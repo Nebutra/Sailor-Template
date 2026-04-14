@@ -1,0 +1,1688 @@
+{
+  "nav": {
+    "features": "機能",
+    "pricing": "料金",
+    "docs": "ドキュメント",
+    "github": "GitHub",
+    "signIn": "ログイン",
+    "getStarted": "無料開始",
+    "about": "About Us",
+    "ideas": "アイデア",
+    "opc": "OPC コミュニティ",
+    "roadmap": "ロードマップ",
+    "resources": "リソース",
+    "changelog": "更新履歴",
+    "impact": "Manifesto"
+  },
+  "hero": {
+    "badge": "Nebutra Intelligence · Leading AI Infrastructure",
+    "headline1": "The engineering foundation",
+    "headline2": "for production-grade AI.",
+    "subheadline": "Nebutra Sailor is a Next.js SaaS framework engineered for AI founders. It natively integrates Agent orchestration, multi-modal capabilities, and an enterprise-level monetization suite, turning AI concepts into scalable commercial products—not just technical demos.",
+    "copyLabel": "Copy Command",
+    "copiedLabel": "Copied",
+    "ctaGetStarted": "Start Building",
+    "ctaViewGitHub": "View on GitHub →",
+    "ctaGetAccess": "Get lifetime access",
+    "ctaExploreDemo": "Explore demo"
+  },
+  "features": {
+    "sectionTitle": "プロトタイプからスケールまでの即戦力インフラストラクチャ。",
+    "item0": {
+      "title": "AIアプリケーション基盤",
+      "description": "自動化されたフレームワークとLLMエンジンを内蔵。複雑な抽象化をバイパスし、構造化AIと直接連携します。"
+    },
+    "item1": {
+      "title": "オープンプロダクトコミュニティ",
+      "description": "将来のAI製品にはサイロではなくエコシステムが必要です。クリエイターとネットワークを繋ぐ構造を提供します。"
+    },
+    "item2": {
+      "title": "エンタープライズSaaS自動化",
+      "description": "Vercel、Supabase、Stripeを深く統合。行レベルのセキュリティ、マルチテナント分離、グローバル課金を標準装備。"
+    }
+  },
+  "cta": {
+    "heading": "Ready to deploy your next AI product?",
+    "subheading": "Initialize a complete, cloud-native SaaS architecture locally with a single terminal command.",
+    "copyLabel": "Copy Command",
+    "copiedLabel": "Copied",
+    "startBuilding": "Start Building"
+  },
+  "comparison": {
+    "badge": "SAILOR 比較",
+    "title": "Sailor と競合製品の比較",
+    "columns": {
+      "feature": "機能",
+      "sailor": "Nebutra Sailor",
+      "nextForge": "next-forge",
+      "supastarter": "Supastarter"
+    },
+    "features": {
+      "multiTenant": "マルチテナント",
+      "aiGateway": "AI統合",
+      "auth": "認証",
+      "billing": "課金・決済",
+      "i18n": "国際化",
+      "frameworks": "フレームワーク対応",
+      "monorepo": "Monorepo規模",
+      "api": "APIフレームワーク",
+      "e2eTests": "E2Eテスト",
+      "archTests": "アーキテクチャテスト",
+      "designSystem": "デザインシステム",
+      "bgJobs": "バックグラウンドジョブ",
+      "license": "ライセンス"
+    },
+    "values": {
+      "orgRbacIsolation": "組織 + RBAC + 行レベル分離",
+      "orgRolesSeat": "組織 + ロール + シート課金",
+      "manualSetup": "手動構築",
+      "multiProviderGateway": "マルチプロバイダーGW",
+      "vercelAiSdk": "Vercel AI SDK",
+      "clerkCustomIdp": "Clerk / Better Auth",
+      "clerkOnly": "Clerk",
+      "betterAuth": "Better Auth（セルフホスト）",
+      "stripeUsage": "5プロバイダー + 従量課金",
+      "stripeOnly": "Stripe",
+      "fiveProviders": "5つの決済プロバイダー",
+      "sevenLangs": "7言語",
+      "nextjsOnly": "Next.jsのみ",
+      "nextNuxtTanstack": "Next.js + Nuxt + TanStack",
+      "turboNineApps": "Turborepo · 9アプリ",
+      "turboSevenApps": "Turborepo · 7アプリ",
+      "turboFiveApps": "Turborepo · 5アプリ",
+      "honoOpenapi": "Hono + OpenAPI + oRPC + tRPC",
+      "trpc": "tRPC",
+      "honoOrpc": "Hono + oRPC",
+      "playwrightSharded": "Playwright · 4シャード",
+      "playwrightGha": "Playwright + GH Actions",
+      "sevenPropertyBased": "7つのプロパティテスト",
+      "fourLayerTokens": "4層トークンエンジン",
+      "shadcn": "shadcn/ui",
+      "radixShadcn": "Radix + shadcn/ui",
+      "inngest": "Inngest",
+      "triggerQstash": "trigger.dev + QStash",
+      "agpl": "AGPL-3.0（無料）",
+      "mit": "MIT（無料）",
+      "paidFrom349": "$349から"
+    }
+  },
+  "footer": {
+    "brandDescription": "数週間でSaaSを出荷。マルチテナント、課金、認証、AI——初日から本番対応。",
+    "columns": {
+      "product": "プロダクト",
+      "resources": "リソース",
+      "legal": "法的情報",
+      "community": "コミュニティ"
+    },
+    "links": {
+      "features": "機能",
+      "pricing": "料金プラン",
+      "about": "会社概要",
+      "showcase": "導入事例",
+      "blog": "ブログ",
+      "changelog": "更新履歴",
+      "roadmap": "ロードマップ",
+      "docs": "ドキュメント",
+      "ideas": "アイデア",
+      "opc": "OPC",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "cookies": "Cookie ポリシー",
+      "refund": "返金ポリシー",
+      "contact": "お問い合わせ",
+      "faq": "よくある質問",
+      "github": "GitHub",
+      "discord": "Discord",
+      "twitter": "X (Twitter)",
+      "product": "Product",
+      "licensing": "Licensing"
+    },
+    "copyright": "© 2026 Nebutra Intelligence. 無断複写・転載を禁じます。",
+    "statusOnline": "全システム正常稼働中",
+    "newsletterTitle": "最新情報を入手",
+    "newsletterPlaceholder": "you@example.com",
+    "newsletterSubscribe": "購読",
+    "newsletterSuccess": "購読ありがとうございます！",
+    "newsletterError": "エラーが発生しました"
+  },
+  "logoStrip": {
+    "tagline": "Engineered upon the premier technologies driving the modern web"
+  },
+  "monorepoTree": {
+    "badge": "TURBOREPO STRUCTURE",
+    "title": "6 apps. 5 packages. One monorepo.",
+    "description": "Shared code, parallel builds, zero duplication. Complete end-to-end typing from database to frontend.",
+    "cta": "Explore the monorepo architecture"
+  },
+  "stats": {
+    "title": "By The Numbers",
+    "github": "GitHub Stars",
+    "discord": "Discord Members",
+    "setup": "Avg Setup Time",
+    "packages": "Monorepo Packages",
+    "ctaStar": "Star →",
+    "ctaJoin": "Join →",
+    "ctaStart": "Start →",
+    "ctaExplore": "Explore →"
+  },
+  "legal": {
+    "nav": {
+      "home": "Home",
+      "contact": "Contact"
+    },
+    "footer": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy",
+      "refund": "Refund Policy",
+      "copyright": "© Nebutra. All rights reserved."
+    }
+  },
+  "legalPages": {
+    "about": {
+      "title": "About Us — The Meta-Unicorn Engine",
+      "description": "Discover the commercial vision and core engineering principles driving Nebutra Intelligence.",
+      "heading": "The Era of Super Individuals",
+      "subheading": "Terminate human-wave bureaucratic expansion. Equip the creative super individual with maximal algorithmic leverage.",
+      "missionTitle": "A New Order Resisting Administrative Decay",
+      "missionP1": "Nebutra isolates itself as the world's foremost Meta-Unicorn ecosystem. Traditional corporate scale inevitably correlates with bureaucracy and entropy. We are ending that scale curse via absolute Code Governance. Our purpose is not just to hatch a few unicorns, but to architect a creator mother-engine crossing capital barricades and defeating entropy with flawless automated workflows.",
+      "missionP2": "Commerce is merely the restructuring of production elements—but historically riddled with hierarchical frictions. In Nebutra's neural network, any independent builder shipping verifiable Proof of Work receives automatic routing of top talent, institutional trust, and algorithmic capital via our Sleptons matchmaker, democratizing entrepreneurship into a highly certain, standardized track.",
+      "missionP3": "We fundamentally reject scaling by adding middle management. Agents handle 100% of operational workflows. We do not hire passive cogs; we invest in, cultivate, and elevate literal creators.",
+      "missionP4": "",
+      "valuesTitle": "The Four Pillars",
+      "values": {
+        "0": {
+          "title": "Infinite Fission (Philosophy)",
+          "description": "Rejecting the bloated myth of horizontal expansion. Every micro-entity hatched here is designed to leverage billions in value with ultra-low headcount."
+        },
+        "1": {
+          "title": "The Builder Core (Infrastructure)",
+          "description": "Transcending simple boilerplates. An arsenal of enterprise multi-tenant isolation, automated MRR billing, shipped by solo founders in one week."
+        },
+        "2": {
+          "title": "Frictionless Flow (Routing)",
+          "description": "Algorithms dismantle HR and VC logic. Execution metrics and git commit velocity dictate purely where capital and talent flow."
+        },
+        "3": {
+          "title": "Code is Law (Organization)",
+          "description": "Eradicate office politics. Provide architectural proofs and the algorithms will automatically elevate your systemic authority."
+        }
+      },
+      "jobsTitle": "Eradicating JD/CV Recruitment",
+      "jobsDescription": "We ignore degrees and pedigrees. Pass the Sleptons machine vision and topological checks via sheer Proof of Work, and shape the ecosystem.",
+      "jobsButton": "Submit Github Profile",
+      "companyInfoTitle": "Organizational Compliance",
+      "companyInfo": {
+        "legalName": "Legal Entity Registration",
+        "founded": "Registration Date",
+        "headquarters": "Global Operations Center",
+        "jurisdiction": "Governing Jurisdiction"
+      },
+      "ctaHeading": "Require deeper technical evaluation?",
+      "ctaDescription": "Contact our engineering specialists for an enterprise integration assessment or review the deployment documentation.",
+      "ctaButton": "Establish Contact"
+    },
+    "contact": {
+      "title": "Technical & Commercial Inquiry — Nebutra Intelligence",
+      "description": "The dedicated communication channel for commercial licensing, enterprise self-hosting, and advanced technical support.",
+      "heading": "Establish Support Connection",
+      "subheading": "We will dispatch a dedicated technical specialist or architect to evaluate your explicit requirements.",
+      "contacts": {
+        "general": {
+          "title": "Enterprise Consultation",
+          "description": "Preliminary discussions concerning ecological strategic partnerships and overarching architectural evolution."
+        },
+        "sales": {
+          "title": "Commercial Deployment",
+          "description": "Negotiation regarding closed-source licensing and specifics pertaining to private cluster-environment deployments."
+        },
+        "support": {
+          "title": "Expert-Level Support",
+          "description": "Targeted architectural guidance and troubleshooting services for active business integrations and core system debugging."
+        },
+        "legal": {
+          "title": "Legal & Compliance",
+          "description": "Inquiries related to open-source boundary definitions, enterprise compliance audits, and contract terms."
+        },
+        "privacy": {
+          "title": "Data Center Privacy",
+          "description": "Technical verification and compliance directives regarding GDPR and subsequent international data protection laws."
+        },
+        "security": {
+          "title": "Security Disclosures",
+          "description": "Securely submit technical reproduction reports concerning potential software vulnerabilities directly to our infrastructure team."
+        }
+      },
+      "formTitle": "Submission Portal",
+      "form": {
+        "name": "Submitter Designation",
+        "email": "Official Email Address",
+        "company": "Affiliated Organization",
+        "category": "Domain of Requirement",
+        "categories": {
+          "general": "Corporate Consultation",
+          "sales": "Licensing & Architecture",
+          "support": "Developer Assistance",
+          "legal": "Legal & Compliance Boundaries",
+          "privacy": "Data Processing Policies",
+          "partnership": "Ecosystem Integrations",
+          "press": "Public Relations"
+        },
+        "subject": "Core Issue Summary",
+        "message": "Detailed Technical/Commercial Specifications",
+        "submit": "Transmit to Backend",
+        "privacyNotice": "Executing this network request signifies reading and consenting to our",
+        "privacyLink": "Systemic Privacy Infrastructure",
+        "submitting": "Entering processing queue...",
+        "successMessage": "Data transmitted successfully. The responsible operational team will issue a detailed response within 1-2 standard business days."
+      },
+      "companyInfoTitle": "Operational Telemetry",
+      "socialMedia": "Primary Network Links",
+      "companyNameChinese": "无锡云毓智能科技有限公司",
+      "companyNameEnglish": "Wuxi Nebutra Intelligent Technology Co., Ltd.",
+      "companyAddress": "Wuxi, Jiangsu Province, China"
+    },
+    "cookies": {
+      "title": "Data Retention Protocols — Nebutra",
+      "description": "Elucidating the platform's execution of necessary technical storage mechanics to maintain session states and platform analytics.",
+      "heading": "Technical Tracking Mechanics",
+      "effectiveDate": "Mandatory Enforcement Date",
+      "lastUpdated": "Latest Technical Revision",
+      "dates": {
+        "effective": "January 1, 2025",
+        "updated": "January 1, 2025"
+      },
+      "intro": "This Cookie Policy explains how Nebutra Co., Ltd. (\"Nebutra,\" \"we,\" \"us,\" or \"our\") uses cookies and similar tracking technologies on our website and services.",
+      "whatAreCookies": {
+        "title": "What Are Cookies?",
+        "content": "Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners."
+      },
+      "howWeUse": {
+        "title": "How We Use Cookies",
+        "intro": "We use cookies to:",
+        "items": {
+          "0": {
+            "label": "Enable Essential Features",
+            "desc": "Provide core functionality like user authentication and security"
+          },
+          "1": {
+            "label": "Remember Preferences",
+            "desc": "Store your language, theme, and other settings"
+          },
+          "2": {
+            "label": "Improve Performance",
+            "desc": "Understand how visitors interact with our services"
+          },
+          "3": {
+            "label": "Personalize Experience",
+            "desc": "Deliver relevant content and recommendations"
+          },
+          "4": {
+            "label": "Measure Marketing",
+            "desc": "Track the effectiveness of our marketing campaigns"
+          }
+        }
+      },
+      "typesTitle": "Types of Cookies We Use",
+      "tableHeaders": {
+        "cookie": "Cookie",
+        "provider": "Provider",
+        "purpose": "Purpose",
+        "duration": "Duration"
+      },
+      "necessary": {
+        "title": "Strictly Necessary Cookies",
+        "description": "These cookies are essential for the website to function properly. They cannot be disabled.",
+        "cookies": {
+          "0": {
+            "name": "__session",
+            "provider": "Nebutra",
+            "purpose": "User authentication session",
+            "duration": "Session"
+          },
+          "1": {
+            "name": "__clerk_db_jwt",
+            "provider": "Clerk",
+            "purpose": "Authentication token",
+            "duration": "7 days"
+          },
+          "2": {
+            "name": "cookie_consent",
+            "provider": "Nebutra",
+            "purpose": "Stores cookie consent preferences",
+            "duration": "1 year"
+          }
+        }
+      },
+      "functional": {
+        "title": "Functional Cookies",
+        "description": "These cookies enable personalized features and remember your preferences.",
+        "cookies": {
+          "0": {
+            "name": "locale",
+            "provider": "Nebutra",
+            "purpose": "Stores language preference",
+            "duration": "1 year"
+          },
+          "1": {
+            "name": "theme",
+            "provider": "Nebutra",
+            "purpose": "Stores theme preference",
+            "duration": "1 year"
+          }
+        }
+      },
+      "analyticsType": {
+        "title": "Analytics Cookies",
+        "description": "These cookies help us understand how visitors interact with our website.",
+        "cookies": {
+          "0": {
+            "name": "_ga",
+            "provider": "Google Analytics",
+            "purpose": "Distinguishes unique users",
+            "duration": "2 years"
+          },
+          "1": {
+            "name": "ph_*",
+            "provider": "PostHog",
+            "purpose": "Product analytics",
+            "duration": "1 year"
+          }
+        }
+      },
+      "marketingType": {
+        "title": "Marketing Cookies",
+        "description": "These cookies are used for advertising and tracking ad campaign performance.",
+        "cookies": {
+          "0": {
+            "name": "_fbp",
+            "provider": "Facebook",
+            "purpose": "Tracks visits for Facebook ads",
+            "duration": "3 months"
+          },
+          "1": {
+            "name": "_gcl_au",
+            "provider": "Google Ads",
+            "purpose": "Conversion tracking",
+            "duration": "3 months"
+          }
+        }
+      },
+      "managingTitle": "Managing Your Cookie Preferences",
+      "consentBanner": {
+        "title": "Cookie Consent Banner",
+        "intro": "When you first visit our website, you will see a cookie consent banner that allows you to:",
+        "items": {
+          "0": {
+            "label": "Accept All",
+            "desc": "Enable all cookie categories"
+          },
+          "1": {
+            "label": "Reject All",
+            "desc": "Disable all optional cookies (necessary cookies remain)"
+          },
+          "2": {
+            "label": "Customize",
+            "desc": "Choose specific cookie categories to enable"
+          }
+        },
+        "changeNote": "You can change your preferences at any time by clicking \"Cookie Settings\" in the footer."
+      },
+      "browserSettings": {
+        "title": "Browser Settings",
+        "intro": "Most web browsers allow you to control cookies through their settings:",
+        "browsers": {
+          "0": {
+            "name": "Chrome",
+            "path": "Settings > Privacy and security > Cookies"
+          },
+          "1": {
+            "name": "Firefox",
+            "path": "Settings > Privacy & Security > Cookies"
+          },
+          "2": {
+            "name": "Safari",
+            "path": "Preferences > Privacy > Cookies"
+          },
+          "3": {
+            "name": "Edge",
+            "path": "Settings > Privacy, search, and services > Cookies"
+          }
+        },
+        "note": "Blocking certain cookies may impact website functionality."
+      },
+      "similarTech": {
+        "title": "Similar Technologies",
+        "intro": "In addition to cookies, we may use:",
+        "items": {
+          "0": {
+            "label": "Local Storage",
+            "desc": "To store preferences and cache data locally"
+          },
+          "1": {
+            "label": "Session Storage",
+            "desc": "For temporary data during your browsing session"
+          },
+          "2": {
+            "label": "Pixel Tags",
+            "desc": "Small images to track email opens and website visits"
+          }
+        },
+        "noFingerprinting": "We do NOT use browser fingerprinting for tracking."
+      },
+      "updates": {
+        "title": "Updates to This Policy",
+        "content": "We may update this Cookie Policy from time to time. We will notify you of material changes by posting the updated policy on our website."
+      },
+      "contactUs": {
+        "title": "Contact Us",
+        "intro": "If you have questions about our use of cookies, please contact us:",
+        "company": "Nebutra Co., Ltd.",
+        "privacyNote": "For more information about how we collect and process your data, please see our",
+        "privacyLink": "Privacy Policy"
+      }
+    },
+    "faq": {
+      "title": "Engineering Guidance & FAQ — Nebutra",
+      "description": "Comprehensive analysis of framework architecture, baseline topologies, and commercial deployment strategies.",
+      "heading": "Executive Deep Dive",
+      "subheading": "Supporting material optimized for systems engineering integration and executive commercial decision-making.",
+      "categories": {
+        "0": {
+          "name": "Architectural Overview",
+          "questions": {
+            "0": {
+              "q": "What is the explicit operational purpose of Nebutra Sailor?",
+              "a": "Nebutra Sailor is a highly structured, production-ready Next.js AI SaaS framework. It bundles microservice functionalities, including corporate billing, multi-factor authentication, and multi-tenant isolation, eliminating boilerplate development overhead and allowing teams to hyper-focus on core structural AI implementation."
+            },
+            "1": {
+              "q": "How is the repository licensing structured?",
+              "a": "The underlying infrastructure strictly enforces the OSS AGPLv3 agreement, guaranteeing transparency and zero-cost usage. For organizations necessitating proprietary obfuscation and elevated rewrite guarantees, explicit closed-source commercial contracts are available."
+            },
+            "2": {
+              "q": "What is the speed of initial commercial evaluation?",
+              "a": "Extremely high-velocity. Using our customized Node CLI toolchain alongside the precise technical specification, a junior engineer can stand up an autonomous local Minimum Viable Product (MVP) instance within single-digit minutes."
+            }
+          }
+        },
+        "1": {
+          "name": "Commercial Operations",
+          "questions": {
+            "0": {
+              "q": "How wide is the tolerance for commercial scaling?",
+              "a": "Designed heavily on micro-component paradigms, structural load capacity maps seamlessly from zero-demand Free Tiers dynamically up to Enterprise thresholds serving multi-million monthly requests, entirely configured via dashboard constraints."
+            },
+            "1": {
+              "q": "How does subscription volatility affect standard accounting?",
+              "a": "We operate utilizing precise, second-level structural logging of resources and API throughput. Shifting constraints instantly reconciles against the accounting layer—either refunding prorated differentials or issuing automatic credits. There is absolutely no tier-freeze period."
+            },
+            "2": {
+              "q": "What processing infrastructure isolates payment vectors?",
+              "a": "Global cash routing fundamentally defers to Stripe server interfaces, guaranteeing strict PCI-DSS telemetry and processing integrity. Enterprise deployments may integrate private financial audit pipelines governed by custom SLA commitments."
+            }
+          }
+        },
+        "2": {
+          "name": "System Engineering Layer",
+          "questions": {
+            "0": {
+              "q": "Which fundamental intelligence abstractions are supported natively?",
+              "a": "The primary interaction logic dictates native interoperability over OpenAI, Anthropic, and Gemini standard specifications. This yields massive flexibility to hot-swap reasoning endpoints efficiently via variable mapping with zero degradation to the upstream commercial logic."
+            },
+            "1": {
+              "q": "How is the risk of database obfuscation addressed?",
+              "a": "Implementation defaults intrinsically deploy Postgres Row-Level Security (RLS) policies tightly coupled with our serverless Tenant Resolution Routing primitives. This ensures hard partitions actively prevent critical application-level data contamination and execution overlap."
+            },
+            "2": {
+              "q": "Are there architectural restrictions on self-managed deployments?",
+              "a": "Absolutely none. The topology is fully decoupled. If the environment executes independent Node.js runtimes alongside healthy PostgreSQL clusters, full functionality is inherently preserved."
+            }
+          }
+        },
+        "3": {
+          "name": "Systematic Integrity",
+          "questions": {
+            "0": {
+              "q": "What protocols determine the perimeter's mechanical defense?",
+              "a": "Mechanisms execute mandatory TLS encryption through transmission, deterministic hashing algorithms for secrets mapping, and the ubiquitous recording of mutation events written strictly into internal time-series tracking ledgers."
+            },
+            "1": {
+              "q": "Does the topology respect major international privacy statutes?",
+              "a": "Yes, profoundly. Business modules supply out-of-the-box algorithmic implementations targeting consent withdrawal states, hard-deletion logic, and deep export queries conforming optimally to the GDPR and localized regulatory frameworks."
+            },
+            "2": {
+              "q": "What executes upon an anomalous catastrophic incident?",
+              "a": "Automated sentinels instantly alert core engineering vectors who force circuit blocks and implement swift triage. Governed by an advanced resolution handbook, fully transparent Incident Postmortems are universally disseminated within an absolute 72-hour window."
+            }
+          }
+        },
+        "4": {
+          "name": "Technical Assistance Directives",
+          "questions": {
+            "0": {
+              "q": "How is operational bottleneck troubleshooting resolved?",
+              "a": "Initial triage vectors target the rigorously maintained and peer-reviewed documentation matrix and verified community interactions. Procuring a standard or enterprise-level license decrypts access to private escalation queues resolving through direct internal engineering nodes."
+            },
+            "1": {
+              "q": "Do you extend physical or specialized environmental integration operations?",
+              "a": "This falls under our bespoke premium execution tier for upper-echelon corporate conglomerates. Our most senior architects deploy outly to perform code auditing against legacy architecture, manage delicate cloud relocations, and validate highly isolated network partitions."
+            }
+          }
+        }
+      },
+      "ctaHeading": "Require immediate technical synchronization?",
+      "ctaDescription": "Whether validating a specific API behavior schema or executing long-term integration agreements, interface directly with the engineering hierarchy.",
+      "ctaButton": "Receive Integration Instructions",
+      "ctaEmail": "Transmit Direct Message"
+    },
+    "privacy": {
+      "title": "Privacy & Information Defense Protocol — Nebutra",
+      "description": "Extensively documenting precisely how the infrastructure mechanics govern user autonomy and machine data isolation.",
+      "heading": "Information Protection Directives",
+      "effectiveDate": "Enforcement Epoch",
+      "lastUpdated": "Latest Structural Revision",
+      "dates": {
+        "effective": "January 1, 2025",
+        "updated": "January 1, 2025"
+      },
+      "intro": "At Nebutra (\"Company,\" \"we,\" \"us,\" or \"our\"), we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website, applications, and services (collectively, the \"Services\").",
+      "infoWeCollect": {
+        "title": "1. Information We Collect",
+        "youProvide": {
+          "title": "1.1 Information You Provide",
+          "intro": "We collect information you directly provide to us, including:",
+          "items": {
+            "0": {
+              "label": "Account Information",
+              "desc": "Name, email address, password, and organization details when you create an account."
+            },
+            "1": {
+              "label": "Profile Information",
+              "desc": "Profile picture, job title, company name, and other optional information."
+            },
+            "2": {
+              "label": "Payment Information",
+              "desc": "Billing address and payment method details (processed securely through Stripe)."
+            },
+            "3": {
+              "label": "Communications",
+              "desc": "Messages, feedback, and other communications you send to us."
+            },
+            "4": {
+              "label": "Content",
+              "desc": "Any content you create, upload, or store using our Services."
+            }
+          }
+        },
+        "automatic": {
+          "title": "1.2 Information Collected Automatically",
+          "intro": "When you use our Services, we automatically collect certain information:",
+          "items": {
+            "0": {
+              "label": "Device Information",
+              "desc": "Device type, operating system, browser type, and unique device identifiers."
+            },
+            "1": {
+              "label": "Usage Information",
+              "desc": "Pages viewed, features used, actions taken, and time spent on Services."
+            },
+            "2": {
+              "label": "Log Data",
+              "desc": "IP address, access times, referring URLs, and system activity logs."
+            },
+            "3": {
+              "label": "Location Information",
+              "desc": "General location based on IP address (we do not collect precise geolocation)."
+            }
+          }
+        }
+      },
+      "howWeUse": {
+        "title": "2. How We Use Your Information",
+        "intro": "We use the information we collect to:",
+        "items": {
+          "0": {
+            "label": "Provide Services",
+            "desc": "Operate, maintain, and improve our Services."
+          },
+          "1": {
+            "label": "Process Transactions",
+            "desc": "Handle payments, billing, and related operations."
+          },
+          "2": {
+            "label": "Communicate",
+            "desc": "Send service announcements, updates, and marketing communications (with consent)."
+          },
+          "3": {
+            "label": "Personalize",
+            "desc": "Customize your experience and provide relevant recommendations."
+          },
+          "4": {
+            "label": "Analyze",
+            "desc": "Understand usage patterns and improve our Services."
+          },
+          "5": {
+            "label": "Protect",
+            "desc": "Detect, prevent, and respond to fraud, abuse, and security incidents."
+          }
+        }
+      },
+      "howWeShare": {
+        "title": "3. How We Share Your Information",
+        "intro": "We may share your information in the following circumstances:",
+        "serviceProviders": {
+          "title": "3.1 Service Providers",
+          "intro": "We share information with third-party vendors who provide services on our behalf, including:",
+          "items": {
+            "0": {
+              "label": "Infrastructure",
+              "desc": "Cloud hosting (Vercel, Supabase), database services"
+            },
+            "1": {
+              "label": "Payment Processing",
+              "desc": "Stripe for secure payment handling"
+            },
+            "2": {
+              "label": "Authentication",
+              "desc": "Clerk for identity management"
+            },
+            "3": {
+              "label": "Analytics",
+              "desc": "PostHog, Vercel Analytics for usage insights"
+            }
+          }
+        },
+        "businessTransfers": {
+          "title": "3.2 Business Transfers",
+          "content": "If we are involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction."
+        },
+        "legalRequirements": {
+          "title": "3.3 Legal Requirements",
+          "content": "We may disclose information when required by law, legal process, or government request, or to protect our rights, privacy, safety, or property."
+        }
+      },
+      "yourRights": {
+        "title": "4. Your Rights and Choices",
+        "accessPortability": {
+          "title": "4.1 Access and Portability",
+          "content": "You can access your personal information through your account settings and request a copy of your data in a portable format."
+        },
+        "correction": {
+          "title": "4.2 Correction",
+          "content": "You can update your account information at any time through the dashboard."
+        },
+        "deletion": {
+          "title": "4.3 Deletion",
+          "content": "You can request deletion of your account and associated data through settings or by contacting us."
+        },
+        "marketing": {
+          "title": "4.4 Marketing Communications",
+          "content": "You can opt out of marketing emails by clicking \"unsubscribe\" in any marketing email or updating your preferences."
+        }
+      },
+      "dataSecurity": {
+        "title": "5. Data Security",
+        "intro": "We implement appropriate technical and organizational measures to protect your information, including:",
+        "items": {
+          "0": "Encryption of data in transit (TLS) and at rest",
+          "1": "Regular security assessments and penetration testing",
+          "2": "Access controls and authentication requirements",
+          "3": "Monitoring and logging of system activity"
+        }
+      },
+      "ccpa": {
+        "title": "6. California Privacy Rights (CCPA)",
+        "intro": "If you are a California resident, you have specific rights regarding your personal information:",
+        "items": {
+          "0": {
+            "label": "Right to Know",
+            "desc": "Request disclosure of information we collect, use, and share."
+          },
+          "1": {
+            "label": "Right to Delete",
+            "desc": "Request deletion of your personal information."
+          },
+          "2": {
+            "label": "Right to Opt-Out",
+            "desc": "Opt out of the sale of personal information (we do not sell your data)."
+          },
+          "3": {
+            "label": "Right to Non-Discrimination",
+            "desc": "We will not discriminate against you for exercising your rights."
+          }
+        }
+      },
+      "gdpr": {
+        "title": "7. European Privacy Rights (GDPR)",
+        "intro": "If you are in the EEA, UK, or Switzerland, you have additional rights under GDPR:",
+        "items": {
+          "0": {
+            "label": "Legal Basis",
+            "desc": "We process your data based on contract performance, legitimate interests, or consent."
+          },
+          "1": {
+            "label": "Rights",
+            "desc": "Access, rectification, erasure, portability, restriction, and objection."
+          },
+          "2": {
+            "label": "DPO",
+            "desc": "You can contact our Data Protection Officer at dpo@nebutra.com."
+          }
+        }
+      },
+      "contactUs": {
+        "title": "8. Contact Us",
+        "intro": "If you have questions about this Privacy Policy, please contact us:",
+        "company": "Nebutra Co., Ltd."
+      }
+    },
+    "refund": {
+      "title": "Transaction Anomaly Protocols — Nebutra",
+      "description": "Rigorous delineation regarding exact capital rollback parameters across diverse structural engagement models.",
+      "heading": "Dispute Execution Framework",
+      "effectiveDate": "Enforcement Implementation Date",
+      "lastUpdated": "Revision Tracing Epoch",
+      "dates": {
+        "effective": "January 1, 2025",
+        "updated": "January 1, 2025"
+      },
+      "intro": "At Nebutra, we want you to be completely satisfied with our services. This Refund Policy outlines the circumstances under which refunds are available and the process for requesting them.",
+      "subscriptionPlans": {
+        "title": "Subscription Plans",
+        "monthly": {
+          "title": "Monthly Subscriptions",
+          "items": {
+            "0": {
+              "label": "Cancellation",
+              "desc": "You may cancel your monthly subscription at any time"
+            },
+            "1": {
+              "label": "Pro-rata Refunds",
+              "desc": "We do not offer pro-rata refunds for partial months"
+            },
+            "2": {
+              "label": "Access",
+              "desc": "You retain access to paid features until the end of your billing period"
+            },
+            "3": {
+              "label": "Automatic Renewal",
+              "desc": "Subscriptions automatically renew unless cancelled"
+            }
+          }
+        },
+        "annual": {
+          "title": "Annual Subscriptions",
+          "items": {
+            "0": {
+              "label": "14-Day Money-Back Guarantee",
+              "desc": "New annual subscribers may request a full refund within 14 days of their initial purchase"
+            },
+            "1": {
+              "label": "After 14 Days",
+              "desc": "Refunds are generally not available after the 14-day period"
+            },
+            "2": {
+              "label": "Cancellation",
+              "desc": "You may cancel at any time, but your subscription will remain active until the end of the annual term"
+            },
+            "3": {
+              "label": "No Pro-rata Refunds",
+              "desc": "We do not offer partial refunds for unused months"
+            }
+          }
+        }
+      },
+      "eligibleScenarios": {
+        "title": "Eligible Refund Scenarios",
+        "intro": "We will consider refund requests in the following circumstances:",
+        "serviceIssues": {
+          "title": "1. Service Issues",
+          "items": {
+            "0": "Significant service outages affecting your ability to use core features",
+            "1": "Technical issues that we are unable to resolve within a reasonable timeframe",
+            "2": "Features significantly different from what was advertised"
+          }
+        },
+        "billingErrors": {
+          "title": "2. Billing Errors",
+          "items": {
+            "0": "Duplicate charges",
+            "1": "Incorrect billing amounts",
+            "2": "Unauthorized charges (after verification)"
+          }
+        },
+        "exceptionalCircumstances": {
+          "title": "3. Exceptional Circumstances",
+          "items": {
+            "0": "Documented medical emergencies",
+            "1": "Natural disasters affecting your business",
+            "2": "Other circumstances evaluated on a case-by-case basis"
+          }
+        }
+      },
+      "nonRefundable": {
+        "title": "Non-Refundable Items",
+        "intro": "The following are generally not eligible for refunds:",
+        "items": {
+          "0": {
+            "label": "Usage-based charges",
+            "desc": "API calls, AI token consumption, or storage used"
+          },
+          "1": {
+            "label": "Add-ons and extras",
+            "desc": "One-time purchases or add-on services"
+          },
+          "2": {
+            "label": "Enterprise contracts",
+            "desc": "Custom agreements have their own terms"
+          },
+          "3": {
+            "label": "Voluntary cancellations",
+            "desc": "After the refund eligibility period"
+          },
+          "4": {
+            "label": "Terms violations",
+            "desc": "Accounts terminated for policy violations"
+          }
+        }
+      },
+      "howToRequest": {
+        "title": "How to Request a Refund",
+        "step1": {
+          "title": "Step 1: Contact Support",
+          "intro": "Email us at billing@nebutra.com with:",
+          "items": {
+            "0": "Your account email address",
+            "1": "Subscription plan and billing period",
+            "2": "Reason for refund request",
+            "3": "Any relevant documentation"
+          }
+        },
+        "step2": {
+          "title": "Step 2: Review Process",
+          "items": {
+            "0": "We will review your request within 5 business days",
+            "1": "We may ask for additional information",
+            "2": "You will receive a written decision via email"
+          }
+        },
+        "step3": {
+          "title": "Step 3: Refund Processing",
+          "intro": "If approved:",
+          "items": {
+            "0": "Refunds are processed to the original payment method",
+            "1": "Credit card refunds typically appear within 5-10 business days",
+            "2": "Bank processing times may vary"
+          }
+        }
+      },
+      "planChanges": {
+        "title": "Plan Changes",
+        "upgrades": {
+          "title": "Upgrades",
+          "items": {
+            "0": "Upgrades take effect immediately",
+            "1": "You are charged the pro-rated difference for the remainder of your billing period",
+            "2": "No refund is provided for the previous plan"
+          }
+        },
+        "downgrades": {
+          "title": "Downgrades",
+          "items": {
+            "0": "Downgrades take effect at the next billing period",
+            "1": "You retain access to current features until then",
+            "2": "No partial refunds for the current period"
+          }
+        }
+      },
+      "freeTrial": {
+        "title": "Free Trial",
+        "items": {
+          "0": "Free trials do not require payment information",
+          "1": "No charges occur during the trial period",
+          "2": "You will be notified before any charges begin"
+        }
+      },
+      "disputeResolution": {
+        "title": "Dispute Resolution",
+        "intro": "If you disagree with our refund decision:",
+        "steps": {
+          "0": "Reply to the decision email with additional information",
+          "1": "Request escalation to a supervisor",
+          "2": "Contact us at legal@nebutra.com for further review"
+        }
+      },
+      "contactUs": {
+        "title": "Contact Us",
+        "intro": "For refund requests or questions about this policy:",
+        "company": "Nebutra Co., Ltd.",
+        "billingLabel": "Billing",
+        "supportLabel": "Support",
+        "legalLabel": "Legal",
+        "responseNote": "We aim to respond to all refund requests within 5 business days.",
+        "termsNote": "This policy is part of our",
+        "termsLink": "Terms of Service",
+        "termsAgreement": "By using Nebutra, you agree to these refund terms."
+      }
+    },
+    "terms": {
+      "title": "Platform Interaction Treaty — Nebutra",
+      "description": "The exact defining technical guidelines outlining the required engagement behaviors between the software framework provider and executing agents.",
+      "heading": "Software Supply License Mechanics (Terms)",
+      "effectiveDate": "Execution Enforcement Date",
+      "lastUpdated": "Final Network Update",
+      "dates": {
+        "effective": "January 1, 2025",
+        "updated": "January 1, 2025"
+      },
+      "intro1": "Welcome to Nebutra! These Terms of Service (\"Terms\") govern your access to and use of Nebutra's website, applications, APIs, and services (collectively, the \"Services\") provided by Nebutra Co., Ltd. (\"Nebutra,\" \"Company,\" \"we,\" \"us,\" or \"our\").",
+      "intro2": "By accessing or using our Services, you agree to be bound by these Terms and our",
+      "intro2PrivacyLink": "Privacy Policy",
+      "intro2End": ". If you do not agree to these Terms, do not use our Services.",
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "eligibility": {
+          "title": "1.1 Eligibility",
+          "intro": "To use our Services, you must:",
+          "items": {
+            "0": "Be at least 18 years old or the age of legal majority in your jurisdiction",
+            "1": "Have the authority to enter into these Terms on behalf of yourself or your organization",
+            "2": "Not be prohibited from using our Services under applicable law"
+          }
+        },
+        "orgAccounts": {
+          "title": "1.2 Organization Accounts",
+          "content": "If you use our Services on behalf of an organization, you represent that you have authority to bind that organization to these Terms."
+        }
+      },
+      "services": {
+        "title": "2. Description of Services",
+        "intro": "Nebutra provides a SaaS platform that includes:",
+        "items": {
+          "0": "AI-powered features and content generation",
+          "1": "Content management and community tools",
+          "2": "Recommendation systems",
+          "3": "E-commerce integrations",
+          "4": "Web3 capabilities",
+          "5": "Analytics and reporting"
+        }
+      },
+      "account": {
+        "title": "3. Account Registration",
+        "creation": {
+          "title": "3.1 Account Creation",
+          "intro": "To access certain features, you must create an account. You agree to:",
+          "items": {
+            "0": "Provide accurate and complete information",
+            "1": "Maintain the security of your account credentials",
+            "2": "Promptly update your information if it changes",
+            "3": "Accept responsibility for all activities under your account"
+          }
+        }
+      },
+      "billing": {
+        "title": "4. Subscription and Billing",
+        "pricing": {
+          "title": "4.1 Pricing",
+          "content": "Our Services are offered under various subscription plans as described on our Pricing page. Prices are subject to change with 30 days' notice."
+        },
+        "payment": {
+          "title": "4.2 Payment",
+          "items": {
+            "0": "Subscriptions are billed in advance on a monthly or annual basis",
+            "1": "All fees are non-refundable except as stated in our",
+            "2": "You authorize us to charge your payment method for applicable fees",
+            "3": "We use Stripe for secure payment processing",
+            "1RefundLink": "Refund Policy"
+          }
+        }
+      },
+      "acceptableUse": {
+        "title": "5. Acceptable Use",
+        "prohibited": {
+          "title": "5.1 Prohibited Activities",
+          "intro": "You agree NOT to:",
+          "items": {
+            "0": "Violate any applicable laws, regulations, or third-party rights",
+            "1": "Use the Services to transmit malware, spam, or harmful content",
+            "2": "Attempt to gain unauthorized access to our systems",
+            "3": "Interfere with or disrupt the integrity or performance of our Services",
+            "4": "Use automated tools to scrape, copy, or extract data without permission",
+            "5": "Reverse engineer, decompile, or disassemble our Services",
+            "6": "Use our AI features to generate illegal, harmful, or deceptive content"
+          }
+        }
+      },
+      "ip": {
+        "title": "6. Intellectual Property",
+        "ours": {
+          "title": "6.1 Our Intellectual Property",
+          "content": "Nebutra and its licensors own all rights, title, and interest in the Services, including all software, designs, trademarks, and content created by us."
+        },
+        "yours": {
+          "title": "6.2 Your Content",
+          "content": "You retain ownership of content you create or upload (\"Your Content\"). By using our Services, you grant us a worldwide, non-exclusive, royalty-free license to use, store, process, and display Your Content solely to provide the Services to you."
+        }
+      },
+      "warranties": {
+        "title": "7. Disclaimer of Warranties",
+        "content": "THE SERVICES ARE PROVIDED \"AS IS\" AND \"AS AVAILABLE\" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT."
+      },
+      "liability": {
+        "title": "8. Limitation of Liability",
+        "para1": "TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEBUTRA SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR LOSS OF PROFITS, DATA, USE, OR GOODWILL.",
+        "para2": "IN NO EVENT SHALL OUR TOTAL LIABILITY EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID US IN THE 12 MONTHS PRECEDING THE CLAIM, OR (B) $100 USD."
+      },
+      "termination": {
+        "title": "9. Termination",
+        "byYou": {
+          "title": "9.1 By You",
+          "content": "You may terminate your account at any time through your account settings. Upon termination, you will lose access to the Services."
+        },
+        "byUs": {
+          "title": "9.2 By Us",
+          "intro": "We may suspend or terminate your account if you:",
+          "items": {
+            "0": "Violate these Terms",
+            "1": "Engage in fraudulent or illegal activity",
+            "2": "Fail to pay applicable fees",
+            "3": "Create risk or legal exposure for us"
+          }
+        }
+      },
+      "disputes": {
+        "title": "10. Dispute Resolution",
+        "informal": {
+          "title": "10.1 Informal Resolution",
+          "content": "Before initiating formal proceedings, you agree to contact us at legal@nebutra.com to attempt to resolve disputes informally."
+        },
+        "governingLaw": {
+          "title": "10.2 Governing Law",
+          "content": "These Terms are governed by the laws of the State of Delaware, without regard to conflict of law principles."
+        }
+      },
+      "contactUs": {
+        "title": "11. Contact Us",
+        "intro": "If you have questions about these Terms, please contact us:",
+        "company": "Nebutra Co., Ltd.",
+        "emailLabel": "Email",
+        "supportLabel": "Support"
+      },
+      "acknowledgement": "By using Nebutra, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service."
+    }
+  },
+  "metadata": {
+    "title": "Nebutra Intelligence | AI Native & SaaS Architecture",
+    "description": "The next-generation engineering framework tailored for mainstream AI startups and enterprises. Designed utilizing stringent permission frameworks, it provides an immediate, fully functional commercial value platform."
+  },
+  "marketing": {
+    "pricing": {
+      "hobby": {
+        "name": "ホビー版",
+        "price": "無料",
+        "description": "個人プロジェクトとテスト向け",
+        "features": ["1プロジェクト", "コミュニティサポート", "基本分析"],
+        "ctaText": "無料で始める"
+      },
+      "pro": {
+        "name": "プロ版",
+        "price": "$29",
+        "description": "急速に拡大するスタートアップに最適",
+        "isPopular": true,
+        "features": ["無制限のプロジェクト", "優先サポート", "カスタムドメイン", "高度なAI機能"],
+        "ctaText": "プロ版にアップグレード"
+      },
+      "enterprise": {
+        "name": "エンタープライズ版",
+        "price": "別途見積",
+        "description": "大規模なチームと高トラフィック向け",
+        "features": ["SSO連携", "専用Slackチャンネル", "99.9%のSLA保証", "完全ホワイトラベル対応"],
+        "ctaText": "お問い合わせ"
+      }
+    },
+    "faq": {
+      "q1": {
+        "q": "プロ版は月額サブスクリプションですか？",
+        "a": "はい、プロ版は月額制です。ダッシュボードからいつでもキャンセルでき、違約金などは一切かかりません。"
+      },
+      "q2": {
+        "q": "返金には対応していますか？",
+        "a": "はい、安心して導入いただけるよう14日間の無条件全額返金保証を提供しています。"
+      },
+      "q3": {
+        "q": "購入後、受託開発やクライアントワークに使用できますか？",
+        "a": "もちろん可能です。商用ライセンスにより、クライアントシステムでも無制限に使用および納品が可能です。"
+      }
+    },
+    "pricingHeader": {
+      "title": "シンプルで透明性の高い料金プラン",
+      "description": "隠れた費用はありません。いつでもキャンセル可能です。",
+      "mostPopular": "一番人気",
+      "perMonth": "/月"
+    },
+    "faqHeader": {
+      "title": "導入に関するよくあるご質問",
+      "description": "お探しの答えが見つかりませんか？サポートチームにお問い合わせください。"
+    },
+    "waitlist": {
+      "title": "アーリーアクセスに登録",
+      "description": "ウェイトリストに参加して、ローンチ情報にいち早くアクセスしましょう。",
+      "placeholder": "name@example.com",
+      "buttonText": "ウェイトリストに参加",
+      "loadingText": "送信中...",
+      "successText": "登録成功！",
+      "successMessage": "ご登録ありがとうございます！担当者より追ってご連絡いたします。",
+      "socialProofPrefix": "現在",
+      "socialProofSuffix": "人以上がリストに参加しています",
+      "emailAriaLabel": "メールアドレス"
+    }
+  },
+  "microLanding": {
+    "architecture": {
+      "badge": "SYSTEM TOPOLOGY",
+      "title": "Transparent architecture, no black boxes.",
+      "description": "Nebutra Sailor is engineered with a hyper-modular Turborepo structure, giving you complete ownership of your entire software lifecycle.",
+      "database": {
+        "title": "PostgreSQL + Prisma v7",
+        "desc": "Fully typed ORM with Row-Level Security (RLS) policies baked in natively."
+      },
+      "auth": {
+        "title": "Clerk Multi-Tenant / Custom Identity",
+        "desc": "SOC2-ready authentication gateway supporting B2B organization switching and RBAC."
+      }
+    },
+    "pricing": {
+      "title": "Accelerate your development cycle.",
+      "description": "Choose a commercial license that aligns with your engineering velocity and enterprise scale.",
+      "standard": {
+        "badge": "SOLO FOUNDER",
+        "price": "Free",
+        "period": "forever",
+        "desc": "Perfect for One-Person Companies (OPC) executing rapid MVP iterations under the AGPL license.",
+        "cta": "Clone Repository",
+        "f1": "Complete Next.js 16 SaaS core",
+        "f2": "Stripe & Clerk integrations",
+        "f3": "4-Layer Token Design System",
+        "f4": "AGPLv3 Open Source License"
+      },
+      "enterprise": {
+        "badge": "PROPRIETARY",
+        "price": "$349",
+        "period": "lifetime",
+        "desc": "Acquire commercial rights to close-source your applications and protect intellectual property.",
+        "cta": "Purchase License",
+        "f1": "Everything in Solo Founder",
+        "f2": "MIT / Proprietary Commercial License",
+        "f3": "Advanced Architecture Tests",
+        "f4": "Private Discord Developer Community",
+        "f5": "1 Year Expert Technical Support"
+      },
+      "socialProofText": "trusted by <highlight>1276 developers</highlight>",
+      "frameworkText": "Choose your framework:",
+      "frameworkNext": "Next.js",
+      "frameworkNuxt": "Nuxt",
+      "frameworkTanStack": "TanStack (Soon)",
+      "solo": {
+        "badge": "SOLO",
+        "price": "Free",
+        "period": "forever",
+        "desc": "Perfect for One-Person Companies (OPC) executing rapid MVP iterations under the AGPL license.",
+        "cta": "Clone Repository",
+        "f1": "Complete Next.js 16 SaaS core",
+        "f2": "Unlimited Personal Projects (Commercial use allowed)",
+        "f3": "Full SaaS stack: Auth, Payments, Organizations, API, Admin UI, Email, i18n, Background Jobs, Storage & more",
+        "f4": "Marketing features: Blog, Landing page, SEO, Analytics",
+        "f5": "AGPLv3 Open Source License"
+      },
+      "startup": {
+        "badge": "STARTUP",
+        "price": "$799",
+        "period": "lifetime",
+        "desc": "Build faster as a team.",
+        "cta": "Get Nebutra for Startups",
+        "f1": "Up to 5 Developer Seats",
+        "f2": "Unlimited Team Projects",
+        "f3": "30-min Architecture Consult (Onboarding Call)",
+        "f4": "Priority Support",
+        "f5": "Everything in Solo"
+      },
+      "agency": {
+        "badge": "AGENCY",
+        "price": "$1,499",
+        "period": "lifetime",
+        "desc": "The ultimate SaaS factory.",
+        "cta": "Get Nebutra for Agencies",
+        "f1": "Up to 10 Developer Seats",
+        "f2": "Unlimited Client Projects",
+        "f3": "30-min Architecture Consult (Onboarding Call)",
+        "f4": "White-label potential",
+        "f5": "Everything in Startup",
+        "f6": "Private Discord support channel"
+      }
+    },
+    "faq": {
+      "title": "Evaluating the stack.",
+      "description": "Detailed engineering answers to accelerate your architectural decisions.",
+      "q1": {
+        "q": "Why Turborepo over a standard Next.js app?",
+        "a": "Turborepo isolates your UI components, database schemas, and shared utilities, allowing unparalleled scale when your SaaS outgrows a single frontend application."
+      },
+      "q2": {
+        "q": "How is multi-tenancy handled?",
+        "a": "We use Clerk's B2B organizational structure deeply integrated with Prisma middleware to ensure strict row-level isolation between organizations."
+      },
+      "q3": {
+        "q": "Can I swap Clerk for Supabase Auth?",
+        "a": "Absolutely. Our authentication layer is abstracted via @nebutra/identity, meaning you can hot-swap identity providers with minimal refactoring."
+      },
+      "q4": {
+        "q": "Do I need to pay for updates?",
+        "a": "No, commercial licenses include lifetime access to the repository and all future updates and architectural improvements."
+      }
+    },
+    "cta": {
+      "title": "Stop configuring. Start building.",
+      "description": "Initialize your scalable SaaS architecture locally within 3 minutes using the Nebutra CLI.",
+      "button": "Deploy Architecture",
+      "license": "AGPL-3.0 ライセンスのオープンソース。クレジットカード不要。"
+    },
+    "capability": {
+      "badge": "Enterprise Capabilities",
+      "title": "A fully typed, extensible core.",
+      "multiTenant": {
+        "title": "Native Row-Level Security",
+        "desc": "Every database query is strictly scoped by the current tenant context.",
+        "cta": "Read database philosophy"
+      },
+      "aiGateway": {
+        "title": "Universal AI Gateway",
+        "desc": "Seamlessly route prompts to OpenAI, Anthropic, or open-source models.",
+        "cta": "Explore the AI SDK handler"
+      },
+      "rbac": {
+        "title": "Granular Access Control",
+        "desc": "Define admin, member, and viewer roles with zero boilerplate.",
+        "cta": "View RBAC documentation"
+      },
+      "billing": {
+        "title": "Stripe Billing Infrastructure",
+        "desc": "Metered usage, subscription webhooks, and self-serve customer portals.",
+        "cta": "See billing architecture"
+      }
+    },
+    "workflow": {
+      "badge": "Velocity",
+      "title": "From zero to production in record time.",
+      "step1": {
+        "title": "1. Clone",
+        "desc": "Instantly clone the Nebutra monorepo and run pnpm install."
+      },
+      "step2": {
+        "title": "2. Configure",
+        "desc": "Set up Prisma, Clerk, and Stripe via the interactive CLI in minutes."
+      },
+      "step3": {
+        "title": "3. Build",
+        "desc": "Focus entirely on your unique SaaS features and UI rather than boilerplate."
+      },
+      "step4": {
+        "title": "4. Deploy",
+        "desc": "Push to Vercel and AWS for instant global distribution."
+      },
+      "speedometer": {
+        "number": "10",
+        "unit": "mins",
+        "subtitle": "TIME TO MARKET",
+        "comparison": "99% faster than building an internal platform team.",
+        "phases": {
+          "scaffold": "Init",
+          "wire": "Core",
+          "ship": "Deploy",
+          "scale": "Scale",
+          "ongoing": "∞"
+        },
+        "cta": "Start your timer"
+      },
+      "presetHint": {
+        "badge": "Nebutraプリセット",
+        "message": "@nebutra/preset経由で初期化されたSaaSアーキテクチャ",
+        "detail": "14のパッケージがネイティブに統合されています。"
+      }
+    },
+    "testimonials": {
+      "badge": "Developers",
+      "title": "Trusted by engineers globally.",
+      "t1": {
+        "quote": "Nebutra saved us six months of platform engineering. We shipped our MVP on day 10.",
+        "author": "Sarah Chen",
+        "role": "CTO, DataFlow"
+      },
+      "t2": {
+        "quote": "The Turborepo setup is phenomenal. Testing, linting, and building are instantly cached.",
+        "author": "Marcus Dev",
+        "role": "Solo Founder"
+      },
+      "t3": {
+        "quote": "Finally, a boilerplate that doesn't feel like a black box. The code quality is immaculate.",
+        "author": "Emma Founder",
+        "role": "Indie Hacker"
+      }
+    },
+    "productDemo": {
+      "badge": "Interactive Demo",
+      "title": "Experience the real-time velocity.",
+      "description": "Get a feel for the command-line interface, Stripe webhook tunneling, and local multi-tenant database provisioning.",
+      "analytics": {
+        "label": "Live Telemetry",
+        "desc": "Stream production usage data straight into your terminal."
+      },
+      "billing": {
+        "label": "Billing Events",
+        "desc": "Watch Stripe webhooks execute via local tunneling."
+      },
+      "workspaces": {
+        "label": "Workspace Init",
+        "desc": "Provision isolated B2B PostgreSQL schemas instantly."
+      }
+    },
+    "harness": {
+      "badge": "HARNESS ENGINEERING",
+      "headline": "Engineering that enforces itself.",
+      "subheadline": "Architecture tests, governance ratchets, and 15 CI workflows ensure code quality can only improve — never regress.",
+      "stat1Value": "15",
+      "stat1Label": "CI Workflows",
+      "stat2Value": "43",
+      "stat2Label": "Architecture Tests",
+      "stat3Value": "0",
+      "stat3Label": "Token Violations",
+      "card1Title": "Architecture Tests",
+      "card1Desc": "7 property-based tests with fast-check enforce dependency flow, token usage, WCAG contrast ratios, API version prefixes, and story coverage.",
+      "card2Title": "Governance Ratchets",
+      "card2Desc": "Token budgets that only tighten: zero raw color classes on landing page, oklch floor 120+, hex ceiling 40, motion imports whitelisted to 2 files.",
+      "card3Title": "CI Pipeline Depth",
+      "card3Desc": "CodeQL SAST, Gitleaks, cosign signing, SBOM/SLSA provenance, Lighthouse ≥0.95, OpenAPI backward compatibility, k6 load tests, Chromatic visual regression."
+    }
+  },
+  "featuresPage": {
+    "hero": {
+      "badge": "プラットフォーム機能",
+      "headlinePrefix": "ユニコーンを出荷するために",
+      "headlineHighlight": "必要なすべて。",
+      "description": "Nebutra はフルスタック SaaS プラットフォームです。AI、課金、マルチテナンシー、オブザーバビリティ、セキュリティが初日から組み込まれています。車輪の再発明はもう不要です。"
+    },
+    "sections": {
+      "ai_category": "AI & Intelligence",
+      "ai_f1_title": "Multi-model chat completions",
+      "ai_f1_desc": "Route requests to GPT-5.4, Claude Opus 4, Gemini 3.1, or your own fine-tuned models. Streaming, vision, and function calling supported out of the box.",
+      "ai_f2_title": "Semantic embeddings",
+      "ai_f2_desc": "Generate and store vector embeddings with pgvector. Power semantic search, RAG pipelines, and recommendation engines.",
+      "ai_f3_title": "AI usage metering",
+      "ai_f3_desc": "Track token consumption per tenant per billing period. Set per-plan quotas and auto-notify on 80% / 100% burn.",
+      "multi_category": "Multi-tenant Platform",
+      "multi_f1_title": "Organisation-level isolation",
+      "multi_f1_desc": "Row-level security in Postgres ensures tenants can never access each other's data — enforced at the database layer, not just the application.",
+      "multi_f2_title": "Multi-provider auth (Clerk / Better Auth)",
+      "multi_f2_desc": "Switch auth providers via preset config. Clerk for managed, Better Auth for self-hosted. Phone + SMS login for China market via Aliyun/Tencent Cloud.",
+      "multi_f3_title": "Automatic tenant provisioning",
+      "multi_f3_desc": "When a new organisation signs up via Clerk, we auto-generate their first API key and send a branded welcome email — zero manual steps.",
+      "dx_category": "Developer Experience",
+      "dx_f1_title": "Hashed API keys",
+      "dx_f1_desc": "SHA-256 hashed keys with prefix display (nbtr_live_…). Shown in plaintext exactly once on creation — security without friction.",
+      "dx_f2_title": "Idempotency middleware",
+      "dx_f2_desc": "Pass an Idempotency-Key header and any POST request becomes safe to retry. Redis-backed, 24-hour cache, IETF draft compliant.",
+      "dx_f3_title": "Multi-Protocol API (REST + oRPC + tRPC)",
+      "dx_f3_desc": "REST/OpenAPI for public APIs, oRPC for type-safe frontend calls, tRPC for T3-stack compatibility. All protocols share the same Zod contracts and middleware stack. Enable per protocol via preset config.",
+      "billing_category": "Billing & Monetisation",
+      "billing_f1_title": "Stripe, LemonSqueezy, Polar & China Pay",
+      "billing_f1_desc": "Choose your payment provider: Stripe for global enterprise, LemonSqueezy for indie devs, Polar for OSS, or Alipay/WeChat Pay for China market. One-click checkout and self-serve billing portal.",
+      "billing_f2_title": "Usage-based quota enforcement",
+      "billing_f2_desc": "Real-time Redis counters track API calls and token usage per tenant. Requests are gated at the gateway when limits are hit.",
+      "billing_f3_title": "Webhook lifecycle sync",
+      "billing_f3_desc": "Stripe subscription events automatically update org plans in your database via Inngest — no cron jobs, no polling.",
+      "rel_category": "Reliability",
+      "rel_f1_title": "Circuit breaker + retry",
+      "rel_f1_desc": "Every Python microservice uses a CLOSED/OPEN/HALF_OPEN circuit breaker with exponential backoff and jitter — no cascading failures.",
+      "rel_f2_title": "Dead letter queue",
+      "rel_f2_desc": "Event handlers that exhaust 3 retry attempts land in the DLQ. Replay them individually from the admin API without redeploying.",
+      "rel_f3_title": "SLO burn-rate alerts",
+      "rel_f3_desc": "Multi-window Google SRE-style alerts fire at 14.4×, 6×, and 3× burn rates before your error budget is exhausted.",
+      "sec_category": "Security",
+      "sec_f1_title": "CSP nonce-based headers",
+      "sec_f1_desc": "Strict-dynamic Content Security Policy with per-request nonces generated in Clerk middleware — no unsafe-inline anywhere.",
+      "sec_f2_title": "ModSecurity WAF",
+      "sec_f2_desc": "OWASP Core Rule Set in DetectionOnly mode on every ingress. Rate limiting at 30 RPS with burst tolerance via nginx annotations.",
+      "sec_f3_title": "SBOM + SLSA provenance",
+      "sec_f3_desc": "Every release generates a CycloneDX software bill of materials and SLSA provenance attestation, uploaded to the GitHub Release.",
+      "obs_category": "Observability",
+      "obs_f1_title": "OpenTelemetry tracing",
+      "obs_f1_desc": "Distributed traces flow from Next.js → Hono → Python microservices via OTLP. Exported to Jaeger (dev) and Grafana Tempo (prod).",
+      "obs_f2_title": "Grafana dashboards",
+      "obs_f2_desc": "32-panel platform overview: SLO availability, error budget remaining, HPA saturation, pod restarts, and CPU throttling.",
+      "obs_f3_title": "Sentry error tracking",
+      "obs_f3_desc": "Server-side and client-side errors captured with tenant context, request ID, and trace ID for cross-system correlation.",
+      "data_category": "Data & Analytics",
+      "data_f1_title": "ClickHouse OLAP warehouse",
+      "data_f1_desc": "Events land in ClickHouse for fast analytical queries. dbt transforms raw events into gold-layer growth metrics visible in the dashboard.",
+      "data_f2_title": "Funnel analytics",
+      "data_f2_desc": "Track signups → activations → conversions with cohort-level attribution. Revenue per active user calculated from the gold layer.",
+      "data_f3_title": "Kafka / event ingestion",
+      "data_f3_desc": "High-throughput event ingestion service decouples your application from your data warehouse. Schema validation at the edge.",
+      "infra_category": "Infrastructure",
+      "infra_f1_title": "GitOps with ArgoCD",
+      "infra_f1_desc": "Main branch changes are automatically reconciled to the cluster. Self-heal reverts manual kubectl edits. Sync windows enforce safe deploy hours.",
+      "infra_f2_title": "PgBouncer connection pooling",
+      "infra_f2_desc": "Transaction-mode PgBouncer in front of Supabase handles 1,000 app connections on 20 Postgres connections. HA with 2 replicas.",
+      "infra_f3_title": "Horizontal + vertical autoscaling",
+      "infra_f3_desc": "HPA scales on CPU/memory. VPA runs in Off mode providing right-sizing recommendations. KEDA custom metrics planned for v2."
+    }
+  },
+  "comingSoon": {
+    "badge": "🚧 準備中",
+    "description": {
+      "ideas": "We are currently crafting an incredible geek-driven experience for this section. It will be launched alongside the next major architecture pipeline update.",
+      "opc": "The hub for the ultimate OPC developers is being built. Subscribe to our release channels to be notified of the upcoming launch.",
+      "roadmap": "基盤からエンタープライズ規模へ — プロダクトフェーズ、バージョンマイルストーン、資金調達ビジョン。"
+    },
+    "returnBtn": "ホームに戻る"
+  },
+  "showcase": {
+    "badge": "実際の動作",
+    "headline": "デモではなく、本番環境のために構築。",
+    "tabs": {
+      "dashboard": "Dashboard",
+      "billing": "Billing",
+      "ai-chat": "AI Chat"
+    }
+  },
+  "blogShowcase": {
+    "badge": "ブログより",
+    "title": "エンジニアリングインサイト",
+    "subtitle": "SaaSアーキテクチャ、AIインフラ、プロダクションエンジニアリングの深掘り。",
+    "readMore": "続きを読む"
+  },
+  "useCases": {
+    "badge": "デプロイメントシナリオ",
+    "title": "One foundation. Infinite possibilities.",
+    "description": "Nebutra Sailor powers the next generation of SaaS products across global markets.",
+    "tabs": {
+      "opc": "AI & OPC Startup Ecosystem",
+      "ip": "Personal IP Matrix",
+      "multimodal": "Multimodal AI SaaS",
+      "enterprise": "Modern Enterprise (CN)",
+      "export": "Global Software Export",
+      "design": "Design System Engine",
+      "edam": "Enterprise Digital Assets",
+      "seoGeo": "SEO & GEO エンジン"
+    },
+    "content": {
+      "opc": {
+        "title": "Leading AI-Native & One-Person Company (OPC) Ecosystem Hub",
+        "desc": "Future AI products require ecosystems, not silos. Designed with the OPC philosophy to provide standardized plugin structures connecting creators with developer networks.",
+        "features": {
+          "f1": "Plugin Architecture",
+          "f2": "Developer Portal",
+          "f3": "SDK Generation"
+        }
+      },
+      "ip": {
+        "title": "Personal IP Growth & Portfolio Matrix",
+        "desc": "Establish a world-class founder presence. High-conversion blog, portfolio, and profile templates optimized for personal brand monetization.",
+        "features": {
+          "f1": "MDX Blog Engine",
+          "f2": "Newsletter Integration",
+          "f3": "SEO Optimized"
+        }
+      },
+      "multimodal": {
+        "title": "Innovative Multimodal AI SaaS",
+        "desc": "Launch complete Chatbot, Text-to-Image, or Video generation SaaS with integrated Vercel AI SDK, streaming, and prompt gateways.",
+        "features": {
+          "f1": "Streaming UI",
+          "f2": "Model Routing",
+          "f3": "Usage Metering"
+        }
+      },
+      "enterprise": {
+        "title": "Modern Enterprise Context (CN)",
+        "desc": "Tailored for the domestic market with ultra-fast local CDN support, WeChat ecosystem integration readiness, and localized compliance.",
+        "features": {
+          "f1": "Local Compliance",
+          "f2": "High Performance",
+          "f3": "Mobile First"
+        }
+      },
+      "export": {
+        "title": "Global Software Export Landing Pages",
+        "desc": "Designed for cross-border SaaS. Built-in multi-currency Stripe checkout, next-intl i18n routing, and GDPR compliance.",
+        "features": {
+          "f1": "Global Payments",
+          "f2": "7 Languages Auto-routing",
+          "f3": "GDPR Ready"
+        }
+      },
+      "design": {
+        "title": "Leading Modern Component Library System",
+        "desc": "A beautiful, token-driven architecture using Radix + framer-motion. Perfect for teams building their own opinionated UI libraries.",
+        "features": {
+          "f1": "4-Layer Tokens",
+          "f2": "CSS Variables",
+          "f3": "Accessible"
+        }
+      },
+      "edam": {
+        "title": "Enterprise Digital Asset Management",
+        "desc": "Structured data lakes and complex dashboard topologies utilizing scalable PostgreSQL architectures and granular RBAC.",
+        "features": {
+          "f1": "Row-Level Security",
+          "f2": "Complex Queries",
+          "f3": "Role Management"
+        }
+      },
+      "seoGeo": {
+        "title": "SEO & GEO 成長エンジン",
+        "desc": "従来の検索を超えて。組み込みのSEO基盤とジェネレーティブエンジン最適化により、GoogleとChatGPT、Perplexity、GeminiなどのAI検索エンジンの両方で発見されます。",
+        "features": {
+          "f1": "Lighthouse 99+ スコア",
+          "f2": "AI検索インデックス済み"
+        }
+      }
+    }
+  },
+  "agentic": {
+    "badge": "AGENTIC エンジニアリング",
+    "headline": "AIコーディングエージェントのために設計。",
+    "subheadline": "すべてのファイル、ルール、テストは、Claude Code、Cursor、Codex がコードベース全体を理解し、自律的に出荷できるように設計されています。",
+    "card1Title": "構造化コンテキスト",
+    "card1Desc": "CLAUDE.md がコンポーネントルール、トークンガバナンス、インポート境界を提供——エージェントは推測不要。",
+    "card2Title": "アーキテクチャガードレール",
+    "card2Desc": "7つのプロパティテストが依存関係、トークン使用、WCAG コントラストを強制——エージェントは不変条件を破れません。",
+    "card3Title": "自律的デプロイ",
+    "card3Desc": "エージェントがコンテキストを読み、コードを書き、テストを実行し、CI をパス——プロンプトから本番まで人手介入なし。",
+    "compTraditional": "AI が推測 → 壊れる → 手動修正",
+    "compSailor": "AI がルールを読む → 制約に従う → CI が検証 → 出荷"
+  },
+  "designSystem": {
+    "badge": "デザインシステム",
+    "headline": "4層のデザインガバナンス。",
+    "subheadline": "ブランドプリミティブからランタイムトークン、マルチテーマエンジン、ガバナンス付きコンポーネントまで — shadcn + Tailwindだけではありません。",
+    "flowBrand": "ブランド",
+    "flowBrandDesc": "カラープリミティブ、グラデーション、モーション言語",
+    "flowTokens": "トークン",
+    "flowTokensDesc": "CSS変数、12段階スケール、ダークモード",
+    "flowTheme": "テーマ",
+    "flowThemeDesc": "oklchマルチテーマ、6プリセット、color-mix()",
+    "flowUI": "UI",
+    "flowUIDesc": "コンポーネント、Storybook、Chromatic",
+    "card1Title": "12段階カラースケール",
+    "card1Desc": "Geist準拠セマンティックスケール：背景(1-2)、状態(3-5)、ボーダー(6-8)、塗り(9-10)、テキスト(11-12)。",
+    "card2Title": "oklchマルチテーマ",
+    "card2Desc": "oklch色空間を使用した6テーマプリセット、color-mix()によるホバー/アクティブ派生。Display-P3広色域 + sRGBフォールバック。",
+    "card3Title": "ビジュアルリグレッション",
+    "card3Desc": "Chromaticが全ピクセル変更を検出。Storybookが全コンポーネントを文書化。アーキテクチャテストがStoryカバレッジを強制。",
+    "card4Title": "トークンガバナンス",
+    "card4Desc": "ラチェット予算：hex上限、oklch下限、生カラークラス制限。CIでブランドドリフト検出。",
+    "card5Title": "インタラクティブドキュメント",
+    "card5Desc": "Fumadocs ベースの設計ドキュメントサイト。2言語対応のコンポーネント API ドキュメント、トークンギャラリー、レイアウトパターンガイド。"
+  },
+  "seoGeo": {
+    "badge": "SEO & GEO",
+    "headline": "人に見つかる。AIに引用される。",
+    "subheadline": "すべてのページにプロダクション品質のSEOとジェネレーティブエンジン最適化を搭載。Google、Perplexity、ChatGPT Search、Bing Copilotに即座に表示されます。",
+    "stat1Value": "100",
+    "stat1Label": "Lighthouse SEO",
+    "stat2Value": "99",
+    "stat2Label": "パフォーマンス",
+    "stat3Value": "7",
+    "stat3Label": "言語",
+    "stat4Value": "6+",
+    "stat4Label": "Schemaタイプ",
+    "seoLabel": "検索エンジン最適化",
+    "geoLabel": "ジェネレーティブエンジン最適化",
+    "card1Title": "自動化メタ & 構造化データ",
+    "card1Desc": "JSON-LD schema、Open Graph、Twitter Cards、canonical URL、XML sitemapをコンテンツモデルから自動生成。設定不要。",
+    "card2Title": "AI最適化コンテンツアーキテクチャ",
+    "card2Desc": "セマンティックHTML5、FAQ schema、HowToマークアップ、AI検索エンジンが回答生成に好む引用対応フォーマット。",
+    "card3Title": "多言語SEO (hreflang)",
+    "card3Desc": "next-intlが7言語のhreflang代替言語を自動生成。各言語で独自のサイトマップエントリ。",
+    "card4Title": "Core Web Vitals ファースト",
+    "card4Desc": "サーバーコンポーネント、動的インポート、画像最適化、エッジキャッシングで99+のLighthouseスコア。モバイルでLCP 1.2秒以下。",
+    "card5Title": "AI引用シグナル",
+    "card5Desc": "構造化データ、権威的コンテンツパターン、E-E-A-Tシグナル。Perplexity、ChatGPT Search、Google SGEが引用元決定に使用。",
+    "card6Title": "グローバルエッジ配信",
+    "card6Desc": "ISR + 300+ Vercel PoP上のエッジミドルウェア。地理別ターゲティングコンテンツ、複数通貨対応、エッジでのロケール認識ルーティング。",
+    "compTraditionalLabel": "従来のSEO",
+    "compTraditional": "手動のmetaタグ → 遅いクロール → AI検索に不可視",
+    "compSailor": "自動化schema → 即時インデックス → AIエンジンに引用 → グローバルリーチ"
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "desc": "お探しのページは削除されたか、一時的に利用できません。",
+    "home": "ホームに戻る",
+    "docs": "ドキュメントを読む"
+  },
+  "impact": {
+    "hero_eyebrow": "Nebutra Core Vision Whitepaper",
+    "hero_title": "The Meta-Unicorn Ecosystem",
+    "hero_subtitle": "We are not here to merely hatch unicorns. We are here to construct the mother-engine that continuously fissions them.",
+    "phil_title": "Ⅰ. Philosophy",
+    "phil_headline": "Infinite Fission over Infinite Expansion",
+    "phil_desc": "Traditional behemoths fall into the scale curse—relying on human wave attrition and bureaucratic layering to survive. Nebutra terminates this old order. Our social-level calling is to democratize entrepreneurship into a lightweight, reliable pathway, making it the absolute default career choice for top digital minds.",
+    "infra_title": "Ⅱ. Infrastructure",
+    "infra_headline": "The AI-Native Convergence",
+    "infra_desc": "Nebutra is not a duct-tape solution of existing tools; it is a full-lifecycle creator engine running from inspiration to monopoly.",
+    "infra_1_title": "The Builder Core",
+    "infra_1_desc": "Transcend typical boilerplates with 50+ pre-integrated modules. Ship complete enterprise models within a week.",
+    "infra_2_title": "The Launchpad",
+    "infra_2_desc": "Utilize algorithmic distribution over paid acquisition. Expose your MVP to a relentless feedback loop on day zero.",
+    "infra_3_title": "Sleptons Router",
+    "infra_3_desc": "Destroy the JD/CV paradigm. Matchmake solo creators entirely via absolute Proof of Work and semantic compatibility.",
+    "infra_4_title": "Algorithmic Capital",
+    "infra_4_desc": "Funding secured not by pitch decks nor networking, but strictly via trailing MRR graphs and code delivery velocity.",
+    "route_title": "Ⅲ. Routing",
+    "route_headline": "Frictionless Flow of Production Elements",
+    "route_desc": "Nebutra constructs a global super-neural network piercing through physical and hierarchical blockades. It aligns Capital directly to Code, Vision flawlessly to Execution, and establishes Trust upon immutable architectural deliveries rather than hollow prestige.",
+    "org_title": "Ⅳ. Organization",
+    "org_headline": "Automated Scaling Resolving Administrative Decay",
+    "org_desc": "Upon immense scale, we fundamentally reject solving problems via \"middle management layering\". In Nebutra’s ecosystem, Code is Law. Automate all operational procedures via AI Agents, reserving human intellect strictly for creation and strategic vision."
+  }
+}

@@ -1,0 +1,101 @@
+name: Sync to sailor-template
+
+# Mirrors Nebutra-Sailor main → nebutra/sailor-template (stripped skeleton)
+# Consumed by `create-sailor` at scaffold time for faster, cleaner cloning.
+#
+# Required repo secrets:
+#   TEMPLATE_PUSH_TOKEN   PAT with repo scope, authorized for nebutra/sailor-template
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "docs/**"
+      - "**/*.md"
+      - ".github/**"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Build only, do not push"
+        type: boolean
+        default: false
+
+concurrency:
+  group: sync-template
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Build template
+        run: pnpm tsx scripts/template-build.ts --out=/tmp/sailor-template
+
+      - name: Verify built template is not empty
+        run: |
+          count=$(find /tmp/sailor-template -type f | wc -l)
+          echo "Built template contains $count files"
+          if [ "$count" -lt 100 ]; then
+            echo "::error::Built template is suspiciously small (< 100 files)"
+            exit 1
+          fi
+
+      - name: Configure SSH for Sailor-Template
+        if: github.event_name != 'workflow_dispatch' || !inputs.dry_run
+        env:
+          SAILOR_TEMPLATE_SSH_KEY: ${{ secrets.SAILOR_TEMPLATE_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "${SAILOR_TEMPLATE_SSH_KEY}" > ~/.ssh/sailor_template
+          chmod 600 ~/.ssh/sailor_template
+          ssh-keyscan -t ed25519,rsa github.com >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Push to Sailor-Template (via SSH deploy key)
+        if: github.event_name != 'workflow_dispatch' || !inputs.dry_run
+        env:
+          SRC_SHA: ${{ github.sha }}
+          GIT_SSH_COMMAND: "ssh -i ~/.ssh/sailor_template -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
+        run: |
+          set -euo pipefail
+          cd /tmp/sailor-template
+          git init -q
+          git config user.email "bot@nebutra.com"
+          git config user.name "Sailor Template Bot"
+          git checkout -q -b main
+          git add -A
+          git commit -q -m "chore: sync from Nebutra-Sailor@${SRC_SHA}"
+          # Force-push replaces whatever is there — acceptable for a mirror repo.
+          git remote add origin "git@github.com:Nebutra/Sailor-Template.git"
+          git push -qf origin main
+
+      - name: Clean up SSH key
+        if: always()
+        run: rm -f ~/.ssh/sailor_template
+
+      - name: Summary
+        run: |
+          echo "### Template sync summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Source SHA: \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- File count: $(find /tmp/sailor-template -type f | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- Pushed: ${{ github.event_name != 'workflow_dispatch' || !inputs.dry_run }}" >> $GITHUB_STEP_SUMMARY

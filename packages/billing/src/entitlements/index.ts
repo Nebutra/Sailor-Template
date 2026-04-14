@@ -1,0 +1,17 @@
+export {
+  checkEntitlement,
+  type Entitlement,
+  type EntitlementCheckResult,
+  FEATURES,
+  type FeatureKey,
+  type GrantEntitlementInput,
+  getEntitlements,
+  grantEntitlement,
+  incrementUsage,
+  initializePlanEntitlements,
+  isPlanFeature,
+  PLAN_FEATURES,
+  requireEntitlement,
+  resetUsage,
+  revokeEntitlement,
+} from "./service.js";

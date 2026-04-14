@@ -1,0 +1,1630 @@
+generator client {
+  provider        = "prisma-client"
+  output          = "../src/generated/prisma"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  extensions = [vector, uuid_ossp(map: "uuid-ossp")]
+  schemas    = ["public", "ecommerce", "recsys", "web3"]
+}
+
+// ============================================
+// Enums
+// ============================================
+
+enum Plan {
+  FREE
+  PRO
+  ENTERPRISE
+  @@schema("public")
+}
+
+enum Role {
+  OWNER
+  ADMIN
+  MEMBER
+  VIEWER
+  @@schema("public")
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+  @@schema("public")
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+  @@schema("public")
+}
+
+enum IntegrationType {
+  SHOPIFY
+  SHOPLINE
+  STRIPE
+  CUSTOM
+  @@schema("public")
+}
+
+enum NftStatus {
+  MINTING
+  MINTED
+  LISTED
+  SOLD
+  BURNED
+  @@schema("public")
+}
+
+enum SleptonsTier {
+  V0
+  V1
+  V2
+  V_INFINITY
+  @@schema("public")
+}
+
+enum ProductStage {
+  IDEA
+  BUILDING
+  LAUNCHED
+  SCALING
+  @@schema("public")
+}
+
+// ============================================
+// Multi-Tenant Core
+// ============================================
+
+model Organization {
+  id        String   @id @default(cuid())
+  clerkId   String   @unique @map("clerk_id")
+  name      String
+  slug      String   @unique
+  plan      Plan     @default(FREE)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  members      OrganizationMember[]
+  contents     Content[]
+  tenantUsage  TenantUsage[]
+  products     Product[]
+  orders       Order[]
+  integrations Integration[]
+  wallets      Wallet[]
+  nfts         Nft[]
+  apiKeys      APIKey[]
+  oauthClients OAuthClient[]
+
+  @@map("organizations")
+  @@schema("public")
+}
+
+// ── API Keys ──────────────────────────────────────────────────────────────────
+// Keys are hashed on creation; the plaintext is shown once and never stored.
+// Soft-deleted via revokedAt so audit log references remain meaningful.
+model APIKey {
+  id             String    @id @default(cuid())
+  name           String    @db.VarChar(64)
+  keyHash        String    @unique @map("key_hash")
+  keyPrefix      String    @map("key_prefix") @db.VarChar(16)
+  organizationId String    @map("organization_id")
+  createdById    String?   @map("created_by_id")
+  lastUsedAt     DateTime? @map("last_used_at")
+  revokedAt      DateTime? @map("revoked_at")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId])
+  @@index([keyHash])
+  @@index([organizationId, revokedAt])
+  @@map("api_keys")
+  @@schema("public")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  clerkId   String   @unique @map("clerk_id")
+  email     String   @unique
+  name      String?
+  avatarUrl String?  @map("avatar_url")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  organizations      OrganizationMember[]
+  contents           Content[]
+  orders             Order[]
+  activities         UserActivity[]
+  wallets            Wallet[]
+  oauthAuthorizations OAuthAuthorization[]
+
+  @@map("users")
+  @@schema("public")
+}
+
+model OrganizationMember {
+  id             String   @id @default(cuid())
+  organizationId String   @map("organization_id")
+  userId         String   @map("user_id")
+  role           Role     @default(MEMBER)
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, userId])
+  @@map("organization_members")
+  @@schema("public")
+}
+
+// ============================================
+// Content
+// ============================================
+
+model Content {
+  id             String        @id @default(cuid())
+  organizationId String        @map("organization_id")
+  authorId       String        @map("author_id")
+  title          String
+  slug           String?
+  body           String        @db.Text
+  status         ContentStatus @default(DRAFT)
+  publishedAt    DateTime?     @map("published_at")
+  createdAt      DateTime      @default(now()) @map("created_at")
+  updatedAt      DateTime      @updatedAt @map("updated_at")
+
+  organization Organization          @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  author       User                  @relation(fields: [authorId], references: [id])
+  embeddings   ContentEmbedding[]
+  translations ContentTranslation[]
+
+  @@unique([organizationId, slug])
+  @@index([organizationId])
+  @@index([authorId])
+  @@index([status])
+  @@index([organizationId, status])
+  @@index([organizationId, publishedAt])
+  @@map("contents")
+  @@schema("public")
+}
+
+model ContentTranslation {
+  id        String   @id @default(cuid())
+  contentId String   @map("content_id")
+  locale    String   @db.VarChar(10)
+  title     String
+  body      String?  @db.Text
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  content Content @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@unique([contentId, locale])
+  @@map("content_translations")
+  @@schema("public")
+}
+
+// ============================================
+// Embeddings (pgvector)
+// ============================================
+
+model ContentEmbedding {
+  id        String                      @id @default(cuid())
+  contentId String                      @map("content_id")
+  embedding Unsupported("vector(1536)")
+  model     String                      @default("text-embedding-3-small")
+  createdAt DateTime                    @default(now()) @map("created_at")
+
+  content Content @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@index([contentId])
+  @@map("content_embeddings")
+  @@schema("public")
+}
+
+// ============================================
+// E-Commerce
+// ============================================
+
+model Product {
+  id             String   @id @default(cuid())
+  organizationId String   @map("organization_id")
+  externalId     String?  @map("external_id")
+  name           String
+  description    String?  @db.Text
+  price          Decimal  @db.Decimal(10, 2)
+  currency       String   @default("USD") @db.VarChar(3)
+  inventory      Int      @default(0)
+  imageUrl       String?  @map("image_url")
+  metadata       Json?    @default("{}")
+  isActive       Boolean  @default(true) @map("is_active")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  orderItems   OrderItem[]
+
+  @@unique([organizationId, externalId])
+  @@index([organizationId])
+  @@map("products")
+  @@schema("public")
+}
+
+model Order {
+  id             String      @id @default(cuid())
+  organizationId String      @map("organization_id")
+  userId         String      @map("user_id")
+  externalId     String?     @map("external_id")
+  status         OrderStatus @default(PENDING)
+  totalAmount    Decimal     @db.Decimal(10, 2)
+  currency       String      @default("USD") @db.VarChar(3)
+  shippingInfo   Json?       @map("shipping_info")
+  metadata       Json?       @default("{}")
+  createdAt      DateTime    @default(now()) @map("created_at")
+  updatedAt      DateTime    @updatedAt @map("updated_at")
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user         User         @relation(fields: [userId], references: [id])
+  items        OrderItem[]
+
+  @@index([organizationId])
+  @@index([userId])
+  @@index([status])
+  @@index([organizationId, status])
+  @@index([organizationId, userId])
+  @@map("orders")
+  @@schema("public")
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String  @map("order_id")
+  productId String  @map("product_id")
+  quantity  Int
+  unitPrice Decimal @db.Decimal(10, 2)
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Restrict)
+
+  @@map("order_items")
+  @@schema("public")
+}
+
+model Integration {
+  id             String          @id @default(cuid())
+  organizationId String          @map("organization_id")
+  type           IntegrationType
+  name           String
+  credentials    Json            @default("{}") // Encrypt in app layer
+  settings       Json            @default("{}")
+  isActive       Boolean         @default(true) @map("is_active")
+  lastSyncAt     DateTime?       @map("last_sync_at")
+  createdAt      DateTime        @default(now()) @map("created_at")
+  updatedAt      DateTime        @updatedAt @map("updated_at")
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, type, name])
+  @@map("integrations")
+  @@schema("public")
+}
+
+// ============================================
+// Web3
+// ============================================
+
+model Wallet {
+  id             String   @id @default(cuid())
+  organizationId String   @map("organization_id")
+  userId         String   @map("user_id")
+  address        String   @db.VarChar(42)
+  chainId        Int      @map("chain_id")
+  isPrimary      Boolean  @default(false) @map("is_primary")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nfts         Nft[]
+
+  @@unique([address, chainId])
+  @@index([userId])
+  @@index([userId, organizationId])
+  @@map("wallets")
+  @@schema("public")
+}
+
+model Nft {
+  id             String    @id @default(cuid())
+  organizationId String    @map("organization_id")
+  walletId       String    @map("wallet_id")
+  contractAddr   String    @map("contract_addr") @db.VarChar(42)
+  tokenId        String    @map("token_id")
+  chainId        Int       @map("chain_id")
+  name           String?
+  description    String?   @db.Text
+  imageUrl       String?   @map("image_url")
+  metadata       Json?     @default("{}")
+  status         NftStatus @default(MINTING)
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  wallet       Wallet       @relation(fields: [walletId], references: [id], onDelete: Cascade)
+
+  @@unique([contractAddr, tokenId, chainId])
+  @@index([walletId])
+  @@index([organizationId, status])
+  @@map("nfts")
+  @@schema("public")
+}
+
+// ============================================
+// User Activity & Analytics
+// ============================================
+
+model UserActivity {
+  id         String   @id @default(cuid())
+  userId     String   @map("user_id")
+  action     String   @db.VarChar(50)
+  entityType String?  @map("entity_type") @db.VarChar(50)
+  entityId   String?  @map("entity_id")
+  metadata   Json?    @default("{}")
+  ipAddress  String?  @map("ip_address") @db.VarChar(45)
+  userAgent  String?  @map("user_agent")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([action])
+  @@index([createdAt])
+  @@index([userId, createdAt])
+  @@map("user_activities")
+  @@schema("public")
+}
+
+// ============================================
+// Usage & Billing
+// ============================================
+
+model TenantUsage {
+  id             String   @id @default(cuid())
+  organizationId String   @map("organization_id")
+  month          String   // Format: YYYY-MM
+  apiCalls       Int      @default(0) @map("api_calls")
+  aiTokens       Int      @default(0) @map("ai_tokens")
+  storage        BigInt   @default(0) // bytes
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, month])
+  @@map("tenant_usage")
+  @@schema("public")
+}
+
+// ============================================
+// AI Service Tracking
+// ============================================
+
+enum AIProvider {
+  OPENAI
+  ANTHROPIC
+  GOOGLE
+  SILICONFLOW
+  CUSTOM
+  @@schema("public")
+}
+
+enum AIRequestType {
+  GENERATE
+  EMBED
+  TRANSLATE
+  CHAT
+  @@schema("public")
+}
+
+model AIRequest {
+  id             String        @id @default(cuid())
+  organizationId String        @map("organization_id")
+  userId         String?       @map("user_id")
+  type           AIRequestType
+  provider       AIProvider
+  model          String
+  inputTokens    Int           @default(0) @map("input_tokens")
+  outputTokens   Int           @default(0) @map("output_tokens")
+  latencyMs      Int?          @map("latency_ms")
+  cost           Decimal?      @db.Decimal(10, 6)
+  metadata       Json?         @default("{}")
+  createdAt      DateTime      @default(now()) @map("created_at")
+
+  @@index([organizationId])
+  @@index([userId])
+  @@index([createdAt])
+  @@index([provider, model])
+  @@index([organizationId, createdAt])
+  @@map("ai_requests")
+  @@schema("public")
+}
+
+// ============================================
+// Recommendation System
+// ============================================
+
+model UserPreference {
+  id             String   @id @default(cuid())
+  organizationId String   @map("organization_id")
+  userId         String   @map("user_id")
+  category       String   @db.VarChar(50)
+  weight         Float    @default(1.0)
+  metadata       Json?    @default("{}")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  @@unique([organizationId, userId, category])
+  @@index([userId])
+  @@map("user_preferences")
+  @@schema("public")
+}
+
+model Recommendation {
+  id             String   @id @default(cuid())
+  organizationId String   @map("organization_id")
+  userId         String   @map("user_id")
+  itemType       String   @map("item_type") @db.VarChar(50) // content, product, nft
+  itemId         String   @map("item_id")
+  score          Float
+  reason         String?  @db.VarChar(100) // collaborative, content-based, trending
+  shown          Boolean  @default(false)
+  clicked        Boolean  @default(false)
+  createdAt      DateTime @default(now()) @map("created_at")
+  expiresAt      DateTime @map("expires_at")
+
+  @@index([organizationId, userId])
+  @@index([itemType, itemId])
+  @@index([expiresAt])
+  @@map("recommendations")
+  @@schema("public")
+}
+
+// ============================================
+// Feature Flags
+// ============================================
+
+enum FeatureFlagType {
+  BOOLEAN
+  PERCENTAGE
+  JSON
+  @@schema("public")
+}
+
+model FeatureFlag {
+  id          String          @id @default(cuid())
+  key         String          @unique @db.VarChar(100)
+  name        String
+  description String?
+  type        FeatureFlagType @default(BOOLEAN)
+  value       Json            @default("false")
+  isEnabled   Boolean         @default(false) @map("is_enabled")
+  createdAt   DateTime        @default(now()) @map("created_at")
+  updatedAt   DateTime        @updatedAt @map("updated_at")
+
+  overrides FeatureFlagOverride[]
+
+  @@map("feature_flags")
+  @@schema("public")
+}
+
+model FeatureFlagOverride {
+  id             String   @id @default(cuid())
+  flagId         String   @map("flag_id")
+  organizationId String?  @map("organization_id")
+  userId         String?  @map("user_id")
+  value          Json
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  flag FeatureFlag @relation(fields: [flagId], references: [id], onDelete: Cascade)
+
+  @@unique([flagId, organizationId, userId])
+  @@map("feature_flag_overrides")
+  @@schema("public")
+}
+
+// ============================================
+// Billing & Monetization
+// ============================================
+
+enum SubscriptionStatus {
+  ACTIVE
+  PAST_DUE
+  CANCELED
+  UNPAID
+  TRIALING
+  PAUSED
+  INCOMPLETE
+  @@schema("public")
+}
+
+enum BillingInterval {
+  MONTHLY
+  YEARLY
+  WEEKLY
+  ONE_TIME
+  @@schema("public")
+}
+
+enum InvoiceStatus {
+  DRAFT
+  OPEN
+  PAID
+  VOID
+  UNCOLLECTIBLE
+  @@schema("public")
+}
+
+enum PaymentMethodType {
+  CARD
+  BANK_TRANSFER
+  ALIPAY
+  WECHAT_PAY
+  CRYPTO
+  @@schema("public")
+}
+
+enum CreditTransactionType {
+  PURCHASE
+  USAGE
+  REFUND
+  ADJUSTMENT
+  EXPIRATION
+  BONUS
+  @@schema("public")
+}
+
+enum UsageType {
+  API_CALL
+  AI_TOKEN
+  STORAGE
+  COMPUTE
+  BANDWIDTH
+  CUSTOM
+  @@schema("public")
+}
+
+enum UsageLedgerSource {
+  API
+  WORKFLOW
+  WEBHOOK
+  SYSTEM
+  BACKFILL
+  @@schema("public")
+}
+
+// ============================================
+// Dynamic Plan Configuration (Unicorn SaaS Pattern)
+// ============================================
+
+// Feature Definitions - All possible features in the system
+model FeatureDefinition {
+  id          String   @id @default(cuid())
+  key         String   @unique @db.VarChar(100) // ai.chat, ai.embeddings, web3.nft
+  name        String
+  description String?
+  category    String   @db.VarChar(50) // ai, content, recsys, ecommerce, web3
+  valueType   String   @default("boolean") @map("value_type") @db.VarChar(20) // boolean, number, unlimited
+  defaultValue Json    @default("false") @map("default_value")
+  metadata    Json     @default("{}")
+  isActive    Boolean  @default(true) @map("is_active")
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  planFeatures PlanFeature[]
+
+  @@index([category])
+  @@map("feature_definitions")
+  @@schema("public")
+}
+
+// Usage Limit Definitions - All possible usage metrics
+model UsageLimitDefinition {
+  id           String   @id @default(cuid())
+  key          String   @unique @db.VarChar(50) // ai_tokens, api_calls, storage_bytes
+  name         String
+  description  String?
+  unit         String   @db.VarChar(20) // tokens, calls, bytes, minutes
+  resetPeriod  String   @default("monthly") @map("reset_period") @db.VarChar(20) // monthly, daily, never
+  overageRate  Decimal? @map("overage_rate") @db.Decimal(10, 8) // cost per unit over limit
+  metadata     Json     @default("{}")
+  isActive     Boolean  @default(true) @map("is_active")
+  sortOrder    Int      @default(0) @map("sort_order")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  planLimits     PlanUsageLimit[]
+  customerLimits CustomerUsageLimit[]
+
+  @@map("usage_limit_definitions")
+  @@schema("public")
+}
+
+// Price/Plan Configuration (Versioned)
+model PricingPlan {
+  id           String          @id @default(cuid())
+  stripeId     String?         @unique @map("stripe_id")
+  name         String
+  slug         String          @unique @db.VarChar(50) // free, pro, enterprise
+  description  String?
+  plan         Plan            // FREE, PRO, ENTERPRISE
+  interval     BillingInterval @default(MONTHLY)
+  amount       Decimal         @db.Decimal(10, 2)
+  currency     String          @default("USD") @db.VarChar(3)
+  trialDays    Int             @default(0) @map("trial_days")
+  
+  // Versioning for grandfathering
+  version       String         @default("v1") @db.VarChar(20)
+  effectiveFrom DateTime       @default(now()) @map("effective_from")
+  effectiveTo   DateTime?      @map("effective_to")
+  
+  // Inheritance
+  basePlanId   String?         @map("base_plan_id")
+  basePlan     PricingPlan?    @relation("PlanInheritance", fields: [basePlanId], references: [id])
+  derivedPlans PricingPlan[]   @relation("PlanInheritance")
+  
+  // Status
+  isActive     Boolean         @default(true) @map("is_active")
+  isPublic     Boolean         @default(true) @map("is_public") // show on pricing page
+  
+  // Legacy JSON fields (for migration, prefer relations)
+  features     Json            @default("[]") // Deprecated: use planFeatures
+  limits       Json            @default("{}") // Deprecated: use planLimits
+  metadata     Json            @default("{}")
+  
+  createdAt    DateTime        @default(now()) @map("created_at")
+  updatedAt    DateTime        @updatedAt @map("updated_at")
+
+  // Relations
+  subscriptions    Subscription[]
+  invoiceItems     InvoiceItem[]
+  planFeatures     PlanFeature[]
+  planLimits       PlanUsageLimit[]
+  grandfatheredOrgs CustomerPlanVersion[]
+
+  @@unique([slug, version])
+  @@index([plan, isActive])
+  @@map("pricing_plans")
+  @@schema("public")
+}
+
+// Plan Features - Many-to-many with values
+model PlanFeature {
+  id           String   @id @default(cuid())
+  planId       String   @map("plan_id")
+  featureId    String   @map("feature_id")
+  value        Json     // true, false, or specific value
+  isEnabled    Boolean  @default(true) @map("is_enabled")
+  metadata     Json     @default("{}")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  plan    PricingPlan       @relation(fields: [planId], references: [id], onDelete: Cascade)
+  feature FeatureDefinition @relation(fields: [featureId], references: [id], onDelete: Cascade)
+
+  @@unique([planId, featureId])
+  @@map("plan_features")
+  @@schema("public")
+}
+
+// Plan Usage Limits
+model PlanUsageLimit {
+  id           String   @id @default(cuid())
+  planId       String   @map("plan_id")
+  limitId      String   @map("limit_id")
+  limitValue   BigInt   @map("limit_value") // -1 = unlimited
+  overageRate  Decimal? @map("overage_rate") @db.Decimal(10, 8) // override default
+  metadata     Json     @default("{}")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  plan       PricingPlan           @relation(fields: [planId], references: [id], onDelete: Cascade)
+  limitDef   UsageLimitDefinition  @relation(fields: [limitId], references: [id], onDelete: Cascade)
+
+  @@unique([planId, limitId])
+  @@map("plan_usage_limits")
+  @@schema("public")
+}
+
+// ============================================
+// Customer Overrides (Grandfathering & Custom Deals)
+// ============================================
+
+// Customer-specific plan version lock (grandfathering)
+model CustomerPlanVersion {
+  id             String    @id @default(cuid())
+  organizationId String    @map("organization_id")
+  planId         String    @map("plan_id")
+  reason         String?   // "Legacy customer", "Enterprise deal", "Beta tester"
+  approvedBy     String?   @map("approved_by") // admin user id
+  expiresAt      DateTime? @map("expires_at")
+  createdAt      DateTime  @default(now()) @map("created_at")
+
+  plan PricingPlan @relation(fields: [planId], references: [id])
+
+  @@unique([organizationId])
+  @@map("customer_plan_versions")
+  @@schema("public")
+}
+
+// Customer-specific feature overrides
+model CustomerFeatureOverride {
+  id             String    @id @default(cuid())
+  organizationId String    @map("organization_id")
+  featureKey     String    @map("feature_key") @db.VarChar(100)
+  value          Json      // override value
+  reason         String?   // "Sales deal", "Support escalation"
+  approvedBy     String?   @map("approved_by")
+  expiresAt      DateTime? @map("expires_at")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  @@unique([organizationId, featureKey])
+  @@index([featureKey])
+  @@map("customer_feature_overrides")
+  @@schema("public")
+}
+
+// Customer-specific usage limit overrides
+model CustomerUsageLimit {
+  id             String    @id @default(cuid())
+  organizationId String    @map("organization_id")
+  limitId        String    @map("limit_id")
+  limitValue     BigInt    @map("limit_value") // -1 = unlimited
+  overageRate    Decimal?  @map("overage_rate") @db.Decimal(10, 8)
+  reason         String?   // "Enterprise deal", "Promo"
+  approvedBy     String?   @map("approved_by")
+  expiresAt      DateTime? @map("expires_at")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  limitDef UsageLimitDefinition @relation(fields: [limitId], references: [id])
+
+  @@unique([organizationId, limitId])
+  @@map("customer_usage_limits")
+  @@schema("public")
+}
+
+// Subscription Management
+model Subscription {
+  id                   String             @id @default(cuid())
+  stripeId             String?            @unique @map("stripe_id")
+  organizationId       String             @map("organization_id")
+  pricingPlanId        String             @map("pricing_plan_id")
+  status               SubscriptionStatus @default(ACTIVE)
+  currentPeriodStart   DateTime           @map("current_period_start")
+  currentPeriodEnd     DateTime           @map("current_period_end")
+  cancelAtPeriodEnd    Boolean            @default(false) @map("cancel_at_period_end")
+  canceledAt           DateTime?          @map("canceled_at")
+  trialStart           DateTime?          @map("trial_start")
+  trialEnd             DateTime?          @map("trial_end")
+  metadata             Json               @default("{}")
+  createdAt            DateTime           @default(now()) @map("created_at")
+  updatedAt            DateTime           @updatedAt @map("updated_at")
+
+  pricingPlan  PricingPlan @relation(fields: [pricingPlanId], references: [id])
+  invoices     Invoice[]
+  usageRecords UsageRecord[]
+  usageLedgerEntries UsageLedgerEntry[]
+
+  @@index([organizationId])
+  @@index([status])
+  @@index([organizationId, status])
+  @@map("subscriptions")
+  @@schema("public")
+}
+
+// Invoice Management
+model Invoice {
+  id               String        @id @default(cuid())
+  stripeId         String?       @unique @map("stripe_id")
+  organizationId   String        @map("organization_id")
+  subscriptionId   String?       @map("subscription_id")
+  number           String        @unique
+  status           InvoiceStatus @default(DRAFT)
+  subtotal         Decimal       @db.Decimal(10, 2)
+  tax              Decimal       @default(0) @db.Decimal(10, 2)
+  total            Decimal       @db.Decimal(10, 2)
+  amountPaid       Decimal       @default(0) @map("amount_paid") @db.Decimal(10, 2)
+  amountDue        Decimal       @map("amount_due") @db.Decimal(10, 2)
+  currency         String        @default("USD") @db.VarChar(3)
+  dueDate          DateTime?     @map("due_date")
+  paidAt           DateTime?     @map("paid_at")
+  invoicePdf       String?       @map("invoice_pdf")
+  hostedInvoiceUrl String?       @map("hosted_invoice_url")
+  billingReason    String?       @map("billing_reason") // subscription_create, subscription_cycle, manual
+  metadata         Json          @default("{}")
+  createdAt        DateTime      @default(now()) @map("created_at")
+  updatedAt        DateTime      @updatedAt @map("updated_at")
+
+  subscription Subscription? @relation(fields: [subscriptionId], references: [id])
+  items        InvoiceItem[]
+  payments     Payment[]
+
+  @@index([organizationId])
+  @@index([status])
+  @@index([dueDate])
+  @@index([organizationId, status])
+  @@index([organizationId, createdAt])
+  @@map("invoices")
+  @@schema("public")
+}
+
+model InvoiceItem {
+  id            String   @id @default(cuid())
+  invoiceId     String   @map("invoice_id")
+  pricingPlanId String?  @map("pricing_plan_id")
+  description   String
+  quantity      Int      @default(1)
+  unitAmount    Decimal  @map("unit_amount") @db.Decimal(10, 4)
+  amount        Decimal  @db.Decimal(10, 2)
+  currency      String   @default("USD") @db.VarChar(3)
+  periodStart   DateTime @map("period_start")
+  periodEnd     DateTime @map("period_end")
+  metadata      Json     @default("{}")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  invoice     Invoice      @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  pricingPlan PricingPlan? @relation(fields: [pricingPlanId], references: [id])
+
+  @@map("invoice_items")
+  @@schema("public")
+}
+
+// Payment Records
+model Payment {
+  id                String            @id @default(cuid())
+  stripeId          String?           @unique @map("stripe_id")
+  organizationId    String            @map("organization_id")
+  invoiceId         String?           @map("invoice_id")
+  amount            Decimal           @db.Decimal(10, 2)
+  currency          String            @default("USD") @db.VarChar(3)
+  status            String            @db.VarChar(20) // succeeded, pending, failed
+  paymentMethodType PaymentMethodType @map("payment_method_type")
+  paymentMethodId   String?           @map("payment_method_id")
+  failureCode       String?           @map("failure_code")
+  failureMessage    String?           @map("failure_message")
+  refundedAmount    Decimal           @default(0) @map("refunded_amount") @db.Decimal(10, 2)
+  metadata          Json              @default("{}")
+  createdAt         DateTime          @default(now()) @map("created_at")
+
+  invoice       Invoice?       @relation(fields: [invoiceId], references: [id])
+  paymentMethod PaymentMethod? @relation(fields: [paymentMethodId], references: [id])
+
+  @@index([organizationId])
+  @@index([status])
+  @@index([organizationId, status])
+  @@index([organizationId, createdAt])
+  @@map("payments")
+  @@schema("public")
+}
+
+// Payment Methods
+model PaymentMethod {
+  id             String            @id @default(cuid())
+  stripeId       String?           @unique @map("stripe_id")
+  organizationId String            @map("organization_id")
+  type           PaymentMethodType
+  isDefault      Boolean           @default(false) @map("is_default")
+  lastFour       String?           @map("last_four") @db.VarChar(4)
+  brand          String?           @db.VarChar(20) // visa, mastercard, etc.
+  expiryMonth    Int?              @map("expiry_month")
+  expiryYear     Int?              @map("expiry_year")
+  billingDetails Json?             @map("billing_details") // name, address, email
+  metadata       Json              @default("{}")
+  createdAt      DateTime          @default(now()) @map("created_at")
+  updatedAt      DateTime          @updatedAt @map("updated_at")
+
+  payments Payment[]
+
+  @@index([organizationId])
+  @@map("payment_methods")
+  @@schema("public")
+}
+
+// Usage Tracking (detailed)
+model UsageRecord {
+  id             String    @id @default(cuid())
+  organizationId String    @map("organization_id")
+  subscriptionId String?   @map("subscription_id")
+  userId         String?   @map("user_id")
+  type           UsageType
+  quantity       BigInt
+  unitCost       Decimal?  @map("unit_cost") @db.Decimal(10, 8) // cost per unit
+  totalCost      Decimal?  @map("total_cost") @db.Decimal(10, 6)
+  resource       String?   @db.VarChar(100) // specific resource: gpt-4o, bge-m3, etc.
+  metadata       Json      @default("{}")
+  recordedAt     DateTime  @default(now()) @map("recorded_at")
+
+  subscription Subscription? @relation(fields: [subscriptionId], references: [id])
+
+  @@index([organizationId, recordedAt])
+  @@index([type])
+  @@index([resource])
+  @@map("usage_records")
+  @@schema("public")
+}
+
+// Immutable usage ledger (idempotent append-only records)
+model UsageLedgerEntry {
+  id             String            @id @default(cuid())
+  organizationId String            @map("organization_id")
+  subscriptionId String?           @map("subscription_id")
+  userId         String?           @map("user_id")
+  idempotencyKey String            @map("idempotency_key") @db.VarChar(191)
+  eventId        String?           @map("event_id") @db.VarChar(191)
+  source         UsageLedgerSource @default(API)
+  type           UsageType
+  resource       String?           @db.VarChar(100)
+  quantity       BigInt
+  unit           String            @default("unit") @db.VarChar(32)
+  unitCost       Decimal?          @map("unit_cost") @db.Decimal(10, 8)
+  totalCost      Decimal?          @map("total_cost") @db.Decimal(10, 6)
+  currency       String            @default("USD") @db.VarChar(3)
+  occurredAt     DateTime          @map("occurred_at")
+  recordedAt     DateTime          @default(now()) @map("recorded_at")
+  ingestVersion  String            @default("v1") @map("ingest_version") @db.VarChar(16)
+  metadata       Json              @default("{}")
+
+  subscription Subscription? @relation(fields: [subscriptionId], references: [id])
+
+  @@unique([organizationId, idempotencyKey])
+  @@index([organizationId, occurredAt])
+  @@index([organizationId, type, occurredAt])
+  @@index([eventId])
+  @@map("usage_ledger_entries")
+  @@schema("public")
+}
+
+// Aggregated Usage (for billing)
+model UsageAggregate {
+  id             String    @id @default(cuid())
+  organizationId String    @map("organization_id")
+  type           UsageType
+  period         String    // YYYY-MM or YYYY-MM-DD
+  quantity       BigInt
+  cost           Decimal   @db.Decimal(10, 4)
+  currency       String    @default("USD") @db.VarChar(3)
+  metadata       Json      @default("{}")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  @@unique([organizationId, type, period])
+  @@map("usage_aggregates")
+  @@schema("public")
+}
+
+// Credits System
+model CreditBalance {
+  id             String   @id @default(cuid())
+  organizationId String   @unique @map("organization_id")
+  balance        Decimal  @default(0) @db.Decimal(10, 4)
+  currency       String   @default("USD") @db.VarChar(3)
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  transactions CreditTransaction[]
+
+  @@map("credit_balances")
+  @@schema("public")
+}
+
+model CreditTransaction {
+  id              String                @id @default(cuid())
+  creditBalanceId String                @map("credit_balance_id")
+  type            CreditTransactionType
+  amount          Decimal               @db.Decimal(10, 4)
+  balanceAfter    Decimal               @map("balance_after") @db.Decimal(10, 4)
+  description     String?
+  expiresAt       DateTime?             @map("expires_at")
+  relatedId       String?               @map("related_id") // payment_id, usage_record_id, etc.
+  metadata        Json                  @default("{}")
+  createdAt       DateTime              @default(now()) @map("created_at")
+
+  creditBalance CreditBalance @relation(fields: [creditBalanceId], references: [id], onDelete: Cascade)
+
+  @@index([creditBalanceId])
+  @@index([type])
+  @@index([createdAt])
+  @@map("credit_transactions")
+  @@schema("public")
+}
+
+// Feature Entitlements
+model Entitlement {
+  id             String    @id @default(cuid())
+  organizationId String    @map("organization_id")
+  feature        String    @db.VarChar(100) // ai.chat, ai.embeddings, web3.nft, etc.
+  isEnabled      Boolean   @default(true) @map("is_enabled")
+  limitValue     BigInt?   @map("limit_value") // null = unlimited
+  usedValue      BigInt    @default(0) @map("used_value")
+  resetPeriod    String?   @map("reset_period") // monthly, daily, null = never
+  lastResetAt    DateTime? @map("last_reset_at")
+  expiresAt      DateTime? @map("expires_at")
+  source         String    @db.VarChar(20) // plan, addon, trial, custom
+  metadata       Json      @default("{}")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  @@unique([organizationId, feature])
+  @@index([feature])
+  @@map("entitlements")
+  @@schema("public")
+}
+
+// Stripe Customer Mapping
+model StripeCustomer {
+  id             String   @id @default(cuid())
+  organizationId String   @unique @map("organization_id")
+  stripeId       String   @unique @map("stripe_id")
+  email          String?
+  name           String?
+  currency       String   @default("USD") @db.VarChar(3)
+  taxExempt      String   @default("none") @map("tax_exempt") @db.VarChar(20)
+  metadata       Json     @default("{}")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  @@map("stripe_customers")
+  @@schema("public")
+}
+
+// Webhook Events (for idempotency)
+model WebhookEvent {
+  id             String    @id @default(cuid())
+  provider       String    @db.VarChar(20) // stripe, paypal, etc.
+  eventId        String    @map("event_id")
+  eventType      String    @map("event_type")
+  payload        Json
+  processedAt    DateTime? @map("processed_at")
+  errorMessage   String?   @map("error_message")
+  retryCount     Int       @default(0) @map("retry_count")
+  createdAt      DateTime  @default(now()) @map("created_at")
+
+  @@unique([provider, eventId])
+  @@index([eventType])
+  @@index([processedAt])
+  @@map("webhook_events")
+  @@schema("public")
+}
+
+// ============================================
+// Audit Logging
+// ============================================
+
+enum AuditAction {
+  CREATE
+  READ
+  UPDATE
+  DELETE
+  LOGIN
+  LOGOUT
+  EXPORT
+  IMPORT
+  @@schema("public")
+}
+
+model AuditLog {
+  id             String      @id @default(cuid())
+  organizationId String?     @map("organization_id")
+  userId         String?     @map("user_id")
+  actorType      String?     @map("actor_type") @db.VarChar(20) // "user" | "system" | "api_key" | "admin"
+  action         AuditAction
+  outcome        String?     @db.VarChar(10) // "success" | "failure" | "pending"
+  reason         String?     @db.VarChar(255)
+  entityType     String      @map("entity_type") @db.VarChar(50)
+  entityId       String?     @map("entity_id")
+  oldValue       Json?       @map("old_value")
+  newValue       Json?       @map("new_value")
+  ipAddress      String?     @map("ip_address") @db.VarChar(45)
+  userAgent      String?     @map("user_agent")
+  metadata       Json?       @default("{}")
+  createdAt      DateTime    @default(now()) @map("created_at")
+
+  @@index([organizationId])
+  @@index([userId])
+  @@index([entityType, entityId])
+  @@index([action])
+  @@index([outcome])
+  @@index([createdAt])
+  @@index([organizationId, createdAt])
+  @@index([organizationId, userId])
+  @@map("audit_logs")
+  @@schema("public")
+}
+
+// ============================================
+// Legal & Compliance
+// ============================================
+
+enum ConsentType {
+  EXPLICIT  // User explicitly clicked "I agree"
+  IMPLICIT  // Continued use implies consent
+  OPT_IN    // User opted in
+  OPT_OUT   // User opted out
+  @@schema("public")
+}
+
+enum LegalDocumentType {
+  PRIVACY_POLICY
+  TERMS_OF_SERVICE
+  COOKIE_POLICY
+  REFUND_POLICY
+  ACCEPTABLE_USE
+  DATA_PROCESSING
+  SLA
+  CUSTOM
+  @@schema("public")
+}
+
+// Legal Document Versions (tracked for compliance)
+model LegalDocument {
+  id           String            @id @default(cuid())
+  slug         String            @db.VarChar(100) // privacy-policy, terms-of-service
+  type         LegalDocumentType
+  locale       String            @default("en") @db.VarChar(10)
+  version      String            @db.VarChar(20) // v1.0.0 (semver)
+  title        String
+  summary      String?           // Brief description of document
+  contentHash  String?           @map("content_hash") @db.VarChar(64) // SHA-256 of content
+  effectiveAt  DateTime          @map("effective_at")
+  expiresAt    DateTime?         @map("expires_at")
+  changelog    Json              @default("[]") // Array of changes
+  metadata     Json              @default("{}")
+  isActive     Boolean           @default(true) @map("is_active")
+  isRequired   Boolean           @default(true) @map("is_required") // Must user consent?
+  createdAt    DateTime          @default(now()) @map("created_at")
+  updatedAt    DateTime          @updatedAt @map("updated_at")
+
+  consents UserConsent[]
+
+  @@unique([slug, version, locale])
+  @@index([type, isActive])
+  @@index([locale])
+  @@index([slug, isActive, effectiveAt])
+  @@index([locale, isActive, effectiveAt])
+  @@map("legal_documents")
+  @@schema("public")
+}
+
+// User Consent Records (audit trail for legal compliance)
+model UserConsent {
+  id               String      @id @default(cuid())
+  userId           String?     @map("user_id") // Clerk user ID
+  organizationId   String?     @map("organization_id") // Clerk org ID
+  visitorId        String?     @map("visitor_id") // Anonymous visitor fingerprint
+  documentId       String      @map("document_id")
+  documentSlug     String      @map("document_slug") @db.VarChar(100)
+  documentVersion  String      @map("document_version") @db.VarChar(20)
+  consentType      ConsentType @default(EXPLICIT) @map("consent_type")
+  consentGiven     Boolean     @default(true) @map("consent_given")
+  ipAddress        String?     @map("ip_address") @db.VarChar(45)
+  userAgent        String?     @map("user_agent")
+  consentContext   String?     @map("consent_context") @db.VarChar(100) // signup, checkout, settings
+  metadata         Json        @default("{}")
+  consentedAt      DateTime    @default(now()) @map("consented_at")
+  withdrawnAt      DateTime?   @map("withdrawn_at") // If consent was withdrawn
+
+  document LegalDocument @relation(fields: [documentId], references: [id])
+
+  @@index([userId])
+  @@index([organizationId])
+  @@index([visitorId])
+  @@index([documentSlug, documentVersion])
+  @@index([consentedAt])
+  @@index([documentSlug, consentGiven, withdrawnAt])
+  @@map("user_consents")
+  @@schema("public")
+}
+
+// Cookie Consent (GDPR/CCPA compliance)
+model CookieConsent {
+  id             String    @id @default(cuid())
+  visitorId      String    @map("visitor_id") // Anonymous visitor fingerprint
+  userId         String?   @map("user_id") // If logged in
+  necessary      Boolean   @default(true) // Always required, cannot be disabled
+  functional     Boolean   @default(false) // Preferences, language, etc.
+  analytics      Boolean   @default(false) // Google Analytics, Mixpanel, etc.
+  marketing      Boolean   @default(false) // Ads, retargeting, etc.
+  thirdParty     Boolean   @default(false) @map("third_party") // Third-party embeds
+  ipAddress      String?   @map("ip_address") @db.VarChar(45)
+  userAgent      String?   @map("user_agent")
+  metadata       Json      @default("{}") // Store specific cookie names/categories
+  consentedAt    DateTime  @default(now()) @map("consented_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  expiresAt      DateTime  @map("expires_at") // Cookie consent expires (e.g., 1 year)
+
+  @@unique([visitorId])
+  @@index([userId])
+  @@index([consentedAt])
+  @@index([userId, expiresAt])
+  @@map("cookie_consents")
+  @@schema("public")
+}
+
+// Contact Form Submissions
+model ContactSubmission {
+  id             String   @id @default(cuid())
+  name           String
+  email          String
+  company        String?
+  phone          String?
+  subject        String   @db.VarChar(200)
+  message        String   @db.Text
+  category       String   @default("general") @db.VarChar(50) // general, sales, support, legal, privacy
+  status         String   @default("new") @db.VarChar(20) // new, in_progress, resolved, spam
+  ipAddress      String?  @map("ip_address") @db.VarChar(45)
+  userAgent      String?  @map("user_agent")
+  metadata       Json     @default("{}")
+  createdAt      DateTime @default(now()) @map("created_at")
+  respondedAt    DateTime? @map("responded_at")
+
+  @@index([email])
+  @@index([category])
+  @@index([status])
+  @@index([createdAt])
+  @@map("contact_submissions")
+  @@schema("public")
+}
+
+// ============================================
+// OAuth 2.0 / OpenID Connect Identity Provider
+// ============================================
+
+enum OAuthClientType {
+  CONFIDENTIAL // Server-side apps (have a secret)
+  PUBLIC       // SPAs, mobile apps, CLIs (no secret)
+  @@schema("public")
+}
+
+enum OAuthClientStatus {
+  ACTIVE
+  SUSPENDED
+  REVOKED
+  @@schema("public")
+}
+
+// Third-party applications registered in Nebutra's ecosystem
+model OAuthClient {
+  id               String            @id @default(cuid())
+  clientId         String            @unique @map("client_id")
+  clientSecretHash String?           @map("client_secret_hash")
+  type             OAuthClientType   @default(CONFIDENTIAL)
+  status           OAuthClientStatus @default(ACTIVE)
+  name             String
+  description      String?           @db.Text
+  logoUrl          String?           @map("logo_url")
+  websiteUrl       String?           @map("website_url")
+  privacyPolicyUrl String?           @map("privacy_policy_url")
+  tosUrl           String?           @map("tos_url")
+
+  // OAuth configuration
+  redirectUris            String[] @map("redirect_uris")
+  allowedScopes           String[] @default(["openid", "profile"]) @map("allowed_scopes")
+  grantTypes              String[] @default(["authorization_code"]) @map("grant_types")
+  responseTypes           String[] @default(["code"]) @map("response_types")
+  tokenEndpointAuthMethod String   @default("client_secret_basic") @map("token_endpoint_auth_method")
+
+  // Rate limiting & security
+  rateLimitRpm    Int @default(60) @map("rate_limit_rpm")
+  accessTokenTtl  Int @default(3600) @map("access_token_ttl")
+  refreshTokenTtl Int @default(2592000) @map("refresh_token_ttl")
+
+  // Ownership
+  organizationId String  @map("organization_id")
+  createdById    String? @map("created_by_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  organization   Organization       @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  authorizations OAuthAuthorization[]
+  accessTokens   OAuthAccessToken[]
+
+  @@index([organizationId])
+  @@index([status])
+  @@map("oauth_clients")
+  @@schema("public")
+}
+
+// User consent records — "User X granted App Y these scopes"
+model OAuthAuthorization {
+  id        String    @id @default(cuid())
+  userId    String    @map("user_id")
+  clientId  String    @map("client_id")
+  scopes    String[]
+  grantedAt DateTime  @default(now()) @map("granted_at")
+  revokedAt DateTime? @map("revoked_at")
+
+  user   User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  client OAuthClient @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, clientId])
+  @@index([userId])
+  @@map("oauth_authorizations")
+  @@schema("public")
+}
+
+// Issued access tokens (for introspection & revocation)
+model OAuthAccessToken {
+  id        String    @id @default(cuid())
+  tokenHash String    @unique @map("token_hash")
+  clientId  String    @map("client_id")
+  userId    String    @map("user_id")
+  scopes    String[]
+  expiresAt DateTime  @map("expires_at")
+  revokedAt DateTime? @map("revoked_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  client OAuthClient @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@index([clientId])
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("oauth_access_tokens")
+  @@schema("public")
+}
+
+// ============================================
+// Self-hosted Auth (Better Auth)
+// ============================================
+// These tables are only populated when using a self-hosted auth provider.
+// When using Clerk, user data lives in Clerk's infrastructure.
+
+model AuthUser {
+  id            String        @id @default(cuid())
+  email         String?       @unique
+  phone         String?       @unique
+  emailVerified Boolean       @default(false) @map("email_verified")
+  phoneVerified Boolean       @default(false) @map("phone_verified")
+  name          String?
+  image         String?
+  passwordHash  String?       @map("password_hash")
+  createdAt     DateTime      @default(now()) @map("created_at")
+  updatedAt     DateTime      @updatedAt @map("updated_at")
+  accounts      AuthAccount[]
+  sessions      AuthSession[]
+
+  @@map("auth_users")
+  @@schema("public")
+}
+
+model AuthAccount {
+  id                    String    @id @default(cuid())
+  userId                String    @map("user_id")
+  accountId             String    @map("account_id")
+  providerId            String    @map("provider_id")
+  accessToken           String?   @map("access_token")
+  refreshToken          String?   @map("refresh_token")
+  accessTokenExpiresAt  DateTime? @map("access_token_expires_at")
+  refreshTokenExpiresAt DateTime? @map("refresh_token_expires_at")
+  scope                 String?
+  idToken               String?   @map("id_token")
+  password              String?
+  createdAt             DateTime  @default(now()) @map("created_at")
+  updatedAt             DateTime  @updatedAt @map("updated_at")
+  user                  AuthUser  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, accountId])
+  @@index([userId])
+  @@map("auth_accounts")
+  @@schema("public")
+}
+
+model AuthSession {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  token     String   @unique
+  expiresAt DateTime @map("expires_at")
+  ipAddress String?  @map("ip_address")
+  userAgent String?  @map("user_agent")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  user      AuthUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+  @@map("auth_sessions")
+  @@schema("public")
+}
+
+model AuthVerification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime @map("expires_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@unique([identifier, value])
+  @@map("auth_verifications")
+  @@schema("public")
+}
+
+// ============================================
+// License & Community
+// ============================================
+
+enum LicenseTier {
+  INDIVIDUAL
+  OPC
+  STARTUP
+  ENTERPRISE
+
+  @@schema("public")
+}
+
+enum LicenseType {
+  FREE
+  COMMERCIAL
+
+  @@schema("public")
+}
+
+model CommunityProfile {
+  id            String    @id @default(cuid())
+  userId        String    @unique @map("user_id")  // Clerk user ID
+
+  // Professional context
+  displayName   String?   @map("display_name")
+  role          String    // "solo_developer" | "founder" | "cto" | "developer" | "other"
+  company       String?
+  teamSize      String?   @map("team_size")  // "1" | "2-5" | "6-20" | "21-50" | "50+"
+  industry      String?
+
+  // What they're building
+  useCase       String?   @map("use_case")  // "saas" | "ai_tool" | "marketplace" | "internal_tool" | "agency" | "other"
+  buildingWhat  String?   @map("building_what") @db.Text  // free-text description
+
+  // Acquisition
+  referralSource String?  @map("referral_source")  // "twitter" | "github" | "product_hunt" | "friend" | "search" | "other"
+
+  // Community engagement
+  showcaseUrl   String?   @map("showcase_url")
+  githubHandle  String?   @map("github_handle")
+  twitterHandle String?   @map("twitter_handle")
+
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  @@map("community_profiles")
+  @@schema("public")
+}
+
+model License {
+  id              String      @id @default(cuid())
+  userId          String      @map("user_id")  // Clerk user ID
+
+  tier            LicenseTier
+  type            LicenseType
+  licenseKey      String      @unique @default(cuid()) @map("license_key")
+
+  // Acceptance
+  acceptedAt      DateTime    @default(now()) @map("accepted_at")
+  acceptedIp      String?     @map("accepted_ip")
+  acceptedVersion String      @default("1.0") @map("accepted_version")  // License version accepted
+
+  // Stripe (for paid tiers)
+  stripeCustomerId    String?    @map("stripe_customer_id")
+  stripeSubscriptionId String?   @map("stripe_subscription_id")
+  stripePriceId       String?    @map("stripe_price_id")
+
+  // Validity
+  expiresAt       DateTime?   @map("expires_at")  // null = perpetual (individual/OPC)
+  isActive        Boolean     @default(true) @map("is_active")
+
+  // Metadata
+  projectName     String?     @map("project_name")  // What project they're using it for
+  projectUrl      String?     @map("project_url")
+
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  sleptonsProfile SleptonsaMemberProfile?
+
+  @@map("licenses")
+  @@schema("public")
+}
+
+// ============================================
+// Sleptons Community
+// ============================================
+
+model SleptonsaMemberProfile {
+  id                  String        @id @default(cuid())
+  member_number       Int           @unique @default(autoincrement())
+  user_id             String        @unique @map("user_id")
+  license_id          String        @unique @map("license_id")
+  slug                String        @unique
+  display_name        String        @map("display_name")
+  bio                 String?       @db.Text
+  avatar_url          String?       @map("avatar_url")
+  product_name        String?       @map("product_name")
+  product_url         String?       @map("product_url")
+  product_tagline     String?       @map("product_tagline")
+  tech_stack          String[]      @map("tech_stack")
+  looking_for         String[]      @map("looking_for")
+  tier                SleptonsTier  @default(V0)
+  is_public           Boolean       @default(true) @map("is_public")
+  embedding           Unsupported("vector(1536)")?
+  github_handle       String?       @map("github_handle")
+  github_data         Json?         @map("github_data")
+  github_refreshed_at DateTime?     @map("github_refreshed_at")
+  created_at          DateTime      @default(now()) @map("created_at")
+  updated_at          DateTime      @updatedAt @map("updated_at")
+
+  license   License                @relation(fields: [license_id], references: [id])
+  products  SleptonsProduct[]
+  following SleptonsConnection[]   @relation("follower")
+  followers SleptonsConnection[]   @relation("following")
+
+  @@index([tier, is_public])
+  @@index([created_at])
+  @@map("sleptons_member_profiles")
+  @@schema("public")
+}
+
+model SleptonsProduct {
+  id            String        @id @default(cuid())
+  member_id     String        @map("member_id")
+  name          String
+  tagline       String
+  description   String?       @db.Text
+  url           String?
+  github_url    String?       @map("github_url")
+  thumbnail_url String?       @map("thumbnail_url")
+  stage         ProductStage  @default(BUILDING)
+  is_featured   Boolean       @default(false) @map("is_featured")
+  featured_at   DateTime?     @map("featured_at")
+  featured_week String?       @map("featured_week")
+  created_at    DateTime      @default(now()) @map("created_at")
+
+  member  SleptonsaMemberProfile @relation(fields: [member_id], references: [id], onDelete: Cascade)
+  upvotes SleptonsUpvote[]
+
+  @@index([member_id])
+  @@index([is_featured, featured_week])
+  @@map("sleptons_products")
+  @@schema("public")
+}
+
+model SleptonsUpvote {
+  member_id  String   @map("member_id")
+  product_id String   @map("product_id")
+  created_at DateTime @default(now()) @map("created_at")
+
+  product SleptonsProduct @relation(fields: [product_id], references: [id], onDelete: Cascade)
+
+  @@id([member_id, product_id])
+  @@map("sleptons_upvotes")
+  @@schema("public")
+}
+
+model SleptonsConnection {
+  follower_id  String   @map("follower_id")
+  following_id String   @map("following_id")
+  created_at   DateTime @default(now()) @map("created_at")
+
+  follower  SleptonsaMemberProfile @relation("follower",  fields: [follower_id],  references: [id], onDelete: Cascade)
+  following SleptonsaMemberProfile @relation("following", fields: [following_id], references: [id], onDelete: Cascade)
+
+  @@id([follower_id, following_id])
+  @@map("sleptons_connections")
+  @@schema("public")
+}
