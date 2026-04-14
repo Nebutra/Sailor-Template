@@ -264,7 +264,7 @@ jobs:
       # Sends a success or failure notification with deployment details.
       - name: Notify Slack — success
         if: success() && env.SLACK_WEBHOOK_URL != ''
-        uses: slackapi/slack-github-action@v1
+        uses: slackapi/slack-github-action@v3
         with:
           payload: |
             {
@@ -287,7 +287,7 @@ jobs:
 
       - name: Notify Slack — failure
         if: failure() && env.SLACK_WEBHOOK_URL != ''
-        uses: slackapi/slack-github-action@v1
+        uses: slackapi/slack-github-action@v3
         with:
           payload: |
             {
