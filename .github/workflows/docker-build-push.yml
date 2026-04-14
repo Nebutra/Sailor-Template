@@ -107,7 +107,7 @@ jobs:
       #   3. Set AWS_ECR_ROLE_ARN secret to arn:aws:iam::<account>:role/<role-name>
       - name: Configure AWS credentials (OIDC)
         if: env.AWS_ACCOUNT_ID != '' && vars.AWS_REGION != ''
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.AWS_ECR_ROLE_ARN }}
           role-session-name: github-actions-ecr-push-${{ github.run_id }}
@@ -272,7 +272,7 @@ jobs:
 
       - name: Configure AWS credentials (OIDC)
         if: env.AWS_ACCOUNT_ID != '' && vars.AWS_REGION != ''
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.AWS_ECR_ROLE_ARN }}
           role-session-name: github-actions-ecr-push-${{ github.run_id }}
