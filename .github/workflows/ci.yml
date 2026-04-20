@@ -716,7 +716,7 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Download all shard reports
         id: download
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: playwright-report-shard-*-${{ github.run_id }}
           path: all-blob-reports
