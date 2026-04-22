@@ -1,0 +1,741 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+  pull-requests: read
+  security-events: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  # Cancel in-flight runs on PR branches to save runner minutes;
+  # never cancel on main/develop to avoid interrupting deployments.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
+jobs:
+  # ── Detect which apps/packages changed ──────────────────────────────────
+  detect-changes:
+    name: Detect Changed Apps
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      web: ${{ steps.filter.outputs.web }}
+      api-gateway: ${{ steps.filter.outputs.api-gateway }}
+      landing-page: ${{ steps.filter.outputs.landing-page }}
+      studio: ${{ steps.filter.outputs.studio }}
+      docs-hub: ${{ steps.filter.outputs.docs-hub }}
+      packages: ${{ steps.filter.outputs.packages }}
+      db: ${{ steps.filter.outputs.db }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3
+        id: filter
+        with:
+          filters: |
+            web:
+              - 'apps/web/**'
+              - 'packages/**'
+            api-gateway:
+              - 'apps/api-gateway/**'
+              - 'packages/**'
+            landing-page:
+              - 'apps/landing-page/**'
+              - 'packages/**'
+            studio:
+              - 'apps/studio/**'
+              - 'packages/**'
+            docs-hub:
+              - 'apps/docs-hub/**'
+              - 'packages/**'
+            packages:
+              - 'packages/**'
+            db:
+              - 'packages/db/**'
+
+
+
+  # ── License compliance ───────────────────────────────────────────────────
+  # Ensures no production dependency uses a copyleft license incompatible
+  # with the project's AGPL-3.0 license.  Runs on every push/PR.
+  license-check:
+    name: License Compliance
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check production dependency licenses
+        run: npx license-checker --production --failOn 'GPL-2.0;GPL-3.0;SSPL-1.0;EUPL-1.1;EUPL-1.2;AGPL-1.0' --excludePackages '@nebutra/*' --summary
+
+  # ── Lint & type-check (affected packages only) ──────────────────────────
+  lint-typecheck:
+    name: Lint & Typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Architecture smoke checks
+        run: |
+          pnpm test:arch
+
+      - name: Generate Prisma Client
+        run: pnpm db:generate
+
+      - name: Resolve Turbo base ref
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+          fi
+
+          if [ -z "$BASE_SHA" ] || [ "$BASE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            BASE_SHA="$(git rev-parse HEAD~1)"
+          fi
+
+          echo "TURBO_BASE_REF=$BASE_SHA" >> "$GITHUB_ENV"
+          echo "Using TURBO_BASE_REF=$BASE_SHA"
+
+      - name: Lint (Biome)
+        run: pnpm biome ci .
+
+      - name: Typecheck (affected)
+        run: pnpm turbo typecheck --filter="...[${TURBO_BASE_REF}]..."
+
+  # ── Python services — lint + test (matrix, parallel) ──────────────────────
+  python-ci:
+    name: Python CI (${{ matrix.service }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        service: [ai, billing, content, ecommerce, event-ingest, recsys, web3]
+    defaults:
+      run:
+        working-directory: services/${{ matrix.service }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7.6.0
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.11
+
+      - name: Create virtual environment and install dependencies
+        # Use .venv/bin/pip directly (not uv pip) to avoid uv's project detection
+        # which would trigger an editable install of the service (requiring hatchling).
+        # --seed ensures pip is installed in the venv (uv venv without --seed omits pip).
+        run: |
+          uv venv --seed
+          .venv/bin/pip install -r requirements.txt ruff pytest pytest-asyncio pytest-cov mypy bandit
+
+      - name: Lint (ruff)
+        run: .venv/bin/ruff check . --output-format=github
+
+      - name: Format check (ruff)
+        run: .venv/bin/ruff format --check .
+
+      - name: Type check (mypy)
+        run: .venv/bin/mypy . --ignore-missing-imports --no-error-summary
+
+      - name: Security check (bandit)
+        run: |
+          # Collect Python source directories (avoid scanning .venv installed packages)
+          SCAN_DIRS=""
+          for d in app providers services utils adapters sync features rank recall indexer listener producers subscribers; do
+            [ -d "$d" ] && SCAN_DIRS="$SCAN_DIRS $d"
+          done
+          .venv/bin/bandit -r $SCAN_DIRS -f json -o bandit-report.json --severity-level medium || true
+          # Fail only on high-severity findings
+          .venv/bin/bandit -r $SCAN_DIRS --severity-level high -q
+
+      - name: Run tests
+        run: |
+          if [ -d "tests" ]; then
+            .venv/bin/pytest --tb=short -q
+          else
+            echo "No tests directory — skipping"
+          fi
+
+  # ── Build (affected packages only) ──────────────────────────────────────
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: lint-typecheck
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate Prisma Client
+        run: pnpm db:generate
+
+      - name: Resolve Turbo base ref
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+          fi
+
+          if [ -z "$BASE_SHA" ] || [ "$BASE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            BASE_SHA="$(git rev-parse HEAD~1)"
+          fi
+
+          echo "TURBO_BASE_REF=$BASE_SHA" >> "$GITHUB_ENV"
+          echo "Using TURBO_BASE_REF=$BASE_SHA"
+
+      - name: Build (affected)
+        run: pnpm turbo build --filter="...[${TURBO_BASE_REF}]..."
+        env:
+          SKIP_ENV_VALIDATION: true
+
+  # ── Tests (affected packages only) ──────────────────────────────────────
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: lint-typecheck
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Resolve Turbo base ref
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE_SHA="${{ github.event.before }}"
+          fi
+
+          if [ -z "$BASE_SHA" ] || [ "$BASE_SHA" = "0000000000000000000000000000000000000000" ]; then
+            BASE_SHA="$(git rev-parse HEAD~1)"
+          fi
+
+          echo "TURBO_BASE_REF=$BASE_SHA" >> "$GITHUB_ENV"
+          echo "Using TURBO_BASE_REF=$BASE_SHA"
+
+      - name: Run tests (affected)
+        run: pnpm turbo test --filter="...[${TURBO_BASE_REF}]..."
+        env:
+          CI: true
+
+  coverage:
+    name: Coverage Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [detect-changes, test]
+    if: needs.detect-changes.outputs.packages == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run coverage for core utility packages
+        run: |
+          pnpm --filter @nebutra/preset test:coverage
+          pnpm --filter @nebutra/alerting test:coverage
+          pnpm --filter @nebutra/rate-limit test:coverage
+          pnpm --filter @nebutra/billing test:coverage
+          pnpm --filter @nebutra/audit test:coverage
+          pnpm --filter @nebutra/identity test:coverage
+        env:
+          CI: true
+
+  # ── Bundle size budget ───────────────────────────────────────────────────
+  # Measures built package sizes against .size-limit.json thresholds.
+  # Runs only when shared packages change (avoids expensive builds on app-only changes).
+  bundle-size:
+    name: Bundle Size Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: [detect-changes, build]
+    if: needs.detect-changes.outputs.packages == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build shared packages
+        run: pnpm turbo build --filter="./packages/*"
+        env:
+          SKIP_ENV_VALIDATION: true
+
+      - name: Check bundle sizes
+        run: pnpm size
+
+  # ── Database schema validation (only when db/ changed) ──────────────────
+  db-check:
+    name: Database Schema Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: detect-changes
+    if: needs.detect-changes.outputs.db == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate Prisma schema
+        run: pnpm --filter @nebutra/db db:generate
+
+      - name: Validate Prisma schema syntax
+        working-directory: packages/db
+        run: pnpm exec prisma validate
+
+      - name: Check migration history is consistent
+        working-directory: packages/db
+        # prisma migrate diff exits non-zero if schema is ahead of migrations —
+        # catches "forgot to create a migration" before it reaches production.
+        run: |
+          pnpm exec prisma migrate diff \
+            --from-migrations ./prisma/migrations \
+            --to-schema-datamodel ./prisma/schema.prisma \
+            --shadow-database-url "${{ secrets.SHADOW_DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/shadow_nebutra' }}" \
+            --exit-code || echo "::warning::Schema has drift vs migrations — run prisma migrate dev"
+
+  # ── Security scanning ────────────────────────────────────────────────────
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Audit dependencies (high severity)
+        run: pnpm audit --prod --audit-level=high
+
+      - name: Generate SBOM
+        run: |
+          npx @cyclonedx/cyclonedx-npm --output-file sbom.cdx.json --omit dev
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-ci
+          path: sbom.cdx.json
+          retention-days: 30
+
+  # ── Deploy jobs ──────────────────────────────────────────────────────────
+  # Add a deploy job per app here, gated by detect-changes output.
+  # Each job only runs when its own app directory (or shared packages) changed.
+  #
+  # Template:
+  #
+  #   deploy-web:
+  #     name: Deploy Web
+  #     runs-on: ubuntu-latest
+  #     needs: [detect-changes, build]
+  #     if: needs.detect-changes.outputs.web == 'true'
+  #     environment: production
+  #     steps:
+  #       - uses: actions/checkout@v6
+  #       - name: Deploy
+  #         run: <your deploy command>
+  #
+  #   deploy-api-gateway:
+  #     name: Deploy API Gateway
+  #     runs-on: ubuntu-latest
+  #     needs: [detect-changes, build]
+  #     if: needs.detect-changes.outputs.api-gateway == 'true'
+  #     steps: ...
+
+  # ── Lighthouse CI (landing page, PRs only) ───────────────────────────────
+  # Audits the public marketing site for performance, accessibility,
+  # best-practices, and SEO.
+  #
+  # Thresholds (defined in lighthouserc.json at repo root):
+  #   accessibility  ≥ 0.95  → "error"  — BLOCKS the PR on failure
+  #   performance    ≥ 0.80  → "warn"   — reports but does not block
+  #   best-practices ≥ 0.90  → "warn"   — reports but does not block
+  #   seo            ≥ 0.90  → "warn"   — reports but does not block
+  lighthouse:
+    name: Lighthouse CI (landing page)
+    runs-on: ubuntu-latest
+    needs: [detect-changes, build]
+    # Only run on PRs and only when landing-page or shared packages changed
+    if: |
+      github.event_name == 'pull_request' &&
+      (needs.detect-changes.outputs.landing-page == 'true' || needs.detect-changes.outputs.packages == 'true')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build landing page
+        run: pnpm --filter @nebutra/landing-page build
+        env:
+          SKIP_ENV_VALIDATION: true
+
+      - name: Run Lighthouse CI
+        run: npx @lhci/cli@0.14.0 autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+  # ── E2E Tests (sharded 4× for parallelism) ───────────────────────────────
+  e2e:
+    name: E2E Tests (shard ${{ matrix.shard }}/4)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: [build]
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build workspace packages (required by landing-page webServer)
+        run: pnpm turbo build --filter="./packages/*"
+        env:
+          SKIP_ENV_VALIDATION: true
+      - name: Sync brand assets to app public directories
+        run: pnpm brand:sync
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            playwright-${{ runner.os }}-
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Generate Prisma Client
+        run: pnpm db:generate
+
+      - name: Run E2E tests (shard ${{ matrix.shard }}/4)
+        run: pnpm exec playwright test --shard=${{ matrix.shard }}/4
+        env:
+          CI: true
+          APP_BASE_URL: "http://localhost:3001"
+          API_BASE_URL: "http://localhost:3002"
+          SKIP_ENV_VALIDATION: "true"
+          DATABASE_URL: ${{ secrets.CI_DATABASE_URL || '' }}
+          CLERK_SECRET_KEY: ${{ secrets.CI_CLERK_SECRET_KEY || '' }}
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-shard-${{ matrix.shard }}-${{ github.run_id }}
+          path: |
+            blob-report/
+            **/test-results/
+          retention-days: 14
+
+  # ── OpenAPI spec validation + client type generation ─────────────────────
+  # Exports the live spec from the Hono app, validates it with Redocly,
+  # and regenerates the openapi-fetch types to catch spec/client drift.
+  # Runs only when api-gateway or web changed.
+  openapi-validate:
+    name: OpenAPI Spec Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [detect-changes, build]
+    if: |
+      needs.detect-changes.outputs.api-gateway == 'true' ||
+      needs.detect-changes.outputs.web == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build api-gateway and dependencies
+        run: pnpm turbo build --filter @nebutra/api-gateway
+        env:
+          SKIP_ENV_VALIDATION: true
+
+      - name: Export OpenAPI spec
+        run: pnpm --filter @nebutra/api-gateway generate:spec
+        env:
+          DATABASE_URL: "postgresql://stub:stub@localhost:5432/stub"
+          REDIS_URL: "redis://localhost:6379"
+          CLERK_SECRET_KEY: "sk_test_stub"
+
+      - name: Validate spec with Redocly
+        run: pnpm --filter @nebutra/api-gateway exec redocly lint openapi.json --format=stylish
+
+      - name: Check API backward compatibility
+        if: github.event_name == 'pull_request'
+        run: |
+          # Fetch the base branch spec
+          git fetch origin ${{ github.base_ref }} --depth=1
+          git show origin/${{ github.base_ref }}:apps/api-gateway/openapi.json > openapi-base.json 2>/dev/null || echo '{}' > openapi-base.json
+          # Compare specs for breaking changes using oasdiff
+          npx oasdiff breaking openapi-base.json apps/api-gateway/openapi.json --format text || {
+            echo "::warning::Breaking API changes detected. Ensure backward compatibility or document migration path."
+          }
+        continue-on-error: true
+
+      - name: Check spec is up to date
+        run: |
+          if [ -f apps/api-gateway/openapi.json ]; then
+            # Compare the freshly generated spec (still in cwd from generate:spec) with the committed one
+            cd apps/api-gateway
+            if ! git diff --quiet openapi.json 2>/dev/null; then
+              echo "::warning::OpenAPI spec is out of date. Run 'pnpm --filter @nebutra/api-gateway generate:spec' and commit."
+            fi
+          fi
+        continue-on-error: true
+
+      - name: Generate typed API client
+        run: pnpm --filter @nebutra/web generate:api-types
+
+      - name: Build web app dependencies
+        run: pnpm turbo build --filter "@nebutra/web^..."
+        env:
+          SKIP_ENV_VALIDATION: true
+
+      - name: Typecheck web with generated types
+        run: pnpm --filter @nebutra/web typecheck
+        env:
+          SKIP_ENV_VALIDATION: true
+
+      - name: Upload spec artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-spec-${{ github.run_id }}
+          path: apps/api-gateway/openapi.json
+          retention-days: 7
+
+  # ── Web app bundle analysis (PRs only) ───────────────────────────────────
+  # Builds the web app with @next/bundle-analyzer and uploads the report.
+  # Does NOT block the PR — purely informational for size regression tracking.
+  bundle-analysis:
+    name: Web Bundle Analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: [detect-changes, build]
+    if: |
+      github.event_name == 'pull_request' &&
+      (needs.detect-changes.outputs.web == 'true' || needs.detect-changes.outputs.packages == 'true')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build web app with bundle analyzer
+        run: pnpm --filter @nebutra/web build
+        env:
+          ANALYZE: "true"
+          SKIP_ENV_VALIDATION: true
+
+      - name: Upload bundle analysis report
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-analysis-${{ github.run_id }}
+          path: apps/web/.next/analyze/
+          retention-days: 30
+
+      - name: Comment PR with bundle analysis link
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## Bundle Analysis\n\nBundle analysis report uploaded. [View artifacts](${runUrl})\n\n> \`client.html\` — client bundle treemap\n> \`edge.html\` — edge runtime bundle`,
+            });
+
+  # ── Merge E2E shard reports ───────────────────────────────────────────────
+  e2e-report:
+    name: Merge E2E Reports
+    runs-on: ubuntu-latest
+    needs: [e2e]
+    if: always()
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Download all shard reports
+        id: download
+        uses: actions/download-artifact@v4
+        with:
+          pattern: playwright-report-shard-*-${{ github.run_id }}
+          path: all-blob-reports
+          merge-multiple: true
+        continue-on-error: true
+      - name: Merge into single HTML report
+        if: steps.download.outcome == 'success'
+        # Multi-path upload preserves directory structure, so blob files land in
+        # all-blob-reports/blob-report/ (not directly in all-blob-reports/).
+        run: |
+          if [ -d ./all-blob-reports/blob-report ] && [ -n "$(ls -A ./all-blob-reports/blob-report 2>/dev/null)" ]; then
+            pnpm exec playwright merge-reports --reporter html ./all-blob-reports/blob-report
+          else
+            echo "No shard blob reports found — skipping merge"
+          fi
+      - name: Upload merged report
+        if: steps.download.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-merged-${{ github.run_id }}
+          path: playwright-report/
+          retention-days: 30
