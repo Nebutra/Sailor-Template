@@ -1,0 +1,31 @@
+{
+  "name": "@nebutra/feature-flags",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Feature flags abstraction - swap providers later",
+  "nebutra": {
+    "status": "wip",
+    "productionReady": false,
+    "requires": ["@nebutra/cache", "@nebutra/db"],
+    "gaps": [
+      "No production app integrations",
+      "Provider adapters not wired (vercel-flags, growthbook, configcat)",
+      "Gradual rollout logic pending"
+    ]
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./react": "./src/react.ts"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@nebutra/cache": "workspace:*",
+    "@nebutra/db": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.15",
+    "typescript": "catalog:"
+  }
+}
