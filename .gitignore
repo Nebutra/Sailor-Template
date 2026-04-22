@@ -1,0 +1,71 @@
+# Claude Code
+.claude/
+
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+dist
+.next
+.turbo
+out
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Testing
+coverage
+
+# Prisma
+packages/db/generated
+
+# Python
+__pycache__
+*.pyc
+.venv
+venv
+.pytest_cache
+
+# Rust
+target
+
+# Brand assets (synced from packages/brand)
+apps/*/public/brand
+apps/*/public/brand-compliant
+apps/*/public/favicon.ico
+# tsekaluk-dev is deployed standalone on Vercel (turbo --filter skips root build:sync)
+# so brand assets must be committed directly
+!apps/tsekaluk-dev/public/brand
+!apps/tsekaluk-dev/public/brand-compliant
+
+# White-label customization (fork users)
+brand.config.ts
+brand.config/
+
+# Misc
+*.tsbuildinfo
+artifacts/
+.vercel
+
+# Generated API client artifacts — produced by pnpm generate:api-types
+# Note: types.generated.ts stub is committed so typecheck works before generation;
+# a real generation run will overwrite it (treat modified state as expected).
+apps/api-gateway/openapi.json
