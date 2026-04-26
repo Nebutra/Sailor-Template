@@ -1,0 +1,110 @@
+/**
+ * Font CSS Variables — SSOT for typography across Nebutra packages.
+ * "Precision Stack" — Geist × Geist Mono × Noto Sans SC
+ *
+ * Font loading strategy (Next.js apps):
+ * Each app's layout.tsx loads Latin fonts via geist/font:
+ *   GeistSans  → injects --font-geist-sans  (variable font, 100–900)
+ *   GeistMono  → injects --font-geist-mono  (variable font, 100–900)
+ *
+ * The CSS custom properties below reference those injected variables and
+ * fall back gracefully when font loaders are unavailable (e.g., Storybook, tests).
+ * CJK uses local/system font fallback to avoid build-time Google font fetches.
+ */
+
+/* ============================================
+   CSS Custom Properties (SSOT)
+   ============================================ */
+
+:root {
+  /* Primary font stack — Geist Sans (geometric precision, variable) */
+  --font-primary:
+    var(--font-geist-sans), "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    sans-serif;
+
+  /* Heading font stack — matches primary for Precision Stack */
+  --font-heading:
+    var(--font-geist-sans), "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    sans-serif;
+
+  /* Monospace — Geist Mono */
+  --font-mono:
+    var(--font-geist-mono), "Geist Mono", "Fira Code", ui-monospace, SFMono-Regular, "SF Mono",
+    Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* CJK — local/system fallback, no build-time font fetch */
+  --font-cjk:
+    var(--font-cn), "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+
+  /* Aliases for Tailwind/shadcn compatibility */
+  --font-sans: var(--font-primary);
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* ============================================
+   Font Smoothing & Rendering
+   ============================================ */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings:
+    "calt" 1,
+    "liga" 1;
+}
+
+/* ============================================
+   Base Typography
+   ============================================ */
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Code */
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-mono);
+}
+
+/* ============================================
+   Font Feature Settings
+   ============================================ */
+
+/* Enable tabular figures for numbers in tables */
+.tabular-nums {
+  font-feature-settings: "tnum" 1;
+}
+
+/* Enable case-sensitive forms for all-caps text */
+.case-sensitive {
+  font-feature-settings: "case" 1;
+}
+
+/* ============================================
+   CJK Support
+   ============================================ */
+
+:lang(zh),
+:lang(ja),
+:lang(ko) {
+  font-family: var(--font-cjk);
+}
