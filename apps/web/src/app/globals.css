@@ -1,0 +1,83 @@
+/**
+ * Nebutra Web App - Global Styles
+ *
+ * This file imports:
+ * 1. Tailwind CSS v4 (must be first)
+ * 2. Tokens from @nebutra/tokens (single source of truth)
+ * 3. Typography CSS variables from @nebutra/ui (fonts.css)
+ */
+
+/* Tailwind CSS v4 - must be imported first */
+@import "tailwindcss";
+/* Single token source */
+@import "@nebutra/tokens/styles.css";
+/* Typography SSOT — defines --font-* variables */
+@import "@nebutra/ui/typography/fonts.css";
+
+/* Scan @nebutra/ui source for Tailwind classes */
+@source "../../../../packages/ui/src";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Custom overrides for web app (dashboard) */
+@layer base {
+  /* Custom font configuration */
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+  }
+}
+
+/* Dashboard specific utilities */
+@layer utilities {
+  /* Sidebar transition */
+  .sidebar-transition {
+    transition:
+      width 0.2s ease-in-out,
+      transform 0.2s ease-in-out;
+  }
+
+  /* Content area */
+  .content-area {
+    min-height: calc(100vh - 4rem);
+  }
+}
+
+/* Progressive enhancement: route transitions on supporting browsers */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (view-transition-name: page-content) {
+    :root {
+      --dashboard-vt-duration: 260ms;
+      --dashboard-vt-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .content-area {
+      contain: layout paint;
+      view-transition-name: dashboard-content;
+    }
+
+    ::view-transition-old(dashboard-content),
+    ::view-transition-new(dashboard-content) {
+      animation-duration: var(--dashboard-vt-duration);
+      animation-timing-function: var(--dashboard-vt-ease);
+    }
+
+    ::view-transition-old(dashboard-content) {
+      opacity: 0.9;
+    }
+  }
+}
+
+/* Loader animations */
