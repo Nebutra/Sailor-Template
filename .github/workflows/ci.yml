@@ -524,7 +524,7 @@ jobs:
 
       - name: Upload SBOM
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: sbom-ci
           path: |
@@ -653,7 +653,7 @@ jobs:
           CLERK_SECRET_KEY: ${{ secrets.CI_CLERK_SECRET_KEY || '' }}
 
       - name: Upload Playwright report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: playwright-report-shard-${{ matrix.shard }}-${{ github.run_id }}
@@ -737,7 +737,7 @@ jobs:
           SKIP_ENV_VALIDATION: true
 
       - name: Upload spec artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: openapi-spec-${{ github.run_id }}
           path: apps/api-gateway/openapi.json
@@ -786,7 +786,7 @@ jobs:
           SKIP_ENV_VALIDATION: true
 
       - name: Upload bundle analysis report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: bundle-analysis-${{ github.run_id }}
           path: apps/web/.next/analyze/
@@ -840,7 +840,7 @@ jobs:
           fi
       - name: Upload merged report
         if: steps.download.outcome == 'success'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: playwright-report-merged-${{ github.run_id }}
           path: playwright-report/
