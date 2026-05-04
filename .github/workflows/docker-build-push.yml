@@ -215,7 +215,7 @@ jobs:
           fi
 
       - name: Upload Trivy scan results
-        uses: github/codeql-action/upload-sarif@9792ccaef0455e446c567163589397e8c3ac2e0d # v3
+        uses: github/codeql-action/upload-sarif@0daab03d71ff584ef619d027a3fd9146679c5d84 # v3
         if: always() && steps.trivy.outcome != 'skipped'
         with:
           sarif_file: "trivy-results.sarif"
@@ -371,7 +371,7 @@ jobs:
           fi
 
       - name: Upload Trivy scan results
-        uses: github/codeql-action/upload-sarif@9792ccaef0455e446c567163589397e8c3ac2e0d # v3
+        uses: github/codeql-action/upload-sarif@0daab03d71ff584ef619d027a3fd9146679c5d84 # v3
         if: always() && steps.trivy.outcome != 'skipped'
         with:
           sarif_file: "trivy-results.sarif"
