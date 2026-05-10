@@ -78,7 +78,7 @@ jobs:
       api:     ${{ steps.resolve.outputs.api }}
       any:     ${{ steps.resolve.outputs.any }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 2
 
@@ -155,7 +155,7 @@ jobs:
         if: matrix.condition != 'true'
         run: echo "Skipping ${{ matrix.app }} — no relevant changes."
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: matrix.condition == 'true'
 
       - uses: pnpm/action-setup@v4
@@ -236,7 +236,7 @@ jobs:
     if: needs.detect-changes.outputs.api == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
@@ -296,7 +296,7 @@ jobs:
           [ -n "${ECS_HOST:-}" ] || { echo "::error::ECS_HOST repository variable is not set"; exit 1; }
           [ -n "${ECS_USER:-}" ] || { echo "::error::ECS_USER repository variable is not set"; exit 1; }
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           sparse-checkout: |
             infra/iac/ecs/ecosystem.config.cjs
