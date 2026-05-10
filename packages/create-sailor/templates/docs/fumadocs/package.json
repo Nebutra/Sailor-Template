@@ -1,0 +1,30 @@
+{
+  "name": "@nebutra/docs",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nebutra/tokens": "workspace:*",
+    "@nebutra/ui": "workspace:*",
+    "fumadocs-core": "^16.6.12",
+    "fumadocs-mdx": "^14.2.9",
+    "fumadocs-ui": "^16.6.12",
+    "next": "^16.2.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^22.19.15",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3"
+  }
+}
