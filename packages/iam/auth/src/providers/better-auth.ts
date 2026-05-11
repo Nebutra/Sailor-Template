@@ -1,0 +1,663 @@
+/**
+ * Better Auth provider implementation.
+ *
+ * Wraps the `better-auth` library to implement the unified AuthProvider
+ * interface. Requires a PostgreSQL database (via Prisma) and optionally
+ * supports OAuth social providers and the organization plugin.
+ *
+ * Environment variables:
+ * - BETTER_AUTH_SECRET (required)
+ * - BETTER_AUTH_URL (optional, base URL for auth endpoints)
+ * - GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET (optional, enables Google OAuth)
+ * - GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET (optional, enables GitHub OAuth)
+ */
+
+import { logger } from "@nebutra/logger";
+import type {
+  AuthCapabilities,
+  AuthConfig,
+  AuthProvider,
+  CreateOrgInput,
+  CreateUserInput,
+  Organization,
+  Session,
+  SignInMethod,
+  SignInResult,
+  User,
+} from "../types";
+
+/**
+ * Sentinel auth.api method names mapped to capabilities.
+ *
+ * Better Auth surfaces plugin functionality as additional methods on
+ * `auth.api` after plugins are registered. We probe by checking for the
+ * presence of one canonical method per plugin. If you add a new plugin
+ * and want to flip a capability, extend this map.
+ *
+ * Exported for tests so the probe contract is documented + verifiable.
+ */
+export const BETTER_AUTH_CAPABILITY_PROBES = {
+  organizations: ["listOrganizations", "createOrganization", "getFullOrganization"],
+  passkeys: ["signInPasskey", "generatePasskeyAuthenticationOptions", "verifyPasskey"],
+  twoFactor: ["verifyTwoFactor", "enableTwoFactor", "disableTwoFactor", "verifyTOTP"],
+  magicLink: ["signInMagicLink", "verifyMagicLink"],
+} as const;
+
+/**
+ * Probe a live Better Auth instance to see which plugins actually mounted.
+ *
+ * Better Auth's plugin loading is best-effort — if a plugin module is missing
+ * (e.g. `better-auth/plugins/passkey` not in the `exports` map) we log a
+ * warning and continue. The probe checks `auth.api` for the presence of
+ * sentinel method names so the resulting `AuthCapabilities` reflects the
+ * actual runtime surface, not config intent. Impersonation is currently not
+ * available as a first-class Better Auth plugin → always `false`.
+ */
+export function probeBetterAuthCapabilities(
+  auth: { api?: Record<string, unknown> } | null | undefined,
+): AuthCapabilities {
+  const api = (auth?.api ?? {}) as Record<string, unknown>;
+  const has = (names: readonly string[]): boolean =>
+    names.some((name) => typeof api[name] === "function");
+  return {
+    organizations: has(BETTER_AUTH_CAPABILITY_PROBES.organizations),
+    passkeys: has(BETTER_AUTH_CAPABILITY_PROBES.passkeys),
+    twoFactor: has(BETTER_AUTH_CAPABILITY_PROBES.twoFactor),
+    magicLink: has(BETTER_AUTH_CAPABILITY_PROBES.magicLink),
+    impersonation: false,
+  };
+}
+
+const ALL_FALSE_CAPABILITIES: AuthCapabilities = Object.freeze({
+  passkeys: false,
+  organizations: false,
+  twoFactor: false,
+  magicLink: false,
+  impersonation: false,
+});
+
+// ─── Helpers ───
+
+/** Map a Better Auth session+user response to our canonical Session type. */
+function mapSession(
+  raw: { session: Record<string, unknown>; user: Record<string, unknown> } | null,
+): Session | null {
+  if (!raw) return null;
+  const { session, user } = raw;
+  return {
+    userId: String(session.userId ?? user.id ?? ""),
+    email: (user.email as string) ?? undefined,
+    expiresAt: session.expiresAt
+      ? new Date(session.expiresAt as string | number)
+      : new Date(Date.now() + 3_600_000),
+  };
+}
+
+/**
+ * Load an optional better-auth plugin by name.
+ *
+ * The plugin path is built from a parameter rather than a string literal so
+ * bundlers (Vite/Turbopack) skip static resolution — necessary because some
+ * plugins (e.g. `passkey`) aren't always present in the installed better-auth
+ * version's `exports` map. The runtime try/catch in callers handles a missing
+ * module gracefully.
+ */
+async function loadOptionalPlugin(name: string): Promise<unknown> {
+  const path = `better-auth/plugins/${name}`;
+  return import(/* @vite-ignore */ /* webpackIgnore: true */ path);
+}
+
+/** Map a Better Auth user record to our canonical User type. */
+function mapUser(raw: Record<string, unknown> | null): User | null {
+  if (!raw) return null;
+  return {
+    id: String(raw.id),
+    email: (raw.email as string) ?? undefined,
+    phone: (raw.phone as string) ?? undefined,
+    name: (raw.name as string) ?? undefined,
+    imageUrl: (raw.image as string) ?? undefined,
+    createdAt: raw.createdAt ? new Date(raw.createdAt as string | number) : new Date(),
+  };
+}
+
+/**
+ * Create a Better Auth provider instance.
+ *
+ * The auth instance is configured lazily — `betterAuth()` and the Prisma
+ * adapter are imported dynamically so that projects not using Better Auth
+ * never pull in the dependency.
+ */
+export function createBetterAuthProvider(config: AuthConfig): AuthProvider {
+  const secret = process.env.BETTER_AUTH_SECRET;
+  if (!secret) {
+    throw new Error(
+      "BETTER_AUTH_SECRET environment variable is required for the Better Auth provider. " +
+        "Generate one with: openssl rand -base64 32",
+    );
+  }
+
+  // Build social providers object conditionally
+  const socialProviders: Record<string, { clientId: string; clientSecret: string }> = {};
+
+  if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
+    socialProviders.google = {
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    };
+  }
+
+  if (process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET) {
+    socialProviders.github = {
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    };
+  }
+
+  if (Object.keys(socialProviders).length === 0) {
+    logger.info(
+      "Better Auth: no OAuth providers configured — only email/password login is available. " +
+        "Set GOOGLE_CLIENT_ID/SECRET or GITHUB_CLIENT_ID/SECRET to enable social login.",
+    );
+  }
+
+  // ── Lazy auth instance ──
+  // We defer creation until first use so that import-time errors are avoided
+  // when the database is not yet available (e.g. during build).
+  let authInstance: Awaited<ReturnType<typeof initAuth>> | null = null;
+
+  async function initAuth() {
+    const { betterAuth } = await import("better-auth");
+    const { prismaAdapter } = await import("better-auth/adapters/prisma");
+
+    // Plugin paths are routed through `loadOptionalPlugin` so that bundlers
+    // (Vite/Turbopack) treat them as runtime-only — necessary because some
+    // plugin paths (e.g. `passkey`) may be missing from the installed
+    // better-auth's `exports` map. Static resolution would fail at build
+    // time even though the runtime try/catch is meant to handle it.
+
+    // Dynamically import the organization plugin — it may not be available
+    let orgPlugin: unknown | undefined;
+    try {
+      const orgModule = await loadOptionalPlugin("organization");
+      orgPlugin = (orgModule as { organization: () => unknown }).organization();
+    } catch {
+      logger.warn(
+        "Better Auth: organization plugin not available — multi-tenant features will be stubbed.",
+      );
+    }
+
+    // Dynamically import the twoFactor plugin — gracefully degrade if absent
+    let twoFactorPlugin: unknown | undefined;
+    try {
+      const twoFactorModule = await loadOptionalPlugin("two-factor");
+      twoFactorPlugin = (twoFactorModule as { twoFactor: () => unknown }).twoFactor();
+    } catch {
+      logger.warn(
+        "Better Auth: two-factor plugin not available — 2FA endpoints (/api/auth/two-factor/*) will not be exposed.",
+      );
+    }
+
+    // Dynamically import the passkey plugin — gracefully degrade if absent.
+    // better-auth 1.5.6 does not ship `./plugins/passkey` in its `exports`
+    // map, so the runtime try/catch handles the missing module and logs a warning.
+    let passkeyPlugin: unknown | undefined;
+    try {
+      const passkeyModule = await loadOptionalPlugin("passkey");
+      passkeyPlugin = (passkeyModule as { passkey: () => unknown }).passkey();
+    } catch {
+      logger.warn(
+        "Better Auth: passkey plugin not available — WebAuthn endpoints (/api/auth/passkey/*) will not be exposed.",
+      );
+    }
+
+    // Dynamically import the magic-link plugin — gracefully degrade if absent
+    let magicLinkPlugin: unknown | undefined;
+    try {
+      const magicLinkModule = (await loadOptionalPlugin("magic-link")) as {
+        magicLink: (opts: {
+          sendMagicLink: (args: { email: string; url: string }) => Promise<void>;
+        }) => unknown;
+      };
+      // The magic-link plugin requires a `sendMagicLink` callback. When not configured,
+      // we register a no-op that logs a warning so endpoints still mount but operators
+      // know to wire a real email transport.
+      magicLinkPlugin = magicLinkModule.magicLink({
+        sendMagicLink: async ({ email, url }: { email: string; url: string }) => {
+          try {
+            const { sendMagicLinkEmail } = await import("@nebutra/email");
+            await sendMagicLinkEmail({ to: email, magicLinkUrl: url });
+          } catch {
+            logger.warn(
+              "Better Auth: @nebutra/email not available for magic-link. Install it or configure a real email transport.",
+              { email, url },
+            );
+          }
+        },
+      });
+    } catch {
+      logger.warn(
+        "Better Auth: magic-link plugin not available — magic-link endpoints (/api/auth/sign-in/magic-link, /api/auth/magic-link/verify) will not be exposed.",
+      );
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const plugins: any[] = [];
+    if (orgPlugin) plugins.push(orgPlugin);
+    if (twoFactorPlugin) plugins.push(twoFactorPlugin);
+    if (passkeyPlugin) plugins.push(passkeyPlugin);
+    if (magicLinkPlugin) plugins.push(magicLinkPlugin);
+
+    const prismaClient = await getPrismaClient(config);
+
+    // Audit hooks — bridge Better Auth's `databaseHooks` into @nebutra/audit so
+    // that `auth.password.changed` / `auth.2fa.enabled` / `auth.2fa.disabled`
+    // are emitted even though they aren't path-distinguishable at the
+    // /api/auth/[...all] route. See packages/iam/auth/src/audit-events.ts.
+    const { buildAuditDatabaseHooks } = await import("../audit-events");
+    const databaseHooks = buildAuditDatabaseHooks() as Record<string, unknown>;
+
+    const auth = betterAuth({
+      secret,
+      baseURL: process.env.BETTER_AUTH_URL,
+      emailAndPassword: { enabled: true },
+      socialProviders,
+      database: prismaAdapter(
+        // PrismaClient is expected to be available globally or passed via config
+        // For now we dynamically import from @nebutra/db
+        prismaClient as Parameters<typeof prismaAdapter>[0],
+        {
+          provider: "postgresql",
+          // Map Better Auth's default model names to our Prisma schema model names.
+          // Our Prisma schema uses AuthUser/AuthAccount/AuthSession/AuthVerification
+          // (mapped to auth_users/auth_accounts/auth_sessions/auth_verifications tables).
+          usePlural: false,
+        },
+      ),
+      plugins,
+      databaseHooks,
+      // Map Better Auth's internal model names to our custom Prisma model names
+      // so the Prisma adapter queries the correct tables.
+      user: { modelName: "AuthUser" },
+      session: { modelName: "AuthSession" },
+      account: { modelName: "AuthAccount" },
+      verification: { modelName: "AuthVerification" },
+      ...(config.options as Record<string, unknown> | undefined),
+    });
+
+    return auth;
+  }
+
+  async function getAuth() {
+    if (!authInstance) {
+      authInstance = await initAuth();
+    }
+    return authInstance;
+  }
+
+  // Capabilities are cached after the first successful initAuth() so reads are
+  // synchronous. Before init runs we return the all-false default — apps must
+  // tolerate that and re-read after the first server-side call. Storybook /
+  // build-time imports therefore never trip lazy DB resolution just to read
+  // capabilities.
+  let cachedCapabilities: AuthCapabilities = ALL_FALSE_CAPABILITIES;
+
+  // Best-effort eager probe: fire-and-forget so the first network call
+  // doesn't pay the latency cost of init. Failures are intentionally
+  // swallowed — capabilities stays at the safe default and we'll try again
+  // on the next read path that calls getAuth().
+  void (async () => {
+    try {
+      const auth = await getAuth();
+      cachedCapabilities = Object.freeze(probeBetterAuthCapabilities(auth));
+    } catch {
+      // Build/test environments without a DB hit this path — that's fine.
+    }
+  })();
+
+  return {
+    provider: "better-auth",
+
+    get capabilities(): Readonly<AuthCapabilities> {
+      return cachedCapabilities;
+    },
+
+    async getSession(request) {
+      const auth = await getAuth();
+      if (!request) {
+        logger.warn("Better Auth getSession: a Request object is required to resolve the session.");
+        return null;
+      }
+      try {
+        const result = await auth.api.getSession({ headers: request.headers });
+        return mapSession(
+          result as { session: Record<string, unknown>; user: Record<string, unknown> } | null,
+        );
+      } catch (error) {
+        logger.error("Better Auth getSession failed", { error });
+        return null;
+      }
+    },
+
+    async getUser(userId) {
+      const auth = await getAuth();
+      try {
+        const ctx = await auth.$context;
+        const adapter = ctx.adapter;
+        const raw = await adapter.findOne<Record<string, unknown>>({
+          model: "user",
+          where: [{ field: "id", value: userId }],
+        });
+        return mapUser(raw);
+      } catch (error) {
+        logger.error("Better Auth getUser failed", { userId, error });
+        return null;
+      }
+    },
+
+    async createUser(data: CreateUserInput) {
+      const auth = await getAuth();
+      try {
+        // Use the sign-up endpoint for email/password users
+        if (data.email && data.password) {
+          const result = await auth.api.signUpEmail({
+            body: {
+              email: data.email,
+              password: data.password,
+              name: data.name ?? "",
+            },
+          });
+          const user = mapUser(
+            ((result as Record<string, unknown>).user as Record<string, unknown>) ??
+              (result as Record<string, unknown>),
+          );
+          if (!user) {
+            throw new Error("Failed to create user — no user returned from sign-up");
+          }
+          return user;
+        }
+
+        // For users without email/password, insert directly via the adapter
+        const ctx = await auth.$context;
+        const adapter = ctx.adapter;
+        const raw = await adapter.create<Record<string, unknown>>({
+          model: "user",
+          data: {
+            email: data.email ?? null,
+            name: data.name ?? null,
+            image: data.imageUrl ?? null,
+          },
+        });
+        const user = mapUser(raw);
+        if (!user) {
+          throw new Error("Failed to create user — adapter returned null");
+        }
+        return user;
+      } catch (error) {
+        logger.error("Better Auth createUser failed", { error });
+        throw error instanceof Error ? error : new Error("Failed to create user via Better Auth");
+      }
+    },
+
+    async getOrganization(orgId) {
+      const auth = await getAuth();
+      try {
+        if (!("getFullOrganization" in auth.api)) {
+          logger.warn(
+            "Better Auth: organization plugin is not enabled — getOrganization returns null. " +
+              "Add the organization plugin to enable multi-tenant support.",
+          );
+          return null;
+        }
+        const api = auth.api as Record<
+          string,
+          ((...args: unknown[]) => Promise<unknown>) | undefined
+        >;
+        const getFullOrg = api.getFullOrganization;
+        if (!getFullOrg) return null;
+        const raw = (await getFullOrg({ query: { organizationId: orgId } })) as Record<
+          string,
+          unknown
+        > | null;
+        if (!raw) return null;
+        return {
+          id: String(raw.id),
+          name: String(raw.name ?? ""),
+          slug: String(raw.slug ?? ""),
+          plan: String(raw.metadata ?? "FREE"),
+          createdAt: raw.createdAt ? new Date(raw.createdAt as string | number) : new Date(),
+        } satisfies Organization;
+      } catch (error) {
+        logger.error("Better Auth getOrganization failed", { orgId, error });
+        return null;
+      }
+    },
+
+    async getUserOrganizations(userId) {
+      const auth = await getAuth();
+      try {
+        if (!("listOrganizations" in auth.api)) {
+          logger.warn(
+            "Better Auth: organization plugin is not enabled — getUserOrganizations returns []. " +
+              "Add the organization plugin to enable multi-tenant support.",
+          );
+          return [];
+        }
+        const api = auth.api as Record<
+          string,
+          ((...args: unknown[]) => Promise<unknown>) | undefined
+        >;
+        const listOrgs = api.listOrganizations;
+        if (!listOrgs) return [];
+        const raw = (await listOrgs({ query: { userId } })) as Array<
+          Record<string, unknown>
+        > | null;
+        if (!raw) return [];
+        return raw.map((org) => ({
+          id: String(org.id),
+          name: String(org.name ?? ""),
+          slug: String(org.slug ?? ""),
+          plan: String(org.metadata ?? "FREE"),
+          createdAt: org.createdAt ? new Date(org.createdAt as string | number) : new Date(),
+        })) satisfies Organization[];
+      } catch (error) {
+        logger.error("Better Auth getUserOrganizations failed", { userId, error });
+        return [];
+      }
+    },
+
+    async createOrganization(data: CreateOrgInput) {
+      const auth = await getAuth();
+      try {
+        if (!("createOrganization" in auth.api)) {
+          throw new Error(
+            "Better Auth: organization plugin is not enabled. " +
+              "Add the organization plugin to enable multi-tenant support.",
+          );
+        }
+        const api = auth.api as Record<
+          string,
+          ((...args: unknown[]) => Promise<unknown>) | undefined
+        >;
+        const createOrg = api.createOrganization;
+        if (!createOrg) {
+          throw new Error(
+            "Better Auth: createOrganization API endpoint not found on auth instance.",
+          );
+        }
+        const raw = (await createOrg({
+          body: {
+            name: data.name,
+            slug: data.slug ?? data.name.toLowerCase().replace(/\s+/g, "-"),
+          },
+        })) as Record<string, unknown>;
+        return {
+          id: String(raw.id),
+          name: String(raw.name ?? ""),
+          slug: String(raw.slug ?? ""),
+          plan: data.plan ?? "FREE",
+          createdAt: raw.createdAt ? new Date(raw.createdAt as string | number) : new Date(),
+        } satisfies Organization;
+      } catch (error) {
+        logger.error("Better Auth createOrganization failed", { error });
+        throw error instanceof Error
+          ? error
+          : new Error("Failed to create organization via Better Auth");
+      }
+    },
+
+    async signIn(method: SignInMethod): Promise<SignInResult> {
+      try {
+        const auth = await getAuth();
+        // Refresh the cached probe now that the api surface is materialized.
+        cachedCapabilities = Object.freeze(probeBetterAuthCapabilities(auth));
+        const api = auth.api as Record<
+          string,
+          ((...args: unknown[]) => Promise<unknown>) | undefined
+        >;
+
+        switch (method.type) {
+          case "email-password": {
+            const signInEmail = api.signInEmail;
+            if (!signInEmail) {
+              return {
+                ok: false,
+                error: {
+                  code: "unsupported",
+                  message: "Better Auth: signInEmail endpoint not available on auth.api.",
+                },
+              };
+            }
+            const raw = (await signInEmail({
+              body: { email: method.email, password: method.password },
+            })) as { user?: { id?: string }; redirect?: string } | null;
+            const userId = raw?.user?.id;
+            return {
+              ok: true,
+              ...(userId ? { userId } : {}),
+              ...(raw?.redirect ? { redirectTo: raw.redirect } : {}),
+            };
+          }
+          case "oauth": {
+            const signInSocial = api.signInSocial;
+            if (!signInSocial) {
+              return {
+                ok: false,
+                error: {
+                  code: "unsupported",
+                  message: "Better Auth: social sign-in not configured.",
+                },
+              };
+            }
+            const raw = (await signInSocial({
+              body: {
+                provider: method.provider,
+                callbackURL: method.redirectUrl,
+              },
+            })) as { url?: string; redirect?: string } | null;
+            const redirectTo = raw?.url ?? raw?.redirect;
+            return {
+              ok: true,
+              ...(redirectTo ? { redirectTo } : {}),
+            };
+          }
+          case "phone": {
+            return {
+              ok: false,
+              error: {
+                code: "unsupported",
+                message:
+                  "Better Auth: phone sign-in is not wired in this build. " +
+                  "Add the phone plugin and re-attempt.",
+              },
+            };
+          }
+          default: {
+            // Exhaustiveness guard
+            const _exhaustive: never = method;
+            return {
+              ok: false,
+              error: {
+                code: "unsupported",
+                message: `Unknown sign-in method: ${String(_exhaustive)}`,
+              },
+            };
+          }
+        }
+      } catch (error) {
+        logger.error("Better Auth signIn failed", { type: method.type, error });
+        const message = error instanceof Error ? error.message : "Sign-in failed";
+        return {
+          ok: false,
+          error: {
+            code: /password|credential/i.test(message) ? "invalid-credentials" : "unknown",
+            message,
+          },
+        };
+      }
+    },
+
+    async signOut(request: Request): Promise<void> {
+      try {
+        const auth = await getAuth();
+        const api = auth.api as Record<
+          string,
+          ((...args: unknown[]) => Promise<unknown>) | undefined
+        >;
+        const signOutFn = api.signOut;
+        if (!signOutFn) {
+          logger.warn("Better Auth: signOut endpoint not available on auth.api.");
+          return;
+        }
+        await signOutFn({ headers: request.headers });
+      } catch (error) {
+        logger.error("Better Auth signOut failed", { error });
+      }
+    },
+
+    middleware() {
+      // Return an async handler that delegates to Better Auth's request handler.
+      // The handler processes /api/auth/* routes (sign-in, sign-up, callback, etc.).
+      return async (req: Request): Promise<Response | undefined> => {
+        const auth = await getAuth();
+        return auth.handler(req);
+      };
+    },
+
+    async handleWebhook(_request) {
+      logger.warn(
+        "Better Auth: webhook handling is not yet implemented. " +
+          "Better Auth uses an events API instead of traditional webhooks. " +
+          "Configure event listeners in the betterAuth() options.",
+      );
+    },
+  };
+}
+
+// ─── Prisma Client Resolution ───
+
+/**
+ * Resolve a PrismaClient instance for the Better Auth adapter.
+ *
+ * Priority:
+ * 1. `config.options.prisma` — explicitly passed PrismaClient
+ * 2. Dynamic import from `@nebutra/db` — monorepo default
+ */
+async function getPrismaClient(config: AuthConfig): Promise<unknown> {
+  const options = config.options as Record<string, unknown> | undefined;
+  if (options?.prisma) {
+    return options.prisma;
+  }
+
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const dbModule = await import("@nebutra/db");
+    return (
+      (dbModule as Record<string, unknown>).prisma ?? (dbModule as Record<string, unknown>).default
+    );
+  } catch {
+    throw new Error(
+      "Better Auth requires a PrismaClient instance. " +
+        "Either pass it via config.options.prisma or ensure @nebutra/db is available.",
+    );
+  }
+}
