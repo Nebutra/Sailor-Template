@@ -1,0 +1,498 @@
+name: Deploy to ECS (PM2)
+
+# Build Node apps on the GH-hosted runner (16 GB) and ship standalone bundles
+# to a single Aliyun ECS box that runs PM2 + Nginx. ECS itself is 2C4G and
+# cannot build Next.js — this workflow exists to remove that constraint and
+# replace the manual rsync flow.
+#
+# REQUIRED REPOSITORY SECRETS (Settings → Secrets and variables → Actions):
+#   ECS_SSH_PRIVATE_KEY  — OpenSSH private key (Ed25519 recommended) whose
+#                          corresponding public key is in the deploy user's
+#                          ~/.ssh/authorized_keys on the ECS box.
+#   ECS_SSH_KNOWN_HOSTS  — output of `ssh-keyscan -H <ECS_HOST>` to pin the
+#                          host key (prevents MITM and warning prompts).
+#
+# REQUIRED REPOSITORY VARIABLES (same UI, "Variables" tab):
+#   ECS_HOST             — IP or DNS of the ECS box.
+#   ECS_USER             — SSH user (must own/manage the PM2 process; usually
+#                          `root` per the existing deploy-ecs-lite.sh).
+#   ECS_DEPLOY_ROOT      — Base path on the ECS box (default /var/www/nebutra).
+#
+# OPTIONAL REPOSITORY VARIABLES:
+#   ECS_SSH_PORT         — defaults to 22.
+#   ECS_KEEP_RELEASES    — past releases to retain (default 5).
+#
+# CONNECTIVITY NOTE:
+# GH-hosted runners sit in US/EU. SSH to Aliyun ECS in mainland China usually
+# works but can be flaky during peak hours. If the deploy step regularly times
+# out, register a self-hosted runner inside Aliyun (e.g. on the same VPC) and
+# add `runs-on: [self-hosted, ecs]` overrides — the rest of the workflow stays
+# the same.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/landing-page/**"
+      - "apps/web/**"
+      - "backends/gateway/**"
+      - "packages/**"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/deploy-ecs.yml"
+      - "infra/iac/ecs/**"
+      - "infra/ops/scripts/ecs-deploy-remote.sh"
+
+  workflow_dispatch:
+    inputs:
+      apps:
+        description: "Apps to deploy (space-separated subset of: landing web api). Empty = auto-detect."
+        required: false
+        default: ""
+      reason:
+        description: "Reason (shown in run summary)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+# Serialise deploys to one ECS box — never run two in parallel.
+concurrency:
+  group: deploy-ecs-prod
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  # ──────────────────────────────────────────────────────────────────────
+  # detect-changes — figure out which apps actually need rebuilding.
+  # On workflow_dispatch with explicit `apps`, we honour the input.
+  # ──────────────────────────────────────────────────────────────────────
+  detect-changes:
+    name: Detect changed apps
+    runs-on: ubuntu-latest
+    outputs:
+      landing: ${{ steps.resolve.outputs.landing }}
+      web:     ${{ steps.resolve.outputs.web }}
+      api:     ${{ steps.resolve.outputs.api }}
+      any:     ${{ steps.resolve.outputs.any }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Path filter
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            landing:
+              - 'apps/landing-page/**'
+              - 'packages/**'
+              - 'pnpm-lock.yaml'
+              - 'infra/iac/ecs/**'
+              - 'infra/ops/scripts/ecs-deploy-remote.sh'
+            web:
+              - 'apps/web/**'
+              - 'packages/**'
+              - 'pnpm-lock.yaml'
+              - 'infra/iac/ecs/**'
+              - 'infra/ops/scripts/ecs-deploy-remote.sh'
+            api:
+              - 'backends/gateway/**'
+              - 'packages/**'
+              - 'pnpm-lock.yaml'
+              - 'infra/iac/ecs/**'
+              - 'infra/ops/scripts/ecs-deploy-remote.sh'
+
+      - name: Resolve target apps
+        id: resolve
+        env:
+          INPUT_APPS: ${{ github.event.inputs.apps }}
+          F_LANDING:  ${{ steps.filter.outputs.landing }}
+          F_WEB:      ${{ steps.filter.outputs.web }}
+          F_API:      ${{ steps.filter.outputs.api }}
+        run: |
+          {
+            if [ -n "${INPUT_APPS:-}" ]; then
+              echo "landing=$([[ "$INPUT_APPS" == *landing* ]] && echo true || echo false)"
+              echo "web=$([[ "$INPUT_APPS" == *web* ]] && echo true || echo false)"
+              echo "api=$([[ "$INPUT_APPS" == *api* ]] && echo true || echo false)"
+            else
+              echo "landing=$F_LANDING"
+              echo "web=$F_WEB"
+              echo "api=$F_API"
+            fi
+            echo "any=$([[ "$F_LANDING" == "true" || "$F_WEB" == "true" || "$F_API" == "true" || -n "${INPUT_APPS:-}" ]] && echo true || echo false)"
+          } >> "$GITHUB_OUTPUT"
+
+  # ──────────────────────────────────────────────────────────────────────
+  # build-next — build either Next standalone app, package as tarball.
+  # Runs in parallel for landing and web. Skipped when no changes.
+  # ──────────────────────────────────────────────────────────────────────
+  build-next:
+    name: Build ${{ matrix.app }} (Next standalone)
+    needs: detect-changes
+    if: needs.detect-changes.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - app: landing
+            package: "@nebutra/landing-page"
+            workspace: apps/landing-page
+            condition: ${{ needs.detect-changes.outputs.landing }}
+            site_url: "https://nebutra.com"
+          - app: web
+            package: "@nebutra/web"
+            workspace: apps/web
+            condition: ${{ needs.detect-changes.outputs.web }}
+            site_url: "https://app.nebutra.com"
+    steps:
+      - name: Skip if not needed
+        if: matrix.condition != 'true'
+        run: echo "Skipping ${{ matrix.app }} — no relevant changes."
+
+      - uses: actions/checkout@v4
+        if: matrix.condition == 'true'
+
+      - uses: pnpm/action-setup@v4
+        if: matrix.condition == 'true'
+
+      - uses: actions/setup-node@v4
+        if: matrix.condition == 'true'
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install dependencies
+        if: matrix.condition == 'true'
+        run: pnpm install --frozen-lockfile
+
+      - name: Build workspace dependencies of ${{ matrix.package }}
+        if: matrix.condition == 'true'
+        # Build all transitive workspace deps first (the `^...` filter means
+        # "dependencies only, not the package itself"). Mirrors the pattern in
+        # .github/workflows/ci.yml — required so that workspace packages like
+        # @nebutra/brand, @nebutra/icons, @nebutra/ui produce their dist/ files
+        # before Next tries to resolve them.
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+        run: pnpm turbo build --filter="${{ matrix.package }}^..."
+
+      - name: Build ${{ matrix.package }}
+        if: matrix.condition == 'true'
+        # NEXT_PUBLIC_* vars are baked into the client bundle at build time.
+        # Without them, layout.tsx falls back to http://localhost:3000 for
+        # metadataBase, and middleware self-fetches break with EPROTO when
+        # nginx terminates TLS but the bundle thinks the origin is localhost.
+        # These are non-secret prod URLs — safe to hardcode here.
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+          NEXT_PUBLIC_SITE_URL: ${{ matrix.site_url }}
+          NEXT_PUBLIC_APP_URL: "https://app.nebutra.com"
+          NEXT_PUBLIC_API_URL: "https://api.nebutra.com"
+          NEXT_PUBLIC_API_GATEWAY_URL: "https://api.nebutra.com"
+          NEXT_PUBLIC_AUTH_PROVIDER: "better-auth"
+          # Build-time placeholder for server env validation. Next.js collects
+          # page data by loading each route module at build time, which triggers
+          # @t3-oss/env-nextjs Zod validation (`DATABASE_URL: z.string().url()`).
+          # Without a value the build crashes with "Invalid environment variables"
+          # while inspecting routes like /api/me/public. Real DATABASE_URL lives
+          # in /var/www/nebutra/web/current/.env on the ECS box and is read at
+          # runtime by the standalone server.
+          DATABASE_URL: "postgresql://build-placeholder:placeholder@localhost:5432/build"
+          # Force standalone output for ECS — landing-page's next.config gates
+          # `output: "standalone"` on this env so Vercel builds skip the trace
+          # cost. ECS workflow needs the standalone bundle for assembly below.
+          NEXT_OUTPUT: standalone
+        run: pnpm --filter ${{ matrix.package }} build
+
+      # Next standalone output is at <workspace>/.next/standalone/. We need to
+      # also copy <workspace>/.next/static and <workspace>/public into the
+      # standalone tree so the packaged bundle is self-sufficient.
+      - name: Assemble standalone bundle
+        if: matrix.condition == 'true'
+        run: |
+          set -euo pipefail
+          WS="${{ matrix.workspace }}"
+          STAGE="$RUNNER_TEMP/stage-${{ matrix.app }}"
+          rm -rf "$STAGE"
+          mkdir -p "$STAGE"
+          cp -r "$WS/.next/standalone/." "$STAGE/"
+          mkdir -p "$STAGE/$WS/.next"
+          cp -r "$WS/.next/static" "$STAGE/$WS/.next/static"
+          if [ -d "$WS/public" ]; then
+            cp -r "$WS/public" "$STAGE/$WS/public"
+          fi
+          ls -la "$STAGE/$WS"
+          tar -czf "$RUNNER_TEMP/nebutra-${{ matrix.app }}-${{ github.sha }}.tar.gz" -C "$STAGE" .
+
+      - name: Upload artifact
+        if: matrix.condition == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-${{ matrix.app }}
+          path: ${{ runner.temp }}/nebutra-${{ matrix.app }}-${{ github.sha }}.tar.gz
+          retention-days: 7
+          if-no-files-found: error
+
+  # ──────────────────────────────────────────────────────────────────────
+  # build-api — pnpm-deploy bundles the api-gateway with hoisted prod deps.
+  # ──────────────────────────────────────────────────────────────────────
+  build-api:
+    name: Build api-gateway
+    needs: detect-changes
+    if: needs.detect-changes.outputs.api == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build workspace dependencies of api-gateway
+        run: pnpm turbo build --filter="@nebutra/gateway^..."
+
+      - name: Build api-gateway
+        run: pnpm --filter @nebutra/gateway build
+
+      - name: pnpm deploy → self-contained bundle
+        run: |
+          set -euo pipefail
+          STAGE="$RUNNER_TEMP/stage-api"
+          rm -rf "$STAGE"
+          # `pnpm deploy` produces a directory with the workspace package's
+          # production deps fully resolved and hoisted — perfect for a server.
+          pnpm deploy --filter @nebutra/gateway --prod --legacy "$STAGE"
+          ls -la "$STAGE"
+          tar -czf "$RUNNER_TEMP/nebutra-api-${{ github.sha }}.tar.gz" -C "$STAGE" .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-api
+          path: ${{ runner.temp }}/nebutra-api-${{ github.sha }}.tar.gz
+          retention-days: 7
+          if-no-files-found: error
+
+  # ──────────────────────────────────────────────────────────────────────
+  # deploy — fetch artifacts, upload over SSH, run remote helper.
+  # ──────────────────────────────────────────────────────────────────────
+  deploy:
+    name: Deploy to ECS
+    needs: [detect-changes, build-next, build-api]
+    if: |
+      always() &&
+      needs.detect-changes.outputs.any == 'true' &&
+      (needs.build-next.result == 'success' || needs.build-next.result == 'skipped') &&
+      (needs.build-api.result  == 'success' || needs.build-api.result  == 'skipped') &&
+      !(needs.build-next.result == 'skipped' && needs.build-api.result == 'skipped')
+    runs-on: ubuntu-latest
+    environment: ecs-prod
+    env:
+      ECS_HOST:          ${{ vars.ECS_HOST }}
+      ECS_USER:          ${{ vars.ECS_USER }}
+      ECS_SSH_PORT:      ${{ vars.ECS_SSH_PORT || '22' }}
+      ECS_DEPLOY_ROOT:   ${{ vars.ECS_DEPLOY_ROOT || '/var/www/nebutra' }}
+      ECS_KEEP_RELEASES: ${{ vars.ECS_KEEP_RELEASES || '5' }}
+    steps:
+      - name: Verify deploy targets configured
+        run: |
+          [ -n "${ECS_HOST:-}" ] || { echo "::error::ECS_HOST repository variable is not set"; exit 1; }
+          [ -n "${ECS_USER:-}" ] || { echo "::error::ECS_USER repository variable is not set"; exit 1; }
+
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            infra/iac/ecs/ecosystem.config.cjs
+            infra/ops/scripts/ecs-deploy-remote.sh
+
+      - name: Download landing bundle
+        if: needs.detect-changes.outputs.landing == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: bundle-landing
+          path: ${{ runner.temp }}/bundles
+
+      - name: Download web bundle
+        if: needs.detect-changes.outputs.web == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: bundle-web
+          path: ${{ runner.temp }}/bundles
+
+      - name: Download api bundle
+        if: needs.detect-changes.outputs.api == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: bundle-api
+          path: ${{ runner.temp }}/bundles
+
+      - name: Configure SSH
+        env:
+          SSH_KEY:     ${{ secrets.ECS_SSH_PRIVATE_KEY }}
+          KNOWN_HOSTS: ${{ secrets.ECS_SSH_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          [ -n "${SSH_KEY:-}" ]     || { echo "::error::ECS_SSH_PRIVATE_KEY secret is not set"; exit 1; }
+          [ -n "${KNOWN_HOSTS:-}" ] || { echo "::error::ECS_SSH_KNOWN_HOSTS secret is not set"; exit 1; }
+          mkdir -p ~/.ssh
+          umask 077
+          printf '%s\n' "$SSH_KEY"     > ~/.ssh/id_deploy
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_deploy ~/.ssh/known_hosts
+
+      - name: Pre-flight disk cleanup on ECS
+        # The ECS box is a 2C4G Aliyun Lite instance. Each release directory
+        # holds ~1 GB of node_modules, so KEEP_RELEASES=5 × 3 apps fills the
+        # disk and even scp-to-/tmp fails before the remote helper can run.
+        # This step SSHes in BEFORE upload and prunes:
+        #   1. Stale /tmp/nebutra-*.tar.gz from prior failed runs
+        #   2. All but the latest 2 releases per app
+        #   3. Old pnpm store / apt caches as a last resort
+        # so the box has enough headroom for the new bundle (~250 MB) + the
+        # extracted node_modules tree.
+        run: |
+          set -euo pipefail
+          ssh -i ~/.ssh/id_deploy -p "${ECS_SSH_PORT}" \
+              -o StrictHostKeyChecking=yes -o ConnectTimeout=20 \
+              -o ServerAliveInterval=30 -o ServerAliveCountMax=6 \
+              "${ECS_USER}@${ECS_HOST}" \
+              "bash -s" <<'PREFLIGHT'
+          set -euo pipefail
+          echo "--- disk before cleanup ---"
+          df -h / 2>/dev/null || df -h
+          echo "--- /tmp tarballs ---"
+          find /tmp -maxdepth 1 -name 'nebutra-*.tar.gz' -ls 2>/dev/null || true
+          find /tmp -maxdepth 1 -name 'nebutra-*.tar.gz' -delete 2>/dev/null || true
+          echo "--- pruning old releases (keep latest 2 per app) ---"
+          for app in landing web api; do
+            dir="${ECS_DEPLOY_ROOT:-/var/www/nebutra}/$app/releases"
+            [ -d "$dir" ] || continue
+            extra=$(find "$dir" -mindepth 1 -maxdepth 1 -type d -printf '%T@ %p\n' 2>/dev/null \
+                      | sort -nr | tail -n +3 | cut -d' ' -f2- || true)
+            if [ -n "$extra" ]; then
+              echo "$app:"; echo "$extra"
+              echo "$extra" | xargs -r rm -rf
+            fi
+          done
+          echo "--- clear pnpm store cache (safe — pnpm rebuilds on next install) ---"
+          rm -rf ~/.local/share/pnpm/store 2>/dev/null || true
+          rm -rf ~/.pnpm-store 2>/dev/null || true
+          echo "--- clear apt + journal as last resort ---"
+          command -v apt-get >/dev/null 2>&1 && apt-get clean 2>/dev/null || true
+          command -v journalctl >/dev/null 2>&1 && journalctl --vacuum-time=2d 2>/dev/null || true
+          echo "--- disk after cleanup ---"
+          df -h / 2>/dev/null || df -h
+          PREFLIGHT
+        env:
+          ECS_HOST:        ${{ vars.ECS_HOST }}
+          ECS_USER:        ${{ vars.ECS_USER }}
+          ECS_SSH_PORT:    ${{ vars.ECS_SSH_PORT || '22' }}
+          ECS_DEPLOY_ROOT: ${{ vars.ECS_DEPLOY_ROOT || '/var/www/nebutra' }}
+
+      - name: Upload bundles + helper to ECS
+        run: |
+          set -euo pipefail
+          # ServerAlive options keep the connection alive on slow / lossy
+          # GH-runner -> Aliyun-China links. Without them, scp on a 100MB+
+          # bundle silently hangs forever when TCP keepalives are absent.
+          # 30s ping × 6 misses = drop after 3 min idle.
+          SCP_OPTS=(-i ~/.ssh/id_deploy -P "${ECS_SSH_PORT}" \
+                    -o StrictHostKeyChecking=yes -o ConnectTimeout=20 \
+                    -o ServerAliveInterval=30 -o ServerAliveCountMax=6 \
+                    -C)
+          BUNDLES_DIR="${RUNNER_TEMP}/bundles"
+          if [ ! -d "$BUNDLES_DIR" ] || [ -z "$(ls -A "$BUNDLES_DIR" 2>/dev/null)" ]; then
+            echo "::warning::No bundle artifacts to upload"; exit 1
+          fi
+
+          # Upload bundles one at a time so a stalled transfer surfaces
+          # quickly and the failure points at a specific tarball.
+          for bundle in "$BUNDLES_DIR"/*.tar.gz; do
+            base=$(basename "$bundle")
+            size=$(du -h "$bundle" | cut -f1)
+            echo "→ scp $base ($size)"
+            scp "${SCP_OPTS[@]}" "$bundle" "${ECS_USER}@${ECS_HOST}:/tmp/"
+          done
+
+          # Always re-upload the helper + ecosystem config so the box stays in sync.
+          scp "${SCP_OPTS[@]}" infra/ops/scripts/ecs-deploy-remote.sh \
+            "${ECS_USER}@${ECS_HOST}:/tmp/ecs-deploy-remote.sh"
+          scp "${SCP_OPTS[@]}" infra/iac/ecs/ecosystem.config.cjs \
+            "${ECS_USER}@${ECS_HOST}:${ECS_DEPLOY_ROOT}/ecosystem.config.cjs"
+
+      - name: Run remote deploy
+        run: |
+          set -euo pipefail
+          APPS=""
+          [ "${{ needs.detect-changes.outputs.landing }}" = "true" ] && APPS="$APPS landing"
+          [ "${{ needs.detect-changes.outputs.web }}"     = "true" ] && APPS="$APPS web"
+          [ "${{ needs.detect-changes.outputs.api }}"     = "true" ] && APPS="$APPS api"
+          APPS="$(echo "$APPS" | xargs)"
+          echo "Deploying: $APPS"
+          # SSH joins all remaining args into a single shell-evaluated string
+          # on the remote side. We must wrap the whole remote command in one
+          # quoted string and quote any value containing spaces (APPS) — else
+          # `env A=foo APPS=landing web api B=bar` is reparsed and `web` is
+          # treated as a command. See run 25603759255 for the original bug.
+          REMOTE_CMD="env DEPLOY_ROOT='${ECS_DEPLOY_ROOT}' \
+                          APPS='${APPS}' \
+                          KEEP_RELEASES='${ECS_KEEP_RELEASES}' \
+                          PM2_CONFIG='${ECS_DEPLOY_ROOT}/ecosystem.config.cjs' \
+                          SHA='${{ github.sha }}' \
+                          bash /tmp/ecs-deploy-remote.sh"
+          ssh -i ~/.ssh/id_deploy -p "${ECS_SSH_PORT}" \
+              -o StrictHostKeyChecking=yes -o ConnectTimeout=20 \
+              -o ServerAliveInterval=30 -o ServerAliveCountMax=6 \
+              "${ECS_USER}@${ECS_HOST}" \
+              "$REMOTE_CMD"
+
+      - name: Smoke test public endpoints
+        run: |
+          set -euo pipefail
+          declare -A targets=()
+          [ "${{ needs.detect-changes.outputs.landing }}" = "true" ] && targets[landing]="https://nebutra.com"
+          [ "${{ needs.detect-changes.outputs.web }}"     = "true" ] && targets[web]="https://app.nebutra.com"
+          [ "${{ needs.detect-changes.outputs.api }}"     = "true" ] && targets[api]="https://api.nebutra.com/health"
+          ok_codes='^(200|301|302|307)$'
+          for name in "${!targets[@]}"; do
+            url="${targets[$name]}"
+            for i in 1 2 3 4 5; do
+              code=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 15 "$url" 2>/dev/null || echo 000)
+              if [[ "$code" =~ $ok_codes ]]; then
+                echo "✅ $name $url -> $code"; break
+              fi
+              if [ "$i" -eq 5 ]; then
+                echo "::error::Smoke test failed for $name at $url (last code: $code)"; exit 1
+              fi
+              sleep 8
+            done
+          done
+
+      - name: Cleanup SSH
+        if: always()
+        run: rm -rf ~/.ssh
+
+      - name: Summary
+        if: always()
+        # Note: GitHub Actions runs `bash --noprofile --norc -eo pipefail`, so
+        # `[ -n "" ] && echo ...` exits 1 when the reason is empty (push events).
+        # Use an explicit if-block to keep the step's exit code at 0.
+        run: |
+          {
+            echo "## ECS deploy summary"
+            echo "- Commit: \`${{ github.sha }}\`"
+            echo "- Apps: landing=${{ needs.detect-changes.outputs.landing }} / web=${{ needs.detect-changes.outputs.web }} / api=${{ needs.detect-changes.outputs.api }}"
+            echo "- Triggered by: ${{ github.actor }} via ${{ github.event_name }}"
+            if [ -n "${{ github.event.inputs.reason }}" ]; then
+              echo "- Reason: ${{ github.event.inputs.reason }}"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
