@@ -1,0 +1,73 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "nebutra-ui",
+  "homepage": "https://ui.nebutra.com",
+  "items": [
+    {
+      "name": "bento-grid",
+      "type": "registry:ui",
+      "title": "Bento Grid",
+      "description": "Responsive bento-style feature grid with hover-reveal CTAs."
+    },
+    {
+      "name": "pricing-card",
+      "type": "registry:ui",
+      "title": "Pricing Card",
+      "description": "Composable pricing card with glass header, plan badges, price slots."
+    },
+    {
+      "name": "feature-card",
+      "type": "registry:ui",
+      "title": "Feature Card",
+      "description": "Feature card with corner bracket decorators, header, body, and dual-mode imagery."
+    },
+    {
+      "name": "animate-in",
+      "type": "registry:ui",
+      "title": "AnimateIn",
+      "description": "Entrance animation primitive with emerge / flow / fade presets, lazy-loaded framer-motion."
+    },
+    {
+      "name": "magic-card",
+      "type": "registry:ui",
+      "title": "Magic Card",
+      "description": "Spotlight cursor-tracking card with gradient border highlight."
+    },
+    {
+      "name": "globe",
+      "type": "registry:ui",
+      "title": "Globe (WebGL)",
+      "description": "Interactive WebGL globe powered by cobe — heavy peer dependency."
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Recharts wrapper with theme-aware color tokens and tooltip primitives."
+    },
+    {
+      "name": "command-menu",
+      "type": "registry:ui",
+      "title": "Command Menu",
+      "description": "AI command palette built on cmdk + base-ui dialog."
+    },
+    {
+      "name": "kpi-card",
+      "type": "registry:ui",
+      "title": "KPI Card",
+      "description": "Dashboard KPI card with trend chevrons and lucide iconography."
+    },
+    {
+      "name": "metric-card",
+      "type": "registry:ui",
+      "title": "Metric Card",
+      "description": "Linear / Vercel / Supabase inspired SaaS dashboard metric tile."
+    },
+    {
+      "name": "nebutra-tokens",
+      "type": "registry:theme",
+      "title": "Nebutra Tokens",
+      "description": "Drops the Nebutra design-system CSS variables (brand, neutral, status, container scale) into globals.css. No TSX."
+    }
+  ]
+}
