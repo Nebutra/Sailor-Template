@@ -1,0 +1,8 @@
+# Nebutra App - Private Dashboard
+# https://app.nebutra.com
+# User content and private data - do not index
+
+User-agent: *
+Disallow: /
+
+# No sitemap - private application
