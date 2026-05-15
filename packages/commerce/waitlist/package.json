@@ -1,0 +1,39 @@
+{
+  "name": "@nebutra/waitlist",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pre-launch waitlist with position tracking, referral codes, and admin management",
+  "type": "module",
+  "nebutra": {
+    "status": "foundation",
+    "productionReady": false,
+    "requires": [
+      "Database adapter (Prisma or in-memory)",
+      "@nebutra/email for confirmation + position update emails"
+    ],
+    "gaps": [
+      "Prisma adapter not implemented — only in-memory store ships",
+      "Email confirmation + position update notifications not wired",
+      "Referral attribution analytics endpoint TODO"
+    ],
+    "featureId": "waitlist",
+    "category": "commerce",
+    "summary": "Pre-launch waitlist with position tracking and referral codes"
+  },
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}
