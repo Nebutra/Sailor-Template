@@ -1,0 +1,70 @@
+{
+  "name": "@nebutra/tenant",
+  "version": "0.1.0",
+  "private": false,
+  "license": "AGPL-3.0",
+  "type": "module",
+  "nebutra": {
+    "status": "foundation",
+    "productionReady": false,
+    "requires": [
+      "Prisma or equivalent DB client for RLS withRls()"
+    ],
+    "gaps": [
+      "Subdomain/JWT resolver strategies scaffolded only",
+      "Schema-per-tenant migration flow pending"
+    ],
+    "featureId": "tenant",
+    "category": "iam",
+    "summary": "Multi-tenancy context — AsyncLocalStorage + RLS + schema isolation"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./isolation": {
+      "types": "./dist/isolation.d.ts",
+      "import": "./dist/isolation.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./middleware": {
+      "types": "./dist/middleware.d.ts",
+      "import": "./dist/middleware.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run --config vitest.config.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nebutra/logger": "workspace:*",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "vitest": "catalog:",
+    "typescript": "catalog:"
+  },
+  "homepage": "https://github.com/Nebutra/Nebutra-Sailor/tree/main/packages/iam/tenant#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/Nebutra-Sailor.git",
+    "directory": "packages/iam/tenant"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/Nebutra-Sailor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
