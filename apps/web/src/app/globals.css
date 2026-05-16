@@ -1,0 +1,196 @@
+/**
+ * Nebutra Web App - Global Styles
+ *
+ * This file imports:
+ * 1. Tailwind CSS v4 (must be first)
+ * 2. Tokens from @nebutra/tokens (single source of truth)
+ * 3. Typography CSS variables from @nebutra/ui (fonts.css)
+ */
+
+/* Tailwind CSS v4 - must be imported first */
+@import "tailwindcss";
+/* Single token source */
+@import "@nebutra/tokens/styles.css";
+/* Typography SSOT — defines --font-* variables */
+@import "@nebutra/ui/typography/fonts.css";
+/* Product-tour theme overrides (driver.js → our tokens) */
+@import "@nebutra/onboarding/styles.css";
+
+/* Scan @nebutra/ui source for Tailwind classes */
+@source "../../../../packages/design/ui/src";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Custom overrides for web app (dashboard) */
+@layer base {
+  /* Custom font configuration */
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+  }
+}
+
+/* Dashboard specific utilities */
+@layer utilities {
+  /* Sidebar transition */
+  .sidebar-transition {
+    transition:
+      width 0.2s ease-in-out,
+      transform 0.2s ease-in-out;
+  }
+
+  /* Content area */
+  .content-area {
+    min-height: calc(100vh - 4rem);
+  }
+
+  /*
+   * Theme playground uses dashboard chrome plus its own tool panels. Its breakpoints
+   * must follow the actual content slot width, not the browser viewport.
+   */
+  .theme-playground-frame {
+    container: theme-playground / inline-size;
+  }
+
+  .theme-playground-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .theme-playground-registry {
+    border-right-width: 0;
+    border-bottom: 1px solid hsl(var(--border) / 0.8);
+  }
+
+  .theme-playground-inspector {
+    border-left-width: 0;
+    border-top: 1px solid hsl(var(--border) / 0.8);
+  }
+
+  .theme-preview-canvas {
+    container: theme-preview / inline-size;
+  }
+
+  .theme-preview-grid,
+  .theme-pricing-grid,
+  .theme-stats-grid {
+    display: grid;
+  }
+
+  .theme-preview-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .theme-pricing-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .theme-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container theme-playground (min-width: 66rem) {
+  .theme-playground-layout {
+    grid-template-columns: minmax(17.5rem, 18rem) minmax(0, 1fr);
+  }
+
+  .theme-playground-registry {
+    border-right: 1px solid hsl(var(--border) / 0.8);
+    border-bottom-width: 0;
+  }
+
+  .theme-playground-inspector {
+    grid-column: 1 / -1;
+    border-left-width: 0;
+    border-top: 1px solid hsl(var(--border) / 0.8);
+  }
+}
+
+@container theme-playground (min-width: 92rem) {
+  .theme-playground-layout {
+    grid-template-columns: minmax(18rem, 19rem) minmax(42rem, 1fr) minmax(20rem, 22rem);
+  }
+
+  .theme-playground-inspector {
+    grid-column: auto;
+    border-left: 1px solid hsl(var(--border) / 0.8);
+    border-top-width: 0;
+  }
+}
+
+@container theme-preview (min-width: 46rem) {
+  .theme-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@container theme-preview (min-width: 66rem) {
+  .theme-preview-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .theme-pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .theme-preview-span-5 {
+    grid-column: span 5 / span 5;
+  }
+
+  .theme-preview-span-7 {
+    grid-column: span 7 / span 7;
+  }
+
+  .theme-preview-span-12 {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Progressive enhancement: route transitions on supporting browsers */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (view-transition-name: page-content) {
+    :root {
+      --dashboard-vt-duration: 260ms;
+      --dashboard-vt-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .content-area {
+      contain: layout paint;
+      view-transition-name: dashboard-content;
+    }
+
+    ::view-transition-old(dashboard-content),
+    ::view-transition-new(dashboard-content) {
+      animation-duration: var(--dashboard-vt-duration);
+      animation-timing-function: var(--dashboard-vt-ease);
+    }
+
+    ::view-transition-old(dashboard-content) {
+      opacity: 0.9;
+    }
+  }
+}
+
+/* Loader animations */
+@keyframes login-success-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
