@@ -1,0 +1,199 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "nebutra-ui",
+  "homepage": "https://ui.nebutra.com",
+  "items": [
+    {
+      "name": "bento-grid",
+      "type": "registry:ui",
+      "title": "Bento Grid",
+      "description": "Responsive bento-style feature grid with hover-reveal CTAs."
+    },
+    {
+      "name": "pricing-card",
+      "type": "registry:ui",
+      "title": "Pricing Card",
+      "description": "Composable pricing card with glass header, plan badges, price slots."
+    },
+    {
+      "name": "feature-card",
+      "type": "registry:ui",
+      "title": "Feature Card",
+      "description": "Feature card with corner bracket decorators, header, body, and dual-mode imagery."
+    },
+    {
+      "name": "animate-in",
+      "type": "registry:ui",
+      "title": "AnimateIn",
+      "description": "Entrance animation primitive with emerge / flow / fade presets, lazy-loaded framer-motion."
+    },
+    {
+      "name": "magic-card",
+      "type": "registry:ui",
+      "title": "Magic Card",
+      "description": "Spotlight cursor-tracking card with gradient border highlight."
+    },
+    {
+      "name": "globe",
+      "type": "registry:ui",
+      "title": "Globe (WebGL)",
+      "description": "Interactive WebGL globe powered by cobe — heavy peer dependency."
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Recharts wrapper with theme-aware color tokens and tooltip primitives."
+    },
+    {
+      "name": "command-menu",
+      "type": "registry:ui",
+      "title": "Command Menu",
+      "description": "AI command palette built on cmdk + base-ui dialog."
+    },
+    {
+      "name": "kpi-card",
+      "type": "registry:ui",
+      "title": "KPI Card",
+      "description": "Dashboard KPI card with trend chevrons and lucide iconography."
+    },
+    {
+      "name": "metric-card",
+      "type": "registry:ui",
+      "title": "Metric Card",
+      "description": "Linear / Vercel / Supabase inspired SaaS dashboard metric tile."
+    },
+    {
+      "name": "text-shimmer",
+      "type": "registry:ui",
+      "title": "Text Shimmer",
+      "description": "Animated text shimmer used as the streaming-header substrate for the chat tool-family."
+    },
+    {
+      "name": "loading-dots",
+      "type": "registry:ui",
+      "title": "Loading Dots",
+      "description": "Three-dot bouncing loader; reused inside EditTool's approval footer."
+    },
+    {
+      "name": "edit-tool",
+      "type": "registry:ui",
+      "title": "Edit Tool",
+      "description": "Inline AI tool-call rendering for file edits — Cursor / Claude Code-style diff block with optional approval footer."
+    },
+    {
+      "name": "question-tool",
+      "type": "registry:ui",
+      "title": "Question Tool",
+      "description": "Inline AI tool-call rendering of a multi-step questionnaire — single / multi / text question kinds."
+    },
+    {
+      "name": "mcp-tool",
+      "type": "registry:ui",
+      "title": "MCP Tool",
+      "description": "Inline AI tool-call rendering for MCP invocations — verb conjugation, priority-sorted args, expandable output panel."
+    },
+    {
+      "name": "todo-tool",
+      "type": "registry:ui",
+      "title": "Todo Tool",
+      "description": "Flat streaming todo list for the Claude TodoWrite tool — sibling of EditTool / McpTool / SearchTool."
+    },
+    {
+      "name": "search-tool",
+      "type": "registry:ui",
+      "title": "Search Tool",
+      "description": "Inline AI tool-call rendering for search/retrieval results — honest-link rows, scrollable result panel."
+    },
+    {
+      "name": "subagent-tool",
+      "type": "registry:ui",
+      "title": "Subagent Tool",
+      "description": "Single-line status pill for delegated subagent invocations — lightest member of the chat tool-family."
+    },
+    {
+      "name": "file-attachment",
+      "type": "registry:ui",
+      "title": "File Attachment",
+      "description": "Chip / thumbnail display for an attached file in a chat composer or message bubble. Keyboard-accessible removal."
+    },
+    {
+      "name": "expandable-gallery",
+      "type": "registry:ui",
+      "title": "Expandable Gallery",
+      "description": "Fanned photo stack that animates into a responsive grid. Tab/Enter expands; outside-click or Back collapses."
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Base UI Tooltip wrapper for concise, non-interactive explanatory text."
+    },
+    {
+      "name": "context-card",
+      "type": "registry:ui",
+      "title": "Context Card",
+      "description": "Geist-style hover/focus card built on Base UI Popover for compact entity metadata."
+    },
+    {
+      "name": "relative-time-card",
+      "type": "registry:ui",
+      "title": "Relative Time Card",
+      "description": "Short relative-time label with hover popover showing absolute UTC + local time. Adaptive tick cadence."
+    },
+    {
+      "name": "project-banner",
+      "type": "registry:ui",
+      "title": "Project Banner",
+      "description": "Full-width, non-dismissible banner for project-wide states needing resolution. Four severity variants + ARIA live region."
+    },
+    {
+      "name": "browser-mockup",
+      "type": "registry:ui",
+      "title": "Browser",
+      "description": "Geist-style browser chrome around a screenshot or demo. Middle-truncating address bar, aspect-locked image viewport."
+    },
+    {
+      "name": "choicebox",
+      "type": "registry:ui",
+      "title": "Choicebox",
+      "description": "Card-style selection control with radio (single) and checkbox (multi) modes. Roving tabindex + arrow-key navigation."
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "title": "Code Block",
+      "description": "Syntax-highlighted code viewer with copy + diff lines. Accepts Geist single-file children API or Nebutra multi-file tabs."
+    },
+    {
+      "name": "collapse",
+      "type": "registry:ui",
+      "title": "Collapse",
+      "description": "Geist-style flat Collapse/CollapseGroup API on top of our Accordion. Single, multiple-open, and standalone modes."
+    },
+    {
+      "name": "description",
+      "type": "registry:ui",
+      "title": "Description",
+      "description": "Definition-list metadata block (<dl>/<dt>/<dd>). Title Case key + emphasized value, optional tooltip on the label."
+    },
+    {
+      "name": "entity",
+      "type": "registry:ui",
+      "title": "Entity",
+      "description": "Row of descriptive content paired with one or two controls. Compound Entity / Entity.Content / Entity.List."
+    },
+    {
+      "name": "material",
+      "type": "registry:ui",
+      "title": "Material",
+      "description": "Surface elevation primitive — 8 Geist-style types (base, small/medium/large, tooltip, menu, modal, fullscreen). Picks chrome from the theme."
+    },
+    {
+      "name": "nebutra-tokens",
+      "type": "registry:theme",
+      "title": "Nebutra Tokens",
+      "description": "Drops the Nebutra design-system CSS variables (brand, neutral, status, container scale) into globals.css. No TSX."
+    }
+  ]
+}
