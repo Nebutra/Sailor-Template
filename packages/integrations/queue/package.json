@@ -1,0 +1,89 @@
+{
+  "name": "@nebutra/queue",
+  "version": "0.1.0",
+  "private": false,
+  "license": "AGPL-3.0",
+  "type": "module",
+  "nebutra": {
+    "status": "foundation",
+    "productionReady": false,
+    "requires": [
+      "QSTASH_TOKEN (+ signing keys) for serverless",
+      "Configured QStash dlqFetcher/dlqEndpoint for provider-side DLQ observability",
+      "REDIS_URL for BullMQ self-hosted",
+      "AWS_SQS_QUEUE_URL (+ AWS credentials) for SQS"
+    ],
+    "gaps": [
+      "Worker auto-scaling TODO"
+    ]
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./qstash": {
+      "types": "./dist/providers/qstash.d.ts",
+      "import": "./dist/providers/qstash.js"
+    },
+    "./bullmq": {
+      "types": "./dist/providers/bullmq.d.ts",
+      "import": "./dist/providers/bullmq.js"
+    },
+    "./sqs": {
+      "types": "./dist/providers/sqs.d.ts",
+      "import": "./dist/providers/sqs.js"
+    },
+    "./queuebase": {
+      "types": "./dist/queuebase.d.ts",
+      "import": "./dist/queuebase.js"
+    },
+    "./scheduled": {
+      "types": "./dist/scheduled/index.d.ts",
+      "import": "./dist/scheduled/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.700.0",
+    "@nebutra/logger": "workspace:*",
+    "@upstash/qstash": "^2.7.17",
+    "bullmq": "^5.34.8",
+    "ioredis": "^5.4.2",
+    "zod": "catalog:"
+  },
+  "peerDependencies": {
+    "@nebutra/db": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@nebutra/db": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@nebutra/db": "workspace:*",
+    "typescript": "catalog:"
+  },
+  "homepage": "https://github.com/Nebutra/Nebutra-Sailor/tree/main/packages/integrations/queue#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/Nebutra-Sailor.git",
+    "directory": "packages/integrations/queue"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/Nebutra-Sailor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
