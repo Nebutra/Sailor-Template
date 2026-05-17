@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "@nebutra/ui"
+  ],
+  "registryDependencies": [
+    "@nebutra/ui"
+  ],
+  "files": [
+    {
+      "path": "registry/examples/select-demo.tsx",
+      "content": "\"use client\";\n\nimport { Select } from \"@nebutra/ui/primitives\";\n\nconst options = [\n  { value: \"nextjs\", label: \"Next.js\" },\n  { value: \"react\", label: \"React\" },\n  { value: \"sveltekit\", label: \"SvelteKit\" },\n] as const;\n\nexport function SelectDemo() {\n  return (\n    <div className=\"w-full max-w-[var(--select-demo-width)] [--select-demo-width:240px]\">\n      <Select label=\"Framework\" placeholder=\"Select a framework\" options={options} />\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
