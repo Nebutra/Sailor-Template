@@ -1,0 +1,212 @@
+{
+  "$schema": "./schemas/ui-governance.schema.json",
+  "policyVersion": "2026.05.v2",
+  "rawTailwindColorBudgets": [
+    {
+      "surface": "landing-marketing",
+      "root": "apps/landing-page/src",
+      "extensions": [".tsx"],
+      "excludeContains": ["/(legal)/"],
+      "max": 399
+    },
+    {
+      "surface": "web-app",
+      "root": "apps/web/src",
+      "extensions": [".tsx"],
+      "excludeContains": [],
+      "max": 88
+    }
+  ],
+  "tokenFormatBudget": {
+    "tokenSurfaces": [
+      {
+        "root": "packages/design/ui/src/theme",
+        "extensions": [".ts", ".tsx"]
+      },
+      {
+        "root": "packages/design/theme/themes.css",
+        "extensions": [".css"]
+      }
+    ],
+    "maxHexLiterals": 40,
+    "maxHslLiterals": 1,
+    "minOklchLiterals": 120,
+    "allowedHexFiles": ["packages/design/ui/src/theme/tokens.ts"],
+    "allowedHslFiles": []
+  },
+  "motionBoundary": {
+    "appSurfaces": ["apps/landing-page/src", "apps/web/src"],
+    "allowedFramerMotionImports": [
+      "apps/landing-page/src/components/landing/AnimateIn.tsx",
+      "apps/landing-page/src/components/landing/GlobalEdgeMap.tsx",
+      "apps/landing-page/src/components/landing/ProductDemoSection.tsx",
+      "apps/landing-page/src/app/[lang]/(marketing)/layout.tsx",
+      "apps/landing-page/src/components/landing/agentic-engineering/TerminalSnippet.tsx",
+      "apps/landing-page/src/components/landing/design-system/PipelineCard.tsx",
+      "apps/landing-page/src/components/landing/impact/FrictionlessRouting.tsx",
+      "apps/landing-page/src/components/landing/impact/ImpactHero.tsx",
+      "apps/landing-page/src/components/landing/impact/InfrastructureGrid.tsx",
+      "apps/landing-page/src/components/landing/impact/OrganizationalEvolution.tsx",
+      "apps/landing-page/src/components/landing/navbar/MobileDrawer.tsx",
+      "apps/landing-page/src/components/landing/product-demo/InvoiceCard.tsx",
+      "apps/landing-page/src/components/landing/product-demo/LiveMetricsChart.tsx",
+      "apps/landing-page/src/components/landing/product-demo/WorkspacesVisuals.tsx",
+      "apps/landing-page/src/components/landing/seo-geo/SEOGEOMockup.tsx",
+      "apps/landing-page/src/components/landing/use-cases/UseCasesSection.tsx",
+      "apps/landing-page/src/components/landing/use-cases/mockups/DesignMockup.tsx",
+      "apps/landing-page/src/components/landing/use-cases/mockups/EDAMMockup.tsx",
+      "apps/landing-page/src/components/landing/use-cases/mockups/EnterpriseMockup.tsx",
+      "apps/landing-page/src/components/landing/use-cases/mockups/IPMockup.tsx",
+      "apps/landing-page/src/components/landing/use-cases/mockups/MultimodalMockup.tsx",
+      "apps/landing-page/src/components/landing/use-cases/mockups/OPCMockup.tsx",
+      "packages/design/ui/src/components/animate-in.tsx"
+    ]
+  },
+  "componentTierCoverage": {
+    "primitivesRoot": "packages/design/ui/src/primitives",
+    "tiers": [
+      {
+        "name": "tier-1",
+        "requiredCoverage": 1,
+        "components": [
+          "button",
+          "input",
+          "textarea",
+          "checkbox-group",
+          "combobox",
+          "command-menu",
+          "dialog",
+          "popover",
+          "select",
+          "tabs",
+          "tooltip",
+          "skeleton",
+          "switch"
+        ]
+      }
+    ]
+  },
+  "dependencyBoundaries": {
+    "appSurfaces": ["apps/landing-page/src", "apps/web/src"],
+    "forbiddenImportRegexes": ["^@nebutra\\/[^\\/]+\\/[^\\/]+\\/.+"],
+    "customUiAllowedExports": [
+      ".",
+      "./components",
+      "./hooks",
+      "./icons",
+      "./layout",
+      "./layouts",
+      "./patterns",
+      "./primitives",
+      "./tailwind.preset",
+      "./theme",
+      "./typography",
+      "./typography/fonts.css",
+      "./utils"
+    ]
+  },
+  "dashboardExperience": {
+    "rules": [
+      {
+        "name": "web-dashboard-overview-high-resolution-density",
+        "description": "Dashboard overview must be decision-led, wide-canvas, and compactly granular; it must not regress into a centered welcome page, onboarding billboard, or nested metadata cards.",
+        "file": "apps/web/src/app/[locale]/(app)/page.tsx",
+        "requiredContains": [
+          "CommandCenter",
+          "max-w-[1440px]",
+          "xl:grid-cols-[minmax(0,1fr)_22rem]",
+          "snapshotMeta",
+          "meta.snapshot",
+          "meta.cadence",
+          "meta.tenant",
+          "2xl:grid-cols-4",
+          "empty.noSnapshot"
+        ],
+        "forbiddenContains": [
+          "DashboardHint",
+          "Atmospheric brand glow",
+          "max-w-2xl flex-col items-center",
+          "type MetricMeta",
+          "dailyMeta",
+          "<dl",
+          "text-3xl font-semibold tabular-nums"
+        ]
+      },
+      {
+        "name": "web-dashboard-loading-state-matches-final-ia",
+        "description": "Skeletons must mirror the final dashboard information architecture so loading does not feel like a different product.",
+        "file": "apps/web/src/app/[locale]/(app)/_dashboard-skeletons.tsx",
+        "requiredContains": [
+          "lg:grid-cols-[minmax(0,1fr)_minmax(26rem,34rem)]",
+          "metricCards",
+          "h-28",
+          "space-y-px overflow-hidden"
+        ],
+        "forbiddenContains": ["max-w-2xl space-y-4 text-center", "justify-center"]
+      },
+      {
+        "name": "web-dashboard-recent-sessions-stable-empty-state",
+        "description": "Recent sessions should preserve dashboard density with an honest empty state instead of disappearing and collapsing the main column.",
+        "file": "apps/web/src/components/onboarding/recent-sessions.tsx",
+        "requiredContains": ["emptyTitle", "emptyDescription", "space-y-2", "formatSessionTime"],
+        "forbiddenContains": ["border-dashed", "if (sessions.length === 0) return null"]
+      },
+      {
+        "name": "web-dashboard-getting-started-compact-rail",
+        "description": "Dashboard setup guidance must render as one compact right-rail checklist, not a grid of separate promo cards.",
+        "file": "apps/web/src/components/onboarding/getting-started.tsx",
+        "requiredContains": [
+          "data-tour-id=\"getting-started\"",
+          "divide-y divide-neutral-5",
+          "rounded-[var(--radius-2xl)]"
+        ],
+        "forbiddenContains": [
+          "md:grid-cols-2 xl:grid-cols-1",
+          "rounded-xl border p-3.5",
+          "border-green-6",
+          "border-neutral-6 bg-neutral-1 hover:border-neutral-8"
+        ]
+      },
+      {
+        "name": "web-dashboard-copy-tokenized-for-locales",
+        "description": "Dashboard experience copy must live in shared i18n messages so governance covers English and Chinese routes together.",
+        "file": "packages/platform/i18n/locales/en.json",
+        "requiredContains": [
+          "\"commandCenter\"",
+          "\"snapshot\": \"Snapshot\"",
+          "\"cadence\": \"Cadence\"",
+          "\"tenant\": \"Tenant\"",
+          "\"No recent sessions yet\""
+        ],
+        "forbiddenContains": []
+      },
+      {
+        "name": "web-dashboard-zh-copy-tokenized-for-locales",
+        "description": "Chinese dashboard copy must stay in the shared i18n layer, not hardcoded in app components.",
+        "file": "packages/platform/i18n/locales/zh.json",
+        "requiredContains": [
+          "\"commandCenter\"",
+          "\"snapshot\": \"快照\"",
+          "\"cadence\": \"频率\"",
+          "\"tenant\": \"租户\"",
+          "\"暂无最近会话\""
+        ],
+        "forbiddenContains": []
+      }
+    ]
+  },
+  "budgets": {
+    "rawTailwindColors": {
+      "description": "Raw Tailwind color utilities (bg-slate-*, text-gray-*, etc.) — use semantic tokens instead",
+      "max": 1064,
+      "paths": ["packages/design/ui/src/**", "apps/web/src/**", "apps/landing-page/src/**"],
+      "exclude": ["**/*.stories.*", "**/globals.css"]
+    },
+    "rawTailwindBorderRadius": {
+      "description": "Raw Tailwind border-radius utilities — use var(--radius-*) tokens instead",
+      "max": 556,
+      "paths": ["packages/design/ui/src/**", "apps/web/src/**", "apps/landing-page/src/**"],
+      "exclude": ["**/*.stories.*"]
+    }
+  }
+}
