@@ -1,0 +1,46 @@
+{
+  "name": "@nebutra/theme",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "CSS-only theme engine — Tailwind v4 @theme tokens + data-theme selectors + next-themes re-export",
+  "private": false,
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./registry": "./src/registry.ts",
+    "./registry.json": "./src/registry.json",
+    "./themes.css": "./themes.css"
+  },
+  "scripts": {
+    "prebuild": "corepack pnpm --filter @nebutra/design-tokens build",
+    "build": "node -e \"require('node:fs').copyFileSync('../design-tokens/build/css/themes.generated.css', './themes.css'); console.log('themes.css regenerated from @nebutra/design-tokens')\"",
+    "sync": "corepack pnpm --filter @nebutra/design-tokens build && node -e \"require('node:fs').copyFileSync('../design-tokens/build/css/themes.generated.css', './themes.css')\"",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next-themes": "^0.4.6"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "^19"
+  },
+  "homepage": "https://github.com/Nebutra/Nebutra-Sailor/tree/main/packages/design/theme#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/Nebutra-Sailor.git",
+    "directory": "packages/design/theme"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/Nebutra-Sailor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

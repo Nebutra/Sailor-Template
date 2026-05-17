@@ -1,0 +1,159 @@
+name: Release
+
+# Manual-only: publish is gated on workflow_dispatch. We intentionally do NOT
+# auto-publish on `push: main` so that landing a PR does not surface a release.
+# Run via the Actions tab when ready to cut a release.
+on:
+  workflow_dispatch:
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+  packages: write
+
+env:
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    outputs:
+      published: ${{ steps.changesets.outputs.published }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate Prisma Client
+        run: pnpm db:generate
+
+      - name: Verify release surface
+        run: pnpm verify:release-surface
+
+      - name: Verify changeset graph
+        run: |
+          if find .changeset -maxdepth 1 -name '*.md' ! -name README.md | grep -q .; then
+            pnpm exec changeset status --verbose
+          else
+            echo "No pending changesets; continuing to publish."
+          fi
+
+      - name: Resolve publishable package filters
+        id: release_filters
+        run: |
+          filters="$(node scripts/print-release-filters.mjs)"
+          echo "filters=${filters}" >> "$GITHUB_OUTPUT"
+          echo "$filters"
+
+      - name: Build publishable package graph
+        run: pnpm turbo run build ${{ steps.release_filters.outputs.filters }}
+
+      - name: Typecheck publishable package graph
+        run: pnpm turbo run typecheck ${{ steps.release_filters.outputs.filters }}
+
+      - name: Test publishable package graph
+        run: pnpm turbo run test ${{ steps.release_filters.outputs.filters }}
+
+      - name: Verify scaffold template
+        run: pnpm template:check
+
+      - name: Smoke test CLI bundle
+        run: node packages/ops/cli/dist/index.js --help
+
+      - name: Create Release Pull Request or Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          commit: "chore(release): version packages"
+          title: "chore(release): version packages"
+          version: pnpm version:packages
+          publish: bash ./scripts/release-publish.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TRUSTED_PUBLISHING: ${{ vars.NPM_TRUSTED_PUBLISHING }}
+          NPM_CONFIG_PROVENANCE: "true"
+          LEFTHOOK: "0"
+
+  provenance:
+    name: Artifact Attestation
+    needs: [release]
+    if: needs.release.outputs.published == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@v6
+      - name: Generate SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          format: cyclonedx-json
+          output-file: sbom.cdx.json
+      - name: Attest SBOM
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: sbom.cdx.json
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom.cdx.json
+          retention-days: 90
+
+  github-packages:
+    name: Mirror to GitHub Packages
+    needs: [release]
+    if: needs.release.outputs.published == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@nebutra"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify release surface
+        run: pnpm verify:release-surface
+
+      - name: Publish scoped packages to GitHub Packages
+        run: bash ./scripts/release-publish-github-packages.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
