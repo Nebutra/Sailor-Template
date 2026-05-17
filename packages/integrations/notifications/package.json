@@ -1,0 +1,75 @@
+{
+  "name": "@nebutra/notifications",
+  "version": "0.1.0",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "nebutra": {
+    "status": "foundation",
+    "productionReady": false,
+    "requires": [
+      "NOVU_API_KEY (managed)",
+      "or Prisma-backed direct notification stores"
+    ],
+    "gaps": [
+      "Novu provider adapter stubs — no batching, retries limited",
+      "Direct production mode requires a database migration and generated Prisma client",
+      "Provider health telemetry still requires an external monitor; direct delivery attempts now expose retry telemetry"
+    ]
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./novu": {
+      "types": "./dist/providers/novu.d.ts",
+      "import": "./dist/providers/novu.js"
+    },
+    "./knock": {
+      "types": "./dist/providers/knock.d.ts",
+      "import": "./dist/providers/knock.js"
+    },
+    "./direct": {
+      "types": "./dist/providers/direct.d.ts",
+      "import": "./dist/providers/direct.js"
+    },
+    "./prisma": {
+      "types": "./dist/prisma.d.ts",
+      "import": "./dist/prisma.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nebutra/logger": "workspace:*",
+    "@novu/node": "^2.0.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "homepage": "https://github.com/Nebutra/Nebutra-Sailor/tree/main/packages/integrations/notifications#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/Nebutra-Sailor.git",
+    "directory": "packages/integrations/notifications"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/Nebutra-Sailor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
