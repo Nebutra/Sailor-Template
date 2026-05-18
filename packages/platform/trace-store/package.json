@@ -1,0 +1,45 @@
+{
+  "name": "@nebutra/trace-store",
+  "version": "0.1.0",
+  "description": "Async trace emit layer for agent, tool, and LLM spans",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "nebutra": {
+    "featureId": "trace-store",
+    "category": "platform",
+    "summary": "Batched trace emitter over the shared telemetry layer"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nebutra/errors": "workspace:*",
+    "@nebutra/logger": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "homepage": "https://github.com/Nebutra/Nebutra-Sailor/tree/main/packages/platform/trace-store#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/Nebutra-Sailor.git",
+    "directory": "packages/platform/trace-store"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/Nebutra-Sailor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
