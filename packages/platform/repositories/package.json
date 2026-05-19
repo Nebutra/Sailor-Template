@@ -1,0 +1,16 @@
+{
+  "name": "@nebutra/repositories",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@nebutra/db": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "^4.0.18"
+  },
+  "license": "AGPL-3.0-only"
+}
