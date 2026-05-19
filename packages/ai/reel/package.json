@@ -1,0 +1,81 @@
+{
+  "name": "@nebutra/reel",
+  "version": "1.0.0",
+  "description": "Typed node-graph dataflow for generative-media production: versioned IO envelope, multi-transport execution, storyboard pipeline",
+  "private": false,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "nebutra": {
+    "featureId": "reel",
+    "category": "ai",
+    "surface": "media-graph",
+    "summary": "Node-graph dataflow + storyboard pipeline for generative media"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./transport": "./src/transport/index.ts",
+    "./storyboard": "./src/storyboard/index.ts",
+    "./store/memory": "./src/store/memory.ts",
+    "./canvas": "./src/canvas/index.ts",
+    "./canvas/binding": "./src/canvas/binding.ts"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nebutra/graph-model": "workspace:*",
+    "@nebutra/logger": "workspace:*",
+    "@nebutra/tenant-store": "workspace:*"
+  },
+  "peerDependencies": {
+    "@nebutra/agents": "workspace:*",
+    "@nebutra/icons": "workspace:*",
+    "@nebutra/ui": "workspace:*",
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "@nebutra/agents": {
+      "optional": true
+    },
+    "@nebutra/icons": {
+      "optional": true
+    },
+    "@nebutra/ui": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@nebutra/agents": "workspace:*",
+    "@nebutra/icons": "workspace:*",
+    "@nebutra/ui": "workspace:*",
+    "@testing-library/react": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "jsdom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "^4.0.18"
+  },
+  "homepage": "https://github.com/Nebutra/Nebutra-Sailor/tree/main/packages/ai/reel#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/Nebutra-Sailor.git",
+    "directory": "packages/ai/reel"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/Nebutra-Sailor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
