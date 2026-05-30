@@ -1,0 +1,198 @@
+"use client";
+
+import { create } from "zustand";
+import { createJSONStorage, persist } from "zustand/middleware";
+import { useShallow } from "zustand/react/shallow";
+
+export type AppearanceAccent =
+  | "default"
+  | "blue"
+  | "cyan"
+  | "violet"
+  | "pink"
+  | "amber"
+  | "green"
+  | "red";
+
+export type AppearanceMotion = "system" | "on" | "off";
+
+export type AppearanceUiFontFamily = "system" | "geist" | "inter" | "sf";
+
+export type AppearanceCodeFontFamily = "system" | "geist-mono" | "sf-mono" | "jetbrains-mono";
+
+export type AppearanceDiffMarkers = "color" | "plusminus";
+
+export type AppearanceState = {
+  accent: AppearanceAccent;
+  uiFontSize: number;
+  codeFontSize: number;
+  motion: AppearanceMotion;
+  transparency: boolean;
+  backgroundColor: string | null;
+  foregroundColor: string | null;
+  uiFontFamily: AppearanceUiFontFamily;
+  codeFontFamily: AppearanceCodeFontFamily;
+  contrast: number;
+  pointerCursor: boolean;
+  diffMarkers: AppearanceDiffMarkers;
+  fontSmoothing: boolean;
+};
+
+export const APPEARANCE_STORAGE_KEY = "nebutra:appearance:v1";
+
+export const APPEARANCE_DEFAULTS: AppearanceState = {
+  accent: "default",
+  uiFontSize: 14,
+  codeFontSize: 12,
+  motion: "system",
+  transparency: false,
+  backgroundColor: null,
+  foregroundColor: null,
+  uiFontFamily: "system",
+  codeFontFamily: "geist-mono",
+  contrast: 50,
+  pointerCursor: false,
+  diffMarkers: "color",
+  fontSmoothing: true,
+};
+
+const ACCENT_VALUES: AppearanceAccent[] = [
+  "default",
+  "blue",
+  "cyan",
+  "violet",
+  "pink",
+  "amber",
+  "green",
+  "red",
+];
+
+const MOTION_VALUES: AppearanceMotion[] = ["system", "on", "off"];
+
+const UI_FONT_FAMILY_VALUES: AppearanceUiFontFamily[] = ["system", "geist", "inter", "sf"];
+
+const CODE_FONT_FAMILY_VALUES: AppearanceCodeFontFamily[] = [
+  "system",
+  "geist-mono",
+  "sf-mono",
+  "jetbrains-mono",
+];
+
+const DIFF_MARKER_VALUES: AppearanceDiffMarkers[] = ["color", "plusminus"];
+
+export const UI_FONT_STACKS: Record<AppearanceUiFontFamily, string> = {
+  system: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`,
+  geist: `'Geist', -apple-system, sans-serif`,
+  inter: `'Inter', -apple-system, sans-serif`,
+  sf: `'SF Pro Text', -apple-system, sans-serif`,
+};
+
+export const CODE_FONT_STACKS: Record<AppearanceCodeFontFamily, string> = {
+  system: `ui-monospace, SFMono-Regular, Menlo, monospace`,
+  "geist-mono": `'Geist Mono', ui-monospace, monospace`,
+  "sf-mono": `'SF Mono', ui-monospace, monospace`,
+  "jetbrains-mono": `'JetBrains Mono', ui-monospace, monospace`,
+};
+
+const HEX_RE = /^#[0-9a-fA-F]{6}$/;
+
+function clampFontSize(value: unknown, min: number, max: number, fallback: number): number {
+  const n = typeof value === "number" ? value : Number(value);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.min(max, Math.max(min, Math.round(n)));
+}
+
+function sanitizeHexColor(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  return HEX_RE.test(value) ? value : null;
+}
+
+function clampContrast(value: unknown): number {
+  const n = typeof value === "number" ? value : Number(value);
+  if (!Number.isFinite(n)) return APPEARANCE_DEFAULTS.contrast;
+  return Math.min(100, Math.max(0, Math.round(n)));
+}
+
+function sanitize(raw: unknown): AppearanceState {
+  if (!raw || typeof raw !== "object") return APPEARANCE_DEFAULTS;
+  const r = raw as Record<string, unknown>;
+  const accent = ACCENT_VALUES.includes(r.accent as AppearanceAccent)
+    ? (r.accent as AppearanceAccent)
+    : APPEARANCE_DEFAULTS.accent;
+  const motion = MOTION_VALUES.includes(r.motion as AppearanceMotion)
+    ? (r.motion as AppearanceMotion)
+    : APPEARANCE_DEFAULTS.motion;
+  const uiFontFamily = UI_FONT_FAMILY_VALUES.includes(r.uiFontFamily as AppearanceUiFontFamily)
+    ? (r.uiFontFamily as AppearanceUiFontFamily)
+    : APPEARANCE_DEFAULTS.uiFontFamily;
+  const codeFontFamily = CODE_FONT_FAMILY_VALUES.includes(
+    r.codeFontFamily as AppearanceCodeFontFamily,
+  )
+    ? (r.codeFontFamily as AppearanceCodeFontFamily)
+    : APPEARANCE_DEFAULTS.codeFontFamily;
+  const diffMarkers = DIFF_MARKER_VALUES.includes(r.diffMarkers as AppearanceDiffMarkers)
+    ? (r.diffMarkers as AppearanceDiffMarkers)
+    : APPEARANCE_DEFAULTS.diffMarkers;
+  return {
+    accent,
+    motion,
+    uiFontSize: clampFontSize(r.uiFontSize, 12, 18, APPEARANCE_DEFAULTS.uiFontSize),
+    codeFontSize: clampFontSize(r.codeFontSize, 10, 18, APPEARANCE_DEFAULTS.codeFontSize),
+    transparency:
+      typeof r.transparency === "boolean" ? r.transparency : APPEARANCE_DEFAULTS.transparency,
+    backgroundColor: sanitizeHexColor(r.backgroundColor),
+    foregroundColor: sanitizeHexColor(r.foregroundColor),
+    uiFontFamily,
+    codeFontFamily,
+    contrast: r.contrast === undefined ? APPEARANCE_DEFAULTS.contrast : clampContrast(r.contrast),
+    pointerCursor:
+      typeof r.pointerCursor === "boolean" ? r.pointerCursor : APPEARANCE_DEFAULTS.pointerCursor,
+    diffMarkers,
+    fontSmoothing:
+      typeof r.fontSmoothing === "boolean" ? r.fontSmoothing : APPEARANCE_DEFAULTS.fontSmoothing,
+  };
+}
+
+type AppearanceUpdate = (patch: Partial<AppearanceState>) => void;
+
+type AppearanceStore = AppearanceState & { update: AppearanceUpdate };
+
+export const useAppearanceStore = create<AppearanceStore>()(
+  persist(
+    (set, get) => ({
+      ...APPEARANCE_DEFAULTS,
+      // Re-run sanitize on every patch so partial updates respect bounds + unions.
+      update: (patch) => set(sanitize({ ...get(), ...patch })),
+    }),
+    {
+      name: APPEARANCE_STORAGE_KEY,
+      version: 1,
+      storage: createJSONStorage(() => localStorage),
+      // Strip the action before persisting; sanitize the rest.
+      partialize: ({ update: _omit, ...state }) => state,
+      // Custom merge mirrors the old sanitize-on-read behavior — corrupt or
+      // partial snapshots fall back to defaults field-by-field.
+      merge: (persisted, current) => ({ ...current, ...sanitize(persisted) }),
+      // SSR-safe: defer rehydration to AppearanceVarsProvider's mount effect
+      // (it calls useAppearanceStore.persist.rehydrate()) so the server and
+      // first client render agree on APPEARANCE_DEFAULTS — no hydration flash.
+      skipHydration: true,
+    },
+  ),
+);
+
+const selectState = (s: AppearanceStore): AppearanceState => {
+  const { update: _omit, ...state } = s;
+  return state;
+};
+
+/**
+ * Back-compat tuple hook. Returns [state, update] so the appearance
+ * primitives stay unchanged. `state` is shallow-memoized; `update` is a
+ * stable action reference.
+ */
+export function useAppearance(): [AppearanceState, AppearanceUpdate] {
+  const state = useAppearanceStore(useShallow(selectState));
+  const update = useAppearanceStore((s) => s.update);
+  return [state, update];
+}
