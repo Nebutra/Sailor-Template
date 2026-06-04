@@ -1,0 +1,178 @@
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { describe, expect, it } from "vitest";
+import {
+  DEPLOYABLE_SERVICES,
+  deployTargetEnvKey,
+  getDefaultDeployTargets,
+  resolveDeployTarget,
+  TARGETS_BY_SURFACE,
+} from "../../packages/ops/preset/src/deploy-target";
+
+const ROOT = process.cwd();
+const ADR_PATH = resolve(ROOT, "docs/architecture/2026-06-04-production-runtime-closure.md");
+const GATEWAY_INDEX_PATH = resolve(ROOT, "backends/gateway/src/index.ts");
+const GATEWAY_NODE_PATH = resolve(ROOT, "backends/gateway/src/node.ts");
+const GATEWAY_WORKER_PATH = resolve(ROOT, "backends/gateway/src/worker.ts");
+const GATEWAY_WRANGLER_PATH = resolve(ROOT, "backends/gateway/wrangler.toml");
+const GATEWAY_AI_ROUTES_PATH = resolve(ROOT, "backends/gateway/src/routes/ai/index.ts");
+const GATEWAY_AI_ORIGIN_HEADERS_PATH = resolve(
+  ROOT,
+  "backends/gateway/src/routes/ai/origin-headers.ts",
+);
+const DEPLOY_GATEWAY_WORKFLOW_PATH = resolve(ROOT, ".github/workflows/deploy-gateway.yml");
+const DEPLOY_ORIGIN_ECS_WORKFLOW_PATH = resolve(ROOT, ".github/workflows/deploy-origin-ecs.yml");
+const ORIGIN_COMPOSE_PATH = resolve(ROOT, "infra/runtime/docker/docker-compose.origin.yml");
+
+describe("production runtime closure", () => {
+  it("defaults to the recommended Worker Gateway + ECS Origin topology without locking providers", () => {
+    expect(getDefaultDeployTargets()).toMatchObject({
+      web: "vercel",
+      "landing-page": "vercel",
+      gateway: "cloudflare-workers",
+      "python-ai": "ecs-docker",
+    });
+
+    expect(TARGETS_BY_SURFACE.edgeGateway).toEqual(
+      expect.arrayContaining([
+        "cloudflare-workers",
+        "vercel-functions",
+        "ecs-docker",
+        "k8s",
+        "aws",
+        "railway",
+      ]),
+    );
+    expect(TARGETS_BY_SURFACE.frontend).toEqual(
+      expect.arrayContaining(["vercel", "standalone", "cloudflare-pages", "railway"]),
+    );
+    expect(TARGETS_BY_SURFACE.originBackend).toEqual(["ecs-docker", "k8s", "aws", "railway"]);
+  });
+
+  it("keeps deploy targets scoped to apps and deployable backends, not domain packages", () => {
+    expect(DEPLOYABLE_SERVICES).not.toContain("@nebutra/db");
+    expect(DEPLOYABLE_SERVICES).not.toContain("packages/platform/db");
+    expect(() => resolveDeployTarget("@nebutra/cache", {})).toThrow(/Unknown deploy service/);
+  });
+
+  it("uses per-service selector keys so one service can switch providers without moving the whole stack", () => {
+    expect(deployTargetEnvKey("gateway")).toBe("DEPLOY_TARGET_GATEWAY");
+    expect(deployTargetEnvKey("python-ai")).toBe("DEPLOY_TARGET_PYTHON_AI");
+    expect(resolveDeployTarget("gateway", { DEPLOY_TARGET_GATEWAY: "k8s" })).toBe("k8s");
+    expect(resolveDeployTarget("python-ai", { DEPLOY_TARGET_PYTHON_AI: "aws" })).toBe("aws");
+  });
+
+  it("records the deployment closure ADR with defaults, switchability, and non-deploying packages", () => {
+    expect(existsSync(ADR_PATH), `${ADR_PATH} must exist`).toBe(true);
+    const adr = readFileSync(ADR_PATH, "utf8");
+
+    expect(adr).toContain("Cloudflare Workers");
+    expect(adr).toContain("ECS Origin");
+    expect(adr).toContain("provider-switchable");
+    expect(adr).toContain("DEPLOY_TARGET_GATEWAY");
+    expect(adr).toContain("packages do not deploy");
+  });
+
+  it("keeps the gateway Hono app importable by Workers without starting the Node server", () => {
+    const index = readFileSync(GATEWAY_INDEX_PATH, "utf8");
+    expect(index).not.toContain("@hono/node-server");
+    expect(index).not.toContain("serve({");
+    expect(index).not.toContain('process.on("SIGTERM"');
+    expect(index).toContain("export default app");
+
+    expect(existsSync(GATEWAY_NODE_PATH), `${GATEWAY_NODE_PATH} must exist`).toBe(true);
+    const nodeEntry = readFileSync(GATEWAY_NODE_PATH, "utf8");
+    expect(nodeEntry).toContain("@hono/node-server");
+    expect(nodeEntry).toContain("serve({ fetch: app.fetch");
+
+    expect(existsSync(GATEWAY_WORKER_PATH), `${GATEWAY_WORKER_PATH} must exist`).toBe(true);
+    const workerEntry = readFileSync(GATEWAY_WORKER_PATH, "utf8");
+    expect(workerEntry).not.toContain("@hono/node-server");
+    expect(workerEntry).toContain("export default");
+    expect(workerEntry).toContain("fetch(request");
+
+    expect(existsSync(GATEWAY_WRANGLER_PATH), `${GATEWAY_WRANGLER_PATH} must exist`).toBe(true);
+    const wrangler = readFileSync(GATEWAY_WRANGLER_PATH, "utf8");
+    expect(wrangler).toContain('main = "src/worker.ts"');
+    expect(wrangler).toContain('compatibility_flags = ["nodejs_compat"]');
+    expect(wrangler).toContain("[observability]");
+    expect(wrangler).toContain("head_sampling_rate = 1");
+  });
+
+  it("gates the Cloudflare Workers gateway deploy behind the per-service selector", () => {
+    expect(
+      existsSync(DEPLOY_GATEWAY_WORKFLOW_PATH),
+      `${DEPLOY_GATEWAY_WORKFLOW_PATH} must exist`,
+    ).toBe(true);
+    const workflow = readFileSync(DEPLOY_GATEWAY_WORKFLOW_PATH, "utf8");
+
+    expect(workflow).toContain("DEPLOY_TARGET_GATEWAY");
+    expect(workflow).toContain("cloudflare-workers");
+    expect(workflow).toContain("cloudflare/wrangler-action");
+    expect(workflow).toContain("CLOUDFLARE_API_TOKEN secret is not set");
+    expect(workflow).toContain("CLOUDFLARE_ACCOUNT_ID secret is not set");
+    expect(workflow).toContain("backends/gateway");
+    expect(workflow).not.toContain("DEPLOY_TARGET == '");
+  });
+
+  it("forwards request correlation headers from the Worker gateway to ECS origin", () => {
+    const routes = readFileSync(GATEWAY_AI_ROUTES_PATH, "utf8");
+    const headers = readFileSync(GATEWAY_AI_ORIGIN_HEADERS_PATH, "utf8");
+
+    expect(headers).toContain("x-nebutra-request-id");
+    expect(headers).toContain("x-request-id");
+    expect(headers).toContain("x-nebutra-client-ip");
+    expect(routes).toContain('requestId: c.get("requestId")');
+    expect(routes).toContain("resolveAiOriginClientIp(c.req.raw.headers)");
+  });
+
+  it("gates the ECS origin deploy behind the python-ai per-service selector", () => {
+    expect(
+      existsSync(DEPLOY_ORIGIN_ECS_WORKFLOW_PATH),
+      `${DEPLOY_ORIGIN_ECS_WORKFLOW_PATH} must exist`,
+    ).toBe(true);
+    const workflow = readFileSync(DEPLOY_ORIGIN_ECS_WORKFLOW_PATH, "utf8");
+
+    expect(workflow).toContain("DEPLOY_TARGET_PYTHON_AI");
+    expect(workflow).toContain("ecs-docker");
+    expect(workflow).toContain("docker compose");
+    expect(workflow).toContain("docker-compose.origin.yml");
+    expect(workflow).toContain("CELERY_BROKER_URL");
+    expect(workflow).toContain(
+      "docker compose -f docker-compose.origin.yml up -d ai-origin ai-worker",
+    );
+    expect(workflow).toContain(
+      "docker compose -f docker-compose.origin.yml ps ai-origin ai-worker",
+    );
+    expect(workflow).toContain("backends/python/ai");
+    expect(workflow).not.toContain("backends/gateway");
+    expect(workflow).not.toContain("DEPLOY_TARGET_GATEWAY");
+  });
+
+  it("defines an ECS origin compose manifest for the FastAPI python-ai service", () => {
+    expect(existsSync(ORIGIN_COMPOSE_PATH), `${ORIGIN_COMPOSE_PATH} must exist`).toBe(true);
+    const compose = readFileSync(ORIGIN_COMPOSE_PATH, "utf8");
+
+    expect(compose).toContain("ai-origin");
+    expect(compose).toContain("ai-worker");
+    expect(compose).toContain("ai-beat");
+    expect(compose).toContain("nebutra-ai");
+    expect(compose).toContain("GATEWAY_SHARED_SECRET");
+    expect(compose).toContain("uvicorn app.main:app --host 0.0.0.0 --port 8000");
+    expect(compose).toContain("celery -A app.workers.celery_app");
+    expect(compose).toContain("--concurrency=$${CELERY_WORKER_CONCURRENCY:-1}");
+    expect(compose).toContain("--prefetch-multiplier=$${CELERY_PREFETCH_MULTIPLIER:-1}");
+    expect(compose).toContain("8000:8000");
+    expect(compose).not.toContain("api-gateway");
+    expect(compose).not.toContain("landing-page");
+  });
+
+  it("documents the Celery origin runtime in the Python AI env example", () => {
+    const envExample = readFileSync(resolve(ROOT, "backends/python/ai/.env.example"), "utf8");
+
+    expect(envExample).toContain("CELERY_BROKER_URL=");
+    expect(envExample).toContain("CELERY_RESULT_BACKEND=");
+    expect(envExample).toContain("CELERY_WORKER_CONCURRENCY=1");
+    expect(envExample).toContain("CELERY_PREFETCH_MULTIPLIER=1");
+  });
+});
