@@ -1,0 +1,273 @@
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  Input,
+  useCopyToClipboard,
+} from "@nebutra/ui/primitives";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+export interface CreatedApiKey {
+  key: string;
+  id: string;
+  name: string;
+  keyPrefix: string;
+  scopes: string[];
+  rateLimitRps: number;
+  expiresAt: string | null;
+  lastUsedAt: string | null;
+  createdAt: string;
+}
+
+export interface CreateApiKeyInput {
+  name: string;
+  scopes: string[];
+}
+
+interface CreateApiKeyDialogProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  onCreate: (input: CreateApiKeyInput) => Promise<CreatedApiKey>;
+  availableScopes?: string[];
+  labels?: {
+    title?: string;
+    description?: string;
+    nameLabel?: string;
+    namePlaceholder?: string;
+    scopesLabel?: string;
+    submit?: string;
+    submitting?: string;
+    close?: string;
+    successWarning?: string;
+    copy?: string;
+    copied?: string;
+    confirmClose?: string;
+  };
+}
+
+const DEFAULT_SCOPES = ["read", "write", "admin"];
+
+const apiKeyFormSchema = z.object({
+  name: z.string().trim().min(1, "Name is required.").max(64),
+  scopes: z.array(z.string()),
+});
+type ApiKeyFormValues = z.infer<typeof apiKeyFormSchema>;
+
+export function CreateApiKeyDialog({
+  open,
+  onOpenChange,
+  onCreate,
+  availableScopes = DEFAULT_SCOPES,
+  labels = {},
+}: CreateApiKeyDialogProps) {
+  const form = useForm<ApiKeyFormValues>({
+    resolver: zodResolver(apiKeyFormSchema),
+    defaultValues: { name: "", scopes: [] },
+  });
+  const [created, setCreated] = useState<CreatedApiKey | null>(null);
+  const { copied, copy } = useCopyToClipboard({ timeout: 2000, showToast: false });
+
+  // Reset internal state when the dialog re-opens
+  useEffect(() => {
+    if (open) {
+      form.reset({ name: "", scopes: [] });
+      setCreated(null);
+      // Note: copied state from useCopyToClipboard auto-resets after 2000ms;
+      // a manual reset is not available from the hook.
+    }
+  }, [open, form]);
+
+  if (!open) return null;
+
+  const text = {
+    title: labels.title ?? "Create API key",
+    description:
+      labels.description ??
+      "API keys let external systems talk to Nebutra on your behalf. Treat them like passwords.",
+    nameLabel: labels.nameLabel ?? "Name",
+    namePlaceholder: labels.namePlaceholder ?? "e.g. Production backend",
+    scopesLabel: labels.scopesLabel ?? "Scopes",
+    submit: labels.submit ?? "Create key",
+    submitting: labels.submitting ?? "Creating…",
+    close: labels.close ?? "Close",
+    successWarning: labels.successWarning ?? "This key appears once. Store it before closing.",
+    copy: labels.copy ?? "Copy",
+    copied: labels.copied ?? "Copied",
+    confirmClose: labels.confirmClose ?? "Closing hides this key forever. Make sure it is stored.",
+  };
+
+  const submitting = form.formState.isSubmitting;
+
+  async function submit(values: ApiKeyFormValues) {
+    try {
+      const result = await onCreate({ name: values.name.trim(), scopes: values.scopes });
+      setCreated(result);
+    } catch (err) {
+      form.setError("root", {
+        message: err instanceof Error ? err.message : "Failed to create key.",
+      });
+    }
+  }
+
+  function toggleScope(scope: string, currentScopes: string[]) {
+    const next = currentScopes.includes(scope)
+      ? currentScopes.filter((s) => s !== scope)
+      : [...currentScopes, scope];
+    form.setValue("scopes", next, { shouldValidate: form.formState.isSubmitted });
+  }
+
+  async function handleCopy() {
+    if (!created) return;
+    await copy(created.key);
+  }
+
+  function attemptClose() {
+    if (created) {
+      const ok = window.confirm(text.confirmClose);
+      if (!ok) return;
+    }
+    onOpenChange(false);
+  }
+
+  const rootError = form.formState.errors.root?.message;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="create-api-key-title"
+    >
+      <div className="w-full max-w-lg rounded-[var(--radius-lg)] border border-[var(--neutral-7)] bg-[var(--neutral-1)] p-6 shadow-xl">
+        <h2
+          id="create-api-key-title"
+          className="mb-1 text-base font-semibold text-[var(--neutral-12)]"
+        >
+          {text.title}
+        </h2>
+        <p className="mb-4 text-sm text-[var(--neutral-11)]">{text.description}</p>
+
+        {created ? (
+          <div className="space-y-4">
+            <div className="rounded-[var(--radius-md)] border border-[var(--amber-6)] bg-[var(--amber-2)] p-4">
+              <p className="mb-2 text-sm font-medium text-[var(--amber-12)]">
+                {text.successWarning}
+              </p>
+              <div className="flex items-center gap-2">
+                <code className="flex-1 break-all rounded bg-[var(--neutral-1)] px-3 py-2 font-mono text-[var(--amber-12)] text-xs shadow-inner">
+                  {created.key}
+                </code>
+                <button
+                  type="button"
+                  onClick={handleCopy}
+                  className="rounded-[var(--radius-md)] border border-[var(--amber-7)] px-3 py-2 text-[var(--amber-12)] text-xs font-medium transition-colors hover:bg-[var(--amber-3)] focus:outline-none focus:ring-2 focus:ring-[var(--amber-8)] focus:ring-offset-1"
+                >
+                  {copied ? text.copied : text.copy}
+                </button>
+              </div>
+            </div>
+            <div className="flex justify-end">
+              <button
+                type="button"
+                onClick={attemptClose}
+                className="rounded-[var(--radius-md)] border border-[var(--neutral-7)] bg-[var(--neutral-1)] px-4 py-2 text-sm font-medium text-[var(--neutral-12)] transition-colors hover:bg-[var(--neutral-2)]"
+              >
+                {text.close}
+              </button>
+            </div>
+          </div>
+        ) : (
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(submit)} className="space-y-4">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem className="space-y-0">
+                    <FormLabel className="mb-1 block text-sm font-medium text-[var(--neutral-12)]">
+                      {text.nameLabel}
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        type="text"
+                        required
+                        maxLength={64}
+                        placeholder={text.namePlaceholder}
+                        disabled={submitting}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="scopes"
+                render={({ field }) => (
+                  <FormItem className="space-y-0">
+                    <fieldset>
+                      <legend className="mb-2 block text-sm font-medium text-[var(--neutral-12)]">
+                        {text.scopesLabel}
+                      </legend>
+                      <div className="grid grid-cols-2 gap-2">
+                        {availableScopes.map((scope) => (
+                          <label
+                            key={scope}
+                            className="flex items-center gap-2 rounded-[var(--radius-md)] border border-[var(--neutral-7)] px-3 py-2 text-sm text-[var(--neutral-12)] transition-colors hover:bg-[var(--neutral-2)]"
+                          >
+                            <input
+                              data-allow-native
+                              type="checkbox"
+                              name="scopes"
+                              value={scope}
+                              checked={field.value.includes(scope)}
+                              onChange={() => toggleScope(scope, field.value)}
+                              disabled={submitting}
+                              className="h-4 w-4 rounded border-[var(--neutral-7)] text-[var(--blue-9)]"
+                            />
+                            <span>{scope}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </fieldset>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {rootError ? <p className="text-sm text-red-11">{rootError}</p> : null}
+
+              <div className="flex items-center justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={attemptClose}
+                  disabled={submitting}
+                  className="rounded-[var(--radius-md)] border border-[var(--neutral-7)] bg-[var(--neutral-1)] px-4 py-2 text-sm font-medium text-[var(--neutral-12)] transition-colors hover:bg-[var(--neutral-2)] disabled:opacity-50"
+                >
+                  {text.close}
+                </button>
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="rounded-[var(--radius-md)] px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+                  style={{ background: "var(--brand-gradient)" }}
+                >
+                  {submitting ? text.submitting : text.submit}
+                </button>
+              </div>
+            </form>
+          </Form>
+        )}
+      </div>
+    </div>
+  );
+}
