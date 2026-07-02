@@ -1,0 +1,65 @@
+{
+  "name": "@nebutra/mcp",
+  "version": "0.1.2",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "nebutra": {
+    "status": "wip",
+    "productionReady": false,
+    "requires": [
+      "@modelcontextprotocol/sdk runtime"
+    ],
+    "gaps": [
+      "No production app integrations",
+      "No production MCP transports beyond HTTP/local seams",
+      "No durable remote tool discovery or app-level integrations"
+    ],
+    "featureId": "mcp",
+    "category": "ai",
+    "surface": "tool-protocol",
+    "summary": "MCP server primitives (Model Context Protocol)"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client/index.ts",
+    "./server": "./src/server/index.ts",
+    "./middleware": "./src/middleware/index.ts"
+  },
+  "bin": {
+    "nebutra-mcp": "./dist/server/contextServer.js",
+    "nebutra-tool-protocol": "./dist/cli.js"
+  },
+  "scripts": {
+    "prepare": "mkdir -p dist/server && test -f dist/server/contextServer.js || echo '#!/usr/bin/env node' > dist/server/contextServer.js",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "@nebutra/capability-kit": "workspace:*",
+    "@nebutra/errors": "workspace:*",
+    "@nebutra/event-log": "workspace:*",
+    "@nebutra/trace-store": "workspace:*",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  },
+  "homepage": "https://github.com/Nebutra/Nebutra-Sailor/tree/main/packages/ai/mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/Nebutra-Sailor.git",
+    "directory": "packages/ai/mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/Nebutra-Sailor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
