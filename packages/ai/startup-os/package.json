@@ -1,0 +1,61 @@
+{
+  "name": "@nebutra/startup-os",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "nebutra": {
+    "status": "wip",
+    "productionReady": false,
+    "surface": "product-orchestration",
+    "requires": [
+      "@nebutra/agent-runtime for orchestration grammar and runtime policy",
+      "@nebutra/agents for injected model execution and fallback routing",
+      "@nebutra/db for persisted startup context",
+      "@nebutra/preset for generated app scaffolds",
+      "@nebutra/ui and @nebutra/icons for shared Startup OS presentation metadata"
+    ],
+    "gaps": [
+      "Dashboard-facing adapters are still wired through app routes",
+      "Product flows still depend on the host app for auth, billing, and tenant lifecycle",
+      "Durable multi-run orchestration is still delegated to adjacent runtime packages",
+      "File and canvas operations are runtime contracts, not a standalone production surface"
+    ],
+    "featureId": "startup-os",
+    "category": "ai",
+    "summary": "Startup OS product orchestration contracts for company context, founder conversation, execution, files, rollout, canvas state, and model-tier decisions"
+  },
+  "main": "./src/compiler.ts",
+  "types": "./src/compiler.ts",
+  "exports": {
+    "./canvas": "./src/canvas.ts",
+    "./compiler": "./src/compiler.ts",
+    "./conversation": "./src/conversation.ts",
+    "./dev-tenant": "./src/dev-tenant.ts",
+    "./execution": "./src/execution.ts",
+    "./feature-flag": "./src/feature-flag.ts",
+    "./files": "./src/files.ts",
+    "./model-tier": "./src/model-tier.ts",
+    "./rollout": "./src/rollout.ts",
+    "./store": "./src/store.ts",
+    "./company-context/*": "./src/company-context/*.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nebutra/agent-runtime": "workspace:*",
+    "@nebutra/agents": "workspace:*",
+    "@nebutra/db": "workspace:*",
+    "@nebutra/icons": "workspace:*",
+    "@nebutra/preset": "workspace:*",
+    "@nebutra/ui": "workspace:*",
+    "ai": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "license": "AGPL-3.0-only"
+}
