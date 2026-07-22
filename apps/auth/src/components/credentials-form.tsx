@@ -1,0 +1,202 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+
+interface CredentialsFormProps {
+  mode: "sign-in" | "sign-up";
+  /** Already-sanitized absolute return URL (computed on the server). */
+  returnTo: string;
+}
+
+const fieldClass =
+  "h-12 w-full rounded-[var(--radius-md)] border border-[var(--neutral-7)] bg-[var(--neutral-1)] px-3 text-[var(--neutral-12)] shadow-none outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue-9)]";
+
+/**
+ * Better Auth email/password form styled like apps/web SignInForm
+ * (neutral token surfaces). Native controls only — no @nebutra/ui runtime
+ * in the standalone ECS bundle (avoids missing workspace module 500s).
+ */
+export function CredentialsForm({ mode, returnTo }: CredentialsFormProps) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    try {
+      const endpoint = mode === "sign-in" ? "/api/auth/sign-in/email" : "/api/auth/sign-up/email";
+      const body =
+        mode === "sign-in"
+          ? { email, password, callbackURL: returnTo }
+          : { email, password, name: name || email.split("@")[0], callbackURL: returnTo };
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify(body),
+      });
+
+      if (!res.ok) {
+        const data = (await res.json().catch(() => null)) as {
+          message?: string;
+          error?: string;
+        } | null;
+        setError(
+          data?.message ||
+            data?.error ||
+            (mode === "sign-in" ? "Sign in failed" : "Sign up failed"),
+        );
+        return;
+      }
+
+      window.location.assign(returnTo);
+    } catch {
+      setError("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const altHref =
+    mode === "sign-in"
+      ? `/sign-up?returnTo=${encodeURIComponent(returnTo)}`
+      : `/sign-in?returnTo=${encodeURIComponent(returnTo)}`;
+
+  return (
+    <div className="w-full">
+      <div className="mb-8">
+        <h1 className="text-3xl font-semibold tracking-tight text-[var(--neutral-12)]">
+          {mode === "sign-in" ? "Log in to Nebutra" : "Create your Nebutra account"}
+        </h1>
+        <p className="mt-4 text-sm leading-6 text-[var(--neutral-10)]">
+          {mode === "sign-in"
+            ? "Choose how you want to sign in."
+            : "One account for every Nebutra app."}
+        </p>
+      </div>
+
+      <form
+        onSubmit={onSubmit}
+        className="flex flex-col gap-5"
+        aria-busy={loading}
+        aria-describedby={error ? "auth-form-error" : undefined}
+      >
+        {mode === "sign-up" ? (
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="auth-name" className="text-sm font-medium text-[var(--neutral-12)]">
+              Name
+            </label>
+            <input
+              id="auth-name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoComplete="name"
+              className={fieldClass}
+              placeholder="Your name"
+            />
+          </div>
+        ) : null}
+
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="auth-email" className="text-sm font-medium text-[var(--neutral-12)]">
+            Email
+          </label>
+          <input
+            id="auth-email"
+            required
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
+            className={fieldClass}
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="auth-password" className="text-sm font-medium text-[var(--neutral-12)]">
+            Password
+          </label>
+          <div className="relative">
+            <input
+              id="auth-password"
+              required
+              type={showPassword ? "text" : "password"}
+              minLength={8}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete={mode === "sign-in" ? "current-password" : "new-password"}
+              className={`${fieldClass} pr-12`}
+              placeholder="Enter your password"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((v) => !v)}
+              aria-label={showPassword ? "Hide password" : "Show password"}
+              aria-pressed={showPassword}
+              className="absolute right-2 top-1/2 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-[var(--radius-md)] text-[var(--neutral-10)] transition-colors hover:bg-[var(--neutral-3)] hover:text-[var(--neutral-12)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue-9)]"
+            >
+              {showPassword ? "Hide" : "Show"}
+            </button>
+          </div>
+        </div>
+
+        {error ? (
+          <p
+            id="auth-form-error"
+            className="rounded-[var(--radius-md)] border border-[color:var(--status-danger,#ef4444)]/30 bg-[color:var(--status-danger,#ef4444)]/10 px-3 py-2 text-sm text-[color:var(--status-danger,#ef4444)]"
+            role="alert"
+            aria-live="polite"
+          >
+            {error}
+          </p>
+        ) : null}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="h-11 w-full rounded-[var(--radius-md)] bg-[var(--neutral-12)] text-sm font-medium text-[var(--neutral-1)] transition-colors hover:bg-[var(--neutral-11)] disabled:cursor-not-allowed disabled:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--blue-9)]"
+        >
+          {loading
+            ? mode === "sign-in"
+              ? "Signing in…"
+              : "Creating account…"
+            : mode === "sign-in"
+              ? "Log in"
+              : "Create account"}
+        </button>
+      </form>
+
+      <p className="mt-8 text-sm text-[var(--neutral-10)]">
+        {mode === "sign-in" ? (
+          <>
+            New to Nebutra?{" "}
+            <Link
+              href={altHref}
+              className="font-medium text-[var(--neutral-12)] underline-offset-4 hover:underline"
+            >
+              Sign up
+            </Link>
+          </>
+        ) : (
+          <>
+            Already have an account?{" "}
+            <Link
+              href={altHref}
+              className="font-medium text-[var(--neutral-12)] underline-offset-4 hover:underline"
+            >
+              Log in
+            </Link>
+          </>
+        )}
+      </p>
+    </div>
+  );
+}
