@@ -1,0 +1,29 @@
+name: Point docs DNS to Vercel
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - name: Diagnose + fix docs routing
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          # Export ZONE for python helpers inside script
+          export ZONE_ID=$(curl -sS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones?name=nebutra.com" \
+            | python3 -c 'import json,sys; r=json.load(sys.stdin).get("result") or []; print(r[0]["id"] if r else "")')
+          export CLOUDFLARE_API_TOKEN
+          bash infra/ops/scripts/point-docs-dns-vercel.sh
+      - name: Smoke (no follow)
+        run: |
+          curl -sSI --max-redirs 0 --max-time 20 https://docs.nebutra.com/en | head -25 || true
+          curl -sSI --max-redirs 0 --max-time 20 https://docs-nebutra.vercel.app/en | head -15 || true
