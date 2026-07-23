@@ -1,0 +1,45 @@
+/**
+ * Router global styles — design-system consumption contract (Tailwind v4)
+ *
+ * 1. tokens CSS variables (@nebutra/tokens)
+ * 2. Tailwind utilities
+ * 3. @source scan of @nebutra/ui (REQUIRED)
+ *
+ * Without @source, CVA classes inside Input/Button/Textarea never enter the
+ * CSS bundle → components render as unstyled native controls (no padding,
+ * square borders). See apps/landing-page and apps/web globals.css.
+ */
+
+@import "tailwindcss";
+@import "@nebutra/tokens/styles.css";
+
+/* Scan design-system primitives for utility classes used by Input/Button/etc. */
+@source "../../../../packages/design/ui/src";
+@source "../../../../packages/design/icons/src";
+
+@custom-variant dark (&:is(.dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01" on, "cv11" on;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+::selection {
+  background: color-mix(in srgb, hsl(var(--primary)) 28%, transparent);
+}
