@@ -1,0 +1,14 @@
+// @brand-exempt: health payload defaults for production hostnames
+export const dynamic = "force-dynamic";
+
+export function GET() {
+  const origin =
+    process.env.NEXT_PUBLIC_AUTH_URL || process.env.BETTER_AUTH_URL || "https://auth.nebutra.com";
+  return Response.json({
+    service: "nebutra-auth-center",
+    status: "ok",
+    origin: origin.replace(/\/$/, ""),
+    role: "login-center",
+    idp: process.env.OIDC_ISSUER || "https://sso.nebutra.com",
+  });
+}
