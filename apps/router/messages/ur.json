@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Router — API مارکیٹ پلیس",
+    "titleTemplate": "%s | {brandName} Router",
+    "description": "تمام ماڈلز کی API مارکیٹ پلیس · استعمال کے مطابق ادائیگی · کیز اور والیٹ کا انتظام · فوری آزمائش۔"
+  },
+  "admin": {
+    "dashboard": "Overview",
+    "keys": "API Keys",
+    "wallet": "Wallet",
+    "docs": "Docs",
+    "title": "Admin",
+    "backToMarket": "مارکیٹ واپس جائیں",
+    "quickUse": "Quick use"
+  },
+  "chrome": {
+    "searchPlaceholder": "آپ AI کے ساتھ کیا کرنا چاہتے ہیں؟",
+    "search": "Search",
+    "locale": "Language",
+    "currency": "Currency",
+    "collapseSidebar": "سائیڈ بار بند کریں",
+    "expandSidebar": "سائیڈ بار کھولیں",
+    "home": "Home",
+    "adminConsole": "Admin",
+    "quickUse": "Quick use",
+    "support": "Support",
+    "apiDocs": "API docs",
+    "integrationHelp": "انٹیگریشن گائیڈ",
+    "aiRecommend": "AI picks",
+    "market": "Market",
+    "usageTitle": "Quick use"
+  },
+  "channels": {
+    "app": "App market",
+    "api": "API market",
+    "models": "ماڈل کیٹلاگ",
+    "client": "Client"
+  },
+  "market": {
+    "new": "New",
+    "hot": "Hot",
+    "forYou": "For you",
+    "grid": "Grid",
+    "list": "List",
+    "apiShelf": "API shelf",
+    "toolShelf": "Tool shelf"
+  }
+}

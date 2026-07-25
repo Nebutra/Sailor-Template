@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Router — API मार्केटप्लेस",
+    "titleTemplate": "%s | {brandName} Router",
+    "description": "सभी-मॉडल API मार्केटप्लेस · उपयोग के अनुसार भुगतान · कुंजियाँ और वॉलेट प्रबंधित करें · त्वरित परीक्षण।"
+  },
+  "admin": {
+    "dashboard": "Overview",
+    "keys": "API Keys",
+    "wallet": "Wallet",
+    "docs": "Docs",
+    "title": "Admin",
+    "backToMarket": "मार्केट पर वापस जाएं",
+    "quickUse": "Quick use"
+  },
+  "chrome": {
+    "searchPlaceholder": "आप AI के साथ क्या करना चाहते हैं?",
+    "search": "Search",
+    "locale": "Language",
+    "currency": "Currency",
+    "collapseSidebar": "साइडबार संकुचित करें",
+    "expandSidebar": "साइडबार विस्तारित करें",
+    "home": "Home",
+    "adminConsole": "Admin",
+    "quickUse": "Quick use",
+    "support": "Support",
+    "apiDocs": "API docs",
+    "integrationHelp": "एकीकरण गाइड",
+    "aiRecommend": "AI picks",
+    "market": "Market",
+    "usageTitle": "Quick use"
+  },
+  "channels": {
+    "app": "App market",
+    "api": "API market",
+    "models": "मॉडल कैटलॉग",
+    "client": "Client"
+  },
+  "market": {
+    "new": "New",
+    "hot": "Hot",
+    "forYou": "For you",
+    "grid": "Grid",
+    "list": "List",
+    "apiShelf": "API shelf",
+    "toolShelf": "Tool shelf"
+  }
+}

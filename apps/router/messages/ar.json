@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Router — سوق واجهات برمجة التطبيقات",
+    "titleTemplate": "%s | {brandName} Router",
+    "description": "سوق واجهات برمجة التطبيقات لجميع النماذج · ادفع حسب الاستخدام · إدارة المفاتيح والمحفظة · تجربة سريعة."
+  },
+  "admin": {
+    "dashboard": "Overview",
+    "keys": "API Keys",
+    "wallet": "Wallet",
+    "docs": "Docs",
+    "title": "Admin",
+    "backToMarket": "العودة إلى السوق",
+    "quickUse": "Quick use"
+  },
+  "chrome": {
+    "searchPlaceholder": "ماذا تريد أن تفعل بالذكاء الاصطناعي؟",
+    "search": "Search",
+    "locale": "Language",
+    "currency": "Currency",
+    "collapseSidebar": "إخفاء الشريط الجانبي",
+    "expandSidebar": "إظهار الشريط الجانبي",
+    "home": "Home",
+    "adminConsole": "Admin",
+    "quickUse": "Quick use",
+    "support": "Support",
+    "apiDocs": "API docs",
+    "integrationHelp": "دليل التكامل",
+    "aiRecommend": "AI picks",
+    "market": "Market",
+    "usageTitle": "Quick use"
+  },
+  "channels": {
+    "app": "App market",
+    "api": "API market",
+    "models": "كتالوج النماذج",
+    "client": "Client"
+  },
+  "market": {
+    "new": "New",
+    "hot": "Hot",
+    "forYou": "For you",
+    "grid": "Grid",
+    "list": "List",
+    "apiShelf": "API shelf",
+    "toolShelf": "Tool shelf"
+  }
+}

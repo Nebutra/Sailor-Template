@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Router — API-markkinapaikka",
+    "titleTemplate": "%s | {brandName} Router",
+    "description": "Kaikkien mallien API-markkinapaikka · maksa käytön mukaan · hallinnoi avaimia ja lompakkoa · kokeile nopeasti."
+  },
+  "admin": {
+    "dashboard": "Overview",
+    "keys": "API Keys",
+    "wallet": "Wallet",
+    "docs": "Docs",
+    "title": "Admin",
+    "backToMarket": "Takaisin markkinoille",
+    "quickUse": "Quick use"
+  },
+  "chrome": {
+    "searchPlaceholder": "Mitä haluat tehdä tekoälyn kanssa?",
+    "search": "Search",
+    "locale": "Language",
+    "currency": "Currency",
+    "collapseSidebar": "Piilota sivupalkki",
+    "expandSidebar": "Näytä sivupalkki",
+    "home": "Home",
+    "adminConsole": "Admin",
+    "quickUse": "Quick use",
+    "support": "Support",
+    "apiDocs": "API docs",
+    "integrationHelp": "Integraatio-oppaan",
+    "aiRecommend": "AI picks",
+    "market": "Market",
+    "usageTitle": "Quick use"
+  },
+  "channels": {
+    "app": "App market",
+    "api": "API market",
+    "models": "Malliluettelo",
+    "client": "Client"
+  },
+  "market": {
+    "new": "New",
+    "hot": "Hot",
+    "forYou": "For you",
+    "grid": "Grid",
+    "list": "List",
+    "apiShelf": "API shelf",
+    "toolShelf": "Tool shelf"
+  }
+}
