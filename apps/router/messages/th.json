@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Router — ตลาด API",
+    "titleTemplate": "%s | {brandName} Router",
+    "description": "ตลาด API ครอบคลุมทุกโมเดล · จ่ายตามการใช้งาน · จัดการคีย์และกระเป๋าเงิน · ทดลองได้ทันที"
+  },
+  "admin": {
+    "dashboard": "Overview",
+    "keys": "API Keys",
+    "wallet": "Wallet",
+    "docs": "Docs",
+    "title": "Admin",
+    "backToMarket": "กลับสู่ตลาด",
+    "quickUse": "Quick use"
+  },
+  "chrome": {
+    "searchPlaceholder": "คุณอยากทำอะไรกับ AI?",
+    "search": "Search",
+    "locale": "Language",
+    "currency": "Currency",
+    "collapseSidebar": "ยุบแถบด้านข้าง",
+    "expandSidebar": "ขยายแถบด้านข้าง",
+    "home": "Home",
+    "adminConsole": "Admin",
+    "quickUse": "Quick use",
+    "support": "Support",
+    "apiDocs": "API docs",
+    "integrationHelp": "คู่มือการผสานรวม",
+    "aiRecommend": "AI picks",
+    "market": "Market",
+    "usageTitle": "Quick use"
+  },
+  "channels": {
+    "app": "App market",
+    "api": "API market",
+    "models": "แคตตาล็อกโมเดล",
+    "client": "Client"
+  },
+  "market": {
+    "new": "New",
+    "hot": "Hot",
+    "forYou": "For you",
+    "grid": "Grid",
+    "list": "List",
+    "apiShelf": "API shelf",
+    "toolShelf": "Tool shelf"
+  }
+}

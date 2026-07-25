@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Router — שוק API",
+    "titleTemplate": "%s | {brandName} Router",
+    "description": "שוק API לכל המודלים · תשלום לפי שימוש · ניהול מפתחות וארנק · ניסוי מהיר."
+  },
+  "admin": {
+    "dashboard": "Overview",
+    "keys": "API Keys",
+    "wallet": "Wallet",
+    "docs": "Docs",
+    "title": "Admin",
+    "backToMarket": "חזרה לשוק",
+    "quickUse": "Quick use"
+  },
+  "chrome": {
+    "searchPlaceholder": "מה תרצה לעשות עם AI?",
+    "search": "Search",
+    "locale": "Language",
+    "currency": "Currency",
+    "collapseSidebar": "כיווץ סרגל צד",
+    "expandSidebar": "הרחבת סרגל צד",
+    "home": "Home",
+    "adminConsole": "Admin",
+    "quickUse": "Quick use",
+    "support": "Support",
+    "apiDocs": "API docs",
+    "integrationHelp": "מדריך אינטגרציה",
+    "aiRecommend": "AI picks",
+    "market": "Market",
+    "usageTitle": "Quick use"
+  },
+  "channels": {
+    "app": "App market",
+    "api": "API market",
+    "models": "קטלוג מודלים",
+    "client": "Client"
+  },
+  "market": {
+    "new": "New",
+    "hot": "Hot",
+    "forYou": "For you",
+    "grid": "Grid",
+    "list": "List",
+    "apiShelf": "API shelf",
+    "toolShelf": "Tool shelf"
+  }
+}
