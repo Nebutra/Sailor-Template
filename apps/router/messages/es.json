@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Router — Marketplace de APIs",
+    "titleTemplate": "%s | {brandName} Router",
+    "description": "Marketplace de APIs para todos los modelos · paga solo lo que uses · gestiona claves y billetera · prueba rápido."
+  },
+  "admin": {
+    "dashboard": "Overview",
+    "keys": "API Keys",
+    "wallet": "Wallet",
+    "docs": "Docs",
+    "title": "Admin",
+    "backToMarket": "Volver al marketplace",
+    "quickUse": "Quick use"
+  },
+  "chrome": {
+    "searchPlaceholder": "¿Qué quieres hacer con IA?",
+    "search": "Search",
+    "locale": "Language",
+    "currency": "Currency",
+    "collapseSidebar": "Contraer barra lateral",
+    "expandSidebar": "Expandir barra lateral",
+    "home": "Home",
+    "adminConsole": "Admin",
+    "quickUse": "Quick use",
+    "support": "Support",
+    "apiDocs": "API docs",
+    "integrationHelp": "Guía de integración",
+    "aiRecommend": "AI picks",
+    "market": "Market",
+    "usageTitle": "Quick use"
+  },
+  "channels": {
+    "app": "App market",
+    "api": "API market",
+    "models": "Catálogo de modelos",
+    "client": "Client"
+  },
+  "market": {
+    "new": "New",
+    "hot": "Hot",
+    "forYou": "For you",
+    "grid": "Grid",
+    "list": "List",
+    "apiShelf": "API shelf",
+    "toolShelf": "Tool shelf"
+  }
+}

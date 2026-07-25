@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Router — маркетплейс API",
+    "titleTemplate": "%s | {brandName} Router",
+    "description": "Маркетплейс API для всех моделей · оплата по факту · управление ключами и кошельком · быстрый тест."
+  },
+  "admin": {
+    "dashboard": "Overview",
+    "keys": "API Keys",
+    "wallet": "Wallet",
+    "docs": "Docs",
+    "title": "Admin",
+    "backToMarket": "Вернуться в маркетплейс",
+    "quickUse": "Quick use"
+  },
+  "chrome": {
+    "searchPlaceholder": "Что вы хотите сделать с помощью ИИ?",
+    "search": "Search",
+    "locale": "Language",
+    "currency": "Currency",
+    "collapseSidebar": "Свернуть боковую панель",
+    "expandSidebar": "Развернуть боковую панель",
+    "home": "Home",
+    "adminConsole": "Admin",
+    "quickUse": "Quick use",
+    "support": "Support",
+    "apiDocs": "API docs",
+    "integrationHelp": "Руководство по интеграции",
+    "aiRecommend": "AI picks",
+    "market": "Market",
+    "usageTitle": "Quick use"
+  },
+  "channels": {
+    "app": "App market",
+    "api": "API market",
+    "models": "Каталог моделей",
+    "client": "Client"
+  },
+  "market": {
+    "new": "New",
+    "hot": "Hot",
+    "forYou": "For you",
+    "grid": "Grid",
+    "list": "List",
+    "apiShelf": "API shelf",
+    "toolShelf": "Tool shelf"
+  }
+}

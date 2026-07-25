@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Router — API marketplace",
+    "titleTemplate": "%s | {brandName} Router",
+    "description": "API marketplace για όλα τα μοντέλα · πληρώνετε μόνο ό,τι χρησιμοποιείτε · διαχείριση κλειδιών & πορτοφολιού · γρήγορη δοκιμή."
+  },
+  "admin": {
+    "dashboard": "Overview",
+    "keys": "API Keys",
+    "wallet": "Wallet",
+    "docs": "Docs",
+    "title": "Admin",
+    "backToMarket": "Επιστροφή στην αγορά",
+    "quickUse": "Quick use"
+  },
+  "chrome": {
+    "searchPlaceholder": "Τι θέλετε να κάνετε με την AI;",
+    "search": "Search",
+    "locale": "Language",
+    "currency": "Currency",
+    "collapseSidebar": "Σύμπτυξη πλαϊνής μπάρας",
+    "expandSidebar": "Ανάπτυξη πλαϊνής μπάρας",
+    "home": "Home",
+    "adminConsole": "Admin",
+    "quickUse": "Quick use",
+    "support": "Support",
+    "apiDocs": "API docs",
+    "integrationHelp": "Οδηγός ολοκλήρωσης",
+    "aiRecommend": "AI picks",
+    "market": "Market",
+    "usageTitle": "Quick use"
+  },
+  "channels": {
+    "app": "App market",
+    "api": "API market",
+    "models": "Κατάλογος μοντέλων",
+    "client": "Client"
+  },
+  "market": {
+    "new": "New",
+    "hot": "Hot",
+    "forYou": "For you",
+    "grid": "Grid",
+    "list": "List",
+    "apiShelf": "API shelf",
+    "toolShelf": "Tool shelf"
+  }
+}

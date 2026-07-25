@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Router — API-Marktplatz",
+    "titleTemplate": "%s | {brandName} Router",
+    "description": "Marktplatz für alle Modelle · Pay-as-you-go · Schlüssel & Wallet verwalten · schnell testen."
+  },
+  "admin": {
+    "dashboard": "Overview",
+    "keys": "API Keys",
+    "wallet": "Wallet",
+    "docs": "Docs",
+    "title": "Admin",
+    "backToMarket": "Zurück zum Marktplatz",
+    "quickUse": "Quick use"
+  },
+  "chrome": {
+    "searchPlaceholder": "Was möchten Sie mit KI tun?",
+    "search": "Search",
+    "locale": "Language",
+    "currency": "Currency",
+    "collapseSidebar": "Seitenleiste einklappen",
+    "expandSidebar": "Seitenleiste ausklappen",
+    "home": "Home",
+    "adminConsole": "Admin",
+    "quickUse": "Quick use",
+    "support": "Support",
+    "apiDocs": "API docs",
+    "integrationHelp": "Integrationsanleitung",
+    "aiRecommend": "AI picks",
+    "market": "Market",
+    "usageTitle": "Quick use"
+  },
+  "channels": {
+    "app": "App market",
+    "api": "API market",
+    "models": "Modellkatalog",
+    "client": "Client"
+  },
+  "market": {
+    "new": "New",
+    "hot": "Hot",
+    "forYou": "For you",
+    "grid": "Grid",
+    "list": "List",
+    "apiShelf": "API shelf",
+    "toolShelf": "Tool shelf"
+  }
+}
