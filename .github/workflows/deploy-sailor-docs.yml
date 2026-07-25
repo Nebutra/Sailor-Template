@@ -1,0 +1,88 @@
+name: Deploy Sailor Docs
+
+# Production target: Vercel (separate project `docs`, root apps/sailor-docs).
+# Why not Cloudflare Workers/OpenNext: the docs bundle is ~87MB uncompressed
+# (handler.mjs) and exceeds the Workers 64 MiB script limit. Public docs on
+# Next+monorepo belong on Vercel/Node, same as landing/web.
+#
+# Deploy path is Git → Vercel project hook (no heavy Actions build). This
+# workflow only re-triggers production when docs paths change, as a safety net.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "apps/sailor-docs/**"
+      - "packages/design/ui/**"
+      - "packages/design/brand/**"
+      - "packages/design/icons/**"
+      - "packages/design/tokens/**"
+      - "pnpm-lock.yaml"
+      - "apps/sailor-docs/vercel.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-sailor-docs-production
+  cancel-in-progress: false
+
+jobs:
+  vercel:
+    name: Trigger Vercel production
+    runs-on: ubuntu-latest
+    if: >-
+      vars.DEPLOY_TARGET_SAILOR_DOCS == 'vercel' ||
+      vars.DEPLOY_TARGET_SAILOR_DOCS == 'cloudflare-pages' ||
+      vars.DEPLOY_TARGET_SAILOR_DOCS == '' ||
+      github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Deploy to Vercel (production)
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID || vars.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_DOCS_PROJECT_ID || vars.VERCEL_DOCS_PROJECT_ID }}
+        run: |
+          set -euo pipefail
+          if [ -z "${VERCEL_TOKEN:-}" ]; then
+            echo "::notice::VERCEL_TOKEN not set — relying on Vercel Git integration only."
+            echo "If docs.nebutra.com is not updating, add VERCEL_TOKEN + VERCEL_DOCS_PROJECT_ID."
+            exit 0
+          fi
+          if [ -z "${VERCEL_PROJECT_ID:-}" ]; then
+            echo "::error::Set VERCEL_DOCS_PROJECT_ID (prj_…) for the docs Vercel project"
+            exit 1
+          fi
+          npm i -g vercel@56.5.0
+          # Link the Vercel project at the monorepo root. The dashboard Root
+          # Directory is already `apps/sailor-docs` — do NOT pass --cwd into
+          # that folder or Vercel doubles the path
+          # (…/apps/sailor-docs/apps/sailor-docs).
+          mkdir -p .vercel
+          cat > .vercel/project.json <<EOF
+          {"projectId":"${VERCEL_PROJECT_ID}","orgId":"${VERCEL_ORG_ID:-}"}
+          EOF
+          # Deploy from monorepo root so turbo filter + pnpm workspace resolve.
+          # --archive=tgz avoids the 15k-file CLI upload limit on this monorepo.
+          vercel deploy --prod --yes --archive=tgz --token="$VERCEL_TOKEN" \
+            --scope "${VERCEL_ORG_ID:-}"
+
+      - name: Smoke docs.nebutra.com
+        run: |
+          set -euo pipefail
+          # Allow a short CDN lag; failure here is non-blocking if DNS not yet cut over.
+          code=$(curl -sS -o /tmp/docs.html -w '%{http_code}' --max-time 30 -L https://docs.nebutra.com/en || echo 000)
+          echo "GET https://docs.nebutra.com/en -> $code"
+          if [ "$code" != "200" ]; then
+            echo "::warning::docs.nebutra.com not healthy yet (DNS/domain may still point at ECS)."
+            exit 0
+          fi
+          if grep -qi 'location: https://nebutra.com' /tmp/docs.html 2>/dev/null; then
+            echo "::warning::still redirecting to landing"
+            exit 0
+          fi
+          echo "docs smoke OK"
