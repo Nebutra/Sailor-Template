@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Stesen alat dalam talian",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Alat codec, teks, hashing, dokumen, dan imej dalam talian."
+  },
+  "nav": {
+    "main": "Navigasi utama",
+    "homeAria": "Laman utama {brandName} Forge",
+    "tools": "Alat",
+    "wallet": "Dompet",
+    "api": "API",
+    "routerAria": "Router {brandName}",
+    "categoriesAria": "Kategori alat",
+    "languageAria": "Tukar bahasa"
+  },
+  "tool": {
+    "breadcrumbAria": "Jejak roti",
+    "labNotice": "Keupayaan makmal: liputan data atau kamus terhad; keputusan adalah untuk rujukan sahaja.",
+    "workspace": "Ruang kerja",
+    "workspaceHint": "Tempatan atau pelayan · laluan sama seperti API",
+    "api": "API",
+    "apiHint": "Kontrak sama seperti halaman. Gunakan kunci yang disahkan dalam pengeluaran.",
+    "related": "Alat berkaitan"
+  },
+  "auth": {
+    "signIn": "Log masuk",
+    "signUp": "Daftar",
+    "signOut": "Log keluar"
+  },
+  "footer": {
+    "navAria": "Pengek",
+    "blurb": "Stesen alat dalam talian. Selesaikan tugas dalam pelayar, atau automasi melalui API / MCP.",
+    "product": "Produk",
+    "developers": "Pembangun",
+    "company": "Syarikat",
+    "docs": "Dokumen integrasi",
+    "website": "Laman web",
+    "privacy": "Privasi"
+  },
+  "home": {
+    "eyebrow": "Lihat. Panggil.",
+    "title": "Kunci Swiss untuk alat dalam talian",
+    "subtitle": "Pengekodan, teks, pengekodan, dokumen, dan pemprosesan imej. Selesaikan dalam pelayar, atau automasi melalui API / MCP — satu pelaksanaan.",
+    "toolCount": "{count} alat",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Cari: kiraan perkataan, base64, json, cap masa…",
+    "aria": "Cari alat",
+    "emptyTitle": "Tiada alat sepadan “{query}”",
+    "emptyHint": "Cuba kata kunci lain, atau pilih alat dari kategori di bawah."
+  },
+  "categories": {
+    "codec": {
+      "label": "Pengekodan",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Pengesahan China",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Pembangun",
+      "hint": "Regex · SQL · warna · UUID"
+    },
+    "doc": {
+      "label": "Dokumen",
+      "hint": "Markdown · PDF gabung/pisah"
+    },
+    "finance": {
+      "label": "Kewangan",
+      "hint": "Jumlah kepada perkataan"
+    },
+    "hash": {
+      "label": "Hash & keselamatan",
+      "hint": "MD5 · SHA · HMAC · kata laluan"
+    },
+    "image": {
+      "label": "Imej",
+      "hint": "Mampatkan · QR · tukar"
+    },
+    "life": {
+      "label": "Kalkulator kehidupan",
+      "hint": "Rumah · BMI · hubungan keluarga"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Token · kos · skema"
+    },
+    "security": {
+      "label": "Keselamatan",
+      "hint": "Penjana kata laluan"
+    },
+    "text": {
+      "label": "Teks",
+      "hint": "Kiraan perkataan · CJK · pinyin · Perbezaan"
+    },
+    "time": {
+      "label": "Masa",
+      "hint": "Matercapaian · zon masa · Cron · lunar"
+    },
+    "unit": {
+      "label": "Unit",
+      "hint": "Panjang · berat · suhu · data"
+    }
+  }
+}
