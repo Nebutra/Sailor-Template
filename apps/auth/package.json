@@ -1,0 +1,39 @@
+{
+  "name": "@nebutra/auth-center",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3101",
+    "build": "pnpm --filter @nebutra/brand sync && next build",
+    "start": "next start",
+    "typecheck": "node ../../scripts/next-typegen-guard.mjs && tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@marsidev/react-turnstile": "^1.5.2",
+    "@nebutra/auth": "workspace:*",
+    "@nebutra/brand": "workspace:*",
+    "@nebutra/db": "workspace:*",
+    "@nebutra/i18n": "workspace:*",
+    "@nebutra/icons": "workspace:*",
+    "@nebutra/logger": "workspace:*",
+    "@nebutra/tokens": "workspace:*",
+    "@nebutra/ui": "workspace:*",
+    "@simplewebauthn/browser": "^13.3.0",
+    "next": "^16.2.11",
+    "next-intl": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "@types/node": "^22.19.15",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "tailwindcss": "^4.2.1",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "license": "AGPL-3.0-only"
+}

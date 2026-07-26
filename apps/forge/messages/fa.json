@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — ایستگاه ابزار آنلاین",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "کدک‌ها، متن، هش، اسناد و ابزارهای تصویر به صورت آنلاین."
+  },
+  "nav": {
+    "main": "ناوبری اصلی",
+    "homeAria": "خانه {brandName} Forge",
+    "tools": "ابزارها",
+    "wallet": "کیف پول",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "دسته‌بندی ابزارها",
+    "languageAria": "تغییر زبان"
+  },
+  "tool": {
+    "breadcrumbAria": "مسیر صفحه",
+    "labNotice": "قابلیت آزمایشگاهی: پوشش داده یا واژه‌نامه محدود؛ نتایج صرفاً جهت مرجع هستند.",
+    "workspace": "محیط کار",
+    "workspaceHint": "محلی یا سرور · مسیر یکسان با API",
+    "api": "API",
+    "apiHint": "قرارداد یکسان با صفحه. در محیط تولید از کلید احراز هویت استفاده کنید.",
+    "related": "ابزارهای مرتبط"
+  },
+  "auth": {
+    "signIn": "ورود",
+    "signUp": "ثبت‌نام",
+    "signOut": "خروج"
+  },
+  "footer": {
+    "navAria": "پاورقی",
+    "blurb": "ایستگاه ابزار آنلاین. کارها را در مرورگر انجام دهید یا از طریق API / MCP خودکار کنید.",
+    "product": "محصول",
+    "developers": "توسعه‌دهندگان",
+    "company": "شرکت",
+    "docs": "مستندات یکپارچه‌سازی",
+    "website": "وب‌سایت",
+    "privacy": "حریم خصوصی"
+  },
+  "home": {
+    "eyebrow": "ببینید. صدا بزنید.",
+    "title": "چاقوی سوئیسی برای ابزارهای آنلاین",
+    "subtitle": "کدک‌ها، متن، هش‌سازی، اسناد و پردازش تصویر. در مرورگر انجام دهید یا از طریق API / MCP خودکار کنید — یک پیاده‌سازی.",
+    "toolCount": "{count} ابزار",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "جستجو: شمارش کلمات، base64，json، timestamp…",
+    "aria": "جستجوی ابزارها",
+    "emptyTitle": "هیچ ابزاری با “{query}” مطابقت ندارد",
+    "emptyHint": "یک کلمه کلیدی دیگر امتحان کنید یا از دسته‌های زیر یک ابزار انتخاب کنید."
+  },
+  "categories": {
+    "codec": {
+      "label": "کدک‌ها",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "اعتبارسنجی چین",
+      "hint": "شناسه · تلفن"
+    },
+    "data": {
+      "label": "داده",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "توسعه‌دهنده",
+      "hint": "Regex · SQL · رنگ · UUID"
+    },
+    "doc": {
+      "label": "اسناد",
+      "hint": "Markdown · ادغام/تقسیم PDF"
+    },
+    "finance": {
+      "label": "مالی",
+      "hint": "مبلغ به حروف"
+    },
+    "hash": {
+      "label": "هش و امنیت",
+      "hint": "MD5 · SHA · HMAC · رمز عبور"
+    },
+    "image": {
+      "label": "تصاویر",
+      "hint": "فشرده‌سازی · QR · تبدیل"
+    },
+    "life": {
+      "label": "ماشین‌حساب‌های زندگی",
+      "hint": "مسکن · BMI · خویشاوندی"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "توکن‌ها · هزینه · طرح"
+    },
+    "security": {
+      "label": "امنیت",
+      "hint": "تولید رمز عبور"
+    },
+    "text": {
+      "label": "متن",
+      "hint": "تعداد کلمات · CJK · پین‌یین · تفاوت"
+    },
+    "time": {
+      "label": "زمان",
+      "hint": "برچسب زمانی · منطقه زمانی · Cron · قمری"
+    },
+    "unit": {
+      "label": "واحدها",
+      "hint": "طول · وزن · دما · داده"
+    }
+  }
+}
