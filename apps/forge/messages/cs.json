@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Online nástroje",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Online nástroje pro kodeky, text, hashování, dokumenty a obrázky."
+  },
+  "nav": {
+    "main": "Hlavní navigace",
+    "homeAria": "Domů {brandName} Forge",
+    "tools": "Nástroje",
+    "wallet": "Peněženka",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Kategorie nástrojů",
+    "languageAria": "Změnit jazyk"
+  },
+  "tool": {
+    "breadcrumbAria": "Navigační cesta",
+    "labNotice": "Funkce v laboratoři: omezená data nebo pokrytí slovníku; výsledky jsou pouze orientační.",
+    "workspace": "Pracovní prostor",
+    "workspaceHint": "Lokální nebo server · stejná cesta jako API",
+    "api": "API",
+    "apiHint": "Stejná smlouva jako na stránce. V produkci použijte ověřený klíč.",
+    "related": "Související nástroje"
+  },
+  "auth": {
+    "signIn": "Přihlásit se",
+    "signUp": "Registrovat se",
+    "signOut": "Odhlásit se"
+  },
+  "footer": {
+    "navAria": "Patička",
+    "blurb": "Online nástroje. Dokončete úkoly v prohlížeči nebo automatizujte přes API / MCP.",
+    "product": "Produkt",
+    "developers": "Vývojáři",
+    "company": "Společnost",
+    "docs": "Dokumentace integrací",
+    "website": "Web",
+    "privacy": "Ochrana soukromí"
+  },
+  "home": {
+    "eyebrow": "Uvidíte to. Zavoláte to.",
+    "title": "Švýcarský nůž pro online nástroje",
+    "subtitle": "Kodeky, text, hashování, dokumenty a zpracování obrázků. Dokončete v prohlížeči nebo automatizujte přes API / MCP — jedna implementace.",
+    "toolCount": "{count} nástrojů",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Hledat: počet slov, base64, json, časové razítko…",
+    "aria": "Hledat nástroje",
+    "emptyTitle": "Žádné nástroje neodpovídají „{query}“",
+    "emptyHint": "Zkuste jiné klíčové slovo nebo vyberte nástroj z kategorií níže."
+  },
+  "categories": {
+    "codec": {
+      "label": "Kodeky",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Ověření pro Čínu",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Vývojář",
+      "hint": "Regex · SQL · barva · UUID"
+    },
+    "doc": {
+      "label": "Dokumenty",
+      "hint": "Markdown · PDF sloučení/rozdělení"
+    },
+    "finance": {
+      "label": "Finance",
+      "hint": "Částka slovy"
+    },
+    "hash": {
+      "label": "Hash a zabezpečení",
+      "hint": "MD5 · SHA · HMAC · heslo"
+    },
+    "image": {
+      "label": "Obrázky",
+      "hint": "Komprese · QR · převod"
+    },
+    "life": {
+      "label": "Životní kalkulačky",
+      "hint": "Hypotéka · BMI · příbuzenství"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokeny · cena · schéma"
+    },
+    "security": {
+      "label": "Zabezpečení",
+      "hint": "Generátor hesel"
+    },
+    "text": {
+      "label": "Text",
+      "hint": "Počet slov · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Čas",
+      "hint": "Časová značka · časové pásmo · Cron · lunární"
+    },
+    "unit": {
+      "label": "Jednotky",
+      "hint": "Délka · hmotnost · teplota · data"
+    }
+  }
+}
