@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Kituo cha zana za mtandaoni",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Zana za mtandaoni za codecs, maandishi, hashing, hati, na picha."
+  },
+  "nav": {
+    "main": "Urambazaji mkuu",
+    "homeAria": "Nyumbani kwa {brandName} Forge",
+    "tools": "Zana",
+    "wallet": "Pesa",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Aina za zana"
+  },
+  "tool": {
+    "breadcrumbAria": "Breadcrumb",
+    "labNotice": "Uwezo wa lab: data au dictionary zinazofikiwa ni za kikomo; matokeo ni ya marejeleo tu.",
+    "workspace": "Kazi",
+    "workspaceHint": "Ndani au seva · njia sawa kama API",
+    "api": "API",
+    "apiHint": "Mkataba sawa na ukurasa. Tumia ufunguo uliothibitishwa katika uzalishaji.",
+    "related": "Zana zinazohusiana"
+  },
+  "auth": {
+    "signIn": "Ingia",
+    "signUp": "Jisajili",
+    "signOut": "Ondoka"
+  },
+  "footer": {
+    "navAria": "Sehemu ya chini",
+    "blurb": "Kituo cha zana za mtandaoni. Maliza kazi kwenye kivinjari, au utengenezee kupitia API / MCP.",
+    "product": "Bidhaa",
+    "developers": "Wanavutano",
+    "company": "Kampuni",
+    "docs": "Nyaraka za muunganisho",
+    "website": "Tovuti",
+    "privacy": "Siri"
+  },
+  "home": {
+    "eyebrow": "Uone. Uite.",
+    "title": "Kifaa cha kila kitu cha zana za mtandaoni",
+    "subtitle": "Codecs, maandishi, hashing, nyaraka, na usindikaji wa picha. Maliza kwenye kivinjari, au utengenezee kupitia API / MCP — utekelezaji mmoja.",
+    "toolCount": "zana {count}",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Tafuta: hesabu ya maneno, base64, json, timestamp…",
+    "aria": "Tafuta zana",
+    "emptyTitle": "Hakuna zana zinazolingana na “{query}”",
+    "emptyHint": "Jaribu neno lingine, au chagua zana kutoka kwa makundi hapa chini."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Uthibitisho wa China",
+      "hint": "Kitambulisho · simu"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Mtaalamu wa programu",
+      "hint": "Regex · SQL · rangi · UUID"
+    },
+    "doc": {
+      "label": "Nyaraka",
+      "hint": "Markdown · Kuunganisha/kuagiza PDF"
+    },
+    "finance": {
+      "label": "Fedha",
+      "hint": "Kiasi kuwa maneno"
+    },
+    "hash": {
+      "label": "Hash na usalama",
+      "hint": "MD5 · SHA · HMAC · neno siri"
+    },
+    "image": {
+      "label": "Picha",
+      "hint": "Kupunguza · QR · kubadilisha"
+    },
+    "life": {
+      "label": "Kikokotozi cha maisha",
+      "hint": "Mkopo wa nyumba · BMI · uhusiano wa damu"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · gharama · schema"
+    },
+    "security": {
+      "label": "Usalama",
+      "hint": "Kizalishaji cha neno siri"
+    },
+    "text": {
+      "label": "Neno",
+      "hint": "Idadi ya maneno · CJK · pinyin · Tofauti"
+    },
+    "time": {
+      "label": "Muda",
+      "hint": "Tamshi ya muda · eneo la saa · Cron · mwezi"
+    },
+    "unit": {
+      "label": "Vipimo",
+      "hint": "Urefu · uzito · joto · data"
+    }
+  }
+}

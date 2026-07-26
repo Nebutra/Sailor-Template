@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Stație de instrumente online",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Instrumente online pentru codec-uri, text, hashing, documente și imagini."
+  },
+  "nav": {
+    "main": "Navigare principală",
+    "homeAria": "Acasă {brandName} Forge",
+    "tools": "Instrumente",
+    "wallet": "Portofel",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Categorii de instrumente"
+  },
+  "tool": {
+    "breadcrumbAria": "Drumuleț",
+    "labNotice": "Capacitate Lab: acoperire limitată de date sau dicționar; rezultatele sunt doar orientative.",
+    "workspace": "Spațiu de lucru",
+    "workspaceHint": "Local sau server · același path ca API",
+    "api": "API",
+    "apiHint": "Același contract ca pagina. Folosește o cheie autentificată în producție.",
+    "related": "Instrumente conexe"
+  },
+  "auth": {
+    "signIn": "Autentificare",
+    "signUp": "Înregistrare",
+    "signOut": "Deconectare"
+  },
+  "footer": {
+    "navAria": "Subsol",
+    "blurb": "Stație de instrumente online. Finalizează sarcini în browser sau automatizează prin API / MCP.",
+    "product": "Produs",
+    "developers": "Dezvoltatori",
+    "company": "Companie",
+    "docs": "Documentație integrare",
+    "website": "Site web",
+    "privacy": "Confidențialitate"
+  },
+  "home": {
+    "eyebrow": "Vezi-l. Numește-l.",
+    "title": "Cuțit elvețian pentru instrumente online",
+    "subtitle": "Codecs, text, hashing, documente și procesare imagini. Finalizează în browser sau automatizează prin API / MCP — o singură implementare.",
+    "toolCount": "{count} instrumente",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Caută: număr cuvinte, base64, json, timestamp…",
+    "aria": "Caută instrumente",
+    "emptyTitle": "Niciun instrument nu se potrivește cu „{query}”",
+    "emptyHint": "Încearcă alt cuvânt cheie sau alege un instrument din categoriile de mai jos."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Validare China",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Date",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Dezvoltator",
+      "hint": "Regex · SQL · culoare · UUID"
+    },
+    "doc": {
+      "label": "Documente",
+      "hint": "Markdown · PDF merge/split"
+    },
+    "finance": {
+      "label": "Finanțe",
+      "hint": "Sumă în cuvinte"
+    },
+    "hash": {
+      "label": "Hash și securitate",
+      "hint": "MD5 · SHA · HMAC · parolă"
+    },
+    "image": {
+      "label": "Imagini",
+      "hint": "Comprimare · QR · conversie"
+    },
+    "life": {
+      "label": "Calculatoare de viață",
+      "hint": "Ipotecă · IMC · rudenie"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokeni · cost · schemă"
+    },
+    "security": {
+      "label": "Securitate",
+      "hint": "Generator de parole"
+    },
+    "text": {
+      "label": "Text",
+      "hint": "Număr cuvinte · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Timp",
+      "hint": "Timestamp · fus orar · Cron · lunar"
+    },
+    "unit": {
+      "label": "Unități",
+      "hint": "Lungime · greutate · temperatură · date"
+    }
+  }
+}

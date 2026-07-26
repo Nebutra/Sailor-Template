@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Σταθμός εργαλείων online",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Κωδικοποιητές, κείμενο, hashing, έγγραφα και εργαλεία εικόνων online."
+  },
+  "nav": {
+    "main": "Κύρια πλοήγηση",
+    "homeAria": "Αρχική {brandName} Forge",
+    "tools": "Εργαλεία",
+    "wallet": "Wallet",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Κατηγορίες εργαλείων"
+  },
+  "tool": {
+    "breadcrumbAria": "Breadcrumb",
+    "labNotice": "Δυνατότητα Lab: περιορισμένο σύνολο δεδομένων ή κάλυψη λεξικού· τα αποτελέσματα είναι μόνο ενδεικτικά.",
+    "workspace": "Workspace",
+    "workspaceHint": "Τοπικό ή server · ίδια διαδρομή με την API",
+    "api": "API",
+    "apiHint": "Ίδιο contract με τη σελίδα. Χρησιμοποιήστε authenticated key σε παραγωγή.",
+    "related": "Σχετικά εργαλεία"
+  },
+  "auth": {
+    "signIn": "Σύνδεση",
+    "signUp": "Εγγραφή",
+    "signOut": "Αποσύνδεση"
+  },
+  "footer": {
+    "navAria": "Ποδιέρα",
+    "blurb": "Σταθμός εργαλείων online. Ολοκληρώστε εργασίες στον browser ή αυτοματοποιήστε μέσω API / MCP.",
+    "product": "Προϊόν",
+    "developers": "Αναπτύκτες",
+    "company": "Εταιρεία",
+    "docs": "Έγγραφα ολοκλήρωσης",
+    "website": "Ιστοσελίδα",
+    "privacy": "Απόρρητο"
+  },
+  "home": {
+    "eyebrow": "Δείτε το. Καλέστε το.",
+    "title": "Ελβετικό μαχαίρι για online εργαλεία",
+    "subtitle": "Codecs, κείμενο, hashing, έγγραφα και επεξεργασία εικόνων. Ολοκληρώστε στον browser ή αυτοματοποιήστε μέσω API / MCP — μία υλοποίηση.",
+    "toolCount": "{count} εργαλεία",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Αναζήτηση: μέτρηση λέξεων, base64, json, timestamp…",
+    "aria": "Αναζήτηση εργαλείων",
+    "emptyTitle": "Δεν βρέθηκαν εργαλεία για “{query}”",
+    "emptyHint": "Δοκιμάστε άλλο λέξη-κλειδί ή επιλέξτε ένα εργαλείο από τις κατηγορίες παρακάτω."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Έλεγχος Κίνας",
+      "hint": "ID · τηλέφωνο"
+    },
+    "data": {
+      "label": "Δεδομένα",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Αναπτύκτες",
+      "hint": "Regex · SQL · χρώμα · UUID"
+    },
+    "doc": {
+      "label": "Έγγραφα",
+      "hint": "Markdown · συνένωση/διαίρεση PDF"
+    },
+    "finance": {
+      "label": "Οικονομικά",
+      "hint": "Ποσό σε λέξεις"
+    },
+    "hash": {
+      "label": "Hash & ασφάλεια",
+      "hint": "MD5 · SHA · HMAC · κωδικός"
+    },
+    "image": {
+      "label": "Εικόνες",
+      "hint": "Συμπίεση · QR · μετατροπή"
+    },
+    "life": {
+      "label": "Υπολογιστές ζωής",
+      "hint": "Δάνειο · ΔΜΣ · συγγένεια"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · κόστος · schema"
+    },
+    "security": {
+      "label": "Ασφάλεια",
+      "hint": "Δημιουργός κωδικών"
+    },
+    "text": {
+      "label": "Κείμενο",
+      "hint": "Μήκος λέξεων · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Χρόνος",
+      "hint": "Χρονική σφραγίδα · ζώνη ώρας · Cron · σελήνη"
+    },
+    "unit": {
+      "label": "Μονάδες",
+      "hint": "Μήκος · βάρος · θερμοκρασία · δεδομένα"
+    }
+  }
+}

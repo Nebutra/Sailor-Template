@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — สถานีเครื่องมือออนไลน์",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "เครื่องมือโค้ด,text,แฮช,เอกสาร และภาพออนไลน์"
+  },
+  "nav": {
+    "main": "การนำทางหลัก",
+    "homeAria": "หน้าหลัก {brandName} Forge",
+    "tools": "เครื่องมือ",
+    "wallet": "กระเป๋าเงิน",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "หมวดหมู่เครื่องมือ"
+  },
+  "tool": {
+    "breadcrumbAria": "เส้นทางนำทาง",
+    "labNotice": "ความสามารถแบบ Lab: ครอบคลุมข้อมูลหรือพจนานุกรมจำกัด ผลลัพธ์ใช้เพื่ออ้างอิงเท่านั้น",
+    "workspace": "พื้นที่ทำงาน",
+    "workspaceHint": "เครื่องท้องถิ่นหรือเซิร์ฟเวอร์ · เส้นทางเดียวกับ API",
+    "api": "API",
+    "apiHint": "สัญญาเดียวกันกับหน้าเว็บ ใช้คีย์ที่ผ่านการยืนยันในสภาพแวดล้อมจริง",
+    "related": "เครื่องมือที่เกี่ยวข้อง"
+  },
+  "auth": {
+    "signIn": "เข้าสู่ระบบ",
+    "signUp": "สมัครสมาชิก",
+    "signOut": "ออกจากระบบ"
+  },
+  "footer": {
+    "navAria": "ส่วนท้าย",
+    "blurb": "สถานีเครื่องมือออนไลน์ ทำงานเสร็จในเบราว์เซอร์ หรืออัตโนมัติผ่าน API / MCP",
+    "product": "ผลิตภัณฑ์",
+    "developers": "นักพัฒนา",
+    "company": "บริษัท",
+    "docs": "เอกสารการผสาน",
+    "website": "เว็บไซต์",
+    "privacy": "ความเป็นส่วนตัว"
+  },
+  "home": {
+    "eyebrow": "เห็นมัน เรียกมัน",
+    "title": "มีดอเนกประสงค์สำหรับเครื่องมือออนไลน์",
+    "subtitle": "Codec ข้อความ แฮช เอกสาร และประมวลผลภาพ ทำงานเสร็จในเบราว์เซอร์ หรืออัตโนมัติผ่าน API / MCP — หนึ่งการนำไปใช้",
+    "toolCount": "{count} เครื่องมือ",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "ค้นหา: นับคำ base64 json timestamp…",
+    "aria": "ค้นหาเครื่องมือ",
+    "emptyTitle": "ไม่มีเครื่องมือตรงกับ “{query}”",
+    "emptyHint": "ลองคีย์เวิร์ดอื่น หรือเลือกเครื่องมือจากหมวดหมู่ด้านล่าง"
+  },
+  "categories": {
+    "codec": {
+      "label": "Codec",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "การตรวจสอบจีน",
+      "hint": "ID · เบอร์โทร"
+    },
+    "data": {
+      "label": "ข้อมูล",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "นักพัฒนา",
+      "hint": "Regex · SQL · สี · UUID"
+    },
+    "doc": {
+      "label": "เอกสาร",
+      "hint": "Markdown · รวม/แยก PDF"
+    },
+    "finance": {
+      "label": "การเงิน",
+      "hint": "แปลงจำนวนเป็นตัวหนังสือ"
+    },
+    "hash": {
+      "label": "แฮช & ความปลอดภัย",
+      "hint": "MD5 · SHA · HMAC · รหัสผ่าน"
+    },
+    "image": {
+      "label": "รูปภาพ",
+      "hint": "บีบอัด · QR · แปลง"
+    },
+    "life": {
+      "label": "เครื่องคำนวณชีวิต",
+      "hint": "เงินกู้ · BMI · ความสัมพันธ์"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "โทเค็น · ค่าใช้จ่าย · schema"
+    },
+    "security": {
+      "label": "ความปลอดภัย",
+      "hint": "สร้างรหัสผ่าน"
+    },
+    "text": {
+      "label": "ข้อความ",
+      "hint": "จำนวนคำ · CJK · พินอิน · Diff"
+    },
+    "time": {
+      "label": "เวลา",
+      "hint": "Timestamp · timezone · Cron · lunar"
+    },
+    "unit": {
+      "label": "หน่วย",
+      "hint": "ความยาว · น้ำหนัก · อุณหภูมิ · ข้อมูล"
+    }
+  }
+}

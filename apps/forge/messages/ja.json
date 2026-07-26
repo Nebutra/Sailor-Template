@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — オンラインツールステーション",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "コーデック、テキスト、ハッシュ、ドキュメント、画像ツールをオンラインで。"
+  },
+  "nav": {
+    "main": "メインナビゲーション",
+    "homeAria": "{brandName} Forge ホーム",
+    "tools": "ツール",
+    "wallet": "ウォレット",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "ツールカテゴリ"
+  },
+  "tool": {
+    "breadcrumbAria": "パンくずリスト",
+    "labNotice": "ラボ機能：データまたは辞書の範囲が限定的です。結果は参考用です。",
+    "workspace": "ワークスペース",
+    "workspaceHint": "ローカルまたはサーバー · APIと同じパス",
+    "api": "API",
+    "apiHint": "ページと同じコントラクトです。本番環境では認証キーを使用してください。",
+    "related": "関連ツール"
+  },
+  "auth": {
+    "signIn": "サインイン",
+    "signUp": "サインアップ",
+    "signOut": "サインアウト"
+  },
+  "footer": {
+    "navAria": "フッター",
+    "blurb": "オンラインツールステーション。ブラウザでタスクを完了するか、API / MCP で自動化。",
+    "product": "プロダクト",
+    "developers": "開発者",
+    "company": "会社情報",
+    "docs": "統合ドキュメント",
+    "website": "ウェブサイト",
+    "privacy": "プライバシー"
+  },
+  "home": {
+    "eyebrow": "見て、呼んで。",
+    "title": "オンラインツールのスイスアーミーナイフ",
+    "subtitle": "コーデック、テキスト、ハッシュ、ドキュメント、画像処理。ブラウザで完了するか、API / MCP で自動化——1つの実装で。",
+    "toolCount": "{count} ツール",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "検索: 文字数、base64、json、タイムスタンプ…",
+    "aria": "ツールを検索",
+    "emptyTitle": "「{query}」に一致するツールはありません",
+    "emptyHint": "別のキーワードを試すか、以下のカテゴリからツールを選択してください。"
+  },
+  "categories": {
+    "codec": {
+      "label": "コーデック",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "中国検証",
+      "hint": "ID · 電話番号"
+    },
+    "data": {
+      "label": "データ",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "開発者",
+      "hint": "正規表現 · SQL · 色 · UUID"
+    },
+    "doc": {
+      "label": "ドキュメント",
+      "hint": "Markdown · PDF 結合/分割"
+    },
+    "finance": {
+      "label": "ファイナンス",
+      "hint": "金額を文字列に変換"
+    },
+    "hash": {
+      "label": "ハッシュとセキュリティ",
+      "hint": "MD5 · SHA · HMAC · パスワード"
+    },
+    "image": {
+      "label": "画像",
+      "hint": "圧縮 · QR · 変換"
+    },
+    "life": {
+      "label": "生活計算ツール",
+      "hint": "住宅ローン · BMI · 親族関係"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "トークン · コスト · スキーマ"
+    },
+    "security": {
+      "label": "セキュリティ",
+      "hint": "パスワード生成"
+    },
+    "text": {
+      "label": "テキスト",
+      "hint": "文字数 · CJK · 拼音 · 差分"
+    },
+    "time": {
+      "label": "時刻",
+      "hint": "タイムスタンプ · タイムゾーン · Cron · 旧暦"
+    },
+    "unit": {
+      "label": "単位",
+      "hint": "長さ · 重量 · 温度 · データ"
+    }
+  }
+}

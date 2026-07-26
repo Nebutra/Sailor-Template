@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Stasiun alat online",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Alat codec, teks, hashing, dokumen, dan gambar secara online."
+  },
+  "nav": {
+    "main": "Navigasi utama",
+    "homeAria": "Beranda {brandName} Forge",
+    "tools": "Alat",
+    "wallet": "Dompet",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Kategori alat"
+  },
+  "tool": {
+    "breadcrumbAria": "Breadcrumb",
+    "labNotice": "Kemampuan lab: cakupan data atau kamus terbatas; hasil hanya untuk referensi.",
+    "workspace": "Workspace",
+    "workspaceHint": "Lokal atau server · jalur sama seperti API",
+    "api": "API",
+    "apiHint": "Kontrak sama dengan halaman. Gunakan kunci terautentikasi di produksi.",
+    "related": "Alat terkait"
+  },
+  "auth": {
+    "signIn": "Masuk",
+    "signUp": "Daftar",
+    "signOut": "Keluar"
+  },
+  "footer": {
+    "navAria": "Footer",
+    "blurb": "Stasiun alat online. Selesaikan tugas di browser, atau otomatisasi via API / MCP.",
+    "product": "Produk",
+    "developers": "Pengembang",
+    "company": "Perusahaan",
+    "docs": "Dokumentasi integrasi",
+    "website": "Website",
+    "privacy": "Privasi"
+  },
+  "home": {
+    "eyebrow": "Lihat. Panggil.",
+    "title": "Pisau swiss untuk alat online",
+    "subtitle": "Codec, teks, hashing, dokumen, dan pemrosesan gambar. Selesaikan di browser, atau otomatisasi via API / MCP — satu implementasi.",
+    "toolCount": "{count} alat",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Cari: hitung kata, base64, json, timestamp…",
+    "aria": "Cari alat",
+    "emptyTitle": "Tidak ada alat yang cocok dengan “{query}”",
+    "emptyHint": "Coba kata kunci lain, atau pilih alat dari kategori di bawah."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codec",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Validasi Tiongkok",
+      "hint": "ID · telepon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Pengembang",
+      "hint": "Regex · SQL · warna · UUID"
+    },
+    "doc": {
+      "label": "Dokumen",
+      "hint": "Markdown · gabung/pisah PDF"
+    },
+    "finance": {
+      "label": "Keuangan",
+      "hint": "Jumlah ke kata"
+    },
+    "hash": {
+      "label": "Hash & keamanan",
+      "hint": "MD5 · SHA · HMAC · sandi"
+    },
+    "image": {
+      "label": "Gambar",
+      "hint": "Kompres · QR · konversi"
+    },
+    "life": {
+      "label": "Kalkulator kehidupan",
+      "hint": "KPR · BMI · kekerabatan"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Token · biaya · skema"
+    },
+    "security": {
+      "label": "Keamanan",
+      "hint": "Generator sandi"
+    },
+    "text": {
+      "label": "Teks",
+      "hint": "Jumlah kata · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Waktu",
+      "hint": "Timestamp · zona waktu · Cron · lunar"
+    },
+    "unit": {
+      "label": "Satuan",
+      "hint": "Panjang · berat · suhu · data"
+    }
+  }
+}
