@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Online verktøy",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Kodek, tekst, hashing, dokumenter og bildedverktøy online."
+  },
+  "nav": {
+    "main": "Hovednavigasjon",
+    "homeAria": "{brandName} Forge hjem",
+    "tools": "Verktøy",
+    "wallet": "Lommebok",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Verktøykategorier"
+  },
+  "tool": {
+    "breadcrumbAria": "Sti",
+    "labNotice": "Lab-funksjonalitet: begrenset data- eller ordboksdekning; resultatene er kun til referanse.",
+    "workspace": "Arbeidsområde",
+    "workspaceHint": "Lokal eller server · samme sti som API",
+    "api": "API",
+    "apiHint": "Samme kontrakt som siden. Bruk en autentisert nøkkel i produksjon.",
+    "related": "Relaterte verktøy"
+  },
+  "auth": {
+    "signIn": "Logg inn",
+    "signUp": "Registrer deg",
+    "signOut": "Logg ut"
+  },
+  "footer": {
+    "navAria": "Bunnfelt",
+    "blurb": "Verktøy-stasjon for nett. Fullfør oppgaver i nettleseren, eller automatiser via API / MCP.",
+    "product": "Produkt",
+    "developers": "Utviklere",
+    "company": "Selskap",
+    "docs": "Integrasjonsdokumentasjon",
+    "website": "Nettsted",
+    "privacy": "Personvern"
+  },
+  "home": {
+    "eyebrow": "Se det. Kall det.",
+    "title": "Sveitsisk kniv for nettverktøy",
+    "subtitle": "Codec, tekst, hashing, dokumenter og bildebehandling. Fullfør i nettleseren, eller automatiser via API / MCP — én implementering.",
+    "toolCount": "{count} verktøy",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Søk: ordtelling, base64, json, tidsstempel…",
+    "aria": "Søk etter verktøy",
+    "emptyTitle": "Ingen verktøy matcher “{query}”",
+    "emptyHint": "Prøv et annet søkeord, eller velg et verktøy fra kategoriene nedenfor."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codec",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Kina-validering",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Utvikler",
+      "hint": "Regex · SQL · farge · UUID"
+    },
+    "doc": {
+      "label": "Dokumenter",
+      "hint": "Markdown · PDF-sammenføying/oppspalting"
+    },
+    "finance": {
+      "label": "Finans",
+      "hint": "Beløp til ord"
+    },
+    "hash": {
+      "label": "Hash og sikkerhet",
+      "hint": "MD5 · SHA · HMAC · passord"
+    },
+    "image": {
+      "label": "Bilder",
+      "hint": "Komprimer · QR · konverter"
+    },
+    "life": {
+      "label": "Livskalkulatorer",
+      "hint": "Boliglån · BMI · slektskap"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · kostnad · skjema"
+    },
+    "security": {
+      "label": "Sikkerhet",
+      "hint": "Passordgenerator"
+    },
+    "text": {
+      "label": "Tekst",
+      "hint": "Ordantall · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Tid",
+      "hint": "Tidspunkt · tidssone · Cron · kinesisk kalender"
+    },
+    "unit": {
+      "label": "Enheter",
+      "hint": "Lengde · vekt · temperatur · data"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Estação de ferramentas online",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Codecs, texto, hashing, documentos e ferramentas de imagem online."
+  },
+  "nav": {
+    "main": "Navegação principal",
+    "homeAria": "Início do {brandName} Forge",
+    "tools": "Ferramentas",
+    "wallet": "Carteira",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Categorias de ferramentas"
+  },
+  "tool": {
+    "breadcrumbAria": "Breadcrumb",
+    "labNotice": "Capacidade de laboratório: cobertura de dados ou dicionário limitada; os resultados são apenas para referência.",
+    "workspace": "Área de trabalho",
+    "workspaceHint": "Local ou servidor · mesmo caminho da API",
+    "api": "API",
+    "apiHint": "Mesmo contrato da página. Use uma chave autenticada em produção.",
+    "related": "Ferramentas relacionadas"
+  },
+  "auth": {
+    "signIn": "Entrar",
+    "signUp": "Cadastrar-se",
+    "signOut": "Sair"
+  },
+  "footer": {
+    "navAria": "Rodapé",
+    "blurb": "Estação de ferramentas online. Conclua tarefas no navegador ou automatize via API / MCP.",
+    "product": "Produto",
+    "developers": "Desenvolvedores",
+    "company": "Empresa",
+    "docs": "Documentação de integração",
+    "website": "Site",
+    "privacy": "Privacidade"
+  },
+  "home": {
+    "eyebrow": "Veja. Chame.",
+    "title": "Canivete suíço para ferramentas online",
+    "subtitle": "Codecs, texto, hashing, documentos e processamento de imagens. Conclua no navegador ou automatize via API / MCP — uma única implementação.",
+    "toolCount": "{count} ferramentas",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Pesquisar: contagem de palavras, base64, json, timestamp…",
+    "aria": "Pesquisar ferramentas",
+    "emptyTitle": "Nenhuma ferramenta corresponde a “{query}”",
+    "emptyHint": "Tente outro termo ou selecione uma ferramenta nas categorias abaixo."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Validação China",
+      "hint": "ID · telefone"
+    },
+    "data": {
+      "label": "Dados",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Desenvolvedor",
+      "hint": "Regex · SQL · cor · UUID"
+    },
+    "doc": {
+      "label": "Documentos",
+      "hint": "Markdown · PDF unir/dividir"
+    },
+    "finance": {
+      "label": "Finanças",
+      "hint": "Valor por extenso"
+    },
+    "hash": {
+      "label": "Hash e segurança",
+      "hint": "MD5 · SHA · HMAC · senha"
+    },
+    "image": {
+      "label": "Imagens",
+      "hint": "Compactar · QR · converter"
+    },
+    "life": {
+      "label": "Calculadoras de vida",
+      "hint": "Hipoteca · IMC · parentesco"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · custo · schema"
+    },
+    "security": {
+      "label": "Segurança",
+      "hint": "Gerador de senhas"
+    },
+    "text": {
+      "label": "Texto",
+      "hint": "Contagem de palavras · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Tempo",
+      "hint": "Carimbo de tempo · fuso horário · Cron · lunar"
+    },
+    "unit": {
+      "label": "Unidades",
+      "hint": "Comprimento · peso · temperatura · dados"
+    }
+  }
+}

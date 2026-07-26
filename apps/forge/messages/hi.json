@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — ऑनलाइन टूल स्टेशन",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "कोडेक्स, टेक्स्ट, हैशिंग, दस्तावेज़ और इमेज टूल्स ऑनलाइन।"
+  },
+  "nav": {
+    "main": "मुख्य नेविगेशन",
+    "homeAria": "{brandName} Forge होम",
+    "tools": "टूल्स",
+    "wallet": "वॉलेट",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "टूल श्रेणियाँ"
+  },
+  "tool": {
+    "breadcrumbAria": "ब्रेडक्रंब",
+    "labNotice": "लैब क्षमता: सीमित डेटा या डिक्शनरी कवरेज; परिणाम केवल संदर्भ के लिए हैं।",
+    "workspace": "वर्कस्पेस",
+    "workspaceHint": "स्थानीय या सर्वर · API के समान पथ",
+    "api": "API",
+    "apiHint": "पेज के समान अनुबंध। उत्पादन में प्रमाणित कुंजी का उपयोग करें।",
+    "related": "संबंधित टूल्स"
+  },
+  "auth": {
+    "signIn": "साइन इन करें",
+    "signUp": "साइन अप करें",
+    "signOut": "साइन आउट करें"
+  },
+  "footer": {
+    "navAria": "फ़ूटर",
+    "blurb": "ऑनलाइन टूल स्टेशन। ब्राउज़र में काम पूरा करें, या API / MCP के माध्यम से ऑटोमेट करें।",
+    "product": "प्रोडक्ट",
+    "developers": "डेवलपर्स",
+    "company": "कंपनी",
+    "docs": "इंटीग्रेशन डॉक्स",
+    "website": "वेबसाइट",
+    "privacy": "गोपनीयता"
+  },
+  "home": {
+    "eyebrow": "देखें। कॉल करें।",
+    "title": "ऑनलाइन टूल्स के लिए स्विस्-आर्मी नाइफ",
+    "subtitle": "कोडेक्स, टेक्स्ट, हैशिंग, दस्तावेज़ और इमेज प्रोसेसिंग। ब्राउज़र में पूरा करें, या API / MCP के माध्यम से ऑटोमेट करें — एक ही इम्प्लीमेंटेशन।",
+    "toolCount": "{count} टूल्स",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "खोजें: शब्द गिनती, base64, json, टाइमस्टैम्प…",
+    "aria": "टूल्स खोजें",
+    "emptyTitle": "कोई टूल “{query}” से मेल नहीं खाता",
+    "emptyHint": "कोई और कीवर्ड आज़माएं, या नीचे दिए गए कैटेगरी से कोई टूल चुनें।"
+  },
+  "categories": {
+    "codec": {
+      "label": "कोडेक्स",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "चीन वैलिडेशन",
+      "hint": "ID · फ़ोन"
+    },
+    "data": {
+      "label": "डेटा",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "डेवलपर",
+      "hint": "Regex · SQL · color · UUID"
+    },
+    "doc": {
+      "label": "दस्तावेज़",
+      "hint": "Markdown · PDF merge/split"
+    },
+    "finance": {
+      "label": "फाइनेंस",
+      "hint": "Amount to words"
+    },
+    "hash": {
+      "label": "Hash & security",
+      "hint": "MD5 · SHA · HMAC · password"
+    },
+    "image": {
+      "label": "छवियाँ",
+      "hint": "Compress · QR · convert"
+    },
+    "life": {
+      "label": "Life calculators",
+      "hint": "Mortgage · BMI · kinship"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "टोकन · लागत · स्कीमा"
+    },
+    "security": {
+      "label": "सुरक्षा",
+      "hint": "पासवर्ड जनरेटर"
+    },
+    "text": {
+      "label": "टेक्स्ट",
+      "hint": "शब्द गिनती · CJK · पिनयिन · अंतर"
+    },
+    "time": {
+      "label": "समय",
+      "hint": "टाइमस्टैम्प · समय क्षेत्र · Cron · चंद्र"
+    },
+    "unit": {
+      "label": "इकाइयाँ",
+      "hint": "लंबाई · वजन · तापमान · डेटा"
+    }
+  }
+}

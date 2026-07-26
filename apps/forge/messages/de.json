@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Online-Toolstation",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Codecs, Text, Hashing, Dokumente und Bildtools online."
+  },
+  "nav": {
+    "main": "Hauptnavigation",
+    "homeAria": "{brandName} Forge Startseite",
+    "tools": "Werkzeuge",
+    "wallet": "Wallet",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Toolkategorien"
+  },
+  "tool": {
+    "breadcrumbAria": "Brotkrümelnavigation",
+    "labNotice": "Lab-Funktion: Begrenzte Daten- oder Wörterbuchabdeckung; Ergebnisse dienen nur als Referenz.",
+    "workspace": "Arbeitsbereich",
+    "workspaceHint": "Lokal oder Server · gleicher Pfad wie API",
+    "api": "API",
+    "apiHint": "Gleicher Vertrag wie die Seite. Verwende in der Produktion einen authentifizierten Schlüssel.",
+    "related": "Verwandte Tools"
+  },
+  "auth": {
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "signOut": "Abmelden"
+  },
+  "footer": {
+    "navAria": "Fußzeile",
+    "blurb": "Online-Toolstation. Aufgaben im Browser erledigen oder über API / MCP automatisieren.",
+    "product": "Produkt",
+    "developers": "Entwickler",
+    "company": "Unternehmen",
+    "docs": "Integrationsdokumentation",
+    "website": "Website",
+    "privacy": "Datenschutz"
+  },
+  "home": {
+    "eyebrow": "Sehen. Benennen.",
+    "title": "Schweizer Taschenmesser für Online-Tools",
+    "subtitle": "Codecs, Text, Hashing, Dokumente und Bildverarbeitung. Im Browser erledigen oder über API / MCP automatisieren — eine Implementierung.",
+    "toolCount": "{count} Tools",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Suche: Wortzähler, base64, json, timestamp…",
+    "aria": "Tools durchsuchen",
+    "emptyTitle": "Keine Tools passen zu „{query}“",
+    "emptyHint": "Versuche ein anderes Stichwort oder wähle ein Tool aus den untenstehenden Kategorien."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "China-Validierung",
+      "hint": "ID · Telefon"
+    },
+    "data": {
+      "label": "Daten",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Entwickler",
+      "hint": "Regex · SQL · Farbe · UUID"
+    },
+    "doc": {
+      "label": "Dokumente",
+      "hint": "Markdown · PDF zusammenführen/teilen"
+    },
+    "finance": {
+      "label": "Finanzen",
+      "hint": "Betrag in Worte"
+    },
+    "hash": {
+      "label": "Hash & Sicherheit",
+      "hint": "MD5 · SHA · HMAC · Passwort"
+    },
+    "image": {
+      "label": "Bilder",
+      "hint": "Komprimieren · QR · Konvertieren"
+    },
+    "life": {
+      "label": "Lebensrechner",
+      "hint": "Hypothek · BMI · Verwandtschaft"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · Kosten · Schema"
+    },
+    "security": {
+      "label": "Sicherheit",
+      "hint": "Passwortgenerator"
+    },
+    "text": {
+      "label": "Text",
+      "hint": "Wortanzahl · CJK · Pinyin · Diff"
+    },
+    "time": {
+      "label": "Zeit",
+      "hint": "Zeitstempel · Zeitzone · Cron · Mondkalender"
+    },
+    "unit": {
+      "label": "Einheiten",
+      "hint": "Länge · Gewicht · Temperatur · Daten"
+    }
+  }
+}
