@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — stacja narzędzi online",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Kodeki, tekst, haszowanie, dokumenty i narzędzia do obrazów online."
+  },
+  "nav": {
+    "main": "Nawigacja główna",
+    "homeAria": "Strona główna {brandName} Forge",
+    "tools": "Narzędzia",
+    "wallet": "Portfel",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Kategorie narzędzi",
+    "languageAria": "Change language"
+  },
+  "tool": {
+    "breadcrumbAria": "Ścieżka nawigacji",
+    "labNotice": "Funkcja laboratoryjna: ograniczone dane lub pokrycie słownika; wyniki mają charakter wyłącznie informacyjny.",
+    "workspace": "Przestrzeń robocza",
+    "workspaceHint": "Lokalnie lub na serwerze · ta sama ścieżka co API",
+    "api": "API",
+    "apiHint": "Ten sam kontrakt co na stronie. W środowisku produkcyjnym użyj klucza uwierzytelniającego.",
+    "related": "Powiązane narzędzia"
+  },
+  "auth": {
+    "signIn": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "signOut": "Wyloguj się"
+  },
+  "footer": {
+    "navAria": "Stopka",
+    "blurb": "Stacja narzędzi online. Wykonuj zadania w przeglądarce lub automatyzuj przez API / MCP.",
+    "product": "Produkt",
+    "developers": "Deweloperzy",
+    "company": "Firma",
+    "docs": "Dokumentacja integracji",
+    "website": "Strona",
+    "privacy": "Prywatność"
+  },
+  "home": {
+    "eyebrow": "Zobacz. Nazwij.",
+    "title": "Szwajcarski scyzoryk narzędzi online",
+    "subtitle": "Kodeki, tekst, haszowanie, dokumenty i obróbka obrazów. Wykonuj w przeglądarce lub automatyzuj przez API / MCP — jedna implementacja.",
+    "toolCount": "{count} narzędzi",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Szukaj: licznik słów, base64, json, znacznik czasu…",
+    "aria": "Szukaj narzędzi",
+    "emptyTitle": "Brak narzędzi pasujących do „{query}”",
+    "emptyHint": "Spróbuj innego słowa kluczowego lub wybierz narzędzie z kategorii poniżej."
+  },
+  "categories": {
+    "codec": {
+      "label": "Kodeki",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Walidacja Chin",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Dane",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Deweloper",
+      "hint": "Regex · SQL · kolor · UUID"
+    },
+    "doc": {
+      "label": "Dokumenty",
+      "hint": "Markdown · PDF scalenie/rozdzielenie"
+    },
+    "finance": {
+      "label": "Finanse",
+      "hint": "Kwota słowami"
+    },
+    "hash": {
+      "label": "Hash i bezpieczeństwo",
+      "hint": "MD5 · SHA · HMAC · hasło"
+    },
+    "image": {
+      "label": "Obrazy",
+      "hint": "Kompresja · QR · konwersja"
+    },
+    "life": {
+      "label": "Kalkulatory życia",
+      "hint": "Kredyt hipoteczny · BMI · pokrewieństwo"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokeny · koszt · schema"
+    },
+    "security": {
+      "label": "Bezpieczeństwo",
+      "hint": "Generator haseł"
+    },
+    "text": {
+      "label": "Tekst",
+      "hint": "Liczba słów · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Czas",
+      "hint": "Miejsce w czasie · strefa czasowa · Cron · kalendarz księżycowy"
+    },
+    "unit": {
+      "label": "Jednostki",
+      "hint": "Długość · waga · temperatura · dane"
+    }
+  }
+}
