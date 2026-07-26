@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Çevrimiçi araç istasyonu",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Kodlayıcılar, metin, karma oluşturma, belgeler ve görsel araçları çevrimiçi."
+  },
+  "nav": {
+    "main": "Ana navigasyon",
+    "homeAria": "{brandName} Forge ana sayfa",
+    "tools": "Araçlar",
+    "wallet": "Cüzdan",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Araç kategorileri",
+    "languageAria": "Change language"
+  },
+  "tool": {
+    "breadcrumbAria": "Breadcrumb",
+    "labNotice": "Lab özelliği: sınırlı veri veya sözlük kapsamı; sonuçlar yalnızca referans amaçlıdır.",
+    "workspace": "Çalışma Alanı",
+    "workspaceHint": "Yerel veya sunucu · API ile aynı yol",
+    "api": "API",
+    "apiHint": "Sayfa ile aynı sözleşme. Üretim ortamında kimlik doğrulaması yapılmış bir anahtar kullanın.",
+    "related": "İlgili araçlar"
+  },
+  "auth": {
+    "signIn": "Giriş yap",
+    "signUp": "Kayıt ol",
+    "signOut": "Çıkış yap"
+  },
+  "footer": {
+    "navAria": "Alt bilgi",
+    "blurb": "Çevrimiçi araç istasyonu. Görevleri tarayıcıda tamamlayın veya API / MCP üzerinden otomatikleştirin.",
+    "product": "Ürün",
+    "developers": "Geliştiriciler",
+    "company": "Şirket",
+    "docs": "Entegrasyon belgeleri",
+    "website": "Web sitesi",
+    "privacy": "Gizlilik"
+  },
+  "home": {
+    "eyebrow": "Görün. Çağırın.",
+    "title": "Çevrimiçi araçlar için çok amaçlı çakı",
+    "subtitle": "Kodlayıcılar, metin, karma, belgeler ve görüntü işleme. Tarayıcıda tamamlayın veya API / MCP üzerinden otomatikleştirin — tek bir uygulama.",
+    "toolCount": "{count} araç",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Ara: kelime sayısı, base64, json, zaman damgası…",
+    "aria": "Araçları ara",
+    "emptyTitle": "“{query}” ile eşleşen araç yok",
+    "emptyHint": "Başka bir anahtar kelime deneyin veya aşağıdaki kategorilerden bir araç seçin."
+  },
+  "categories": {
+    "codec": {
+      "label": "Kodlayıcılar",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Çin doğrulama",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Veri",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Geliştirici",
+      "hint": "Regex · SQL · renk · UUID"
+    },
+    "doc": {
+      "label": "Belgeler",
+      "hint": "Markdown · PDF birleştir/böl"
+    },
+    "finance": {
+      "label": "Finans",
+      "hint": "Tutarı yazıyla"
+    },
+    "hash": {
+      "label": "Karma ve güvenlik",
+      "hint": "MD5 · SHA · HMAC · şifre"
+    },
+    "image": {
+      "label": "Görseller",
+      "hint": "Sıkıştır · QR · dönüştür"
+    },
+    "life": {
+      "label": "Hayat hesaplayıcıları",
+      "hint": "Konut kredisi · BMI · akrabalık"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Token · maliyet · şema"
+    },
+    "security": {
+      "label": "Güvenlik",
+      "hint": "Şifre oluşturucu"
+    },
+    "text": {
+      "label": "Metin",
+      "hint": "Kelime sayısı · CJK · pinyin · Fark"
+    },
+    "time": {
+      "label": "Zaman",
+      "hint": "Zaman damgası · saat dilimi · Cron · ay takvimi"
+    },
+    "unit": {
+      "label": "Birimler",
+      "hint": "Uzunluk · ağırlık · sıcaklık · veri"
+    }
+  }
+}
