@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Station d'outils en ligne",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Codecs, texte, hachage, documents et outils d'image en ligne."
+  },
+  "nav": {
+    "main": "Navigation principale",
+    "homeAria": "Accueil {brandName} Forge",
+    "tools": "Outils",
+    "wallet": "Portefeuille",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Catégories d'outils",
+    "languageAria": "Change language"
+  },
+  "tool": {
+    "breadcrumbAria": "Fil d'Ariane",
+    "labNotice": "Fonctionnalité Lab : couverture de données ou de dictionnaire limitée ; les résultats sont donnés à titre indicatif.",
+    "workspace": "Espace de travail",
+    "workspaceHint": "Local ou serveur · même chemin que l'API",
+    "api": "API",
+    "apiHint": "Même contrat que la page. Utilisez une clé authentifiée en production.",
+    "related": "Outils connexes"
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "signOut": "Se déconnecter"
+  },
+  "footer": {
+    "navAria": "Pied de page",
+    "blurb": "Station d'outils en ligne. Terminez vos tâches dans le navigateur ou automatisez via API / MCP.",
+    "product": "Produit",
+    "developers": "Développeurs",
+    "company": "Entreprise",
+    "docs": "Docs d'intégration",
+    "website": "Site web",
+    "privacy": "Confidentialité"
+  },
+  "home": {
+    "eyebrow": "Voyez-le. Appelez-le.",
+    "title": "Couteau suisse pour outils en ligne",
+    "subtitle": "Codecs, texte, hachage, documents et traitement d'images. Terminez dans le navigateur ou automatisez via API / MCP — une seule implémentation.",
+    "toolCount": "{count} outils",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Rechercher : compteur de mots, base64, json, timestamp…",
+    "aria": "Rechercher des outils",
+    "emptyTitle": "Aucun outil ne correspond à « {query} »",
+    "emptyHint": "Essayez un autre mot-clé ou choisissez un outil dans les catégories ci-dessous."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Validation Chine",
+      "hint": "ID · téléphone"
+    },
+    "data": {
+      "label": "Données",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Développeur",
+      "hint": "Regex · SQL · couleur · UUID"
+    },
+    "doc": {
+      "label": "Documents",
+      "hint": "Markdown · fusion/séparation PDF"
+    },
+    "finance": {
+      "label": "Finance",
+      "hint": "Montant en lettres"
+    },
+    "hash": {
+      "label": "Hachage & sécurité",
+      "hint": "MD5 · SHA · HMAC · mot de passe"
+    },
+    "image": {
+      "label": "Images",
+      "hint": "Compression · QR · conversion"
+    },
+    "life": {
+      "label": "Calculatrices vie",
+      "hint": "Hypothèque · IMC · parenté"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Jetons · coût · schéma"
+    },
+    "security": {
+      "label": "Sécurité",
+      "hint": "Générateur de mots de passe"
+    },
+    "text": {
+      "label": "Texte",
+      "hint": "Nombre de mots · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Temps",
+      "hint": "Horodatage · fuseau horaire · Cron · lunaire"
+    },
+    "unit": {
+      "label": "Unités",
+      "hint": "Longueur · poids · température · données"
+    }
+  }
+}

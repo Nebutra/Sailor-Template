@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — 線上工具站",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "線上編碼器、文字、雜湊、文件與影像工具。"
+  },
+  "nav": {
+    "main": "主要導覽",
+    "homeAria": "{brandName} Forge 首頁",
+    "tools": "工具",
+    "wallet": "錢包",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "工具分類",
+    "languageAria": "Change language"
+  },
+  "tool": {
+    "breadcrumbAria": "麵包屑",
+    "labNotice": "實驗室功能：資料或詞典涵蓋有限，結果僅供參考。",
+    "workspace": "工作區",
+    "workspaceHint": "本機或伺服器 · 與 API 路徑相同",
+    "api": "API",
+    "apiHint": "與頁面合約相同。生產環境請使用已驗證的 Key。",
+    "related": "相關工具"
+  },
+  "auth": {
+    "signIn": "登入",
+    "signUp": "註冊",
+    "signOut": "登出"
+  },
+  "footer": {
+    "navAria": "頁尾",
+    "blurb": "線上工具站。在瀏覽器中完成任務，或透過 API / MCP 自動化。",
+    "product": "產品",
+    "developers": "開發者",
+    "company": "公司",
+    "docs": "整合文件",
+    "website": "網站",
+    "privacy": "隱私"
+  },
+  "home": {
+    "eyebrow": "看得見，叫得出。",
+    "title": "線上工具的瑞士軍刀",
+    "subtitle": "編碼、文字、雜湊、文件與影像處理。在瀏覽器中完成，或透過 API / MCP 自動化——一套實作。",
+    "toolCount": "{count} 個工具",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "搜尋：字數統計、base64、json、時間戳…",
+    "aria": "搜尋工具",
+    "emptyTitle": "沒有工具符合「{query}」",
+    "emptyHint": "試試其他關鍵字，或從下方類別中選擇工具。"
+  },
+  "categories": {
+    "codec": {
+      "label": "編碼",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "中國驗證",
+      "hint": "身分證 · 手機號碼"
+    },
+    "data": {
+      "label": "資料",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "開發者",
+      "hint": "Regex · SQL · 顏色 · UUID"
+    },
+    "doc": {
+      "label": "文件",
+      "hint": "Markdown · PDF 合併/分割"
+    },
+    "finance": {
+      "label": "財務",
+      "hint": "數字轉大寫"
+    },
+    "hash": {
+      "label": "雜湊與安全",
+      "hint": "MD5 · SHA · HMAC · 密碼"
+    },
+    "image": {
+      "label": "圖片",
+      "hint": "壓縮 · QR 碼 · 格式轉換"
+    },
+    "life": {
+      "label": "生活計算",
+      "hint": "房貸 · BMI · 親屬關係"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Token · 費用 · Schema"
+    },
+    "security": {
+      "label": "安全",
+      "hint": "密碼產生器"
+    },
+    "text": {
+      "label": "文字",
+      "hint": "字數 · 中日韓字元 · 拼音 · 差異"
+    },
+    "time": {
+      "label": "時間",
+      "hint": "時間戳 · 時區 · Cron · 農曆"
+    },
+    "unit": {
+      "label": "單位",
+      "hint": "長度 · 重量 · 溫度 · 資料"
+    }
+  }
+}
