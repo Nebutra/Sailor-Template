@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Online værktøjsstation",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Codecs, tekst, hashing, dokumenter og billedværktøjer online."
+  },
+  "nav": {
+    "main": "Hovednavigation",
+    "homeAria": "{brandName} Forge hjem",
+    "tools": "Værktøjer",
+    "wallet": "Lommebog",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Værktøjskategorier",
+    "languageAria": "Skift sprog"
+  },
+  "tool": {
+    "breadcrumbAria": "Brødkrumme",
+    "labNotice": "Lab-funktion: begrænset data- eller ordbogscoverage; resultater er kun vejledende.",
+    "workspace": "Arbejdsområde",
+    "workspaceHint": "Lokal eller server · samme sti som API",
+    "api": "API",
+    "apiHint": "Samme kontrakt som siden. Brug en autentificeret nøgle i produktion.",
+    "related": "Relaterede værktøjer"
+  },
+  "auth": {
+    "signIn": "Log ind",
+    "signUp": "Opret konto",
+    "signOut": "Log ud"
+  },
+  "footer": {
+    "navAria": "Sidefod",
+    "blurb": "Online værktøjsstation. Udfør opgaver i browseren, eller automatiser via API / MCP.",
+    "product": "Produkt",
+    "developers": "Udviklere",
+    "company": "Virksomhed",
+    "docs": "Integrationsdokumentation",
+    "website": "Hjemmeside",
+    "privacy": "Privatliv"
+  },
+  "home": {
+    "eyebrow": "Se det. Kald det.",
+    "title": "Lommekniv til online-værktøjer",
+    "subtitle": "Codecs, tekst, hashing, dokumenter og billedbehandling. Udfør i browseren, eller automatiser via API / MCP — én implementering.",
+    "toolCount": "{count} værktøjer",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Søg: ordtælling, base64, json, tidsstempel…",
+    "aria": "Søg i værktøjer",
+    "emptyTitle": "Ingen værktøjer matcher “{query}”",
+    "emptyHint": "Prøv et andet søgeord, eller vælg et værktøj fra kategorierne nedenfor."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Kina-validering",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Udvikler",
+      "hint": "Regex · SQL · farve · UUID"
+    },
+    "doc": {
+      "label": "Dokumenter",
+      "hint": "Markdown · PDF samling/opdeling"
+    },
+    "finance": {
+      "label": "Finans",
+      "hint": "Beløb til ord"
+    },
+    "hash": {
+      "label": "Hash & sikkerhed",
+      "hint": "MD5 · SHA · HMAC · adgangskode"
+    },
+    "image": {
+      "label": "Billeder",
+      "hint": "Komprimer · QR · konverter"
+    },
+    "life": {
+      "label": "Livsberegner",
+      "hint": "Boliglån · BMI · slægtsskab"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · omkostning · skema"
+    },
+    "security": {
+      "label": "Sikkerhed",
+      "hint": "Adgangskodegenerator"
+    },
+    "text": {
+      "label": "Tekst",
+      "hint": "Ordantælling · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Tid",
+      "hint": "Tidsstempel · tidszone · Cron · lunarskifte"
+    },
+    "unit": {
+      "label": "Enheder",
+      "hint": "Længde · vægt · temperatur · data"
+    }
+  }
+}
