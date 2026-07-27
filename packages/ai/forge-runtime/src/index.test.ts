@@ -1,0 +1,187 @@
+import { describe, expect, it } from "vitest";
+import {
+  buildCategoryHub,
+  buildToolPageModel,
+  countText,
+  createForgeMcpHandlers,
+  ForgeRegistry,
+  invokeTool,
+} from "./index";
+import { markdownToSimplePdf } from "./tools/md-to-pdf";
+
+describe("countText", () => {
+  it("counts CJK and latin words", () => {
+    const result = countText("你好 world");
+    expect(result.cjkCharacters).toBe(2);
+    // Segmenter may treat CJK runs as one or more word-like units depending on locale
+    expect(result.words).toBeGreaterThanOrEqual(2);
+    expect(result.engine).toMatch(/Segmenter|fallback/);
+    expect(result.characters).toBeGreaterThan(0);
+  });
+});
+
+describe("ForgeRegistry", () => {
+  it("lists full registry (≥70) after expansion wiring", () => {
+    const registry = ForgeRegistry.openDefault();
+    const tools = registry.list();
+    expect(tools.length).toBeGreaterThanOrEqual(70);
+    expect(tools.every((t) => typeof t.sotaStatus === "string")).toBe(true);
+    expect(tools.some((t) => t.sotaStatus === "production")).toBe(true);
+    // lab/scaffold optional for some CN/life tools
+    expect(registry.get("word-count").id).toBe("text/word-count");
+    expect(registry.get("zh-cn-tw").id).toBe("text/zh-cn-tw");
+    expect(registry.get("cost-estimate").id).toBe("llm/cost-estimate");
+    expect(registry.get("qr-generate").id).toBe("image/qr-generate");
+    expect(registry.get("json-yaml").id).toBe("data/json-yaml");
+    expect(registry.get("pdf-merge").id).toBe("doc/pdf-merge");
+    expect(registry.search("json").some((t) => t.slug === "json-format")).toBe(true);
+    expect(registry.categories()).toContain("text");
+    expect(registry.categories()).toContain("unit");
+    expect(registry.categories()).toContain("cn");
+  });
+});
+
+describe("invokeTool", () => {
+  const registry = ForgeRegistry.openDefault();
+
+  it("invokes word-count successfully", async () => {
+    const result = await invokeTool(registry, {
+      toolId: "text/word-count",
+      input: { text: "hello world" },
+      requestId: "req_test",
+    });
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.output).toMatchObject({ words: 2 });
+      expect(result.meterId).toBe("forge.text.word_count");
+      expect(result.requestId).toBe("req_test");
+    }
+  });
+
+  it("returns invalid_input for bad payload", async () => {
+    const result = await invokeTool(registry, {
+      toolId: "data/json-format",
+      input: { text: 123 },
+    });
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(result.code).toBe("invalid_input");
+    }
+  });
+
+  it("returns tool_not_found", async () => {
+    const result = await invokeTool(registry, {
+      toolId: "no/such-tool",
+      input: {},
+    });
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(result.code).toBe("tool_not_found");
+    }
+  });
+
+  it("formats valid json", async () => {
+    const result = await invokeTool(registry, {
+      toolId: "json-format",
+      input: { text: '{"a":1}', mode: "format", indent: 2 },
+    });
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(String((result.output as { result: string }).result)).toContain('"a"');
+    }
+  });
+});
+
+describe("buildToolPageModel", () => {
+  it("builds dual-surface page model for human template", () => {
+    const registry = ForgeRegistry.openDefault();
+    const page = buildToolPageModel(registry, "base64");
+    expect(page.path).toBe("/t/base64");
+    expect(page.api.path).toContain("/v1/tools/");
+    expect(page.api.exampleCurl).toContain("curl");
+    expect(page.seo.title.zh).toContain("Base64");
+    expect(page.engine.name).toBeTruthy();
+  });
+
+  it("builds category hub for home IA", () => {
+    const hub = buildCategoryHub(ForgeRegistry.openDefault());
+    expect(hub.categories.length).toBeGreaterThan(0);
+    expect(hub.tools.length).toBeGreaterThanOrEqual(8);
+  });
+});
+
+describe("md-to-pdf + mcp", () => {
+  it("writes a valid PDF header via marked simple path", () => {
+    const pdf = markdownToSimplePdf("# Hello\n\n**world**\n\n- a\n- b", "Test");
+    expect(pdf.subarray(0, 5).toString("utf8")).toBe("%PDF-");
+  });
+
+  it("renderMarkdownPdf simple engine returns PDF and marks simple render", async () => {
+    const { renderMarkdownPdf } = await import("./tools/md-to-pdf.js");
+    const out = await renderMarkdownPdf({
+      markdown: "# Title\n\nHello **PDF**",
+      title: "T",
+      engine: "simple",
+    });
+    expect(out.renderEngine).toBe("simple");
+    expect(out.buf.subarray(0, 5).toString("utf8")).toBe("%PDF-");
+  });
+
+  it("keeps md-to-pdf off the default registry (host registers via /pdf subpath)", async () => {
+    const registry = ForgeRegistry.openDefault();
+    expect(registry.list().some((t) => t.id === "doc/md-to-pdf")).toBe(false);
+    const missing = await invokeTool(registry, {
+      toolId: "doc/md-to-pdf",
+      input: { markdown: "# x", title: "Doc", engine: "simple" },
+    });
+    expect(missing.ok).toBe(false);
+    if (!missing.ok) {
+      expect(missing.code).toBe("tool_not_found");
+    }
+
+    // Hosts that need Playwright PDF import the tool from the optional subpath
+    // and register it explicitly — see tools/index.ts F0_BATCH1_TOOLS comment.
+    const { mdToPdfTool } = await import("./tools/md-to-pdf.js");
+    const { F0_BATCH1_TOOLS } = await import("./tools/index.js");
+    const withPdf = new ForgeRegistry([...F0_BATCH1_TOOLS, mdToPdfTool]);
+    const result = await invokeTool(withPdf, {
+      toolId: "doc/md-to-pdf",
+      input: {
+        markdown: "# SOTA path\n\n- item",
+        title: "Doc",
+        engine: "simple",
+      },
+    });
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      const output = result.output as {
+        renderEngine: string;
+        base64: string;
+      };
+      expect(output.renderEngine).toBe("simple");
+      expect(Buffer.from(output.base64, "base64").subarray(0, 5).toString("utf8")).toBe("%PDF-");
+    }
+  });
+
+  it("diffs with jsdiff engine", async () => {
+    const registry = ForgeRegistry.openDefault();
+    const result = await invokeTool(registry, {
+      toolId: "text/diff",
+      input: { left: "a\nb", right: "a\nc" },
+    });
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(String((result.output as { engine: string }).engine)).toBe("diff");
+    }
+  });
+
+  it("lists and calls MCP-shaped tools", async () => {
+    const registry = ForgeRegistry.openDefault();
+    const mcp = createForgeMcpHandlers(registry);
+    const tools = mcp.listTools();
+    expect(tools.some((t) => t.name === "text__word-count")).toBe(true);
+    const result = await mcp.callTool("text__word-count", { text: "a b" });
+    expect(result.isError).toBeFalsy();
+    expect(result.content[0]?.text).toContain("words");
+  });
+});
