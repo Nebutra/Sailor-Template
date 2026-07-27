@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Online eszközök",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Kódolók, szöveg, hash, dokumentumok és képeszközök online."
+  },
+  "nav": {
+    "main": "Fő navigáció",
+    "homeAria": "{brandName} Forge kezdőlap",
+    "tools": "Eszközök",
+    "wallet": "Tárca",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Eszköz kategóriák",
+    "languageAria": "Nyelv módosítása"
+  },
+  "tool": {
+    "breadcrumbAria": "Vezérlőpálya",
+    "labNotice": "Lab funkció: korlátozott adat- vagy szótárlefedettség; az eredmények tájékoztató jellegűek.",
+    "workspace": "Munkaterület",
+    "workspaceHint": "Helyi vagy szerver · ugyanaz az elérési út, mint az API",
+    "api": "API",
+    "apiHint": "Ugyanaz a szerződés, mint az oldalon. Éles környezetben hitelesített kulcsot használj.",
+    "related": "Kapcsolódó eszközök"
+  },
+  "auth": {
+    "signIn": "Bejelentkezés",
+    "signUp": "Regisztráció",
+    "signOut": "Kijelentkezés"
+  },
+  "footer": {
+    "navAria": "Lábléc",
+    "blurb": "Online eszközök állomása. Fejezd be a feladatokat böngészőben, vagy automatizáld API / MCP segítségével.",
+    "product": "Termék",
+    "developers": "Fejlesztők",
+    "company": "Cég",
+    "docs": "Integrációs dokumentáció",
+    "website": "Weboldal",
+    "privacy": "Adatvédelem"
+  },
+  "home": {
+    "eyebrow": "Lásd. Hívd.",
+    "title": "Svájci bicska az online eszközökhöz",
+    "subtitle": "Kódolók, szöveg, hash, dokumentumok és képfeldolgozás. Fejezd be böngészőben, vagy automatizáld API / MCP segítségével – egyetlen implementáció.",
+    "toolCount": "{count} eszköz",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Keresés: szavaszámláló, base64, json, időbélyeg…",
+    "aria": "Eszközök keresése",
+    "emptyTitle": "Nincs eszköz, ami illeszkedik a(z) “{query}” kifejezéshez",
+    "emptyHint": "Próbálj meg egy másik kulcsszót, vagy válassz eszközt az alábbi kategóriákból."
+  },
+  "categories": {
+    "codec": {
+      "label": "Kódolók",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Kínai érvényesítés",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Adatok",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Fejlesztő",
+      "hint": "Regex · SQL · szín · UUID"
+    },
+    "doc": {
+      "label": "Dokumentumok",
+      "hint": "Markdown · PDF egyesítés/szétválasztás"
+    },
+    "finance": {
+      "label": "Pénzügy",
+      "hint": "Összeg szavakra"
+    },
+    "hash": {
+      "label": "Hash és biztonság",
+      "hint": "MD5 · SHA · HMAC · jelszó"
+    },
+    "image": {
+      "label": "Képek",
+      "hint": "Tömörítés · QR · konvertálás"
+    },
+    "life": {
+      "label": "Élet kalkulátorok",
+      "hint": "Hitel · BMI · rokonság"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokenek · költség · séma"
+    },
+    "security": {
+      "label": "Biztonság",
+      "hint": "Jelszó generátor"
+    },
+    "text": {
+      "label": "Szöveg",
+      "hint": "Szószám · CJK · pinjin · Diff"
+    },
+    "time": {
+      "label": "Idő",
+      "hint": "Időbélyeg · időzóna · Cron · holdnaptár"
+    },
+    "unit": {
+      "label": "Mértékegységek",
+      "hint": "Hossz · tömeg · hőmérséklet · adat"
+    }
+  }
+}
