@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — תחנת כלים מקוונת",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "קודקים, טקסט, הקודות, מסמכים וכלי תמונות מקוונים."
+  },
+  "nav": {
+    "main": "ניווט ראשי",
+    "homeAria": "דף הבית של {brandName} Forge",
+    "tools": "כלים",
+    "wallet": "ארנק",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "קטגוריות כלים",
+    "languageAria": "שנה שפה"
+  },
+  "tool": {
+    "breadcrumbAria": "פירורי לחם",
+    "labNotice": "יכולת ניסוי: כיסוי נתונים או מילון מוגבל; התוצאות הן להמחשה בלבד.",
+    "workspace": "מרחב עבודה",
+    "workspaceHint": "מקומי או שרת · אותו נתיב כמו ב-API",
+    "api": "API",
+    "apiHint": "אותו חוזה כמו בדף. השתמש במפתח מאומת בייצור.",
+    "related": "כלים קשורים"
+  },
+  "auth": {
+    "signIn": "התחבר",
+    "signUp": "הירשם",
+    "signOut": "התנתק"
+  },
+  "footer": {
+    "navAria": "כותרת תחתונה",
+    "blurb": "תחנת כלים מקוונת. סיימו משימות בדפדפן או אוטומציה דרך API / MCP.",
+    "product": "מוצר",
+    "developers": "מפתחים",
+    "company": "חברה",
+    "docs": "תיעוד אינטגרציה",
+    "website": "אתר",
+    "privacy": "פרטיות"
+  },
+  "home": {
+    "eyebrow": "ראו את זה. קראו את זה.",
+    "title": "סכין שוויצרית לכלים מקוונים",
+    "subtitle": "קודקים, טקסט, הקודות, מסמכים ועיבוד תמונות. סיימו בדפדפן או אוטומציה דרך API / MCP — יישום אחד.",
+    "toolCount": "{count} כלים",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "חיפוש: ספירת מילים, base64, json, חותמת זמן…",
+    "aria": "חיפוש כלים",
+    "emptyTitle": "אין כלים התואמים ל-“{query}”",
+    "emptyHint": "נסו מילת מפתח אחרת או בחרו כלי מהקטגוריות למטה."
+  },
+  "categories": {
+    "codec": {
+      "label": "קודקים",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "אימות סין",
+      "hint": "מזהה · טלפון"
+    },
+    "data": {
+      "label": "נתונים",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "מפתחים",
+      "hint": "Regex · SQL · צבע · UUID"
+    },
+    "doc": {
+      "label": "מסמכים",
+      "hint": "Markdown · מיזוג/פיצול PDF"
+    },
+    "finance": {
+      "label": "פיננסים",
+      "hint": "סכום למילים"
+    },
+    "hash": {
+      "label": "האש ואבטחה",
+      "hint": "MD5 · SHA · HMAC · סיסמה"
+    },
+    "image": {
+      "label": "תמונות",
+      "hint": "דחיסה · QR · המרה"
+    },
+    "life": {
+      "label": "מחשבי חיים",
+      "hint": "משכנתא · BMI · קרבה משפחתית"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "טוקנים · עלות · סכמה"
+    },
+    "security": {
+      "label": "אבטחה",
+      "hint": "מחולל סיסמאות"
+    },
+    "text": {
+      "label": "טקסט",
+      "hint": "מספר מילים · CJK · פין-יין · Diff"
+    },
+    "time": {
+      "label": "זמן",
+      "hint": "חותמת זמן · אזור זמן · Cron · לוח ירחי"
+    },
+    "unit": {
+      "label": "יחידות",
+      "hint": "אורך · משקל · טמפרטורה · נתונים"
+    }
+  }
+}
