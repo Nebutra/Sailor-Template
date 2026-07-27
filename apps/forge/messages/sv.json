@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Online verktygsstation",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Kodningar, text, hashning, dokument och bildverktyg online."
+  },
+  "nav": {
+    "main": "Huvudnavigation",
+    "homeAria": "{brandName} Forge hem",
+    "tools": "Verktyg",
+    "wallet": "Plånbok",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Verktygskategorier",
+    "languageAria": "Byt språk"
+  },
+  "tool": {
+    "breadcrumbAria": "Brödsmulor",
+    "labNotice": "Lab-funktion: begränsad data- eller ordbokscoverage; resultaten är endast för referens.",
+    "workspace": "Arbetsyta",
+    "workspaceHint": "Lokalt eller server · samma sökväg som API",
+    "api": "API",
+    "apiHint": "Samma kontrakt som sidan. Använd en autentiserad nyckel i produktion.",
+    "related": "Relaterade verktyg"
+  },
+  "auth": {
+    "signIn": "Logga in",
+    "signUp": "Skapa konto",
+    "signOut": "Logga ut"
+  },
+  "footer": {
+    "navAria": "Sidfot",
+    "blurb": "Onlineverktygsstation. Slutför uppgifter i webbläsaren eller automatisera via API / MCP.",
+    "product": "Produkt",
+    "developers": "Utvecklare",
+    "company": "Företag",
+    "docs": "Integrationsdokumentation",
+    "website": "Webbplats",
+    "privacy": "Integritet"
+  },
+  "home": {
+    "eyebrow": "Se det. Anropa det.",
+    "title": "Multiverktyg för onlineverktyg",
+    "subtitle": "Codecs, text, hashning, dokument och bildbehandling. Slutför i webbläsaren eller automatisera via API / MCP — en implementation.",
+    "toolCount": "{count} verktyg",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Sök: ordantal, base64, json, tidsstämpel…",
+    "aria": "Sök verktyg",
+    "emptyTitle": "Inga verktyg matchar ”{query}”",
+    "emptyHint": "Försök med ett annat nyckelord eller välj ett verktyg från kategorierna nedan."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Kina-validering",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Utvecklare",
+      "hint": "Regex · SQL · färg · UUID"
+    },
+    "doc": {
+      "label": "Dokument",
+      "hint": "Markdown · PDF sammanfoga/dela"
+    },
+    "finance": {
+      "label": "Finans",
+      "hint": "Belopp till ord"
+    },
+    "hash": {
+      "label": "Hash & säkerhet",
+      "hint": "MD5 · SHA · HMAC · lösenord"
+    },
+    "image": {
+      "label": "Bilder",
+      "hint": "Komprimera · QR · konvertera"
+    },
+    "life": {
+      "label": "Livskalkylatorer",
+      "hint": "Bostadslån · BMI · släktskap"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · kostnad · schema"
+    },
+    "security": {
+      "label": "Säkerhet",
+      "hint": "Lösenordsgenerator"
+    },
+    "text": {
+      "label": "Text",
+      "hint": "Ordantal · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Tid",
+      "hint": "Tidstämpel · tidszon · Cron · lunär"
+    },
+    "unit": {
+      "label": "Enheter",
+      "hint": "Längd · vikt · temperatur · data"
+    }
+  }
+}
