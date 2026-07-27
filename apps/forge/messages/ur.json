@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — آن لائن ٹول اسٹیشن",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "کوڈیکس، ٹیکسٹ، ہیشنگ، دستاویزات اور امیج ٹولز آن لائن۔"
+  },
+  "nav": {
+    "main": "مین نیویگیشن",
+    "homeAria": "{brandName} Forge ہوم",
+    "tools": "ٹولز",
+    "wallet": "والیٹ",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "ٹول کیٹیگریز",
+    "languageAria": "زبان تبدیل کریں"
+  },
+  "tool": {
+    "breadcrumbAria": "بریبڈ کرامب",
+    "labNotice": "لیب کی صلاحیت: محدود ڈیٹا یا ڈکشنری کوریج؛ نتائج صرف حوالہ کے لیے ہیں۔",
+    "workspace": "ورک اسپیس",
+    "workspaceHint": "لوکل یا سرور · API جیسا ہی راستہ",
+    "api": "API",
+    "apiHint": "صفحے جیسا ہی معاہدہ۔ پروڈکشن میں تصدیق شدہ کلید استعمال کریں۔",
+    "related": "متعلقہ ٹولز"
+  },
+  "auth": {
+    "signIn": "سائن ان",
+    "signUp": "سائن اپ",
+    "signOut": "سائن آؤٹ"
+  },
+  "footer": {
+    "navAria": "فوٹر",
+    "blurb": "آن لائن ٹول اسٹیشن۔ براؤزر میں کام مکمل کریں، یا API / MCP کے ذریعے خودکار بنائیں۔",
+    "product": "پروڈکٹ",
+    "developers": "ڈویلپرز",
+    "company": "کمپنی",
+    "docs": "انٹیگریشن دستاویزات",
+    "website": "ویب سائٹ",
+    "privacy": "پرائیویسی"
+  },
+  "home": {
+    "eyebrow": "دیکھیں۔ کال کریں۔",
+    "title": "آن لائن ٹولز کے لیے سوئس آرمی نائیف",
+    "subtitle": "کوڈیکس، ٹیکسٹ، ہیشنگ، دستاویزات، اور امیج پروسیسنگ۔ براؤزر میں مکمل کریں، یا API / MCP کے ذریعے خودکار بنائیں — ایک ہی امپلیمنٹیشن۔",
+    "toolCount": "{count} ٹولز",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "تلاش کریں: ورڈ کاؤنٹ، base64，json، ٹائم اسٹیمپ…",
+    "aria": "ٹولز تلاش کریں",
+    "emptyTitle": "کوئی ٹول \"{query}\" سے مطابقت نہیں رکھتا",
+    "emptyHint": "دوسرا کی ورڈ آزمائیں، یا نیچے دی گئی زمرہ جات میں سے کوئی ٹول منتخب کریں۔"
+  },
+  "categories": {
+    "codec": {
+      "label": "کوڈیکس",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "چین کی توثیق",
+      "hint": "آئی ڈی · فون"
+    },
+    "data": {
+      "label": "ڈیٹا",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "ڈویلپر",
+      "hint": "Regex · SQL · رنگ · UUID"
+    },
+    "doc": {
+      "label": "دستاویزات",
+      "hint": "Markdown · PDF ملاپ/تقسیم"
+    },
+    "finance": {
+      "label": "مالیات",
+      "hint": "رقم کو الفاظ میں"
+    },
+    "hash": {
+      "label": "ہیش اور سیکیورٹی",
+      "hint": "MD5 · SHA · HMAC · پاس ورڈ"
+    },
+    "image": {
+      "label": "تصاویر",
+      "hint": "کمپریس · QR · تبدیل کریں"
+    },
+    "life": {
+      "label": "زندگی کی کیلکولیٹرز",
+      "hint": "مورٹیج · BMI · رشتہ"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "ٹوکنز · لاگت · اسکیم"
+    },
+    "security": {
+      "label": "سیکیورٹی",
+      "hint": "پاس ورڈ جنریٹر"
+    },
+    "text": {
+      "label": "متن",
+      "hint": "الفاظ کی گنتی · CJK · پین یین · فرق"
+    },
+    "time": {
+      "label": "وقت",
+      "hint": "ٹائم اسٹیمپ · ٹائم زون · Cron · قمری"
+    },
+    "unit": {
+      "label": "اکائیاں",
+      "hint": "لمبائی · وزن · درجہ حرارت · ڈیٹا"
+    }
+  }
+}

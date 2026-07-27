@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Online tool station",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Codecs, tekst, hashing, documenten en beeldtools online."
+  },
+  "nav": {
+    "main": "Hoofdnavigatie",
+    "homeAria": "{brandName} Forge home",
+    "tools": "Tools",
+    "wallet": "Wallet",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Toolcategorieën",
+    "languageAria": "Taal wijzigen"
+  },
+  "tool": {
+    "breadcrumbAria": "Broodkruimels",
+    "labNotice": "Lab-functie: beperkte data- of woordenboekdekking; resultaten zijn slechts ter referentie.",
+    "workspace": "Werkruimte",
+    "workspaceHint": "Lokaal of server · zelfde pad als API",
+    "api": "API",
+    "apiHint": "Zelfde contract als de pagina. Gebruik een geauthenticeerde sleutel in productie.",
+    "related": "Gerelateerde tools"
+  },
+  "auth": {
+    "signIn": "Inloggen",
+    "signUp": "Aanmelden",
+    "signOut": "Uitloggen"
+  },
+  "footer": {
+    "navAria": "Voettekst",
+    "blurb": "Online toolstation. Voer taken uit in de browser of automatiseer via API / MCP.",
+    "product": "Product",
+    "developers": "Ontwikkelaars",
+    "company": "Bedrijf",
+    "docs": "Integratiedocumentatie",
+    "website": "Website",
+    "privacy": "Privacy"
+  },
+  "home": {
+    "eyebrow": "Zie het. Roep het aan.",
+    "title": "Zwitserse zakmes voor online tools",
+    "subtitle": "Codecs, tekst, hashing, documenten en beeldverwerking. Klaar in de browser of geautomatiseerd via API / MCP — één implementatie.",
+    "toolCount": "{count} tools",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Zoeken: woordteller, base64, json, timestamp…",
+    "aria": "Zoek tools",
+    "emptyTitle": "Geen tools gevonden voor “{query}”",
+    "emptyHint": "Probeer een ander trefwoord of kies een tool uit de categorieën hieronder."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "China-validatie",
+      "hint": "ID · telefoon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Ontwikkelaar",
+      "hint": "Regex · SQL · kleur · UUID"
+    },
+    "doc": {
+      "label": "Documenten",
+      "hint": "Markdown · PDF samenvoegen/splitsen"
+    },
+    "finance": {
+      "label": "Financiën",
+      "hint": "Bedrag naar woorden"
+    },
+    "hash": {
+      "label": "Hash & beveiliging",
+      "hint": "MD5 · SHA · HMAC · wachtwoord"
+    },
+    "image": {
+      "label": "Afbeeldingen",
+      "hint": "Comprimeren · QR · converteren"
+    },
+    "life": {
+      "label": "Levensrekenmachines",
+      "hint": "Hypotheek · BMI · verwantschap"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · kosten · schema"
+    },
+    "security": {
+      "label": "Beveiliging",
+      "hint": "Wachtwoordgenerator"
+    },
+    "text": {
+      "label": "Tekst",
+      "hint": "Woordtelling · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Tijd",
+      "hint": "Tijdstempel · tijdzone · Cron · maantijd"
+    },
+    "unit": {
+      "label": "Eenheden",
+      "hint": "Lengte · gewicht · temperatuur · data"
+    }
+  }
+}
