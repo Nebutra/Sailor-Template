@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — 온라인 도구 스테이션",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "인코더, 텍스트, 해싱, 문서, 이미지 도구 등을 온라인에서 사용하세요."
+  },
+  "nav": {
+    "main": "주 메뉴",
+    "homeAria": "{brandName} Forge 홈",
+    "tools": "도구",
+    "wallet": "지갑",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "도구 카테고리",
+    "languageAria": "언어 변경"
+  },
+  "tool": {
+    "breadcrumbAria": "경로",
+    "labNotice": "실험실 기능: 데이터 또는 사전 커버리지가 제한적이며, 결과는 참고용입니다.",
+    "workspace": "작업 공간",
+    "workspaceHint": "로컬 또는 서버 · API와 동일한 경로",
+    "api": "API",
+    "apiHint": "페이지와 동일한 계약. 프로덕션에서는 인증 키를 사용하세요.",
+    "related": "관련 도구"
+  },
+  "auth": {
+    "signIn": "로그인",
+    "signUp": "회원가입",
+    "signOut": "로그아웃"
+  },
+  "footer": {
+    "navAria": "푸터",
+    "blurb": "온라인 도구 스테이션. 브라우저에서 작업을 완료하거나 API / MCP를 통해 자동화하세요.",
+    "product": "제품",
+    "developers": "개발자",
+    "company": "회사",
+    "docs": "통합 문서",
+    "website": "웹사이트",
+    "privacy": "개인정보"
+  },
+  "home": {
+    "eyebrow": "보고 호출하세요.",
+    "title": "온라인 도구의 스위스 아미 나이프",
+    "subtitle": "코덱, 텍스트, 해싱, 문서, 이미지 처리. 브라우저에서 완료하거나 API / MCP를 통해 자동화하세요 — 단일 구현.",
+    "toolCount": "{count}개 도구",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "검색: 단어 수, base64, json, 타임스탬프…",
+    "aria": "도구 검색",
+    "emptyTitle": "“{query}”와 일치하는 도구가 없습니다.",
+    "emptyHint": "다른 키워드로 시도하거나 아래 카테고리에서 도구를 선택하세요."
+  },
+  "categories": {
+    "codec": {
+      "label": "코덱",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "중국 유효성 검사",
+      "hint": "ID · 전화번호"
+    },
+    "data": {
+      "label": "데이터",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "개발자",
+      "hint": "Regex · SQL · 색상 · UUID"
+    },
+    "doc": {
+      "label": "문서",
+      "hint": "Markdown · PDF 병합/분할"
+    },
+    "finance": {
+      "label": "금융",
+      "hint": "금액 → 문자"
+    },
+    "hash": {
+      "label": "해시 & 보안",
+      "hint": "MD5 · SHA · HMAC · 비밀번호"
+    },
+    "image": {
+      "label": "이미지",
+      "hint": "압축 · QR · 변환"
+    },
+    "life": {
+      "label": "생활 계산기",
+      "hint": "주택담보 · BMI · 친족"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "토큰 · 비용 · 스키마"
+    },
+    "security": {
+      "label": "보안",
+      "hint": "비밀번호 생성기"
+    },
+    "text": {
+      "label": "텍스트",
+      "hint": "단어 수 · CJK · 병음 · 차이"
+    },
+    "time": {
+      "label": "시간",
+      "hint": "타임스탬프 · 시간대 · Cron · 음력"
+    },
+    "unit": {
+      "label": "단위",
+      "hint": "길이 · 무게 · 온도 · 데이터"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Run",
+      "running": "Running…",
+      "copy": "Copy",
+      "copied": "Copied",
+      "sameAsApi": "Same path as API · OSS engine",
+      "mustBeNumber": "{label} must be a number",
+      "base64Loaded": "Base64 payload loaded",
+      "workspaceMissing": "Workspace not configured: {slug}",
+      "yes": "Yes",
+      "no": "No",
+      "text": "Text",
+      "outputPreview": "Output preview",
+      "mode": "Mode",
+      "encode": "Encode",
+      "decode": "Decode"
+    },
+    "lorem": {
+      "paragraphs": "Paragraphs",
+      "wordsPerParagraph": "Words per paragraph",
+      "startWithLorem": "Start with “Lorem ipsum”",
+      "note": "Lorem Ipsum Generator · pure"
+    },
+    "emailValidate": {
+      "note": "Email Validator · format only (no MX lookup)"
+    },
+    "creditCardLuhn": {
+      "number": "Card number",
+      "note": "Luhn Checker · offline, never stored"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "JSON Minifier · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS Minifier · lightweight (edge-safe)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Ignore case",
+      "note": "Hash Comparator · constant-time for equal length"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON Diff · path-level ops · kind-colored rows · side-by-side",
+      "equal": "Identical",
+      "differs": "{count} change(s)",
+      "colPath": "Path",
+      "colKind": "Kind",
+      "colLeft": "Left",
+      "colRight": "Right",
+      "filtersAria": "Filter by change kind",
+      "filterAll": "All ({count})",
+      "filterAdd": "Add ({count})",
+      "filterRemove": "Remove ({count})",
+      "filterChange": "Change ({count})",
+      "filterType": "Type ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Mode",
+      "pretty": "Pretty",
+      "compact": "Compact",
+      "indent": "Indent",
+      "note": "YAML Formatter · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "TOML Formatter · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "XML Minifier · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "URL Validator · WHATWG URL (no network fetch)"
+    },
+    "ipValidate": {
+      "note": "IP Validator · IPv4/IPv6 offline"
+    },
+    "uuidValidate": {
+      "note": "UUID Validator · RFC 4122 shape"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "HTML Minifier · lightweight (edge-safe)"
+    },
+    "randomString": {
+      "length": "Length",
+      "count": "Count",
+      "charset": "Charset",
+      "alphanumeric": "Alphanumeric",
+      "symbols": "Alphanumeric + symbols",
+      "hex": "Hex",
+      "base64url": "Base64URL",
+      "note": "Random String · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Reading time · CJK + Latin heuristic"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Max heading level",
+      "note": "Markdown TOC · ATX headings"
+    },
+    "pdfInfo": {
+      "file": "PDF file",
+      "note": "PDF Info · pdf-lib (pages + metadata)"
+    },
+    "rot13": {
+      "shift": "Shift (13 = ROT13)",
+      "note": "ROT13 / Caesar · pure"
+    },
+    "morse": {
+      "note": "Morse Code · ITU · pure"
+    },
+    "textBinary": {
+      "toBinary": "Text → binary",
+      "fromBinary": "Binary → text",
+      "note": "Text ↔ Binary · UTF-8 bits"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Digest encoding",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS Beautifier · lightweight"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · lightweight"
+    },
+    "stringSimilarity": {
+      "a": "String A",
+      "b": "String B",
+      "note": "String Similarity · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Number → Roman",
+      "fromRoman": "Roman → Number",
+      "note": "Roman Numerals · 1–3999"
+    },
+    "age": {
+      "birthDate": "Birth date (YYYY-MM-DD)",
+      "asOf": "As of (optional)",
+      "note": "Age Calculator · exact Y/M/D"
+    },
+    "tip": {
+      "bill": "Bill amount",
+      "percent": "Tip %",
+      "people": "People",
+      "note": "Tip Calculator · split friendly"
+    },
+    "aspect": {
+      "width": "Width",
+      "height": "Height",
+      "note": "Aspect Ratio · GCD simplify"
+    },
+    "mime": {
+      "note": "MIME Lookup · common web types"
+    },
+    "ua": {
+      "note": "User-Agent Parser · heuristic (offline)"
+    },
+    "imageMeta": {
+      "file": "Image file",
+      "note": "Image Metadata · sharp (EXIF buffer size)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "Word Frequency · CJK + Latin"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL Minifier · comments + whitespace"
+    },
+    "lineNum": {
+      "start": "Start number",
+      "note": "Add Line Numbers · pure"
+    },
+    "uniqueWords": {
+      "note": "Unique Words · first-seen order"
+    },
+    "epoch": {
+      "value": "Value",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Epoch Milliseconds · Date"
+    },
+    "passwordEntropy": {
+      "password": "Password",
+      "note": "Password Entropy · charset heuristic"
+    },
+    "contrast": {
+      "fg": "Foreground (#hex)",
+      "bg": "Background (#hex)",
+      "note": "Color Contrast · WCAG 2.x"
+    },
+    "exif": {
+      "file": "Image file",
+      "note": "EXIF Viewer · exifr + JPEG fallback"
+    },
+    "regex": {
+      "pattern": "Pattern",
+      "replacement": "Replacement",
+      "flags": "Flags",
+      "note": "Regex Find & Replace · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Secret",
+      "exp": "Expires (seconds)",
+      "note": "JWT Generate · HS256 (dev/test only)"
+    },
+    "rand": {
+      "min": "Min",
+      "max": "Max",
+      "count": "Count",
+      "note": "Random Number · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Sides",
+      "count": "Dice count",
+      "note": "Dice Roller · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · pure"
+    },
+    "base64url": {
+      "note": "Base64URL · JWT-style"
+    },
+    "hmac": {
+      "message": "Message",
+      "secret": "Secret",
+      "signature": "Signature",
+      "note": "HMAC Verify · SHA-256"
+    },
+    "secret": {
+      "bytes": "Bytes",
+      "count": "Count",
+      "note": "Secret Key Generator · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "PDF file",
+      "note": "PDF Light Optimize · pdf-lib rewrite (not image recompress)"
+    },
+    "pdfCompress": {
+      "file": "PDF file",
+      "quality": "Quality",
+      "engine": "Engine",
+      "qStructural": "Structural (qpdf, lossless streams)",
+      "qScreen": "Screen (smallest, Ghostscript)",
+      "qEbook": "Ebook (balanced, Ghostscript)",
+      "qPrinter": "Printer (higher quality, Ghostscript)",
+      "eAuto": "Auto (qpdf → Ghostscript → pdf-lib)",
+      "download": "Download PDF",
+      "needFile": "Choose a PDF file first",
+      "in": "Input",
+      "out": "Output",
+      "saved": "Saved",
+      "note": "PDF Compress · qpdf / Ghostscript on host · pdf-lib fallback"
+    }
+  },
+  "roots": {
+    "hubLabel": "By intent",
+    "tools": "tools",
+    "dualSurface": "Human page + Agent API · same engine",
+    "otherRoots": "Other demand roots"
+  }
+}
