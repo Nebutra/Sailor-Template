@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — オンラインツールステーション",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "コーデック、テキスト、ハッシュ、ドキュメント、画像ツールをオンラインで。"
+  },
+  "nav": {
+    "main": "メインナビゲーション",
+    "homeAria": "{brandName} Forge ホーム",
+    "tools": "ツール",
+    "wallet": "ウォレット",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "ツールカテゴリ",
+    "languageAria": "言語を変更"
+  },
+  "tool": {
+    "breadcrumbAria": "パンくずリスト",
+    "workspace": "ワークスペース",
+    "workspaceHint": "ローカルまたはサーバー · APIと同じパス",
+    "api": "API",
+    "apiHint": "ページと同じコントラクトです。本番環境では認証キーを使用してください。",
+    "related": "関連ツール"
+  },
+  "auth": {
+    "signIn": "サインイン",
+    "signUp": "サインアップ",
+    "signOut": "サインアウト"
+  },
+  "footer": {
+    "navAria": "フッター",
+    "blurb": "オンラインツールステーション。ブラウザでタスクを完了するか、API / MCP で自動化。",
+    "product": "プロダクト",
+    "developers": "開発者",
+    "company": "会社情報",
+    "docs": "統合ドキュメント",
+    "website": "ウェブサイト",
+    "privacy": "プライバシー"
+  },
+  "home": {
+    "eyebrow": "見て、呼んで。",
+    "title": "オンラインツールのスイスアーミーナイフ",
+    "subtitle": "コーデック、テキスト、ハッシュ、ドキュメント、画像処理。ブラウザで完了するか、API / MCP で自動化——1つの実装で。",
+    "toolCount": "{count} ツール",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "検索: 文字数、base64、json、タイムスタンプ…",
+    "aria": "ツールを検索",
+    "emptyTitle": "「{query}」に一致するツールはありません",
+    "emptyHint": "別のキーワードを試すか、以下のカテゴリからツールを選択してください。"
+  },
+  "categories": {
+    "codec": {
+      "label": "コーデック",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "中国検証",
+      "hint": "ID · 電話番号"
+    },
+    "data": {
+      "label": "データ",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "開発者",
+      "hint": "正規表現 · SQL · 色 · UUID"
+    },
+    "doc": {
+      "label": "ドキュメント",
+      "hint": "Markdown · PDF 結合/分割"
+    },
+    "finance": {
+      "label": "ファイナンス",
+      "hint": "金額を文字列に変換"
+    },
+    "hash": {
+      "label": "ハッシュとセキュリティ",
+      "hint": "MD5 · SHA · HMAC · パスワード"
+    },
+    "image": {
+      "label": "画像",
+      "hint": "圧縮 · QR · 変換"
+    },
+    "life": {
+      "label": "生活計算ツール",
+      "hint": "住宅ローン · BMI · 親族関係"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "トークン · コスト · スキーマ"
+    },
+    "security": {
+      "label": "セキュリティ",
+      "hint": "パスワード生成"
+    },
+    "text": {
+      "label": "テキスト",
+      "hint": "文字数 · CJK · 拼音 · 差分"
+    },
+    "time": {
+      "label": "時刻",
+      "hint": "タイムスタンプ · タイムゾーン · Cron · 旧暦"
+    },
+    "unit": {
+      "label": "単位",
+      "hint": "長さ · 重量 · 温度 · データ"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "実行",
+      "running": "実行中…",
+      "copy": "コピー",
+      "copied": "コピーしました",
+      "sameAsApi": "APIと同じパス · OSSエンジン",
+      "mustBeNumber": "{label}は数値である必要があります",
+      "base64Loaded": "Base64ペイロードを読み込みました",
+      "workspaceMissing": "ワークスペースが設定されていません: {slug}",
+      "yes": "はい",
+      "no": "いいえ",
+      "text": "テキスト",
+      "outputPreview": "出力プレビュー",
+      "mode": "モード",
+      "encode": "エンコード",
+      "decode": "デコード"
+    },
+    "lorem": {
+      "paragraphs": "段落数",
+      "wordsPerParagraph": "段落あたりの単語数",
+      "startWithLorem": "「Lorem ipsum」で開始",
+      "note": "Lorem Ipsum ジェネレーター · pure"
+    },
+    "emailValidate": {
+      "note": "メール検証ツール · フォーマットのみ（MX ルックアップなし）"
+    },
+    "creditCardLuhn": {
+      "number": "カード番号",
+      "note": "Luhn チェッカー · オフライン、保存なし"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "JSON ミニファイア · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS Minifier · lightweight (edge-safe)"
+    },
+    "hashCompare": {
+      "a": "ハッシュ A",
+      "b": "ハッシュ B",
+      "ignoreCase": "大文字小文字を区別しない",
+      "note": "Hash Comparator · 等長時の定数時間比較"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON Diff · パス単位操作 · 種類別カラー行 · 並列表示",
+      "equal": "同一",
+      "differs": "{count} 件の変更",
+      "colPath": "パス",
+      "colKind": "種類",
+      "colLeft": "左側",
+      "colRight": "右側",
+      "filtersAria": "変更の種類でフィルター",
+      "filterAll": "すべて ({count})",
+      "filterAdd": "追加 ({count})",
+      "filterRemove": "削除 ({count})",
+      "filterChange": "変更 ({count})",
+      "filterType": "タイプ ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "モード",
+      "pretty": "整形表示",
+      "compact": "コンパクト",
+      "indent": "インデント",
+      "note": "YAML フォーマッター · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "TOML フォーマッター · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "XML ミニファイア · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "URL バリデーター · WHATWG URL（ネットワーク取得なし）"
+    },
+    "ipValidate": {
+      "note": "IP バリデーター · IPv4/IPv6 オフライン"
+    },
+    "uuidValidate": {
+      "note": "UUID バリデーター · RFC 4122 形式"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "HTML ミニファイア · ライトウェイト（エッジ対応）"
+    },
+    "randomString": {
+      "length": "長さ",
+      "count": "件数",
+      "charset": "文字セット",
+      "alphanumeric": "英数字",
+      "symbols": "英数字 + 記号",
+      "hex": "16進数",
+      "base64url": "Base64URL",
+      "note": "ランダム文字列 · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "読書時間 · CJK + ラテン語推定"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "見出し最大レベル",
+      "note": "Markdown目次 · ATX見出し"
+    },
+    "pdfInfo": {
+      "file": "PDF ファイル",
+      "note": "PDF Info · pdf-lib（ページ数 + メタデータ）"
+    },
+    "rot13": {
+      "shift": "シフト（13 = ROT13）",
+      "note": "ROT13 / Caesar · pure"
+    },
+    "morse": {
+      "note": "モールス符号 · ITU · pure"
+    },
+    "textBinary": {
+      "toBinary": "テキスト → バイナリ",
+      "fromBinary": "バイナリ → テキスト",
+      "note": "テキスト ↔ バイナリ · UTF-8 ビット"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "ダイジェストエンコーディング",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS Beautifier · lightweight"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · ライトウェイト"
+    },
+    "stringSimilarity": {
+      "a": "文字列 A",
+      "b": "文字列 B",
+      "note": "文字列類似度 · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "数字 → ローマ数字",
+      "fromRoman": "ローマ数字 → 数字",
+      "note": "ローマ数字 · 1–3999"
+    },
+    "age": {
+      "birthDate": "生年月日 (YYYY-MM-DD)",
+      "asOf": "基準日 (任意)",
+      "note": "年齢計算機 · 正確な年/月/日"
+    },
+    "tip": {
+      "bill": "請求額",
+      "percent": "チップ %",
+      "people": "人数",
+      "note": "チップ計算機 · 割り勘対応"
+    },
+    "aspect": {
+      "width": "幅",
+      "height": "高さ",
+      "note": "アスペクト比 · 最大公約数で簡略化"
+    },
+    "mime": {
+      "note": "MIME 種別確認 · 一般的な Web タイプ"
+    },
+    "ua": {
+      "note": "User-Agent パーサー · 推論ベース（オフライン）"
+    },
+    "imageMeta": {
+      "file": "画像ファイル",
+      "note": "画像メタデータ · sharp（EXIF バッファサイズ）"
+    },
+    "wordFreq": {
+      "top": "上位 N",
+      "note": "単語頻度 · CJK + ラテン文字"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL Minifier · コメントと空白の削除"
+    },
+    "lineNum": {
+      "start": "開始番号",
+      "note": "行番号を追加 · 純粋な実装"
+    },
+    "uniqueWords": {
+      "note": "重複なしの単語一覧 · 初出順"
+    },
+    "epoch": {
+      "value": "値",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "エポックミリ秒 · 日付"
+    },
+    "passwordEntropy": {
+      "password": "パスワード",
+      "note": "パスワードエントロピー · 文字種推定"
+    },
+    "contrast": {
+      "fg": "前景色 (#hex)",
+      "bg": "背景色 (#hex)",
+      "note": "色相対比 · WCAG 2.x"
+    },
+    "exif": {
+      "file": "画像ファイル",
+      "note": "EXIF ビューア · exifr + JPEG フォールバック"
+    },
+    "regex": {
+      "pattern": "パターン",
+      "replacement": "置換文字列",
+      "flags": "フラグ",
+      "note": "正規表現検索と置換 · ECMAScript"
+    },
+    "jwt": {
+      "payload": "ペイロード JSON",
+      "secret": "シークレット",
+      "exp": "有効期限（秒）",
+      "note": "JWT 生成 · HS256（開発/テスト用）"
+    },
+    "rand": {
+      "min": "最小値",
+      "max": "最大値",
+      "count": "個数",
+      "note": "乱数生成 · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "面数",
+      "count": "サイコロ数",
+      "note": "サイコロロール · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · pure"
+    },
+    "base64url": {
+      "note": "Base64URL · JWTスタイル"
+    },
+    "hmac": {
+      "message": "メッセージ",
+      "secret": "シークレット",
+      "signature": "署名",
+      "note": "HMAC検証 · SHA-256"
+    },
+    "secret": {
+      "bytes": "バイト数",
+      "count": "件数",
+      "note": "シークレットキー生成器 · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "PDF ファイル",
+      "note": "PDF ライト最適化 · pdf-lib 書き換え（画像再圧縮なし）"
+    },
+    "pdfCompress": {
+      "file": "PDF ファイル",
+      "quality": "品質",
+      "engine": "エンジン",
+      "qStructural": "構造化（qpdf、ロスレスストリーム）",
+      "qScreen": "スクリーン（最小、Ghostscript）",
+      "qEbook": "電子書籍（バランス、Ghostscript）",
+      "qPrinter": "プリンター（高品質、Ghostscript）",
+      "eAuto": "自動 (qpdf → Ghostscript → pdf-lib)",
+      "download": "PDFをダウンロード",
+      "needFile": "まずPDFファイルを選択してください",
+      "in": "入力",
+      "out": "出力",
+      "saved": "保存済み",
+      "note": "PDF圧縮 · ホスト上のqpdf / Ghostscript · pdf-libフォールバック"
+    }
+  },
+  "roots": {
+    "hubLabel": "インテント別",
+    "tools": "ツール",
+    "dualSurface": "Human page + Agent API · 同一エンジン",
+    "otherRoots": "その他の需要ルート"
+  }
+}
