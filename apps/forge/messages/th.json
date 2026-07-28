@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — สถานีเครื่องมือออนไลน์",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "เครื่องมือโค้ด,text,แฮช,เอกสาร และภาพออนไลน์"
+  },
+  "nav": {
+    "main": "การนำทางหลัก",
+    "homeAria": "หน้าหลัก {brandName} Forge",
+    "tools": "เครื่องมือ",
+    "wallet": "กระเป๋าเงิน",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "หมวดหมู่เครื่องมือ",
+    "languageAria": "เปลี่ยนภาษา"
+  },
+  "tool": {
+    "breadcrumbAria": "เส้นทางนำทาง",
+    "labNotice": "ความสามารถแบบ Lab: ครอบคลุมข้อมูลหรือพจนานุกรมจำกัด ผลลัพธ์ใช้เพื่ออ้างอิงเท่านั้น",
+    "workspace": "พื้นที่ทำงาน",
+    "workspaceHint": "เครื่องท้องถิ่นหรือเซิร์ฟเวอร์ · เส้นทางเดียวกับ API",
+    "api": "API",
+    "apiHint": "สัญญาเดียวกันกับหน้าเว็บ ใช้คีย์ที่ผ่านการยืนยันในสภาพแวดล้อมจริง",
+    "related": "เครื่องมือที่เกี่ยวข้อง"
+  },
+  "auth": {
+    "signIn": "เข้าสู่ระบบ",
+    "signUp": "สมัครสมาชิก",
+    "signOut": "ออกจากระบบ"
+  },
+  "footer": {
+    "navAria": "ส่วนท้าย",
+    "blurb": "สถานีเครื่องมือออนไลน์ ทำงานเสร็จในเบราว์เซอร์ หรืออัตโนมัติผ่าน API / MCP",
+    "product": "ผลิตภัณฑ์",
+    "developers": "นักพัฒนา",
+    "company": "บริษัท",
+    "docs": "เอกสารการผสาน",
+    "website": "เว็บไซต์",
+    "privacy": "ความเป็นส่วนตัว"
+  },
+  "home": {
+    "eyebrow": "เห็นมัน เรียกมัน",
+    "title": "มีดอเนกประสงค์สำหรับเครื่องมือออนไลน์",
+    "subtitle": "Codec ข้อความ แฮช เอกสาร และประมวลผลภาพ ทำงานเสร็จในเบราว์เซอร์ หรืออัตโนมัติผ่าน API / MCP — หนึ่งการนำไปใช้",
+    "toolCount": "{count} เครื่องมือ",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "ค้นหา: นับคำ base64 json timestamp…",
+    "aria": "ค้นหาเครื่องมือ",
+    "emptyTitle": "ไม่มีเครื่องมือตรงกับ “{query}”",
+    "emptyHint": "ลองคีย์เวิร์ดอื่น หรือเลือกเครื่องมือจากหมวดหมู่ด้านล่าง"
+  },
+  "categories": {
+    "codec": {
+      "label": "Codec",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "การตรวจสอบจีน",
+      "hint": "ID · เบอร์โทร"
+    },
+    "data": {
+      "label": "ข้อมูล",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "นักพัฒนา",
+      "hint": "Regex · SQL · สี · UUID"
+    },
+    "doc": {
+      "label": "เอกสาร",
+      "hint": "Markdown · รวม/แยก PDF"
+    },
+    "finance": {
+      "label": "การเงิน",
+      "hint": "แปลงจำนวนเป็นตัวหนังสือ"
+    },
+    "hash": {
+      "label": "แฮช & ความปลอดภัย",
+      "hint": "MD5 · SHA · HMAC · รหัสผ่าน"
+    },
+    "image": {
+      "label": "รูปภาพ",
+      "hint": "บีบอัด · QR · แปลง"
+    },
+    "life": {
+      "label": "เครื่องคำนวณชีวิต",
+      "hint": "เงินกู้ · BMI · ความสัมพันธ์"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "โทเค็น · ค่าใช้จ่าย · schema"
+    },
+    "security": {
+      "label": "ความปลอดภัย",
+      "hint": "สร้างรหัสผ่าน"
+    },
+    "text": {
+      "label": "ข้อความ",
+      "hint": "จำนวนคำ · CJK · พินอิน · Diff"
+    },
+    "time": {
+      "label": "เวลา",
+      "hint": "Timestamp · timezone · Cron · lunar"
+    },
+    "unit": {
+      "label": "หน่วย",
+      "hint": "ความยาว · น้ำหนัก · อุณหภูมิ · ข้อมูล"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "เรียกใช้",
+      "running": "กำลังเรียกใช้…",
+      "copy": "คัดลอก",
+      "copied": "คัดลอกแล้ว",
+      "sameAsApi": "เส้นทางเดียวกับ API · OSS engine",
+      "mustBeNumber": "{label} ต้องเป็นตัวเลข",
+      "base64Loaded": "โหลด payload Base64 แล้ว",
+      "workspaceMissing": "ยังไม่ได้กำหนดค่า Workspace: {slug}",
+      "yes": "ใช่",
+      "no": "ไม่ใช่",
+      "text": "ข้อความ",
+      "outputPreview": "ตัวอย่างผลลัพธ์",
+      "mode": "โหมด",
+      "encode": "เข้ารหัส",
+      "decode": "ถอดรหัส"
+    },
+    "lorem": {
+      "paragraphs": "ย่อหน้า",
+      "wordsPerParagraph": "คำต่อย่อหน้า",
+      "startWithLorem": "เริ่มต้นด้วย “Lorem ipsum”",
+      "note": "เครื่องสร้าง Lorem Ipsum · แบบ pure"
+    },
+    "emailValidate": {
+      "note": "ตัวตรวจสอบอีเมล · ตรวจสอบรูปแบบเท่านั้น (ไม่ค้นหา MX)"
+    },
+    "creditCardLuhn": {
+      "number": "หมายเลขบัตร",
+      "note": "ตัวตรวจสอบ Luhn · แบบออฟไลน์ ไม่มีการเก็บข้อมูล"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "ตัวย่อ JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS Minifier · เบา (ปลอดภัยกับ edge)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "ไม่สนใจตัวพิมพ์",
+      "note": "Hash Comparator · constant-time สำหรับความยาวเท่ากัน"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON Diff · การดำเนินการระดับ path · แถวแยกสีตามชนิด · แสดงเคียงข้าง",
+      "equal": "เหมือนกัน",
+      "differs": "{count} การเปลี่ยนแปลง",
+      "colPath": "Path",
+      "colKind": "ประเภท",
+      "colLeft": "ซ้าย",
+      "colRight": "ขวา",
+      "filtersAria": "กรองตามประเภทการเปลี่ยนแปลง",
+      "filterAll": "ทั้งหมด ({count})",
+      "filterAdd": "เพิ่ม ({count})",
+      "filterRemove": "ลบ ({count})",
+      "filterChange": "เปลี่ยนแปลง ({count})",
+      "filterType": "ประเภท ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "โหมด",
+      "pretty": "สวยงาม",
+      "compact": "กะทัดรัด",
+      "indent": "ย่อหน้า",
+      "note": "YAML Formatter · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "TOML Formatter · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "XML Minifier · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "URL Validator · WHATWG URL (ไม่มีการดึงข้อมูลเครือข่าย)"
+    },
+    "ipValidate": {
+      "note": "IP Validator · IPv4/IPv6 ออฟไลน์"
+    },
+    "uuidValidate": {
+      "note": "UUID Validator · รูปแบบ RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "HTML Minifier · เบา (ปลอดภัยสำหรับ edge)"
+    },
+    "randomString": {
+      "length": "ความยาว",
+      "count": "จำนวน",
+      "charset": "ชุดตัวอักษร",
+      "alphanumeric": "ตัวอักษรและตัวเลข",
+      "symbols": "ตัวอักษร ตัวเลข + สัญลักษณ์",
+      "hex": "เลขฐานสิบหก",
+      "base64url": "Base64URL",
+      "note": "สตริงสุ่ม · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "เวลาอ่าน · Heuristic สำหรับ CJK + Latin"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "ระดับหัวข้อสูงสุด",
+      "note": "สารบัญ Markdown · หัวข้อ ATX"
+    },
+    "pdfInfo": {
+      "file": "ไฟล์ PDF",
+      "note": "ข้อมูล PDF · pdf-lib (หน้า + metadata)"
+    },
+    "rot13": {
+      "shift": "เลื่อน (13 = ROT13)",
+      "note": "ROT13 / Caesar · pure"
+    },
+    "morse": {
+      "note": "รหัสโม尔斯 · ITU · pure"
+    },
+    "textBinary": {
+      "toBinary": "ข้อความ → ไบนารี",
+      "fromBinary": "ไบนารี → ข้อความ",
+      "note": "ข้อความ ↔ ไบนารี · UTF-8 bits"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "การเข้ารหัส Digest",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS Beautifier · lightweight"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · เบาและรวดเร็ว"
+    },
+    "stringSimilarity": {
+      "a": "สตริง A",
+      "b": "สตริง B",
+      "note": "ความคล้ายคลึงของสตริง · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "ตัวเลข → เลขโรมัน",
+      "fromRoman": "เลขโรมัน → ตัวเลข",
+      "note": "เลขโรมัน · 1–3999"
+    },
+    "age": {
+      "birthDate": "วันเกิด (YYYY-MM-DD)",
+      "asOf": "นับถึง (ไม่บังคับ)",
+      "note": "เครื่องคำนวณอายุ · แม่นยำถึงปี/เดือน/วัน"
+    },
+    "tip": {
+      "bill": "ยอดบิล",
+      "percent": "ทิป %",
+      "people": "ผู้คน",
+      "note": "เครื่องคำนวณทิป · แบ่งจ่ายง่าย"
+    },
+    "aspect": {
+      "width": "ความกว้าง",
+      "height": "ความสูง",
+      "note": "อัตราส่วนภาพ · ลดทอนด้วย GCD"
+    },
+    "mime": {
+      "note": "ค้นหา MIME · ประเภทเว็บทั่วไป"
+    },
+    "ua": {
+      "note": "ตัวแยก User-Agent · แบบ heuristic (ออฟไลน์)"
+    },
+    "imageMeta": {
+      "file": "ไฟล์ภาพ",
+      "note": "ข้อมูลภาพ · sharp (ขนาดบัฟเฟอร์ EXIF)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "ความถี่คำ · CJK + Latin"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL Minifier · คอมเมนต์ + ช่องว่าง"
+    },
+    "lineNum": {
+      "start": "เลขเริ่มต้น",
+      "note": "เพิ่มเลขบรรทัด · แบบบริสุทธิ์"
+    },
+    "uniqueWords": {
+      "note": "คำที่ไม่ซ้ำ · ตามลำดับที่พบ"
+    },
+    "epoch": {
+      "value": "ค่า",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Epoch Milliseconds · วันที่"
+    },
+    "passwordEntropy": {
+      "password": "รหัสผ่าน",
+      "note": "Password Entropy · การประมาณ charset"
+    },
+    "contrast": {
+      "fg": "พื้นหน้า (#hex)",
+      "bg": "พื้นหลัง (#hex)",
+      "note": "ความคมชัดของสี · WCAG 2.x"
+    },
+    "exif": {
+      "file": "ไฟล์รูปภาพ",
+      "note": "ตัวดู EXIF · exifr + JPEG fallback"
+    },
+    "regex": {
+      "pattern": "รูปแบบ",
+      "replacement": "ข้อความแทนที่",
+      "flags": "Flags",
+      "note": "Regex ค้นหาและแทนที่ · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Secret",
+      "exp": "หมดอายุ (วินาที)",
+      "note": "สร้าง JWT · HS256 (สำหรับ dev/test เท่านั้น)"
+    },
+    "rand": {
+      "min": "ค่าต่ำสุด",
+      "max": "สูงสุด",
+      "count": "จำนวน",
+      "note": "ตัวเลขสุ่ม · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "ด้าน",
+      "count": "จำนวนลูกเต๋า",
+      "note": "ทอยลูกเต๋า · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · pure"
+    },
+    "base64url": {
+      "note": "Base64URL · JWT-style"
+    },
+    "hmac": {
+      "message": "ข้อความ",
+      "secret": "รหัสลับ",
+      "signature": "ลายเซ็น",
+      "note": "ตรวจสอบ HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "ไบต์",
+      "count": "จำนวน",
+      "note": "ตัวสร้างคีย์ลับ · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "ไฟล์ PDF",
+      "note": "PDF Light Optimize · pdf-lib rewrite (ไม่ recompress ภาพ)"
+    },
+    "pdfCompress": {
+      "file": "ไฟล์ PDF",
+      "quality": "คุณภาพ",
+      "engine": "Engine",
+      "qStructural": "Structural (qpdf, lossless streams)",
+      "qScreen": "Screen (เล็กที่สุด, Ghostscript)",
+      "qEbook": "Ebook (สมดุล, Ghostscript)",
+      "qPrinter": "Printer (คุณภาพสูงกว่า, Ghostscript)",
+      "eAuto": "อัตโนมัติ (qpdf → Ghostscript → pdf-lib)",
+      "download": "ดาวน์โหลด PDF",
+      "needFile": "เลือกไฟล์ PDF ก่อน",
+      "in": "นำเข้า",
+      "out": "ส่งออก",
+      "saved": "บันทึกแล้ว",
+      "note": "PDF Compress · qpdf / Ghostscript บนโฮสต์ · pdf-lib เป็นทางเลือกสำรอง"
+    }
+  },
+  "roots": {
+    "hubLabel": "ตามเจตนา",
+    "tools": "เครื่องมือ",
+    "dualSurface": "หน้ามนุษย์ + API ตัวแทน · ใช้เครื่องยนต์เดียวกัน",
+    "otherRoots": "รากความต้องการอื่นๆ"
+  }
+}

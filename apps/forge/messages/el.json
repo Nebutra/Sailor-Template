@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Σταθμός εργαλείων online",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Κωδικοποιητές, κείμενο, hashing, έγγραφα και εργαλεία εικόνων online."
+  },
+  "nav": {
+    "main": "Κύρια πλοήγηση",
+    "homeAria": "Αρχική {brandName} Forge",
+    "tools": "Εργαλεία",
+    "wallet": "Πορτοφόλι",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Κατηγορίες εργαλείων",
+    "languageAria": "Αλλαγή γλώσσας"
+  },
+  "tool": {
+    "breadcrumbAria": "Διαδρομή",
+    "labNotice": "Δυνατότητα Lab: περιορισμένο σύνολο δεδομένων ή κάλυψη λεξικού· τα αποτελέσματα είναι μόνο ενδεικτικά.",
+    "workspace": "Εργαζιακός Χώρος",
+    "workspaceHint": "Τοπικό ή server · ίδια διαδρομή με την API",
+    "api": "API",
+    "apiHint": "Ίδιο contract με τη σελίδα. Χρησιμοποιήστε authenticated key σε παραγωγή.",
+    "related": "Σχετικά εργαλεία"
+  },
+  "auth": {
+    "signIn": "Σύνδεση",
+    "signUp": "Εγγραφή",
+    "signOut": "Αποσύνδεση"
+  },
+  "footer": {
+    "navAria": "Ποδιέρα",
+    "blurb": "Σταθμός εργαλείων online. Ολοκληρώστε εργασίες στον browser ή αυτοματοποιήστε μέσω API / MCP.",
+    "product": "Προϊόν",
+    "developers": "Αναπτύκτες",
+    "company": "Εταιρεία",
+    "docs": "Έγγραφα ολοκλήρωσης",
+    "website": "Ιστοσελίδα",
+    "privacy": "Απόρρητο"
+  },
+  "home": {
+    "eyebrow": "Δείτε το. Καλέστε το.",
+    "title": "Ελβετικό μαχαίρι για online εργαλεία",
+    "subtitle": "Codecs, κείμενο, hashing, έγγραφα και επεξεργασία εικόνων. Ολοκληρώστε στον browser ή αυτοματοποιήστε μέσω API / MCP — μία υλοποίηση.",
+    "toolCount": "{count} εργαλεία",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Αναζήτηση: μέτρηση λέξεων, base64, json, timestamp…",
+    "aria": "Αναζήτηση εργαλείων",
+    "emptyTitle": "Δεν βρέθηκαν εργαλεία για “{query}”",
+    "emptyHint": "Δοκιμάστε άλλο λέξη-κλειδί ή επιλέξτε ένα εργαλείο από τις κατηγορίες παρακάτω."
+  },
+  "categories": {
+    "codec": {
+      "label": "Κωδικοποιητές",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Έλεγχος Κίνας",
+      "hint": "ID · τηλέφωνο"
+    },
+    "data": {
+      "label": "Δεδομένα",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Αναπτύκτες",
+      "hint": "Regex · SQL · χρώμα · UUID"
+    },
+    "doc": {
+      "label": "Έγγραφα",
+      "hint": "Markdown · συνένωση/διαίρεση PDF"
+    },
+    "finance": {
+      "label": "Οικονομικά",
+      "hint": "Ποσό σε λέξεις"
+    },
+    "hash": {
+      "label": "Hash & ασφάλεια",
+      "hint": "MD5 · SHA · HMAC · κωδικός"
+    },
+    "image": {
+      "label": "Εικόνες",
+      "hint": "Συμπίεση · QR · μετατροπή"
+    },
+    "life": {
+      "label": "Υπολογιστές ζωής",
+      "hint": "Δάνειο · ΔΜΣ · συγγένεια"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · κόστος · schema"
+    },
+    "security": {
+      "label": "Ασφάλεια",
+      "hint": "Δημιουργός κωδικών"
+    },
+    "text": {
+      "label": "Κείμενο",
+      "hint": "Μήκος λέξεων · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Χρόνος",
+      "hint": "Χρονική σφραγίδα · ζώνη ώρας · Cron · σελήνη"
+    },
+    "unit": {
+      "label": "Μονάδες",
+      "hint": "Μήκος · βάρος · θερμοκρασία · δεδομένα"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Εκτέλεση",
+      "running": "Εκτελείται…",
+      "copy": "Αντιγραφή",
+      "copied": "Αντιγράφηκε",
+      "sameAsApi": "Ίδια διαδρομή με το API · OSS engine",
+      "mustBeNumber": "Το {label} πρέπει να είναι αριθμός",
+      "base64Loaded": "Φορτώθηκε το Base64 payload",
+      "workspaceMissing": "Ο χώρος εργασίας δεν έχει ρυθμιστεί: {slug}",
+      "yes": "Ναι",
+      "no": "Όχι",
+      "text": "Κείμενο",
+      "outputPreview": "Προεπισκόπηση εξόδου",
+      "mode": "Λειτουργία",
+      "encode": "Κωδικοποίηση",
+      "decode": "Αποκωδικοποίηση"
+    },
+    "lorem": {
+      "paragraphs": "Παράγραφοι",
+      "wordsPerParagraph": "Λέξεις ανά παράγραφο",
+      "startWithLorem": "Έναρξη με “Lorem ipsum”",
+      "note": "Γεννήτρια Lorem Ipsum · καθαρή"
+    },
+    "emailValidate": {
+      "note": "Επαληθευτής Email · μόνο μορφή (χωρίς έλεγχο MX)"
+    },
+    "creditCardLuhn": {
+      "number": "Αριθμός κάρτας",
+      "note": "Έλεγχος Luhn · εκτός σύνδεσης, ποτέ αποθηκευμένο"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "Συμπιεστής JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS Minifier · ελαφρύ (ασφαλές για edge)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Αγνόηση πεζών/κεφαλαίων",
+      "note": "Hash Comparator · σταθερού χρόνου για ίσο μήκος"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON Diff · λειτουργίες σε επίπεδο διαδρομής · χρωματισμένες γραμμές ανά τύπο · δίπλα-δίπλα",
+      "equal": "Ίδια",
+      "differs": "{count} αλλαγή/ες",
+      "colPath": "Διαδρομή",
+      "colKind": "Είδος",
+      "colLeft": "Αριστερά",
+      "colRight": "Δεξιά",
+      "filtersAria": "Φιλτράρισμα ανά είδος αλλαγής",
+      "filterAll": "Όλα ({count})",
+      "filterAdd": "Προσθήκη ({count})",
+      "filterRemove": "Αφαίρεση ({count})",
+      "filterChange": "Αλλαγή ({count})",
+      "filterType": "Τύπος ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Λειτουργία",
+      "pretty": "Όμορφη",
+      "compact": "Συμπαγές",
+      "indent": "Εσοχή",
+      "note": "Διαμορφωτής YAML · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "Διαμορφωτής TOML · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "Συμπιεστής XML · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "Επαληθευτής URL · WHATWG URL (χωρίς ανάκτηση δικτύου)"
+    },
+    "ipValidate": {
+      "note": "Επαληθευτής IP · IPv4/IPv6 εκτός σύνδεσης"
+    },
+    "uuidValidate": {
+      "note": "Επαληθευτής UUID · σχήμα RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "Συμπιεστής HTML · ελαφρύς (ασφαλής για edge)"
+    },
+    "randomString": {
+      "length": "Μήκος",
+      "count": "Αριθμός",
+      "charset": "Σύνολο χαρακτήρων",
+      "alphanumeric": "Αλφαριθμητικά",
+      "symbols": "Αλφαριθμητικά + σύμβολα",
+      "hex": "Hex",
+      "base64url": "Base64URL",
+      "note": "Τυχαία συμβολοσειρά · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Χρόνος ανάγνωσης · εuristic CJK + Latin"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Μέγιστο επίπεδο επικεφαλίδας",
+      "note": "Markdown TOC · επικεφαλίδες ATX"
+    },
+    "pdfInfo": {
+      "file": "Αρχείο PDF",
+      "note": "Πληροφορίες PDF · pdf-lib (σελίδες + μεταδεδομένα)"
+    },
+    "rot13": {
+      "shift": "Μετατόπιση (13 = ROT13)",
+      "note": "ROT13 / Caesar · καθαρό"
+    },
+    "morse": {
+      "note": "Κώδικας Μορς · ITU · καθαρό"
+    },
+    "textBinary": {
+      "toBinary": "Κείμενο → δυαδικό",
+      "fromBinary": "Δυαδικό → κείμενο",
+      "note": "Κείμενο ↔ Δυαδικό · UTF-8 bits"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Κωδικοποίηση σύνοψης",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS Beautifier · ελαφρύ"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · ελαφρύ"
+    },
+    "stringSimilarity": {
+      "a": "Συμβολοσειρά Α",
+      "b": "Συμβολοσειρά Β",
+      "note": "Ομοιότητα Συμβολοσειρών · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Αριθμός → Ρωμαϊκός",
+      "fromRoman": "Ρωμαϊκός → Αριθμός",
+      "note": "Ρωμαϊκοί Αριθμοί · 1–3999"
+    },
+    "age": {
+      "birthDate": "Ημερομηνία γέννησης (YYYY-MM-DD)",
+      "asOf": "Έως (προαιρετικό)",
+      "note": "Υπολογιστής Ηλικίας · ακριβής Ε/Μ/Η"
+    },
+    "tip": {
+      "bill": "Ποσό λογαριασμού",
+      "percent": "Φόρος %",
+      "people": "Άτομα",
+      "note": "Υπολογιστής φιλοδωρήματος · φιλικό για διαμοιρασμό"
+    },
+    "aspect": {
+      "width": "Πλάτος",
+      "height": "Ύψος",
+      "note": "Λόγος διαστάσεων · απλοποίηση GCD"
+    },
+    "mime": {
+      "note": "Αναζήτηση MIME · κοινοί τύποι ιστού"
+    },
+    "ua": {
+      "note": "Ανάλυση User-Agent · ευρετική (εκτός σύνδεσης)"
+    },
+    "imageMeta": {
+      "file": "Αρχείο εικόνας",
+      "note": "Μεταδεδομένα εικόνας · sharp (μέγεθος buffer EXIF)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "Συχνότητα λέξεων · CJK + Λατινικά"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL Minifier · σχόλια + κενά"
+    },
+    "lineNum": {
+      "start": "Αριθμός εκκίνησης",
+      "note": "Προσθήκη Αριθμών Γραμμών · καθαρή"
+    },
+    "uniqueWords": {
+      "note": "Μοναδικές Λέξεις · σειρά πρώτης εμφάνισης"
+    },
+    "epoch": {
+      "value": "Τιμή",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Epoch Milliseconds · Ημερομηνία"
+    },
+    "passwordEntropy": {
+      "password": "Κωδικός",
+      "note": "Εντροπία Κωδικού · εuristic σετ χαρακτήρων"
+    },
+    "contrast": {
+      "fg": "Πρόσθιο (#hex)",
+      "bg": "Υπόβαθρο (#hex)",
+      "note": "Αντίθεση Χρωμάτων · WCAG 2.x"
+    },
+    "exif": {
+      "file": "Αρχείο εικόνας",
+      "note": "Προβολέας EXIF · exifr + JPEG fallback"
+    },
+    "regex": {
+      "pattern": "Σχέδιο",
+      "replacement": "Αντικατάσταση",
+      "flags": "Σημαίες",
+      "note": "Regex Find & Replace · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Μυστικό",
+      "exp": "Λήξη (δευτερόλεπτα)",
+      "note": "Δημιουργία JWT · HS256 (μόνο για dev/test)"
+    },
+    "rand": {
+      "min": "Ελάχιστο",
+      "max": "Μέγιστο",
+      "count": "Αριθμός",
+      "note": "Τυχαίος Αριθμός · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Έδρες",
+      "count": "Αριθμός ζαριών",
+      "note": "Ζάρια · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · καθαρό"
+    },
+    "base64url": {
+      "note": "Base64URL · στυλ JWT"
+    },
+    "hmac": {
+      "message": "Μήνυμα",
+      "secret": "Μυστικό",
+      "signature": "Υπογραφή",
+      "note": "Επαλήθευση HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "Bytes",
+      "count": "Αριθμός",
+      "note": "Γεννήτρια Μυστικού Κλειδιού · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "Αρχείο PDF",
+      "note": "PDF Light Optimize · ξαναγραφή με pdf-lib (όχι επανασυμπίεση εικόνας)"
+    },
+    "pdfCompress": {
+      "file": "Αρχείο PDF",
+      "quality": "Ποιότητα",
+      "engine": "Κινητήρας",
+      "qStructural": "Δομική (qpdf, απώλειες streams)",
+      "qScreen": "Οθόνη (μικρότερο, Ghostscript)",
+      "qEbook": "Ebook (ισορροπημένο, Ghostscript)",
+      "qPrinter": "Εκτυπωτής (υψηλότερη ποιότητα, Ghostscript)",
+      "eAuto": "Αυτόματο (qpdf → Ghostscript → pdf-lib)",
+      "download": "Λήψη PDF",
+      "needFile": "Επιλέξτε αρχικά ένα αρχείο PDF",
+      "in": "Είσοδος",
+      "out": "Έξοδος",
+      "saved": "Αποθηκεύτηκε",
+      "note": "Συμπίεση PDF · qpdf / Ghostscript στον υπολογιστή · pdf-lib ως εναλλακτική"
+    }
+  },
+  "roots": {
+    "hubLabel": "Κατά πρόθεση",
+    "tools": "εργαλεία",
+    "dualSurface": "Ανθρώπινη σελίδα + Agent API · ίδια μηχανή",
+    "otherRoots": "Άλλες ρίζες ζήτησης"
+  }
+}

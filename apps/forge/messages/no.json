@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Online verktøy",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Kodek, tekst, hashing, dokumenter og bildedverktøy online."
+  },
+  "nav": {
+    "main": "Hovednavigasjon",
+    "homeAria": "{brandName} Forge hjem",
+    "tools": "Verktøy",
+    "wallet": "Lommebok",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Verktøykategorier",
+    "languageAria": "Bytt språk"
+  },
+  "tool": {
+    "breadcrumbAria": "Sti",
+    "labNotice": "Lab-funksjonalitet: begrenset data- eller ordboksdekning; resultatene er kun til referanse.",
+    "workspace": "Arbeidsområde",
+    "workspaceHint": "Lokal eller server · samme sti som API",
+    "api": "API",
+    "apiHint": "Samme kontrakt som siden. Bruk en autentisert nøkkel i produksjon.",
+    "related": "Relaterte verktøy"
+  },
+  "auth": {
+    "signIn": "Logg inn",
+    "signUp": "Registrer deg",
+    "signOut": "Logg ut"
+  },
+  "footer": {
+    "navAria": "Bunnfelt",
+    "blurb": "Verktøy-stasjon for nett. Fullfør oppgaver i nettleseren, eller automatiser via API / MCP.",
+    "product": "Produkt",
+    "developers": "Utviklere",
+    "company": "Selskap",
+    "docs": "Integrasjonsdokumentasjon",
+    "website": "Nettsted",
+    "privacy": "Personvern"
+  },
+  "home": {
+    "eyebrow": "Se det. Kall det.",
+    "title": "Sveitsisk kniv for nettverktøy",
+    "subtitle": "Codec, tekst, hashing, dokumenter og bildebehandling. Fullfør i nettleseren, eller automatiser via API / MCP — én implementering.",
+    "toolCount": "{count} verktøy",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Søk: ordtelling, base64, json, tidsstempel…",
+    "aria": "Søk etter verktøy",
+    "emptyTitle": "Ingen verktøy matcher “{query}”",
+    "emptyHint": "Prøv et annet søkeord, eller velg et verktøy fra kategoriene nedenfor."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codec",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Kina-validering",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Utvikler",
+      "hint": "Regex · SQL · farge · UUID"
+    },
+    "doc": {
+      "label": "Dokumenter",
+      "hint": "Markdown · PDF-sammenføying/oppspalting"
+    },
+    "finance": {
+      "label": "Finans",
+      "hint": "Beløp til ord"
+    },
+    "hash": {
+      "label": "Hash og sikkerhet",
+      "hint": "MD5 · SHA · HMAC · passord"
+    },
+    "image": {
+      "label": "Bilder",
+      "hint": "Komprimer · QR · konverter"
+    },
+    "life": {
+      "label": "Livskalkulatorer",
+      "hint": "Boliglån · BMI · slektskap"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · kostnad · skjema"
+    },
+    "security": {
+      "label": "Sikkerhet",
+      "hint": "Passordgenerator"
+    },
+    "text": {
+      "label": "Tekst",
+      "hint": "Ordantall · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Tid",
+      "hint": "Tidspunkt · tidssone · Cron · kinesisk kalender"
+    },
+    "unit": {
+      "label": "Enheter",
+      "hint": "Lengde · vekt · temperatur · data"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Kjør",
+      "running": "Kjører…",
+      "copy": "Kopier",
+      "copied": "Kopiert",
+      "sameAsApi": "Samme sti som API · OSS-motor",
+      "mustBeNumber": "{label} må være et tall",
+      "base64Loaded": "Base64-payload lastet",
+      "workspaceMissing": "Arbeidsområde ikke konfigurert: {slug}",
+      "yes": "Ja",
+      "no": "Nei",
+      "text": "Tekst",
+      "outputPreview": "Forhåndsvisning av utdata",
+      "mode": "Modus",
+      "encode": "Koder",
+      "decode": "Dekoder"
+    },
+    "lorem": {
+      "paragraphs": "Avsnitt",
+      "wordsPerParagraph": "Ord per avsnitt",
+      "startWithLorem": "Start med «Lorem ipsum»",
+      "note": "Lorem Ipsum-generator · ren"
+    },
+    "emailValidate": {
+      "note": "E-postvaliderer · kun format (ingen MX-søk)"
+    },
+    "creditCardLuhn": {
+      "number": "Kortnummer",
+      "note": "Luhn-sjekker · offline, aldri lagret"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "JSON-minifiserer · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS-minifisering · lettvekt (kanttrygg)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Ignorer store/små bokstaver",
+      "note": "Hash-sammenligner · konstant tid for lik lengde"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON-diff · sti-nivå-operasjoner · fargede rader etter type · side ved side",
+      "equal": "Identisk",
+      "differs": "{count} endring(er)",
+      "colPath": "Sti",
+      "colKind": "Type",
+      "colLeft": "Venstre",
+      "colRight": "Høyre",
+      "filtersAria": "Filtrer etter endringstype",
+      "filterAll": "Alle ({count})",
+      "filterAdd": "Legg til ({count})",
+      "filterRemove": "Fjern ({count})",
+      "filterChange": "Endring ({count})",
+      "filterType": "Type ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Modus",
+      "pretty": "Prettig",
+      "compact": "Kompakt",
+      "indent": "Innrykk",
+      "note": "YAML-formater · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "TOML-formater · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "XML-minifiserer · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "URL-validerer · WHATWG URL (ingen nettverkshenting)"
+    },
+    "ipValidate": {
+      "note": "IP-validerer · IPv4/IPv6 offline"
+    },
+    "uuidValidate": {
+      "note": "UUID-validerer · RFC 4122-format"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "HTML-minifiserer · lettvekt (kanttrygg)"
+    },
+    "randomString": {
+      "length": "Lengde",
+      "count": "Antall",
+      "charset": "Tegnsett",
+      "alphanumeric": "Alfanumerisk",
+      "symbols": "Alfanumerisk + symboler",
+      "hex": "Hex",
+      "base64url": "Base64URL",
+      "note": "Tilfeldig streng · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Lesetid · CJK + Latin heuristikk"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Maks overskriftsnivå",
+      "note": "Markdown TOC · ATX-overskrifter"
+    },
+    "pdfInfo": {
+      "file": "PDF-fil",
+      "note": "PDF-info · pdf-lib (sider + metadata)"
+    },
+    "rot13": {
+      "shift": "Forskyvning (13 = ROT13)",
+      "note": "ROT13 / Caesar · ren"
+    },
+    "morse": {
+      "note": "Morsekode · ITU · ren"
+    },
+    "textBinary": {
+      "toBinary": "Tekst → binær",
+      "fromBinary": "Binær → tekst",
+      "note": "Tekst ↔ binær · UTF-8-biter"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Sjekksumkoding",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS-formatør · lettvekts"
+    },
+    "htmlFormat": {
+      "note": "HTML-formatør · lettvekts"
+    },
+    "stringSimilarity": {
+      "a": "Streng A",
+      "b": "Streng B",
+      "note": "Strenglignhet · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Tall → Romersk",
+      "fromRoman": "Romersk → Tall",
+      "note": "Romerske tall · 1–3999"
+    },
+    "age": {
+      "birthDate": "Fødselsdato (ÅÅÅÅ-MM-DD)",
+      "asOf": "Per (valgfritt)",
+      "note": "Aldersberegner · nøyaktig Å/M/D"
+    },
+    "tip": {
+      "bill": "Regning",
+      "percent": "Drikkepenger %",
+      "people": "Personer",
+      "note": "Tipskalkulator · vennlig oppdeling"
+    },
+    "aspect": {
+      "width": "Bredde",
+      "height": "Høyde",
+      "note": "Bildeformat · GCD forenkling"
+    },
+    "mime": {
+      "note": "MIME-oppslag · vanlige webtyper"
+    },
+    "ua": {
+      "note": "User-Agent-parser · heuristisk (frakoblet)"
+    },
+    "imageMeta": {
+      "file": "Bildefil",
+      "note": "Bildeforventninger · sharp (EXIF-bufferstørrelse)"
+    },
+    "wordFreq": {
+      "top": "Topp N",
+      "note": "Ordfrekvens · CJK + Latin"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL-minifisering · kommentarer + mellomrom"
+    },
+    "lineNum": {
+      "start": "Startnummer",
+      "note": "Legg til linjenumre · ren"
+    },
+    "uniqueWords": {
+      "note": "Unike ord · rekkefølge etter førstese"
+    },
+    "epoch": {
+      "value": "Verdi",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Epoch-milliseconder · dato"
+    },
+    "passwordEntropy": {
+      "password": "Passord",
+      "note": "Passordentropi · tegnsett-heuristikk"
+    },
+    "contrast": {
+      "fg": "Forgrunn (#hex)",
+      "bg": "Bakgrunn (#hex)",
+      "note": "Fargekontrast · WCAG 2.x"
+    },
+    "exif": {
+      "file": "Bildefil",
+      "note": "EXIF-viser · exifr + JPEG-fallback"
+    },
+    "regex": {
+      "pattern": "Mønster",
+      "replacement": "Erstatning",
+      "flags": "Flagg",
+      "note": "Regex Finn og erstatt · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Hemmelighet",
+      "exp": "Utløper (sekunder)",
+      "note": "JWT-generering · HS256 (kun utvikling/test)"
+    },
+    "rand": {
+      "min": "Min",
+      "max": "Maks",
+      "count": "Antall",
+      "note": "Tilfeldig tall · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Sider",
+      "count": "Antall terninger",
+      "note": "Terningkaster · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · ren"
+    },
+    "base64url": {
+      "note": "Base64URL · JWT-stil"
+    },
+    "hmac": {
+      "message": "Melding",
+      "secret": "Hemmelighet",
+      "signature": "Signatur",
+      "note": "HMAC-verifisering · SHA-256"
+    },
+    "secret": {
+      "bytes": "Bytes",
+      "count": "Antall",
+      "note": "Hemmelig nøkkel-generator · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "PDF-fil",
+      "note": "PDF Light Optimize · pdf-lib-omskrivning (ikke bildekomprimering)"
+    },
+    "pdfCompress": {
+      "file": "PDF-fil",
+      "quality": "Kvalitet",
+      "engine": "Motor",
+      "qStructural": "Strukturell (qpdf, tapfri strømmer)",
+      "qScreen": "Skjerm (minst, Ghostscript)",
+      "qEbook": "E-bok (balansert, Ghostscript)",
+      "qPrinter": "Skriver (høyere kvalitet, Ghostscript)",
+      "eAuto": "Auto (qpdf → Ghostscript → pdf-lib)",
+      "download": "Last ned PDF",
+      "needFile": "Velg en PDF-fil først",
+      "in": "Inndata",
+      "out": "Utdata",
+      "saved": "Lagret",
+      "note": "PDF-komprimering · qpdf / Ghostscript på vert · pdf-lib fallback"
+    }
+  },
+  "roots": {
+    "hubLabel": "Etter hensikt",
+    "tools": "verktøy",
+    "dualSurface": "Menneskeside + Agent-API · samme motor",
+    "otherRoots": "Andre etterspørselsrøtter"
+  }
+}
