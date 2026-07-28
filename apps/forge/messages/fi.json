@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — verkkotyökalupaketti",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Koodereita, tekstityökaluja, hashauksia, asiakirjoja ja kuvatyökaluja verkossa."
+  },
+  "nav": {
+    "main": "Päävalikko",
+    "homeAria": "{brandName} Forge -etusivu",
+    "tools": "Työkalut",
+    "wallet": "Lompakko",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Työkaluluokat",
+    "languageAria": "Vaihda kieli"
+  },
+  "tool": {
+    "breadcrumbAria": "Polku",
+    "labNotice": "Laboratoriotila: rajallinen data- tai sanakirjakattavuus; tulokset ovat vain viitteellisiä.",
+    "workspace": "Työtila",
+    "workspaceHint": "Paikallinen tai palvelin · sama polku kuin API",
+    "api": "API",
+    "apiHint": "Sama sopimus kuin sivulla. Käytä tuotannossa todennettua avainta.",
+    "related": "Liittyvät työkalut"
+  },
+  "auth": {
+    "signIn": "Kirjaudu sisään",
+    "signUp": "Rekisteröidy",
+    "signOut": "Kirjaudu ulos"
+  },
+  "footer": {
+    "navAria": "Alaosa",
+    "blurb": "Verkkotyökalustation. Suorita tehtäviä selaimessa tai automatisoi API / MCP -liittymien kautta.",
+    "product": "Tuote",
+    "developers": "Kehittäjät",
+    "company": "Yritys",
+    "docs": "Integraatio-ohjeet",
+    "website": "Verkkosivusto",
+    "privacy": "Tietosuoja"
+  },
+  "home": {
+    "eyebrow": "Näe se. Kutsu se.",
+    "title": "Sveitsinveitsi verkkotyökaluihin",
+    "subtitle": "Koodaukset, teksti, hashaus, asiakirjat ja kuvankäsittely. Suorita selaimessa tai automatisoi API / MCP -liittymien kautta — yksi toteutus.",
+    "toolCount": "{count} työkalua",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Hae: sanamäärä, base64, json, aikaleima…",
+    "aria": "Hae työkaluja",
+    "emptyTitle": "Ei työkaluja, jotka vastaavat hakua “{query}”",
+    "emptyHint": "Kokeile toista hakusanaa tai valitse työkalu alla olevista kategorioista."
+  },
+  "categories": {
+    "codec": {
+      "label": "Koodaukset",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Kiinan validointi",
+      "hint": "ID · puhelin"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Kehittäjä",
+      "hint": "Regex · SQL · väri · UUID"
+    },
+    "doc": {
+      "label": "Dokumentit",
+      "hint": "Markdown · PDF yhdistä/erota"
+    },
+    "finance": {
+      "label": "Rahoitus",
+      "hint": "Summa sanoiksi"
+    },
+    "hash": {
+      "label": "Hash & turvallisuus",
+      "hint": "MD5 · SHA · HMAC · salasana"
+    },
+    "image": {
+      "label": "Kuvat",
+      "hint": "Purista · QR · muunna"
+    },
+    "life": {
+      "label": "Elämän laskurit",
+      "hint": "Asuntolaina · BMI · sukulaisuus"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokenit · kustannus · skeema"
+    },
+    "security": {
+      "label": "Turvallisuus",
+      "hint": "Salasanageneraattori"
+    },
+    "text": {
+      "label": "Teksti",
+      "hint": "Sanalaskenta · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Aika",
+      "hint": "Aikaleima · aikavyöhyke · Cron · kuukalenteri"
+    },
+    "unit": {
+      "label": "Yksiköt",
+      "hint": "Pituus · paino · lämpötila · data"
+    }
+  }
+}
