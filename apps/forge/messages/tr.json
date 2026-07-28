@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Çevrimiçi araç istasyonu",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Kodlayıcılar, metin, karma oluşturma, belgeler ve görsel araçları çevrimiçi."
+  },
+  "nav": {
+    "main": "Ana navigasyon",
+    "homeAria": "{brandName} Forge ana sayfa",
+    "tools": "Araçlar",
+    "wallet": "Cüzdan",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Araç kategorileri",
+    "languageAria": "Dili değiştir"
+  },
+  "tool": {
+    "breadcrumbAria": "Gezinme Çıtırması",
+    "labNotice": "Lab özelliği: sınırlı veri veya sözlük kapsamı; sonuçlar yalnızca referans amaçlıdır.",
+    "workspace": "Çalışma Alanı",
+    "workspaceHint": "Yerel veya sunucu · API ile aynı yol",
+    "api": "API",
+    "apiHint": "Sayfa ile aynı sözleşme. Üretim ortamında kimlik doğrulaması yapılmış bir anahtar kullanın.",
+    "related": "İlgili araçlar"
+  },
+  "auth": {
+    "signIn": "Giriş yap",
+    "signUp": "Kayıt ol",
+    "signOut": "Çıkış yap"
+  },
+  "footer": {
+    "navAria": "Alt bilgi",
+    "blurb": "Çevrimiçi araç istasyonu. Görevleri tarayıcıda tamamlayın veya API / MCP üzerinden otomatikleştirin.",
+    "product": "Ürün",
+    "developers": "Geliştiriciler",
+    "company": "Şirket",
+    "docs": "Entegrasyon belgeleri",
+    "website": "Web sitesi",
+    "privacy": "Gizlilik"
+  },
+  "home": {
+    "eyebrow": "Görün. Çağırın.",
+    "title": "Çevrimiçi araçlar için çok amaçlı çakı",
+    "subtitle": "Kodlayıcılar, metin, karma, belgeler ve görüntü işleme. Tarayıcıda tamamlayın veya API / MCP üzerinden otomatikleştirin — tek bir uygulama.",
+    "toolCount": "{count} araç",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Ara: kelime sayısı, base64, json, zaman damgası…",
+    "aria": "Araçları ara",
+    "emptyTitle": "“{query}” ile eşleşen araç yok",
+    "emptyHint": "Başka bir anahtar kelime deneyin veya aşağıdaki kategorilerden bir araç seçin."
+  },
+  "categories": {
+    "codec": {
+      "label": "Kodlayıcılar",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Çin doğrulama",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Veri",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Geliştirici",
+      "hint": "Regex · SQL · renk · UUID"
+    },
+    "doc": {
+      "label": "Belgeler",
+      "hint": "Markdown · PDF birleştir/böl"
+    },
+    "finance": {
+      "label": "Finans",
+      "hint": "Tutarı yazıyla"
+    },
+    "hash": {
+      "label": "Karma ve güvenlik",
+      "hint": "MD5 · SHA · HMAC · şifre"
+    },
+    "image": {
+      "label": "Görseller",
+      "hint": "Sıkıştır · QR · dönüştür"
+    },
+    "life": {
+      "label": "Hayat hesaplayıcıları",
+      "hint": "Konut kredisi · BMI · akrabalık"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Token · maliyet · şema"
+    },
+    "security": {
+      "label": "Güvenlik",
+      "hint": "Şifre oluşturucu"
+    },
+    "text": {
+      "label": "Metin",
+      "hint": "Kelime sayısı · CJK · pinyin · Fark"
+    },
+    "time": {
+      "label": "Zaman",
+      "hint": "Zaman damgası · saat dilimi · Cron · ay takvimi"
+    },
+    "unit": {
+      "label": "Birimler",
+      "hint": "Uzunluk · ağırlık · sıcaklık · veri"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Çalıştır",
+      "running": "Çalışıyor…",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı",
+      "sameAsApi": "API ile aynı yol · OSS motoru",
+      "mustBeNumber": "{label} bir sayı olmalı",
+      "base64Loaded": "Base64 yükü yüklendi",
+      "workspaceMissing": "Çalışma alanı yapılandırılmadı: {slug}",
+      "yes": "Evet",
+      "no": "Hayır",
+      "text": "Metin",
+      "outputPreview": "Çıktı önizlemesi",
+      "mode": "Mod",
+      "encode": "Şifrele",
+      "decode": "Şifre Çöz"
+    },
+    "lorem": {
+      "paragraphs": "Paragraflar",
+      "wordsPerParagraph": "Paragraf başına kelime",
+      "startWithLorem": "“Lorem ipsum” ile başla",
+      "note": "Lorem Ipsum Oluşturucu · saf"
+    },
+    "emailValidate": {
+      "note": "E-posta Doğrulayıcı · yalnızca biçim (MX sorgusu yok)"
+    },
+    "creditCardLuhn": {
+      "number": "Kart numarası",
+      "note": "Luhn Denetleyici · çevrimdışı, asla saklanmaz"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "JSON Sıkıştırıcı · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS Minifier · hafif (edge-safe)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Büyük/küçük harf duyarsız",
+      "note": "Hash Comparator · eşit uzunlukta sabit süre"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON Diff · yol düzeyi işlemler · tür renkli satırlar · yan yana",
+      "equal": "Eşit",
+      "differs": "{count} değişiklik",
+      "colPath": "Yol",
+      "colKind": "Tür",
+      "colLeft": "Sol",
+      "colRight": "Sağ",
+      "filtersAria": "Değişiklik türüne göre filtrele",
+      "filterAll": "Tümü ({count})",
+      "filterAdd": "Ekleme ({count})",
+      "filterRemove": "Silme ({count})",
+      "filterChange": "Değişiklik ({count})",
+      "filterType": "Tür ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Mod",
+      "pretty": "Düzenli",
+      "compact": "Kompakt",
+      "indent": "Girinti",
+      "note": "YAML Biçimlendirici · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "TOML Biçimlendirici · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "XML Sıkıştırıcı · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "URL Doğrulayıcı · WHATWG URL (ağ isteği yok)"
+    },
+    "ipValidate": {
+      "note": "IP Doğrulayıcı · IPv4/IPv6 çevrimdışı"
+    },
+    "uuidValidate": {
+      "note": "UUID Doğrulayıcı · RFC 4122 yapısı"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "HTML Sıkıştırıcı · hafif (edge-uyumlu)"
+    },
+    "randomString": {
+      "length": "Uzunluk",
+      "count": "Adet",
+      "charset": "Karakter Seti",
+      "alphanumeric": "Alfanümerik",
+      "symbols": "Alfanümerik + semboller",
+      "hex": "Hex",
+      "base64url": "Base64URL",
+      "note": "Rastgele Dize · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Okuma süresi · CJK + Latin heuristik"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Maks. başlık seviyesi",
+      "note": "Markdown TOC · ATX başlıkları"
+    },
+    "pdfInfo": {
+      "file": "PDF dosyası",
+      "note": "PDF Bilgisi · pdf-lib (sayfalar + meta veri)"
+    },
+    "rot13": {
+      "shift": "Kaydırma (13 = ROT13)",
+      "note": "ROT13 / Caesar · saf"
+    },
+    "morse": {
+      "note": "Morse Kodu · ITU · saf"
+    },
+    "textBinary": {
+      "toBinary": "Metin → ikili",
+      "fromBinary": "İkili → metin",
+      "note": "Metin ↔ İkili · UTF-8 bitleri"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Özet kodlaması",
+      "note": "Çoklu-Özet · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS Güzelleştirici · hafif"
+    },
+    "htmlFormat": {
+      "note": "HTML Güzelleştirici · hafif"
+    },
+    "stringSimilarity": {
+      "a": "Dize A",
+      "b": "Dize B",
+      "note": "Dize Benzerliği · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Sayı → Roma",
+      "fromRoman": "Roma → Sayı",
+      "note": "Roma Rakamları · 1–3999"
+    },
+    "age": {
+      "birthDate": "Doğum tarihi (YYYY-AA-GG)",
+      "asOf": "Tarihine göre (isteğe bağlı)",
+      "note": "Yaş Hesaplayıcı · tam Y/A/G"
+    },
+    "tip": {
+      "bill": "Fatura tutarı",
+      "percent": "Bahşiş %",
+      "people": "Kişi Sayısı",
+      "note": "Bahşiş Hesaplayıcı · kolay paylaşım"
+    },
+    "aspect": {
+      "width": "Genişlik",
+      "height": "Yükseklik",
+      "note": "En Boy Oranı · OEB sadeleştirme"
+    },
+    "mime": {
+      "note": "MIME Sorgulama · yaygın web türleri"
+    },
+    "ua": {
+      "note": "User-Agent Ayrıştırıcı · heuristik (çevrimdışı)"
+    },
+    "imageMeta": {
+      "file": "Görsel dosyası",
+      "note": "Görsel Meta Verileri · sharp (EXIF tampon boyutu)"
+    },
+    "wordFreq": {
+      "top": "İlk N",
+      "note": "Kelime Sıklığı · CJK + Latin"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL Minifier · yorumlar + boşluklar"
+    },
+    "lineNum": {
+      "start": "Başlangıç numarası",
+      "note": "Satır Numaraları Ekle · saf"
+    },
+    "uniqueWords": {
+      "note": "Benzersiz Kelimeler · ilk görüldüğü sıra"
+    },
+    "epoch": {
+      "value": "Değer",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Epoch Milisaniye · Tarih"
+    },
+    "passwordEntropy": {
+      "password": "Şifre",
+      "note": "Şifre Entropisi · karakter kümesi heuristik"
+    },
+    "contrast": {
+      "fg": "Ön plan (#hex)",
+      "bg": "Arka plan (#hex)",
+      "note": "Renk Kontrastı · WCAG 2.x"
+    },
+    "exif": {
+      "file": "Görsel dosyası",
+      "note": "EXIF Görüntüleyici · exifr + JPEG yedekleme"
+    },
+    "regex": {
+      "pattern": "Desen",
+      "replacement": "Değiştirme",
+      "flags": "Bayraklar",
+      "note": "Regex Bul & Değiştir · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Yük JSON",
+      "secret": "Gizli Anahtar",
+      "exp": "Son Kullanma (saniye)",
+      "note": "JWT Oluştur · HS256 (sadece geliştirme/test)"
+    },
+    "rand": {
+      "min": "Min",
+      "max": "Maksimum",
+      "count": "Adet",
+      "note": "Rastgele Sayı · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Yüz",
+      "count": "Zar sayısı",
+      "note": "Zar Atma · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · safi"
+    },
+    "base64url": {
+      "note": "Base64URL · JWT tarzı"
+    },
+    "hmac": {
+      "message": "Mesaj",
+      "secret": "Gizli Anahtar",
+      "signature": "İmza",
+      "note": "HMAC Doğrulama · SHA-256"
+    },
+    "secret": {
+      "bytes": "Bayt",
+      "count": "Adet",
+      "note": "Gizli Anahtar Oluşturucu · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "PDF dosyası",
+      "note": "PDF Hafif Optimizasyon · pdf-lib yeniden yazma (görüntü yeniden sıkıştırma değil)"
+    },
+    "pdfCompress": {
+      "file": "PDF dosyası",
+      "quality": "Kalite",
+      "engine": "Motor",
+      "qStructural": "Yapısal (qpdf, kayıpsız akışlar)",
+      "qScreen": "Ekran (en küçük, Ghostscript)",
+      "qEbook": "E-kitap (dengeli, Ghostscript)",
+      "qPrinter": "Yazıcı (daha yüksek kalite, Ghostscript)",
+      "eAuto": "Otomatik (qpdf → Ghostscript → pdf-lib)",
+      "download": "PDF İndir",
+      "needFile": "Önce bir PDF dosyası seçin",
+      "in": "Giriş",
+      "out": "Çıkış",
+      "saved": "Kaydedildi",
+      "note": "PDF Sıkıştırma · ana bilgisayarda qpdf / Ghostscript · pdf-lib yedek"
+    }
+  },
+  "roots": {
+    "hubLabel": "Amaca göre",
+    "tools": "araçlar",
+    "dualSurface": "İnsan sayfası + Aracı API · aynı motor",
+    "otherRoots": "Diğer talep kökleri"
+  }
+}

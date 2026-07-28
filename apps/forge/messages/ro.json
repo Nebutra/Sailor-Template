@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Stație de instrumente online",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Instrumente online pentru codec-uri, text, hashing, documente și imagini."
+  },
+  "nav": {
+    "main": "Navigare principală",
+    "homeAria": "Acasă {brandName} Forge",
+    "tools": "Instrumente",
+    "wallet": "Portofel",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Categorii de instrumente",
+    "languageAria": "Schimbă limba"
+  },
+  "tool": {
+    "breadcrumbAria": "Drumuleț",
+    "labNotice": "Capacitate Lab: acoperire limitată de date sau dicționar; rezultatele sunt doar orientative.",
+    "workspace": "Spațiu de lucru",
+    "workspaceHint": "Local sau server · același path ca API",
+    "api": "API",
+    "apiHint": "Același contract ca pagina. Folosește o cheie autentificată în producție.",
+    "related": "Instrumente conexe"
+  },
+  "auth": {
+    "signIn": "Autentificare",
+    "signUp": "Înregistrare",
+    "signOut": "Deconectare"
+  },
+  "footer": {
+    "navAria": "Subsol",
+    "blurb": "Stație de instrumente online. Finalizează sarcini în browser sau automatizează prin API / MCP.",
+    "product": "Produs",
+    "developers": "Dezvoltatori",
+    "company": "Companie",
+    "docs": "Documentație integrare",
+    "website": "Site web",
+    "privacy": "Confidențialitate"
+  },
+  "home": {
+    "eyebrow": "Vezi-l. Numește-l.",
+    "title": "Cuțit elvețian pentru instrumente online",
+    "subtitle": "Codecs, text, hashing, documente și procesare imagini. Finalizează în browser sau automatizează prin API / MCP — o singură implementare.",
+    "toolCount": "{count} instrumente",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Caută: număr cuvinte, base64, json, timestamp…",
+    "aria": "Caută instrumente",
+    "emptyTitle": "Niciun instrument nu se potrivește cu „{query}”",
+    "emptyHint": "Încearcă alt cuvânt cheie sau alege un instrument din categoriile de mai jos."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codificatoare",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Validare China",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Date",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Dezvoltator",
+      "hint": "Regex · SQL · culoare · UUID"
+    },
+    "doc": {
+      "label": "Documente",
+      "hint": "Markdown · PDF merge/split"
+    },
+    "finance": {
+      "label": "Finanțe",
+      "hint": "Sumă în cuvinte"
+    },
+    "hash": {
+      "label": "Hash și securitate",
+      "hint": "MD5 · SHA · HMAC · parolă"
+    },
+    "image": {
+      "label": "Imagini",
+      "hint": "Comprimare · QR · conversie"
+    },
+    "life": {
+      "label": "Calculatoare de viață",
+      "hint": "Ipotecă · IMC · rudenie"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokeni · cost · schemă"
+    },
+    "security": {
+      "label": "Securitate",
+      "hint": "Generator de parole"
+    },
+    "text": {
+      "label": "Text",
+      "hint": "Număr cuvinte · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Timp",
+      "hint": "Timestamp · fus orar · Cron · lunar"
+    },
+    "unit": {
+      "label": "Unități",
+      "hint": "Lungime · greutate · temperatură · date"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Rulează",
+      "running": "Se rulează…",
+      "copy": "Copiază",
+      "copied": "Copiat",
+      "sameAsApi": "Aceeași cale ca API · motor OSS",
+      "mustBeNumber": "{label} trebuie să fie un număr",
+      "base64Loaded": "Payload Base64 încărcat",
+      "workspaceMissing": "Spațiul de lucru nu este configurat: {slug}",
+      "yes": "Da",
+      "no": "Nu",
+      "text": "Text",
+      "outputPreview": "Previzualizare ieșire",
+      "mode": "Mod",
+      "encode": "Codificare",
+      "decode": "Decodificare"
+    },
+    "lorem": {
+      "paragraphs": "Paragrafe",
+      "wordsPerParagraph": "Cuvinte pe paragraf",
+      "startWithLorem": "Începe cu „Lorem ipsum”",
+      "note": "Generator Lorem Ipsum · pur"
+    },
+    "emailValidate": {
+      "note": "Validator email · doar format (fără căutare MX)"
+    },
+    "creditCardLuhn": {
+      "number": "Număr card",
+      "note": "Verificator Luhn · offline, nu se stochează"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "Minifier JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "Minifier CSS · ușor (sigur pentru edge)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Ignoră majusculele",
+      "note": "Comparator Hash · timp constant pentru lungimi egale"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "Diferență JSON · operații la nivel de cale · rânduri colorate după tip · alăturat",
+      "equal": "Identice",
+      "differs": "{count} modificare(i)",
+      "colPath": "Cale",
+      "colKind": "Tip",
+      "colLeft": "Stânga",
+      "colRight": "Dreapta",
+      "filtersAria": "Filtrează după tipul modificării",
+      "filterAll": "Toate ({count})",
+      "filterAdd": "Adaugă ({count})",
+      "filterRemove": "Elimină ({count})",
+      "filterChange": "Modifică ({count})",
+      "filterType": "Tip ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Mod",
+      "pretty": "Formatat",
+      "compact": "Compact",
+      "indent": "Indentare",
+      "note": "Formatator YAML · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "Formatator TOML · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "Minificator XML · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "Validator URL · WHATWG URL (fără rețea)"
+    },
+    "ipValidate": {
+      "note": "Validator IP · IPv4/IPv6 offline"
+    },
+    "uuidValidate": {
+      "note": "Validator UUID · format RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "Minificator HTML · ușor (sigur la margine)"
+    },
+    "randomString": {
+      "length": "Lungime",
+      "count": "Număr",
+      "charset": "Set de caractere",
+      "alphanumeric": "Alfanumeric",
+      "symbols": "Alfanumeric + simboluri",
+      "hex": "Hex",
+      "base64url": "Base64URL",
+      "note": "Șir aleator · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Timp de lectură · heuristică CJK + Latină"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Nivel maxim titlu",
+      "note": "TOC Markdown · titluri ATX"
+    },
+    "pdfInfo": {
+      "file": "Fișier PDF",
+      "note": "Info PDF · pdf-lib (pagini + metadate)"
+    },
+    "rot13": {
+      "shift": "Deplasare (13 = ROT13)",
+      "note": "ROT13 / Caesar · pur"
+    },
+    "morse": {
+      "note": "Cod Morse · ITU · pur"
+    },
+    "textBinary": {
+      "toBinary": "Text → binar",
+      "fromBinary": "Binar → text",
+      "note": "Text ↔ Binar · biți UTF-8"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Codificare digest",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "Beautifier CSS · ușor"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · ușor"
+    },
+    "stringSimilarity": {
+      "a": "Șir A",
+      "b": "Șir B",
+      "note": "Similaritate șiruri · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Număr → Roman",
+      "fromRoman": "Roman → Număr",
+      "note": "Numere romane · 1–3999"
+    },
+    "age": {
+      "birthDate": "Data nașterii (AAAA-LL-ZZ)",
+      "asOf": "Până la (opțional)",
+      "note": "Calculator vârstă · exact A/L/Z"
+    },
+    "tip": {
+      "bill": "Suma facturii",
+      "percent": "Bacșiș %",
+      "people": "Persoane",
+      "note": "Calculator bacșiș · împărțire prietenoasă"
+    },
+    "aspect": {
+      "width": "Lățime",
+      "height": "Înălțime",
+      "note": "Raport de aspect · simplificare CMMDC"
+    },
+    "mime": {
+      "note": "Căutare MIME · tipuri web comune"
+    },
+    "ua": {
+      "note": "Parser User-Agent · euristic (offline)"
+    },
+    "imageMeta": {
+      "file": "Fișier imagine",
+      "note": "Metadate imagine · sharp (dimensiune buffer EXIF)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "Frecvență cuvinte · CJK + Latin"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "Minimizator SQL · comentarii + spații albe"
+    },
+    "lineNum": {
+      "start": "Număr de start",
+      "note": "Adaugă numere de linie · pur"
+    },
+    "uniqueWords": {
+      "note": "Cuvinte unice · ordinea apariției"
+    },
+    "epoch": {
+      "value": "Valoare",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Milisecunde Epoch · Dată"
+    },
+    "passwordEntropy": {
+      "password": "Parolă",
+      "note": "Entropie parolă · heuristică charset"
+    },
+    "contrast": {
+      "fg": "Prim-plan (#hex)",
+      "bg": "Fundal (#hex)",
+      "note": "Contrast de culoare · WCAG 2.x"
+    },
+    "exif": {
+      "file": "Fișier imagine",
+      "note": "Vizualizator EXIF · exifr + fallback JPEG"
+    },
+    "regex": {
+      "pattern": "Model",
+      "replacement": "Înlocuire",
+      "flags": "Indicatori",
+      "note": "Căutare și înlocuire cu regex · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Secret",
+      "exp": "Expiră (secunde)",
+      "note": "Generare JWT · HS256 (doar pentru dezvoltare/testare)"
+    },
+    "rand": {
+      "min": "Min",
+      "max": "Maxim",
+      "count": "Număr",
+      "note": "Număr aleatoriu · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Fețe",
+      "count": "Număr zaruri",
+      "note": "Aruncare zaruri · RNG cripto"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · pur"
+    },
+    "base64url": {
+      "note": "Base64URL · stil JWT"
+    },
+    "hmac": {
+      "message": "Mesaj",
+      "secret": "Secret",
+      "signature": "Semnătură",
+      "note": "Verificare HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "Bytes",
+      "count": "Număr",
+      "note": "Generator cheie secretă · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "Fișier PDF",
+      "note": "Optimizare ușoară PDF · rescriere pdf-lib (fără recomprimare imagini)"
+    },
+    "pdfCompress": {
+      "file": "Fișier PDF",
+      "quality": "Calitate",
+      "engine": "Motor",
+      "qStructural": "Structural (qpdf, fluxuri fără pierderi)",
+      "qScreen": "Ecran (cel mai mic, Ghostscript)",
+      "qEbook": "Ebook (echilibrat, Ghostscript)",
+      "qPrinter": "Imprimantă (calitate mai mare, Ghostscript)",
+      "eAuto": "Auto (qpdf → Ghostscript → pdf-lib)",
+      "download": "Descarcă PDF",
+      "needFile": "Alege mai întâi un fișier PDF",
+      "in": "Intrare",
+      "out": "Ieșire",
+      "saved": "Salvat",
+      "note": "Comprimare PDF · qpdf / Ghostscript pe gazdă · pdf-lib ca rezervă"
+    }
+  },
+  "roots": {
+    "hubLabel": "După intenție",
+    "tools": "unelte",
+    "dualSurface": "Pagina umană + API Agent · același motor",
+    "otherRoots": "Alte rădăcini de cerere"
+  }
+}
