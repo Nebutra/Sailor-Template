@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Trạm công cụ trực tuyến",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Công cụ mã hóa, văn bản, băm, tài liệu và hình ảnh trực tuyến."
+  },
+  "nav": {
+    "main": "Điều hướng chính",
+    "homeAria": "Trang chủ {brandName} Forge",
+    "tools": "Công cụ",
+    "wallet": "Ví",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Danh mục công cụ",
+    "languageAria": "Đổi ngôn ngữ"
+  },
+  "tool": {
+    "breadcrumbAria": "Breadcrumbs",
+    "labNotice": "Tính năng Lab: phạm vi dữ liệu hoặc từ điển hạn chế; kết quả chỉ mang tính tham khảo.",
+    "workspace": "Không gian làm việc",
+    "workspaceHint": "Cục bộ hoặc máy chủ · cùng đường dẫn như API",
+    "api": "API",
+    "apiHint": "Cùng hợp đồng như trang. Sử dụng khóa đã xác thực trong môi trường sản xuất.",
+    "related": "Công cụ liên quan"
+  },
+  "auth": {
+    "signIn": "Đăng nhập",
+    "signUp": "Đăng ký",
+    "signOut": "Đăng xuất"
+  },
+  "footer": {
+    "navAria": "Chân trang",
+    "blurb": "Trạm công cụ trực tuyến. Hoàn thành tác vụ trong trình duyệt, hoặc tự động hóa qua API / MCP.",
+    "product": "Sản phẩm",
+    "developers": "Nhà phát triển",
+    "company": "Công ty",
+    "docs": "Tài liệu tích hợp",
+    "website": "Trang web",
+    "privacy": "Bảo mật"
+  },
+  "home": {
+    "eyebrow": "Nhìn thấy. Gọi tên.",
+    "title": "Con dao quân đội Thụy Sĩ cho công cụ trực tuyến",
+    "subtitle": "Codec, văn bản, băm, tài liệu và xử lý hình ảnh. Hoàn thành trong trình duyệt, hoặc tự động hóa qua API / MCP — một bộ triển khai duy nhất.",
+    "toolCount": "{count} công cụ",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Tìm kiếm: đếm từ, base64, json, timestamp…",
+    "aria": "Tìm kiếm công cụ",
+    "emptyTitle": "Không có công cụ nào khớp với “{query}”",
+    "emptyHint": "Thử từ khóa khác, hoặc chọn công cụ từ danh mục bên dưới."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codec",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Xác thực Trung Quốc",
+      "hint": "ID · SĐT"
+    },
+    "data": {
+      "label": "Dữ liệu",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Nhà phát triển",
+      "hint": "Regex · SQL · màu · UUID"
+    },
+    "doc": {
+      "label": "Tài liệu",
+      "hint": "Markdown · gộp/tách PDF"
+    },
+    "finance": {
+      "label": "Tài chính",
+      "hint": "Số tiền sang chữ"
+    },
+    "hash": {
+      "label": "Hash & bảo mật",
+      "hint": "MD5 · SHA · HMAC · mật khẩu"
+    },
+    "image": {
+      "label": "Hình ảnh",
+      "hint": "Nén · QR · chuyển đổi"
+    },
+    "life": {
+      "label": "Công cụ tính toán đời sống",
+      "hint": "Vay mua nhà · BMI · quan hệ họ hàng"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Token · chi phí · schema"
+    },
+    "security": {
+      "label": "Bảo mật",
+      "hint": "Tạo mật khẩu"
+    },
+    "text": {
+      "label": "Văn bản",
+      "hint": "Đếm từ · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Thời gian",
+      "hint": "Dấu thời gian · múi giờ · Cron · âm lịch"
+    },
+    "unit": {
+      "label": "Đơn vị",
+      "hint": "Chiều dài · khối lượng · nhiệt độ · dữ liệu"
+    }
+  }
+}
