@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Online verktygsstation",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Kodningar, text, hashning, dokument och bildverktyg online."
+  },
+  "nav": {
+    "main": "Huvudnavigation",
+    "homeAria": "{brandName} Forge hem",
+    "tools": "Verktyg",
+    "wallet": "Plånbok",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Verktygskategorier",
+    "languageAria": "Byt språk"
+  },
+  "tool": {
+    "breadcrumbAria": "Brödsmulor",
+    "labNotice": "Lab-funktion: begränsad data- eller ordbokscoverage; resultaten är endast för referens.",
+    "workspace": "Arbetsyta",
+    "workspaceHint": "Lokalt eller server · samma sökväg som API",
+    "api": "API",
+    "apiHint": "Samma kontrakt som sidan. Använd en autentiserad nyckel i produktion.",
+    "related": "Relaterade verktyg"
+  },
+  "auth": {
+    "signIn": "Logga in",
+    "signUp": "Skapa konto",
+    "signOut": "Logga ut"
+  },
+  "footer": {
+    "navAria": "Sidfot",
+    "blurb": "Onlineverktygsstation. Slutför uppgifter i webbläsaren eller automatisera via API / MCP.",
+    "product": "Produkt",
+    "developers": "Utvecklare",
+    "company": "Företag",
+    "docs": "Integrationsdokumentation",
+    "website": "Webbplats",
+    "privacy": "Integritet"
+  },
+  "home": {
+    "eyebrow": "Se det. Anropa det.",
+    "title": "Multiverktyg för onlineverktyg",
+    "subtitle": "Codecs, text, hashning, dokument och bildbehandling. Slutför i webbläsaren eller automatisera via API / MCP — en implementation.",
+    "toolCount": "{count} verktyg",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Sök: ordantal, base64, json, tidsstämpel…",
+    "aria": "Sök verktyg",
+    "emptyTitle": "Inga verktyg matchar ”{query}”",
+    "emptyHint": "Försök med ett annat nyckelord eller välj ett verktyg från kategorierna nedan."
+  },
+  "categories": {
+    "codec": {
+      "label": "Kodningar",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Kina-validering",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Utvecklare",
+      "hint": "Regex · SQL · färg · UUID"
+    },
+    "doc": {
+      "label": "Dokument",
+      "hint": "Markdown · PDF sammanfoga/dela"
+    },
+    "finance": {
+      "label": "Finans",
+      "hint": "Belopp till ord"
+    },
+    "hash": {
+      "label": "Hash & säkerhet",
+      "hint": "MD5 · SHA · HMAC · lösenord"
+    },
+    "image": {
+      "label": "Bilder",
+      "hint": "Komprimera · QR · konvertera"
+    },
+    "life": {
+      "label": "Livskalkylatorer",
+      "hint": "Bostadslån · BMI · släktskap"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · kostnad · schema"
+    },
+    "security": {
+      "label": "Säkerhet",
+      "hint": "Lösenordsgenerator"
+    },
+    "text": {
+      "label": "Text",
+      "hint": "Ordantal · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Tid",
+      "hint": "Tidstämpel · tidszon · Cron · lunär"
+    },
+    "unit": {
+      "label": "Enheter",
+      "hint": "Längd · vikt · temperatur · data"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Kör",
+      "running": "Kör…",
+      "copy": "Kopiera",
+      "copied": "Kopierat",
+      "sameAsApi": "Samma sökväg som API · OSS-motor",
+      "mustBeNumber": "{label} måste vara ett nummer",
+      "base64Loaded": "Base64-payload laddad",
+      "workspaceMissing": "Arbetsplats inte konfigurerad: {slug}",
+      "yes": "Ja",
+      "no": "Nej",
+      "text": "Text",
+      "outputPreview": "Förhandsvisning av utdata",
+      "mode": "Läge",
+      "encode": "Kodning",
+      "decode": "Avkodning"
+    },
+    "lorem": {
+      "paragraphs": "Stycken",
+      "wordsPerParagraph": "Ord per stycke",
+      "startWithLorem": "Börja med ”Lorem ipsum”",
+      "note": "Lorem Ipsum-generator · ren"
+    },
+    "emailValidate": {
+      "note": "E-postvaliderare · endast format (ingen MX-lookup)"
+    },
+    "creditCardLuhn": {
+      "number": "Kortnummer",
+      "note": "Luhn-kontroll · offline, sparas aldrig"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "JSON-minifierare · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS-minifier · lättviktig (säker för edge)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Ignorera storlek",
+      "note": "Hashjämförare · konstant tid för lika längd"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON-diff · sökvägsnivåoperationer · färgkodade rader · sida vid sida",
+      "equal": "Identiska",
+      "differs": "{count} ändring(ar)",
+      "colPath": "Sökväg",
+      "colKind": "Typ",
+      "colLeft": "Vänster",
+      "colRight": "Höger",
+      "filtersAria": "Filtrera efter ändringstyp",
+      "filterAll": "Alla ({count})",
+      "filterAdd": "Lägg till ({count})",
+      "filterRemove": "Ta bort ({count})",
+      "filterChange": "Ändra ({count})",
+      "filterType": "Typ ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Läge",
+      "pretty": "Prettig",
+      "compact": "Kompakt",
+      "indent": "Indentera",
+      "note": "YAML-formatering · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "TOML-formatering · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "XML-minifier · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "URL-validerare · WHATWG URL (ingen nätverksinhämtning)"
+    },
+    "ipValidate": {
+      "note": "IP-validerare · IPv4/IPv6 offline"
+    },
+    "uuidValidate": {
+      "note": "UUID-validerare · RFC 4122-format"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "HTML-minifier · lättviktig (edge-säker)"
+    },
+    "randomString": {
+      "length": "Längd",
+      "count": "Antal",
+      "charset": "Teckenuppsättning",
+      "alphanumeric": "Alfanumeriskt",
+      "symbols": "Alfanumeriskt + symboler",
+      "hex": "Hex",
+      "base64url": "Base64URL",
+      "note": "Slumpsträng · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Lästid · CJK + Latin heuristik"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Max rubriknivå",
+      "note": "Markdown TOC · ATX-rubriker"
+    },
+    "pdfInfo": {
+      "file": "PDF-fil",
+      "note": "PDF-info · pdf-lib (sidor + metadata)"
+    },
+    "rot13": {
+      "shift": "Förskjutning (13 = ROT13)",
+      "note": "ROT13 / Caesar · ren"
+    },
+    "morse": {
+      "note": "Morsekod · ITU · ren"
+    },
+    "textBinary": {
+      "toBinary": "Text → binär",
+      "fromBinary": "Binär → text",
+      "note": "Text ↔ Binär · UTF-8-bitar"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Digest-kodning",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS-formatering · lättviktig"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · lättviktig"
+    },
+    "stringSimilarity": {
+      "a": "Sträng A",
+      "b": "Sträng B",
+      "note": "Stränglikhet · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Tal → Romerskt",
+      "fromRoman": "Romerskt → Tal",
+      "note": "Romerska siffror · 1–3999"
+    },
+    "age": {
+      "birthDate": "Födelsedatum (YYYY-MM-DD)",
+      "asOf": "Per (valfritt)",
+      "note": "Åldersberäknare · exakt Å/M/D"
+    },
+    "tip": {
+      "bill": "Belopp",
+      "percent": "Dricks %",
+      "people": "Personer",
+      "note": "Dricksberäknare · enkel delning"
+    },
+    "aspect": {
+      "width": "Bredd",
+      "height": "Höjd",
+      "note": "Bildförhållande · förenklat GCD"
+    },
+    "mime": {
+      "note": "MIME-sökning · vanliga webbtyper"
+    },
+    "ua": {
+      "note": "User-Agent-parser · heuristisk (offline)"
+    },
+    "imageMeta": {
+      "file": "Bildfil",
+      "note": "Bildmetadata · sharp (EXIF-buffertstorlek)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "Ordfrekvens · CJK + Latin"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL-minifier · kommentarer + blanksteg"
+    },
+    "lineNum": {
+      "start": "Startnummer",
+      "note": "Lägg till radnummer · rent"
+    },
+    "uniqueWords": {
+      "note": "Unika ord · i ordning av första förekomst"
+    },
+    "epoch": {
+      "value": "Värde",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Epoch-milliseconder · datum"
+    },
+    "passwordEntropy": {
+      "password": "Lösenord",
+      "note": "Lösenordsentropi · teckenuppsättningsheuristik"
+    },
+    "contrast": {
+      "fg": "Förgrund (#hex)",
+      "bg": "Bakgrund (#hex)",
+      "note": "Färgkontrast · WCAG 2.x"
+    },
+    "exif": {
+      "file": "Bildfil",
+      "note": "EXIF-visare · exifr + JPEG-fallback"
+    },
+    "regex": {
+      "pattern": "Mönster",
+      "replacement": "Ersättning",
+      "flags": "Flaggor",
+      "note": "Regex sök & ersätt · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Hemlighet",
+      "exp": "Utgår (sekunder)",
+      "note": "JWT-generering · HS256 (endast utveckling/test)"
+    },
+    "rand": {
+      "min": "Min",
+      "max": "Max",
+      "count": "Antal",
+      "note": "Slumpmässig tal · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Sidor",
+      "count": "Antal tärningar",
+      "note": "Tärningsrulle · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · ren"
+    },
+    "base64url": {
+      "note": "Base64URL · JWT-stil"
+    },
+    "hmac": {
+      "message": "Meddelande",
+      "secret": "Hemlighet",
+      "signature": "Signatur",
+      "note": "HMAC-verifiering · SHA-256"
+    },
+    "secret": {
+      "bytes": "Byte",
+      "count": "Antal",
+      "note": "Hemlig nyckelgenerator · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "PDF-fil",
+      "note": "PDF Light Optimize · pdf-lib-omskrivning (ingen bildomkomprimering)"
+    },
+    "pdfCompress": {
+      "file": "PDF-fil",
+      "quality": "Kvalitet",
+      "engine": "Motor",
+      "qStructural": "Strukturell (qpdf, förlustfria strömmar)",
+      "qScreen": "Skärm (minst, Ghostscript)",
+      "qEbook": "E-bok (balanserad, Ghostscript)",
+      "qPrinter": "Skrivare (högre kvalitet, Ghostscript)",
+      "eAuto": "Auto (qpdf → Ghostscript → pdf-lib)",
+      "download": "Ladda ner PDF",
+      "needFile": "Välj en PDF-fil först",
+      "in": "Inmatning",
+      "out": "Utmatning",
+      "saved": "Sparad",
+      "note": "PDF-komprimering · qpdf / Ghostscript på värd · pdf-lib som reserv"
+    }
+  },
+  "roots": {
+    "hubLabel": "Efter avsikt",
+    "tools": "verktyg",
+    "dualSurface": "Människosida + Agent-API · samma motor",
+    "otherRoots": "Andra efterfråganrötter"
+  }
+}
