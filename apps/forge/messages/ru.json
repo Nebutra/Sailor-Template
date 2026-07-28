@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — онлайн-станция инструментов",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Онлайн-инструменты для кодеков, текста, хеширования, документов и изображений."
+  },
+  "nav": {
+    "main": "Главная навигация",
+    "homeAria": "Главная {brandName} Forge",
+    "tools": "Инструменты",
+    "wallet": "Кошелёк",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Категории инструментов",
+    "languageAria": "Изменить язык"
+  },
+  "tool": {
+    "breadcrumbAria": "Навигационная цепочка",
+    "workspace": "Рабочая область",
+    "workspaceHint": "Локально или на сервере · тот же путь, что и в API",
+    "api": "API",
+    "apiHint": "Тот же контракт, что и на странице. В продакшене используйте ключ с аутентификацией.",
+    "related": "Похожие инструменты"
+  },
+  "auth": {
+    "signIn": "Войти",
+    "signUp": "Зарегистрироваться",
+    "signOut": "Выйти"
+  },
+  "footer": {
+    "navAria": "Подвал",
+    "blurb": "Онлайн-станция инструментов. Выполняйте задачи в браузере или автоматизируйте через API / MCP.",
+    "product": "Продукт",
+    "developers": "Разработчикам",
+    "company": "Компания",
+    "docs": "Документация по интеграции",
+    "website": "Сайт",
+    "privacy": "Конфиденциальность"
+  },
+  "home": {
+    "eyebrow": "Увидели. Назовите.",
+    "title": "Швейцарский нож для онлайн-инструментов",
+    "subtitle": "Кодеки, текст, хеширование, документы и обработка изображений. Выполняйте в браузере или автоматизируйте через API / MCP — единая реализация.",
+    "toolCount": "{count} инструментов",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Поиск: счётчик слов, base64, json, timestamp…",
+    "aria": "Поиск инструментов",
+    "emptyTitle": "Нет инструментов по запросу «{query}»",
+    "emptyHint": "Попробуйте другой ключевой термин или выберите инструмент из категорий ниже."
+  },
+  "categories": {
+    "codec": {
+      "label": "Кодеки",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Проверка для Китая",
+      "hint": "ID · телефон"
+    },
+    "data": {
+      "label": "Данные",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Для разработчиков",
+      "hint": "Regex · SQL · цвет · UUID"
+    },
+    "doc": {
+      "label": "Документы",
+      "hint": "Markdown · объединение/разделение PDF"
+    },
+    "finance": {
+      "label": "Финансы",
+      "hint": "Сумма прописью"
+    },
+    "hash": {
+      "label": "Хеши и безопасность",
+      "hint": "MD5 · SHA · HMAC · пароль"
+    },
+    "image": {
+      "label": "Изображения",
+      "hint": "Сжатие · QR · конвертация"
+    },
+    "life": {
+      "label": "Жизненные калькуляторы",
+      "hint": "Ипотека · ИМТ · родство"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Токены · стоимость · схема"
+    },
+    "security": {
+      "label": "Безопасность",
+      "hint": "Генератор паролей"
+    },
+    "text": {
+      "label": "Текст",
+      "hint": "Символы · CJK · пиньинь · Diff"
+    },
+    "time": {
+      "label": "Время",
+      "hint": "Временная метка · часовой пояс · Cron · лунный календарь"
+    },
+    "unit": {
+      "label": "Единицы",
+      "hint": "Длина · вес · температура · данные"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Запустить",
+      "running": "Выполняется…",
+      "copy": "Копировать",
+      "copied": "Скопировано",
+      "sameAsApi": "Тот же путь, что и у API · OSS-движок",
+      "mustBeNumber": "{label} должно быть числом",
+      "base64Loaded": "Нагрузка Base64 загружена",
+      "workspaceMissing": "Рабочее пространство не настроено: {slug}",
+      "yes": "Да",
+      "no": "Нет",
+      "text": "Текст",
+      "outputPreview": "Предпросмотр вывода",
+      "mode": "Режим",
+      "encode": "Кодировать",
+      "decode": "Декодировать"
+    },
+    "lorem": {
+      "paragraphs": "Абзацы",
+      "wordsPerParagraph": "Слов в абзаце",
+      "startWithLorem": "Начинать с «Lorem ipsum»",
+      "note": "Генератор Lorem Ipsum · чистый"
+    },
+    "emailValidate": {
+      "note": "Валидатор email · только формат (без MX-запроса)"
+    },
+    "creditCardLuhn": {
+      "number": "Номер карты",
+      "note": "Проверка Luhn · офлайн, данные не сохраняются"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "Минификатор JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "Минификатор CSS · лёгкий (безопасный для edge)"
+    },
+    "hashCompare": {
+      "a": "Хэш A",
+      "b": "Хэш B",
+      "ignoreCase": "Игнорировать регистр",
+      "note": "Компаратор хэшей · константное время для равной длины"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "Сравнение JSON · операции на уровне путей · строки с цветовой маркировкой · рядом",
+      "equal": "Идентичны",
+      "differs": "{count} изменение(я)",
+      "colPath": "Путь",
+      "colKind": "Тип",
+      "colLeft": "Слева",
+      "colRight": "Справа",
+      "filtersAria": "Фильтр по типу изменений",
+      "filterAll": "Все ({count})",
+      "filterAdd": "Добавлено ({count})",
+      "filterRemove": "Удалено ({count})",
+      "filterChange": "Изменено ({count})",
+      "filterType": "Тип ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Режим",
+      "pretty": "Красивый",
+      "compact": "Компактный",
+      "indent": "С отступом",
+      "note": "Форматтер YAML · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "Форматтер TOML · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "Минификатор XML · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "Валидатор URL · WHATWG URL (без сетевых запросов)"
+    },
+    "ipValidate": {
+      "note": "Валидатор IP · IPv4/IPv6 офлайн"
+    },
+    "uuidValidate": {
+      "note": "Валидатор UUID · формат RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "Минификатор HTML · лёгкий (безопасный для edge)"
+    },
+    "randomString": {
+      "length": "Длина",
+      "count": "Количество",
+      "charset": "Набор символов",
+      "alphanumeric": "Буквенно-цифровые",
+      "symbols": "Буквенно-цифровые + символы",
+      "hex": "Шестнадцатеричные",
+      "base64url": "Base64URL",
+      "note": "Случайная строка · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Время чтения · эвристика CJK + Latin"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Максимальный уровень заголовка",
+      "note": "Оглавление Markdown · заголовки ATX"
+    },
+    "pdfInfo": {
+      "file": "Файл PDF",
+      "note": "Информация о PDF · pdf-lib (страницы + метаданные)"
+    },
+    "rot13": {
+      "shift": "Сдвиг (13 = ROT13)",
+      "note": "ROT13 / Цезарь · чистый"
+    },
+    "morse": {
+      "note": "Азбука Морзе · ITU · чистый"
+    },
+    "textBinary": {
+      "toBinary": "Текст → двоичный",
+      "fromBinary": "Двоичный → текст",
+      "note": "Текст ↔ двоичный · биты UTF-8"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Кодирование дайджеста",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "Форматирование CSS · лёгкий"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · лёгкий"
+    },
+    "stringSimilarity": {
+      "a": "Строка A",
+      "b": "Строка B",
+      "note": "Сходство строк · Левенштейн"
+    },
+    "roman": {
+      "toRoman": "Число → Римское",
+      "fromRoman": "Римское → Число",
+      "note": "Римские цифры · 1–3999"
+    },
+    "age": {
+      "birthDate": "Дата рождения (ГГГГ-ММ-ДД)",
+      "asOf": "Дата расчёта (необязательно)",
+      "note": "Калькулятор возраста · точный Г/М/Д"
+    },
+    "tip": {
+      "bill": "Сумма счёта",
+      "percent": "Чаевые %",
+      "people": "Люди",
+      "note": "Калькулятор чаевых · удобно делить"
+    },
+    "aspect": {
+      "width": "Ширина",
+      "height": "Высота",
+      "note": "Соотношение сторон · упрощение НОД"
+    },
+    "mime": {
+      "note": "Поиск MIME · распространённые веб-типы"
+    },
+    "ua": {
+      "note": "Парсер User-Agent · эвристический (офлайн)"
+    },
+    "imageMeta": {
+      "file": "Файл изображения",
+      "note": "Метаданные изображения · sharp (размер буфера EXIF)"
+    },
+    "wordFreq": {
+      "top": "Топ N",
+      "note": "Частота слов · CJK + латиница"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "Минификация SQL · комментарии и пробелы"
+    },
+    "lineNum": {
+      "start": "Начальный номер",
+      "note": "Нумерация строк · без зависимостей"
+    },
+    "uniqueWords": {
+      "note": "Уникальные слова · порядок первого появления"
+    },
+    "epoch": {
+      "value": "Значение",
+      "msToIso": "мс → ISO",
+      "isoToMs": "ISO → мс",
+      "note": "Эпоха в миллисекундах · Дата"
+    },
+    "passwordEntropy": {
+      "password": "Пароль",
+      "note": "Энтропия пароля · эвристика набора символов"
+    },
+    "contrast": {
+      "fg": "Текст (#hex)",
+      "bg": "Фон (#hex)",
+      "note": "Контраст цветов · WCAG 2.x"
+    },
+    "exif": {
+      "file": "Файл изображения",
+      "note": "Просмотр EXIF · exifr + JPEG fallback"
+    },
+    "regex": {
+      "pattern": "Шаблон",
+      "replacement": "Замена",
+      "flags": "Флаги",
+      "note": "Поиск и замена по Regex · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Секрет",
+      "exp": "Истекает (секунды)",
+      "note": "Генерация JWT · HS256 (только для dev/test)"
+    },
+    "rand": {
+      "min": "Мин",
+      "max": "Максимум",
+      "count": "Количество",
+      "note": "Случайное число · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Грани",
+      "count": "Количество кубиков",
+      "note": "Бросок кубиков · криптографический ГСЧ"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · чистый"
+    },
+    "base64url": {
+      "note": "Base64URL · стиль JWT"
+    },
+    "hmac": {
+      "message": "Сообщение",
+      "secret": "Секрет",
+      "signature": "Подпись",
+      "note": "Проверка HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "Байты",
+      "count": "Количество",
+      "note": "Генератор секретных ключей · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "PDF-файл",
+      "note": "PDF Light Optimize · переписывание через pdf-lib (без перекомпрессии изображений)"
+    },
+    "pdfCompress": {
+      "file": "PDF-файл",
+      "quality": "Качество",
+      "engine": "Движок",
+      "qStructural": "Структурное (qpdf, потоки без потерь)",
+      "qScreen": "Экранное (минимальный размер, Ghostscript)",
+      "qEbook": "Электронная книга (баланс, Ghostscript)",
+      "qPrinter": "Для печати (высокое качество, Ghostscript)",
+      "eAuto": "Авто (qpdf → Ghostscript → pdf-lib)",
+      "download": "Скачать PDF",
+      "needFile": "Сначала выберите PDF-файл",
+      "in": "Вход",
+      "out": "Выход",
+      "saved": "Сохранено",
+      "note": "Сжатие PDF · qpdf / Ghostscript на хосте · pdf-lib как запасной вариант"
+    }
+  },
+  "roots": {
+    "hubLabel": "По намерению",
+    "tools": "инструменты",
+    "dualSurface": "Страница для человека + API для агента · один движок",
+    "otherRoots": "Другие источники спроса"
+  }
+}

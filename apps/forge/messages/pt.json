@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Estação de ferramentas online",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Codecs, texto, hashing, documentos e ferramentas de imagem online."
+  },
+  "nav": {
+    "main": "Navegação principal",
+    "homeAria": "Início do {brandName} Forge",
+    "tools": "Ferramentas",
+    "wallet": "Carteira",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Categorias de ferramentas",
+    "languageAria": "Alterar idioma"
+  },
+  "tool": {
+    "breadcrumbAria": "Breadcrumb",
+    "workspace": "Área de trabalho",
+    "workspaceHint": "Local ou servidor · mesmo caminho da API",
+    "api": "API",
+    "apiHint": "Mesmo contrato da página. Use uma chave autenticada em produção.",
+    "related": "Ferramentas relacionadas"
+  },
+  "auth": {
+    "signIn": "Entrar",
+    "signUp": "Cadastrar-se",
+    "signOut": "Sair"
+  },
+  "footer": {
+    "navAria": "Rodapé",
+    "blurb": "Estação de ferramentas online. Conclua tarefas no navegador ou automatize via API / MCP.",
+    "product": "Produto",
+    "developers": "Desenvolvedores",
+    "company": "Empresa",
+    "docs": "Documentação de integração",
+    "website": "Site",
+    "privacy": "Privacidade"
+  },
+  "home": {
+    "eyebrow": "Veja. Chame.",
+    "title": "Canivete suíço para ferramentas online",
+    "subtitle": "Codecs, texto, hashing, documentos e processamento de imagens. Conclua no navegador ou automatize via API / MCP — uma única implementação.",
+    "toolCount": "{count} ferramentas",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Pesquisar: contagem de palavras, base64, json, timestamp…",
+    "aria": "Pesquisar ferramentas",
+    "emptyTitle": "Nenhuma ferramenta corresponde a “{query}”",
+    "emptyHint": "Tente outro termo ou selecione uma ferramenta nas categorias abaixo."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Validação China",
+      "hint": "ID · telefone"
+    },
+    "data": {
+      "label": "Dados",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Desenvolvedor",
+      "hint": "Regex · SQL · cor · UUID"
+    },
+    "doc": {
+      "label": "Documentos",
+      "hint": "Markdown · PDF unir/dividir"
+    },
+    "finance": {
+      "label": "Finanças",
+      "hint": "Valor por extenso"
+    },
+    "hash": {
+      "label": "Hash e segurança",
+      "hint": "MD5 · SHA · HMAC · senha"
+    },
+    "image": {
+      "label": "Imagens",
+      "hint": "Compactar · QR · converter"
+    },
+    "life": {
+      "label": "Calculadoras de vida",
+      "hint": "Hipoteca · IMC · parentesco"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · custo · schema"
+    },
+    "security": {
+      "label": "Segurança",
+      "hint": "Gerador de senhas"
+    },
+    "text": {
+      "label": "Texto",
+      "hint": "Contagem de palavras · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Tempo",
+      "hint": "Carimbo de tempo · fuso horário · Cron · lunar"
+    },
+    "unit": {
+      "label": "Unidades",
+      "hint": "Comprimento · peso · temperatura · dados"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Executar",
+      "running": "Executando…",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "sameAsApi": "Mesmo caminho da API · motor OSS",
+      "mustBeNumber": "{label} deve ser um número",
+      "base64Loaded": "Carga Base64 carregada",
+      "workspaceMissing": "Workspace não configurado: {slug}",
+      "yes": "Sim",
+      "no": "Não",
+      "text": "Texto",
+      "outputPreview": "Pré-visualização da saída",
+      "mode": "Modo",
+      "encode": "Codificar",
+      "decode": "Decodificar"
+    },
+    "lorem": {
+      "paragraphs": "Parágrafos",
+      "wordsPerParagraph": "Palavras por parágrafo",
+      "startWithLorem": "Começar com “Lorem ipsum”",
+      "note": "Gerador de Lorem Ipsum · puro"
+    },
+    "emailValidate": {
+      "note": "Validador de e-mail · apenas formato (sem consulta MX)"
+    },
+    "creditCardLuhn": {
+      "number": "Número do cartão",
+      "note": "Verificador Luhn · offline, nunca armazenado"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "Minificador JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "Minificador CSS · leve (seguro para edge)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Ignorar maiúsculas/minúsculas",
+      "note": "Comparador de Hash · tempo constante para mesmo comprimento"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "Diferença JSON · operações por caminho · linhas coloridas por tipo · lado a lado",
+      "equal": "Idênticos",
+      "differs": "{count} alteração(ões)",
+      "colPath": "Caminho",
+      "colKind": "Tipo",
+      "colLeft": "Esquerda",
+      "colRight": "Direita",
+      "filtersAria": "Filtrar por tipo de alteração",
+      "filterAll": "Todos ({count})",
+      "filterAdd": "Adicionar ({count})",
+      "filterRemove": "Remover ({count})",
+      "filterChange": "Alterar ({count})",
+      "filterType": "Tipo ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Modo",
+      "pretty": "Bonito",
+      "compact": "Compacto",
+      "indent": "Indentação",
+      "note": "Formatador YAML · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "Formatador TOML · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "Minificador XML · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "Validador de URL · WHATWG URL (sem busca na rede)"
+    },
+    "ipValidate": {
+      "note": "Validador de IP · IPv4/IPv6 offline"
+    },
+    "uuidValidate": {
+      "note": "Validador de UUID · formato RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "Minificador HTML · leve (seguro para edge)"
+    },
+    "randomString": {
+      "length": "Comprimento",
+      "count": "Quantidade",
+      "charset": "Conjunto de caracteres",
+      "alphanumeric": "Alfanumérico",
+      "symbols": "Alfanumérico + símbolos",
+      "hex": "Hexadecimal",
+      "base64url": "Base64URL",
+      "note": "String aleatória · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Tempo de leitura · heurística CJK + Latina"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Nível máximo de cabeçalho",
+      "note": "Sumário Markdown · cabeçalhos ATX"
+    },
+    "pdfInfo": {
+      "file": "Arquivo PDF",
+      "note": "Info do PDF · pdf-lib (páginas + metadados)"
+    },
+    "rot13": {
+      "shift": "Deslocamento (13 = ROT13)",
+      "note": "ROT13 / César · puro"
+    },
+    "morse": {
+      "note": "Código Morse · ITU · puro"
+    },
+    "textBinary": {
+      "toBinary": "Texto → binário",
+      "fromBinary": "Binário → texto",
+      "note": "Texto ↔ Binário · bits UTF-8"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Codificação do resumo",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "Beautifier CSS · leve"
+    },
+    "htmlFormat": {
+      "note": "Formatador HTML · leve"
+    },
+    "stringSimilarity": {
+      "a": "String A",
+      "b": "String B",
+      "note": "Similaridade de Strings · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Número → Romano",
+      "fromRoman": "Romano → Número",
+      "note": "Números Romanos · 1–3999"
+    },
+    "age": {
+      "birthDate": "Data de nascimento (AAAA-MM-DD)",
+      "asOf": "Até (opcional)",
+      "note": "Calculadora de Idade · Y/M/D exato"
+    },
+    "tip": {
+      "bill": "Valor da conta",
+      "percent": "Propina %",
+      "people": "Pessoas",
+      "note": "Calculadora de Gorjeta · divisão justa"
+    },
+    "aspect": {
+      "width": "Largura",
+      "height": "Altura",
+      "note": "Proporção · simplificação MDC"
+    },
+    "mime": {
+      "note": "Consulta MIME · tipos web comuns"
+    },
+    "ua": {
+      "note": "Parser User-Agent · heurístico (offline)"
+    },
+    "imageMeta": {
+      "file": "Arquivo de imagem",
+      "note": "Metadados de Imagem · sharp (tamanho do buffer EXIF)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "Frequência de Palavras · CJK + Latim"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "Minificador SQL · comentários + espaços em branco"
+    },
+    "lineNum": {
+      "start": "Número inicial",
+      "note": "Adicionar Números de Linha · puro"
+    },
+    "uniqueWords": {
+      "note": "Palavras Únicas · ordem de primeira ocorrência"
+    },
+    "epoch": {
+      "value": "Valor",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Milissegundos Epoch · Data"
+    },
+    "passwordEntropy": {
+      "password": "Senha",
+      "note": "Entropia de Senha · heurística de conjunto de caracteres"
+    },
+    "contrast": {
+      "fg": "Primeiro plano (#hex)",
+      "bg": "Plano de fundo (#hex)",
+      "note": "Contraste de Cor · WCAG 2.x"
+    },
+    "exif": {
+      "file": "Arquivo de imagem",
+      "note": "Visualizador EXIF · exifr + JPEG fallback"
+    },
+    "regex": {
+      "pattern": "Padrão",
+      "replacement": "Substituição",
+      "flags": "Flags",
+      "note": "Regex Find & Replace · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Segredo",
+      "exp": "Expira (segundos)",
+      "note": "Gerar JWT · HS256 (apenas dev/teste)"
+    },
+    "rand": {
+      "min": "Mín",
+      "max": "Máx",
+      "count": "Quantidade",
+      "note": "Número Aleatório · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Faces",
+      "count": "Quantidade de dados",
+      "note": "Rolador de Dados · RNG criptográfico"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · puro"
+    },
+    "base64url": {
+      "note": "Base64URL · estilo JWT"
+    },
+    "hmac": {
+      "message": "Mensagem",
+      "secret": "Segredo",
+      "signature": "Assinatura",
+      "note": "Verificação HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "Bytes",
+      "count": "Contagem",
+      "note": "Gerador de Chave Secreta · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "Arquivo PDF",
+      "note": "Otimização Leve de PDF · reescrita com pdf-lib (sem recompressão de imagens)"
+    },
+    "pdfCompress": {
+      "file": "Arquivo PDF",
+      "quality": "Qualidade",
+      "engine": "Motor",
+      "qStructural": "Estrutural (qpdf, streams sem perdas)",
+      "qScreen": "Tela (menor tamanho, Ghostscript)",
+      "qEbook": "Ebook (equilibrado, Ghostscript)",
+      "qPrinter": "Impressora (qualidade superior, Ghostscript)",
+      "eAuto": "Automático (qpdf → Ghostscript → pdf-lib)",
+      "download": "Baixar PDF",
+      "needFile": "Selecione um arquivo PDF primeiro",
+      "in": "Entrada",
+      "out": "Saída",
+      "saved": "Salvo",
+      "note": "Compressão PDF · qpdf / Ghostscript no host · pdf-lib como fallback"
+    }
+  },
+  "roots": {
+    "hubLabel": "Por intenção",
+    "tools": "ferramentas",
+    "dualSurface": "Página humana + API de agente · mesmo motor",
+    "otherRoots": "Outras raízes de demanda"
+  }
+}
