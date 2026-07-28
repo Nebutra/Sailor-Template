@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Stazione di strumenti online",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Codec, testo, hashing, documenti e strumenti per immagini online."
+  },
+  "nav": {
+    "main": "Navigazione principale",
+    "homeAria": "Home di {brandName} Forge",
+    "tools": "Strumenti",
+    "wallet": "Portafoglio",
+    "api": "API",
+    "routerAria": "Router di {brandName}",
+    "categoriesAria": "Categorie di strumenti",
+    "languageAria": "Cambia lingua"
+  },
+  "tool": {
+    "breadcrumbAria": "Briciola di pane",
+    "workspace": "Area di lavoro",
+    "workspaceHint": "Locale o server · stesso percorso dell'API",
+    "api": "API",
+    "apiHint": "Stesso contratto della pagina. Usa una chiave autenticata in produzione.",
+    "related": "Strumenti correlati"
+  },
+  "auth": {
+    "signIn": "Accedi",
+    "signUp": "Registrati",
+    "signOut": "Esci"
+  },
+  "footer": {
+    "navAria": "Piè di pagina",
+    "blurb": "Stazione di strumenti online. Completa i compiti nel browser o automatizzali tramite API / MCP.",
+    "product": "Prodotto",
+    "developers": "Sviluppatori",
+    "company": "Azienda",
+    "docs": "Documentazione di integrazione",
+    "website": "Sito web",
+    "privacy": "Privacy"
+  },
+  "home": {
+    "eyebrow": "Vedilo. Chiamalo.",
+    "title": "Coltellino svizzero per strumenti online",
+    "subtitle": "Codec, testo, hashing, documenti e elaborazione immagini. Completa nel browser o automatizza tramite API / MCP — un'unica implementazione.",
+    "toolCount": "{count} strumenti",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Cerca: conteggio parole, base64, json, timestamp…",
+    "aria": "Cerca strumenti",
+    "emptyTitle": "Nessun strumento corrisponde a “{query}”",
+    "emptyHint": "Prova un'altra parola chiave o scegli uno strumento dalle categorie qui sotto."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codec",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Validazione Cina",
+      "hint": "ID · telefono"
+    },
+    "data": {
+      "label": "Dati",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Sviluppatore",
+      "hint": "Regex · SQL · colore · UUID"
+    },
+    "doc": {
+      "label": "Documenti",
+      "hint": "Markdown · unione/divisione PDF"
+    },
+    "finance": {
+      "label": "Finanza",
+      "hint": "Importo in lettere"
+    },
+    "hash": {
+      "label": "Hash e sicurezza",
+      "hint": "MD5 · SHA · HMAC · password"
+    },
+    "image": {
+      "label": "Immagini",
+      "hint": "Comprimi · QR · converti"
+    },
+    "life": {
+      "label": "Calcolatori per la vita",
+      "hint": "Mutuo · BMI · parentela"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Token · costo · schema"
+    },
+    "security": {
+      "label": "Sicurezza",
+      "hint": "Generatore di password"
+    },
+    "text": {
+      "label": "Testo",
+      "hint": "Conteggio parole · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Tempo",
+      "hint": "Timestamp · fuso orario · Cron · lunare"
+    },
+    "unit": {
+      "label": "Unità",
+      "hint": "Lunghezza · peso · temperatura · dati"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Esegui",
+      "running": "In esecuzione…",
+      "copy": "Copia",
+      "copied": "Copiato",
+      "sameAsApi": "Stesso percorso dell'API · Motore OSS",
+      "mustBeNumber": "{label} deve essere un numero",
+      "base64Loaded": "Payload Base64 caricato",
+      "workspaceMissing": "Workspace non configurato: {slug}",
+      "yes": "Sì",
+      "no": "No",
+      "text": "Testo",
+      "outputPreview": "Anteprima output",
+      "mode": "Modalità",
+      "encode": "Codifica",
+      "decode": "Decodifica"
+    },
+    "lorem": {
+      "paragraphs": "Paragrafi",
+      "wordsPerParagraph": "Parole per paragrafo",
+      "startWithLorem": "Inizia con “Lorem ipsum”",
+      "note": "Generatore Lorem Ipsum · puro"
+    },
+    "emailValidate": {
+      "note": "Validatore email · solo formato (nessuna ricerca MX)"
+    },
+    "creditCardLuhn": {
+      "number": "Numero carta",
+      "note": "Controllo Luhn · offline, mai memorizzato"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "Minificatore JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "Minificatore CSS · leggero (edge-safe)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Ignora maiuscole/minuscole",
+      "note": "Comparatore hash · tempo costante per lunghezza uguale"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "Diff JSON · operazioni a livello di percorso · righe colorate per tipo · affiancate",
+      "equal": "Identici",
+      "differs": "{count} modifica(e)",
+      "colPath": "Percorso",
+      "colKind": "Tipo",
+      "colLeft": "Sinistra",
+      "colRight": "Destra",
+      "filtersAria": "Filtra per tipo di modifica",
+      "filterAll": "Tutti ({count})",
+      "filterAdd": "Aggiungi ({count})",
+      "filterRemove": "Rimuovi ({count})",
+      "filterChange": "Modifica ({count})",
+      "filterType": "Tipo ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Modalità",
+      "pretty": "Formattato",
+      "compact": "Compatto",
+      "indent": "Indentato",
+      "note": "Formattatore YAML · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "Formattatore TOML · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "Minificatore XML · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "Validatore URL · WHATWG URL (senza richiesta di rete)"
+    },
+    "ipValidate": {
+      "note": "Validatore IP · IPv4/IPv6 offline"
+    },
+    "uuidValidate": {
+      "note": "Validatore UUID · formato RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "Minificatore HTML · leggero (edge-safe)"
+    },
+    "randomString": {
+      "length": "Lunghezza",
+      "count": "Quantità",
+      "charset": "Set di caratteri",
+      "alphanumeric": "Alfanumerico",
+      "symbols": "Alfanumerico + simboli",
+      "hex": "Esadecimale",
+      "base64url": "Base64URL",
+      "note": "Stringa casuale · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Tempo di lettura · euristica CJK + latino"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Livello massimo di intestazione",
+      "note": "Sommario Markdown · intestazioni ATX"
+    },
+    "pdfInfo": {
+      "file": "File PDF",
+      "note": "Info PDF · pdf-lib (pagine + metadati)"
+    },
+    "rot13": {
+      "shift": "Spostamento (13 = ROT13)",
+      "note": "ROT13 / Cesare · puro"
+    },
+    "morse": {
+      "note": "Codice Morse · ITU · puro"
+    },
+    "textBinary": {
+      "toBinary": "Testo → binario",
+      "fromBinary": "Binario → testo",
+      "note": "Testo ↔ Binario · bit UTF-8"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Codifica digest",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS Beautifier · leggero"
+    },
+    "htmlFormat": {
+      "note": "Formattatore HTML · leggero"
+    },
+    "stringSimilarity": {
+      "a": "Stringa A",
+      "b": "Stringa B",
+      "note": "Somiglianza stringhe · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Numero → Romano",
+      "fromRoman": "Romano → Numero",
+      "note": "Numeri romani · 1–3999"
+    },
+    "age": {
+      "birthDate": "Data di nascita (AAAA-MM-GG)",
+      "asOf": "Al (opzionale)",
+      "note": "Calcolatore età · esatto A/M/G"
+    },
+    "tip": {
+      "bill": "Importo del conto",
+      "percent": "Mancia %",
+      "people": "Persone",
+      "note": "Calcolatore Mancia · divisione equa"
+    },
+    "aspect": {
+      "width": "Larghezza",
+      "height": "Altezza",
+      "note": "Rapporto d'aspetto · semplificazione MCD"
+    },
+    "mime": {
+      "note": "Ricerca MIME · tipi web comuni"
+    },
+    "ua": {
+      "note": "Parser User-Agent · euristico (offline)"
+    },
+    "imageMeta": {
+      "file": "File immagine",
+      "note": "Metadati immagine · sharp (dimensione buffer EXIF)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "Frequenza parole · CJK + Latino"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "Minificatore SQL · commenti + spazi bianchi"
+    },
+    "lineNum": {
+      "start": "Numero iniziale",
+      "note": "Aggiungi numeri di riga · puro"
+    },
+    "uniqueWords": {
+      "note": "Parole uniche · ordine di prima occorrenza"
+    },
+    "epoch": {
+      "value": "Valore",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Millisecondi Epoch · Data"
+    },
+    "passwordEntropy": {
+      "password": "Password",
+      "note": "Entropia password · euristica charset"
+    },
+    "contrast": {
+      "fg": "Primo piano (#hex)",
+      "bg": "Sfondo (#hex)",
+      "note": "Contrasto colore · WCAG 2.x"
+    },
+    "exif": {
+      "file": "File immagine",
+      "note": "Visualizzatore EXIF · exifr + fallback JPEG"
+    },
+    "regex": {
+      "pattern": "Pattern",
+      "replacement": "Sostituzione",
+      "flags": "Flag",
+      "note": "Trova e sostituisci Regex · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Segreto",
+      "exp": "Scade (secondi)",
+      "note": "Generazione JWT · HS256 (solo dev/test)"
+    },
+    "rand": {
+      "min": "Min",
+      "max": "Max",
+      "count": "Conteggio",
+      "note": "Numero casuale · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Facce",
+      "count": "Numero di dadi",
+      "note": "Lanciatore di dadi · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · puro"
+    },
+    "base64url": {
+      "note": "Base64URL · stile JWT"
+    },
+    "hmac": {
+      "message": "Messaggio",
+      "secret": "Segreto",
+      "signature": "Firma",
+      "note": "Verifica HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "Byte",
+      "count": "Conteggio",
+      "note": "Generatore Chiave Segreta · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "File PDF",
+      "note": "Ottimizzazione Leggera PDF · riscrittura pdf-lib (senza ricompressione immagini)"
+    },
+    "pdfCompress": {
+      "file": "File PDF",
+      "quality": "Qualità",
+      "engine": "Motore",
+      "qStructural": "Strutturale (qpdf, flussi senza perdita)",
+      "qScreen": "Schermo (più piccolo, Ghostscript)",
+      "qEbook": "Ebook (bilanciato, Ghostscript)",
+      "qPrinter": "Stampa (qualità superiore, Ghostscript)",
+      "eAuto": "Auto (qpdf → Ghostscript → pdf-lib)",
+      "download": "Scarica PDF",
+      "needFile": "Seleziona prima un file PDF",
+      "in": "Input",
+      "out": "Output",
+      "saved": "Salvato",
+      "note": "PDF Compress · qpdf / Ghostscript sul server · pdf-lib come fallback"
+    }
+  },
+  "roots": {
+    "hubLabel": "Per intento",
+    "tools": "strumenti",
+    "dualSurface": "Pagina umana + API agente · stesso motore",
+    "otherRoots": "Altre radici della domanda"
+  }
+}
