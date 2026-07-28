@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Kituo cha zana za mtandaoni",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Zana za mtandaoni za codecs, maandishi, hashing, hati, na picha."
+  },
+  "nav": {
+    "main": "Urambazaji mkuu",
+    "homeAria": "Nyumbani kwa {brandName} Forge",
+    "tools": "Zana",
+    "wallet": "Pesa",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "Aina za zana",
+    "languageAria": "Badilisha lugha"
+  },
+  "tool": {
+    "breadcrumbAria": "Breadcrumb",
+    "labNotice": "Uwezo wa lab: data au dictionary zinazofikiwa ni za kikomo; matokeo ni ya marejeleo tu.",
+    "workspace": "Kazi",
+    "workspaceHint": "Ndani au seva · njia sawa kama API",
+    "api": "API",
+    "apiHint": "Mkataba sawa na ukurasa. Tumia ufunguo uliothibitishwa katika uzalishaji.",
+    "related": "Zana zinazohusiana"
+  },
+  "auth": {
+    "signIn": "Ingia",
+    "signUp": "Jisajili",
+    "signOut": "Ondoka"
+  },
+  "footer": {
+    "navAria": "Sehemu ya chini",
+    "blurb": "Kituo cha zana za mtandaoni. Maliza kazi kwenye kivinjari, au utengenezee kupitia API / MCP.",
+    "product": "Bidhaa",
+    "developers": "Wanavutano",
+    "company": "Kampuni",
+    "docs": "Nyaraka za muunganisho",
+    "website": "Tovuti",
+    "privacy": "Siri"
+  },
+  "home": {
+    "eyebrow": "Uone. Uite.",
+    "title": "Kifaa cha kila kitu cha zana za mtandaoni",
+    "subtitle": "Codecs, maandishi, hashing, nyaraka, na usindikaji wa picha. Maliza kwenye kivinjari, au utengenezee kupitia API / MCP — utekelezaji mmoja.",
+    "toolCount": "zana {count}",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Tafuta: hesabu ya maneno, base64, json, timestamp…",
+    "aria": "Tafuta zana",
+    "emptyTitle": "Hakuna zana zinazolingana na “{query}”",
+    "emptyHint": "Jaribu neno lingine, au chagua zana kutoka kwa makundi hapa chini."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codecs",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Uthibitisho wa China",
+      "hint": "Kitambulisho · simu"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Mtaalamu wa programu",
+      "hint": "Regex · SQL · rangi · UUID"
+    },
+    "doc": {
+      "label": "Nyaraka",
+      "hint": "Markdown · Kuunganisha/kuagiza PDF"
+    },
+    "finance": {
+      "label": "Fedha",
+      "hint": "Kiasi kuwa maneno"
+    },
+    "hash": {
+      "label": "Hash na usalama",
+      "hint": "MD5 · SHA · HMAC · neno siri"
+    },
+    "image": {
+      "label": "Picha",
+      "hint": "Kupunguza · QR · kubadilisha"
+    },
+    "life": {
+      "label": "Kikokotozi cha maisha",
+      "hint": "Mkopo wa nyumba · BMI · uhusiano wa damu"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Tokens · gharama · schema"
+    },
+    "security": {
+      "label": "Usalama",
+      "hint": "Kizalishaji cha neno siri"
+    },
+    "text": {
+      "label": "Neno",
+      "hint": "Idadi ya maneno · CJK · pinyin · Tofauti"
+    },
+    "time": {
+      "label": "Muda",
+      "hint": "Tamshi ya muda · eneo la saa · Cron · mwezi"
+    },
+    "unit": {
+      "label": "Vipimo",
+      "hint": "Urefu · uzito · joto · data"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Fanya",
+      "running": "Inafanya kazi…",
+      "copy": "Nakili",
+      "copied": "Imenakiliwa",
+      "sameAsApi": "Njia ileile kama API · injini ya OSS",
+      "mustBeNumber": "{label} lazima iwe namba",
+      "base64Loaded": "Mazao ya Base64 yamepakiwa",
+      "workspaceMissing": "Kazi haijasanifiwa: {slug}",
+      "yes": "Ndiyo",
+      "no": "Hapana",
+      "text": "Nakala",
+      "outputPreview": "Onyesho la matokeo",
+      "mode": "Hali",
+      "encode": "Panga",
+      "decode": "Futa"
+    },
+    "lorem": {
+      "paragraphs": "Aya",
+      "wordsPerParagraph": "Maneno kwa kila aya",
+      "startWithLorem": "Anza na “Lorem ipsum”",
+      "note": "Kizalishaji Lorem Ipsum · safi"
+    },
+    "emailValidate": {
+      "note": "Kithibitisho cha Barua Pepe · muundo tu (hakuna utafutaji wa MX)"
+    },
+    "creditCardLuhn": {
+      "number": "Nambari ya kadi",
+      "note": "Kikagua Luhn · nje ya mtandao, haihifadhiwi"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "Kipunguzi cha JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS Minifier · nyepesi (salama kwa edge)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Puuza kesi",
+      "note": "Hash Comparator · muda wa kudumu kwa urefu sawa"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON Diff · operesheni za kiwango cha njia · mistari ya rangi ya aina · upande kwa upande",
+      "equal": "Sawa",
+      "differs": "mabadiliko {count}",
+      "colPath": "Njia",
+      "colKind": "Aina",
+      "colLeft": "Kushoto",
+      "colRight": "Kulia",
+      "filtersAria": "Chuja kwa aina ya mabadiliko",
+      "filterAll": "Zote ({count})",
+      "filterAdd": "Ongeza ({count})",
+      "filterRemove": "Ondoa ({count})",
+      "filterChange": "Badilisha ({count})",
+      "filterType": "Aina ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Hali",
+      "pretty": "Nzuri",
+      "compact": "Kufunga",
+      "indent": "Kutenganisha",
+      "note": "YAML Formatter · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "TOML Formatter · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "XML Minifier · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "URL Validator · WHATWG URL (hakuna kunakiliwa mtandao)"
+    },
+    "ipValidate": {
+      "note": "IP Validator · IPv4/IPv6 nje ya mtandao"
+    },
+    "uuidValidate": {
+      "note": "UUID Validator · muundo wa RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "HTML Minifier · nyepesi (salama kwa edge)"
+    },
+    "randomString": {
+      "length": "Urefu",
+      "count": "Idadi",
+      "charset": "Seti ya herufi",
+      "alphanumeric": "Alfanumeriki",
+      "symbols": "Alfanumeriki + alama",
+      "hex": "Hex",
+      "base64url": "Base64URL",
+      "note": "Nukuu ya nasibu · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Muda wa kusoma · heuristiki ya CJK + Latin"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Kiwango cha juu cha kichwa",
+      "note": "Markdown TOC · vichwa vya ATX"
+    },
+    "pdfInfo": {
+      "file": "Faili ya PDF",
+      "note": "Taarifa za PDF · pdf-lib (majina + metadata)"
+    },
+    "rot13": {
+      "shift": "Shift (13 = ROT13)",
+      "note": "ROT13 / Caesar · safi"
+    },
+    "morse": {
+      "note": "Msimbo wa Morse · ITU · safi"
+    },
+    "textBinary": {
+      "toBinary": "Mandhari → binary",
+      "fromBinary": "Binary → mandhari",
+      "note": "Mandhari ↔ Binary · UTF-8 bits"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Uandishi wa Digest",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS Beautifier · nyepesi"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · nyepesi"
+    },
+    "stringSimilarity": {
+      "a": "String A",
+      "b": "String B",
+      "note": "String Similarity · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Namba → Roman",
+      "fromRoman": "Roman → Namba",
+      "note": "Roman Numerals · 1–3999"
+    },
+    "age": {
+      "birthDate": "Tarehe ya kuzaliwa (YYYY-MM-DD)",
+      "asOf": "Kutoka (hiari)",
+      "note": "Age Calculator · Y/M/D sahihi"
+    },
+    "tip": {
+      "bill": "Kiasi cha bili",
+      "percent": "Tip %",
+      "people": "Watu",
+      "note": "Kikokotozi cha Tips · gawanya kwa urahisi"
+    },
+    "aspect": {
+      "width": "Upana",
+      "height": "Urefu",
+      "note": "Ratio ya Aspect · GCD simplify"
+    },
+    "mime": {
+      "note": "MIME Lookup · aina za kawaida za wavuti"
+    },
+    "ua": {
+      "note": "User-Agent Parser · heuristic (offline)"
+    },
+    "imageMeta": {
+      "file": "Faili la picha",
+      "note": "Image Metadata · sharp (EXIF buffer size)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "Word Frequency · CJK + Latin"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL Minifier · maoni + nafasi tupu"
+    },
+    "lineNum": {
+      "start": "Namba ya kuanza",
+      "note": "Ongeza Namba za Mstari · safi"
+    },
+    "uniqueWords": {
+      "note": "Maneno ya Kipekee · mpangilio wa kuonekana kwanza"
+    },
+    "epoch": {
+      "value": "Thamani",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Epoch Milliseconds · Tarehe"
+    },
+    "passwordEntropy": {
+      "password": "Nywila",
+      "note": "Entropy ya Nywila · heuristiki ya charset"
+    },
+    "contrast": {
+      "fg": "Mbele (#hex)",
+      "bg": "Mabano (#hex)",
+      "note": "Tofauti ya Rangi · WCAG 2.x"
+    },
+    "exif": {
+      "file": "Faili ya picha",
+      "note": "Kiongozi wa EXIF · exifr + JPEG fallback"
+    },
+    "regex": {
+      "pattern": "Mchoro",
+      "replacement": "Badilisho",
+      "flags": "Bendera",
+      "note": "Regex Tafuta na Badilisha · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Siri",
+      "exp": "Inaisha (sekunde)",
+      "note": "JWT Tengeneza · HS256 (maendeleo/ujaribio tu)"
+    },
+    "rand": {
+      "min": "Kiwango cha chini",
+      "max": "Upeo",
+      "count": "Idadi",
+      "note": "Nambari Nasibu · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Pande",
+      "count": "Idadi ya kete",
+      "note": "Kiviringisha Kete · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · safi"
+    },
+    "base64url": {
+      "note": "Base64URL · mtindo wa JWT"
+    },
+    "hmac": {
+      "message": "Ujumbe",
+      "secret": "Siri",
+      "signature": "Sahihi",
+      "note": "Thibitisha HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "Baiti",
+      "count": "Idadi",
+      "note": "Kizalishaji cha Ufunguo wa Siri · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "Faili ya PDF",
+      "note": "Bora PDF Nyeupe · kuandika upya kwa pdf-lib (si kukomaa picha)"
+    },
+    "pdfCompress": {
+      "file": "Faili ya PDF",
+      "quality": "Ubora",
+      "engine": "Injini",
+      "qStructural": "Muundo (qpdf, mitiririko isiyo na upotevu)",
+      "qScreen": "Skrini (ndogo zaidi, Ghostscript)",
+      "qEbook": "Kitabu (sawa, Ghostscript)",
+      "qPrinter": "Chapisho (ubora wa juu, Ghostscript)",
+      "eAuto": "Otomatiki (qpdf → Ghostscript → pdf-lib)",
+      "download": "Pakua PDF",
+      "needFile": "Chagua faili la PDF kwanza",
+      "in": "Ingizo",
+      "out": "Tokeo",
+      "saved": "Imehifadhiwa",
+      "note": "PDF Compress · qpdf / Ghostscript kwenye mwenyeji · pdf-lib mbadala"
+    }
+  },
+  "roots": {
+    "hubLabel": "Kulingana na nia",
+    "tools": "zana",
+    "dualSurface": "Ukurasa wa binadamu + API ya Agent · injini moja",
+    "otherRoots": "Mizizi mingine ya mahitaji"
+  }
+}
