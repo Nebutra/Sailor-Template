@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Stesen alat dalam talian",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Alat codec, teks, hashing, dokumen, dan imej dalam talian."
+  },
+  "nav": {
+    "main": "Navigasi utama",
+    "homeAria": "Laman utama {brandName} Forge",
+    "tools": "Alat",
+    "wallet": "Dompet",
+    "api": "API",
+    "routerAria": "Router {brandName}",
+    "categoriesAria": "Kategori alat",
+    "languageAria": "Tukar bahasa"
+  },
+  "tool": {
+    "breadcrumbAria": "Jejak roti",
+    "workspace": "Ruang kerja",
+    "workspaceHint": "Tempatan atau pelayan · laluan sama seperti API",
+    "api": "API",
+    "apiHint": "Kontrak sama seperti halaman. Gunakan kunci yang disahkan dalam pengeluaran.",
+    "related": "Alat berkaitan"
+  },
+  "auth": {
+    "signIn": "Log masuk",
+    "signUp": "Daftar",
+    "signOut": "Log keluar"
+  },
+  "footer": {
+    "navAria": "Pengek",
+    "blurb": "Stesen alat dalam talian. Selesaikan tugas dalam pelayar, atau automasi melalui API / MCP.",
+    "product": "Produk",
+    "developers": "Pembangun",
+    "company": "Syarikat",
+    "docs": "Dokumen integrasi",
+    "website": "Laman web",
+    "privacy": "Privasi"
+  },
+  "home": {
+    "eyebrow": "Lihat. Panggil.",
+    "title": "Kunci Swiss untuk alat dalam talian",
+    "subtitle": "Pengekodan, teks, pengekodan, dokumen, dan pemprosesan imej. Selesaikan dalam pelayar, atau automasi melalui API / MCP — satu pelaksanaan.",
+    "toolCount": "{count} alat",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Cari: kiraan perkataan, base64, json, cap masa…",
+    "aria": "Cari alat",
+    "emptyTitle": "Tiada alat sepadan “{query}”",
+    "emptyHint": "Cuba kata kunci lain, atau pilih alat dari kategori di bawah."
+  },
+  "categories": {
+    "codec": {
+      "label": "Pengekodan",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Pengesahan China",
+      "hint": "ID · telefon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Pembangun",
+      "hint": "Regex · SQL · warna · UUID"
+    },
+    "doc": {
+      "label": "Dokumen",
+      "hint": "Markdown · PDF gabung/pisah"
+    },
+    "finance": {
+      "label": "Kewangan",
+      "hint": "Jumlah kepada perkataan"
+    },
+    "hash": {
+      "label": "Hash & keselamatan",
+      "hint": "MD5 · SHA · HMAC · kata laluan"
+    },
+    "image": {
+      "label": "Imej",
+      "hint": "Mampatkan · QR · tukar"
+    },
+    "life": {
+      "label": "Kalkulator kehidupan",
+      "hint": "Rumah · BMI · hubungan keluarga"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Token · kos · skema"
+    },
+    "security": {
+      "label": "Keselamatan",
+      "hint": "Penjana kata laluan"
+    },
+    "text": {
+      "label": "Teks",
+      "hint": "Kiraan perkataan · CJK · pinyin · Perbezaan"
+    },
+    "time": {
+      "label": "Masa",
+      "hint": "Matercapaian · zon masa · Cron · lunar"
+    },
+    "unit": {
+      "label": "Unit",
+      "hint": "Panjang · berat · suhu · data"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Jalankan",
+      "running": "Sedang berjalan…",
+      "copy": "Salin",
+      "copied": "Disalin",
+      "sameAsApi": "Laluan sama seperti API · enjin OSS",
+      "mustBeNumber": "{label} mesti nombor",
+      "base64Loaded": "Beban Base64 dimuat",
+      "workspaceMissing": "Ruang kerja tidak dikonfigurasi: {slug}",
+      "yes": "Ya",
+      "no": "Tidak",
+      "text": "Teks",
+      "outputPreview": "Pratonton output",
+      "mode": "Mod",
+      "encode": "Encode",
+      "decode": "Decode"
+    },
+    "lorem": {
+      "paragraphs": "Perenggan",
+      "wordsPerParagraph": "Perkataan per perenggan",
+      "startWithLorem": "Mula dengan “Lorem ipsum”",
+      "note": "Penjana Lorem Ipsum · tulen"
+    },
+    "emailValidate": {
+      "note": "Pengesah Email · format sahaja (tiada carian MX)"
+    },
+    "creditCardLuhn": {
+      "number": "Nombor kad",
+      "note": "Pemeriksa Luhn · luar talian, tidak disimpan"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "Penyusut JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "Penipis CSS · ringan (selamat tepi)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Abaikan kes",
+      "note": "Perbandingan Hash · masa malar untuk panjang sama"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "Perbezaan JSON · operasi peringkat laluan · bar berwarna jenis · bersebelahan",
+      "equal": "Sama",
+      "differs": "{count} perubahan",
+      "colPath": "Laluan",
+      "colKind": "Jenis",
+      "colLeft": "Kiri",
+      "colRight": "Kanan",
+      "filtersAria": "Tapis mengikut jenis perubahan",
+      "filterAll": "Semua ({count})",
+      "filterAdd": "Tambah ({count})",
+      "filterRemove": "Buang ({count})",
+      "filterChange": "Ubah ({count})",
+      "filterType": "Jenis ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Mod",
+      "pretty": "Kemas",
+      "compact": "Padat",
+      "indent": "Selerak",
+      "note": "Pemformat YAML · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "Pemformat TOML · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "Pemampat XML · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "Pengesah URL · WHATWG URL (tanpa pengambilan rangkaian)"
+    },
+    "ipValidate": {
+      "note": "Pengesah IP · IPv4/IPv6 luar talian"
+    },
+    "uuidValidate": {
+      "note": "Pengesah UUID · bentuk RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "Pemampat HTML · ringan (selamat tepi)"
+    },
+    "randomString": {
+      "length": "Panjang",
+      "count": "Kiraan",
+      "charset": "Set aksara",
+      "alphanumeric": "Alfanumerik",
+      "symbols": "Alfanumerik + simbol",
+      "hex": "Hex",
+      "base64url": "Base64URL",
+      "note": "Rentetan Rawak · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Masa baca · heuristik CJK + Latin"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Tahap tajuk maksimum",
+      "note": "TOC Markdown · tajuk ATX"
+    },
+    "pdfInfo": {
+      "file": "Fail PDF",
+      "note": "Maklumat PDF · pdf-lib (halaman + metadata)"
+    },
+    "rot13": {
+      "shift": "Anjakan (13 = ROT13)",
+      "note": "ROT13 / Caesar · tulen"
+    },
+    "morse": {
+      "note": "Kod Morse · ITU · tulen"
+    },
+    "textBinary": {
+      "toBinary": "Teks → binari",
+      "fromBinary": "Binari → teks",
+      "note": "Teks ↔ Binari · bit UTF-8"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Penyulitan ringkasan",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "Penyusun CSS · ringan"
+    },
+    "htmlFormat": {
+      "note": "Penyusun HTML · ringan"
+    },
+    "stringSimilarity": {
+      "a": "Rentetan A",
+      "b": "Rentetan B",
+      "note": "Keserupaan Rentetan · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Nombor → Rumi",
+      "fromRoman": "Rumi → Nombor",
+      "note": "Nombor Rumi · 1–3999"
+    },
+    "age": {
+      "birthDate": "Tarikh lahir (YYYY-MM-DD)",
+      "asOf": "Sehingga (pilihan)",
+      "note": "Pengira Umur · tepat Y/B/H"
+    },
+    "tip": {
+      "bill": "Jumlah bil",
+      "percent": "Tip %",
+      "people": "Orang",
+      "note": "Kalkulator Tip · bahagi mesra"
+    },
+    "aspect": {
+      "width": "Lebar",
+      "height": "Tinggi",
+      "note": "Nisbah Aspek · permudahkan GCD"
+    },
+    "mime": {
+      "note": "Carian MIME · jenis web biasa"
+    },
+    "ua": {
+      "note": "Penyahkod User-Agent · heuristik (larian luar talian)"
+    },
+    "imageMeta": {
+      "file": "Fail imej",
+      "note": "Metadata Imej · sharp (saiz buffer EXIF)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "Kekerapan Perkataan · CJK + Latin"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "Penyusun SQL · komen + ruang putih"
+    },
+    "lineNum": {
+      "start": "Nombor mula",
+      "note": "Tambah Nombor Baris · tulen"
+    },
+    "uniqueWords": {
+      "note": "Perkataan Unik · tertib pertama dilihat"
+    },
+    "epoch": {
+      "value": "Nilai",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Saat Epoch · Tarikh"
+    },
+    "passwordEntropy": {
+      "password": "Kata Laluan",
+      "note": "Entropi Kata Laluan · heuristik set aksara"
+    },
+    "contrast": {
+      "fg": "Latar Depan (#hex)",
+      "bg": "Latar Belakang (#hex)",
+      "note": "Kontras Warna · WCAG 2.x"
+    },
+    "exif": {
+      "file": "Fail imej",
+      "note": "Pemerhati EXIF · exifr + JPEG fallback"
+    },
+    "regex": {
+      "pattern": "Corak",
+      "replacement": "Penggantian",
+      "flags": "Bendera",
+      "note": "Cari & Ganti Regex · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Rahsia",
+      "exp": "Tamat (saat)",
+      "note": "Jana JWT · HS256 (dev/test sahaja)"
+    },
+    "rand": {
+      "min": "Min",
+      "max": "Maks",
+      "count": "Kiraan",
+      "note": "Nombor Rawak · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Sisi",
+      "count": "Kiraan dadu",
+      "note": "Pengocok Dadu · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · tulen"
+    },
+    "base64url": {
+      "note": "Base64URL · gaya JWT"
+    },
+    "hmac": {
+      "message": "Mesej",
+      "secret": "Rahsia",
+      "signature": "Tandatangan",
+      "note": "Pengesahan HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "Bait",
+      "count": "Kiraan",
+      "note": "Penjana Kunci Rahsia · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "Fail PDF",
+      "note": "Pengoptimuman PDF Ringan · tulis semula pdf-lib (bukan mampatan semula imej)"
+    },
+    "pdfCompress": {
+      "file": "Fail PDF",
+      "quality": "Kualiti",
+      "engine": "Enjin",
+      "qStructural": "Struktural (qpdf, aliran tanpa kehilangan)",
+      "qScreen": "Skrin (paling kecil, Ghostscript)",
+      "qEbook": "Ebook (seimbang, Ghostscript)",
+      "qPrinter": "Pencetak (kualiti lebih tinggi, Ghostscript)",
+      "eAuto": "Auto (qpdf → Ghostscript → pdf-lib)",
+      "download": "Muat turun PDF",
+      "needFile": "Pilih fail PDF terlebih dahulu",
+      "in": "Input",
+      "out": "Output",
+      "saved": "Disimpan",
+      "note": "PDF Compress · qpdf / Ghostscript pada hos · pdf-lib fallback"
+    }
+  },
+  "roots": {
+    "hubLabel": "Mengikut niat",
+    "tools": "alat",
+    "dualSurface": "Laman manusia + API Ejen · enjin sama",
+    "otherRoots": "Akar permintaan lain"
+  }
+}
