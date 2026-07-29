@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — محطة أدوات عبر الإنترنت",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "أدوات عبر الإنترنت للتشفير، والنصوص، والتجزئة، والمستندات، والصور."
+  },
+  "nav": {
+    "main": "التنقل الرئيسي",
+    "homeAria": "الصفحة الرئيسية لـ {brandName} Forge",
+    "tools": "الأدوات",
+    "wallet": "المحفظة",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "فئات الأدوات",
+    "languageAria": "تغيير اللغة"
+  },
+  "tool": {
+    "breadcrumbAria": "مسار التنقل",
+    "workspace": "مساحة العمل",
+    "workspaceHint": "محلي أو خادم · نفس مسار API",
+    "api": "API",
+    "apiHint": "نفس العقد الموجود في الصفحة. استخدم مفتاحاً مصادقاً في الإنتاج.",
+    "related": "أدوات ذات صلة"
+  },
+  "auth": {
+    "signIn": "تسجيل الدخول",
+    "signUp": "إنشاء حساب",
+    "signOut": "تسجيل الخروج"
+  },
+  "footer": {
+    "navAria": "تذييل الصفحة",
+    "blurb": "محطة أدوات عبر الإنترنت. أكمل المهام في المتصفح، أو أتمها عبر API / MCP.",
+    "product": "المنتج",
+    "developers": "المطورون",
+    "company": "الشركة",
+    "docs": "وثائق التكامل",
+    "website": "الموقع الإلكتروني",
+    "privacy": "الخصوصية"
+  },
+  "home": {
+    "eyebrow": "شاهده. استدعه.",
+    "title": "سكين سويسري متعدد الاستخدامات للأدوات عبر الإنترنت",
+    "subtitle": "ترميز، نص، تجزئة، مستندات، ومعالجة الصور. أكمل في المتصفح، أو أتم عبر API / MCP — تنفيذ واحد.",
+    "toolCount": "{count} أداة",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "بحث: عدد الكلمات، base64، json، timestamp…",
+    "aria": "البحث في الأدوات",
+    "emptyTitle": "لا توجد أدوات مطابقة لـ “{query}”",
+    "emptyHint": "جرب كلمة مفتاحية أخرى، أو اختر أداة من الفئات أدناه."
+  },
+  "categories": {
+    "codec": {
+      "label": "الترميز",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "التحقق الصيني",
+      "hint": "المعرّف · الهاتف"
+    },
+    "data": {
+      "label": "البيانات",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "المطور",
+      "hint": "Regex · SQL · اللون · UUID"
+    },
+    "doc": {
+      "label": "المستندات",
+      "hint": "Markdown · دمج/تقسيم PDF"
+    },
+    "finance": {
+      "label": "المالية",
+      "hint": "المبلغ إلى كلمات"
+    },
+    "hash": {
+      "label": "التجزئة والأمان",
+      "hint": "MD5 · SHA · HMAC · كلمة المرور"
+    },
+    "image": {
+      "label": "الصور",
+      "hint": "ضغط · QR · تحويل"
+    },
+    "life": {
+      "label": "حسابات الحياة",
+      "hint": "الرهن العقاري · مؤشر كتلة الجسم · القرابة"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "الرموز · التكلفة · المخطط"
+    },
+    "security": {
+      "label": "الأمان",
+      "hint": "مولّد كلمات المرور"
+    },
+    "text": {
+      "label": "النص",
+      "hint": "عدد الكلمات · CJK · بينيين · Diff"
+    },
+    "time": {
+      "label": "الوقت",
+      "hint": "الطابع الزمني · المنطقة الزمنية · Cron · القمري"
+    },
+    "unit": {
+      "label": "الوحدات",
+      "hint": "الطول · الوزن · درجة الحرارة · البيانات"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "تشغيل",
+      "running": "جارٍ التشغيل…",
+      "copy": "نسخ",
+      "copied": "تم النسخ",
+      "sameAsApi": "نفس مسار الـ API · محرك مفتوح المصدر",
+      "mustBeNumber": "يجب أن يكون {label} رقمًا",
+      "base64Loaded": "تم تحميل حمولة Base64",
+      "workspaceMissing": "لم يتم تكوين مساحة العمل: {slug}",
+      "yes": "نعم",
+      "no": "لا",
+      "text": "نص",
+      "outputPreview": "معاينة الإخراج",
+      "mode": "الوضع",
+      "encode": "ترميز",
+      "decode": "فك الترميز"
+    },
+    "lorem": {
+      "paragraphs": "الفقرات",
+      "wordsPerParagraph": "الكلمات في الفقرة",
+      "startWithLorem": "ابدأ بـ \"Lorem ipsum\"",
+      "note": "مولّد Lorem Ipsum · نقي"
+    },
+    "emailValidate": {
+      "note": "مُحقّق البريد الإلكتروني · التنسيق فقط (بدون بحث MX)"
+    },
+    "creditCardLuhn": {
+      "number": "رقم البطاقة",
+      "note": "فاحص Luhn · غير متصل، لا يُحفظ"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "مُصغّر JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "مُصغّر CSS · خفيف (آمن للحواف)"
+    },
+    "hashCompare": {
+      "a": "التجزئة أ",
+      "b": "التجزئة ب",
+      "ignoreCase": "تجاهل حالة الأحرف",
+      "note": "مقارن التجزئة · زمن ثابت للطول المتساوي"
+    },
+    "jsonDiff": {
+      "left": "JSON أ",
+      "right": "JSON ب",
+      "note": "اختلاف JSON · عمليات على مستوى المسار · صفوف ملونة حسب النوع · جنبًا إلى جنب",
+      "equal": "متطابق",
+      "differs": "{count} تغيير(ات)",
+      "colPath": "المسار",
+      "colKind": "النوع",
+      "colLeft": "اليسار",
+      "colRight": "اليمين",
+      "filtersAria": "تصفية حسب نوع التغيير",
+      "filterAll": "الكل ({count})",
+      "filterAdd": "إضافة ({count})",
+      "filterRemove": "إزالة ({count})",
+      "filterChange": "تغيير ({count})",
+      "filterType": "النوع ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "الوضع",
+      "pretty": "منسق",
+      "compact": "مضغوط",
+      "indent": "مسافة بادئة",
+      "note": "منسق YAML · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "منسق TOML · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "مُصغّر XML · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "مدقق URL · WHATWG URL (بدون جلب شبكة)"
+    },
+    "ipValidate": {
+      "note": "مدقق IP · IPv4/IPv6 دون اتصال"
+    },
+    "uuidValidate": {
+      "note": "مدقق UUID · شكل RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "مُصغّر HTML · خفيف (آمن للحواف)"
+    },
+    "randomString": {
+      "length": "الطول",
+      "count": "العدد",
+      "charset": "مجموعة الأحرف",
+      "alphanumeric": "أحرف وأرقام",
+      "symbols": "أحرف وأرقام + رموز",
+      "hex": "سداسي عشري",
+      "base64url": "Base64URL",
+      "note": "سلسلة عشوائية · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "وقت القراءة · قاعدة تقريبية لـ CJK + اللاتينية"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "أقصى مستوى للعنوان",
+      "note": "فهرس Markdown · عناوين ATX"
+    },
+    "pdfInfo": {
+      "file": "ملف PDF",
+      "note": "معلومات PDF · pdf-lib (الصفحات + البيانات الوصفية)"
+    },
+    "rot13": {
+      "shift": "الإزاحة (13 = ROT13)",
+      "note": "ROT13 / قيصر · نقي"
+    },
+    "morse": {
+      "note": "شفرة مورس · ITU · نقي"
+    },
+    "textBinary": {
+      "toBinary": "نص → ثنائي",
+      "fromBinary": "ثنائي → نص",
+      "note": "نص ↔ ثنائي · بتات UTF-8"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "ترميز التلخيص",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "منسق CSS · خفيف"
+    },
+    "htmlFormat": {
+      "note": "منسق HTML · خفيف"
+    },
+    "stringSimilarity": {
+      "a": "النص أ",
+      "b": "النص ب",
+      "note": "تشابه النصوص · ليفنشتاين"
+    },
+    "roman": {
+      "toRoman": "رقم → روماني",
+      "fromRoman": "روماني → رقم",
+      "note": "الأرقام الرومانية · 1–3999"
+    },
+    "age": {
+      "birthDate": "تاريخ الميلاد (YYYY-MM-DD)",
+      "asOf": "حتى تاريخ (اختياري)",
+      "note": "حاسبة العمر · سنوات/أشهر/أيام بالضبط"
+    },
+    "tip": {
+      "bill": "مبلغ الفاتورة",
+      "percent": "نسبة البقشيش %",
+      "people": "الأشخاص",
+      "note": "حاسبة الإكرامية · تقسيم سهل"
+    },
+    "aspect": {
+      "width": "العرض",
+      "height": "الارتفاع",
+      "note": "نسبة العرض إلى الارتفاع · تبسيط القاسم المشترك الأكبر"
+    },
+    "mime": {
+      "note": "البحث عن MIME · الأنواع الشائعة للويب"
+    },
+    "ua": {
+      "note": "محلل User-Agent · استدلالي (دون اتصال)"
+    },
+    "imageMeta": {
+      "file": "ملف الصورة",
+      "note": "بيانات الصورة الوصفية · sharp (حجم مخزن EXIF)"
+    },
+    "wordFreq": {
+      "top": "أعلى N",
+      "note": "تكرار الكلمات · CJK + لاتيني"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "مُصغّر SQL · التعليقات + المسافات البيضاء"
+    },
+    "lineNum": {
+      "start": "رقم البداية",
+      "note": "إضافة أرقام الأسطر · نقي"
+    },
+    "uniqueWords": {
+      "note": "كلمات فريدة · ترتيب أول ظهور"
+    },
+    "epoch": {
+      "value": "القيمة",
+      "msToIso": "مللي ثانية → ISO",
+      "isoToMs": "ISO → مللي ثانية",
+      "note": "مللي ثوان Epoch · التاريخ"
+    },
+    "passwordEntropy": {
+      "password": "كلمة المرور",
+      "note": "إنتروبيا كلمة المرور · استنتاج مجموعة الأحرف"
+    },
+    "contrast": {
+      "fg": "اللون الأمامي (#hex)",
+      "bg": "اللون الخلفي (#hex)",
+      "note": "تباين الألوان · WCAG 2.x"
+    },
+    "exif": {
+      "file": "ملف الصورة",
+      "note": "عارض EXIF · exifr + JPEG fallback"
+    },
+    "regex": {
+      "pattern": "النمط",
+      "replacement": "الاستبدال",
+      "flags": "العلامات",
+      "note": "البحث والاستبدال بالنمط · ECMAScript"
+    },
+    "jwt": {
+      "payload": "حمولة JSON",
+      "secret": "السر",
+      "exp": "تاريخ الانتهاء (بالثواني)",
+      "note": "إنشاء JWT · HS256 (للتطوير والاختبار فقط)"
+    },
+    "rand": {
+      "min": "الحد الأدنى",
+      "max": "الحد الأقصى",
+      "count": "العدد",
+      "note": "رقم عشوائي · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "الأوجه",
+      "count": "عدد النرد",
+      "note": "مرح النرد · مولد أرقام عشوائية"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · نقي"
+    },
+    "base64url": {
+      "note": "Base64URL · نمط JWT"
+    },
+    "hmac": {
+      "message": "الرسالة",
+      "secret": "السر",
+      "signature": "التوقيع",
+      "note": "التحقق من HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "بايت",
+      "count": "العدد",
+      "note": "مولّد المفتاح السري · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "ملف PDF",
+      "note": "تحسين PDF خفيف · إعادة كتابة pdf-lib (بدون ضغط صور)"
+    },
+    "pdfCompress": {
+      "file": "ملف PDF",
+      "quality": "الجودة",
+      "engine": "المحرك",
+      "qStructural": "هيكلية (qpdf، تيارات بدون فقدان)",
+      "qScreen": "شاشة (الأصغر، Ghostscript)",
+      "qEbook": "كتاب إلكتروني (متوازن، Ghostscript)",
+      "qPrinter": "طابعة (جودة أعلى، Ghostscript)",
+      "eAuto": "تلقائي (qpdf → Ghostscript → pdf-lib)",
+      "download": "تحميل PDF",
+      "needFile": "اختر ملف PDF أولاً",
+      "in": "الإدخال",
+      "out": "الإخراج",
+      "saved": "تم الحفظ",
+      "note": "ضغط PDF · qpdf / Ghostscript على المضيف · pdf-lib كخيار بديل"
+    }
+  },
+  "roots": {
+    "hubLabel": "حسب النية",
+    "tools": "أدوات",
+    "dualSurface": "Human page + Agent API · same engine",
+    "otherRoots": "جذور الطلب الأخرى"
+  }
+}
