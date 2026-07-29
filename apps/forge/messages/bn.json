@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — অনলাইন টুল স্টেশন",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "কোডেক, টেক্সট, হ্যাশিং, ডকুমেন্ট এবং ইমেজ টুলস অনলাইন।"
+  },
+  "nav": {
+    "main": "মেইন নেভিগেশন",
+    "homeAria": "{brandName} Forge হোম",
+    "tools": "টুলস",
+    "wallet": "ওয়ালেট",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "টুল ক্যাটাগরি",
+    "languageAria": "ভাষা পরিবর্তন করুন"
+  },
+  "tool": {
+    "breadcrumbAria": "ব্রেডক্রাম্ব",
+    "workspace": "ওয়ার্কস্পেস",
+    "workspaceHint": "লোকাল বা সার্ভার · API এর মতো একই পথ",
+    "api": "API",
+    "apiHint": "পেজের মতো একই কনট্রাক্ট। প্রোডাকশনে একটি অথেন্টিকেটেড কী ব্যবহার করুন।",
+    "related": "সম্পর্কিত টুলস"
+  },
+  "auth": {
+    "signIn": "সাইন ইন",
+    "signUp": "সাইন আপ",
+    "signOut": "সাইন আউট"
+  },
+  "footer": {
+    "navAria": "ফুটার",
+    "blurb": "অনলাইন টুল স্টেশন। ব্রাউজারে কাজ শেষ করুন, অথবা API / MCP এর মাধ্যমে অটোমেট করুন।",
+    "product": "প্রোডাক্ট",
+    "developers": "ডেভেলপাররা",
+    "company": "কোম্পানি",
+    "docs": "ইন্টিগ্রেশন ডক্স",
+    "website": "ওয়েবসাইট",
+    "privacy": "প্রাইভেসি"
+  },
+  "home": {
+    "eyebrow": "দেখুন। কল করুন।",
+    "title": "অনলাইন টুলের সুইস আর্মি নাইফ",
+    "subtitle": "কোডেকস, টেক্সট, হ্যাশিং, ডকুমেন্ট এবং ইমেজ প্রসেসিং। ব্রাউজারে শেষ করুন, অথবা API / MCP এর মাধ্যমে অটোমেট করুন — এক ইমপ্লিমেন্টেশন।",
+    "toolCount": "{count} টুল",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "সার্চ করুন: ওয়ার্ড কাউন্ট, base64, json, টাইমস্ট্যাম্প…",
+    "aria": "টুল সার্চ করুন",
+    "emptyTitle": "কোনো টুল মিলছে না “{query}”",
+    "emptyHint": "অন্য কিওয়ার্ড চেষ্টা করুন, অথবা নিচের ক্যাটাগরি থেকে একটি টুল বেছে নিন।"
+  },
+  "categories": {
+    "codec": {
+      "label": "কোডেকস",
+      "hint": "Base64 · URL · JWT · ইউনিকোড"
+    },
+    "cn": {
+      "label": "চায়না ভ্যালিডেশন",
+      "hint": "ID · ফোন"
+    },
+    "data": {
+      "label": "ডেটা",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "ডেভেলপার",
+      "hint": "রেগুলার এক্সপ্রেশন · SQL · রঙ · UUID"
+    },
+    "doc": {
+      "label": "ডকুমেন্ট",
+      "hint": "মার্কডাউন · PDF মার্জ/বিভাজন"
+    },
+    "finance": {
+      "label": "ফাইন্যান্স",
+      "hint": "টাকার পরিমাণ শব্দে"
+    },
+    "hash": {
+      "label": "হ্যাশ ও নিরাপত্তা",
+      "hint": "MD5 · SHA · HMAC · পাসওয়ার্ড"
+    },
+    "image": {
+      "label": "ছবি",
+      "hint": "কম্প্রেস · QR · রূপান্তর"
+    },
+    "life": {
+      "label": "জীবন ক্যালকুলেটর",
+      "hint": "মর্টগেজ · BMI · সম্পর্ক"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "টোকেন · খরচ · স্কিমা"
+    },
+    "security": {
+      "label": "নিরাপত্তা",
+      "hint": "পাসওয়ার্ড জেনারেটর"
+    },
+    "text": {
+      "label": "টেক্সট",
+      "hint": "শব্দ গণনা · CJK · পিনিন · ডিফ"
+    },
+    "time": {
+      "label": "সময়",
+      "hint": "টাইমস্ট্যাম্প · টাইমজোন · Cron · লুনার"
+    },
+    "unit": {
+      "label": "একক",
+      "hint": "দৈর্ঘ্য · ওজন · তাপমাত্রা · ডেটা"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "চালান",
+      "running": "চলছে…",
+      "copy": "কপি করুন",
+      "copied": "কপি হয়েছে",
+      "sameAsApi": "Same path as API · OSS engine",
+      "mustBeNumber": "{label} অবশ্যই একটি সংখ্যা হতে হবে",
+      "base64Loaded": "Base64 পেইলোড লোড হয়েছে",
+      "workspaceMissing": "ওয়ার্কস্পেস কনফিগার করা হয়নি: {slug}",
+      "yes": "হ্যাঁ",
+      "no": "না",
+      "text": "টেক্সট",
+      "outputPreview": "আউটপুট প্রিভিউ",
+      "mode": "মোড",
+      "encode": "এনকোড",
+      "decode": "ডিকোড"
+    },
+    "lorem": {
+      "paragraphs": "অনুচ্ছেদ",
+      "wordsPerParagraph": "প্রতি অনুচ্ছেদে শব্দ",
+      "startWithLorem": "“Lorem ipsum” দিয়ে শুরু করুন",
+      "note": "Lorem Ipsum জেনারেটর · pure"
+    },
+    "emailValidate": {
+      "note": "ইমেইল ভ্যালিডেটর · শুধু ফরম্যাট (MX লুকআপ নেই)"
+    },
+    "creditCardLuhn": {
+      "number": "কার্ড নম্বর",
+      "note": "Luhn চেকার · অফলাইন, কখনো সংরক্ষিত হয় না"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "JSON মিনিফায়ার · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS Minifier · হালকা (এজ-নিরাপদ)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "কেস উপেক্ষা করুন",
+      "note": "Hash Comparator · সমান দৈর্ঘ্যের জন্য constant-time"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON Diff · পথ-স্তরের অপারেশন · রঙিন সারি · পাশাপাশি",
+      "equal": "একই",
+      "differs": "{count} পরিবর্তন",
+      "colPath": "পথ",
+      "colKind": "প্রকার",
+      "colLeft": "বাম",
+      "colRight": "ডান",
+      "filtersAria": "পরিবর্তনের প্রকার অনুযায়ী ফিল্টার করুন",
+      "filterAll": "সব ({count})",
+      "filterAdd": "যোগ করুন ({count})",
+      "filterRemove": "সরান ({count})",
+      "filterChange": "পরিবর্তন ({count})",
+      "filterType": "টাইপ ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "মোড",
+      "pretty": "সুন্দর",
+      "compact": "কম্প্যাক্ট",
+      "indent": "ইনডেন্ট",
+      "note": "YAML Formatter · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "TOML Formatter · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "XML Minifier · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "URL Validator · WHATWG URL (নেটওয়ার্ক ফেচ নেই)"
+    },
+    "ipValidate": {
+      "note": "IP Validator · IPv4/IPv6 অফলাইন"
+    },
+    "uuidValidate": {
+      "note": "UUID Validator · RFC 4122 শেপ"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "HTML Minifier · লাইটওয়েট (এজ-সেফ)"
+    },
+    "randomString": {
+      "length": "দৈর্ঘ্য",
+      "count": "সংখ্যা",
+      "charset": "ক্যারেক্টার সেট",
+      "alphanumeric": "অ্যালফানামেরিক",
+      "symbols": "অ্যালফানামেরিক + প্রতীক",
+      "hex": "হেক্স",
+      "base64url": "Base64URL",
+      "note": "র‍্যান্ডম স্ট্রিং · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "পড়ার সময় · CJK + ল্যাটিন হিউরিস্টিক"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "সর্বোচ্চ হেডিং লেভেল",
+      "note": "Markdown TOC · ATX হেডিং"
+    },
+    "pdfInfo": {
+      "file": "PDF ফাইল",
+      "note": "PDF তথ্য · pdf-lib (পৃষ্ঠা + মেটাডেটা)"
+    },
+    "rot13": {
+      "shift": "শিফট (13 = ROT13)",
+      "note": "ROT13 / সিজার · পিওর"
+    },
+    "morse": {
+      "note": "মোর্স কোড · ITU · পিওর"
+    },
+    "textBinary": {
+      "toBinary": "টেক্সট → বাইনারি",
+      "fromBinary": "বাইনারি → টেক্সট",
+      "note": "টেক্সট ↔ বাইনারি · UTF-8 বিট"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "ডাইজেস্ট এনকোডিং",
+      "note": "মাল্টি-হ্যাশ · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS বিউটিফায়ার · লাইটওয়েট"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · হালকা"
+    },
+    "stringSimilarity": {
+      "a": "স্ট্রিং A",
+      "b": "স্ট্রিং B",
+      "note": "স্ট্রিং Similarity · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "সংখ্যা → রোমান",
+      "fromRoman": "রোমান → সংখ্যা",
+      "note": "রোমান সংখ্যা · 1–3999"
+    },
+    "age": {
+      "birthDate": "জন্ম তারিখ (YYYY-MM-DD)",
+      "asOf": "তারিখ অনুযায়ী (ঐচ্ছিক)",
+      "note": "বয়স ক্যালকুলেটর · সঠিক Y/M/D"
+    },
+    "tip": {
+      "bill": "বিলের পরিমাণ",
+      "percent": "টিপস %",
+      "people": "ব্যক্তি",
+      "note": "টিপ ক্যালকুলেটর · সহজে ভাগ করুন"
+    },
+    "aspect": {
+      "width": "প্রস্থ",
+      "height": "উচ্চতা",
+      "note": "অ্যাসপেক্ট রেশিও · GCD সরলীকরণ"
+    },
+    "mime": {
+      "note": "MIME লুকআপ · সাধারণ ওয়েব টাইপ"
+    },
+    "ua": {
+      "note": "User-Agent পার্সার · হিউরিস্টিক (অফলাইন)"
+    },
+    "imageMeta": {
+      "file": "ছবি ফাইল",
+      "note": "ছবি মেটাডেটা · sharp (EXIF বাফার সাইজ)"
+    },
+    "wordFreq": {
+      "top": "শীর্ষ N",
+      "note": "শব্দ ফ্রিকোয়েন্সি · CJK + ল্যাটিন"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL মিনিফায়ার · কমেন্ট + স্পেস"
+    },
+    "lineNum": {
+      "start": "শুরু নম্বর",
+      "note": "লাইন নম্বর যোগ করুন · শুদ্ধ"
+    },
+    "uniqueWords": {
+      "note": "অনন্য শব্দ · প্রথম দেখা ক্রম"
+    },
+    "epoch": {
+      "value": "মান",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "এপোক মিলিসেকেন্ড · তারিখ"
+    },
+    "passwordEntropy": {
+      "password": "পাসওয়ার্ড",
+      "note": "পাসওয়ার্ড এনট্রপি · ক্যারেক্টার সেট অনুমান"
+    },
+    "contrast": {
+      "fg": "ফোরগ্রাউন্ড (#hex)",
+      "bg": "ব্যাকগ্রাউন্ড (#hex)",
+      "note": "রঙের কনট্রাস্ট · WCAG 2.x"
+    },
+    "exif": {
+      "file": "ছবির ফাইল",
+      "note": "EXIF ভিউয়ার · exifr + JPEG ফলব্যাক"
+    },
+    "regex": {
+      "pattern": "প্যাটার্ন",
+      "replacement": "প্রতিস্থাপন",
+      "flags": "ফ্ল্যাগ",
+      "note": "রেগুলার এক্সপ্রেশন খুঁজুন ও প্রতিস্থাপন করুন · ECMAScript"
+    },
+    "jwt": {
+      "payload": "পেইলোড JSON",
+      "secret": "সিক্রেট",
+      "exp": "মেয়াদ শেষ (সেকেন্ড)",
+      "note": "JWT তৈরি · HS256 (শুধুমাত্র ডেভ/টেস্ট)"
+    },
+    "rand": {
+      "min": "ন্যূনতম",
+      "max": "সর্বোচ্চ",
+      "count": "গণনা",
+      "note": "র‍্যান্ডম সংখ্যা · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "পাশ",
+      "count": "ডাইসের সংখ্যা",
+      "note": "ডাইস রোলার · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · pure"
+    },
+    "base64url": {
+      "note": "Base64URL · JWT-style"
+    },
+    "hmac": {
+      "message": "বার্তা",
+      "secret": "গোপন",
+      "signature": "স্বাক্ষর",
+      "note": "HMAC যাচাই · SHA-256"
+    },
+    "secret": {
+      "bytes": "বাইট",
+      "count": "গণনা",
+      "note": "সিক্রেট কী জেনারেটর · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "PDF ফাইল",
+      "note": "PDF লাইট অপ্টিমাইজ · pdf-lib রিরাইট (ছবি রিকম্প্রেস নয়)"
+    },
+    "pdfCompress": {
+      "file": "PDF ফাইল",
+      "quality": "গুণমান",
+      "engine": "এঞ্জিন",
+      "qStructural": "স্ট্রাকচারাল (qpdf, লসলেস স্ট্রিম)",
+      "qScreen": "স্ক্রিন (সবচেয়ে ছোট, Ghostscript)",
+      "qEbook": "ইবুক (সমতুল্য, Ghostscript)",
+      "qPrinter": "প্রিন্টার (উচ্চ গুণমান, Ghostscript)",
+      "eAuto": "স্বয়ংক্রিয় (qpdf → Ghostscript → pdf-lib)",
+      "download": "PDF ডাউনলোড করুন",
+      "needFile": "প্রথমে একটি PDF ফাইল নির্বাচন করুন",
+      "in": "ইনপুট",
+      "out": "আউটপুট",
+      "saved": "সংরক্ষিত",
+      "note": "PDF কম্প্রেস · হোস্টে qpdf / Ghostscript · pdf-lib ফলব্যাক"
+    }
+  },
+  "roots": {
+    "hubLabel": "উদ্দেশ্য অনুযায়ী",
+    "tools": "টুলস",
+    "dualSurface": "মানব পৃষ্ঠা + এজেন্ট API · একই ইঞ্জিন",
+    "otherRoots": "অন্যান্য চাহিদা রুট"
+  }
+}
