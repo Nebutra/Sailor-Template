@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — תחנת כלים מקוונת",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "קודקים, טקסט, הקודות, מסמכים וכלי תמונות מקוונים."
+  },
+  "nav": {
+    "main": "ניווט ראשי",
+    "homeAria": "דף הבית של {brandName} Forge",
+    "tools": "כלים",
+    "wallet": "ארנק",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "קטגוריות כלים",
+    "languageAria": "שנה שפה"
+  },
+  "tool": {
+    "breadcrumbAria": "פירורי לחם",
+    "workspace": "מרחב עבודה",
+    "workspaceHint": "מקומי או שרת · אותו נתיב כמו ב-API",
+    "api": "API",
+    "apiHint": "אותו חוזה כמו בדף. השתמש במפתח מאומת בייצור.",
+    "related": "כלים קשורים"
+  },
+  "auth": {
+    "signIn": "התחבר",
+    "signUp": "הירשם",
+    "signOut": "התנתק"
+  },
+  "footer": {
+    "navAria": "כותרת תחתונה",
+    "blurb": "תחנת כלים מקוונת. סיימו משימות בדפדפן או אוטומציה דרך API / MCP.",
+    "product": "מוצר",
+    "developers": "מפתחים",
+    "company": "חברה",
+    "docs": "תיעוד אינטגרציה",
+    "website": "אתר",
+    "privacy": "פרטיות"
+  },
+  "home": {
+    "eyebrow": "ראו את זה. קראו את זה.",
+    "title": "סכין שוויצרית לכלים מקוונים",
+    "subtitle": "קודקים, טקסט, הקודות, מסמכים ועיבוד תמונות. סיימו בדפדפן או אוטומציה דרך API / MCP — יישום אחד.",
+    "toolCount": "{count} כלים",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "חיפוש: ספירת מילים, base64, json, חותמת זמן…",
+    "aria": "חיפוש כלים",
+    "emptyTitle": "אין כלים התואמים ל-“{query}”",
+    "emptyHint": "נסו מילת מפתח אחרת או בחרו כלי מהקטגוריות למטה."
+  },
+  "categories": {
+    "codec": {
+      "label": "קודקים",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "אימות סין",
+      "hint": "מזהה · טלפון"
+    },
+    "data": {
+      "label": "נתונים",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "מפתחים",
+      "hint": "Regex · SQL · צבע · UUID"
+    },
+    "doc": {
+      "label": "מסמכים",
+      "hint": "Markdown · מיזוג/פיצול PDF"
+    },
+    "finance": {
+      "label": "פיננסים",
+      "hint": "סכום למילים"
+    },
+    "hash": {
+      "label": "האש ואבטחה",
+      "hint": "MD5 · SHA · HMAC · סיסמה"
+    },
+    "image": {
+      "label": "תמונות",
+      "hint": "דחיסה · QR · המרה"
+    },
+    "life": {
+      "label": "מחשבי חיים",
+      "hint": "משכנתא · BMI · קרבה משפחתית"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "טוקנים · עלות · סכמה"
+    },
+    "security": {
+      "label": "אבטחה",
+      "hint": "מחולל סיסמאות"
+    },
+    "text": {
+      "label": "טקסט",
+      "hint": "מספר מילים · CJK · פין-יין · Diff"
+    },
+    "time": {
+      "label": "זמן",
+      "hint": "חותמת זמן · אזור זמן · Cron · לוח ירחי"
+    },
+    "unit": {
+      "label": "יחידות",
+      "hint": "אורך · משקל · טמפרטורה · נתונים"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "הפעל",
+      "running": "מפעיל…",
+      "copy": "העתק",
+      "copied": "הועתק",
+      "sameAsApi": "אותו נתיב כמו API · מנוע OSS",
+      "mustBeNumber": "{label} חייב להיות מספר",
+      "base64Loaded": "נתוני Base64 נטענו",
+      "workspaceMissing": "מרחב העבודה לא מוגדר: {slug}",
+      "yes": "כן",
+      "no": "לא",
+      "text": "טקסט",
+      "outputPreview": "תצוגה מקדימה של פלט",
+      "mode": "מצב",
+      "encode": "קודד",
+      "decode": "פענח"
+    },
+    "lorem": {
+      "paragraphs": "פסקאות",
+      "wordsPerParagraph": "מילים לפסקה",
+      "startWithLorem": "התחל עם \"Lorem ipsum\"",
+      "note": "מחולל Lorem Ipsum · טהור"
+    },
+    "emailValidate": {
+      "note": "מאמת דוא\"ל · בדיקת פורמט בלבד (ללא בדיקת MX)"
+    },
+    "creditCardLuhn": {
+      "number": "מספר כרטיס",
+      "note": "בודק Luhn · לא מקוון, לא מאוחסן"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "מכווץ JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "מכווץ CSS · קל משקל (בטוח לשוליים)"
+    },
+    "hashCompare": {
+      "a": "האש א",
+      "b": "האש ב",
+      "ignoreCase": "התעלם מרישיות",
+      "note": "מקבל האשים · זמן קבוע לאותו אורך"
+    },
+    "jsonDiff": {
+      "left": "JSON א",
+      "right": "JSON ב",
+      "note": "הבדלי JSON · פעולות ברמת נתיב · שורות צבעויות לפי סוג · צד לצד",
+      "equal": "זהים",
+      "differs": "{count} שינויים",
+      "colPath": "נתיב",
+      "colKind": "סוג",
+      "colLeft": "שמאל",
+      "colRight": "ימין",
+      "filtersAria": "סינון לפי סוג שינוי",
+      "filterAll": "הכל ({count})",
+      "filterAdd": "הוספה ({count})",
+      "filterRemove": "הסרה ({count})",
+      "filterChange": "שינוי ({count})",
+      "filterType": "סוג ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "מצב",
+      "pretty": "מסודר",
+      "compact": "קומפקטי",
+      "indent": "שורה חדשה",
+      "note": "מסדר YAML · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "מסדר TOML · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "מכווץ XML · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "מאמת כתובות · WHATWG URL (ללא גישה לרשת)"
+    },
+    "ipValidate": {
+      "note": "מאמת כתובות IP · IPv4/IPv6 לא מקוון"
+    },
+    "uuidValidate": {
+      "note": "מאמת UUID · מבנה לפי RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "מכווץ HTML · קל משקל (בטוח ל־edge)"
+    },
+    "randomString": {
+      "length": "אורך",
+      "count": "כמות",
+      "charset": "סט תווים",
+      "alphanumeric": "אלפא-נומרי",
+      "symbols": "אלפא-נומרי + סמלים",
+      "hex": "הקסדצימלי",
+      "base64url": "Base64URL",
+      "note": "מחרוזת אקראית · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "זמן קריאה · היוריסטיקה ל-CJK וללטיני"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "רמת כותרת מקסימלית",
+      "note": "תוכן עניינים ב-Markdown · כותרות ATX"
+    },
+    "pdfInfo": {
+      "file": "קובץ PDF",
+      "note": "מידע PDF · pdf-lib (עמודים + מטא-נתונים)"
+    },
+    "rot13": {
+      "shift": "הזזה (13 = ROT13)",
+      "note": "ROT13 / קיסר · טהור"
+    },
+    "morse": {
+      "note": "קוד מורס · ITU · טהור"
+    },
+    "textBinary": {
+      "toBinary": "טקסט → בינארי",
+      "fromBinary": "בינארי → טקסט",
+      "note": "טקסט ↔ בינארי · סיביות UTF-8"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "קידוד עיכול",
+      "note": "ריבוי-האש · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "מסדר CSS · קל משקל"
+    },
+    "htmlFormat": {
+      "note": "מְעַצֵּב HTML · קל משקל"
+    },
+    "stringSimilarity": {
+      "a": "מחרוזת א׳",
+      "b": "מחרוזת ב׳",
+      "note": "דמיון מחרוזות · לֶבֶנְשְׁטַיְן"
+    },
+    "roman": {
+      "toRoman": "מספר → רומי",
+      "fromRoman": "רומי → מספר",
+      "note": "ספרות רומיות · 1–3999"
+    },
+    "age": {
+      "birthDate": "תאריך לידה (YYYY-MM-DD)",
+      "asOf": "נכון ל־ (אופציונלי)",
+      "note": "מחשבון גיל · שנים/חודשים/ימים מדויקים"
+    },
+    "tip": {
+      "bill": "סכום החשבון",
+      "percent": "טיפ %",
+      "people": "אנשים",
+      "note": "מחשבון טיפים · חלוקה נוחה"
+    },
+    "aspect": {
+      "width": "רוחב",
+      "height": "גובה",
+      "note": "יחס תצוגה · פישוט GCD"
+    },
+    "mime": {
+      "note": "חיפוש MIME · סוגי אינטרנט נפוצים"
+    },
+    "ua": {
+      "note": "מנתח User-Agent · היוריסטי (אופליין)"
+    },
+    "imageMeta": {
+      "file": "קובץ תמונה",
+      "note": "מטא-נתוני תמונה · sharp (גודל באפר EXIF)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "תדירות מילים · CJK + לטיני"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "מקטין SQL · הערות + רווחים"
+    },
+    "lineNum": {
+      "start": "מספר התחלה",
+      "note": "הוסף מספרי שורה · טהור"
+    },
+    "uniqueWords": {
+      "note": "מילים ייחודיות · סדר מופע ראשון"
+    },
+    "epoch": {
+      "value": "ערך",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "אלפיות עידן · תאריך"
+    },
+    "passwordEntropy": {
+      "password": "סיסמה",
+      "note": "אנטרופיית סיסמה · היוריסטיקת מערך תווים"
+    },
+    "contrast": {
+      "fg": "טקסט (#hex)",
+      "bg": "רקע (#hex)",
+      "note": "ניגודיות צבעים · WCAG 2.x"
+    },
+    "exif": {
+      "file": "קובץ תמונה",
+      "note": "צופה EXIF · exifr + גיבוי JPEG"
+    },
+    "regex": {
+      "pattern": "תבנית",
+      "replacement": "החלפה",
+      "flags": "דגלים",
+      "note": "חיפוש והחלפה ב-Regex · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "סוד",
+      "exp": "פג תוקף (שניות)",
+      "note": "יצירת JWT · HS256 (לפיתוח/בדיקות בלבד)"
+    },
+    "rand": {
+      "min": "מינימום",
+      "max": "מקסימום",
+      "count": "כמות",
+      "note": "מספר אקראי · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "צדדים",
+      "count": "מספר קוביות",
+      "note": "זורק קוביות · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · טהור"
+    },
+    "base64url": {
+      "note": "Base64URL · בסגנון JWT"
+    },
+    "hmac": {
+      "message": "הודעה",
+      "secret": "סוד",
+      "signature": "חתימה",
+      "note": "אימות HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "בתים",
+      "count": "ספירה",
+      "note": "מחולל מפתח סודי · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "קובץ PDF",
+      "note": "PDF Light Optimize · כתיבה מחדש עם pdf-lib (לא דחיסה מחדש של תמונות)"
+    },
+    "pdfCompress": {
+      "file": "קובץ PDF",
+      "quality": "איכות",
+      "engine": "מנוע",
+      "qStructural": "מבני (qpdf, זרמים ללא אובדן)",
+      "qScreen": "מסך (קטן ביותר, Ghostscript)",
+      "qEbook": "ספר אלקטרוני (מאוזן, Ghostscript)",
+      "qPrinter": "מדפסת (איכות גבוהה יותר, Ghostscript)",
+      "eAuto": "אוטומטי (qpdf → Ghostscript → pdf-lib)",
+      "download": "הורד PDF",
+      "needFile": "בחר קובץ PDF תחילה",
+      "in": "קלט",
+      "out": "פלט",
+      "saved": "נשמר",
+      "note": "PDF Compress · qpdf / Ghostscript על המארח · pdf-lib כגיבוי"
+    }
+  },
+  "roots": {
+    "hubLabel": "על פי כוונה",
+    "tools": "כלים",
+    "dualSurface": "דף אנושי + ממשק API לסוכן · אותו מנוע",
+    "otherRoots": "שורשי ביקוש אחרים"
+  }
+}

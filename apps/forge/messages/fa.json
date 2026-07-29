@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — ایستگاه ابزار آنلاین",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "کدک‌ها، متن، هش، اسناد و ابزارهای تصویر به صورت آنلاین."
+  },
+  "nav": {
+    "main": "ناوبری اصلی",
+    "homeAria": "خانه {brandName} Forge",
+    "tools": "ابزارها",
+    "wallet": "کیف پول",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "دسته‌بندی ابزارها",
+    "languageAria": "تغییر زبان"
+  },
+  "tool": {
+    "breadcrumbAria": "مسیر صفحه",
+    "workspace": "محیط کار",
+    "workspaceHint": "محلی یا سرور · مسیر یکسان با API",
+    "api": "API",
+    "apiHint": "قرارداد یکسان با صفحه. در محیط تولید از کلید احراز هویت استفاده کنید.",
+    "related": "ابزارهای مرتبط"
+  },
+  "auth": {
+    "signIn": "ورود",
+    "signUp": "ثبت‌نام",
+    "signOut": "خروج"
+  },
+  "footer": {
+    "navAria": "پاورقی",
+    "blurb": "ایستگاه ابزار آنلاین. کارها را در مرورگر انجام دهید یا از طریق API / MCP خودکار کنید.",
+    "product": "محصول",
+    "developers": "توسعه‌دهندگان",
+    "company": "شرکت",
+    "docs": "مستندات یکپارچه‌سازی",
+    "website": "وب‌سایت",
+    "privacy": "حریم خصوصی"
+  },
+  "home": {
+    "eyebrow": "ببینید. صدا بزنید.",
+    "title": "چاقوی سوئیسی برای ابزارهای آنلاین",
+    "subtitle": "کدک‌ها، متن، هش‌سازی، اسناد و پردازش تصویر. در مرورگر انجام دهید یا از طریق API / MCP خودکار کنید — یک پیاده‌سازی.",
+    "toolCount": "{count} ابزار",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "جستجو: شمارش کلمات، base64، json، timestamp…",
+    "aria": "جستجوی ابزارها",
+    "emptyTitle": "هیچ ابزاری با “{query}” مطابقت ندارد",
+    "emptyHint": "یک کلمه کلیدی دیگر امتحان کنید یا از دسته‌های زیر یک ابزار انتخاب کنید."
+  },
+  "categories": {
+    "codec": {
+      "label": "کدک‌ها",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "اعتبارسنجی چین",
+      "hint": "شناسه · تلفن"
+    },
+    "data": {
+      "label": "داده",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "توسعه‌دهنده",
+      "hint": "Regex · SQL · رنگ · UUID"
+    },
+    "doc": {
+      "label": "اسناد",
+      "hint": "Markdown · ادغام/تقسیم PDF"
+    },
+    "finance": {
+      "label": "مالی",
+      "hint": "مبلغ به حروف"
+    },
+    "hash": {
+      "label": "هش و امنیت",
+      "hint": "MD5 · SHA · HMAC · رمز عبور"
+    },
+    "image": {
+      "label": "تصاویر",
+      "hint": "فشرده‌سازی · QR · تبدیل"
+    },
+    "life": {
+      "label": "ماشین‌حساب‌های زندگی",
+      "hint": "مسکن · BMI · خویشاوندی"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "توکن‌ها · هزینه · طرح"
+    },
+    "security": {
+      "label": "امنیت",
+      "hint": "تولید رمز عبور"
+    },
+    "text": {
+      "label": "متن",
+      "hint": "تعداد کلمات · CJK · پین‌یین · تفاوت"
+    },
+    "time": {
+      "label": "زمان",
+      "hint": "برچسب زمانی · منطقه زمانی · Cron · قمری"
+    },
+    "unit": {
+      "label": "واحدها",
+      "hint": "طول · وزن · دما · داده"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "اجرا",
+      "running": "در حال اجرا…",
+      "copy": "کپی",
+      "copied": "کپی شد",
+      "sameAsApi": "مسیر یکسان با API · موتور OSS",
+      "mustBeNumber": "{label} باید یک عدد باشد",
+      "base64Loaded": "بار Base64 بارگذاری شد",
+      "workspaceMissing": "فضای کاری پیکربندی نشده: {slug}",
+      "yes": "بله",
+      "no": "خیر",
+      "text": "متن",
+      "outputPreview": "پیش‌نمایش خروجی",
+      "mode": "حالت",
+      "encode": "رمزگذاری",
+      "decode": "رمزگشایی"
+    },
+    "lorem": {
+      "paragraphs": "پاراگراف‌ها",
+      "wordsPerParagraph": "تعداد کلمات در هر پاراگراف",
+      "startWithLorem": "شروع با «Lorem ipsum»",
+      "note": "تولیدکننده Lorem Ipsum · خالص"
+    },
+    "emailValidate": {
+      "note": "اعتبارسنج ایمیل · فقط فرمت (بدون بررسی MX)"
+    },
+    "creditCardLuhn": {
+      "number": "شماره کارت",
+      "note": "بررسی Luhn · آفلاین، هرگز ذخیره نمی‌شود"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "فشرده‌ساز JSON · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "فشرده‌ساز CSS · سبک (امن برای لبه)"
+    },
+    "hashCompare": {
+      "a": "هش A",
+      "b": "هش B",
+      "ignoreCase": "نادیده‌گرفتن حروف بزرگ و کوچک",
+      "note": "مقایسه‌گر هش · زمان ثابت برای طول برابر"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "تفاوت JSON · عملیات سطح مسیر · ردیف‌های رنگی بر اساس نوع · کنار به کنار",
+      "equal": "یکسان",
+      "differs": "{count} تغییر",
+      "colPath": "مسیر",
+      "colKind": "نوع",
+      "colLeft": "چپ",
+      "colRight": "راست",
+      "filtersAria": "فیلتر بر اساس نوع تغییر",
+      "filterAll": "همه ({count})",
+      "filterAdd": "افزودن ({count})",
+      "filterRemove": "حذف ({count})",
+      "filterChange": "تغییر ({count})",
+      "filterType": "نوع ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "حالت",
+      "pretty": "زیبا",
+      "compact": "فشرده",
+      "indent": "تورفتگی",
+      "note": "فرمت‌ساز YAML · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "فرمت‌ساز TOML · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "فشرده‌ساز XML · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "اعتبارسنج URL · WHATWG URL (بدون دریافت شبکه)"
+    },
+    "ipValidate": {
+      "note": "اعتبارسنج IP · IPv4/IPv6 آفلاین"
+    },
+    "uuidValidate": {
+      "note": "اعتبارسنج UUID · ساختار RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "فشرده‌ساز HTML · سبک (ایمن برای لبه)"
+    },
+    "randomString": {
+      "length": "طول",
+      "count": "تعداد",
+      "charset": "مجموعه نویسه",
+      "alphanumeric": "الفبایی-عددی",
+      "symbols": "الفبایی-عددی + نمادها",
+      "hex": "هگزادسیمال",
+      "base64url": "Base64URL",
+      "note": "رشته تصادفی · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "زمان مطالعه · تخمین CJK + لاتین"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "بیشینه سطح تیتر",
+      "note": "فهرست Markdown · تیترهای ATX"
+    },
+    "pdfInfo": {
+      "file": "فایل PDF",
+      "note": "اطلاعات PDF · pdf-lib (صفحات + متادیتا)"
+    },
+    "rot13": {
+      "shift": "شیفت (13 = ROT13)",
+      "note": "ROT13 / سزار · خالص"
+    },
+    "morse": {
+      "note": "کد مورس · ITU · خالص"
+    },
+    "textBinary": {
+      "toBinary": "متن → باینری",
+      "fromBinary": "باینری → متن",
+      "note": "متن ↔ باینری · بیت‌های UTF-8"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "کدگذاری Digest",
+      "note": "چند-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "زیباساز CSS · سبک"
+    },
+    "htmlFormat": {
+      "note": "زیباساز HTML · سبک"
+    },
+    "stringSimilarity": {
+      "a": "رشته A",
+      "b": "رشته B",
+      "note": "شباهت رشته‌ها · لونسhtein"
+    },
+    "roman": {
+      "toRoman": "عدد → رومی",
+      "fromRoman": "رومی → عدد",
+      "note": "اعداد رومی · ۱–۳۹۹۹"
+    },
+    "age": {
+      "birthDate": "تاریخ تولد (YYYY-MM-DD)",
+      "asOf": "تا تاریخ (اختیاری)",
+      "note": "محاسبه‌گر سن · دقیق Y/M/D"
+    },
+    "tip": {
+      "bill": "مبلغ قبض",
+      "percent": "نرخ انعام %",
+      "people": "افراد",
+      "note": "ماشین‌حساب انعام · تقسیم دوستانه"
+    },
+    "aspect": {
+      "width": "عرض",
+      "height": "ارتفاع",
+      "note": "نسبت تصویر · ساده‌سازی با ب.م.م"
+    },
+    "mime": {
+      "note": "جستجوی MIME · انواع رایج وب"
+    },
+    "ua": {
+      "note": "تجزیه‌کننده User-Agent · هیوریستیک (آفلاین)"
+    },
+    "imageMeta": {
+      "file": "فایل تصویر",
+      "note": "متادیتای تصویر · sharp (اندازه بافر EXIF)"
+    },
+    "wordFreq": {
+      "top": "برترین N",
+      "note": "فرکانس واژگان · CJK + لاتین"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "فشرده‌ساز SQL · حذف کامنت‌ها و فاصله‌ها"
+    },
+    "lineNum": {
+      "start": "شماره شروع",
+      "note": "شماره‌گذاری خطوط · خالص"
+    },
+    "uniqueWords": {
+      "note": "کلمات یکتا · به ترتیب اولین مشاهده"
+    },
+    "epoch": {
+      "value": "مقدار",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "میلی‌ثانیه Epoch · تاریخ"
+    },
+    "passwordEntropy": {
+      "password": "رمز عبور",
+      "note": "آنتروپی رمز عبور · تخمین بر اساس مجموعه کاراکترها"
+    },
+    "contrast": {
+      "fg": "پیش‌زمینه (#hex)",
+      "bg": "پس‌زمینه (#hex)",
+      "note": "تضاد رنگ · WCAG 2.x"
+    },
+    "exif": {
+      "file": "فایل تصویر",
+      "note": "نمایشگر EXIF · exifr + JPEG fallback"
+    },
+    "regex": {
+      "pattern": "الگو",
+      "replacement": "جایگزینی",
+      "flags": "پرچم‌ها",
+      "note": "جستجو و جایگزینی Regex · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "رمز",
+      "exp": "انقضا (ثانیه)",
+      "note": "تولید JWT · HS256 (فقط توسعه/تست)"
+    },
+    "rand": {
+      "min": "حداقل",
+      "max": "حداکثر",
+      "count": "تعداد",
+      "note": "عدد تصادفی · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "تعداد اضلاع",
+      "count": "تعداد تاس",
+      "note": "تاس‌انداز · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · خالص"
+    },
+    "base64url": {
+      "note": "Base64URL · سبک JWT"
+    },
+    "hmac": {
+      "message": "پیام",
+      "secret": "رمز",
+      "signature": "امضا",
+      "note": "تأیید HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "بایت",
+      "count": "تعداد",
+      "note": "تولیدکننده کلید مخفی · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "فایل PDF",
+      "note": "بهینه‌سازی سبک PDF · بازنویسی pdf-lib (بدون فشرده‌سازی مجدد تصویر)"
+    },
+    "pdfCompress": {
+      "file": "فایل PDF",
+      "quality": "کیفیت",
+      "engine": "موتور",
+      "qStructural": "ساختاری (qpdf، جریان‌های بدون افت)",
+      "qScreen": "صفحه نمایش (کوچک‌ترین، Ghostscript)",
+      "qEbook": "کتاب الکترونیکی (متعادل، Ghostscript)",
+      "qPrinter": "چاپگر (کیفیت بالاتر، Ghostscript)",
+      "eAuto": "خودکار (qpdf → Ghostscript → pdf-lib)",
+      "download": "دانلود PDF",
+      "needFile": "ابتدا یک فایل PDF انتخاب کنید",
+      "in": "ورودی",
+      "out": "خروجی",
+      "saved": "ذخیره شد",
+      "note": "فشرده‌سازی PDF · qpdf / Ghostscript روی میزبان · pdf-lib به‌عنوان جایگزین"
+    }
+  },
+  "roots": {
+    "hubLabel": "بر اساس قصد",
+    "tools": "ابزارها",
+    "dualSurface": "صفحه انسانی + API عامل · موتور مشترک",
+    "otherRoots": "ریشه‌های تقاضای دیگر"
+  }
+}
