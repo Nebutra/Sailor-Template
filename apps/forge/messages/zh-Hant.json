@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — 線上工具站",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "線上編碼器、文字、雜湊、文件與影像工具。"
+  },
+  "nav": {
+    "main": "主要導覽",
+    "homeAria": "{brandName} Forge 首頁",
+    "tools": "工具",
+    "wallet": "錢包",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "工具分類",
+    "languageAria": "切換語言"
+  },
+  "tool": {
+    "breadcrumbAria": "麵包屑",
+    "workspace": "工作區",
+    "workspaceHint": "本機或伺服器 · 與 API 路徑相同",
+    "api": "API",
+    "apiHint": "與頁面合約相同。生產環境請使用已驗證的 Key。",
+    "related": "相關工具"
+  },
+  "auth": {
+    "signIn": "登入",
+    "signUp": "註冊",
+    "signOut": "登出"
+  },
+  "footer": {
+    "navAria": "頁尾",
+    "blurb": "線上工具站。在瀏覽器中完成任務，或透過 API / MCP 自動化。",
+    "product": "產品",
+    "developers": "開發者",
+    "company": "公司",
+    "docs": "整合文件",
+    "website": "網站",
+    "privacy": "隱私"
+  },
+  "home": {
+    "eyebrow": "看得見，叫得出。",
+    "title": "線上工具的瑞士軍刀",
+    "subtitle": "編碼、文字、雜湊、文件與影像處理。在瀏覽器中完成，或透過 API / MCP 自動化——一套實作。",
+    "toolCount": "{count} 個工具",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "搜尋：字數統計、base64、json、時間戳…",
+    "aria": "搜尋工具",
+    "emptyTitle": "沒有工具符合「{query}」",
+    "emptyHint": "試試其他關鍵字，或從下方類別中選擇工具。"
+  },
+  "categories": {
+    "codec": {
+      "label": "編碼",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "中國驗證",
+      "hint": "身分證 · 手機號碼"
+    },
+    "data": {
+      "label": "資料",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "開發者",
+      "hint": "Regex · SQL · 顏色 · UUID"
+    },
+    "doc": {
+      "label": "文件",
+      "hint": "Markdown · PDF 合併/分割"
+    },
+    "finance": {
+      "label": "財務",
+      "hint": "數字轉大寫"
+    },
+    "hash": {
+      "label": "雜湊與安全",
+      "hint": "MD5 · SHA · HMAC · 密碼"
+    },
+    "image": {
+      "label": "圖片",
+      "hint": "壓縮 · QR 碼 · 格式轉換"
+    },
+    "life": {
+      "label": "生活計算",
+      "hint": "房貸 · BMI · 親屬關係"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Token · 費用 · Schema"
+    },
+    "security": {
+      "label": "安全",
+      "hint": "密碼產生器"
+    },
+    "text": {
+      "label": "文字",
+      "hint": "字數 · 中日韓字元 · 拼音 · 差異"
+    },
+    "time": {
+      "label": "時間",
+      "hint": "時間戳 · 時區 · Cron · 農曆"
+    },
+    "unit": {
+      "label": "單位",
+      "hint": "長度 · 重量 · 溫度 · 資料"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "執行",
+      "running": "執行中…",
+      "copy": "複製",
+      "copied": "已複製",
+      "sameAsApi": "路徑與 API 相同 · OSS 引擎",
+      "mustBeNumber": "{label} 必須為數字",
+      "base64Loaded": "已載入 Base64 負載",
+      "workspaceMissing": "工作區未設定：{slug}",
+      "yes": "是",
+      "no": "否",
+      "text": "文字",
+      "outputPreview": "輸出預覽",
+      "mode": "模式",
+      "encode": "編碼",
+      "decode": "解碼"
+    },
+    "lorem": {
+      "paragraphs": "段落數",
+      "wordsPerParagraph": "每段字數",
+      "startWithLorem": "以「Lorem ipsum」開頭",
+      "note": "Lorem Ipsum 產生器 · 純前端"
+    },
+    "emailValidate": {
+      "note": "電子信箱驗證器 · 僅格式驗證（不查 MX）"
+    },
+    "creditCardLuhn": {
+      "number": "卡號",
+      "note": "Luhn 檢查器 · 離線處理，永不儲存"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "JSON 壓縮器 · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS 壓縮器 · 輕量（邊緣安全）"
+    },
+    "hashCompare": {
+      "a": "雜湊 A",
+      "b": "雜湊 B",
+      "ignoreCase": "忽略大小寫",
+      "note": "雜湊比較器 · 等長時恆定時間"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON 差異 · 路徑級操作 · 類型著色列 · 並排顯示",
+      "equal": "完全相同",
+      "differs": "{count} 處變更",
+      "colPath": "路徑",
+      "colKind": "類型",
+      "colLeft": "左側",
+      "colRight": "右側",
+      "filtersAria": "按變更類型篩選",
+      "filterAll": "全部 ({count})",
+      "filterAdd": "新增 ({count})",
+      "filterRemove": "移除 ({count})",
+      "filterChange": "變更 ({count})",
+      "filterType": "類型 ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "模式",
+      "pretty": "美化",
+      "compact": "緊湊",
+      "indent": "縮排",
+      "note": "YAML 格式化器 · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "TOML 格式化器 · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "XML 壓縮器 · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "URL 驗證器 · WHATWG URL（無網路請求）"
+    },
+    "ipValidate": {
+      "note": "IP 驗證器 · IPv4/IPv6 離線"
+    },
+    "uuidValidate": {
+      "note": "UUID 驗證器 · RFC 4122 格式"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "HTML 壓縮器 · 輕量級（邊緣安全）"
+    },
+    "randomString": {
+      "length": "長度",
+      "count": "數量",
+      "charset": "字元集",
+      "alphanumeric": "字母數字",
+      "symbols": "字母數字 + 符號",
+      "hex": "十六進位",
+      "base64url": "Base64URL",
+      "note": "隨機字串 · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "閱讀時間 · CJK + 拉丁文啟發式"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "最大標題層級",
+      "note": "Markdown 目錄 · ATX 標題"
+    },
+    "pdfInfo": {
+      "file": "PDF 檔案",
+      "note": "PDF 資訊 · pdf-lib（頁數 + 元資料）"
+    },
+    "rot13": {
+      "shift": "位移（13 = ROT13）",
+      "note": "ROT13 / 凱撒密碼 · 純函數"
+    },
+    "morse": {
+      "note": "摩斯密碼 · ITU · 純函數"
+    },
+    "textBinary": {
+      "toBinary": "文字 → 二進位",
+      "fromBinary": "二進位 → 文字",
+      "note": "文字 ↔ 二進位 · UTF-8 位元"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "摘要編碼",
+      "note": "多重雜湊 · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS 美化器 · 輕量級"
+    },
+    "htmlFormat": {
+      "note": "HTML 美化器 · 輕量級"
+    },
+    "stringSimilarity": {
+      "a": "字串 A",
+      "b": "字串 B",
+      "note": "字串相似度 · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "數字 → 羅馬數字",
+      "fromRoman": "羅馬數字 → 數字",
+      "note": "羅馬數字 · 1–3999"
+    },
+    "age": {
+      "birthDate": "出生日期（YYYY-MM-DD）",
+      "asOf": "計算基準日（選填）",
+      "note": "年齡計算器 · 精確至年/月/日"
+    },
+    "tip": {
+      "bill": "帳單金額",
+      "percent": "小費 %",
+      "people": "人數",
+      "note": "小費計算器 · 友善分攤"
+    },
+    "aspect": {
+      "width": "寬度",
+      "height": "高度",
+      "note": "長寬比 · 最大公因數簡化"
+    },
+    "mime": {
+      "note": "MIME 查詢 · 常見網頁類型"
+    },
+    "ua": {
+      "note": "User-Agent 解析器 · 啟發式（離線）"
+    },
+    "imageMeta": {
+      "file": "圖片檔案",
+      "note": "圖片元資料 · sharp（EXIF 緩衝區大小）"
+    },
+    "wordFreq": {
+      "top": "前 N 個",
+      "note": "詞頻統計 · 中日韓 + 拉丁字母"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL 縮小化 · 註解 + 空白"
+    },
+    "lineNum": {
+      "start": "起始編號",
+      "note": "加入行號 · 純文字"
+    },
+    "uniqueWords": {
+      "note": "唯一詞彙 · 首次出現順序"
+    },
+    "epoch": {
+      "value": "數值",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "紀元毫秒 · 日期"
+    },
+    "passwordEntropy": {
+      "password": "密碼",
+      "note": "密碼熵值 · 字元集推斷"
+    },
+    "contrast": {
+      "fg": "前景色 (#hex)",
+      "bg": "背景色 (#hex)",
+      "note": "色彩對比度 · WCAG 2.x"
+    },
+    "exif": {
+      "file": "影像檔案",
+      "note": "EXIF 檢視器 · exifr + JPEG 回退"
+    },
+    "regex": {
+      "pattern": "模式",
+      "replacement": "取代內容",
+      "flags": "旗標",
+      "note": "正則查找取代 · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "密鑰",
+      "exp": "過期時間（秒）",
+      "note": "JWT 產生 · HS256（僅限開發／測試）"
+    },
+    "rand": {
+      "min": "最小值",
+      "max": "最大值",
+      "count": "數量",
+      "note": "隨機數 · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "面數",
+      "count": "骰子數量",
+      "note": "擲骰子 · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · 純函數"
+    },
+    "base64url": {
+      "note": "Base64URL · JWT 風格"
+    },
+    "hmac": {
+      "message": "訊息",
+      "secret": "密鑰",
+      "signature": "簽名",
+      "note": "HMAC 驗證 · SHA-256"
+    },
+    "secret": {
+      "bytes": "位元組",
+      "count": "數量",
+      "note": "Secret Key Generator · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "PDF 檔案",
+      "note": "PDF Light Optimize · pdf-lib 重寫（非影像重新壓縮）"
+    },
+    "pdfCompress": {
+      "file": "PDF 檔案",
+      "quality": "品質",
+      "engine": "引擎",
+      "qStructural": "結構化（qpdf，無損串流）",
+      "qScreen": "螢幕（最小，Ghostscript）",
+      "qEbook": "電子書（平衡，Ghostscript）",
+      "qPrinter": "列印（高品質，Ghostscript）",
+      "eAuto": "自動（qpdf → Ghostscript → pdf-lib）",
+      "download": "下載 PDF",
+      "needFile": "請先選擇 PDF 檔案",
+      "in": "輸入",
+      "out": "輸出",
+      "saved": "已儲存",
+      "note": "PDF 壓縮 · 主機端 qpdf / Ghostscript · pdf-lib 備用"
+    }
+  },
+  "roots": {
+    "hubLabel": "依意圖分類",
+    "tools": "工具",
+    "dualSurface": "人工頁面 + Agent API · 同一引擎",
+    "otherRoots": "其他需求來源"
+  }
+}
