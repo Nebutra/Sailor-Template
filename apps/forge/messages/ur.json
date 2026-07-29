@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — آن لائن ٹول اسٹیشن",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "کوڈیکس، ٹیکسٹ، ہیشنگ، دستاویزات اور امیج ٹولز آن لائن۔"
+  },
+  "nav": {
+    "main": "مین نیویگیشن",
+    "homeAria": "{brandName} Forge ہوم",
+    "tools": "ٹولز",
+    "wallet": "والیٹ",
+    "api": "API",
+    "routerAria": "{brandName} Router",
+    "categoriesAria": "ٹول کیٹیگریز",
+    "languageAria": "زبان تبدیل کریں"
+  },
+  "tool": {
+    "breadcrumbAria": "بریبڈ کرامب",
+    "workspace": "ورک اسپیس",
+    "workspaceHint": "لوکل یا سرور · API جیسا ہی راستہ",
+    "api": "API",
+    "apiHint": "صفحے جیسا ہی معاہدہ۔ پروڈکشن میں تصدیق شدہ کلید استعمال کریں۔",
+    "related": "متعلقہ ٹولز"
+  },
+  "auth": {
+    "signIn": "سائن ان",
+    "signUp": "سائن اپ",
+    "signOut": "سائن آؤٹ"
+  },
+  "footer": {
+    "navAria": "فوٹر",
+    "blurb": "آن لائن ٹول اسٹیشن۔ براؤزر میں کام مکمل کریں، یا API / MCP کے ذریعے خودکار بنائیں۔",
+    "product": "پروڈکٹ",
+    "developers": "ڈویلپرز",
+    "company": "کمپنی",
+    "docs": "انٹیگریشن دستاویزات",
+    "website": "ویب سائٹ",
+    "privacy": "پرائیویسی"
+  },
+  "home": {
+    "eyebrow": "دیکھیں۔ کال کریں۔",
+    "title": "آن لائن ٹولز کے لیے سوئس آرمی نائیف",
+    "subtitle": "کوڈیکس، ٹیکسٹ، ہیشنگ، دستاویزات، اور امیج پروسیسنگ۔ براؤزر میں مکمل کریں، یا API / MCP کے ذریعے خودکار بنائیں — ایک ہی امپلیمنٹیشن۔",
+    "toolCount": "{count} ٹولز",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "تلاش کریں: ورڈ کاؤنٹ، base64، json، ٹائم اسٹیمپ…",
+    "aria": "ٹولز تلاش کریں",
+    "emptyTitle": "کوئی ٹول \"{query}\" سے مطابقت نہیں رکھتا",
+    "emptyHint": "دوسرا کی ورڈ آزمائیں، یا نیچے دی گئی زمرہ جات میں سے کوئی ٹول منتخب کریں۔"
+  },
+  "categories": {
+    "codec": {
+      "label": "کوڈیکس",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "چین کی توثیق",
+      "hint": "آئی ڈی · فون"
+    },
+    "data": {
+      "label": "ڈیٹا",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "ڈویلپر",
+      "hint": "Regex · SQL · رنگ · UUID"
+    },
+    "doc": {
+      "label": "دستاویزات",
+      "hint": "Markdown · PDF ملاپ/تقسیم"
+    },
+    "finance": {
+      "label": "مالیات",
+      "hint": "رقم کو الفاظ میں"
+    },
+    "hash": {
+      "label": "ہیش اور سیکیورٹی",
+      "hint": "MD5 · SHA · HMAC · پاس ورڈ"
+    },
+    "image": {
+      "label": "تصاویر",
+      "hint": "کمپریس · QR · تبدیل کریں"
+    },
+    "life": {
+      "label": "زندگی کی کیلکولیٹرز",
+      "hint": "مورٹیج · BMI · رشتہ"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "ٹوکنز · لاگت · اسکیم"
+    },
+    "security": {
+      "label": "سیکیورٹی",
+      "hint": "پاس ورڈ جنریٹر"
+    },
+    "text": {
+      "label": "متن",
+      "hint": "الفاظ کی گنتی · CJK · پین یین · فرق"
+    },
+    "time": {
+      "label": "وقت",
+      "hint": "ٹائم اسٹیمپ · ٹائم زون · Cron · قمری"
+    },
+    "unit": {
+      "label": "اکائیاں",
+      "hint": "لمبائی · وزن · درجہ حرارت · ڈیٹا"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "چلائیں",
+      "running": "چل رہا ہے…",
+      "copy": "کاپی",
+      "copied": "کاپی ہو گیا",
+      "sameAsApi": "API جیسا ہی راستہ · OSS انجن",
+      "mustBeNumber": "{label} ایک نمبر ہونا چاہیے",
+      "base64Loaded": "Base64 لوڈ ہو گیا",
+      "workspaceMissing": "ورک اسپیس ترتیب نہیں دی گئی: {slug}",
+      "yes": "جی ہاں",
+      "no": "نہیں",
+      "text": "متن",
+      "outputPreview": "آؤٹ پٹ پیش نظارہ",
+      "mode": "موڈ",
+      "encode": "انکوڈ",
+      "decode": "ڈی کوڈ"
+    },
+    "lorem": {
+      "paragraphs": "پیراگراف",
+      "wordsPerParagraph": "فی پیراگراف الفاظ",
+      "startWithLorem": "“Lorem ipsum” سے شروع کریں",
+      "note": "Lorem Ipsum جنریٹر · خالص"
+    },
+    "emailValidate": {
+      "note": "ای میل ویلیڈیٹر · صرف فارمیٹ (کوئی MX تلاش نہیں)"
+    },
+    "creditCardLuhn": {
+      "number": "کارڈ نمبر",
+      "note": "Luhn چیکر · آف لائن، کبھی محفوظ نہیں ہوتا"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "JSON مینی فائر · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS Minifier · ہلکا پھلکا (edge-safe)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "کیس نظر انداز کریں",
+      "note": "Hash Comparator · برابر لمبائی کے لیے constant-time"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON Diff · path-level ops · kind-colored rows · side-by-side",
+      "equal": "مساوی",
+      "differs": "{count} تبدیلی(یاں)",
+      "colPath": "Path",
+      "colKind": "قسم",
+      "colLeft": "بائیں",
+      "colRight": "دائیں",
+      "filtersAria": "تبدیلی کی قسم کے مطابق فلٹر کریں",
+      "filterAll": "سب ({count})",
+      "filterAdd": "شامل کریں ({count})",
+      "filterRemove": "ہٹائیں ({count})",
+      "filterChange": "تبدیلی ({count})",
+      "filterType": "قسم ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "موڈ",
+      "pretty": "صاف ستھرا",
+      "compact": "مختصر",
+      "indent": "انڈینٹ",
+      "note": "YAML فارمیٹر · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "TOML فارمیٹر · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "XML مینی فائر · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "URL ویلیڈیٹر · WHATWG URL (کوئی نیٹ ورک فچ نہیں)"
+    },
+    "ipValidate": {
+      "note": "IP ویلیڈیٹر · IPv4/IPv6 آف لائن"
+    },
+    "uuidValidate": {
+      "note": "UUID ویلیڈیٹر · RFC 4122 شکل"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "HTML مینی فائر · ہلکا پھلکا (ایج سیف)"
+    },
+    "randomString": {
+      "length": "لمبائی",
+      "count": "تعداد",
+      "charset": "کاریکٹرز سیٹ",
+      "alphanumeric": "الفبیٹ نمبر",
+      "symbols": "الفبیٹ نمبر + علامات",
+      "hex": "ہیکس",
+      "base64url": "Base64URL",
+      "note": "رینڈم اسٹرنگ · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "پڑھنے کا وقت · CJK + لاطینی اندازہ"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "زیادہ سے زیادہ ہیڈنگ لیول",
+      "note": "Markdown TOC · ATX ہیڈنگز"
+    },
+    "pdfInfo": {
+      "file": "PDF فائل",
+      "note": "PDF Info · pdf-lib (صفحے + میٹا ڈیٹا)"
+    },
+    "rot13": {
+      "shift": "شِفٹ (13 = ROT13)",
+      "note": "ROT13 / Caesar · pure"
+    },
+    "morse": {
+      "note": "Morse Code · ITU · pure"
+    },
+    "textBinary": {
+      "toBinary": "ٹیکسٹ → بائنری",
+      "fromBinary": "بائنری → ٹیکسٹ",
+      "note": "ٹیکسٹ ↔ بائنری · UTF-8 بٹس"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "ڈائجسٹ انکوڈنگ",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS Beautifier · lightweight"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · ہلکا پھلکا"
+    },
+    "stringSimilarity": {
+      "a": "سٹرنگ A",
+      "b": "سٹرنگ B",
+      "note": "سٹرنگ Similarity · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "نمبر → رومن",
+      "fromRoman": "رومن → نمبر",
+      "note": "رومن Numerals · 1–3999"
+    },
+    "age": {
+      "birthDate": "تاریخ پیدائش (YYYY-MM-DD)",
+      "asOf": "تاریخ تک (اختیاری)",
+      "note": "عمر Calculator · درست Y/M/D"
+    },
+    "tip": {
+      "bill": "بل کی رقم",
+      "percent": "ٹپ %",
+      "people": "لوگ",
+      "note": "ٹپ کیلکولیٹر · تقسیم کے لیے موزوں"
+    },
+    "aspect": {
+      "width": "چوڑائی",
+      "height": "اونچائی",
+      "note": "ایسپیکٹ ریشو · جی سی ڈی سادہ"
+    },
+    "mime": {
+      "note": "MIME لک اپ · عام ویب ٹائپس"
+    },
+    "ua": {
+      "note": "یوزر ایجنٹ پارسر · ہیوریسٹک (آف لائن)"
+    },
+    "imageMeta": {
+      "file": "تصویر فائل",
+      "note": "تصویری میٹا ڈیٹا · شارپ (EXIF بفر سائز)"
+    },
+    "wordFreq": {
+      "top": "ٹاپ N",
+      "note": "لفظ کی تعدد · CJK + لاطینی"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · فاسٹ ایکس ایم ایل پارسر"
+    },
+    "sqlMinify": {
+      "note": "SQL Minifier · تبصرات + خلا"
+    },
+    "lineNum": {
+      "start": "شمارہ آغاز",
+      "note": "لائن نمبر شامل کریں · خالص"
+    },
+    "uniqueWords": {
+      "note": "منفرد الفاظ · پہلی نظر آنے کی ترتیب"
+    },
+    "epoch": {
+      "value": "قیمت",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Epoch Milliseconds · تاریخ"
+    },
+    "passwordEntropy": {
+      "password": "پاس ورڈ",
+      "note": "پاس ورڈ انٹروپی · charset تخمینہ"
+    },
+    "contrast": {
+      "fg": "پیش منظر (#hex)",
+      "bg": "پس منظر (#hex)",
+      "note": "رنگ کا تضاد · WCAG 2.x"
+    },
+    "exif": {
+      "file": "تصویر فائل",
+      "note": "EXIF ویوئر · exifr + JPEG فال بیک"
+    },
+    "regex": {
+      "pattern": "پیٹرن",
+      "replacement": "ریپلیسمنٹ",
+      "flags": "فلیگز",
+      "note": "ریگیکس فائنڈ اینڈ ریپلیس · ECMAScript"
+    },
+    "jwt": {
+      "payload": "پے لوڈ JSON",
+      "secret": "سکرٹ",
+      "exp": "میعاد ختم (سیکنڈز)",
+      "note": "JWT جنریٹ · HS256 (صرف ڈیو/ٹیسٹ)"
+    },
+    "rand": {
+      "min": "کم از کم",
+      "max": "زیادہ سے زیادہ",
+      "count": "شمار",
+      "note": "بے ترتیب نمبر · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "پہلو",
+      "count": "ڈائس کی تعداد",
+      "note": "ڈائس رولر · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · خالص"
+    },
+    "base64url": {
+      "note": "Base64URL · JWT انداز"
+    },
+    "hmac": {
+      "message": "پیغام",
+      "secret": "راز",
+      "signature": "دستخط",
+      "note": "HMAC تصدیق · SHA-256"
+    },
+    "secret": {
+      "bytes": "بائٹس",
+      "count": "شمار",
+      "note": "سکرٹ کی جنریٹر · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "PDF فائل",
+      "note": "PDF لائٹ آپٹیمائز · pdf-lib ری رائٹ (تصویر دوبارہ کمپریس نہیں)"
+    },
+    "pdfCompress": {
+      "file": "PDF فائل",
+      "quality": "کوالٹی",
+      "engine": "انجن",
+      "qStructural": "سٹرکچرل (qpdf, لاسلیس اسٹریمز)",
+      "qScreen": "اسکرین (سب سے چھوٹی، Ghostscript)",
+      "qEbook": "ای بک (متوازن، Ghostscript)",
+      "qPrinter": "پرنٹر (اعلیٰ کوالٹی، Ghostscript)",
+      "eAuto": "خودکار (qpdf → Ghostscript → pdf-lib)",
+      "download": "PDF ڈاؤن لوڈ کریں",
+      "needFile": "سب سے پہلے ایک PDF فائل منتخب کریں",
+      "in": "ان پٹ",
+      "out": "آؤٹ پٹ",
+      "saved": "محفوظ شدہ",
+      "note": "PDF کمپریس · ہوسٹ پر qpdf / Ghostscript · pdf-lib فال بیک"
+    }
+  },
+  "roots": {
+    "hubLabel": "مقصد کے مطابق",
+    "tools": "اوزار",
+    "dualSurface": "انسانی صفحہ + ایجنٹ API · ایک ہی انجن",
+    "otherRoots": "دیگر طلب کے جڑیں"
+  }
+}
