@@ -1,0 +1,388 @@
+{
+  "meta": {
+    "titleDefault": "{brandName} Forge — Stasiun alat online",
+    "titleTemplate": "%s | {brandName} Forge",
+    "description": "Alat codec, teks, hashing, dokumen, dan gambar secara online."
+  },
+  "nav": {
+    "main": "Navigasi utama",
+    "homeAria": "Beranda {brandName} Forge",
+    "tools": "Alat",
+    "wallet": "Dompet",
+    "api": "API",
+    "routerAria": "Router {brandName}",
+    "categoriesAria": "Kategori alat",
+    "languageAria": "Ubah bahasa"
+  },
+  "tool": {
+    "breadcrumbAria": "Breadcrumb",
+    "workspace": "Workspace",
+    "workspaceHint": "Lokal atau server · jalur sama seperti API",
+    "api": "API",
+    "apiHint": "Kontrak sama dengan halaman. Gunakan kunci terautentikasi di produksi.",
+    "related": "Alat terkait"
+  },
+  "auth": {
+    "signIn": "Masuk",
+    "signUp": "Daftar",
+    "signOut": "Keluar"
+  },
+  "footer": {
+    "navAria": "Bagian Bawah",
+    "blurb": "Stasiun alat online. Selesaikan tugas di browser, atau otomatisasi via API / MCP.",
+    "product": "Produk",
+    "developers": "Pengembang",
+    "company": "Perusahaan",
+    "docs": "Dokumentasi integrasi",
+    "website": "Situs Web",
+    "privacy": "Privasi"
+  },
+  "home": {
+    "eyebrow": "Lihat. Panggil.",
+    "title": "Pisau swiss untuk alat online",
+    "subtitle": "Codec, teks, hashing, dokumen, dan pemrosesan gambar. Selesaikan di browser, atau otomatisasi via API / MCP — satu implementasi.",
+    "toolCount": "{count} alat",
+    "apiMcp": "API / MCP"
+  },
+  "search": {
+    "placeholder": "Cari: hitung kata, base64, json, timestamp…",
+    "aria": "Cari alat",
+    "emptyTitle": "Tidak ada alat yang cocok dengan “{query}”",
+    "emptyHint": "Coba kata kunci lain, atau pilih alat dari kategori di bawah."
+  },
+  "categories": {
+    "codec": {
+      "label": "Codec",
+      "hint": "Base64 · URL · JWT · Unicode"
+    },
+    "cn": {
+      "label": "Validasi Tiongkok",
+      "hint": "ID · telepon"
+    },
+    "data": {
+      "label": "Data",
+      "hint": "JSON · YAML · CSV · XML"
+    },
+    "dev": {
+      "label": "Pengembang",
+      "hint": "Regex · SQL · warna · UUID"
+    },
+    "doc": {
+      "label": "Dokumen",
+      "hint": "Markdown · gabung/pisah PDF"
+    },
+    "finance": {
+      "label": "Keuangan",
+      "hint": "Jumlah ke kata"
+    },
+    "hash": {
+      "label": "Hash & keamanan",
+      "hint": "MD5 · SHA · HMAC · sandi"
+    },
+    "image": {
+      "label": "Gambar",
+      "hint": "Kompres · QR · konversi"
+    },
+    "life": {
+      "label": "Kalkulator kehidupan",
+      "hint": "KPR · BMI · kekerabatan"
+    },
+    "llm": {
+      "label": "LLM",
+      "hint": "Token · biaya · skema"
+    },
+    "security": {
+      "label": "Keamanan",
+      "hint": "Generator sandi"
+    },
+    "text": {
+      "label": "Teks",
+      "hint": "Jumlah kata · CJK · pinyin · Diff"
+    },
+    "time": {
+      "label": "Waktu",
+      "hint": "Timestamp · zona waktu · Cron · lunar"
+    },
+    "unit": {
+      "label": "Satuan",
+      "hint": "Panjang · berat · suhu · data"
+    }
+  },
+  "runners": {
+    "common": {
+      "run": "Jalankan",
+      "running": "Sedang berjalan…",
+      "copy": "Salin",
+      "copied": "Tersalin",
+      "sameAsApi": "Sama dengan jalur API · Mesin OSS",
+      "mustBeNumber": "{label} harus berupa angka",
+      "base64Loaded": "Payload Base64 dimuat",
+      "workspaceMissing": "Workspace belum dikonfigurasi: {slug}",
+      "yes": "Ya",
+      "no": "Tidak",
+      "text": "Teks",
+      "outputPreview": "Pratinjau output",
+      "mode": "Mode",
+      "encode": "Encode",
+      "decode": "Decode"
+    },
+    "lorem": {
+      "paragraphs": "Paragraf",
+      "wordsPerParagraph": "Kata per paragraf",
+      "startWithLorem": "Mulai dengan “Lorem ipsum”",
+      "note": "Lorem Ipsum Generator · pure"
+    },
+    "emailValidate": {
+      "note": "Email Validator · format only (no MX lookup)"
+    },
+    "creditCardLuhn": {
+      "number": "Nomor kartu",
+      "note": "Luhn Checker · offline, never stored"
+    },
+    "jsonMinify": {
+      "json": "JSON",
+      "note": "JSON Minifier · JSON.parse/stringify"
+    },
+    "cssMinify": {
+      "css": "CSS",
+      "note": "CSS Minifier · ringan (aman di edge)"
+    },
+    "hashCompare": {
+      "a": "Hash A",
+      "b": "Hash B",
+      "ignoreCase": "Abaikan huruf besar/kecil",
+      "note": "Hash Comparator · waktu konstan untuk panjang sama"
+    },
+    "jsonDiff": {
+      "left": "JSON A",
+      "right": "JSON B",
+      "note": "JSON Diff · operasi level path · baris berwarna jenis · berdampingan",
+      "equal": "Identik",
+      "differs": "{count} perubahan",
+      "colPath": "Path",
+      "colKind": "Jenis",
+      "colLeft": "Kiri",
+      "colRight": "Kanan",
+      "filtersAria": "Filter berdasarkan jenis perubahan",
+      "filterAll": "Semua ({count})",
+      "filterAdd": "Tambah ({count})",
+      "filterRemove": "Hapus ({count})",
+      "filterChange": "Ubah ({count})",
+      "filterType": "Tipe ({count})"
+    },
+    "yamlFormat": {
+      "yaml": "YAML",
+      "mode": "Mode",
+      "pretty": "Rapi",
+      "compact": "Padat",
+      "indent": "Indentasi",
+      "note": "Formatter YAML · js-yaml"
+    },
+    "tomlFormat": {
+      "toml": "TOML",
+      "note": "Formatter TOML · smol-toml"
+    },
+    "xmlMinify": {
+      "xml": "XML",
+      "note": "Minifier XML · fast-xml-parser"
+    },
+    "urlValidate": {
+      "note": "Validator URL · WHATWG URL (tanpa pengambilan jaringan)"
+    },
+    "ipValidate": {
+      "note": "Validator IP · IPv4/IPv6 offline"
+    },
+    "uuidValidate": {
+      "note": "Validator UUID · bentuk RFC 4122"
+    },
+    "htmlMinify": {
+      "html": "HTML",
+      "note": "Minifier HTML · ringan (aman di edge)"
+    },
+    "randomString": {
+      "length": "Panjang",
+      "count": "Jumlah",
+      "charset": "Charset",
+      "alphanumeric": "Alfanumerik",
+      "symbols": "Alfanumerik + simbol",
+      "hex": "Hex",
+      "base64url": "Base64URL",
+      "note": "Random String · node:crypto randomInt"
+    },
+    "readingTime": {
+      "note": "Waktu baca · heuristik CJK + Latin"
+    },
+    "markdownToc": {
+      "markdown": "Markdown",
+      "maxLevel": "Level heading maksimum",
+      "note": "Markdown TOC · heading ATX"
+    },
+    "pdfInfo": {
+      "file": "File PDF",
+      "note": "Info PDF · pdf-lib (halaman + metadata)"
+    },
+    "rot13": {
+      "shift": "Geser (13 = ROT13)",
+      "note": "ROT13 / Caesar · murni"
+    },
+    "morse": {
+      "note": "Kode Morse · ITU · murni"
+    },
+    "textBinary": {
+      "toBinary": "Teks → biner",
+      "fromBinary": "Biner → teks",
+      "note": "Teks ↔ Biner · bit UTF-8"
+    },
+    "base32": {
+      "note": "Base32 · RFC 4648"
+    },
+    "multiHash": {
+      "encoding": "Enkripsi digest",
+      "note": "Multi-Hash · MD5 + SHA-1/256/512 · node:crypto"
+    },
+    "cssFormat": {
+      "note": "CSS Beautifier · ringan"
+    },
+    "htmlFormat": {
+      "note": "HTML Beautifier · ringan"
+    },
+    "stringSimilarity": {
+      "a": "String A",
+      "b": "String B",
+      "note": "String Similarity · Levenshtein"
+    },
+    "roman": {
+      "toRoman": "Angka → Romawi",
+      "fromRoman": "Romawi → Angka",
+      "note": "Angka Romawi · 1–3999"
+    },
+    "age": {
+      "birthDate": "Tanggal lahir (YYYY-MM-DD)",
+      "asOf": "Per (opsional)",
+      "note": "Kalkulator Umur · Y/B/H tepat"
+    },
+    "tip": {
+      "bill": "Jumlah tagihan",
+      "percent": "Tips %",
+      "people": "Orang",
+      "note": "Kalkulator Tips · bagi adil"
+    },
+    "aspect": {
+      "width": "Lebar",
+      "height": "Tinggi",
+      "note": "Rasio Aspek · sederhanakan GCD"
+    },
+    "mime": {
+      "note": "Cari MIME · tipe web umum"
+    },
+    "ua": {
+      "note": "Parser User-Agent · heuristik (offline)"
+    },
+    "imageMeta": {
+      "file": "File gambar",
+      "note": "Metadata Gambar · sharp (ukuran buffer EXIF)"
+    },
+    "wordFreq": {
+      "top": "Top N",
+      "note": "Frekuensi Kata · CJK + Latin"
+    },
+    "jsonXml": {
+      "note": "JSON ↔ XML · fast-xml-parser"
+    },
+    "sqlMinify": {
+      "note": "SQL Minifier · komentar + spasi"
+    },
+    "lineNum": {
+      "start": "Nomor awal",
+      "note": "Tambah Nomor Baris · murni"
+    },
+    "uniqueWords": {
+      "note": "Kata Unik · urutan pertama muncul"
+    },
+    "epoch": {
+      "value": "Nilai",
+      "msToIso": "ms → ISO",
+      "isoToMs": "ISO → ms",
+      "note": "Epoch Milidetik · Tanggal"
+    },
+    "passwordEntropy": {
+      "password": "Kata Sandi",
+      "note": "Entropi Kata Sandi · heuristik charset"
+    },
+    "contrast": {
+      "fg": "Latar Depan (#hex)",
+      "bg": "Latar Belakang (#hex)",
+      "note": "Kontras Warna · WCAG 2.x"
+    },
+    "exif": {
+      "file": "File gambar",
+      "note": "Penampil EXIF · exifr + JPEG fallback"
+    },
+    "regex": {
+      "pattern": "Pola",
+      "replacement": "Pengganti",
+      "flags": "Bendera",
+      "note": "Cari & Ganti Regex · ECMAScript"
+    },
+    "jwt": {
+      "payload": "Payload JSON",
+      "secret": "Rahasia",
+      "exp": "Kadaluarsa (detik)",
+      "note": "Generate JWT · HS256 (hanya dev/test)"
+    },
+    "rand": {
+      "min": "Min",
+      "max": "Maks",
+      "count": "Jumlah",
+      "note": "Angka Acak · crypto.randomInt"
+    },
+    "dice": {
+      "sides": "Sisi",
+      "count": "Jumlah dadu",
+      "note": "Pengocok Dadu · crypto RNG"
+    },
+    "hexRgb": {
+      "note": "HEX ↔ RGB · murni"
+    },
+    "base64url": {
+      "note": "Base64URL · gaya JWT"
+    },
+    "hmac": {
+      "message": "Pesan",
+      "secret": "Rahasia",
+      "signature": "Tanda Tangan",
+      "note": "Verifikasi HMAC · SHA-256"
+    },
+    "secret": {
+      "bytes": "Byte",
+      "count": "Jumlah",
+      "note": "Generator Kunci Rahasia · randomBytes"
+    },
+    "pdfOptimize": {
+      "file": "File PDF",
+      "note": "Optimasi Ringan PDF · penulisan ulang pdf-lib (bukan kompresi ulang gambar)"
+    },
+    "pdfCompress": {
+      "file": "File PDF",
+      "quality": "Kualitas",
+      "engine": "Mesin",
+      "qStructural": "Struktural (qpdf, aliran tanpa kehilangan)",
+      "qScreen": "Layar (terkecil, Ghostscript)",
+      "qEbook": "Ebook (seimbang, Ghostscript)",
+      "qPrinter": "Printer (kualitas lebih tinggi, Ghostscript)",
+      "eAuto": "Otomatis (qpdf → Ghostscript → pdf-lib)",
+      "download": "Unduh PDF",
+      "needFile": "Pilih file PDF terlebih dahulu",
+      "in": "Masukan",
+      "out": "Keluaran",
+      "saved": "Tersimpan",
+      "note": "Kompres PDF · qpdf / Ghostscript di host · pdf-lib cadangan"
+    }
+  },
+  "roots": {
+    "hubLabel": "Berdasarkan niat",
+    "tools": "alat",
+    "dualSurface": "Halaman manusia + API Agen · mesin yang sama",
+    "otherRoots": "Akar permintaan lainnya"
+  }
+}
