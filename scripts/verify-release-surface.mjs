@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+import { getReleaseSurfaceDiagnostics } from "./lib/release-surface.mjs";
+
+const diagnostics = getReleaseSurfaceDiagnostics();
+
+const failures = [
+  ...diagnostics.missingChangesetPackages.map(
+    (entry) =>
+      `changeset ${entry.changeset} references ${entry.packageName}, which is not in the workspace`,
+  ),
+  ...diagnostics.privateRuntimeDependencies.map(
+    (entry) =>
+      `${entry.packageName} ${entry.field} includes private workspace package ${entry.dependencyName} (${entry.dependencyDir})`,
+  ),
+  ...diagnostics.monorepoProtocolRuntimeDependencies.map(
+    (entry) =>
+      `${entry.packageName} ${entry.field}.${entry.dependencyName} is "${entry.range}" — CLI packages must not declare monorepo-only protocols as production deps (npm cannot resolve workspace:/catalog:; bundle via tsup noExternal and keep the dep in devDependencies)`,
+  ),
+  ...diagnostics.requiredMetadataMissing.map(
+    (entry) => `${entry.packageName} is missing ${entry.field}; expected ${entry.expected}`,
+  ),
+  ...diagnostics.manifestRuntimeFilesExcludedByFiles.map(
+    (entry) =>
+      `${entry.packageName} manifest references ${entry.reference}, but package files only include ${entry.files.join(", ")} (${entry.packageDir})`,
+  ),
+];
+
+console.log(
+  `[release-surface] ${diagnostics.publishableCount} publishable packages across ${diagnostics.packageCount} workspace manifests`,
+);
+
+if (failures.length > 0) {
+  console.error("[release-surface] release surface is not publishable:");
+  for (const failure of failures) {
+    console.error(`- ${failure}`);
+  }
+  process.exit(1);
+}
+
+console.log("[release-surface] release surface is publishable");
