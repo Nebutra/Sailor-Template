@@ -1,0 +1,47 @@
+# Thin edge gateway. Separate Worker from nebutra-gateway, not a variant of it.
+#
+# No Hyperdrive binding and no cron: this entry never touches Postgres. Both
+# belong to the full gateway, which runs as the Fly Hono origin. Giving the
+# edge a database connection would invite exactly the duplicated logic the
+# split exists to avoid.
+#
+# ORIGIN_URL must be a hostname that is NOT routed to this Worker.
+# Pointing it at api.nebutra.com loops the request back into itself, so it
+# is set per-environment as a var rather than defaulted here.
+
+name = "nebutra-gateway-edge"
+main = "src/worker-edge.ts"
+compatibility_date = "2026-06-04"
+
+# Takes api.nebutra.com in front of the Fly Hono origin. The hostname is
+# already proxied by Cloudflare, so this changes only what runs before the
+# origin fetch — removing the route puts traffic straight back on whatever
+# api.nebutra.com resolves to.
+#
+# ORIGIN_URL must not be api.nebutra.com. The Fly app URL is outside this
+# zone's Worker routes, so it cannot loop. A grey-cloud origin.nebutra.com
+# alias is also safe; an orange-cloud same-zone name is not.
+routes = [
+  { pattern = "api.nebutra.com/*", zone_name = "nebutra.com" },
+]
+
+# Kept on alongside the route. Declaring `routes` makes wrangler disable the
+# workers.dev subdomain by default, which removes the only way to exercise this
+# Worker without sending production traffic at it — and if the route fails to
+# apply, that leaves no way to reach it at all.
+workers_dev = true
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[vars]
+# Origin hostname. A hostname, not a credential — it belongs in config where it
+# is visible, and if it is wrong every forwarded request fails loudly rather
+# than leaking anything. Must not be the hostname this Worker serves.
+ORIGIN_URL = "https://nebutra-gateway.fly.dev"
+
+# Requests per minute per IP before shedding. Set far above real usage — this
+# sheds floods, it is not the per-key limit, which stays at the origin where
+# the plan is known.
+EDGE_IP_RATE_LIMIT = "600"
