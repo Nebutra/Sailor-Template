@@ -1,0 +1,782 @@
+@import "tailwindcss";
+@import "@nebutra/tokens/styles.css";
+@import "@nebutra/tokens/skins/cosmos.css";
+
+@source "../**/*.{ts,tsx}";
+
+/**
+ * Every colour, radius and weight below resolves through the Cosmos Brand
+ * Package (packages/design/tokens/brands/cosmos), applied by
+ * `html[data-brand="cosmos"]` in app/layout.tsx. The short aliases are kept
+ * because the rules in this file — and GARMENT_GROUNDS in src/catalog/skus.ts —
+ * already spell them; they are now names for skin roles rather than hex.
+ *
+ * Do not reintroduce a literal colour here. This file carried eyeballed
+ * approximations of the system (#f6f6f4 for Linen Canvas, #111111 for Ink
+ * Black, #ecece8 for a surface the system does not have) for long enough that
+ * the Brand Package was later authored from them instead of from the spec.
+ */
+:root {
+  --canvas: hsl(var(--role-canvas)); /* Linen Canvas #f7f5f3 */
+  --ink: hsl(var(--role-canvas-fg)); /* Ink Black #0d0d0d — never #000 */
+  --mute: hsl(var(--role-muted-fg)); /* Stone #6e6a69 */
+  --soft: var(--brand-category-pebble); /* Pebble #9a9796 */
+  --line: hsl(var(--role-border)); /* Ink Black at 12% over the canvas */
+  --pill: hsl(var(--role-surface)); /* Paper White — the only second surface */
+
+  /* Cosmos: 1280px content well. */
+  --page-max: 1280px;
+
+  /* One signature radius. 12px is the single documented exception, and it is
+     only ever for an image tile. */
+  --tile: 12px;
+  --rot: 0deg;
+
+  /* Photographic grounds behind cut-out garment stills. These are imagery, not
+     chrome, which is the one place Cosmos allows colour to live. */
+  --ground-white: hsl(var(--role-surface));
+  --ground-smoke: #7e8691;
+  --ground-ink: hsl(var(--role-canvas-fg));
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.shell {
+  min-height: 100dvh;
+  background: var(--canvas);
+}
+
+/* The bar itself is only a gutter — the pill below floats in it, so page content
+   passes behind the gaps rather than under a tinted strip. */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 12px 22px;
+}
+
+/* Paper White, one hairline, fully round, and no shadow: elevation in Cosmos is
+   surface contrast alone. */
+.navpill {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 6px 6px 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--pill);
+}
+
+.navpill-left,
+.navpill-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navpill-right {
+  justify-content: flex-end;
+}
+
+/* Flush inside the pill: the search is part of the bar, not a control sitting
+   on top of it. */
+.navpill .search-pill {
+  height: 36px;
+  padding: 0 10px;
+  border: 0;
+  background: transparent;
+}
+
+.auth-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-link {
+  border: 0;
+  background: transparent;
+  color: var(--mute);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+
+.auth-link:hover,
+a.auth-link:hover {
+  color: var(--ink);
+}
+
+.auth-slot {
+  display: inline-block;
+  width: 28px;
+  height: 14px;
+}
+
+.brand {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+}
+
+.mark {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.mark i {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+/* 3×3 at 0 / 7 / 14 for a 4px dot in an 18px box; the centre slot stays empty. */
+.mark i:nth-child(1) {
+  left: 0;
+  top: 0;
+}
+.mark i:nth-child(2) {
+  left: 7px;
+  top: 0;
+}
+.mark i:nth-child(3) {
+  left: 14px;
+  top: 0;
+}
+.mark i:nth-child(4) {
+  left: 0;
+  top: 7px;
+}
+.mark i:nth-child(5) {
+  left: 14px;
+  top: 7px;
+}
+.mark i:nth-child(6) {
+  left: 0;
+  top: 14px;
+}
+.mark i:nth-child(7) {
+  left: 7px;
+  top: 14px;
+}
+.mark i:nth-child(8) {
+  left: 14px;
+  top: 14px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--mute);
+}
+
+.nav-links a[data-active="true"] {
+  color: var(--ink);
+}
+
+/* The floating search bar is the one documented capsule in the system. */
+.search-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--pill);
+}
+
+.search-pill input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+}
+
+.search-pill input::placeholder {
+  color: var(--soft);
+}
+
+.search-glyph {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--mute);
+  border-radius: 50%;
+  position: relative;
+  flex: none;
+}
+
+.search-glyph::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 1.5px;
+  background: var(--mute);
+  right: -5px;
+  bottom: -1px;
+  transform: rotate(40deg);
+}
+
+/* Monochrome on purpose. This was acid-lime — Linear's accent, which arrived
+   here with the wrong token file and is the one thing Cosmos's don't-list names
+   outright: no accent colours in interface chrome. */
+.search-spark {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ink);
+  flex: none;
+}
+
+/* 16px, not a capsule. Cosmos: "tight, pill-like but squared at the radius" —
+   9999px belongs to the floating nav bar alone. The transparent border keeps
+   every variant on one box model so the outlined secondary matches the filled
+   primary exactly, which the system asks for. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-button);
+  background: transparent;
+  color: var(--mute);
+  cursor: pointer;
+}
+
+.pill-ink {
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+.pill-ghost {
+  border-color: var(--line);
+  background: var(--pill);
+  color: var(--ink);
+}
+
+.pill[data-active="true"] {
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+.pill:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.home {
+  position: relative;
+  min-height: calc(100dvh - 72px);
+  overflow: hidden;
+}
+
+.orbit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orbit-tile {
+  position: absolute;
+  display: block;
+  aspect-ratio: 1;
+  border-radius: var(--tile);
+  overflow: hidden;
+  transform: rotate(var(--rot, 0deg));
+  animation: drift 14s ease-in-out infinite;
+  pointer-events: auto;
+}
+
+.orbit-tile:hover {
+  z-index: 4;
+  opacity: 1;
+  filter: none;
+}
+
+.orbit-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-core {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100dvh - 72px);
+  padding: 80px 24px 96px;
+  text-align: center;
+}
+
+.hero-core::before {
+  content: "";
+  position: absolute;
+  inset: 22% 18%;
+  background: radial-gradient(closest-side, var(--canvas) 42%, transparent 82%);
+  pointer-events: none;
+}
+
+.hero-core > * {
+  position: relative;
+}
+
+.hero-kicker {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin: 0;
+  max-width: none;
+  font-size: clamp(28px, 5.6vw, 64px);
+  line-height: 1.06;
+  font-weight: var(--font-weight-heading);
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.explore {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 12px 22px 80px;
+}
+
+.explore h1,
+.page-main h1 {
+  margin: 28px 0 8px;
+  font-size: 33px;
+  font-weight: var(--font-weight-heading);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.lede {
+  margin: 0 0 22px;
+  color: var(--mute);
+  font-size: 15px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 28px;
+}
+
+.masonry {
+  columns: 4;
+  column-gap: 14px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  display: block;
+  margin: 0 0 14px;
+}
+
+.masonry-item figure {
+  margin: 0;
+}
+
+.masonry-item img,
+.tile-photo {
+  width: 100%;
+  display: block;
+  border-radius: var(--tile);
+  background: var(--pill);
+}
+
+.masonry[data-ground="paper"] {
+  --garment-ground: var(--canvas);
+}
+
+.masonry[data-ground="white"] {
+  --garment-ground: var(--ground-white);
+}
+
+.masonry[data-ground="smoke"] {
+  --garment-ground: var(--ground-smoke);
+}
+
+.masonry[data-ground="ink"] {
+  --garment-ground: var(--ground-ink);
+}
+
+.masonry-item img.tile-photo-garment,
+.tile-photo-garment {
+  background: var(--garment-ground, var(--canvas));
+}
+
+.masonry-item figcaption,
+.tile-meta {
+  padding: 10px 4px 4px;
+}
+
+.tile-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tile-sub {
+  display: block;
+  margin-top: 2px;
+  color: var(--mute);
+  font-size: 13px;
+}
+
+.tile-spec {
+  display: block;
+  margin-top: 4px;
+  color: var(--mute);
+  font-size: 12px;
+}
+
+.tile-brand {
+  display: block;
+  margin-top: 6px;
+  color: var(--mute);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.masonry-item[data-live="false"] {
+  opacity: 0.55;
+}
+
+.page-main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px 22px 80px;
+}
+
+.sku-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.size-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+  border: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+
+.size-row legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.sku-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  align-items: start;
+  gap: 12px;
+  margin: 28px 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.sku-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--pill);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.sku-card[data-active="true"] {
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+.sku-card img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--tile);
+  background: var(--pill);
+}
+
+.sku-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  margin: 20px 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--pill);
+  color: var(--mute);
+  cursor: pointer;
+}
+
+.upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.studio-frame {
+  display: grid;
+  grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.portrait {
+  width: 100%;
+  height: auto;
+  border-radius: var(--tile);
+  background: var(--pill);
+}
+
+.note {
+  margin-top: 12px;
+  color: var(--mute);
+  font-size: 13px;
+}
+
+.note[data-tone="error"] {
+  color: hsl(var(--destructive));
+}
+
+/* ── /me ────────────────────────────────────────────────────────────────
+   Paper White on Linen, one 16px radius, a 1px Ink hairline and no shadow —
+   the only depth Cosmos allows is the step between the two surfaces. */
+
+.identity {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 24px 0 32px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--pill);
+}
+
+.identity-plate {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-card);
+  background: var(--ink);
+  color: var(--canvas);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.field-list {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.field-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+}
+
+.field-row dt {
+  flex: none;
+  min-width: 92px;
+  color: var(--mute);
+  font-size: 14px;
+}
+
+.field-row dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+}
+
+.ledger {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 32px;
+}
+
+.ledger-item {
+  flex: 1 1 160px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--pill);
+}
+
+.ledger-figure {
+  margin: 0 0 4px;
+  font-size: 33px;
+  font-weight: var(--font-weight-heading);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+/* A date is a sentence, not a number — it must not sit at display size. */
+.ledger-figure-sm {
+  font-size: 18px;
+  line-height: 1.29;
+  letter-spacing: -0.011em;
+}
+
+.ledger-item dt {
+  color: var(--mute);
+  font-size: 14px;
+}
+
+.section-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.011em;
+}
+
+.leave-row {
+  display: flex;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
+  .identity {
+    flex-direction: column;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translate3d(8px, -12px, 0) rotate(var(--rot, 0deg));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-tile {
+    animation: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .masonry {
+    columns: 2;
+  }
+
+  .orbit-tile {
+    width: 84px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+  }
+
+  /* Mark, search, account. The links live in the page at this width. */
+  .topbar {
+    padding: 8px 12px;
+  }
+
+  .navpill {
+    gap: 8px;
+    padding: 6px 6px 6px 10px;
+  }
+
+  .navpill-left,
+  .navpill-right {
+    gap: 8px;
+  }
+
+  .studio-frame,
+  .masonry {
+    grid-template-columns: 1fr;
+    columns: 2;
+  }
+}
