@@ -1,0 +1,13 @@
+{
+  "type": "sailor-template-mirror",
+  "sourceRepo": "Nebutra/Nebutra-Sailor",
+  "sailorVersion": "1.1.2",
+  "sailorVersionConverged": false,
+  "syncedAt": "2026-09-03T16:26:09.031Z",
+  "license": {
+    "open": "AGPL-3.0",
+    "commercialException": "LICENSE-COMMERCIAL.md"
+  },
+  "readonly": true,
+  "note": "PRs to this repo are closed. Open PRs against Nebutra/Nebutra-Sailor."
+}
