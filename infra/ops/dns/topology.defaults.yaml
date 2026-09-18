@@ -1,0 +1,47 @@
+ecs_host: "106.15.4.31"
+apex_a: "216.198.79.1"
+www_cname: "cname.vercel-dns.com"
+docs_cname: "331816c5997d8344.vercel-dns-017.com"
+mail:
+  provider: aliyun
+  records:
+    mail: "qiye.aliyun.com"
+    imap: "imap.qiye.aliyun.com"
+    pop3: "pop.qiye.aliyun.com"
+    smtp: "smtp.qiye.aliyun.com"
+# Shanghai ECS is China-forward / rollback only. Product edges live on Fly sin.
+# carina: static Astro from Nebutra/carina apps/docs → nebutra-carina.
+# New-API: private Fly Machine (no public hostname). Leak DNS: dedicated IPv4.
+#
+# status: leftover A → ECS; landing already serves the page on Vercel.
+#
+# open: Vercel CNAME on the landing project (`point-open-dns-vercel.sh`).
+# Host alias — landing `/` on open.nebutra.com rewrites to `/open`.
+# Console stays on app `/settings/developers`. Do not add an ECS A or a
+# second Vercel project.
+ecs_surfaces: []
+vercel_surfaces: [open]
+proxy:
+  proxied:
+    [
+      "@",
+      www,
+      app,
+      auth,
+      api,
+      sso,
+      router,
+      forge,
+      design,
+      status,
+      open,
+      admin,
+      pebble,
+      carina,
+      kuanlan,
+      mail,
+      imap,
+      pop3,
+      smtp,
+    ]
+  dns_only: [docs]
