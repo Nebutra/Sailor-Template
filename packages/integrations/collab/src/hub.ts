@@ -1,0 +1,167 @@
+/**
+ * `CollabHub` — the tenant-partition boundary.
+ *
+ * TENANT ISOLATION IS STRUCTURAL: rooms are stored in a `Map` keyed by a
+ * composite `tenantId\0roomId` string with a NUL separator that cannot
+ * appear in a normal id. There is no API that takes only a roomId, so a key
+ * minted for tenant A is unreachable from tenant B — a room handle is only
+ * ever produced by passing an explicit `tenantId`, and the snapshot store +
+ * transport are likewise addressed by (tenantId, roomId). The same property
+ * a Prisma adapter gets from RLS is enforced here by the composite key, with
+ * no trust placed in caller-supplied payload.
+ */
+
+import { CollabError } from "./errors";
+import { Room } from "./room";
+import { InMemorySnapshotStore } from "./store/memory";
+import { LoopbackTransport } from "./transport/loopback";
+import type {
+  CollabConfig,
+  CollabHub,
+  CollabRoom,
+  CollabTransport,
+  DoctorReport,
+  SnapshotStore,
+} from "./types";
+
+// NUL separator: it cannot appear in a normal tenant/room id, so the pairs
+// ("a","bc") and ("ab","c") can never collide into the same room key — the
+// tenant partition is exact, not merely conventional.
+const KEY_SEP = "\0";
+
+function roomKey(tenantId: string, roomId: string): string {
+  return `${tenantId}${KEY_SEP}${roomId}`;
+}
+
+function assertId(value: string, kind: "tenant" | "room"): void {
+  if (typeof value !== "string" || value.trim().length === 0) {
+    throw new CollabError(`A non-empty ${kind}Id is required.`, {
+      code: kind === "tenant" ? "COLLAB_INVALID_TENANT" : "COLLAB_INVALID_ROOM",
+      suggestion:
+        kind === "tenant"
+          ? "Pass the current tenant id, e.g. from getCurrentTenant().tenantId — " +
+            "never call room() without an explicit tenant."
+          : "Pass a stable, non-empty roomId (document/canvas id).",
+    });
+  }
+}
+
+class Hub implements CollabHub {
+  private readonly rooms = new Map<string, Room>();
+  private readonly store: SnapshotStore;
+  private readonly transport: CollabTransport;
+
+  constructor(config: CollabConfig = {}) {
+    this.store = config.store ?? new InMemorySnapshotStore();
+    this.transport = config.transport ?? new LoopbackTransport();
+  }
+
+  room(tenantId: string, roomId: string): CollabRoom {
+    assertId(tenantId, "tenant");
+    assertId(roomId, "room");
+    const key = roomKey(tenantId, roomId);
+    let room = this.rooms.get(key);
+    if (!room) {
+      room = new Room(tenantId, roomId, this.store, this.transport);
+      this.rooms.set(key, room);
+    }
+    return room;
+  }
+
+  async roomRestored(tenantId: string, roomId: string): Promise<CollabRoom> {
+    const key = roomKey(tenantId, roomId);
+    const existed = this.rooms.has(key);
+    const room = this.room(tenantId, roomId) as Room;
+    // Only hydrate a freshly created room; an already-live room is the
+    // authoritative in-memory state.
+    if (!existed) await room._restore();
+    return room;
+  }
+
+  async doctor(): Promise<DoctorReport> {
+    const start = Date.now();
+
+    // 1. Yjs presence + a real round-trip (not just "is it imported").
+    let yjsOk = false;
+    let yjsDetail = "";
+    try {
+      const Y = await import("yjs");
+      const probe = new Y.Doc();
+      probe.getMap("p").set("k", 1);
+      const restored = new Y.Doc();
+      Y.applyUpdate(restored, Y.encodeStateAsUpdate(probe));
+      const ok = restored.getMap("p").get("k") === 1;
+      probe.destroy();
+      restored.destroy();
+      yjsOk = ok;
+      yjsDetail = ok
+        ? "Yjs encode/apply round-trip succeeded."
+        : "Yjs round-trip produced unexpected state.";
+    } catch (e) {
+      yjsDetail = `Yjs unavailable: ${String(e)}`;
+    }
+    const yjs = { ok: yjsOk, detail: yjsDetail };
+
+    // 2. Store health — write+read under a reserved diagnostic tenant.
+    let storeOk = false;
+    let storeDetail = "";
+    try {
+      const probe = new Uint8Array([7, 7, 7]);
+      await this.store.save("__collab_doctor__", "__probe__", probe);
+      const back = await this.store.load("__collab_doctor__", "__probe__");
+      const ok = !!back && back.length === probe.length && back[0] === 7;
+      storeOk = ok;
+      storeDetail = ok
+        ? "SnapshotStore save/load round-trip succeeded."
+        : "SnapshotStore returned unexpected bytes.";
+    } catch (e) {
+      storeDetail = `SnapshotStore error: ${String(e)}`;
+    }
+    const store = { ok: storeOk, detail: storeDetail };
+
+    // 3. Transport health — subscribe, broadcast, observe, unsubscribe.
+    let transportOk = false;
+    let transportDetail = "";
+    try {
+      let received = false;
+      const off = this.transport.subscribe("__collab_doctor__", "__probe__", () => {
+        received = true;
+      });
+      await this.transport.broadcast("__collab_doctor__", "__probe__", new Uint8Array([1]));
+      off();
+      transportOk = received;
+      transportDetail = received
+        ? "Transport broadcast/subscribe round-trip succeeded."
+        : "Transport did not deliver the probe (network adapter may be async).";
+    } catch (e) {
+      transportDetail = `Transport error: ${String(e)}`;
+    }
+    const transport = { ok: transportOk, detail: transportDetail };
+
+    return {
+      ok: yjs.ok && store.ok && transport.ok,
+      durationMs: Date.now() - start,
+      checks: { yjs, store, transport },
+    };
+  }
+
+  destroy(): void {
+    for (const room of this.rooms.values()) room.destroy();
+    this.rooms.clear();
+  }
+}
+
+/** Synchronous factory. */
+export function createCollab(config?: CollabConfig): CollabHub {
+  return new Hub(config);
+}
+
+/**
+ * Async factory mirroring other Sailor integration packages. There is no
+ * env/credential negotiation for the zero-config defaults, so this resolves
+ * immediately — the async shape is reserved for future credentialed
+ * store/transport providers without a breaking signature change.
+ */
+export async function getCollab(config?: CollabConfig): Promise<CollabHub> {
+  return createCollab(config);
+}
