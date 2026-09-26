@@ -1,0 +1,48 @@
+/**
+ * Zero-config default `CollabTransport`. An in-process loopback bus keyed by
+ * `tenantId\0roomId`, so a subscriber for tenant A's room can never be
+ * reached by a broadcast for tenant B's room of the same id (the tenant is
+ * part of the channel key, not trusted from payload).
+ *
+ * A real network transport (Pusher channels, a WebSocket relay) implements
+ * the same `CollabTransport` interface and is injected via
+ * `createCollab({ transport })`. This file intentionally ships NO network
+ * code — only the loopback so zero-config single-process usage works.
+ */
+
+import type { CollabTransport } from "../types";
+
+type Listener = (update: Uint8Array) => void;
+
+function channel(tenantId: string, roomId: string): string {
+  // NUL separator: cannot occur in normal ids, so "a","bc" and "ab","c"
+  // can never collide into the same channel.
+  return `${tenantId}\0${roomId}`;
+}
+
+export class LoopbackTransport implements CollabTransport {
+  private readonly channels = new Map<string, Set<Listener>>();
+
+  broadcast(tenantId: string, roomId: string, update: Uint8Array): void {
+    const set = this.channels.get(channel(tenantId, roomId));
+    if (!set) return;
+    // Snapshot listeners so unsubscribing during dispatch is safe.
+    for (const cb of [...set]) cb(update);
+  }
+
+  subscribe(tenantId: string, roomId: string, cb: Listener): () => void {
+    const key = channel(tenantId, roomId);
+    let set = this.channels.get(key);
+    if (!set) {
+      set = new Set();
+      this.channels.set(key, set);
+    }
+    set.add(cb);
+    return () => {
+      const s = this.channels.get(key);
+      if (!s) return;
+      s.delete(cb);
+      if (s.size === 0) this.channels.delete(key);
+    };
+  }
+}
