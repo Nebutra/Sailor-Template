@@ -1,0 +1,75 @@
+{
+  "name": "@nebutra/queue",
+  "version": "2.0.0",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "nebutra": {
+    "graph": "core",
+    "status": "foundation",
+    "productionReady": false,
+    "requires": [
+      "QSTASH_TOKEN (+ signing keys) for serverless",
+      "Configured QStash dlqFetcher/dlqEndpoint for provider-side DLQ observability",
+      "Host-injected getSystemDb for registerDefaultScheduledJobs (optional scheduled jobs)"
+    ],
+    "gaps": [
+      "Worker auto-scaling TODO"
+    ]
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./qstash": {
+      "types": "./dist/providers/qstash.d.ts",
+      "import": "./dist/providers/qstash.js"
+    },
+    "./queuebase": {
+      "types": "./dist/queuebase.d.ts",
+      "import": "./dist/queuebase.js"
+    },
+    "./queuebase-webhook": {
+      "types": "./dist/queuebase-webhook.d.ts",
+      "import": "./dist/queuebase-webhook.js"
+    },
+    "./scheduled": {
+      "types": "./dist/scheduled/index.d.ts",
+      "import": "./dist/scheduled/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@nebutra/logger": "workspace:*",
+    "@nebutra/provider-factory": "workspace:*",
+    "@upstash/qstash": "^2.7.17",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "homepage": "https://github.com/Nebutra/Nebutra-Sailor/tree/main/packages/integrations/queue#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/Nebutra-Sailor.git",
+    "directory": "packages/integrations/queue"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/Nebutra-Sailor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
