@@ -1,0 +1,35 @@
+{
+  "name": "@nebutra/status",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Status and incident core: probes, uptime history, incidents, maintenance, chat notifications",
+  "type": "module",
+  "nebutra": {
+    "graph": "core",
+    "status": "active",
+    "productionReady": true,
+    "featureId": "status",
+    "category": "platform",
+    "summary": "Hosted status page core — uptime, incidents, maintenance, Feishu/Slack cards"
+  },
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./math": "./src/math.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@nebutra/logger": "workspace:*",
+    "@nebutra/tokens": "workspace:*",
+    "p-limit": "^7.3.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "license": "FSL-1.1-ALv2"
+}
