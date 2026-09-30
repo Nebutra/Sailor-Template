@@ -1,0 +1,153 @@
+"use client";
+
+import { CreditCard, Sparkles } from "@nebutra/icons";
+import Link from "next/link";
+import { useFormatter, useTranslations } from "next-intl";
+import type { SubscriptionStatus } from "@/lib/billing/active-plan";
+
+/**
+ * Public snapshot consumed by ActivePlanCard.
+ *
+ * Shape mirrors `HasActivePlanResult` from `@/lib/billing/active-plan` so that
+ * a server component can fetch via `hasActivePlan(orgId)` and pass the result
+ * down without remapping.
+ */
+export interface ActivePlanCardSnapshot {
+  active: boolean;
+  planId: string | null;
+  planName: string | null;
+  status: SubscriptionStatus;
+  currentPeriodEnd: string | null;
+}
+
+export interface ActivePlanCardProps {
+  organizationId: string;
+  /** Pre-fetched snapshot. `null` renders the empty / error state. */
+  snapshot: ActivePlanCardSnapshot | null;
+  /** When true, renders a load-failed alert. Mutually exclusive with snapshot. */
+  error?: boolean;
+  className?: string;
+}
+
+const STATUS_TONES: Record<SubscriptionStatus, string> = {
+  active: "bg-success/10 text-success-strong ring-1 ring-success/30",
+  trialing: "bg-info/10 text-info ring-1 ring-info/30",
+  past_due: "bg-warning/10 text-warning-strong ring-1 ring-warning/30",
+  canceled: "bg-destructive/10 text-destructive-strong ring-1 ring-destructive/30",
+  free: "bg-muted text-muted-foreground ring-1 ring-border",
+};
+
+/**
+ * Renders the active subscription summary for an organization.
+ *
+ * Inputs are passed in (snapshot) rather than fetched here so that this remains
+ * a presentation component — callers (page.tsx server components) call
+ * `hasActivePlan(orgId)` and pass the result down. This keeps the component
+ * client-renderable and trivially testable.
+ */
+export function ActivePlanCard({
+  organizationId: _organizationId,
+  snapshot,
+  error,
+  className,
+}: ActivePlanCardProps) {
+  const t = useTranslations("billing.activePlan");
+  const format = useFormatter();
+
+  if (error) {
+    return (
+      <div
+        role="alert"
+        className={`rounded-[var(--radius-3xl)] border border-destructive/30 bg-destructive/10 p-5 text-destructive-strong text-sm ${className ?? ""}`}
+      >
+        {t("errors.loadFailed")}
+      </div>
+    );
+  }
+
+  if (!snapshot || !snapshot.planId) {
+    return (
+      <div
+        className={`rounded-[var(--radius-3xl)] border border-border bg-background p-5 shadow-sm ${className ?? ""}`}
+      >
+        <p className="font-medium text-sm uppercase tracking-[0.18em] text-muted-foreground">
+          {t("title")}
+        </p>
+        <h2 className="mt-3 font-semibold text-2xl text-foreground">{t("noPlanTitle")}</h2>
+        <p className="mt-2 max-w-2xl text-muted-foreground text-sm">{t("noPlanDescription")}</p>
+        <div className="mt-5">
+          <Link
+            href="/choose-plan"
+            className="inline-flex items-center gap-2 rounded-[var(--radius-xl)] bg-primary px-4 py-2.5 font-medium text-sm text-primary-foreground transition hover:opacity-90"
+          >
+            <Sparkles className="size-4" aria-hidden="true" />
+            {t("choosePlan")}
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const { planName, status, currentPeriodEnd } = snapshot;
+  const periodDate = currentPeriodEnd ? new Date(currentPeriodEnd) : null;
+  const dateLabel =
+    periodDate && !Number.isNaN(periodDate.getTime())
+      ? format.dateTime(periodDate, { year: "numeric", month: "short", day: "numeric" })
+      : "";
+  const statusLabel = t(`status.${status}`);
+  const statusTone = STATUS_TONES[status] ?? STATUS_TONES.free;
+
+  let periodCopy: string | null = null;
+  if (dateLabel) {
+    if (status === "trialing") periodCopy = t("trialEndsOn", { date: dateLabel });
+    else if (status === "canceled") periodCopy = t("endsOn", { date: dateLabel });
+    else periodCopy = t("renewsOn", { date: dateLabel });
+  }
+
+  const isFree = status === "free";
+
+  return (
+    <div
+      className={`rounded-[var(--radius-3xl)] border border-border bg-background p-5 shadow-sm ${className ?? ""}`}
+    >
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="font-medium text-sm uppercase tracking-[0.18em] text-muted-foreground">
+            {t("title")}
+          </p>
+          <h2 className="mt-3 flex items-center gap-2 font-semibold text-2xl text-foreground">
+            <Sparkles className="size-5 text-primary" aria-hidden="true" />
+            {planName}
+          </h2>
+          {periodCopy && <p className="mt-2 text-muted-foreground text-sm">{periodCopy}</p>}
+        </div>
+        <span
+          data-testid="active-plan-status"
+          className={`inline-flex items-center rounded-full px-3 py-1 font-medium text-xs ${statusTone}`}
+        >
+          {statusLabel}
+        </span>
+      </div>
+
+      <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+        {isFree ? (
+          <Link
+            href="/choose-plan"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-xl)] bg-primary px-4 py-2.5 font-medium text-sm text-primary-foreground transition hover:opacity-90 sm:w-auto"
+          >
+            <Sparkles className="size-4" aria-hidden="true" />
+            {t("choosePlan")}
+          </Link>
+        ) : (
+          <Link
+            href="/billing"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-xl)] bg-foreground px-4 py-2.5 font-medium text-sm text-background transition hover:bg-muted-foreground sm:w-auto"
+          >
+            <CreditCard className="size-4" aria-hidden="true" />
+            {t("manage")}
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+}
