@@ -1,0 +1,3667 @@
+{
+  "nav": {
+    "features": "Funkce",
+    "solutions": "Řešení",
+    "pricing": "Ceník",
+    "docs": "Dokumentace",
+    "github": "GitHub",
+    "npm": "npm",
+    "about": "O nás",
+    "ideas": "Nápady",
+    "opc": "Platforma",
+    "roadmap": "Roadmapa",
+    "resources": "Zdroje",
+    "signIn": "Přihlásit se",
+    "getStarted": "Začít plout",
+    "changelog": "Seznam změn",
+    "news": "Novinky",
+    "designDocs": "Design systém",
+    "avatarMenu": {
+      "ariaLabel": "Nabídka účtu",
+      "loadingName": "Načítání…",
+      "dashboard": "Přehled",
+      "account": "Účet",
+      "billing": "Fakturace",
+      "docs": "Dokumentace",
+      "signOut": "Odhlásit se"
+    },
+    "theme": "Theme"
+  },
+  "refer": {
+    "metadataTitle": "Přidejte se k referenčnímu okruhu zakladatelů {brandName}",
+    "metadataDescription": "Přidejte se na čekací seznam {brandName}, zachovejte atribuci doporučení a odemkněte si vlastní odkaz na sdílení v jednom uzavřeném produktově řízeném okruhu.",
+    "eyebrow": "Referenční okruh zakladatelů",
+    "title": "Přidejte se k dalšímu ročníku zakladatelů a získajte vlastní odkaz na sdílení.",
+    "description": "Přidejte se pomocí libovolného pozvánkového kódu nebo přímo. Pokud kód existuje, zachováme atribuci, umístíme vás na čekací seznam a vydáme vám soukromý referenční odkaz, který můžete okamžitě sdílet.",
+    "signal": {
+      "waitlist": "Trvalý čekací seznam",
+      "codeDetected": "Zjištěn kód {code}",
+      "direct": "Přímá registrace"
+    },
+    "form": {
+      "emailLabel": "Pracovní e-mail",
+      "emailPlaceholder": "you@example.com",
+      "codeLabel": "Referenční kód",
+      "codePlaceholder": "Volitelný kód",
+      "submit": "Přidat se do seznamu čekajících",
+      "submitting": "Přidávám",
+      "invalidEmail": "Zadejte platný e-mail.",
+      "error": "Nelze se přidat. Zkuste to prosím znovu.",
+      "successTitle": "Jste na seznamu",
+      "successDescription": "Váš soukromý odkaz pro sdílení je připraven.",
+      "positionLabel": "Pozice ve frontě",
+      "referralCodeLabel": "Váš kód",
+      "referralUrlLabel": "Váš odkaz pro sdílení",
+      "copyLink": "Kopírovat odkaz",
+      "copied": "Zkopírováno",
+      "share": "Sdílet",
+      "shareTitle": "Přidejte se do zakládající smyčky {brandName}",
+      "shareText": "Použijte můj pozvávací odkaz a přidejte se do seznamu čekajících zakladatelů {brandName}.",
+      "directMode": "Není potřeba referenční kód",
+      "codeMode": "Připsání doporučení zapnuto"
+    },
+    "proof": {
+      "peerLoop": {
+        "title": "Smyčka zakladatel na zakladatele",
+        "description": "Každý přijatý zápis obdrží kód a URL, takže další doporučení začne bez ručního předání."
+      },
+      "attribution": {
+        "title": "Poctivé připsání",
+        "description": "Neznámé kódy se ukládají jako pokus o připsání, zatímco platné kódy zvýší počítadlo doporučujícího a zápis zůstane čistý."
+      },
+      "shareLink": {
+        "title": "Stav úspěchu připravený ke sdílení",
+        "description": "Stav potvrzení zobrazuje pozici, kód, možnost kopírování a nativní akce pro sdílení, takže se smyčka dokončí přímo na stránce."
+      }
+    },
+    "infrastructure": {
+      "eyebrow": "Infrastruktura řízená produktem",
+      "title": "Navrženo jako trvanlivá SaaS infrastruktura, ne jako jednorázový formulář.",
+      "description": "Povrch doporučení je podložen balíčkem domény, trvalým modelem Prisma, typovanou trasou Next.js a veřejnými kontrolami, které mohou běžet po nasazení ECS.",
+      "data": {
+        "eyebrow": "Data",
+        "title": "Jedna trvanlivá tabulka čekacího seznamu",
+        "description": "Jedinečnost e-mailu, automaticky inkrementovaná pozice, indexy kódů doporučení, metadata pokusů o připsání a přechody stavů jsou uloženy v databázi platformy."
+      },
+      "api": {
+        "eyebrow": "API",
+        "title": "Typovaný endpoint pro připojení",
+        "description": "Stránka posílá požadavek na `/api/waitlist`, normalizuje libovolné kódy, vrací existující záznamy idempotentně a nikdy nezávisí na vzorovém kódu."
+      },
+      "cicd": {
+        "eyebrow": "CI/CD",
+        "title": "Veřejný smoke test při nasazení",
+        "description": "Kanonické a alias URL jsou připravené pro automatizované kontroly, takže ECS doručení zachytí regresy v routování, DNS a stavu služby."
+      }
+    }
+  },
+  "hero": {
+    "headline1": "Nasaďte svůj startup",
+    "headline2": "poháněný Agent OS od {brandName}.",
+    "subheadline": "Ušetřete týdny práce na platformě díky <highlight>produkčně připravené</highlight> základně s řízenou architekturou, vytvořené pro AI kódovací agenty a zakladatele mířící na globální trh.",
+    "copyLabel": "Kopírovat příkaz",
+    "copiedLabel": "Zkopírováno",
+    "ctaGetAccess": "Spusťte svůj startup",
+    "ctaExploreDemo": "Prozkoumat demo",
+    "pillCopied": "Zkopírováno"
+  },
+  "features": {
+    "sectionTitle": "Infrastruktura připravená k použití, od prototypu po škálování.",
+    "item0": {
+      "title": "Infrastruktura pro AI aplikace",
+      "description": "Vestavěné, produkčně testované Agent Frameworks a LLM orchestrační enginy. Obejděte složité podkladové abstrakce a pracujte přímo se strukturovanými inteligentními API."
+    },
+    "item1": {
+      "title": "Řízená základna platformy",
+      "description": "Řízená základna platformy pro týmy vydávající AI-native SaaS. Synchronizujte kostry, runtime primitiva a doručovací rozhraní bez skládání improvizovaných nástrojů."
+    },
+    "item2": {
+      "title": "Automatizace enterprise SaaS",
+      "description": "Hluboká integrace moderní technologické stacku Postgres, Better Auth a Creem. Poskytuje bezpečnost na úrovni řádků, komplexní izolaci více nájemců a globální fakturaci předplatného přímo z krabice."
+    }
+  },
+  "cta": {
+    "heading": "Připraveni nasadit svou další AI aplikaci?",
+    "subheading": "Inicializujte kompletní cloud-native SaaS architekturu lokálně jediným příkazem v terminálu.",
+    "copyLabel": "Kopírovat příkaz",
+    "copiedLabel": "Zkopírováno",
+    "startBuilding": "Začít tvořit"
+  },
+  "footer": {
+    "brandDescription": "Spusťte svůj startup s {brandName} Agent OS. Více nájemců, fakturace, autentizace a AI — připraveno na produkční nasazení od prvního dne.",
+    "columns": {
+      "product": "Produkt",
+      "resources": "Zdroje",
+      "company": "Společnost",
+      "legal": "Právní"
+    },
+    "links": {
+      "product": "Produkt",
+      "features": "Funkce",
+      "forge": "Forge",
+      "pricing": "Ceník",
+      "about": "O nás",
+      "showcase": "Ukázka",
+      "blog": "Blog",
+      "playbook": "Playbook",
+      "changelog": "Přehled změn",
+      "roadmap": "Roadmap",
+      "docs": "Dokumentace",
+      "ideas": "Návrhy",
+      "opc": "Platforma",
+      "careers": "Kariéra",
+      "security": "Zabezpečení",
+      "dpa": "DPA",
+      "privacy": "Ochrana osobních údajů",
+      "terms": "Podmínky",
+      "cookies": "Cookies",
+      "refund": "Vrácení peněz",
+      "credits": "Poděkování",
+      "licensing": "Licencování",
+      "contact": "Kontakt",
+      "faq": "FAQ",
+      "github": "GitHub",
+      "discord": "Discord",
+      "twitter": "X (Twitter)"
+    },
+    "copyright": "© 2026 {companyLegalEn} · Všechna práva vyhrazena.",
+    "statusOnline": "Všechny systémy fungují",
+    "newsletterTitle": "Zůstaňte informováni",
+    "newsletterPlaceholder": "you@example.com",
+    "newsletterSubscribe": "Odebírat",
+    "newsletterSuccess": "Děkujeme za odběr!",
+    "newsletterError": "Něco se pokazilo",
+    "statusDegraded": "Degraded performance",
+    "statusOutage": "Major service outage",
+    "statusUnknown": "Checking status"
+  },
+  "logoStrip": {
+    "tagline": "Běží na"
+  },
+  "monorepoTree": {
+    "badge": "STRUKTURA TURBOREPO",
+    "title": "10 aplikací. 111 balíčků. 4 backendové dráhy.",
+    "description": "Sdílený kód, paralelní sestavování, žádná duplicita. Kompletní typování od databáze až po frontend.",
+    "metricApps": "aplikace",
+    "metricBackends": "backendové dráhy",
+    "metricPackages": "balíčky",
+    "verifiedPaths": "Cesty ověřené vůči aktuálnímu pracovnímu prostoru",
+    "cta": "Prozkoumejte architekturu monorepo"
+  },
+  "stats": {
+    "title": "V číslech",
+    "github": "Hvězdy na GitHubu",
+    "discord": "Členové Discordu",
+    "setup": "Průměrná doba nastavení",
+    "packages": "Balíčky monorepo",
+    "ctaStar": "Hvězda →",
+    "ctaJoin": "Připojit se →",
+    "ctaStart": "Začít →",
+    "ctaExplore": "Prozkoumat →"
+  },
+  "legalPages": {
+    "about": {
+      "title": "O nás — Platforma řízeného AI",
+      "description": "Objevte komerční vizi a inženýrské principy za platformou řízeného AI od {brandName}.",
+      "heading": "Éra štíhlých produktových týmů",
+      "subheading": "Nahraďte opakovanou práci na platformě řízenou infrastrukturou, silnou automatizací a dlouhodobou inženýrskou výhodou.",
+      "missionTitle": "Nový řád odolávající administrativnímu úpadku",
+      "missionP1": "{brandName} staví řízenou AI platformu pro týmy, které potřebují trvanlivou infrastrukturu místo krátkodobých startovacích stacků. Tradiční škálování často přináší byrokracii a entropii; my reagujeme kódovou správou, automatizací a základnou platformy, která zůstává auditovatelná při růstu.",
+      "missionP2": "Obchod stále trpí koordinací, rozdrobenými nástroji a slabými cestami pro aktualizace. Zajímá nás snížení těchto třením prostřednictvím jasnějších platforemních smluv, silnějších prvků dodávky a chování runtime, které mohou týmy skutečně sledovat a důvěřovat.",
+      "missionP3": "Odmítáme zvyk řešit problémy škálování větší organizační zátěží. Automatizace, testy a správa by měly absorbovat opakovanou provozní práci, aby se týmy mohly soustředit na produkt, architekturu a výsledky pro zákazníky.",
+      "missionP4": "",
+      "valuesTitle": "Čtyři pilíře",
+      "values": {
+        "0": {
+          "title": "Řízené škálování (Filozofie)",
+          "description": "Škálování by mělo vycházet z silnějších systémů, lepší pákové výhody a jasnějších provozních pravidel — ne z hromadění další organizační váhy."
+        },
+        "1": {
+          "title": "Jádro tvůrce (Infrastruktura)",
+          "description": "Opakovaně použitelná základna platformy pro multi-tenancy, fakturaci, autentizaci, compliance a AI integrace, kterou mohou týmy auditovat, rozšiřovat a opakovaně vydávat."
+        },
+        "2": {
+          "title": "Disciplína aktualizací (Routing)",
+          "description": "Zdravé systémy rostou prostřednictvím kontrol kompatibility, migrací a pozorovatelných runtime smluv místo driftu, hrdinství a jednorázových přepisů."
+        },
+        "3": {
+          "title": "Kód je zákon (Organizace)",
+          "description": "Provozní disciplína by měla být zakódována v testech, workflow a pravidlech správy, aby týmy mohly platformu zlepšovat bez opírání se o politiku nebo institucionální paměť."
+        }
+      },
+      "jobsTitle": "Inženýrské signály před kredencemi",
+      "jobsDescription": "Více nás zajímá ověřitelný inženýrský výstup, jasnost myšlení a systémové soudnictví než původ nebo inflace titulů.",
+      "jobsButton": "Odeslat profil na GitHub",
+      "companyInfoTitle": "Organizační soulad",
+      "companyInfo": {
+        "legalName": "Registrace právní entity",
+        "founded": "Datum registrace",
+        "headquarters": "Centrum globálních operací",
+        "jurisdiction": "Převládající jurisdikce"
+      },
+      "ctaHeading": "Potřebujete hlubší technické posouzení?",
+      "ctaDescription": "Kontaktujte naše inženýrské specialisty pro hodnocení podnikové integrace nebo si prohlédněte dokumentaci nasazení.",
+      "ctaButton": "Navázat kontakt"
+    },
+    "contact": {
+      "title": "Technický a obchodní dotaz — {brandName}",
+      "description": "Věcný komunikační kanál pro obchodní licencování, podnikové self-hosting a pokročilou technickou podporu.",
+      "heading": "Navázat spojení podpory",
+      "subheading": "Zašleme vám vyhrazeného technického specialistu nebo architekta k posouzení vašich explicitních požadavků.",
+      "contacts": {
+        "founder": {
+          "title": "Přímý kontakt s zakladatelem",
+          "description": "Přímý komunikační kanál pro základní strategické zarovnání a dotazy na úrovni vedení."
+        },
+        "general": {
+          "title": "Podniková konzultace",
+          "description": "Předběžná jednání týkající se ekologických strategických partnerství a celkového vývoje architektury."
+        },
+        "sales": {
+          "title": "Komerční nasazení",
+          "description": "Vyjednávání ohledně licencování uzavřeného zdroje a specifik týkajících se nasazení v soukromém clusterovém prostředí."
+        },
+        "support": {
+          "title": "Podpora na úrovni experta",
+          "description": "Cílené architektonické poradenství a služby řešení potíží pro aktivní obchodní integrace a ladění jádra systému."
+        },
+        "legal": {
+          "title": "Právní a soulad",
+          "description": "Dotazy týkající se definice hranic open-source, podnikových auditů souladu a smluvních podmínek."
+        },
+        "privacy": {
+          "title": "Soukromí datového centra",
+          "description": "Technické ověření a směrnice pro soulad týkající se GDPR a následných mezinárodních zákonů o ochraně dat."
+        },
+        "security": {
+          "title": "Zveřejnění bezpečnosti",
+          "description": "Bezpečně odešlete technické zprávy o reprodukci týkající se potenciálních softwarových zranitelností přímo našemu týmu infrastruktury."
+        }
+      },
+      "formTitle": "Portál pro odesílání",
+      "form": {
+        "name": "Označení odesílatele",
+        "email": "Oficiální e-mailová adresa",
+        "company": "Přidružená organizace",
+        "category": "Oblast požadavku",
+        "categories": {
+          "general": "Firemní konzultace",
+          "sales": "Licencování a architektura",
+          "support": "Podpora pro vývojáře",
+          "legal": "Právní a compliance hranice",
+          "privacy": "Politiky zpracování dat",
+          "partnership": "Integrace ekosystému",
+          "press": "Veřejné vztahy"
+        },
+        "subject": "Shrnutí hlavního problému",
+        "message": "Podrobné technické/komerční specifikace",
+        "submit": "Odeslat na backend",
+        "privacyNotice": "Provedením této síťové požadavku potvrzujete, že jste si přečetli a souhlasíte s našimi",
+        "privacyLink": "Systémová infrastruktura ochrany soukromí",
+        "submitting": "Vstup do fronty zpracování...",
+        "successMessage": "Data úspěšně odeslána. Odpovědný provozní tým poskytne podrobnou odpověď do 1–2 pracovních dnů."
+      },
+      "companyInfoTitle": "Provozní telemetrie",
+      "companyNameChinese": "{companyLegal}",
+      "companyNameEnglish": "{companyLegalEn}",
+      "companyAddress": "Wuxi, provincie Jiangsu, Čína",
+      "socialMedia": "Hlavní odkazy na sociální sítě"
+    },
+    "cookies": {
+      "title": "Zásady používání cookies — {brandName}",
+      "description": "Jak {brandName} používá cookies a podobné technologie sledování na našich webových stránkách a službách.",
+      "heading": "Zásady používání cookies",
+      "effectiveDate": "Datum účinnosti",
+      "lastUpdated": "Naposledy aktualizováno",
+      "dates": {
+        "effective": "1. ledna 2025",
+        "updated": "1. ledna 2025"
+      },
+      "intro": "Tyto zásady používání cookies vysvětlují, jak společnost {brandName} Co., Ltd. (\"{brandName}\", \"my\", \"nás\" nebo \"naše\") používá cookies a podobné technologie sledování na našich webových stránkách a službách.",
+      "whatAreCookies": {
+        "title": "Co jsou cookies?",
+        "content": "Cookies jsou malé textové soubory, které se umístí na vaše zařízení při návštěvě webové stránky. Široce se používají k efektivnějšímu fungování webových stránek a poskytování informací vlastníkům webových stránek."
+      },
+      "howWeUse": {
+        "title": "Jak používáme cookies",
+        "intro": "Cookies používáme k tomu, abychom mohli:",
+        "items": {
+          "0": {
+            "label": "Zajistit základní funkce",
+            "desc": "Poskytovat základní funkce, jako je ověřování uživatelů a zabezpečení"
+          },
+          "1": {
+            "label": "Pamatovat si předvolby",
+            "desc": "Uložení vašeho jazyka, tématu a dalších nastavení"
+          },
+          "2": {
+            "label": "Zlepšení výkonu",
+            "desc": "Porozumění tomu, jak návštěvníci interagují s našimi službami"
+          },
+          "3": {
+            "label": "Personalizace zážitku",
+            "desc": "Poskytování relevantního obsahu a doporučení"
+          },
+          "4": {
+            "label": "Měření marketingu",
+            "desc": "Sledování účinnosti našich marketingových kampaní"
+          }
+        }
+      },
+      "typesTitle": "Typy cookies, které používáme",
+      "tableHeaders": {
+        "cookie": "Cookie",
+        "provider": "Poskytovatel",
+        "purpose": "Účel",
+        "duration": "Doba trvání"
+      },
+      "necessary": {
+        "title": "Základní nezbytné cookies",
+        "description": "Tyto cookies jsou nezbytné pro správnou funkci webu. Nelze je vypnout.",
+        "cookies": {
+          "0": {
+            "name": "__session",
+            "provider": "{brandName}",
+            "purpose": "Relace ověřování uživatele",
+            "duration": "Relace"
+          },
+          "1": {
+            "name": "better-auth.session_token",
+            "provider": "Better Auth",
+            "purpose": "Token relace ověřování",
+            "duration": "7 dní"
+          },
+          "2": {
+            "name": "cookie_consent",
+            "provider": "{brandName}",
+            "purpose": "Ukládá předvolby souhlasu s cookies",
+            "duration": "1 rok"
+          }
+        }
+      },
+      "functional": {
+        "title": "Funkční cookies",
+        "description": "Tyto cookies umožňují personalizované funkce a pamatují si vaše předvolby.",
+        "cookies": {
+          "0": {
+            "name": "locale",
+            "provider": "{brandName}",
+            "purpose": "Ukládá předvolbu jazyka",
+            "duration": "1 rok"
+          },
+          "1": {
+            "name": "theme",
+            "provider": "{brandName}",
+            "purpose": "Ukládá předvolbu motivu",
+            "duration": "1 rok"
+          }
+        }
+      },
+      "analyticsType": {
+        "title": "Analytické cookies",
+        "description": "Tyto cookies nám pomáhají pochopit, jak návštěvníci interagují s naším webem.",
+        "cookies": {
+          "0": {
+            "name": "_ga",
+            "provider": "Google Analytics",
+            "purpose": "Rozlišuje jedinečné uživatele",
+            "duration": "2 roky"
+          },
+          "1": {
+            "name": "ph_*",
+            "provider": "PostHog",
+            "purpose": "Analytika produktu",
+            "duration": "1 rok"
+          }
+        }
+      },
+      "marketingType": {
+        "title": "Marketingové cookies",
+        "description": "Tyto cookies se používají k reklamě a sledování výkonu reklamních kampaní.",
+        "cookies": {
+          "0": {
+            "name": "_fbp",
+            "provider": "Facebook",
+            "purpose": "Sleduje návštěvy pro reklamy na Facebooku",
+            "duration": "3 měsíce"
+          },
+          "1": {
+            "name": "_gcl_au",
+            "provider": "Google Ads",
+            "purpose": "Sledování konverzí",
+            "duration": "3 měsíce"
+          }
+        }
+      },
+      "managingTitle": "Správa vašich předvolení cookies",
+      "consentBanner": {
+        "title": "Banner souhlasu s cookies",
+        "intro": "Při první návštěvě naší webové stránky uvidíte banner souhlasu s cookies, který vám umožní:",
+        "items": {
+          "0": {
+            "label": "Přijmout vše",
+            "desc": "Povolit všechny kategorie cookies"
+          },
+          "1": {
+            "label": "Odmítnout vše",
+            "desc": "Zakázat všechny volitelné cookies (nezbytné cookies zůstanou)"
+          },
+          "2": {
+            "label": "Přizpůsobit",
+            "desc": "Vybrat konkrétní kategorie cookies k povolení"
+          }
+        },
+        "changeNote": "Své předvolení můžete kdykoli změnit kliknutíem na \"Nastavení cookies\" v patičce stránky."
+      },
+      "browserSettings": {
+        "title": "Nastavení prohlížeče",
+        "intro": "Většina webových prohlížečů vám umožňuje ovládat cookies prostřednictvím jejich nastavení:",
+        "browsers": {
+          "0": {
+            "name": "Chrome",
+            "path": "Nastavení > Soukromí a zabezpečení > Cookies"
+          },
+          "1": {
+            "name": "Firefox",
+            "path": "Nastavení > Soukromí a zabezpečení > Cookies"
+          },
+          "2": {
+            "name": "Safari",
+            "path": "Předvolby > Soukromí > Cookies"
+          },
+          "3": {
+            "name": "Edge",
+            "path": "Nastavení > Soukromí, vyhledávání a služby > Cookies"
+          }
+        },
+        "note": "Blokování určitých cookies může ovlivnit funkčnost webu."
+      },
+      "similarTech": {
+        "title": "Podobné technologie",
+        "intro": "Kromě cookies můžeme používat také:",
+        "items": {
+          "0": {
+            "label": "Lokální úložiště",
+            "desc": "Pro ukládání předvoleb a mezipaměti dat lokálně"
+          },
+          "1": {
+            "label": "Úložiště relace",
+            "desc": "Pro dočasná data během vaší prohlížecké relace"
+          },
+          "2": {
+            "label": "Pixelové značky",
+            "desc": "Malé obrázky pro sledování otevření e-mailů a návštěv webu"
+          }
+        },
+        "noFingerprinting": "Pro sledování NEPOUŽÍVÁME browser fingerprinting."
+      },
+      "updates": {
+        "title": "Aktualizace této politiky",
+        "content": "Tuto politiku cookies můžeme čas od času aktualizovat. O podstatných změnách vás budeme informovat zveřejněním aktualizované politiky na našem webu."
+      },
+      "contactUs": {
+        "title": "Kontaktujte nás",
+        "intro": "Pokud máte otázky týkající se používání cookies, kontaktujte nás:",
+        "company": "{brandName} Co., Ltd.",
+        "privacyNote": "Více informací o tom, jak sbíráme a zpracováváme vaše data, najdete v naší",
+        "privacyLink": "Zásadách ochrany osobních údajů"
+      }
+    },
+    "faq": {
+      "title": "Inženýrské pokyny a FAQ — {brandName}",
+      "description": "Komplexní analýza architektury frameworku, základních topologií a strategií komerčního nasazení.",
+      "heading": "Podrobný pohled pro vedení",
+      "subheading": "Podpůrné materiály optimalizované pro integraci systémového inženýrství a komerční rozhodování vedení.",
+      "categories": {
+        "0": {
+          "name": "Přehled architektury",
+          "questions": {
+            "0": {
+              "q": "Jaký je explicitní provozní účel {productName}?",
+              "a": "{productName} je vysoce strukturovaný, produkčně připravený Next.js AI SaaS framework. Kombinuje firemní fakturaci, vícefaktorové ověřování a izolaci více nájemců do řízené platformové základny, což umožňuje týmům soustředit se na implementaci AI specifickou pro produkt."
+            },
+            "1": {
+              "q": "Jak je strukturováno licencování repozitáře?",
+              "a": "Základní infrastruktura je nyní licencována pod Functional Source License, verze 1.1, ALv2 (FSL-1.1-ALv2) — zcela zdarma pro stavbu produktů, bez poplatků a bez copyleft povinností. Jediné, co není povoleno, je nabízet samotný Sailor jako konkurenční komerční produkt nebo službu. Každá verze se dva roky po vydání neodvolatelně převádí na Apache-2.0."
+            },
+            "2": {
+              "q": "Jaká je rychlost počátečního komerčního hodnocení?",
+              "a": "Extrémně vysoká. Pomocí naší přizpůsobené Node CLI nástrojové řetězce a přesné technické specifikace může junior inženýr rozchodit autonomní místní instanci MVP (Minimum Viable Product) během několika minut."
+            }
+          }
+        },
+        "1": {
+          "name": "Komerční operace",
+          "questions": {
+            "0": {
+              "q": "Jak široká je tolerance pro komerční škálování?",
+              "a": "Navrženo silně na paradigmatu mikrokomponent, kapacita strukturní zátěže hladce mapuje od bezplatných úrovní s nulovým poptávkovým zatížením až po prahy Enterprise sloužící milionům měsíčních požadavků, vše plně konfigurovatelné prostřednictvím omezení v dashboardu."
+            },
+            "1": {
+              "q": "Jak ovlivňuje volatilita předplatného standardní účetnictví?",
+              "a": "Fungujeme s přesným, sekundovým strukturním logováním zdrojů a propustnosti API. Změna omezení se okamžitě vyrovná s účetní vrstvou – buď vrácením poměrných rozdílů nebo vydáním automatických kreditů. Neexistuje žádné období zamrznutí úrovně."
+            },
+            "2": {
+              "q": "Jaká zpracovatelská infrastruktura izoluje platební vektory?",
+              "a": "Globální směrování peněz se zásadně odkazuje na rozhraní serverů Creem coby merchant of record (oficiálního prodejce), což zaručuje přísnou telemetrii PCI-DSS a integritu zpracování. Nasazení Enterprise mohou integrovat soukromé finanční auditní potrubí řízené vlastními závazky SLA."
+            }
+          }
+        },
+        "2": {
+          "name": "Vrstva systémového inženýrství",
+          "questions": {
+            "0": {
+              "q": "Které základní inteligentní abstrakce jsou podporovány nativně?",
+              "a": "Primární interakční logika předepisuje nativní interoperabilitu přes standardní specifikace OpenAI, Anthropic a Gemini. To poskytuje obrovskou flexibilitu k efektivnímu výměně koncových bodů pro uvažování pomocí mapování proměnných bez degradace upstreamové komerční logiky."
+            },
+            "1": {
+              "q": "Jak je řešeno riziko obfuskace databáze?",
+              "a": "Implementace výchozími nastaveními intrinsicky nasazuje politiky zabezpečení na úrovni řádků Postgres (RLS) těsně spjaté s našimi primitivy pro směrování řešení nájemce bez serveru. To zajišťuje, že tvrdé particionování aktivně zabraňuje kritické kontaminaci dat na úrovni aplikace a překryvu provádění."
+            },
+            "2": {
+              "q": "Existují nějaká architektonická omezení pro samostatně spravovaná nasazení?",
+              "a": "Zcela žádná. Topologie je plně oddělená. Pokud prostředí spouští nezávislé Node.js runtime vedle zdravých PostgreSQL clusterů, plná funkčnost je inherentně zachována."
+            }
+          }
+        },
+        "3": {
+          "name": "Systémová integrita",
+          "questions": {
+            "0": {
+              "q": "Jaké protokoly určují mechanickou obranu perimetru?",
+              "a": "Mechanismy provádějí povinné šifrování TLS během přenosu, deterministické algoritmy hashování pro mapování tajných klíčů a všudypřítomné zaznamenávání událostí mutací, které jsou přísně zapisovány do interních časových řad sledovacích rejstříků."
+            },
+            "1": {
+              "q": "Respektuje topologie hlavní mezinárodní předpisy o ochraně soukromí?",
+              "a": "Ano, hluboce. Obchodní moduly poskytují algoritmus implementace přímo z krabice cílící na stavy stažení souhlasu, logiku tvrdého smazání a hluboké exportní dotazy, které optimálně odpovídají GDPR a lokalizovaným regulačním rámcům."
+            },
+            "2": {
+              "q": "Co se provede při anomálním katastrofickém incidentu?",
+              "a": "Automatické hlídače okamžitě upozorní základní inženýrské vektory, kteří vynutí blokování obvodů a provedou rychlou triáž. Řízeno pokročilou příručkou řešení, plně transparentní Incident Postmortems jsou univerzálně šířeny v absolutním časovém okně 72 hodin."
+            }
+          }
+        },
+        "4": {
+          "name": "Směrnice technické asistence",
+          "questions": {
+            "0": {
+              "q": "Jak se řeší odstraňování provozních úzkých míst?",
+              "a": "Počáteční vektory triáže cílí na pečlivě udržovanou a recenzovanou matici dokumentace a ověřené interakce komunity. Získání standardní nebo podnikové licence odemkne přístup k soukromým eskalačním frontám řešeným prostřednictvím přímých interních inženýrských uzlů."
+            },
+            "1": {
+              "q": "Poskytujete fyzické nebo specializované operační integrace prostředí?",
+              "a": "To spadá pod naši špičkovou prémiovou výkonnostní vrstvu pro korporátní konglomeráty nejvyšší úrovně. Naši nejzkušení architekti nasazují outly k provedení auditu kódu vůči legacy architektuře, správě citlivých cloudových přesunů a validaci vysoce izolovaných síťových partií."
+            }
+          }
+        }
+      },
+      "ctaHeading": "Potřebujete okamžitou technickou synchronizaci?",
+      "ctaDescription": "Ať už validujete specifický schéma chování API nebo provádíte dlouhodobé integrační dohody, rozhraní přímo s inženýrskou hierarchií.",
+      "ctaButton": "Získat pokyny k integraci",
+      "ctaEmail": "Odeslat přímou zprávu"
+    },
+    "privacy": {
+      "title": "Protokol ochrany soukromí a informací — {brandName}",
+      "description": "Podrobně popisuje, jak mechanika infrastruktury řídí autonomii uživatele a izolaci strojových dat.",
+      "heading": "Směrnice ochrany informací",
+      "effectiveDate": "Datum účinnosti",
+      "lastUpdated": "Poslední aktualizace",
+      "dates": {
+        "effective": "1. ledna 2025",
+        "updated": "1. ledna 2025"
+      },
+      "intro": "Společnost {brandName} (\"Společnost\", \"my\", \"nás\" nebo \"náš\") se zavazuje chránit vaše soukromí. Tato zásada ochrany osobních údajů vysvětluje, jak sbíráme, používáme, zveřejňujeme a chráníme vaše informace při používání našich webových stránek, aplikací a služeb (dále jen \"Služby\").",
+      "infoWeCollect": {
+        "title": "1. Informace, které sbíráme",
+        "youProvide": {
+          "title": "1.1 Informace, které nám poskytnete",
+          "intro": "Sbíráme informace, které nám přímo poskytnete, včetně:",
+          "items": {
+            "0": {
+              "label": "Informace o účtu",
+              "desc": "Jméno, e-mailová adresa, heslo a údaje o organizaci při vytváření účtu."
+            },
+            "1": {
+              "label": "Informace o profilu",
+              "desc": "Profilová fotografie, pracovní pozice, název společnosti a další volitelné informace."
+            },
+            "2": {
+              "label": "Platební údaje",
+              "desc": "Fakturační adresa a podrobnosti o platební metodě (bezpečně zpracovávané prostřednictvím Creem)."
+            },
+            "3": {
+              "label": "Komunikace",
+              "desc": "Zprávy, zpětnou vazbu a další komunikaci, kterou nám zašlete."
+            },
+            "4": {
+              "label": "Obsah",
+              "desc": "Jakýkoli obsah, který vytvoříte, nahrajete nebo uložíte pomocí našich služeb."
+            }
+          }
+        },
+        "automatic": {
+          "title": "1.2 Informace shromažďované automaticky",
+          "intro": "Při používání našich služeb automaticky shromažďujeme určité informace:",
+          "items": {
+            "0": {
+              "label": "Informace o zařízení",
+              "desc": "Typ zařízení, operační systém, typ prohlížeče a jedinečné identifikátory zařízení."
+            },
+            "1": {
+              "label": "Informace o používání",
+              "desc": "Zobrazené stránky, používané funkce, provedené akce a čas strávený ve službách."
+            },
+            "2": {
+              "label": "Protokoly",
+              "desc": "IP adresa, časy přístupu, odkazující URL adresy a protokoly systémové aktivity."
+            },
+            "3": {
+              "label": "Informace o poloze",
+              "desc": "Obecná poloha na základě IP adresy (nesbíráme přesnou geolokaci)."
+            }
+          }
+        }
+      },
+      "howWeUse": {
+        "title": "2. Jak používáme vaše údaje",
+        "intro": "Používáme informace, které sbíráme, k tomu, abychom mohli:",
+        "items": {
+          "0": {
+            "label": "Poskytovat služby",
+            "desc": "Provozovat, udržovat a vylepšovat naše služby."
+          },
+          "1": {
+            "label": "Zpracovávat transakce",
+            "desc": "Zpracovávat platby, fakturaci a související operace."
+          },
+          "2": {
+            "label": "Komunikovat",
+            "desc": "Posílat oznámení o službách, aktualizace a marketingové zprávy (s vaším souhlasem)."
+          },
+          "3": {
+            "label": "Přizpůsobovat",
+            "desc": "Přizpůsobit vaše prostředí a poskytovat relevantní doporučení."
+          },
+          "4": {
+            "label": "Analyzovat",
+            "desc": "Rozumět vzorcům používání a vylepšovat naše služby."
+          },
+          "5": {
+            "label": "Chránit",
+            "desc": "Zjišťovat, předcházet a řešit podvody, zneužívání a bezpečnostní incidenty."
+          }
+        }
+      },
+      "howWeShare": {
+        "title": "3. Jak sdílíme vaše údaje",
+        "intro": "Vaše údaje můžeme sdílet v následujících případech:",
+        "serviceProviders": {
+          "title": "3.1 Poskytovatelé služeb",
+          "intro": "Informace sdílíme s poskytovateli třetích stran, kteří poskytují služby v naší jméno, včetně:",
+          "items": {
+            "0": {
+              "label": "Infrastruktura",
+              "desc": "Cloudové hostování (Fly.io, Cloudflare), databázové služby"
+            },
+            "1": {
+              "label": "Zpracování plateb",
+              "desc": "Creem pro bezpečné zpracování plateb"
+            },
+            "2": {
+              "label": "Ověřování",
+              "desc": "Better Auth pro správu identit"
+            },
+            "3": {
+              "label": "Analytika",
+              "desc": "PostHog, Vercel Analytics pro analýzu využití"
+            }
+          }
+        },
+        "businessTransfers": {
+          "title": "3.2 Převody podnikání",
+          "content": "Pokud se účastníme fúze, akvizice nebo prodeje aktiv, vaše údaje mohou být přeneseny jako součást této transakce."
+        },
+        "legalRequirements": {
+          "title": "3.3 Právní požadavky",
+          "content": "Informace můžeme zveřejnit, pokud to vyžaduje zákon, právní řízení nebo žádost vlády, nebo k ochraně našich práv, soukromí, bezpečnosti nebo majetku."
+        }
+      },
+      "yourRights": {
+        "title": "4. Vaše práva a možnosti",
+        "accessPortability": {
+          "title": "4.1 Přístup a přenositelnost",
+          "content": "K vašim osobním údajům se můžete dostat prostřednictvím nastavení účtu a požádat o kopii vašich dat v přenosném formátu."
+        },
+        "correction": {
+          "title": "4.2 Oprava",
+          "content": "Informace o účtu můžete kdykoli aktualizovat prostřednictvím dashboardu."
+        },
+        "deletion": {
+          "title": "4.3 Smazání",
+          "content": "Můžete požádat o smazání svého účtu a souvisejících dat prostřednictvím nastavení nebo kontaktováním nás."
+        },
+        "marketing": {
+          "title": "4.4 Marketingové komunikace",
+          "content": "Můžete se odhlásit z marketingových e-mailů kliknutím na \"odhlásit\" v libovolném marketingovém e-mailu nebo aktualizací svých preferencí."
+        }
+      },
+      "dataSecurity": {
+        "title": "5. Zabezpečení dat",
+        "intro": "Implementujeme vhodné technické a organizační opatření k ochraně vašich informací, včetně:",
+        "items": {
+          "0": "Šifrování dat při přenosu (TLS) a v klidu",
+          "1": "Pravidelné bezpečnostní hodnocení a penetrační testování",
+          "2": "Kontrola přístupu a požadavky na ověřování",
+          "3": "Monitorování a protokolování aktivity systému"
+        }
+      },
+      "ccpa": {
+        "title": "6. Kalifornská práva soukromí (CCPA)",
+        "intro": "Pokud jste rezidentem Kalifornie, máte specifická práva týkající se vašich osobních údajů:",
+        "items": {
+          "0": {
+            "label": "Právo na informace",
+            "desc": "Požádejte o zveřejnění informací, které sbíráme, používáme a sdílíme."
+          },
+          "1": {
+            "label": "Právo na smazání",
+            "desc": "Požádejte o smazání vašich osobních údajů."
+          },
+          "2": {
+            "label": "Právo na výjimku",
+            "desc": "Vyloučte se z prodeje osobních údajů (vaše data neprodáváme)."
+          },
+          "3": {
+            "label": "Právo na nediskriminaci",
+            "desc": "Nediskriminujeme vás za uplatňování vašich práv."
+          }
+        }
+      },
+      "gdpr": {
+        "title": "7. Evropská práva soukromí (GDPR)",
+        "intro": "Pokud se nacházíte v EHP, ve Velké Británii nebo ve Švýcarsku, máte v souladu s GDPR další práva:",
+        "items": {
+          "0": {
+            "label": "Právní základ",
+            "desc": "Vaše údaje zpracováváme na základě plnění smlouvy, oprávněných zájmů nebo souhlasu."
+          },
+          "1": {
+            "label": "Práva",
+            "desc": "Přístup, oprava, smazání, přenositelnost, omezení a námitka."
+          },
+          "2": {
+            "label": "DPO",
+            "desc": "Můžete kontaktovat našeho správce ochrany osobních údajů na adrese dpo@{domain}."
+          }
+        }
+      },
+      "contactUs": {
+        "title": "8. Kontaktujte nás",
+        "intro": "Pokud máte otázky k této zásadě ochrany osobních údajů, kontaktujte nás:",
+        "company": "{brandName} Co., Ltd."
+      }
+    },
+    "refund": {
+      "title": "Protokoly pro anomálie transakcí — {brandName}",
+      "description": "Přesné určení parametrů vrácení prostředků napříč různými modely strukturovaného zapojení.",
+      "heading": "Rámec řešení sporů",
+      "effectiveDate": "Datum účinnosti",
+      "lastUpdated": "Datum poslední aktualizace",
+      "dates": {
+        "effective": "1. ledna 2025",
+        "updated": "1. ledna 2025"
+      },
+      "intro": "V {brandName} chceme, abyste byli s našimi službami naprosto spokojeni. Tato politika vrácení prostředků popisuje okolnosti, za kterých je možné vrácení prostředků, a proces pro jejich žádost.",
+      "subscriptionPlans": {
+        "title": "Plány předplatného",
+        "monthly": {
+          "title": "Měsíční předplatné",
+          "items": {
+            "0": {
+              "label": "Zrušení",
+              "desc": "Měsíční předplatné můžete kdykoli zrušit"
+            },
+            "1": {
+              "label": "Poměrné vrácení prostředků",
+              "desc": "Nabízíme pouze celkové vrácení peněz, ne pro-rata vrácení za částečné měsíce"
+            },
+            "2": {
+              "label": "Přístup",
+              "desc": "Přístup k placeným funkcím si zachováváte do konce svého fakturačního období"
+            },
+            "3": {
+              "label": "Automatické prodloužení",
+              "desc": "Předplatné se automaticky prodlužuje, pokud není zrušeno"
+            }
+          }
+        },
+        "annual": {
+          "title": "Roční předplatné",
+          "items": {
+            "0": {
+              "label": "14denní záruka vrácení peněz",
+              "desc": "Noví roční předplatitelé mohou požádat o plné vrácení peněz do 14 dnů od počátečního nákupu"
+            },
+            "1": {
+              "label": "Po 14 dnech",
+              "desc": "Vrácení peněz je obecně po 14denní lhůtě již možné"
+            },
+            "2": {
+              "label": "Zrušení",
+              "desc": "Předplatné můžete kdykoliv zrušit, ale zůstane aktivní do konce ročního období"
+            },
+            "3": {
+              "label": "Žádné pro-rata vrácení",
+              "desc": "Nabízíme pouze celkové vrácení peněz, ne částečné vrácení za nepoužité měsíce"
+            }
+          }
+        }
+      },
+      "eligibleScenarios": {
+        "title": "Případy způsobilé k vrácení peněz",
+        "intro": "Žádosti o vrácení peněz zvážíme v následujících případech:",
+        "serviceIssues": {
+          "title": "1. Problémy se službou",
+          "items": {
+            "0": "Výpadky služby, které výrazně omezují vaši schopnost používat základní funkce",
+            "1": "Technické problémy, které se nám nepodaří vyřešit v rozumném časovém horizontu",
+            "2": "Funkce výrazně odlišné od těch, které byly inzerovány"
+          }
+        },
+        "billingErrors": {
+          "title": "2. Chyby v fakturaci",
+          "items": {
+            "0": "Duplicitní poplatky",
+            "1": "Nesprávné částky fakturace",
+            "2": "Neoprávněné poplatky (po ověření)"
+          }
+        },
+        "exceptionalCircumstances": {
+          "title": "3. Výjimečné okolnosti",
+          "items": {
+            "0": "Doložené lékařské nouzové situace",
+            "1": "Přírodní katastrofy ovlivňující váš podnik",
+            "2": "Ostatní okolnosti posuzované individuálně"
+          }
+        }
+      },
+      "nonRefundable": {
+        "title": "Nevracitelné položky",
+        "intro": "Následující položky obvykle nejsou způsobilé k vrácení peněz:",
+        "items": {
+          "0": {
+            "label": "Poplatky na základě využití",
+            "desc": "Volání API, spotřeba AI tokenů nebo využitá úložiště"
+          },
+          "1": {
+            "label": "Doplňky a příplatky",
+            "desc": "Jednorázové nákupy nebo doplňkové služby"
+          },
+          "2": {
+            "label": "Podnikové smlouvy",
+            "desc": "Vlastní dohody mají vlastní podmínky"
+          },
+          "3": {
+            "label": "Dobrovolné zrušení",
+            "desc": "Po uplynutí lhůty pro nárok na vrácení"
+          },
+          "4": {
+            "label": "Porušení podmínek",
+            "desc": "Účty ukončené kvůli porušení pravidel"
+          }
+        }
+      },
+      "howToRequest": {
+        "title": "Jak požádat o vrácení peněz",
+        "step1": {
+          "title": "Krok 1: Kontaktujte podporu",
+          "intro": "Napište nám na billing@{domain} s těmito údaji:",
+          "items": {
+            "0": "E-mailová adresa vašeho účtu",
+            "1": "Plán předplatného a fakturační období",
+            "2": "Důvod žádosti o vrácení peněz",
+            "3": "Příslušnou dokumentaci"
+          }
+        },
+        "step2": {
+          "title": "Krok 2: Proces přezkumu",
+          "items": {
+            "0": "Vaši žádost prozkoumáme do 5 pracovních dnů",
+            "1": "Můžeme požádat o dodatečné informace",
+            "2": "Rozhodnutí obdržíte písemně e-mailem"
+          }
+        },
+        "step3": {
+          "title": "Krok 3: Zpracování vrácení",
+          "intro": "Pokud bude žádost schválena:",
+          "items": {
+            "0": "Vrácení se provádí na původní platební metodu",
+            "1": "Vrácení na kreditní kartu se obvykle objeví do 5–10 pracovních dnů",
+            "2": "Doba zpracování bankou se může lišit"
+          }
+        }
+      },
+      "planChanges": {
+        "title": "Změny plánu",
+        "upgrades": {
+          "title": "Upgrade",
+          "items": {
+            "0": "Upgrade platí okamžitě",
+            "1": "Za zbytek fakturačního období vám bude účtován poměrný rozdíl",
+            "2": "Za předchozí plán se nevyplácí vrácení"
+          }
+        },
+        "downgrades": {
+          "title": "Downgrade",
+          "items": {
+            "0": "Downgrade platí od dalšího fakturačního období",
+            "1": "Do té doby si zachováváte přístup k aktuálním funkcím",
+            "2": "Žádné částečné vrácení prostředků za aktuální období"
+          }
+        }
+      },
+      "freeTrial": {
+        "title": "Zkušební verze zdarma",
+        "items": {
+          "0": "Zkušební verze zdarma nevyžaduje platební údaje",
+          "1": "Během zkušební doby nedojde k žádnému úhradu",
+          "2": "Budete upozorněni před zahájením jakéhokoli úhrady"
+        }
+      },
+      "disputeResolution": {
+        "title": "Řešení sporů",
+        "intro": "Pokud nesouhlasíte s naším rozhodnutím o vrácení prostředků:",
+        "steps": {
+          "0": "Odpovězte na e-mail s rozhodnutím a přidejte další informace",
+          "1": "Požádejte o eskalaci na vedoucího",
+          "2": "Kontaktujte nás na adrese legal@{domain} pro další přezkum"
+        }
+      },
+      "contactUs": {
+        "title": "Kontaktujte nás",
+        "intro": "Pro žádosti o vrácení prostředků nebo dotazy týkající se této politiky:",
+        "company": "{brandName} Co., Ltd.",
+        "billingLabel": "Fakturace",
+        "supportLabel": "Podpora",
+        "legalLabel": "Právní oddělení",
+        "responseNote": "Snažíme se reagovat na všechny žádosti o vrácení peněz do 5 pracovních dnů.",
+        "termsNote": "Tato politika je součástí našich",
+        "termsLink": "Podmínek služby",
+        "termsAgreement": "Používáním {brandName} souhlasíte s těmito podmínkami vrácení peněz."
+      }
+    },
+    "terms": {
+      "title": "Podmínky služby — {brandName}",
+      "description": "Podmínky služby upravující váš přístup a používání webu, aplikací, API a služeb {brandName}.",
+      "heading": "Podmínky služby",
+      "effectiveDate": "Datum účinnosti",
+      "lastUpdated": "Poslední aktualizace",
+      "dates": {
+        "effective": "1. ledna 2025",
+        "updated": "1. ledna 2025"
+      },
+      "intro1": "Vítejte na {brandName}! Tyto podmínky služby (\"Podmínky\") upravují váš přístup a používání webu, aplikací, API a služeb (dogether „Služby“) poskytnutých společností {brandName} Co., Ltd. (\"{brandName}\", \"Společnost\", \"my\", \"nás\" nebo \"naše\").",
+      "intro2": "Přístupem nebo použitím našich Služeb souhlasíte s tím, že budete vázáni těmito Podmínkami a naší",
+      "intro2PrivacyLink": "Zásadou ochrany osobních údajů",
+      "intro2End": ". Pokud s těmito Podmínkami nesouhlasíte, nepoužívejte naše Služby.",
+      "acceptance": {
+        "title": "1. Přijetí podmínek",
+        "eligibility": {
+          "title": "1.1 Způsobilost",
+          "intro": "Pro používání našich služeb musíte:",
+          "items": {
+            "0": "Mít alespoň 18 let nebo věk plnoletosti ve vaší jurisdikci",
+            "1": "Mít oprávnění uzavřít tyto podmínky ve vlastním jménem nebo jménem vaší organizace",
+            "2": "Nemít zakázáno používat naše služby podle platné legislativy"
+          }
+        },
+        "orgAccounts": {
+          "title": "1.2 Organizační účty",
+          "content": "Pokud používáte naše služby jménem organizace, prohlašujete, že máte oprávnění zavázat tuto organizaci těmito podmínkami."
+        }
+      },
+      "services": {
+        "title": "2. Popis služeb",
+        "intro": "{brandName} poskytuje SaaS platformu, která zahrnuje:",
+        "items": {
+          "0": "Funkce poháněné AI a generování obsahu",
+          "1": "Nástroje pro správu obsahu a komunitu",
+          "2": "Doporučovací systémy",
+          "3": "Integrace e-commerce",
+          "4": "Funkce Web3",
+          "5": "Analytika a reporty"
+        }
+      },
+      "account": {
+        "title": "3. Registrace účtu",
+        "creation": {
+          "title": "3.1 Vytvoření účtu",
+          "intro": "Pro přístup k některým funkcím musíte vytvořit účet. Souhlasíte s tím, že:",
+          "items": {
+            "0": "Uvedete přesné a úplné informace",
+            "1": "Budete udržovat bezpečnost přihlašovacích údajů vašeho účtu",
+            "2": "Okamžitě aktualizujete své informace, pokud se změní",
+            "3": "Přijímáte odpovědnost za všechny aktivity pod vaším účtem"
+          }
+        }
+      },
+      "billing": {
+        "title": "4. Předplatné a fakturace",
+        "pricing": {
+          "title": "4.1 Ceny",
+          "content": "Naše služby jsou nabízeny v rámci různých předplatných plánů, jak je popsáno na naší stránce Ceny. Ceny se mohou měnit s 30denním předem upozorněním."
+        },
+        "payment": {
+          "title": "4.2 Platba",
+          "items": {
+            "0": "Předplatné je fakturováno předem měsíčně nebo ročně",
+            "1": "Všechny poplatky jsou nevracitelné, pokud není uvedeno jinak v našem",
+            "2": "Zmocňujete nás k naúčtování platby vaším platebním prostředkem pro příslušné poplatky",
+            "3": "Pro bezpečné zpracování plateb používáme Creem",
+            "1RefundLink": "Zásady vrácení peněz"
+          }
+        }
+      },
+      "acceptableUse": {
+        "title": "5. Povolené používání",
+        "prohibited": {
+          "title": "5.1 Zakázané činnosti",
+          "intro": "Souhlasíte s tím, že NEBUDETE:",
+          "items": {
+            "0": "Porušovat žádné platné zákony, předpisy nebo práva třetích stran",
+            "1": "Používat Služby k přenosu malware, spamu nebo škodlivého obsahu",
+            "2": "Pokoušet se získat neoprávněný přístup k našim systémům",
+            "3": "Narušovat nebo ovlivňovat integritu nebo výkon našich Služeb",
+            "4": "Používat automatizované nástroje k scrapingu, kopírování nebo extrahování dat bez povolení",
+            "5": "Provádět reverzní inženýrství, dekomilaci nebo rozkládání našich Služeb",
+            "6": "Používat naše funkce AI k generování nelegálního, škodlivého nebo klamavého obsahu"
+          }
+        }
+      },
+      "ip": {
+        "title": "6. Duševní vlastnictví",
+        "ours": {
+          "title": "6.1 Naše duševní vlastnictví",
+          "content": "{brandName} a jeho licenční dárci vlastní všechna práva, titul a zájem na Službách, včetně všeho softwaru, návrhů, ochranných známek a obsahu vytvořeného námi."
+        },
+        "yours": {
+          "title": "6.2 Váš obsah",
+          "content": "Zůstáváte vlastníkem obsahu, který vytvoříte nebo nahrajete (\"Váš obsah\"). Používáním našich Služeb nám udělujete celosvětové, neexkluzivní, bezplatné licenci k používání, ukládání, zpracování a zobrazování Vašeho obsahu výhradně za účelem poskytování Služeb vám."
+        }
+      },
+      "warranties": {
+        "title": "7. Vyloučení záruk",
+        "content": "SLUŽBY JSOU POSKYTOVÁNY \"JAK JSOU\" A \"JAK JSOU DOSTUPNÉ\" BEZ ZÁRUK JAKÉHOKOLI DRUHU, AŽ NA PŘÍPADNÉ ZÁKONNÉ, AŽ NA PŘÍPADNÉ ZÁRUKY OBCHODOVATELNOSTI, VHODNOSTI PRO KONKRÉTNÍ ÚČEL, TITULU A NEPORUŠOVÁNÍ PRÁV TŘETÍCH STRAN."
+      },
+      "liability": {
+        "title": "8. Omezení odpovědnosti",
+        "para1": "V MAXIMÁLNÍ MÍŘE POVOLENÉ ZÁKONEM NENÍ {brandNameUpper} ODPOVĚDNÁ ZA NEPŘÍMÉ, NÁHODNÉ, SPECIÁLNÍ, DŮSLEDKOVÉ NEBO TRESTNÍ ŠKODY, ANI ZA ZTRÁTU ZISKU, DAT, POUŽITÍ NEBO DŮVĚRY.",
+        "para2": "V ŽÁDNÉM PŘÍPADĚ NESMÍ NÁŠ CELKOVÝ ROZSAH ODPOVĚDNOSTI PŘEKROČIT VĚTŠÍ Z NÁSLEDUJÍCÍCH ČÁSTEK: (A) ČÁSTKA, KTEROU JSTE NÁM ZAPLATILI BĚHEM 12 MĚSÍCŮ PŘED PODÁNÍM NÁROKU, NEBO (B) 100 USD."
+      },
+      "termination": {
+        "title": "9. Ukončení",
+        "byYou": {
+          "title": "9.1 Vámi",
+          "content": "Své konto můžete kdykoli ukončit prostřednictvím nastavení účtu. Po ukončení přijdete o přístup k Službám."
+        },
+        "byUs": {
+          "title": "9.2 Námi",
+          "intro": "Můžeme pozastavit nebo ukončit váš účet, pokud:",
+          "items": {
+            "0": "Porušíte tyto Podmínky",
+            "1": "Zapojíte se do podvodné nebo nezákonné činnosti",
+            "2": "Nezaplatíte příslušné poplatky",
+            "3": "Vytvoříte pro nás riziko nebo právní vystavení"
+          }
+        }
+      },
+      "disputes": {
+        "title": "10. Řešení sporů",
+        "informal": {
+          "title": "10.1 Neformální řešení",
+          "content": "Před zahájením formálního řízení souhlasíte s tím, že nás kontaktujete na adrese legal@{domain}, abyste se pokusili spory vyřešit neformálně."
+        },
+        "governingLaw": {
+          "title": "10.2 Řídicí právo",
+          "content": "Tyto podmínky se řídí zákony státu Delaware bez ohledu na zásady kolizního práva."
+        }
+      },
+      "contactUs": {
+        "title": "11. Kontaktujte nás",
+        "intro": "Pokud máte otázky týkající se těchto podmínek, kontaktujte nás:",
+        "company": "{brandName} Co., Ltd.",
+        "emailLabel": "E-mail",
+        "supportLabel": "Podpora"
+      },
+      "acknowledgement": "Používáním služby {brandName} potvrzujete, že jste si přečetli, porozuměli a souhlasíte s tím, že budete vázáni těmito podmínkami služby."
+    }
+  },
+  "metadata": {
+    "title": "{brandName} Agent OS | Startup Agent OS",
+    "description": "Startup Agent OS pro zakladatele vstupující na globální trh. Produkční základna Next.js s řízenou architekturou, autentizací, fakturací, agenty a i18n — vytvořeno pro AI kódovací agenty a seriózní týmy."
+  },
+  "microLanding": {
+    "architecture": {
+      "badge": "SYSTÉMOVÁ TOPOLOGIE",
+      "title": "Transparentní architektura, žádné černé skříňky.",
+      "description": "{productName} je navržen s hypermodulární strukturou Turborepo, což vám dává plnou kontrolu nad celým životním cyklem vašeho softwaru.",
+      "database": {
+        "title": "PostgreSQL + Prisma v7",
+        "desc": "Plně typovaný ORM s politikami Row-Level Security (RLS) zabudovanými nativně."
+      },
+      "auth": {
+        "title": "Better Auth Multi-Tenant / Vlastní identita",
+        "desc": "Autentizační brána připravená na SOC2 podporující přepínání B2B organizací a RBAC."
+      }
+    },
+    "pricing": {
+      "title": "Stavět můžete zdarma. Platíte, jen když potřebujete, abychom ručili.",
+      "description": "Postavit komerční produkt na {brandName} nic nestojí — žádný poplatek, žádný licenční klíč, žádná registrace, žádný copyleft. Placené úrovně prodávají podporu, SLA, odškodnění a práva k ochranné známce, nikdy povolení k použití.",
+      "socialProofText": "MIT na npm · FSL-1.1-ALv2 v repozitáři, po dvou letech přechází na Apache-2.0 · komerční použití zdarma v jakémkoli rozsahu.",
+      "community": {
+        "badge": "KOMUNITA",
+        "price": "Zdarma",
+        "period": "navždy",
+        "desc": "Pro všechny. Jakákoli velikost týmu, jakékoli tržby. Komerční použití s uzavřeným kódem je zahrnuto, bez registrace a bez povinnosti uvádět autorství.",
+        "cta": "npx create-sailor",
+        "f1": "Kompletní jádro SaaS Next.js 16, všechny balíčky součástí",
+        "f2": "Komerční použití s uzavřeným kódem při jakékoli velikosti týmu či tržbách",
+        "f3": "Celý stack: Auth, Platby, Organizace, API, E-mail, i18n, Úlohy na pozadí, Úložiště a další",
+        "f4": "Marketingové funkce: Blog, vstupní stránka, SEO, Analytics",
+        "f5": "Veřejné issues, Discussions a Discord — dle možností, bez záruky odpovědi"
+      },
+      "team": {
+        "badge": "TÝM",
+        "price": "2 000 $",
+        "period": "rok",
+        "desc": "For teams that cannot put a critical path on community response times.",
+        "cta": "Získat podporu {brandName}",
+        "f1": "Soukromý kanál podpory (e-mail + sdílený Slack nebo Discord)",
+        "f2": "První odpověď zaručeně do dvou pracovních dnů",
+        "f3": "Přednostní třídění chyb před issues komunity",
+        "f4": "Pomoc s upgrady a předběžné upozornění na nekompatibilní změny",
+        "f5": "Vše z Komunity"
+      },
+      "enterprise": {
+        "badge": "ENTERPRISE",
+        "price": "Od 30 000 $",
+        "period": "rok",
+        "desc": "Pro organizace, jejichž nákup, právní oddělení nebo bezpečnostní prověrka vyžaduje protistranu, která podepíše.",
+        "cta": "Kontaktovat obchod",
+        "f1": "SLA odezvy — 4 pracovní hodiny standardně, 1 hodina při výpadku produkce",
+        "f2": "Odškodnění a smluvní závazek k bezpečnostním záplatám",
+        "f3": "Podepsaná smlouva o zpracování údajů, balíček shody a závazek kontinuity",
+        "f4": "Práva k ochranné známce a white label plus výjimka z konkurenčního použití",
+        "f5": "Větev dlouhodobé podpory a inženýrská podpora privátního nasazení",
+        "f6": "Vše z Týmu"
+      }
+    },
+    "faq": {
+      "title": "FAQ k cenám a licencování",
+      "description": "Otázky k licenčním úrovním, vrácení peněz a právům k komerčnímu využití.",
+      "q1": {
+        "q": "Je Sailor měsíční SaaS předplatné?",
+        "a": "Ne. Tato cenová politika platí pro licenční smlouvy k zdrojovému kódu Sailor: Independent je zdarma, Startup se fakturuje ročně a Enterprise je na míru."
+      },
+      "q2": {
+        "q": "Nabízíte vrácení peněz?",
+        "a": "Komerční licence Startup zahrnuje 14denní lhůtu na vrácení peněz za počáteční nákupy. Podmínky Enterprise se řeší v podepsané smlouvě."
+      },
+      "q3": {
+        "q": "Mohu použít Sailor pro práci pro klienty?",
+        "a": "Ano. Komerční licence umožňuje vašemu týmu vydávat uzavřené zdrojové produkty pro klienty nebo interní produkty v rámci licencovaného rozsahu; práva na bílou značku vyžadují schválení Enterprise."
+      },
+      "contactNudge": "Stále máte otázky? Promluvte si s týmem {brandName} →"
+    },
+    "cta": {
+      "eyebrow": "Začněte",
+      "title": "Přestaňte konfigurovat. Začněte budovat.",
+      "description": "Inicializujte škálovatelnou SaaS architekturu lokálně pomocí CLI {brandName}.",
+      "license": "Open source pod licencí FSL-1.1-ALv2. Karta není vyžadována."
+    },
+    "capability": {
+      "badge": "Funkce pro enterprise",
+      "title": "Plně typované, rozšiřitelné jádro.",
+      "multiTenant": {
+        "title": "Nativní zabezpečení na úrovni řádků",
+        "desc": "Každý dotaz na databázi je přísně omezen aktuálním kontextem nájemce.",
+        "cta": "Přečíst si filozofii databáze"
+      },
+      "aiGateway": {
+        "title": "Univerzální AI brána",
+        "desc": "Plynule směrujte požadavky na OpenAI, Anthropic nebo open-source modely.",
+        "cta": "Prozkoumat AI SDK handler"
+      },
+      "rbac": {
+        "title": "Detailní řízení přístupu",
+        "desc": "Definujte role správce, člena a pozorovatele s vestavěnou strukturou politik.",
+        "cta": "Zobrazit dokumentaci RBAC"
+      },
+      "billing": {
+        "title": "Infrastruktura fakturace pro více poskytovatelů",
+        "desc": "Měřená spotřeba, webhooky předplatného a samoslužné portály pro zákazníky.",
+        "cta": "Zobrazit architekturu fakturace"
+      }
+    },
+    "productDemo": {
+      "badge": "Ukázka produktu",
+      "title": "Podívejte se na platformu v akci.",
+      "description": "Tři plochy, které každé AI SaaS dodává hned první den — analytika, fakturace a pracovní prostory — běží na stejném typovaném jádru.",
+      "analytics": {
+        "label": "Analytika",
+        "desc": "Od příjmu událostí po dashboard s dotazy omezenými na tenanta a bez lepicího kódu."
+      },
+      "billing": {
+        "label": "Fakturace",
+        "desc": "Předplatné, oprávnění a měření využití napojené na poskytovatele podle vašeho výběru."
+      },
+      "workspaces": {
+        "label": "Pracovní prostory",
+        "desc": "Multi-tenant organizace, pozvánky a role se zabezpečením na úrovni řádků ve výchozím nastavení."
+      }
+    },
+    "workflow": {
+      "badge": "Rychlost",
+      "title": "Od nuly k produkci v rekordním čase.",
+      "step1": {
+        "title": "1. Klonovat",
+        "desc": "Okamžitě naklonujte monorepo {brandName} a spusťte pnpm install."
+      },
+      "step2": {
+        "title": "2. Konfigurovat",
+        "desc": "Nastavte Prisma, Better Auth a Creem prostřednictvím interaktivního CLI během několika minut."
+      },
+      "step3": {
+        "title": "3. Vytvořit",
+        "desc": "Soustřeďte se na produktovou logiku a UI, zatímco základ platformy je již připraven."
+      },
+      "step4": {
+        "title": "4. Nasadit",
+        "desc": "Push na Vercel a AWS pro okamžité globální rozšíření."
+      },
+      "speedometer": {
+        "number": "10",
+        "unit": "min",
+        "subtitle": "ČAS NA TRH",
+        "comparison": "Ušetřete měsíce práce na platformě.",
+        "phases": {
+          "scaffold": "Inicializace",
+          "wire": "Jádro",
+          "ship": "Nasazení",
+          "scale": "Škálování",
+          "ongoing": "∞"
+        },
+        "cta": "Spusťte časovač"
+      },
+      "presetHint": {
+        "badge": "Přednastavený systém",
+        "message": "Jedna konfigurace. Všechny funkce. Vyberte přednastavení a nasadte.",
+        "detail": "Konfigurujte jednou, generujte vše — fakturaci, autentizaci, AI, i18n — z jedné přednastavené konfigurace.",
+        "readyStatus": "Přednastavený systém připraven"
+      }
+    }
+  },
+  "featuresPage": {
+    "hero": {
+      "badge": "Možnosti platformy",
+      "headlinePrefix": "Vše, co potřebujete k tomu, abyste ",
+      "headlineHighlight": "nasadili s jistotou.",
+      "description": "{brandName} je plnohodnotná full-stack SaaS platforma — AI, fakturace, multi-tenancy, observability a bezpečnost zabudované od prvního dne. Přestaňte stavět vrstvu platformy znovu."
+    },
+    "sections": {
+      "exploreFeature": "Prozkoumat funkci",
+      "ai_category": "AI a inteligence",
+      "ai_f1_title": "Chat dokončování s více modely",
+      "ai_f1_desc": "Směrujte požadavky na Anthropic, OpenAI, Google nebo vlastní vyladěné modely. Streaming, vizuální zpracování a volání funkcí jsou podporovány ihned po instalaci.",
+      "ai_f2_title": "Sémantické embeddingy",
+      "ai_f2_desc": "Generujte a ukládejte vektorové embeddingy pomocí pgvector. Podporuje sémantické vyhledávání, RAG pipeline a doporučovací systémy.",
+      "ai_f3_title": "Měření využití AI",
+      "ai_f3_desc": "Kvóty podle plánu s sledováním využití — měřte AI tokeny, API volání a úložiště vůči real-time agregátům na ClickHouse.",
+      "multi_category": "Platforma pro více nájemců",
+      "multi_f1_title": "Izolace na úrovni organizace",
+      "multi_f1_desc": "Zabezpečení na úrovni řádků v Postgres zajišťuje, že nájemci nikdy nebudou mít přístup k datům jiných nájemců — vynuceno na úrovni databáze, ne jen aplikace.",
+      "multi_f2_title": "Multi-provider autentizace (Better Auth)",
+      "multi_f2_desc": "Multi-provider OAuth (Google, GitHub atd.) plus e-mail/heslo a magic-link — vše přes Better Auth pomocí jedné proměnné prostředí.",
+      "multi_f3_title": "Automatické zprovozňování nájemců",
+      "multi_f3_desc": "Když se nová organizace zaregistruje, automaticky vygenerujeme její první API klíč a odešleme značkový uvítací e-mail — bez manuálních kroků.",
+      "dx_category": "Zkušenost vývojářů",
+      "dx_f1_title": "Hashované API klíče",
+      "dx_f1_desc": "SHA-256 hashované klíče s prefixem (nbtr_live_…). Zobrazeny v čitelné podobě pouze jednou při vytvoření — bezpečnost bez zbytečných překážek.",
+      "dx_f2_title": "Middleware pro idempotenci",
+      "dx_f2_desc": "Přidejte hlavičku Idempotency-Key a libovolná POST žádost se stane bezpečnou pro opakování. Podporováno Redisem, 24hodinová cache, v souladu s návrhem IETF.",
+      "dx_f3_title": "Multi-protokolové API (REST + oRPC + tRPC)",
+      "dx_f3_desc": "REST/OpenAPI pro veřejná API, oRPC pro typově bezpečná volání z frontendu, tRPC pro kompatibilitu s T3 stackem. Všechny protokoly sdílejí stejné Zod kontrakty a middleware stack. Aktivujte jednotlivé protokoly přes přednastavenou konfiguraci.",
+      "billing_category": "Fakturace a monetizace",
+      "billing_f1_title": "Creem a platby pro Čínu",
+      "billing_f1_desc": "Vyberte si poskytovatele plateb: Creem pro globální podniky jako merchant of record, který sám vybírá a odvádí daň z prodeje/DPH, takže se nemusíte registrovat v každé zemi, nebo Alipay/WeChat Pay pro čínský trh. Jednoklikový checkout a samoobslužný fakturační portál.",
+      "billing_f2_title": "Vynucování kvót na základě využití",
+      "billing_f2_desc": "Reálné počítadla v Redisu sledují volání API a využití tokenů pro každého nájemce. Žádosti jsou bráněny na úrovni gateway, když jsou dosaženy limity.",
+      "billing_f3_title": "Synchronizace životního cyklu webhooků",
+      "billing_f3_desc": "Události platebních webhooků automaticky aktualizují plány organizací v vaší databázi prostřednictvím Inngest — žádné cron úlohy, žádné dotazování.",
+      "rel_category": "Spolehlivost",
+      "rel_f1_title": "Circuit breaker + opakování",
+      "rel_f1_desc": "Gateway a AI služba používají circuit breaker v režimu CLOSED/OPEN/HALF_OPEN s exponenciálním backoffem a jitterem — žádné kaskádové selhání.",
+      "rel_f2_title": "Fronta mrtvé pošty",
+      "rel_f2_desc": "Obsluha událostí, která vyčerpá 3 pokusy o opakování, se dostane do DLQ. Přehrajte je jednotlivě přes admin API bez opětovného nasazení.",
+      "rel_f3_title": "Upozornění na rychlost spotřeby SLO",
+      "rel_f3_desc": "Víceokenná upozornění ve stylu Google SRE se spouštějí při rychlosti spotřeby 14,4×, 6× a 3× před vyčerpáním rozpočtu chyb.",
+      "sec_category": "Zabezpečení",
+      "sec_f1_title": "Hlavičky založené na nonce CSP",
+      "sec_f1_desc": "Přísně dynamická Content Security Policy s nonce generovanými pro každý požadavek v middleware Auth — nikde žádné unsafe-inline.",
+      "sec_f2_title": "ModSecurity WAF",
+      "sec_f2_desc": "OWASP Core Rule Set v režimu DetectionOnly na každém vstupu. Omezení rychlosti na 30 RPS s tolerancí špiček prostřednictvím anotací nginx.",
+      "sec_f3_title": "SBOM + SLSA původ",
+      "sec_f3_desc": "Každé vydání generuje seznam softwarových komponent CycloneDX a atestaci původu SLSA, která se nahrává do vydání na GitHubu.",
+      "obs_category": "Observabilita",
+      "obs_f1_title": "Sledování OpenTelemetry",
+      "obs_f1_desc": "Distribuované stopy proudí z Next.js → Hono → Python mikroslužby prostřednictvím OTLP. Exportují se do Jaeger (vývoj) a Grafana Tempo (produkce).",
+      "obs_f2_title": "Nástěnky Grafana",
+      "obs_f2_desc": "Přehled platformy s více panely: dostupnost SLO, zbývající rozpočet chyb, saturace HPA, restarty podů a omezování CPU.",
+      "obs_f3_title": "Sledování chyb Sentry",
+      "obs_f3_desc": "Chyby na straně serveru i klienta se zachytávají s kontextem nájemce, ID požadavku a ID stopy pro korelaci napříč systémy.",
+      "data_category": "Data a analýza",
+      "data_f1_title": "ClickHouse OLAP sklad",
+      "data_f1_desc": "Události přistávají v ClickHouse pro rychlé analytické dotazy. dbt transformuje surové události na metriky růstu gold vrstvy viditelné v dashboardu.",
+      "data_f2_title": "Analýza trychtýřů",
+      "data_f2_desc": "Sledujte registrace → aktivace → konverze s atribucí na úrovni kohort. Příjmy na aktivního uživatele se počítají z gold vrstvy.",
+      "data_f3_title": "Kafka / příjem událostí",
+      "data_f3_desc": "Vysokoprovozní ingest událostí přes Inngest do ClickHouse bronze, s deduplikací v paměti a validací schématu na okraji gateway.",
+      "infra_category": "Infrastruktura",
+      "infra_f1_title": "GitOps s ArgoCD",
+      "infra_f1_desc": "Změny v hlavní větvi se automaticky synchronizují do clusteru. Self-heal vrací ruční úpravy kubectl. Sync windows vynucují bezpečné hodiny nasazení.",
+      "infra_f2_title": "PgBouncer sdílení připojení",
+      "infra_f2_desc": "PgBouncer v transakčním režimu před Postgres zvládne 1 000 připojení aplikace na 20 připojení Postgres. HA s 2 replikami.",
+      "infra_f3_title": "Horizontální a vertikální autoskalování",
+      "infra_f3_desc": "HPA škáluje podle CPU/paměti. VPA běží v režimu Off a poskytuje doporučení pro right-sizing. KEDA custom metrics plánováno pro v2."
+    }
+  },
+  "comingSoon": {
+    "badge": "🚧 V přípravě",
+    "description": {
+      "ideas": "Právě tvoříme úžasný geek-driven zážitek pro tuto sekci. Spustíme ji spolu s další velkou aktualizací architektury pipeline.",
+      "opc": "Podrobnější přehled platformy je v přípravě. Sledujte changelog a roadmap pro nadcházející vydání.",
+      "roadmap": "Od infrastrukturního základu až po podnikové nasazení — fáze produktu, milníky verzí a naše vize financování."
+    },
+    "returnBtn": "Zpět do Hubu"
+  },
+  "blogShowcase": {
+    "badge": "Z BLOGU",
+    "title": "Inženýrské poznatky",
+    "subtitle": "Hlubší pohled na architekturu SaaS, AI infrastrukturu a produkční inženýrství.",
+    "readMore": "Číst více"
+  },
+  "useCases": {
+    "badge": "ŠKÁLOVATELNÉ SCÉNÁŘE",
+    "title": "Seven shapes, one foundation.",
+    "description": "An operations hub, a portfolio site, a multimodal SaaS, two enterprise sites, a design system and an asset library — the same core underneath each.",
+    "tabs": {
+      "opc": "Agentic operace",
+      "ip": "Osobní IP matice",
+      "multimodal": "Multimodální AI SaaS",
+      "enterprise": "Moderní podnik (CN)",
+      "export": "Globální export softwaru",
+      "design": "Design systémový engine",
+      "edam": "Podnikové digitální aktiva"
+    },
+    "content": {
+      "opc": {
+        "title": "AI-Nativní operační centrum",
+        "desc": "Spouštějte agentní workflow, interní nástroje a integrační rozhraní na jedné řízené platformě. Rozšíření řízená registrem, portály operátorů a opakovaně použitelné runtime vzory zůstávají v souladu při škálování systému.",
+        "features": {
+          "f1": "Registr nástrojů a integrační rozhraní",
+          "f2": "Portál operátorů a interní konzole"
+        }
+      },
+      "ip": {
+        "title": "Růst osobního IP a portfoliová matice",
+        "desc": "Vytvořte světovou přítomnost zakladatele s vysoko konvertujícím MDX blogem, portfoliem a profily. Vestavěný newsletter, analitika a SEO zajistí růst vaší osobní značky.",
+        "features": {
+          "f1": "MDX blog + newsletter engine",
+          "f2": "Optimalizováno pro SEO a sociální graf"
+        }
+      },
+      "multimodal": {
+        "title": "Inovativní multimodální AI SaaS",
+        "desc": "Publikujte Multi-Agent orchestraci, Chatbot, Text-to-Image, Image-to-Text a Text-to-Video SaaS produkty s UX-leading streaming UI, inteligentním model routingem a měřením využití.",
+        "features": {
+          "f1": "Multi-Agent streaming UI",
+          "f2": "Model Router + měření využití"
+        }
+      },
+      "enterprise": {
+        "title": "Moderní podnikové webové stránky (CN)",
+        "desc": "Přizpůsobeno pro čínské obchodní scénáře — ultra-rychlá domácí CDN, integrace ekosystému WeChat, mobile-first responzivní design a lokalizovaná compliance out of the box.",
+        "features": {
+          "f1": "Lokální CDN + compliance",
+          "f2": "Připraveno pro ekosystém WeChat"
+        }
+      },
+      "export": {
+        "title": "Landing pages pro globální export softwaru",
+        "desc": "Navrženo pro SaaS expandující do zahraničí. Creem checkout s více měnami, automatické směrování i18n přes next-intl v 7 jazycích, soulad s GDPR/CCPA a obsah cílený podle země.",
+        "features": {
+          "f1": "Globální platby v více měnách",
+          "f2": "7 jazyků + připraveno na GDPR"
+        }
+      },
+      "design": {
+        "title": "Vedoucí designový systém a knihovna komponent",
+        "desc": "A 4-layer token-driven architecture: Brand → Tokens → Theme → UI. Built on Radix + the shared Motion layer with eight switchable design languages, Storybook docs, and visual regression testing.",
+        "features": {
+          "f1": "Správa tokenů ve 4 vrstvách",
+          "f2": "Eight design languages + Storybook"
+        }
+      },
+      "edam": {
+        "title": "Správa digitálních aktiv pro podniky",
+        "desc": "Strukturovaná data lakes a komplexní topologie dashboardů využívající škálovatelné architektury PostgreSQL a granularní RBAC.",
+        "features": {
+          "f1": "Bezpečnost na úrovni řádků",
+          "f2": "Komplexní dotazy",
+          "f3": "Správa rolí"
+        }
+      }
+    }
+  },
+  "designSystem": {
+    "badge": "DESIGN SYSTEM",
+    "headline": "4 vrstvy designové správy.",
+    "subheadline": "Od brandových prvků přes runtime tokeny až po multi-theme engine a řízené komponenty — nejen shadcn s Tailwindem.",
+    "flowBrand": "Značka",
+    "flowBrandDesc": "Barevné prvky, gradienty, jazyk pohybu",
+    "flowTokens": "Tokeny",
+    "flowTokensDesc": "CSS proměnné, 12stupňové škály, tmavý režim",
+    "flowTheme": "Téma",
+    "flowThemeDesc": "Brand Packages, 7 languages, html[data-brand]",
+    "flowUI": "UI",
+    "flowUIDesc": "Komponenty, Storybook, Chromatic",
+    "card1Title": "12stupňové barevné škály",
+    "card1Desc": "Sémantická škála v souladu s Geistem: pozadí (1-2), stavy (3-5), okraje (6-8), výplně (9-10), text (11-12).",
+    "card2Title": "Design Languages",
+    "card2Desc": "Seven Brand Packages on html[data-brand]. Colour roles, radii, elevation, type and easing switch together — not just the palette.",
+    "card3Title": "Vizuální regrese",
+    "card3Desc": "Chromatic zachytí každou změnu pixelu. Storybook dokumentuje každou komponentu. Architektura testů vynucuje pokrytí příběhů.",
+    "card4Title": "Řízení tokenů",
+    "card4Desc": "Shrink-only allowlists for brand hex, brand literals and motion tokens. A new offender fails CI; the existing ones migrate on touch.",
+    "card5Title": "Interaktivní dokumentace",
+    "card5Desc": "Kompletní web s designovou dokumentací poháněný Fumadocs s dvojjazyčnou (EN/ZH) dokumentací API komponent, galeriemi tokenů, průvodci vzory rozložení a živými příklady kódu.",
+    "card6Title": "Token Pipeline",
+    "card6Desc": "Brand primitives compile to DTCG tokens, tokens to CSS variables, variables to governed components. One direction, no hand-offs by hand."
+  },
+  "notFound": {
+    "title": "Stránka nenalezena",
+    "desc": "Odkaz může být zastaralý nebo stránka mohla být přesunuta.",
+    "home": "Zpět na {brandName}",
+    "docs": "Otevřít dokumentaci"
+  },
+  "ui": {
+    "search": {
+      "placeholder": "Hledat vydání..."
+    },
+    "nav": {
+      "toggleMenu": "Přepnout menu"
+    },
+    "actions": {
+      "showFullRelease": "Zobrazit celé vydání",
+      "copyLinkToRelease": "Kopírovat odkaz na vydání",
+      "copyLink": "Kopírovat odkaz",
+      "openInNewTab": "Otevřít v novém panelu"
+    },
+    "status": {
+      "comingSoon": "Brzy"
+    }
+  },
+  "licensing": {
+    "hero": {
+      "title": "Zdarma <hl>vyvíjet na</hl>",
+      "description": "{brandName}-Sailor je zdarma i pro komerční použití — MIT na npm, FSL-1.1-ALv2 v repozitáři, po dvou letech přechází na Apache-2.0. Placené úrovně prodávají podporu a smluvní závazky, nikdy povolení."
+    },
+    "plans": {
+      "community": {
+        "badge": "Vždy zdarma",
+        "title": "Komunita",
+        "subtitle": "Pro každého",
+        "description": "Libovolná velikost týmu, libovolný obrat. Včetně uzavřených komerčních produktů.",
+        "features": {
+          "fullSource": "Celý zdrojový kód, všechny balíčky",
+          "closedSourceOk": "Uzavřené komerční použití — bez copyleftu",
+          "noAttribution": "Žádná registrace, žádná nutnost uvádět zdroj",
+          "communitySupport": "Podpora komunity — co nejlépe"
+        },
+        "cta": "Zobrazit na GitHubu"
+      },
+      "team": {
+        "badge": "Od {price}/rok",
+        "title": "Tým",
+        "subtitle": "Předplatné podpory",
+        "description": "For teams that cannot put a critical path on community response times.",
+        "features": {
+          "privateChannel": "Soukromý kanál podpory",
+          "firstResponse": "První odpověď do dvou pracovních dnů, zaručeno",
+          "priorityTriage": "Prioritní třídění chyb",
+          "upgradeHelp": "Asistence při aktualizaci a upozornění na breaking changes"
+        },
+        "cta": "Získat podporu"
+      },
+      "enterprise": {
+        "badge": "Od 30 000 USD/rok",
+        "title": "Enterprise",
+        "subtitle": "Připraveno pro nákupní proces",
+        "description": "Pro organizace, jejichž právní, bezpečnostní nebo nákupní revize vyžaduje protistranu, která podepisuje.",
+        "features": {
+          "sla": "SLA odezvy — 4 pracovní hodiny, 1 hodina při výpadku produkce",
+          "indemnity": "Ochrana před škodami a závazek k bezpečnostním záplatám",
+          "compliance": "Podepsaný DPA, balíček pro dodržování předpisů, závazek k kontinuitě",
+          "trademark": "Práva k ochranné známce a white-label"
+        },
+        "cta": "Kontaktujte prodej"
+      }
+    },
+    "faq": {
+      "title": "Často kladené otázky",
+      "description": "Stručná verze: používání je zdarma. Platba je pro případ, kdy nás potřebujete smluvně zavázat.",
+      "items": {
+        "whyFsl": {
+          "q": "Proč FSL místo MIT nebo AGPL?",
+          "a": "FSL permits every use except selling a substitute for Sailor itself, and each version becomes Apache-2.0 two years after release — a grant made irrevocably in advance. It clears corporate legal review more readily than AGPL."
+        },
+        "reallyFree": {
+          "q": "Je komerční použití skutečně zdarma?",
+          "a": "Ano. Žádný poplatek, žádný licenční klíč, žádná registrace, žádný práh příjmu nebo počtu zaměstnanců, žádné připisování. Vytvořte produkt s uzavřeným zdrojovým kódem a prodávejte ho."
+        },
+        "competingUse": {
+          "q": "Co se počítá jako konkurenční použití?",
+          "a": "Nabízení Sailor samotného — hostované služby Sailor nebo pře-balívaná konkurenční základna platformy. Budování vertikálního SaaS, interního nástroje nebo projektů pro klienty na Sailor se nepočítá jako konkurenční použití. Pokud váš model potřebuje, může Enterprise smlouva zahrnovat písemné prominutí."
+        },
+        "upgrade": {
+          "q": "Co vlastně platné úrovně kupují?",
+          "a": "Závazky podpory, SLA odezvy, ochrana před škodami, dokumentace pro dodržování předpisů a práva k ochranné známce. Nikdy povolení k používání softwaru — to už máte."
+        },
+        "contributions": {
+          "q": "Co na to příspěvky do open source?",
+          "a": "Všechny příspěvky vyžadují CLA. Viz CONTRIBUTING.md."
+        }
+      }
+    },
+    "meta": {
+      "title": "Licencování — {brandName}",
+      "description": "Zdarma pro komerční použití. MIT na npm, FSL-1.1-ALv2 v repozitáři, převod na Apache-2.0."
+    }
+  },
+  "licenseWizard": {
+    "tiers": {
+      "individualFree": "Bezplatná licence pro jednotlivce",
+      "opcFree": "Licence pro společnost s jedním vlastníkem",
+      "startupCommercial": "Komerční licence Startup",
+      "enterprise": "Licence Enterprise"
+    },
+    "referralSource": {
+      "selectPlaceholder": "Vyberte možnost...",
+      "productHunt": "Product Hunt"
+    }
+  },
+  "changelogMeta": {
+    "title": "Přehled změn — {brandName}",
+    "description": "Každé vydání dodáváme s obsesivní péčí o detaily.",
+    "versionTitleSuffix": "Přehled změn {brandName}"
+  },
+  "roadmapMeta": {
+    "title": "Plán rozvoje platformy — {brandName}",
+    "description": "Roadmap pro řízenou základnu platformy {brandName}, Harness runtime a cestu k aktualizaci."
+  },
+  "blogMeta": {
+    "title": "Blog — {brandName}",
+    "description": "Inženýrské poznatky, aktualizace produktů a osvědčené postupy SaaS od týmu {brandName}."
+  },
+  "getLicenseMeta": {
+    "title": "Získejte svou licenci — {brandName}",
+    "description": "Získejte licenci {brandName} a přístup k platformě za 2 minuty."
+  },
+  "landing": {
+    "faq": {
+      "badge": "FAQ",
+      "title": "Otázky, odpovězené přímo",
+      "subtitle": "Vše, co potřebujete vědět před vydáním.",
+      "items": {
+        "what-is-sailor": {
+          "question": "Co přesně je {productName}?",
+          "answer": "Sailor je názorová SaaS základna Next.js + Tailwind v4 s již připraveným auth, billingem, multi-tenancí, AI, frontami, vyhledáváním a e-mailem. Stačí ji naklonovat, nakonfigurovat poskytovatele a vydat — obvykle do týdne."
+        },
+        "who-is-it-for": {
+          "question": "Pro koho je Sailor určený?",
+          "answer": "Pro zakladatele a produktové inženýry, kteří chtějí trávit čas tím, co je odlišuje — ne tím, že znovu staví stejnou infrastrukturu pro auth/billing/tenancy po páté."
+        },
+        "free-or-paid": {
+          "question": "Je to zdarma nebo placené?",
+          "answer": "Celý zdrojový kód je vydáván pod licencí FSL-1.1-ALv2 — zcela zdarma pro stavbu produktů, bez poplatků a bez copyleft povinností. Jediné omezení je, že nelze nabízet samotný Sailor jako konkurenční komerční produkt nebo službu, a každá verze se po dvou letech automaticky převádí na Apache-2.0. Každý plán zahrnuje kompletní sadu funkcí (auth, billing, multi-tenancy, AI, audit); placené plány neprodávají žádné funkce navíc — prodávají závazek podpory a SLA, odškodnění, compliance dokumentaci a práva k ochranné známce."
+        },
+        "china-friendly": {
+          "question": "Funguje to v Číně?",
+          "answer": "Ano. Poskytujeme paralelní konfiguraci infrastruktury (CDN kompatibilní s Aliyun, domény vhodné pro ICP), takže stejná kódová základna se čistě nasadí i uvnitř Velkého ohnivého zdi."
+        },
+        "deployment": {
+          "question": "Kde to mohu nasadit?",
+          "answer": "Kdekoliv běží Node 22+. Marketingová stránka se nasazuje na Vercel; dashboard, gateway a Python služby běží na Docker / PM2 (dnes je provozujeme na Aliyun ECS, s kompletními Kubernetes manifesty v infra/iac/k8s/ pro clustery). Enterprise zákazníci také nasazují uvnitř vlastních VPC."
+        },
+        "security": {
+          "question": "Jak je řešena bezpečnost?",
+          "answer": "Šifrování na aplikační vrstvě pro tajné informace (@nebutra/vault), Postgres RLS pro izolaci tenantů, RBAC/ABAC přes CASL (@nebutra/permissions), HMAC podepsané tokeny mezi službami, podepsané outbound webhooky a auditní pipeline v souladu se SOC 2 (@nebutra/audit) zahrnutá v každém plánu. Pro a Enterprise přidávají podporu pro SOC 2 attestaci, dedikovanou incident response a delší uchovávání auditních logů."
+        },
+        "support": {
+          "question": "Jakou podporu dostanu?",
+          "answer": "Zdarma zákazníci dostanou komunitní Discord + GitHub Issues. Pro přidává prioritní e-mail s odpovědí do 1 pracovního dne. Enterprise dostává dedikovaný Slack kanál a onboarding inženýra."
+        },
+        "byo-provider": {
+          "question": "Mohu si přinést vlastní poskytovatele?",
+          "answer": "Ano. Každá integrace (auth, queue, search, email, payments, storage, billing) je nezávislá na poskytovateli. Factory v každém balíčku vybere správný adapter z jedné env proměnné — použijte Better Auth, QStash, Resend nebo Creem — bez dotyku aplikačního kódu."
+        },
+        "tech-stack": {
+          "question": "Jaký je tech stack?",
+          "answer": "Next.js 16 (App Router) na React 19, TypeScript 5.9, Tailwind v4, Prisma 7 nad Postgres (s pgvector + RLS), Hono pro BFF gateway, FastAPI pro ML/těžké služby a kurátorská komponentová knihovna na Radix, {brandName} UI primitivy a sdílené Motion vrstvě. AI funkce procházejí přes Vercel AI SDK s portabilitou poskytovatele (OpenAI / OpenRouter / SiliconFlow / Azure / local)."
+        },
+        "license": {
+          "question": "Jaká je licence?",
+          "answer": "FSL-1.1-ALv2 (Functional Source License, verze 1.1, ALv2). Zcela zdarma pro stavbu produktů, bez copyleft povinností. Jediné, co není povoleno, je nabízet samotný Sailor jako konkurenční komerční produkt nebo službu. Každá verze se dva roky po vydání neodvolatelně převádí na Apache-2.0. Placené plány prodávají závazek podpory, SLA, odškodnění, compliance dokumentaci a práva k ochranné známce, ne funkce navíc."
+        },
+        "paid-updates": {
+          "question": "Musím platit za aktualizace?",
+          "answer": "Ne. Aktualizace zdrojového kódu jsou součástí každé komerční licence — tahat z mainu můžete kdykoliv a rebaseovat svůj fork. Placená úroveň je právem používat Sailor v komerční produkci, ne právem na přijímání kódu. Každá minor verze obsahuje CHANGELOG a návod na upgrade pro případné breaking změny."
+        },
+        "why-turborepo": {
+          "question": "Proč Turborepo místo standardní Next.js aplikace?",
+          "answer": "Sailor je 10 aplikací + 104 sdílených balíčků v packages/*/* + 4 backendové dráhy (Hono gateway, FastAPI/Python, Go, Rust) — daleko za bodem, kde by se udržovala jedna Next.js mega-aplikace. Turborepo nám dává builds pouze pro změněné části, transparentní remote caching a jediný zdroj pravdy pro sdílené design tokens, auth, billing a observability — bez nutnosti tlačit všechny týmy do stejného Next.js procesu."
+        },
+        "multi-tenancy": {
+          "question": "Jak je řešena multi-tenance?",
+          "answer": "Dvě vrstvy. Kontext tenantu v rozsahu požadavku přes @nebutra/tenant (AsyncLocalStorage propaguje aktivní organizaci přes každý serverový volání, včetně DB dotazů a outbound webhooků) a izolace vynucená databází přes Postgres Row-Level Security policies (packages/platform/db/prisma/generated/rls.sql) vázané na session-local app.current_tenant_id. Service-role connectiony bypassují RLS pouze uvnitř důvěryhodných interních služeb; všechny uživatelské routy jdou přes tenant-scoped klienta."
+        },
+        "swap-clerk": {
+          "question": "Mohu vyměnit Better Auth za jiného auth providera?",
+          "answer": "Ano. @nebutra/auth obsahuje first-class adaptér pro Better Auth. Přepnutí přes AUTH_PROVIDER env var nebo výběr při scaffoldování s create-sailor --auth=... — server, React a middleware rozhraní zůstávají identická bez ohledu na providera. Přidání pátého adaptéru znamená implementaci jediného interface (~80 LOC); nic v okolním kódu není spjato s konkrétním providerem."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "Milováno buildery",
+      "title": "Co říkají zakladatelé po nasazení s Sailor",
+      "subtitle": "Zákaznické příběhy z naší beta skupiny přicházejí brzy — buďte mezi prvními."
+    },
+    "comparison": {
+      "badge": "Porovnat úrovně",
+      "title": "Vše je zdarma. Vyberte si, jak velký závazek potřebujete.",
+      "subtitle": "Každá úroveň obsahuje kompletní zdrojový kód a umožňuje bezplatné komerční použití s uzavřeným kódem. Rozdíly jsou v podpoře, smluvních závazcích a právech k ochranné známce.",
+      "plan": {
+        "community": "Komunita",
+        "team": "Tým",
+        "enterprise": "Enterprise"
+      },
+      "feature": {
+        "license": {
+          "label": "Licence",
+          "type": "Licence",
+          "commercial-use": "Komerční použití s uzavřeným kódem",
+          "registration": "Registrace",
+          "trademark": "Práva k ochranné známce"
+        },
+        "source": {
+          "label": "Zdrojový kód",
+          "full-source": "Kompletní zdrojový kód",
+          "all-packages": "Všechny balíčky a moduly",
+          "update-window": "Aktualizace"
+        },
+        "support": {
+          "label": "Podpora",
+          "channel": "Kanál podpory",
+          "first-response": "Zaručená první odpověď",
+          "security-patch": "Závazek k bezpečnostním záplatám"
+        },
+        "procurement": {
+          "label": "Nákup",
+          "indemnification": "Odškodnění",
+          "dpa": "Podepsaná smlouva o zpracování a balíček shody",
+          "continuity": "Závazek kontinuity"
+        }
+      },
+      "ariaTable": "Porovnání úrovní a funkcí",
+      "value": {
+        "included": "Zahrnuto",
+        "notIncluded": "Nezahrnuto",
+        "licenseIds": "MIT + FSL-1.1-ALv2",
+        "notRequired": "Není nutná",
+        "whiteLabelRights": "Práva white label",
+        "unlimited": "Neomezené",
+        "unlimitedPlusNotice": "Neomezené + předběžné upozornění na nekompatibilní změny",
+        "unlimitedPlusLts": "Neomezené + větev dlouhodobé podpory",
+        "publicChannels": "Veřejné issues a Discord",
+        "privateChannel": "Soukromý kanál",
+        "namedContact": "Určený kontakt",
+        "twoBusinessDays": "2 pracovní dny",
+        "fourBusinessHours": "4 pracovní hodiny",
+        "bestEffort": "Dle možností",
+        "contractual": "Smluvní"
+      }
+    },
+    "socialProof": {
+      "title": "Postaveno na stacku, kterému můžete věřit",
+      "logosLabel": "Partneři pro integraci",
+      "metrics": {
+        "developers": {
+          "value": "47+",
+          "label": "Podporovaní poskytovatelé AI"
+        },
+        "projects": {
+          "value": "104",
+          "label": "balíčky monorepo"
+        },
+        "uptime": {
+          "value": "7",
+          "label": "i18n lokalizace hned po instalaci"
+        }
+      }
+    }
+  },
+  "compliance": {
+    "icp": {
+      "recordNumber": "Záznam ICP",
+      "publicSecurity": "Veřejná bezpečnost"
+    }
+  },
+  "icpFooter": {
+    "recordNumber": "Záznam ICP",
+    "publicSecurity": "Záznam veřejné bezpečnosti"
+  },
+  "MarketLocalePicker": {
+    "title": "Regions and languages",
+    "description": "Select a region and language for the marketing site.",
+    "triggerAria": "Select region and language",
+    "searchPlaceholder": "Search regions…",
+    "plannedHint": "Rozhraní přejde na angličtinu, dokud nebude tento jazyk vydán",
+    "noResults": "No regions match",
+    "menuAria": "Regions and languages"
+  },
+  "siteShell": {
+    "nav": {
+      "openNavigation": "Open navigation",
+      "closeNavigation": "Close navigation",
+      "searchSite": "Search the site",
+      "siteNavigation": "Site navigation",
+      "searchPages": "Search pages",
+      "noMatch": "Nothing matches that."
+    },
+    "menu": {
+      "writeToFounder": "Write to the founder",
+      "sailorOnGithub": "Sailor on GitHub",
+      "back": "Back"
+    },
+    "footer": {
+      "tagline": "An AI-native company builder. No company should be hard to start.",
+      "read": "Read",
+      "journal": "Journal",
+      "changelog": "Changelog",
+      "build": "Build",
+      "whatWeAreBuilding": "What we're building",
+      "status": "Status",
+      "company": "Company",
+      "about": "About",
+      "writeToFounder": "Write to the founder",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "credits": "Credits"
+    }
+  },
+  "sitePages": {
+    "home": {
+      "metaDescription": "No company should be hard to start. {brandName} builds the platform, the products and the network that make it so.",
+      "hero": {
+        "title": "No company should be hard to <signature>start.</signature>",
+        "titleCn": "让世界上没有难创的业。",
+        "lead": "Founders rarely die of bad ideas. They die of the Founder Tax — a dozen brilliant tools, each seeing one slice, none knowing you are building a company. {brandName} is building the system that does, and writing down what we learn on the way."
+      },
+      "latest": {
+        "title": "Latest",
+        "titleCn": "最新文章",
+        "viewAll": "All essays"
+      },
+      "newsletter": {
+        "title": "Read it as it's written.",
+        "lead": "New essays on agents, the layer after them, and the founder's craft — when they are ready, not on a schedule."
+      },
+      "sailor": {
+        "lead": "The open-source platform we build everything on. Usable today: npx create-sailor.",
+        "cta": "The platform"
+      },
+      "building": {
+        "title": "What we're building",
+        "lead": "{brandName} OS, the Sleptons network, and the early products growing on the platform.",
+        "cta": "In progress"
+      }
+    },
+    "sailor": {
+      "hero": {
+        "lead": "The open-source platform we build everything on: auth, billing, tenancy, AI routing and the guards that keep a fast-moving codebase honest. Start a company on it with one command.",
+        "cn": "我们自己在用的开源地基，今天就能用。"
+      },
+      "install": {
+        "copyLabel": "Copy",
+        "copiedLabel": "Copied"
+      },
+      "links": {
+        "source": "Source on GitHub",
+        "seeSite": "See the site you get",
+        "licensing": "Licensing for teams"
+      }
+    },
+    "sleptons": {
+      "hero": {
+        "lead": "Where people, ideas, needs and capital find each other — earlier than they would have alone.",
+        "cn": "让潜能流动起来。"
+      },
+      "parts": {
+        "ideas": {
+          "title": "Ideas",
+          "titleCn": "创意与需求",
+          "body": "Write down what you wish existed, or what you need. The ideas and needs people post are where the network starts.",
+          "cta": "Post an idea"
+        },
+        "capital": {
+          "title": "Capital",
+          "titleCn": "资本",
+          "body": "The investor directory we keep today — Chinese and global funds, each with what they back.",
+          "cta": "Browse investors"
+        },
+        "network": {
+          "title": "The network",
+          "titleCn": "网络",
+          "body": "Describe the person you wish existed; an AI-native network finds them. In development.",
+          "cta": "Read the plan"
+        }
+      }
+    },
+    "building": {
+      "hero": {
+        "title": "What we're building",
+        "lead": "{brandName} OS, and the products we built on the platform along the way.",
+        "cn": "我们正在造的东西。"
+      },
+      "os": {
+        "lead": "One sentence, a whole company: brand, product, code and launch from one context, on your Mac. In development — the essay below is what it is for; there is nothing to show until there is something real.",
+        "cta": "Why we are building it"
+      },
+      "platform": {
+        "title": "On the platform",
+        "lead": "Products we have built on Sailor along the way, each open to use."
+      }
+    },
+    "about": {
+      "hero": {
+        "title": "Where chaos becomes a company.",
+        "lead": "{brandName} is an AI-native company builder. We exist because founders rarely die of bad ideas — they die of the Founder Tax: a dozen brilliant tools, each seeing one slice, none knowing you are building a company.",
+        "cn": "让世界上没有难创的业。",
+        "cta": "Why we are building {brandName}"
+      },
+      "name": {
+        "title": "The name",
+        "lead": "Four words, compressed into one: nurture the nebula into an ultra future.",
+        "nebula": "every idea before it has a shape",
+        "nurture": "we grow it with you, not for you",
+        "ultra": "a fifty-person agency's output from one person",
+        "future": "the company form being rewritten now"
+      },
+      "how": {
+        "title": "How we work",
+        "lead": "We don't hire a company. We orchestrate one. The founder sets direction and makes the calls that are hard to reverse; agents write, review and ship; the architecture decides what is allowed to merge — so speed never buys drift.",
+        "cn": "人定方向，agent 执行，架构把关。",
+        "architectureNote": "好的架构，意味着你能走很远。"
+      },
+      "contact": {
+        "founderTitle": "Write to the founder",
+        "companyTitle": "The company"
+      }
+    },
+    "aboutProducts": {
+      "hero": {
+        "title": "The founder OS",
+        "lead": "Everything {brandName} makes is one system for starting a company: a production layer to build on, a network to find people and needs, and an OS that runs the company from one context.",
+        "cn": "创始人操作系统：一套从想法走到公司的系统。"
+      },
+      "layers": {
+        "sailor": {
+          "line": "Skip to production.",
+          "body": "The production layer for agent-built software: auth, billing for global and China rails, multi-tenancy and an AI gateway in one command, running locally with zero keys. You own the code.",
+          "cn": "给 AI 写出来的产品铺好上线的路。",
+          "status": "Usable today",
+          "cta": "Sailor"
+        },
+        "sleptons": {
+          "line": "Where people, ideas, needs and capital find each other.",
+          "body": "The network around the platform: Ideas, the open board of ideas and needs, and the people and resources that pick them up.",
+          "cn": "人、想法、需求与资本彼此找到的地方。",
+          "status": "Open",
+          "cta": "Sleptons"
+        },
+        "os": {
+          "line": "One sentence, a whole company.",
+          "body": "Brand, product, code and launch from one context, on your Mac. In development — there is nothing to show until there is something real.",
+          "cn": "一句话，一整家公司。",
+          "status": "In development",
+          "cta": "Why we are building it"
+        }
+      },
+      "platform": {
+        "title": "Built on the platform",
+        "lead": "Products we have built on Sailor along the way, each open to use.",
+        "cn": "在平台上长出来的产品。",
+        "buildingLink": "What we're building"
+      }
+    }
+  },
+  "siteMap": {
+    "sections": {
+      "home": {
+        "title": "Home",
+        "is": "The manifesto, led by the Journal."
+      },
+      "journal": {
+        "title": "Journal",
+        "is": "The founder's essays: what we believe about building now."
+      },
+      "sailor": {
+        "title": "Sailor",
+        "is": "The open-source platform everything is built on, usable today."
+      },
+      "sleptons": {
+        "title": "Sleptons",
+        "is": "Where people, ideas, needs and capital find each other — including Ideas, the UGC of ideas and needs."
+      },
+      "building": {
+        "title": "Building",
+        "is": "The founder OS, and the products grown on the platform along the way."
+      },
+      "company": {
+        "title": "Company",
+        "is": "Who we are, how we work, how to reach us, and the legal pages."
+      }
+    },
+    "pages": {
+      "home": {
+        "title": "Home"
+      },
+      "blog": {
+        "title": "Journal",
+        "slug": {
+          "title": "Essay"
+        },
+        "author": {
+          "author": {
+            "title": "Author"
+          }
+        },
+        "tag": {
+          "tag": {
+            "title": "Topic"
+          }
+        }
+      },
+      "news": {
+        "title": "News"
+      },
+      "sailor": {
+        "title": "Sailor",
+        "studio": {
+          "title": "Sailor Studio",
+          "frame": {
+            "title": "Sailor Studio frame"
+          }
+        }
+      },
+      "features": {
+        "title": "Packages",
+        "name": {
+          "title": "Package"
+        }
+      },
+      "pricing": {
+        "title": "Pricing"
+      },
+      "licensing": {
+        "title": "Licensing"
+      },
+      "getLicense": {
+        "title": "Get a license"
+      },
+      "ai": {
+        "models": {
+          "title": "AI models"
+        }
+      },
+      "open": {
+        "title": "Open platform"
+      },
+      "changelog": {
+        "title": "Changelog",
+        "version": {
+          "title": "Release"
+        }
+      },
+      "showcase": {
+        "title": "Built with Sailor"
+      },
+      "status": {
+        "title": "Status",
+        "history": {
+          "title": "Incident history"
+        },
+        "subscription": {
+          "title": "Status subscription"
+        },
+        "incidents": {
+          "id": {
+            "title": "Incident"
+          }
+        }
+      },
+      "security": {
+        "title": "Security"
+      },
+      "refer": {
+        "title": "Refer"
+      },
+      "sleptons": {
+        "title": "Sleptons"
+      },
+      "ideas": {
+        "title": "Ideas"
+      },
+      "solutions": {
+        "title": "Capital",
+        "slug": {
+          "title": "Solution"
+        },
+        "chinaVc": {
+          "id": {
+            "title": "Investor"
+          }
+        },
+        "globalVc": {
+          "id": {
+            "title": "Investor"
+          }
+        }
+      },
+      "building": {
+        "title": "Building"
+      },
+      "roadmap": {
+        "title": "Roadmap"
+      },
+      "playbook": {
+        "title": "Playbook"
+      },
+      "opc": {
+        "title": "OPC"
+      },
+      "about": {
+        "title": "About",
+        "whitepaper": {
+          "title": "Whitepaper"
+        },
+        "products": {
+          "title": "Founder OS"
+        },
+        "businessPortfolio": {
+          "title": "Business"
+        },
+        "global": {
+          "title": "Global"
+        },
+        "innovation": {
+          "title": "Innovation"
+        }
+      },
+      "careers": {
+        "title": "Careers"
+      },
+      "contact": {
+        "title": "Contact"
+      },
+      "faq": {
+        "title": "FAQ"
+      },
+      "privacy": {
+        "title": "Privacy"
+      },
+      "terms": {
+        "title": "Terms"
+      },
+      "cookies": {
+        "title": "Cookies"
+      },
+      "credits": {
+        "title": "Credits"
+      },
+      "dpa": {
+        "title": "DPA"
+      },
+      "refund": {
+        "title": "Refunds"
+      },
+      "legal": {
+        "slug": {
+          "title": "Legal"
+        }
+      }
+    }
+  },
+  "solutionsCatalog": {
+    "groups": {
+      "go-to-market": {
+        "label": "Go-to-Market"
+      },
+      "build-govern": {
+        "label": "Build & Govern"
+      },
+      "ai-data": {
+        "label": "AI & Data"
+      },
+      "founder": {
+        "label": "Founder"
+      }
+    },
+    "solutions": {
+      "go-global": {
+        "label": "Ship Globally",
+        "tagline": "Launch a compliant, localized SaaS for global markets.",
+        "hero": {
+          "eyebrow": "Go Global",
+          "title": "Take your SaaS",
+          "titleAccent": "global",
+          "summary": "Multi-region infra, i18n, payments and compliance — the harness ships the cross-border plumbing so you ship product."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Localization at the core",
+            "body": "7-locale routing, RTL-ready tokens and per-market content without forking the codebase."
+          },
+          "uc2": {
+            "title": "Payments without rewrites",
+            "body": "Creem (cards, merchant of record) plus WeChat Pay / Alipay behind one billing contract — both live the moment you add their keys."
+          },
+          "uc3": {
+            "title": "Compliance baked in",
+            "body": "Tenant isolation, audit logging and data-residency primitives ready on day one."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Do I need separate apps per region?",
+            "a": "No — one codebase. Both adapters of a China pair (payments, SMS, storage) ship in every build; whichever keys are present at deploy time decide which run, and both can run at once."
+          }
+        }
+      },
+      "growth": {
+        "label": "Growth Hacking",
+        "tagline": "Acquisition, activation and retention loops that compound.",
+        "hero": {
+          "eyebrow": "Growth",
+          "title": "Build loops that",
+          "titleAccent": "compound",
+          "summary": "Instrument funnels, run experiments and wire referral and lifecycle loops on a metering + notifications backbone."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Funnel instrumentation",
+            "body": "Usage metering + analytics give you the events to measure activation, not guesses."
+          },
+          "uc2": {
+            "title": "Lifecycle messaging",
+            "body": "Multi-channel notifications (in-app / email / push) driven by product events."
+          },
+          "uc3": {
+            "title": "Experiment fast",
+            "body": "Feature flags ship variants without redeploys; metering reads the result."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Is an analytics warehouse included?",
+            "a": "Metering aggregates to ClickHouse for real-time funnel and cohort reads."
+          }
+        }
+      },
+      "architecture": {
+        "label": "Architecture Governance",
+        "tagline": "Keep a large codebase coherent as it scales.",
+        "hero": {
+          "eyebrow": "Architecture",
+          "title": "Govern your",
+          "titleAccent": "architecture",
+          "summary": "Architecture tests, ratchets and capability boundaries enforce structure mechanically — not in a wiki nobody reads."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Ratcheted invariants",
+            "body": "Property tests fail the build when hardcoded values or cross-layer imports creep in."
+          },
+          "uc2": {
+            "title": "Capability boundaries",
+            "body": "Domain-grouped packages with declared owners and scopes keep coupling low."
+          },
+          "uc3": {
+            "title": "Three-tier lifecycle",
+            "body": "active / stub / incubator keeps dead concepts out of CI without losing the idea."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Does governance slow teams down?",
+            "a": "It moves review from humans to tests, so most checks are instant and automatic."
+          }
+        }
+      },
+      "tech-stack": {
+        "label": "Tech Selection",
+        "tagline": "One opinionated stack per domain — a second adapter only where China requires it.",
+        "hero": {
+          "eyebrow": "Tech Stack",
+          "title": "One stack,",
+          "titleAccent": "zero decisions",
+          "summary": "Queue, search, auth, billing and storage each have one answer — Better Auth, QStash, Postgres, Creem — behind an interface, not a picklist."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "One answer per domain",
+            "body": "Better Auth for identity, QStash for queues, Postgres (pgvector + full-text) for search, Creem for billing — the interface stayed, the alternatives didn't."
+          },
+          "uc2": {
+            "title": "TS-by-default backend",
+            "body": "A documented policy for when Python is justified keeps the stack from sprawling."
+          },
+          "uc3": {
+            "title": "China pairs, not a matrix",
+            "body": "Payments (Creem + WeChat Pay/Alipay), SMS (Twilio Verify + Aliyun) and storage (R2/OSS on one S3-compatible client) keep a second adapter only where mainland law or network access makes the default unusable — both live as soon as their keys are set."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "What if I need a provider that isn't kept?",
+            "a": "Each domain still ships behind an interface — add an adapter without touching call sites. The ones that remain were kept because production runs on them, not because the interface only fits them."
+          }
+        }
+      },
+      "dx": {
+        "label": "DX Tooling",
+        "tagline": "A developer experience that keeps velocity high.",
+        "hero": {
+          "eyebrow": "DX",
+          "title": "Tooling that gets",
+          "titleAccent": "out of the way",
+          "summary": "One scaffold CLI, one formatter, one pipeline. Generate, lint, test and ship without yak-shaving the toolchain."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Scaffold in seconds",
+            "body": "`npx create-sailor my-app` asks nothing and ships the full converged stack, wired and ready to run."
+          },
+          "uc2": {
+            "title": "One linter, one config",
+            "body": "Biome formats and lints the whole monorepo — no ESLint/Prettier split-brain."
+          },
+          "uc3": {
+            "title": "Green pipeline by default",
+            "body": "lint → build → test → scan → deploy runs the same locally and in CI."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Can I bring my own tools?",
+            "a": "Yes — presets are opt-in; the defaults are opinionated, not locked."
+          }
+        }
+      },
+      "ai": {
+        "label": "AI Integration",
+        "tagline": "Ship AI features on a provider-agnostic agent runtime.",
+        "hero": {
+          "eyebrow": "AI",
+          "title": "Make your product",
+          "titleAccent": "AI-native",
+          "summary": "Agents, RAG, tools and an LLM gateway — multi-model, observable, and safe to put in front of users."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Model-agnostic gateway",
+            "body": "Route, fail over and track cost across providers behind one API."
+          },
+          "uc2": {
+            "title": "RAG that ships",
+            "body": "Knowledge base, embeddings and retrieval primitives wired for multi-tenant use."
+          },
+          "uc3": {
+            "title": "Tool-using agents",
+            "body": "An agent runtime with tool registry and execution policy for safe autonomy."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Am I locked to one model vendor?",
+            "a": "No — the gateway abstracts vendors; switching is configuration."
+          }
+        }
+      },
+      "ai-data-ops": {
+        "label": "AI Data Operations",
+        "tagline": "Managed data labeling, RLHF and eval pipelines — as a service.",
+        "hero": {
+          "eyebrow": "AI Data Ops",
+          "title": "Fuel your models with",
+          "titleAccent": "quality data",
+          "summary": "A managed data operation — annotation, RLHF preference data and evaluation sets — run by our team against your spec."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Annotation at scale",
+            "body": "Vetted workforce + tooling for text, image, audio and 3D labeling."
+          },
+          "uc2": {
+            "title": "RLHF preference data",
+            "body": "Pairwise comparisons and rubric scoring to align your model to intent."
+          },
+          "uc3": {
+            "title": "Evaluation sets",
+            "body": "Held-out, audited eval suites so you measure quality, not vibes."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "How do we start?",
+            "a": "Book a scoping call — we turn your spec into a pilot batch within days."
+          }
+        }
+      },
+      "frontier": {
+        "label": "Frontier",
+        "tagline": "Field notes from the edge of what's shipping.",
+        "hero": {
+          "eyebrow": "Frontier",
+          "title": "Stay on the",
+          "titleAccent": "frontier",
+          "summary": "What we're testing before it's obvious — new models, runtimes and patterns, with the trade-offs spelled out."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Early signal",
+            "body": "Honest write-ups of what worked and what didn't, not hype."
+          },
+          "uc2": {
+            "title": "Reference implementations",
+            "body": "Runnable spikes you can lift instead of starting from a blog post."
+          },
+          "uc3": {
+            "title": "Trade-offs first",
+            "body": "Every frontier note leads with cost, risk and when not to adopt."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Is this production advice?",
+            "a": "Treat frontier notes as scouting — production guidance is flagged explicitly."
+          }
+        }
+      },
+      "china-vc": {
+        "label": "China VC Directory",
+        "tagline": "China's direct-investment institutions, searchable by sector, type and deal activity.",
+        "hero": {
+          "eyebrow": "China VC",
+          "title": "Find the right",
+          "titleAccent": "China investors",
+          "summary": "A searchable directory of China's direct-investment institutions — filter by sector, type and deal volume."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Filter by sector",
+            "body": "Normalized sectors — narrow to investors active in your space."
+          },
+          "uc2": {
+            "title": "Read the activity signal",
+            "body": "Cumulative deal volume shows who deploys most."
+          },
+          "uc3": {
+            "title": "Go straight to source",
+            "body": "Each institution links straight to its official site."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Which institutions are included?",
+            "a": "China's mainstream direct-investment institutions across stages and sectors."
+          }
+        }
+      },
+      "global-vc": {
+        "label": "Global VC Directory",
+        "tagline": "Well-known global investors — from Y Combinator to multi-stage funds.",
+        "hero": {
+          "eyebrow": "Global VC",
+          "title": "Reach",
+          "titleAccent": "global investors",
+          "summary": "A curated directory of leading global investors — accelerators, seed, multi-stage and growth funds — filterable by sector, type and region."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "From accelerator to growth",
+            "body": "Y Combinator, a16z, Sequoia, Accel and more — across every stage."
+          },
+          "uc2": {
+            "title": "Filter by focus",
+            "body": "Narrow by sector (AI, fintech, crypto, bio…), type and region."
+          },
+          "uc3": {
+            "title": "Go straight to source",
+            "body": "Each fund links straight to its official site."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "How is this list chosen?",
+            "a": "A hand-curated set of widely recognized global investors, compiled from public information."
+          }
+        }
+      },
+      "fundraising": {
+        "label": "Fundraising",
+        "tagline": "Playbooks for raising from the right investors.",
+        "hero": {
+          "eyebrow": "Fundraising",
+          "title": "Raise with a",
+          "titleAccent": "clear story",
+          "summary": "Metrics, narrative and process — how to package what you've built into a round that closes."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Metrics that matter",
+            "body": "Which numbers investors actually underwrite at each stage."
+          },
+          "uc2": {
+            "title": "Narrative craft",
+            "body": "Turn a feature list into a market story without overclaiming."
+          },
+          "uc3": {
+            "title": "Process discipline",
+            "body": "Run a tight, time-boxed raise instead of an open-ended drift."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Is this region-specific?",
+            "a": "Patterns are general; we flag where US, EU and China rounds differ."
+          }
+        }
+      },
+      "product-insights": {
+        "label": "Product Insights",
+        "tagline": "Teardowns and patterns from products worth studying.",
+        "hero": {
+          "eyebrow": "Product",
+          "title": "Learn from",
+          "titleAccent": "products that work",
+          "summary": "Structured teardowns — what a product gets right, why it works, and what's transferable to yours."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Pattern, not copy",
+            "body": "We extract the reusable principle behind a UX or GTM move."
+          },
+          "uc2": {
+            "title": "Decision context",
+            "body": "Why a choice made sense for them — and when it wouldn't for you."
+          },
+          "uc3": {
+            "title": "Actionable takeaways",
+            "body": "Each teardown ends with what to try this week."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Do you cover B2B and B2C?",
+            "a": "Both, with a bias toward SaaS and developer-facing products."
+          }
+        }
+      }
+    },
+    "index": {
+      "eyebrow": "Solutions",
+      "title": "Best practices for shipping global SaaS",
+      "summary": "Scenario playbooks for outbound founders — from going global and growth to architecture, AI and fundraising."
+    },
+    "page": {
+      "back": "All solutions",
+      "useCasesHeading": "How it helps",
+      "capabilities": "Powered by",
+      "bestPractices": "Best practices",
+      "faqHeading": "FAQ",
+      "ctaContent": "Get Sailed",
+      "ctaOffering": "Book a scoping call"
+    },
+    "vcProfile": {
+      "home": "Home",
+      "thesis": "Investment focus",
+      "facts": "At a glance",
+      "founded": "Founded",
+      "hq": "HQ",
+      "stages": "Stages",
+      "checkSize": "Check size",
+      "totalDeals": "Total deals",
+      "region": "Region",
+      "sectors": "Sectors",
+      "notable": "Notable portfolio",
+      "recent": "Recent activity (2025–26)",
+      "similar": "Similar institutions",
+      "visit": "Visit website"
+    },
+    "chinaVc": {
+      "back": "All solutions",
+      "statInstitutions": "Institutions",
+      "statSectors": "Sectors",
+      "statDeals": "Deals tracked",
+      "source": "Compiled from public information on China's direct-investment institutions.",
+      "directoryLabel": "China VC"
+    },
+    "globalVc": {
+      "back": "All solutions",
+      "statFunds": "Funds",
+      "statSectors": "Sectors",
+      "statRegions": "Regions",
+      "source": "A curated set of well-known global investors. Profiles compiled from public information.",
+      "directoryLabel": "Global VC"
+    },
+    "meta": {
+      "indexTitle": "Solutions | {brandName}",
+      "indexDescription": "Scenario playbooks for outbound founders — go global, growth, architecture, AI and fundraising best practices.",
+      "detailTitleSuffix": "{brandName} Solutions",
+      "chinaVcProfileTitle": "{name} — Investor Profile | {brandName}",
+      "chinaVcProfileDescriptionFallback": "{name}: investment focus, sectors, stages and notable portfolio.",
+      "globalVcProfileTitle": "{name} — Investor Profile | {brandName}",
+      "globalVcProfileDescriptionFallback": "{name}: focus sectors, stage and region."
+    }
+  },
+  "solutionsNav": {
+    "groups": {
+      "go-to-market": "Go-to-Market",
+      "build-govern": "Build & Govern",
+      "ai-data": "AI & Data",
+      "founder": "Founder"
+    },
+    "items": {
+      "go-global": {
+        "label": "Ship Globally",
+        "tagline": "Launch a compliant, localized SaaS for global markets."
+      },
+      "growth": {
+        "label": "Growth Hacking",
+        "tagline": "Acquisition, activation and retention loops that compound."
+      },
+      "architecture": {
+        "label": "Architecture Governance",
+        "tagline": "Keep a large codebase coherent as it scales."
+      },
+      "tech-stack": {
+        "label": "Tech Selection",
+        "tagline": "One opinionated stack per domain — a second adapter only where China requires it."
+      },
+      "dx": {
+        "label": "DX Tooling",
+        "tagline": "A developer experience that keeps velocity high."
+      },
+      "ai": {
+        "label": "AI Integration",
+        "tagline": "Ship AI features on a provider-agnostic agent runtime."
+      },
+      "ai-data-ops": {
+        "label": "AI Data Operations",
+        "tagline": "Managed data labeling, RLHF and eval pipelines — as a service."
+      },
+      "frontier": {
+        "label": "Frontier",
+        "tagline": "Field notes from the edge of what's shipping."
+      },
+      "china-vc": {
+        "label": "China VC Directory",
+        "tagline": "China's direct-investment institutions, searchable by sector, type and deal activity."
+      },
+      "global-vc": {
+        "label": "Global VC Directory",
+        "tagline": "Well-known global investors — from Y Combinator to multi-stage funds."
+      },
+      "fundraising": {
+        "label": "Fundraising",
+        "tagline": "Playbooks for raising from the right investors."
+      },
+      "product-insights": {
+        "label": "Product Insights",
+        "tagline": "Teardowns and patterns from products worth studying."
+      }
+    }
+  },
+  "resourcesCatalog": {
+    "groups": {
+      "developers": "Developers",
+      "company": "Company"
+    },
+    "items": {
+      "open-platform": {
+        "label": "Open Platform",
+        "tagline": "APIs, docs, and the developer console"
+      },
+      "docs": {
+        "label": "Docs",
+        "tagline": "API docs and guides"
+      },
+      "forge": {
+        "label": "Forge",
+        "tagline": "Online codecs, text, hashing, and document tools"
+      },
+      "blog": {
+        "label": "Blog",
+        "tagline": "Engineering notes and updates"
+      },
+      "changelog": {
+        "label": "Changelog",
+        "tagline": "What's new in {brandName}"
+      },
+      "roadmap": {
+        "label": "Roadmap",
+        "tagline": "See what we're building next"
+      },
+      "design-system": {
+        "label": "Design System",
+        "tagline": "Tokens, components, and brand"
+      },
+      "status": {
+        "label": "Status",
+        "tagline": "Service status and uptime"
+      },
+      "about": {
+        "label": "About",
+        "tagline": "Our mission and team"
+      },
+      "careers": {
+        "label": "Careers",
+        "tagline": "Join the team"
+      },
+      "newsroom": {
+        "label": "Newsroom",
+        "tagline": "Announcements and press"
+      },
+      "playbook": {
+        "label": "Playbook",
+        "tagline": "How we build"
+      },
+      "showcase": {
+        "label": "Showcase",
+        "tagline": "Built with {brandName}"
+      },
+      "security": {
+        "label": "Security",
+        "tagline": "Security and compliance"
+      }
+    }
+  },
+  "openPlatform": {
+    "eyebrow": "Open Platform",
+    "title": "{brandName} Open Platform",
+    "lead": "Docs, public APIs, and the signed-in developer console — one catalog, no second origin.",
+    "consoleCta": "Open the console",
+    "consoleHint": "API keys, webhooks, and provider keys stay on the app. Sign in if you are asked.",
+    "groups": {
+      "catalog": {
+        "label": "Public surfaces",
+        "description": "Hosts that already exist. This page does not proxy them."
+      },
+      "console": {
+        "label": "Developer console",
+        "description": "Signed-in settings on the app. Create and revoke credentials there."
+      }
+    },
+    "items": {
+      "docs": {
+        "title": "Docs",
+        "description": "Guides, API reference, and webhook contracts."
+      },
+      "api": {
+        "title": "API",
+        "description": "Shared gateway. Product namespaces stay under /<product>/v1/*."
+      },
+      "router": {
+        "title": "Router",
+        "description": "OpenAI-compatible model edge."
+      },
+      "forge": {
+        "title": "Forge",
+        "description": "Tool station and agent invoke API."
+      },
+      "sso": {
+        "title": "Sign in with {brandName}",
+        "description": "OIDC issuer on sso. Client registration is not self-serve yet.",
+        "badge": "IdP"
+      },
+      "status": {
+        "title": "Status",
+        "description": "Live operational status for public hosts."
+      },
+      "api-keys": {
+        "title": "API keys",
+        "description": "Create and revoke programmatic keys for the gateway."
+      },
+      "webhooks": {
+        "title": "Webhooks",
+        "description": "Subscribe to workspace events. Payloads are signed."
+      },
+      "provider-keys": {
+        "title": "Provider keys",
+        "description": "Bring your own AI provider credentials."
+      }
+    }
+  },
+  "playbookCatalog": {
+    "categories": {
+      "ai": {
+        "label": "AI & Agents",
+        "description": "Agentic runtimes and multi-step pipelines you can watch run end-to-end."
+      },
+      "design": {
+        "label": "Design & Theming",
+        "description": "Shape the brand system — palette, type, motion — and preview it live."
+      },
+      "compose": {
+        "label": "Embedding & Composition",
+        "description": "Compose workflows visually and embed Sailor surfaces anywhere."
+      },
+      "os": {
+        "label": "The OS",
+        "description": "Opinionated operating surfaces built on top of the platform."
+      }
+    },
+    "items": {
+      "layer0": {
+        "title": "Layer 0 Capability Loop",
+        "description": "Watch a capability request travel the full perceive → plan → act → verify loop."
+      },
+      "agent-runtime": {
+        "title": "Agent Runtime Grammar",
+        "description": "The multi-step agent runtime — tool registry, streaming UI, MCP integration."
+      },
+      "cinema": {
+        "title": "Cinema — Film-Director Pipeline",
+        "description": "A multi-agent pipeline that storyboards, shoots and cuts a short film."
+      },
+      "sailor-studio": {
+        "title": "Sailor Studio",
+        "description": "Choose a project's look, preview it on real pages, apply it with one command."
+      },
+      "color-tokens": {
+        "title": "Color & Tokens",
+        "description": "Browse the 12-step brand color scales and the live design-token reference."
+      },
+      "icon-library": {
+        "title": "Icon Library",
+        "description": "Browse all 541 Geist icons as tree-shakable, single-weight TSX components."
+      },
+      "canvas": {
+        "title": "Canvas — Node-Graph Editor",
+        "description": "An infinite node-graph canvas for composing agent workflows visually."
+      },
+      "embed": {
+        "title": "Embed Demo",
+        "description": "Drop a Sailor surface into any page with a single embed snippet."
+      },
+      "startup-os": {
+        "title": "Startup OS",
+        "description": "An opinionated operating surface for running a startup on Sailor.",
+        "badge": "Alpha"
+      }
+    },
+    "page": {
+      "eyebrow": "Playbook",
+      "title": "See the infrastructure run",
+      "lead": "The infrastructure demos, utilities, integrations and experiments that ship inside Sailor — pick one and dive in."
+    },
+    "meta": {
+      "title": "Playbook — {productName}",
+      "description": "A curated directory of the infrastructure demos, utilities, integrations and experimental features that ship inside Sailor."
+    }
+  },
+  "packageCatalog": {
+    "descriptions": {
+      "audit": "Hash-chained, SHA-256 append-only audit log for actor/tenant actions. SOC 2-grade tamper detection, streaming export, and replay-safe queries.",
+      "auth": "Better Auth on Postgres — organization membership, device-flow login, MFA-enforced, session HMAC-signed. One identity layer, no vendor in the loop.",
+      "captcha": "Bot challenge with Cloudflare Turnstile / hCaptcha / reCAPTCHA behind one verify() call. Server-side scoring, per-route enable, no third-party tracker on the client.",
+      "identity": "Shared actor primitive — usr_/svc_/api_ ID space, role/membership lookup, tenant attachment. The single identity object every iam package reads.",
+      "oauth": "Your own OIDC identity provider — \"Sign in with {brandName}\" for third-party apps. Authorization code + PKCE, refresh-token rotation, consent, clients stored in Postgres.",
+      "permissions": "RBAC + ABAC engine — CASL for in-process checks. defineAbility() server, <Can /> in React.",
+      "tenant": "Request-scoped tenant context via AsyncLocalStorage, with Prisma RLS bridge. One tenantId resolves through middleware and propagates the whole stack.",
+      "vault": "Application-layer envelope encryption for customer secrets — AES-256-GCM, per-tenant DEK, KMS-wrapped. Audit-logged read/decrypt, zero plaintext at rest.",
+      "billing": "Billing on Creem (cards worldwide, merchant of record), plus WeChat Pay / Alipay for mainland China (or manual, for offline invoicing). Same Subscription / Invoice / Customer surface for every backend.",
+      "blog": "Framework-agnostic blog rules shared by every content surface: PortableText types, reading time, related-post ranking, table-of-contents extraction.",
+      "contracts": "Cross-package event, identity, billing, and notification type contracts. The shared TypeScript boundary that lets commerce talk to iam, queue, webhooks.",
+      "license": "License key generation, validation, and revocation. Ed25519-signed, offline-verifiable, with seat-count and expiry enforcement.",
+      "marketing": "Shared marketing-site primitives — hero blocks, pricing tables, FAQ accordions — reused by landing and product marketing surfaces with the brand tokens already wired.",
+      "metering": "Usage metering on ClickHouse — sub-second ingestion, per-tenant quota lookup, ready to feed metered billing or in-product limits.",
+      "waitlist": "Pre-launch waitlist for the foundation tier — invite codes, position queues, referral counts, and operator dashboards.",
+      "cache": "Tag-based cache with Redis, Upstash, or in-memory backend. Same get/set/invalidate(tags) for serverless and self-hosted.",
+      "queue": "Message queue — Upstash QStash (serverless), with an in-memory fallback for local dev and tests.",
+      "search": "Full-text + vector search — pgvector (Postgres). BM25 keyword search and vector cosine search over your own database, no external search infra.",
+      "notifications": "Multi-channel notifications — in-app, email, push, SMS, chat — with self-hosted direct dispatchers and recipient-preference resolution.",
+      "webhooks": "Outbound webhook delivery — self-hosted custom dispatcher, signed payloads, retry with exponential backoff, subscriber portal for self-serve.",
+      "uploads": "Large-file uploads — S3 / R2 multipart, Tus resumable, presigned URLs. Picks the right strategy by file size automatically.",
+      "storage": "Lower-tier object storage helpers — list, copy, ACL, signed reads. Sits below @nebutra/uploads when you don't need multipart logic.",
+      "email": "Render React Email templates, dispatch through Resend / SES / SMTP. One sendEmail(template, props, recipient) for every transactional flow.",
+      "saga": "Distributed-transaction primitives — compensating actions, retry/rollback hooks, idempotency keys. WIP; ships behind a flag.",
+      "event-bus": "In-process pub/sub with cross-app fanout. Used by audit, billing, and notifications to react to commerce events without circular imports.",
+      "sms": "Transactional SMS + OTP verify — Twilio Verify globally, Aliyun for mainland China — same send(to, template) surface, automatic local-prefix routing.",
+      "tts": "Text-to-speech with OpenAI / ElevenLabs / Azure backends. Streamed audio, voice presets, per-tenant rate-limit budgets.",
+      "video-compose": "Programmatic video composition via Remotion. Render reels, social cards, and on-brand product GIFs from a JSON spec.",
+      "collab": "Realtime co-editing primitives — Yjs CRDT, WebSocket transport, presence cursors. The piece every multi-user app eventually needs.",
+      "onboarding": "Multi-step product onboarding with persistence — checklist state per user, branching flows, A/B-friendly step gating.",
+      "admin-tooling": "Self-serve operator dashboards — tenants, billing overrides, feature-flag flips — all gated by @nebutra/permissions.",
+      "integration-vault": "Per-tenant credential store for OAuth integrations and API keys — Creem, Gmail OAuth, Notion API. KMS-wrapped, refresh-rotated.",
+      "db": "Typed Prisma client wrapper — extension-aware, RLS-friendly, with per-tenant connection pinning when the deployment splits writes from reads.",
+      "prepaid-wallet": "Prepaid balances and API keys for {brandName} Router and Forge: a wallet port, sk-sailor- keys stored as SHA-256 fingerprints, and a usage envelope that records the charge and the supply cost.",
+      "router-supply": "Supply routing for {brandName} Router: model aliases, engine discovery from the environment, and an upstream chain that falls back when a provider fails.",
+      "browser-utils": "Small browser helpers every app needs: storage that survives private mode and blocked site data, and fetch with a timeout.",
+      "config": "Typed environment + runtime config — Zod schemas at boot, no scattered process.env reads, fail-fast on missing keys.",
+      "logger": "Structured logging with pino + Sentry transport. One log object per request, breadcrumbs forwarded, PII-stripper plugged into the standard sink.",
+      "health": "Liveness + readiness probes for every backend service. Aggregates downstream deps (db, queue, search) into one /healthz response.",
+      "errors": "Typed application error taxonomy — UserError, AuthError, RateLimitError. Maps cleanly to HTTP, to logs, to Sentry, to the in-product toast.",
+      "gateway-core": "BFF primitives shared by backends/gateway and edge handlers — middleware chains, route matchers, header normalization, request-id propagation.",
+      "rate-limit": "Token-bucket rate limiter — Upstash Redis or in-memory. Per-route + per-tenant policy, 429 with retry-after, decision logged for audit.",
+      "repositories": "Repository-pattern primitives — findAll, findById, create, update, delete behind one Repository<T>. Swap Prisma for any backend without changing callers.",
+      "tenant-store": "Tenant-bound key/value cache for lookups too hot for the database. Auto-invalidates on tenant settings change.",
+      "trace-store": "OpenTelemetry-compatible span store and query layer. Lets agents trace a tool call across iam, billing, and webhooks.",
+      "status": "Public status page primitives — incident timeline, component graph, subscriber emails. Renders both /status pages and embeddable widgets.",
+      "alerting": "Alert rules + delivery on top of @nebutra/metering. Threshold/anomaly detection, route to PagerDuty, Discord, or in-product banners.",
+      "analytics": "First-party product analytics on ClickHouse — event ingest, funnel queries, no third-party loader on the marketing site.",
+      "feature-flags": "Server + client flag evaluator with GrowthBook / Statsig / custom. Per-tenant overrides, sticky bucketing, exported as React hooks.",
+      "i18n": "next-intl bridge — runtime locale, ICU plural, currency/date formatters, sided JSON bundles per route. Build-time guarantees on key drift.",
+      "graph-model": "Property-graph model layer for knowledge / org / asset graphs. Edges/nodes typed by Zod, persisted via Prisma or Neo4j adapter.",
+      "provider-factory": "Auto-detecting provider factory pattern — env vars choose between queue / search / notifications backends with a single getX() call.",
+      "capability-kit": "Composable capability primitives — pricing tier ↔ feature flag ↔ quota ↔ UI gating wired into one declarative manifest.",
+      "typelens-catalog": "The data layer for TypeLens: typographic works, pairings and extract packs for designers and design agents. Work in progress — the catalog model exists, the seed content does not yet.",
+      "fonts": "Self-hosted open-source fonts: the Chinese body face every app loads, plus a registry of 19 faces that themes and DESIGN.md files can name — no request leaves for a font CDN.",
+      "brand": "Brand primitives — color definitions, gradient tokens, motion language. Source data; not imported at runtime by apps.",
+      "tokens": "Runtime CSS variables + ThemeProvider — single source of truth for colors, spacing, radii in every app. @import in your globals.css.",
+      "design-tokens": "W3C DTCG $value/$type token files + Style Dictionary 4 pipeline. Output CSS variables and JS modules, edited git-only — no design-tool sync round-trip.",
+      "icons": "541 Geist icons as tree-shakable TSX components. Single-weight, optical-sized, drop-in for Vercel / v0 visual parity.",
+      "theme": "CSS-only multi-theme engine — six oklch presets toggled by data-theme attribute. No JavaScript on the critical path.",
+      "ui": "Primary component library — {brandName} components, custom primitives, layout, theme bridge, and the shared Motion facade. The product UI import boundary.",
+      "design-sync": "Git-only design-token sync — tokens live in the repo as the source of truth, no design-tool round-trip to keep in lock-step.",
+      "forge-dns-leak": "An authoritative DNS zone for real leak tests: probe names resolved by the visitor's recursive resolver are logged by source IP. Work in progress — needs a delegated zone.",
+      "forge-runtime": "The capability registry and invoke pipeline behind {brandName} Forge: pure tools, one invoke path for the page and the API, charged against the credit ledger.",
+      "startup-os": "Typed contracts for Startup OS: company context, founder conversation streaming, run state, generated files and rollout gates. Work in progress — no production app uses it yet.",
+      "workflow-runtime": "Tenant-written workflows — agent(), parallel(), phase() — run only inside a fail-closed sandbox. Untrusted script source never reaches eval, new Function or node:vm.",
+      "agents": "Multi-step agent runtime — Vercel AI SDK foundation, tool registry, streaming UI, MCP integration. The skeleton for every Sailor agentic feature.",
+      "agent-runtime": "Lower-level agent execution — message reducer, tool invocation, streaming state machine. The kernel @nebutra/agents wraps.",
+      "ai-primitives": "Shared helpers used across all AI packages — token counting, prompt templating, stream-parser, retry-with-backoff. No provider dependency.",
+      "ai-providers": "Provider metadata — pricing per million tokens, context windows, modalities. Drives model selection and cost estimates.",
+      "mcp": "Model Context Protocol server primitives — register tools, expose resources, stream subscriptions. Run inside Sailor or stand-alone.",
+      "knowledge-rag": "Retrieval-augmented generation pipeline — chunk, embed, store, retrieve, rerank — pluggable per vector store.",
+      "knowledge-base": "Document store + indexer for RAG. Watches sources (S3, Notion, GitHub), schedules re-embed, surfaces freshness in the agent answer.",
+      "knowledge-graph": "Entity + relationship store on top of @nebutra/graph-model. Lets agents traverse \"customer → invoice → product\" without a SQL detour.",
+      "tool-registry": "Runtime tool catalog — schemas, descriptions, safety levels. Hot-swap tools between agents without re-deploying.",
+      "code-execution": "Sandboxed code execution for agents — JS / Python / shell — short-lived containers, network-isolated, capability-gated by @nebutra/permissions.",
+      "sandbox-runtime": "Vercel Sandbox + Lambda + local runner adapter under one execute() call. Picks the runner from a policy rule list.",
+      "browser-control": "Headless browser drive for agents — Vercel Agent Browser primary, Playwright fallback. Screenshot, click, type, evaluate.",
+      "generation-context": "Token-budgeted context window manager — system prompt, RAG, user history, scratchpad. Picks what to drop when the window fills.",
+      "local-embedding": "On-device embedding via ONNX / WebGPU. Avoids the round-trip when the embed is short, private, or rate-limited at the provider.",
+      "execution-policy": "Policy rules that route agent tasks to compute backends — render → Vercel Sandbox, long → Lambda, internal → local-runner.",
+      "code-index": "Repository code index for agents — symbol graph, embedding, file watcher. Lets the agent answer \"where is X defined\" without grep'ing.",
+      "voice-realtime": "Realtime voice loop — input ASR, model stream, output TTS — sub-300ms end-to-end. Bridges OpenAI Realtime + Deepgram + ElevenLabs.",
+      "image-pipeline": "Image generation + transform pipeline — provider-routed, watermark + safety filter, cached output, per-tenant quota.",
+      "audio-pipeline": "Audio processing chain — voice clone, denoise, transcribe, summarize. Streams through one async iterator per stage.",
+      "video-pipeline": "Long-form video pipeline — split, caption, b-roll, render. Distributes the long stages to backends/python via queue.",
+      "document-pipeline": "Ingestion for PDF / docx / markdown — chunk, table-aware extract, embed, route to @nebutra/knowledge-base. OCR fallback for image-only pages.",
+      "3d-pipeline": "3D asset generation + render — text-to-mesh + USD export + Three.js preview, with GPU-pool routing on the backend.",
+      "cli": "`nebutra` CLI — scaffold features, run migrations, inspect tenants, deploy presets. Same binary your CI uses.",
+      "create-sailor": "`create-sailor` scaffold — one command, working multi-tenant SaaS with auth + billing + dashboard wired in.",
+      "preset": "Feature-based SaaS config system. Toggle apps and features directly in one config file to shape your stack.",
+      "sanity": "Sanity Studio v4 helpers — schema generators, content-driven page builder, image pipeline integration.",
+      "china-compliance": "China-region operations — ICP filing helpers, MIIT registration, real-name verification, in-country DB residency.",
+      "content-store": "Headless CMS adapter — Sanity / Strapi / Notion behind one ContentEntry<T> read API. Drives marketing pages and product copy.",
+      "play-loader": "Hot-reload loader for atelier plays — sandboxed iframe, message bridge, persistence on save.",
+      "play-marketplace": "Marketplace shell for shareable atelier plays — discovery, ratings, install, attribution.",
+      "access-gate": "Pre-launch access gate — invite-code redemption, position queue, drip-release windows. Layers on top of @nebutra/waitlist.",
+      "atelier-canvas": "Infinite design canvas — multiplayer cursors, layer panel, frame export. The drawing surface every atelier play renders into.",
+      "brand-genesis": "Brand creation flow — pick palette, type pair, motion preset; ships a synced @nebutra/brand override and a Figma preview link.",
+      "cinema": "Atelier cinema mode — distraction-free fullscreen with timed scene playback, perfect for demoing a play or rehearsing a pitch.",
+      "cofounder-match": "Skill-and-stage cofounder matching — answers a small intake, surfaces ranked candidates with shared interest and warm intros.",
+      "ecosystem-safety": "Pre-flight safety check — license sweep, dep-vuln audit, prohibited-content scan. Surfaces blockers before a play ships to marketplace.",
+      "event-log": "General-purpose event log primitive — append, query, time-window aggregate. Sits below audit, analytics, and trace-store as their record.",
+      "founder-cemetery": "Failed-startup memorial — anonymized post-mortems with cause tags. Read-only catalog, source of the recurring failure pattern dashboard.",
+      "idea-plaza": "Public idea board — submit, upvote, comment; the seed pool atelier plays draw from when a founder asks \"what should I build\".",
+      "landing-builder": "Block-based landing page builder — drag pre-styled sections, edit copy in place, publish to a subdomain with one click.",
+      "legal": "Legal entity primitives — corp filings, registered agents, jurisdiction-aware ToS/Privacy generation. Feeds the legal section of @nebutra/preset.",
+      "outreach-engine": "Cold-outreach orchestrator — list dedupe, persona-aware drafting, send via SES/Resend, reply detection. Routes hot replies back into @nebutra/agents.",
+      "reel": "Short-form vertical video primitive — captures atelier moments, auto-captions via TTS pipeline, publishes to social channels.",
+      "support-deflector": "Inline AI support layer — answers from your docs + past tickets before a human is needed. Hands off cleanly with full transcript.",
+      "time-machine": "Project history scrubber — snapshot every save, branch a play from any past frame, diff two snapshots side by side."
+    },
+    "groups": {
+      "ai": {
+        "label": "AI runtime",
+        "summary": "Agent runtimes, RAG, media pipelines, and provider tooling"
+      },
+      "commerce": {
+        "label": "Commerce",
+        "summary": "Access, billing, license, marketing, and metering contracts"
+      },
+      "design": {
+        "label": "Design system",
+        "summary": "Brand, tokens, icons, theme, and UI system packages"
+      },
+      "gateway": {
+        "label": "Gateway",
+        "summary": "TypeScript / Hono BFF, auth, tenancy, OpenAPI"
+      },
+      "iam": {
+        "label": "Identity and trust",
+        "summary": "Auth, identity, permissions, tenancy, audit, and secrets"
+      },
+      "integrations": {
+        "label": "Integrations",
+        "summary": "Cache, queues, search, messaging, storage, and webhooks"
+      },
+      "ops": {
+        "label": "Operations",
+        "summary": "The nebutra CLI, create-sailor, presets, Sanity helpers and China compliance"
+      },
+      "platform": {
+        "label": "Platform",
+        "summary": "Core platform services, data, config, health, and tenancy"
+      }
+    },
+    "folders": {
+      "ai": {
+        "title": "AI Runtime & Agent Substrate",
+        "titleCn": "AI 运行时与智能体底座",
+        "summary": "A production AI domain with agent loops, tool protocols, RAG, local execution, provider metadata, and multimodal pipelines kept out of app code.",
+        "signature": {
+          "label": "AI packages",
+          "detail": "220 runtime source files and 117 tests, with the heaviest coverage in agent-runtime, knowledge-rag, reel, graph, and execution policies."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Agent workbench topology",
+          "caption": "One core loop coordinates model calls, context, tools, memory, execution, and media production.",
+          "nodes": {
+            "0": "durable turns, tools, commands, hooks, subagents",
+            "1": "retrieval, chunking, local embeddings, content-store",
+            "2": "tool catalog and protocol bridge",
+            "3": "typed media graph and storyboard execution",
+            "4": "execution providers behind one router",
+            "5": "metadata only; runtime remains in agents"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "agent-runtime tests",
+            "detail": "dispatcher, hooks, durable turns, commands, rollout store"
+          },
+          "1": {
+            "label": "RAG tests",
+            "detail": "retrieval contracts and ingestion behavior"
+          },
+          "2": {
+            "label": "README surfaces",
+            "detail": "package-level docs for most AI capabilities"
+          }
+        },
+        "owns": {
+          "0": "@nebutra/agents as the canonical model execution surface",
+          "1": "RAG, code indexing, knowledge graph, content store, and tool registry",
+          "2": "Image, video, audio, voice, sandbox, and browser automation pipelines"
+        },
+        "boundaries": {
+          "0": "Apps consume stable package APIs; they do not own provider routing.",
+          "1": "Media workflows depend on injected adapters instead of hardcoded vendors."
+        },
+        "proof": {
+          "0": "package-local tests for agents, knowledge-rag, reel, and agent-runtime",
+          "1": "architecture tests for AI primitive ownership and runtime dependencies"
+        }
+      },
+      "platform": {
+        "title": "Platform Control Plane",
+        "titleCn": "平台控制平面",
+        "summary": "The lowest shared layer: database, config, provider selection, tenant locks, gateway-core contracts, health, rate limits, traces, and repository boundaries.",
+        "signature": {
+          "label": "foundation packages",
+          "detail": "166 runtime source files spanning db, gateway-core, provider-factory, tenant-store, trace-store, config, errors, and observability."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Downward-only platform stack",
+          "caption": "Feature packages stand above this stack; platform packages must not pull product logic upward.",
+          "nodes": {
+            "0": "Prisma v7, schema policy, generation scripts",
+            "1": "per-tenant serialization and scoped stores",
+            "2": "explicit/env/detect/fallback provider resolution",
+            "3": "shared gateway contracts below the Hono backend",
+            "4": "async traces for agents, tools, and LLM spans"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "db source files",
+            "detail": "schema, client, seed, generated boundaries"
+          },
+          "1": {
+            "label": "local AGENTS contracts",
+            "detail": "package-level ownership rules"
+          },
+          "2": {
+            "label": "gateway-core tests",
+            "detail": "shared gateway behavior below backend routes"
+          }
+        },
+        "owns": {
+          "0": "Prisma schema, database client, migrations, and multi-schema policy",
+          "1": "Tenant locks, trace store, health checks, config, errors, and rate limiting",
+          "2": "Provider factory and repository boundaries used by higher-level packages"
+        },
+        "boundaries": {
+          "0": "No app-specific UI or product copy belongs in platform packages.",
+          "1": "Feature packages depend downward; platform does not import feature domains."
+        },
+        "proof": {
+          "0": "schema drift audits, db generation, and architecture dependency tests",
+          "1": "tenant-store and trace-store package-local doctor/debug commands"
+        }
+      },
+      "iam": {
+        "title": "Identity, Access & Tenant Trust",
+        "titleCn": "身份、访问与租户信任",
+        "summary": "Authentication on Better Auth, tenant context, permission gates, audit, captcha, OAuth, and encrypted vault behavior live in one trust boundary.",
+        "signature": {
+          "label": "trust tests",
+          "detail": "Provider abstraction, audit, tenant, permission, OAuth, and vault tests keep auth behavior from drifting into apps."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Trust corridor",
+          "caption": "Every product action should pass through identity, tenant, permission, audit, and secret boundaries in that order.",
+          "nodes": {
+            "0": "Better Auth on Postgres, session-based",
+            "1": "tenant context and organization scoping",
+            "2": "RBAC and resource-action scopes",
+            "3": "sensitive operation trail",
+            "4": "local and KMS-backed secret storage"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "auth tests",
+            "detail": "provider contract behavior"
+          },
+          "1": {
+            "label": "local AGENTS files",
+            "detail": "every IAM package declares ownership"
+          },
+          "2": {
+            "label": "tenant tests",
+            "detail": "organization context and tenant policies"
+          }
+        },
+        "owns": {
+          "0": "Better Auth session/identity surface, with device-flow login and organization membership",
+          "1": "Permission gates, tenant context, audit events, and vault storage",
+          "2": "OAuth server and captcha boundaries for external identity flows"
+        },
+        "boundaries": {
+          "0": "UI checks call IAM contracts; they do not reimplement authorization.",
+          "1": "Secrets and audit behavior do not leak into app-local helpers."
+        },
+        "proof": {
+          "0": "auth provider abstraction tests and permission concept docs",
+          "1": "audit and tenant package boundaries in AGENTS.md contracts"
+        }
+      },
+      "design": {
+        "title": "Design System Supply Chain",
+        "titleCn": "设计系统供应链",
+        "summary": "Brand assets, DTCG tokens, Tailwind v4 theme exports, Geist icons, UI primitives, registry builds, and git-only/design-md sync operate as a pipeline.",
+        "signature": {
+          "label": "packaged Geist icons",
+          "detail": "@nebutra/icons alone has 543 source files; the design lane is source-heavy by nature."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Token-to-app supply chain",
+          "caption": "One fact, one owner: colors, icons, components, and registries flow through governed package boundaries.",
+          "nodes": {
+            "0": "W3C DTCG source of truth",
+            "1": "CSS variables and ThemeProvider entry",
+            "2": "Tailwind v4 @theme and data-theme selectors",
+            "3": "Geist icon React package",
+            "4": "primitives, layouts, registry, governance tests"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "UI source files",
+            "detail": "primitives, layout shells, registry scripts"
+          },
+          "1": {
+            "label": "design-sync tests",
+            "detail": "git-only, design-md, IO, detection"
+          },
+          "2": {
+            "label": "AGENTS contracts",
+            "detail": "token, theme, brand, icons, UI, sync ownership"
+          }
+        },
+        "owns": {
+          "0": "CSS variable tokens, oklch themes, brand primitives, and generated assets",
+          "1": "Reusable primitives, layout shells, registry manifests, and Storybook surfaces",
+          "2": "Design sync scripts and policy tests for UI governance"
+        },
+        "boundaries": {
+          "0": "Landing pages compose design packages; they do not fork primitives.",
+          "1": "Token changes flow through brand sync, not one-off hex overrides."
+        },
+        "proof": {
+          "0": "React Doctor, Storybook registry generation, and token sync checks",
+          "1": "design-docs component pages and governance tests"
+        }
+      },
+      "integrations": {
+        "title": "Integration Runtime Layer",
+        "titleCn": "集成运行时层",
+        "summary": "Queues, cache, event bus, email, uploads, storage, search, SMS, notifications, webhooks, collaboration, and provider vaults share one adapter lane.",
+        "signature": {
+          "label": "adapter packages",
+          "detail": "The most operational lane: queue has 10 tests, notifications 5, email/uploads/webhooks 3 each."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Port-and-adapter bus",
+          "caption": "Transport details collect here so AI, commerce, and app packages call stable ports instead of vendor SDKs.",
+          "nodes": {
+            "0": "durable delivery and worker contracts",
+            "1": "cache provider boundary",
+            "2": "Resend, Console transports",
+            "3": "upload validation and storage handoff",
+            "4": "signature verification and delivery",
+            "5": "tenant-partitioned CRDT rooms"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "queue tests",
+            "detail": "delivery, retry, and worker behavior"
+          },
+          "1": {
+            "label": "README surfaces",
+            "detail": "adapter usage stays package-local"
+          },
+          "2": {
+            "label": "AGENTS contracts",
+            "detail": "operational boundaries per integration"
+          }
+        },
+        "owns": {
+          "0": "Cache, queue, event-bus, saga, notifications, onboarding, and webhooks",
+          "1": "Search, storage, uploads, SMS, TTS, video compose, and integration vault",
+          "2": "Provider-facing adapters that keep apps from depending on vendor SDKs directly"
+        },
+        "boundaries": {
+          "0": "Business workflows call integration ports; provider details stay here.",
+          "1": "AI and commerce packages reuse adapters without owning transport code."
+        },
+        "proof": {
+          "0": "queue, cache, webhook, and search package tests",
+          "1": "background job docs and operational smoke checks"
+        }
+      },
+      "commerce": {
+        "title": "Commercial System of Record",
+        "titleCn": "商业系统记录源",
+        "summary": "Access gates, billing providers, subscriptions, usage, credits, metering, licenses, contracts, legal content, marketing, and waitlists form the commercial domain.",
+        "signature": {
+          "label": "commercial packages",
+          "detail": "Billing is the largest package, but access-gate, blog, license, legal, metering, and waitlist keep adjacent commercial facts separate."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Commercial ledger lanes",
+          "caption": "Each lane owns a different fact: access, invoice, usage, license, legal, or acquisition.",
+          "nodes": {
+            "0": "invite lifecycle for controlled SaaS access",
+            "1": "Creem, ChinaPay, credits, manual",
+            "2": "usage records and billing handoff",
+            "3": "issuance, validation, lifecycle events",
+            "4": "policy content and compliance surfaces"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "billing tests",
+            "detail": "checkout factory, readiness, credit webhook, metering"
+          },
+          "1": {
+            "label": "metering tests",
+            "detail": "usage accounting boundary"
+          },
+          "2": {
+            "label": "license tests",
+            "detail": "issuance and validation lifecycle"
+          }
+        },
+        "owns": {
+          "0": "Billing provider adapters, subscription lifecycle, and metering contracts",
+          "1": "Access-gate invites, licensing, legal content, marketing primitives, and waitlist",
+          "2": "Commercial boundaries that apps expose but do not redefine"
+        },
+        "boundaries": {
+          "0": "Landing copy can link to commerce contracts; it does not own pricing behavior.",
+          "1": "Auth and billing connect through tenant identifiers, not shared UI state."
+        },
+        "proof": {
+          "0": "access-gate lifecycle tests and package status docs",
+          "1": "billing model docs and release-surface verification"
+        }
+      },
+      "gateway": {
+        "title": "Typed API Gateway Boundary",
+        "titleCn": "类型化 API 网关边界",
+        "summary": "The Hono backend owns request context, security middleware, tenant extraction, idempotency, usage metering, route groups, OpenAPI generation, and async Inngest jobs.",
+        "signature": {
+          "label": "gateway tests",
+          "detail": "Billing idempotency, RBAC, middleware, queue delivery, events, health, notifications, and AI gateway routes are covered."
+        },
+        "sourceStats": {
+          "unitLabel": "backend"
+        },
+        "topology": {
+          "title": "Request-to-contract path",
+          "caption": "Route code is the visible part; the hard boundary is the ordered policy chain before and around it.",
+          "nodes": {
+            "0": "trace IDs, correlation, dependency injection",
+            "1": "headers, dynamic CORS, token buckets",
+            "2": "tenant extraction, mutation dedupe",
+            "3": "admin, ai, billing, events, legal, webhooks",
+            "4": "typed clients and background sync jobs"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "source files",
+            "detail": "routes, middleware, services, clients, adapters"
+          },
+          "1": {
+            "label": "async jobs",
+            "detail": "billing sync, GDPR deletion, tenant provisioning, user sync"
+          },
+          "2": {
+            "label": "contract output",
+            "detail": "generate:spec and typed API clients"
+          }
+        },
+        "owns": {
+          "0": "BFF routing, OpenAPI generation, middleware order, and tenancy extraction",
+          "1": "Gateway-level rate limiting, idempotency, audit logging, and versioning",
+          "2": "Typed API contracts consumed by web and generated clients"
+        },
+        "boundaries": {
+          "0": "Backend policy lives in middleware, not duplicated in each route.",
+          "1": "Apps do not bypass the gateway for tenant-sensitive operations."
+        },
+        "proof": {
+          "0": "OpenAPI generation, gateway route tests, and release verification scripts",
+          "1": "api-reference docs and dashboard typed-client integration"
+        }
+      }
+    },
+    "page": {
+      "heroTitle": "Every layer, already <signature>written.</signature>",
+      "heroLead": "{packageCount} packages in {domainCount} domains: every layer a SaaS needs, written, tested and in one repository. Each domain is below, with how it fits together and every package it holds.",
+      "metaDescription": "{packageCount} packages in {domainCount} domains — auth, billing, tenancy, AI, integrations and the design system, written, tested and in one repository.",
+      "exploreDomain": "Explore the domain",
+      "startTitle": "Start from all of it",
+      "startLead": "One command gives you the repository, with every package on this page already wired together.",
+      "install": {
+        "copyLabel": "Copy",
+        "copiedLabel": "Copied"
+      },
+      "allPackages": "Packages",
+      "docs": "Docs",
+      "source": "Source",
+      "inCode": "In code",
+      "owns": "What it owns",
+      "stops": "Where it stops",
+      "proof": "How we know it works",
+      "packages": "Packages",
+      "packagesCount": "{count} packages in {path}.",
+      "moreInDomain": "More in {domain}",
+      "allPackagesInDomain": "All {count} packages",
+      "sourceSentence": "{count} {unit}, {sourceFiles} source files and {testFiles} test files in {path}."
+    },
+    "glyphs": {
+      "sms": {
+        "message": "Your {brandName} OTP is 8472. Expires in 5 minutes.",
+        "delivered": "delivered"
+      },
+      "audio-pipeline": {
+        "steps": {
+          "0": "transcribe",
+          "1": "denoise",
+          "2": "master"
+        }
+      },
+      "code-execution": {
+        "footer": "Vercel Sandbox · safe untrusted",
+        "executed": "executed in 47ms"
+      },
+      "document-pipeline": {
+        "steps": {
+          "0": {
+            "label": "PDF",
+            "meta": "upload"
+          },
+          "1": {
+            "label": "OCR",
+            "meta": "47p"
+          },
+          "2": {
+            "label": "chunk",
+            "meta": "248"
+          },
+          "3": {
+            "label": "embed",
+            "meta": ""
+          }
+        },
+        "docs": {
+          "0": {
+            "age": "2m ago",
+            "pages": "47 pages",
+            "chunks": "248 chunks"
+          },
+          "1": {
+            "age": "12m ago",
+            "pages": "12 pages",
+            "chunks": "84 chunks"
+          }
+        },
+        "processed": "processed"
+      },
+      "ecosystem-safety": {
+        "title": "Guardrails active",
+        "layersCount": "4 layers",
+        "layers": {
+          "0": {
+            "label": "Content moderation",
+            "stat": "0 blocked today"
+          },
+          "1": {
+            "label": "PII redaction",
+            "stat": "12 redacted today"
+          },
+          "2": {
+            "label": "Prompt injection detect",
+            "stat": "2 caught today"
+          },
+          "3": {
+            "label": "Rate limit per actor",
+            "stat": "normal"
+          }
+        },
+        "footer": "OpenAI Moderation · regex + LLM gate"
+      },
+      "notifications": {
+        "rows": {
+          "0": {
+            "title": "payment received"
+          },
+          "1": {
+            "title": "new teammate"
+          },
+          "2": {
+            "title": "rate limit hit"
+          }
+        }
+      },
+      "onboarding": {
+        "steps": {
+          "0": "Account",
+          "1": "Workspace",
+          "2": "Invite",
+          "3": "First action"
+        },
+        "footnote": "Almost there",
+        "count": "3 of 4"
+      },
+      "outreach-engine": {
+        "campaign": "Q4 enterprise outbound",
+        "status": "Active · 47 prospects",
+        "sent": "Sent",
+        "open": "Opens",
+        "reply": "Replies",
+        "steps": {
+          "0": "Day 1: intro",
+          "1": "Day 3: case study",
+          "2": "Day 7: demo offer",
+          "3": "Day 14: bump"
+        }
+      },
+      "sandbox-runtime": {
+        "footer": "Vercel Sandbox · safe untrusted",
+        "run": "Run",
+        "lastExec": "Last exec"
+      }
+    },
+    "showcases": {
+      "auth": {
+        "active": "active",
+        "providers": {
+          "0": {
+            "label": "Continue with passkey"
+          },
+          "1": {
+            "label": "Continue with Google"
+          },
+          "2": {
+            "label": "Continue with GitHub"
+          },
+          "3": {
+            "label": "Continue with device code"
+          },
+          "4": {
+            "label": "Continue with magic link"
+          }
+        },
+        "cta": "Sign in",
+        "description": "One auth provider, every sign-in method it needs — Better Auth, no vendor in the loop.",
+        "email": "Email",
+        "or": "or sign in with email",
+        "password": "Password",
+        "stats": "Better Auth · SSO ready · MFA enforced",
+        "title": "Sign in to {brandName}"
+      },
+      "db": {
+        "headerLabel": "Query · packages/platform/db",
+        "rlsEnforced": "enforced",
+        "resultsTitle": "Query results",
+        "resultsSubtitle": "tenant-scoped via row-level security",
+        "visibleLabel": "Visible rows",
+        "hiddenLabel": "Hidden by RLS",
+        "visibleHint": "in tenant_a",
+        "hiddenHint": "other tenants",
+        "hiddenNote": "RLS hides rows belonging to other tenants — they never leave the database."
+      },
+      "gateway-core": {
+        "stops": {
+          "0": "Tenant resolution",
+          "1": "Rate-limit check",
+          "2": "Idempotency",
+          "3": "Auth",
+          "4": "Route handler",
+          "5": "Response shape"
+        },
+        "totalLabel": "Total latency",
+        "lifecycle": "Middleware lifecycle",
+        "okLabel": "OK",
+        "rps": "Requests / sec",
+        "p50": "p50 latency",
+        "p95": "p95 latency",
+        "gaugeLabel": "Success rate",
+        "success": "success"
+      },
+      "metering": {
+        "kpis": {
+          "0": {
+            "label": "API calls"
+          },
+          "1": {
+            "label": "AI tokens"
+          },
+          "2": {
+            "label": "Storage"
+          },
+          "3": {
+            "label": "Active users"
+          }
+        },
+        "meterRows": {
+          "0": {
+            "tier": "Pro · $0.001/call"
+          },
+          "1": {
+            "tier": "Pro · metered"
+          },
+          "2": {
+            "tier": "Pro · 50 GB incl."
+          },
+          "3": {
+            "tier": "Pro · seat-based"
+          }
+        },
+        "capLabel": "Cap",
+        "footer": "Aggregated in ClickHouse · realtime · ≤ 800ms p99",
+        "meterLabel": "Meter",
+        "of": "of",
+        "pctLabel": "% used",
+        "realtime": "live",
+        "tierLabel": "Pricing tier",
+        "title": "Usage metering",
+        "usedLabel": "Period usage"
+      },
+      "queue": {
+        "jobs": {
+          "0": {
+            "relative": "now"
+          },
+          "1": {
+            "relative": "12s ago"
+          },
+          "2": {
+            "relative": "48s ago"
+          },
+          "3": {
+            "relative": "1m ago"
+          },
+          "4": {
+            "relative": "2m ago"
+          },
+          "5": {
+            "relative": "3m ago"
+          }
+        },
+        "statusMeta": {
+          "failed": "Failed",
+          "pending": "Pending",
+          "processing": "Processing",
+          "success": "Success"
+        },
+        "attempts": "Attempts",
+        "duration": "Duration",
+        "queue": "Queue",
+        "status": "Status",
+        "throughput": "Throughput",
+        "success": "Success rate",
+        "when": "When",
+        "rate": "jobs/min",
+        "latency": "Avg latency",
+        "healthy": "Healthy",
+        "last60": "Last 60 min",
+        "live": "Live · QStash"
+      },
+      "search": {
+        "results": {
+          "0": {
+            "title": "Billing v2 migration playbook",
+            "excerpt": "Step-by-step migration from legacy invoices to the new metering pipeline."
+          },
+          "1": {
+            "title": "Migration checklist for billing tenants",
+            "excerpt": "Verify RLS, secrets rotation, and webhook backfill before cutover."
+          },
+          "2": {
+            "title": "Creem + WeChat Pay billing adapter notes",
+            "excerpt": "One billing contract keeps customer code stable across both rails."
+          },
+          "3": {
+            "title": "Zero-downtime migration patterns",
+            "excerpt": "Dual-write, shadow-read, then flip — applies to billing data too."
+          }
+        },
+        "placeholder": "Search docs, posts, changelog…",
+        "indexLabel": "Index",
+        "tagsLabel": "Tags",
+        "footer": "Searched {count} docs in {ms} · Postgres backend",
+        "relevance": "score"
+      },
+      "webhooks": {
+        "deliveries": {
+          "0": {
+            "timestamp": "2m ago"
+          },
+          "1": {
+            "timestamp": "5m ago"
+          },
+          "2": {
+            "timestamp": "just now"
+          },
+          "3": {
+            "timestamp": "12m ago"
+          },
+          "4": {
+            "timestamp": "1h ago"
+          }
+        },
+        "active": "Active",
+        "attempts": "Attempts",
+        "code": "Code",
+        "delivered": "last delivered 2m ago",
+        "event": "Event",
+        "footer": "99.2% success · p95 248ms · signed HMAC",
+        "latency": "Latency",
+        "retry": "retrying",
+        "status": "Status",
+        "title": "Recent deliveries",
+        "when": "When"
+      }
+    }
+  }
+}
