@@ -1,0 +1,3667 @@
+{
+  "nav": {
+    "features": "Functies",
+    "solutions": "Oplossingen",
+    "pricing": "Prijzen",
+    "docs": "Documentatie",
+    "github": "GitHub",
+    "npm": "npm",
+    "about": "Over ons",
+    "ideas": "Ideeën",
+    "opc": "Platform",
+    "roadmap": "Roadmap",
+    "resources": "Bronnen",
+    "signIn": "Inloggen",
+    "getStarted": "Start nu",
+    "changelog": "Changelog",
+    "news": "Nieuws",
+    "designDocs": "Designsysteem",
+    "avatarMenu": {
+      "ariaLabel": "Accountmenu",
+      "loadingName": "Laden…",
+      "dashboard": "Dashboard",
+      "account": "Account",
+      "billing": "Facturering",
+      "docs": "Documentatie",
+      "signOut": "Afmelden"
+    },
+    "theme": "Theme"
+  },
+  "refer": {
+    "metadataTitle": "Sluit je aan bij de {brandName} founder referral loop",
+    "metadataDescription": "Sluit je aan bij de {brandName} waitlist, behoud referral-attributie en ontgrendel je eigen sharelink in één gesloten product-led loop.",
+    "eyebrow": "Referral-lus voor oprichters",
+    "title": "Sluit je aan bij de volgende founder-cohort en krijg je eigen sharelink.",
+    "description": "Ga binnen met elke invitecode of meld je direct aan. We behouden de attributie als de code bestaat, plaatsen je op de waitlist en verstrekken een private referral-URL die je direct kunt delen.",
+    "signal": {
+      "waitlist": "Duurzame waitlist",
+      "codeDetected": "Code {code} gedetecteerd",
+      "direct": "Directe aanmelding"
+    },
+    "form": {
+      "emailLabel": "Werk-e-mail",
+      "emailPlaceholder": "you@example.com",
+      "codeLabel": "Referralcode",
+      "codePlaceholder": "Optionele code",
+      "submit": "Toetreden tot wachtlijst",
+      "submitting": "Aan het toetreden",
+      "invalidEmail": "Voer een geldig e-mailadres in.",
+      "error": "Kan momenteel niet toetreden. Probeer het opnieuw.",
+      "successTitle": "Je staat op de lijst",
+      "successDescription": "Je persoonlijke deelkoppeling is klaar.",
+      "positionLabel": "Wachtrijpositie",
+      "referralCodeLabel": "Jouw code",
+      "referralUrlLabel": "Jouw deelkoppeling",
+      "copyLink": "Koppeling kopiëren",
+      "copied": "Gekopieerd",
+      "share": "Delen",
+      "shareTitle": "Sluit je aan bij de {brandName} founding loop",
+      "shareText": "Gebruik mijn uitnodigingskoppeling om toe te treden tot de {brandName} founder-wachtlijst.",
+      "directMode": "Geen verwijscode nodig",
+      "codeMode": "Referral-attributie ingeschakeld"
+    },
+    "proof": {
+      "peerLoop": {
+        "title": "Oprichter-naar-oprichter-lus",
+        "description": "Elke geaccepteerde aanmelding ontvangt een code en URL, zodat de volgende verwijzing begint zonder handmatige overdracht."
+      },
+      "attribution": {
+        "title": "Eerlijke attributie",
+        "description": "Onbekende codes worden opgeslagen als geprobeerde attributie, terwijl geldige codes de verwijzer verhogen en de aanmelding schoon houden."
+      },
+      "shareLink": {
+        "title": "Deelklaar successtatus",
+        "description": "De bevestigingsstatus toont positie, code, kopiëren en native deelacties, zodat de lus op de pagina wordt voltooid."
+      }
+    },
+    "infrastructure": {
+      "eyebrow": "Product-gedreven infrastructuur",
+      "title": "Ontworpen als duurzame SaaS-infrastructuur, geen wegwerpvormulier.",
+      "description": "Het verwijzingsoppervlak wordt ondersteund door een domeinpakket, een persistente Prisma-model, een getypte Next.js-route en openbare rooktests die na ECS-deploys kunnen worden uitgevoerd.",
+      "data": {
+        "eyebrow": "Data",
+        "title": "Eén duurzame wachtlijsttabel",
+        "description": "E-mailuniekheid, automatisch verhoogde positie, verwijzingscode-indexen, metadata voor geprobeerde attributie en statusovergangen staan in de platformdatabase."
+      },
+      "api": {
+        "eyebrow": "API",
+        "title": "Getypt join-eindpunt",
+        "description": "De pagina post naar `/api/waitlist`, normaliseert willekeurige codes, retourneert bestaande items idempotent en is nooit afhankelijk van een voorbeeldcode."
+      },
+      "cicd": {
+        "eyebrow": "CI/CD",
+        "title": "Publieke smoke-test bij deploy",
+        "description": "Canonical en alias-URL's zijn klaar voor geautomatiseerde checks, zodat ECS-levering regressies in routes, DNS en gezondheid opvangt."
+      }
+    }
+  },
+  "hero": {
+    "headline1": "Zet je startup in de markt,",
+    "headline2": "aangedreven door {brandName} Agent OS.",
+    "subheadline": "Sla weken aan platformwerk over met een <highlight>productierijp</highlight> fundament met bestuurde architectuur, gebouwd voor AI-coding agents & founders die wereldwijd opereren.",
+    "copyLabel": "Commando kopiëren",
+    "copiedLabel": "Gekopieerd",
+    "ctaGetAccess": "Start je startup",
+    "ctaExploreDemo": "Demo verkennen",
+    "pillCopied": "Gekopieerd"
+  },
+  "features": {
+    "sectionTitle": "Infrastructuur uit de doos, van prototype tot schaal.",
+    "item0": {
+      "title": "AI-toepassingsinfrastructuur",
+      "description": "Ingebouwde, productietestte Agent Frameworks en LLM-orchestratie-engines. Omzeil complexe onderliggende abstracties en werk direct met gestructureerde intelligentie-API's."
+    },
+    "item1": {
+      "title": "Bestuurde platformbasis",
+      "description": "Een bestuurde platformbasis voor teams die AI-native SaaS leveren. Stem scaffolding, runtime-primitieven en leveringsoppervlakken op elkaar af zonder ad-hoc tooling aan elkaar te knutselen."
+    },
+    "item2": {
+      "title": "Enterprise SaaS-automatisering",
+      "description": "Diep geïntegreerde moderne tech stack van Postgres, Better Auth en Creem. Biedt out-of-the-box row-level security, complexe multi-tenant isolatie en wereldwijde abonnementsfacturering."
+    }
+  },
+  "cta": {
+    "heading": "Klaar om je volgende AI-product te deployen?",
+    "subheading": "Initialiseer een complete, cloud-native SaaS-architectuur lokaal met één terminalcommando.",
+    "copyLabel": "Commando kopiëren",
+    "copiedLabel": "Gekopieerd",
+    "startBuilding": "Begin met bouwen"
+  },
+  "footer": {
+    "brandDescription": "Breng je startup uit met {brandName} Agent OS. Multi-tenancy, facturering, auth en AI — productieklare vanaf dag één.",
+    "columns": {
+      "product": "Product",
+      "resources": "Bronnen",
+      "company": "Bedrijf",
+      "legal": "Juridisch"
+    },
+    "links": {
+      "product": "Product",
+      "features": "Functies",
+      "forge": "Forge",
+      "pricing": "Prijzen",
+      "about": "Over ons",
+      "showcase": "Showcase",
+      "blog": "Blog",
+      "playbook": "Playbook",
+      "changelog": "Changelog",
+      "roadmap": "Roadmap",
+      "docs": "Documentatie",
+      "ideas": "Ideeën",
+      "opc": "Platform",
+      "careers": "Vacatures",
+      "security": "Beveiliging",
+      "dpa": "DPA",
+      "privacy": "Privacy",
+      "terms": "Voorwaarden",
+      "cookies": "Cookies",
+      "refund": "Terugbetaling",
+      "credits": "Dankbetuigingen",
+      "licensing": "Licenties",
+      "contact": "Contact",
+      "faq": "FAQ",
+      "github": "GitHub",
+      "discord": "Discord",
+      "twitter": "X (Twitter)"
+    },
+    "copyright": "© 2026 {companyLegalEn} · Alle rechten voorbehouden.",
+    "statusOnline": "Alle systemen operationeel",
+    "newsletterTitle": "Blijf op de hoogte",
+    "newsletterPlaceholder": "you@example.com",
+    "newsletterSubscribe": "Abonneren",
+    "newsletterSuccess": "Bedankt voor je aanmelding!",
+    "newsletterError": "Er is iets misgegaan",
+    "statusDegraded": "Degraded performance",
+    "statusOutage": "Major service outage",
+    "statusUnknown": "Checking status"
+  },
+  "logoStrip": {
+    "tagline": "Draait op"
+  },
+  "monorepoTree": {
+    "badge": "TURBOREPO-STRUCTUUR",
+    "title": "10 apps. 111 pakketten. 4 backendlanes.",
+    "description": "Gedeelde code, parallelle builds, geen duplicatie. Volledige end-to-end typing van database tot frontend.",
+    "metricApps": "apps",
+    "metricBackends": "backendlanes",
+    "metricPackages": "pakketten",
+    "verifiedPaths": "Paden geverifieerd tegen de huidige werkruimte",
+    "cta": "Verken de monorepo-architectuur"
+  },
+  "stats": {
+    "title": "In cijfers",
+    "github": "GitHub-sterren",
+    "discord": "Discord-leden",
+    "setup": "Gem. opzetduur",
+    "packages": "Monorepo-pakketten",
+    "ctaStar": "Ster →",
+    "ctaJoin": "Lid worden →",
+    "ctaStart": "Starten →",
+    "ctaExplore": "Verkenen →"
+  },
+  "legalPages": {
+    "about": {
+      "title": "Over ons — Het beheerde AI-platform",
+      "description": "Ontdek de commerciële visie en engineeringprincipes achter het beheerde AI-platform van {brandName}.",
+      "heading": "Het tijdperk van slanke productteams",
+      "subheading": "Vervang herhaald platformwerk door beheerde infrastructuur, sterke automatisering en duurzame engineering-leverage.",
+      "missionTitle": "Een nieuwe orde die bestandsverval weerstaat",
+      "missionP1": "{brandName} bouwt een beheerd AI-platform voor teams die duurzame infrastructuur nodig hebben in plaats van korte starter stacks. Traditionele schaal gaat vaak gepaard met bureaucratie en entropie; wij reageren met code-governance, automatisering en een platformbasis die auditbaar blijft naarmate het groeit.",
+      "missionP2": "Commerce kampt nog steeds met coördinatie-overhead, gefragmenteerde tooling en zwakke upgrade-paden. Wij richten ons op het verminderen van die wrijving door duidelijkere platformcontracten, sterkere delivery-primitieven en runtime-gedrag dat teams daadwerkelijk kunnen waarnemen en vertrouwen.",
+      "missionP3": "Wij verwerpen de gewoonte om schaalsproblemen op te lossen met meer organisatorische weerstand. Automatisering, tests en governance moeten herhaald operationeel werk absorberen, zodat teams zich kunnen richten op product, architectuur en klantresultaten.",
+      "missionP4": "",
+      "valuesTitle": "De vier pijlers",
+      "values": {
+        "0": {
+          "title": "Beheerde schaal (filosofie)",
+          "description": "Schaal moet komen van sterkere systemen, betere leverage en duidelijkere bedrijfsregels — niet van het ophopen van meer organisatorisch gewicht."
+        },
+        "1": {
+          "title": "De builder-core (infrastructuur)",
+          "description": "Een herbruikbare platformbasis voor multi-tenancy, facturering, auth, compliance en AI-integraties die teams kunnen auditen, uitbreiden en herhaaldelijk kunnen uitrollen."
+        },
+        "2": {
+          "title": "Upgrade-discipline (routing)",
+          "description": "Gezonde systemen groeien door compatibiliteitscontroles, migraties en waarneembare runtime-contracten in plaats van drift, heldendaden en eenmalige herschrijvingen."
+        },
+        "3": {
+          "title": "Code is wet (organisatie)",
+          "description": "Operationele discipline moet worden gecodeerd in tests, workflows en governance-regels, zodat teams het platform kunnen verbeteren zonder te vertrouwen op politiek of institutioneel geheugen."
+        }
+      },
+      "jobsTitle": "Engineering-signalen boven referenties",
+      "jobsDescription": "Wij hechten meer waarde aan verifieerbare engineering-output, helder denken en systeem-oordeel dan aan pedigree of titelinflatie.",
+      "jobsButton": "Verstuur GitHub-profiel",
+      "companyInfoTitle": "Organisatorische naleving",
+      "companyInfo": {
+        "legalName": "Registratie rechtspersoon",
+        "founded": "Registratiedatum",
+        "headquarters": "Globaal operationeel centrum",
+        "jurisdiction": "Toepasselijke rechtsgebieden"
+      },
+      "ctaHeading": "Heeft u een diepere technische evaluatie nodig?",
+      "ctaDescription": "Neem contact op met onze engineering-specialisten voor een enterprise-integratiebeoordeling of bekijk de implementatiedocumentatie.",
+      "ctaButton": "Contact opnemen"
+    },
+    "contact": {
+      "title": "Technische & commerciële aanvraag — {brandName}",
+      "description": "Het speciale communicatiekanaal voor commerciële licenties, enterprise self-hosting en geavanceerde technische ondersteuning.",
+      "heading": "Ondersteuningsverbinding tot stand brengen",
+      "subheading": "Wij sturen een toegewijde technische specialist of architect om uw expliciete vereisten te evalueren.",
+      "contacts": {
+        "founder": {
+          "title": "Directe contact met oprichter",
+          "description": "Direct communicatiekanaal voor kernstrategische afstemmingen en uitvoerende aanvragen."
+        },
+        "general": {
+          "title": "Enterprise-consultatie",
+          "description": "Vooroverleg over ecologische strategische partnerschappen en de algehele architecturale ontwikkeling."
+        },
+        "sales": {
+          "title": "Commerciële Implementatie",
+          "description": "Onderhandelingen over licenties voor gesloten broncode en bijzonderheden met betrekking tot implementaties in privé-clusteromgevingen."
+        },
+        "support": {
+          "title": "Ondersteuning op Expertniveau",
+          "description": "Gerichte architecturale begeleiding en probleemoplossing voor actieve zakelijke integraties en debugging van kernsystemen."
+        },
+        "legal": {
+          "title": "Juridische Zaken & Compliance",
+          "description": "Vragen over de definitie van open-source grenzen, enterprise compliance-audits en contractvoorwaarden."
+        },
+        "privacy": {
+          "title": "Privacy van Datacenters",
+          "description": "Technische verificatie en compliance-richtlijnen met betrekking tot de GDPR en daaropvolgende internationale wetgeving op het gebied van gegevensbescherming."
+        },
+        "security": {
+          "title": "Beveiligingsmeldingen",
+          "description": "Dien technische reproduceringsrapporten in over mogelijke softwarekwetsbaarheden op een veilige manier direct bij ons infrastructuurteam."
+        }
+      },
+      "formTitle": "Inzendportaal",
+      "form": {
+        "name": "Naam van de Inzender",
+        "email": "Officieel E-mailadres",
+        "company": "Aangesloten Organisatie",
+        "category": "Domein van de Vraag",
+        "categories": {
+          "general": "Zakelijke Raadpleging",
+          "sales": "Licenties & Architectuur",
+          "support": "Ontwikkelaarsondersteuning",
+          "legal": "Juridische & Compliance Kaders",
+          "privacy": "Gegevensverwerkingsbeleid",
+          "partnership": "Ecosystem Integraties",
+          "press": "Public Relations"
+        },
+        "subject": "Kernprobleem Samenvatting",
+        "message": "Gedetailleerde Technische/Commerciële Specificaties",
+        "submit": "Verzenden naar Backend",
+        "privacyNotice": "Het verzenden van dit verzoek betekent dat u onze hebt gelezen en ermee akkoord gaat",
+        "privacyLink": "Systeem Privacy Infrastructuur",
+        "submitting": "Verwerkingswachtrij betreden...",
+        "successMessage": "Gegevens succesvol verzonden. Het verantwoordelijke operationele team zal binnen 1-2 werkdagen een gedetailleerd antwoord versturen."
+      },
+      "companyInfoTitle": "Operationele Telemetrie",
+      "companyNameChinese": "{companyLegal}",
+      "companyNameEnglish": "{companyLegalEn}",
+      "companyAddress": "Wuxi, provincie Jiangsu, China",
+      "socialMedia": "Primaire netwerklinks"
+    },
+    "cookies": {
+      "title": "Cookiebeleid — {brandName}",
+      "description": "Hoe {brandName} cookies en vergelijkbare trackingtechnologieën gebruikt op onze website en diensten.",
+      "heading": "Cookiebeleid",
+      "effectiveDate": "Ingangsdatum",
+      "lastUpdated": "Laatst bijgewerkt",
+      "dates": {
+        "effective": "1 januari 2025",
+        "updated": "1 januari 2025"
+      },
+      "intro": "Dit cookiebeleid legt uit hoe {brandName} Co., Ltd. (\"{brandName},\" \"wij,\" \"ons,\" of \"onze\") cookies en vergelijkbare trackingtechnologieën gebruikt op onze website en diensten.",
+      "whatAreCookies": {
+        "title": "Wat zijn cookies?",
+        "content": "Cookies zijn kleine tekstbestanden die op uw apparaat worden geplaatst wanneer u een website bezoekt. Ze worden veel gebruikt om websites efficiënter te laten werken en informatie te verstrekken aan website-eigenaren."
+      },
+      "howWeUse": {
+        "title": "Hoe wij cookies gebruiken",
+        "intro": "Wij gebruiken cookies om:",
+        "items": {
+          "0": {
+            "label": "Essentiële functies mogelijk maken",
+            "desc": "Kernfunctionaliteit bieden zoals gebruikersauthenticatie en beveiliging"
+          },
+          "1": {
+            "label": "Voorkeuren onthouden",
+            "desc": "Sla uw taal, thema en andere instellingen op"
+          },
+          "2": {
+            "label": "Verbeter prestaties",
+            "desc": "Begrijp hoe bezoekers met onze diensten omgaan"
+          },
+          "3": {
+            "label": "Personaliseer ervaring",
+            "desc": "Lever relevante inhoud en aanbevelingen"
+          },
+          "4": {
+            "label": "Meet marketing",
+            "desc": "Volg de effectiviteit van onze marketingcampagnes"
+          }
+        }
+      },
+      "typesTitle": "Soorten cookies die we gebruiken",
+      "tableHeaders": {
+        "cookie": "Cookie",
+        "provider": "Aanbieder",
+        "purpose": "Doel",
+        "duration": "Duur"
+      },
+      "necessary": {
+        "title": "Strikt noodzakelijke cookies",
+        "description": "Deze cookies zijn essentieel voor de werking van de website. Ze kunnen niet worden uitgeschakeld.",
+        "cookies": {
+          "0": {
+            "name": "__session",
+            "provider": "{brandName}",
+            "purpose": "Gebruikersautenticatiesessie",
+            "duration": "Sessie"
+          },
+          "1": {
+            "name": "better-auth.session_token",
+            "provider": "Better Auth",
+            "purpose": "Authenticatiesessietoken",
+            "duration": "7 dagen"
+          },
+          "2": {
+            "name": "cookie_consent",
+            "provider": "{brandName}",
+            "purpose": "Bewaart cookie-toestemmingsvoorkeuren",
+            "duration": "1 jaar"
+          }
+        }
+      },
+      "functional": {
+        "title": "Functionele cookies",
+        "description": "Deze cookies maken gepersonaliseerde functies mogelijk en onthouden uw voorkeuren.",
+        "cookies": {
+          "0": {
+            "name": "locale",
+            "provider": "{brandName}",
+            "purpose": "Bewaart taalvoorkeur",
+            "duration": "1 jaar"
+          },
+          "1": {
+            "name": "theme",
+            "provider": "{brandName}",
+            "purpose": "Bewaart thema-voorkeur",
+            "duration": "1 jaar"
+          }
+        }
+      },
+      "analyticsType": {
+        "title": "Analytische cookies",
+        "description": "Deze cookies helpen ons te begrijpen hoe bezoekers met onze website omgaan.",
+        "cookies": {
+          "0": {
+            "name": "_ga",
+            "provider": "Google Analytics",
+            "purpose": "Onderscheidt unieke gebruikers",
+            "duration": "2 jaar"
+          },
+          "1": {
+            "name": "ph_*",
+            "provider": "PostHog",
+            "purpose": "Productanalytics",
+            "duration": "1 jaar"
+          }
+        }
+      },
+      "marketingType": {
+        "title": "Marketingcookies",
+        "description": "Deze cookies worden gebruikt voor advertenties en het bijhouden van de prestaties van adverterende campagnes.",
+        "cookies": {
+          "0": {
+            "name": "_fbp",
+            "provider": "Facebook",
+            "purpose": "Houdt bezoeken bij voor Facebook-advertenties",
+            "duration": "3 maanden"
+          },
+          "1": {
+            "name": "_gcl_au",
+            "provider": "Google Ads",
+            "purpose": "Conversie-tracking",
+            "duration": "3 maanden"
+          }
+        }
+      },
+      "managingTitle": "Uw cookievoorkeuren beheren",
+      "consentBanner": {
+        "title": "Cookie-toestemmingsbanner",
+        "intro": "Bij uw eerste bezoek aan onze website ziet u een cookie-toestemmingsbanner waarmee u kunt:",
+        "items": {
+          "0": {
+            "label": "Alles accepteren",
+            "desc": "Alle cookiecategorieën inschakelen"
+          },
+          "1": {
+            "label": "Alles weigeren",
+            "desc": "Alle optionele cookies uitschakelen (noodzakelijke cookies blijven actief)"
+          },
+          "2": {
+            "label": "Aanpassen",
+            "desc": "Specifieke cookiecategorieën selecteren om in te schakelen"
+          }
+        },
+        "changeNote": "U kunt uw voorkeuren op elk moment wijzigen door op \"Cookie-instellingen\" in de voettekst te klikken."
+      },
+      "browserSettings": {
+        "title": "Browserinstellingen",
+        "intro": "De meeste webbrowsers laten u cookies beheren via hun instellingen:",
+        "browsers": {
+          "0": {
+            "name": "Chrome",
+            "path": "Instellingen > Privacy en beveiliging > Cookies"
+          },
+          "1": {
+            "name": "Firefox",
+            "path": "Instellingen > Privacy & Beveiliging > Cookies"
+          },
+          "2": {
+            "name": "Safari",
+            "path": "Voorkeuren > Privacy > Cookies"
+          },
+          "3": {
+            "name": "Edge",
+            "path": "Instellingen > Privacy, zoeken en services > Cookies"
+          }
+        },
+        "note": "Het blokkeren van bepaalde cookies kan de functionaliteit van de website beïnvloeden."
+      },
+      "similarTech": {
+        "title": "Vergelijkbare technologieën",
+        "intro": "Naast cookies kunnen we ook gebruikmaken van:",
+        "items": {
+          "0": {
+            "label": "Lokale opslag",
+            "desc": "Voor het lokaal opslaan van voorkeuren en het cachen van gegevens"
+          },
+          "1": {
+            "label": "Sessieopslag",
+            "desc": "Voor tijdelijke gegevens tijdens uw browsessie"
+          },
+          "2": {
+            "label": "Pixeltags",
+            "desc": "Kleine afbeeldingen om e-mailopeningen en websitebezoeken bij te houden"
+          }
+        },
+        "noFingerprinting": "We gebruiken GEEN browserfingerprinting voor tracking."
+      },
+      "updates": {
+        "title": "Bijwerkingen van dit beleid",
+        "content": "We kunnen dit cookiebeleid van tijd tot tijd bijwerken. We zullen u op de hoogte stellen van belangrijke wijzigingen door het bijgewerkte beleid op onze website te plaatsen."
+      },
+      "contactUs": {
+        "title": "Neem contact met ons op",
+        "intro": "Heeft u vragen over ons gebruik van cookies? Neem dan contact met ons op:",
+        "company": "{brandName} Co., Ltd.",
+        "privacyNote": "Voor meer informatie over hoe we uw gegevens verzamelen en verwerken, zie ons",
+        "privacyLink": "Privacybeleid"
+      }
+    },
+    "faq": {
+      "title": "Technische Richtlijnen & FAQ — {brandName}",
+      "description": "Uitgebreide analyse van frameworkarchitectuur, basistopologieën en commerciële implementatiestrategieën.",
+      "heading": "Executive Deep Dive",
+      "subheading": "Ondersteunend materiaal geoptimaliseerd voor systeemintegratie en uitvoerende commerciële besluitvorming.",
+      "categories": {
+        "0": {
+          "name": "Architectuuroverzicht",
+          "questions": {
+            "0": {
+              "q": "Wat is het expliciete operationele doel van {productName}?",
+              "a": "{productName} is een zeer gestructureerd, productie-klaar Next.js AI SaaS-framework. Het bundelt bedrijfsfacturering, multifactorauthenticatie en multi-tenant isolatie in een beheerd platformbaseline, zodat teams zich kunnen richten op product-specifieke AI-implementatie."
+            },
+            "1": {
+              "q": "Hoe is de licentie van de repository gestructureerd?",
+              "a": "De kern is gelicentieerd onder FSL-1.1-ALv2 (Functional Source License), vrij te gebruiken om producten te bouwen — geen kosten, geen copyleft-verplichting. De enige beperking is het aanbieden van Sailor zelf als concurrerend commercieel product of dienst. Elke versie zet automatisch en onherroepelijk om naar Apache-2.0 twee jaar na de release."
+            },
+            "2": {
+              "q": "Wat is de snelheid van de initiële commerciële evaluatie?",
+              "a": "Extreem hoge snelheid. Met behulp van onze aangepaste Node CLI-toolchain en de nauwkeurige technische specificatie kan een junior engineer binnen enkele minuten een autonome lokale Minimum Viable Product (MVP)-instantie opzetten."
+            }
+          }
+        },
+        "1": {
+          "name": "Commerciële operaties",
+          "questions": {
+            "0": {
+              "q": "Hoe groot is de tolerantie voor commerciële schaalvergroting?",
+              "a": "Ontworpen met sterke nadruk op micro-component paradigma's, waarbij de structurele draagkracht naadloos schaalbaar is van Free Tiers zonder vraag tot Enterprise-drempels die meerdere miljoenen maandelijkse verzoeken afhandelen, volledig geconfigureerd via dashboardbeperkingen."
+            },
+            "1": {
+              "q": "Hoe beïnvloedt abonnementsvolatiliteit de standaard boekhouding?",
+              "a": "Wij werken met nauwkeurige, op seconden gebaseerde structurele logging van resources en API-doorvoer. Veranderende beperkingen worden direct afgestemd met de boekhoudlaag—ofwel door evenredige verschillen terug te storten of door automatische tegoeden toe te kennen. Er is absoluut geen periode van vastgevroren niveaus."
+            },
+            "2": {
+              "q": "Welke verwerkingsinfrastructuur isoleert betalingsvectoren?",
+              "a": "Wereldwijd geldrouten verzoeken fundamenteel aan Creem-serverinterfaces als merchant of record, wat strikte PCI-DSS-telemetrie en verwerkingsintegriteit garandeert. Enterprise-implementaties kunnen private financiële auditpijplijnen integreren die worden beheerd door aangepaste SLA-verplichtingen."
+            }
+          }
+        },
+        "2": {
+          "name": "Systeemengineeringlaag",
+          "questions": {
+            "0": {
+              "q": "Welke fundamentele intelligentie-abstracties worden native ondersteund?",
+              "a": "De primaire interactielogica bepaalt native interoperabiliteit over de standaard specificaties van OpenAI, Anthropic en Gemini. Dit biedt enorme flexibiliteit om redeneer-eindpunten efficiënt te verwisselen via variabelemapping zonder degradatie van de upstream commerciële logica."
+            },
+            "1": {
+              "q": "Hoe wordt het risico van databaseverduistering aangepakt?",
+              "a": "Implementatie-standaarden zetten intrinsiek Postgres Row-Level Security (RLS)-beleid in, nauw verbonden met onze serverless Tenant Resolution Routing-primitieven. Dit zorgt ervoor dat harde partities actief kritieke data-contaminatie op applicatieniveau en uitvoeringsoverlapping voorkomen."
+            },
+            "2": {
+              "q": "Zijn er architectonische beperkingen voor zelfbeheerde implementaties?",
+              "a": "Helemaal niet. De topologie is volledig ontkoppeld. Als de omgeving onafhankelijke Node.js-runtimes uitvoert naast gezonde PostgreSQL-clusters, blijft de volledige functionaliteit inherent behouden."
+            }
+          }
+        },
+        "3": {
+          "name": "Systematische Integriteit",
+          "questions": {
+            "0": {
+              "q": "Welke protocollen bepalen de mechanische verdediging van de perimeter?",
+              "a": "Mechanismen voeren verplichte TLS-codering tijdens transmissie uit, deterministische hashalgoritmes voor geheimenmapping en de alomtegenwoordige registratie van mutatiegebeurtenissen die strikt worden geschreven in interne tijdreeksen-trackingledgers."
+            },
+            "1": {
+              "q": "Eerbiedigt de topologie belangrijke internationale privacywetgeving?",
+              "a": "Ja, diepgaand. Zakelijke modules leveren out-of-the-box algoritme-implementaties die gericht zijn op toestemmingsintrekkingstoestanden, harde-verwijderingslogica en diepe exportqueries die optimaal voldoen aan de GDPR en gelokaliseerde regelgevingskaders."
+            },
+            "2": {
+              "q": "Wat wordt uitgevoerd bij een abnormaal catastrofale incident?",
+              "a": "Automatische wachters waarschuwen onmiddellijk kernengineeringvectoren die circuitblokkades afdwingen en snelle triage implementeren. Bestuurd door een geavanceerd oplossingshandboek, worden volledig transparante Incident Postmortems universeel verspreid binnen een absolute 72-uursvenster."
+            }
+          }
+        },
+        "4": {
+          "name": "Technische Assistentie Richtlijnen",
+          "questions": {
+            "0": {
+              "q": "Hoe wordt operationeel bottleneck-onderzoek opgelost?",
+              "a": "Initiële triagevectoren richten zich op de zorgvuldig onderhouden en door collega's beoordeelde documentatiematrix en geverifieerde community-interacties. Het verwerven van een standaard- of enterprise-licentie ontgrendelt toegang tot private escalatiequeues die worden opgelost via directe interne engineeringknooppunten."
+            },
+            "1": {
+              "q": "Bieden jullie fysieke of gespecialiseerde omgevingsintegratieoperaties aan?",
+              "a": "Dit valt onder ons op maat gemaakte premium uitvoeringstier voor topcorporate conglomeraten. Onze meest senior architecten worden extern ingezet om codeaudits uit te voeren tegen legacy-architectuur, delicate cloudverplaatsingen te beheren en sterk geïsoleerde netwerkpartities te valideren."
+            }
+          }
+        }
+      },
+      "ctaHeading": "Directe technische synchronisatie nodig?",
+      "ctaDescription": "Of het nu gaat om het valideren van een specifiek API-gedragsschema of het uitvoeren van langetermijnintegratieovereenkomsten, neem direct contact op met de engineeringhiërarchie.",
+      "ctaButton": "Integratie-instructies ontvangen",
+      "ctaEmail": "Direct bericht verzenden"
+    },
+    "privacy": {
+      "title": "Privacy- en informatiebeschermingsprotocol — {brandName}",
+      "description": "Uitgebreide documentatie over hoe de infrastructuurmechanismen gebruikersautonomie en machinegegevensisolatie reguleren.",
+      "heading": "Informatiebeschermingsrichtlijnen",
+      "effectiveDate": "Ingangsdatum",
+      "lastUpdated": "Laatst bijgewerkt",
+      "dates": {
+        "effective": "1 januari 2025",
+        "updated": "1 januari 2025"
+      },
+      "intro": "Bij {brandName} (\"Bedrijf,\" \"wij,\" \"ons\" of \"onze\") zijn we toegewijd aan het beschermen van uw privacy. Dit privacybeleid legt uit hoe we uw informatie verzamelen, gebruiken, openbaren en beveiligen wanneer u onze website, applicaties en diensten gebruikt (gezamenlijk de \"Diensten\").",
+      "infoWeCollect": {
+        "title": "1. Informatie die we verzamelen",
+        "youProvide": {
+          "title": "1.1 Informatie die u verstrekt",
+          "intro": "We verzamelen informatie die u ons direct verstrekt, waaronder:",
+          "items": {
+            "0": {
+              "label": "Accountinformatie",
+              "desc": "Naam, e-mailadres, wachtwoord en organisatiedetails wanneer u een account aanmaakt."
+            },
+            "1": {
+              "label": "Profielinformatie",
+              "desc": "Profielfoto, functietitel, bedrijfsnaam en andere optionele informatie."
+            },
+            "2": {
+              "label": "Betalingsgegevens",
+              "desc": "Factuuradres en betalingsgegevens (veilig verwerkt via Creem)."
+            },
+            "3": {
+              "label": "Communicatie",
+              "desc": "Berichten, feedback en andere communicatie die u naar ons stuurt."
+            },
+            "4": {
+              "label": "Inhoud",
+              "desc": "Alle inhoud die u maakt, uploadt of opslaat via onze Diensten."
+            }
+          }
+        },
+        "automatic": {
+          "title": "1.2 Automatisch verzamelde informatie",
+          "intro": "Wanneer u onze Diensten gebruikt, verzamelen we automatisch bepaalde informatie:",
+          "items": {
+            "0": {
+              "label": "Apparaatinformatie",
+              "desc": "Apparaattype, besturingssysteem, browsertype en unieke apparaatidentificatiecodes."
+            },
+            "1": {
+              "label": "Gebruiksgegevens",
+              "desc": "Bekeken pagina's, gebruikte functies, uitgevoerde acties en tijd besteed aan de Diensten."
+            },
+            "2": {
+              "label": "Loggegevens",
+              "desc": "IP-adres, toegangstijden, verwijzende URL's en systeemactiviteitslogs."
+            },
+            "3": {
+              "label": "Locatiegegevens",
+              "desc": "Algemene locatie op basis van IP-adres (we verzamelen geen nauwkeurige locatiegegevens)."
+            }
+          }
+        }
+      },
+      "howWeUse": {
+        "title": "2. Hoe we uw informatie gebruiken",
+        "intro": "We gebruiken de verzamelde informatie om:",
+        "items": {
+          "0": {
+            "label": "Diensten leveren",
+            "desc": "Onze Diensten beheren, onderhouden en verbeteren."
+          },
+          "1": {
+            "label": "Transacties verwerken",
+            "desc": "Betalingen, facturering en gerelateerde operaties afhandelen."
+          },
+          "2": {
+            "label": "Communiceren",
+            "desc": "Dienstaanbiedingen, updates en marketingcommunicatie sturen (met toestemming)."
+          },
+          "3": {
+            "label": "Personaliseren",
+            "desc": "Uw ervaring aanpassen en relevante aanbevelingen bieden."
+          },
+          "4": {
+            "label": "Analyseren",
+            "desc": "Gebruikspatronen begrijpen en onze Diensten verbeteren."
+          },
+          "5": {
+            "label": "Beschermen",
+            "desc": "Fraude, misbruik en beveiligingsincidenten detecteren, voorkomen en opvolgen."
+          }
+        }
+      },
+      "howWeShare": {
+        "title": "3. Hoe we uw informatie delen",
+        "intro": "We kunnen uw gegevens delen in de volgende omstandigheden:",
+        "serviceProviders": {
+          "title": "3.1 Dienstaanbieders",
+          "intro": "We delen gegevens met externe leveranciers die namens ons diensten verlenen, waaronder:",
+          "items": {
+            "0": {
+              "label": "Infrastructuur",
+              "desc": "Cloudhosting (Fly.io, Cloudflare), databaseservices"
+            },
+            "1": {
+              "label": "Betalingsverwerking",
+              "desc": "Creem voor beveiligde betalingsafhandeling"
+            },
+            "2": {
+              "label": "Authenticatie",
+              "desc": "Better Auth voor identiteitsbeheer"
+            },
+            "3": {
+              "label": "Analytics",
+              "desc": "PostHog, Vercel Analytics voor gebruiksinzichten"
+            }
+          }
+        },
+        "businessTransfers": {
+          "title": "3.2 Bedrijfsoverdrachten",
+          "content": "Als we betrokken zijn bij een fusie, overname of verkoop van activa, kunnen uw gegevens worden overgedragen als onderdeel van die transactie."
+        },
+        "legalRequirements": {
+          "title": "3.3 Wettelijke verplichtingen",
+          "content": "We kunnen gegevens openbaren wanneer dit wettelijk verplicht is, op grond van een juridische procedure of overheidsverzoek, of om onze rechten, privacy, veiligheid of eigendommen te beschermen."
+        }
+      },
+      "yourRights": {
+        "title": "4. Uw rechten en keuzes",
+        "accessPortability": {
+          "title": "4.1 Toegang en overdraagbaarheid",
+          "content": "U kunt toegang krijgen tot uw persoonlijke gegevens via uw accountinstellingen en een kopie van uw gegevens aanvragen in een overdraagbaar formaat."
+        },
+        "correction": {
+          "title": "4.2 Correctie",
+          "content": "U kunt uw accountgegevens op elk moment bijwerken via het dashboard."
+        },
+        "deletion": {
+          "title": "4.3 Verwijdering",
+          "content": "U kunt verwijdering van uw account en bijbehorende gegevens aanvragen via de instellingen of door contact met ons op te nemen."
+        },
+        "marketing": {
+          "title": "4.4 Marketingcommunicatie",
+          "content": "U kunt zich afmelden voor marketinge-mails door op 'afmelden' te klikken in een marketinge-mail of uw voorkeuren bij te werken."
+        }
+      },
+      "dataSecurity": {
+        "title": "5. Gegevensbeveiliging",
+        "intro": "Wij nemen passende technische en organisatorische maatregelen om uw gegevens te beschermen, waaronder:",
+        "items": {
+          "0": "Versleuteling van gegevens tijdens overdracht (TLS) en opslag",
+          "1": "Regelmatige beveiligingsbeoordelingen en penetratietests",
+          "2": "Toegangscontroles en authenticatievereisten",
+          "3": "Monitoring en logging van systeemactiviteit"
+        }
+      },
+      "ccpa": {
+        "title": "6. Californische privacyrechten (CCPA)",
+        "intro": "Als u een inwoner van Californië bent, heeft u specifieke rechten met betrekking tot uw persoonlijke gegevens:",
+        "items": {
+          "0": {
+            "label": "Recht op informatie",
+            "desc": "Vraag informatie op over de gegevens die we verzamelen, gebruiken en delen."
+          },
+          "1": {
+            "label": "Recht op verwijdering",
+            "desc": "Vraag verwijdering van uw persoonlijke gegevens aan."
+          },
+          "2": {
+            "label": "Recht op uitsluiting",
+            "desc": "Kies voor uitsluiting van de verkoop van persoonlijke gegevens (we verkopen uw gegevens niet)."
+          },
+          "3": {
+            "label": "Recht op niet-discriminatie",
+            "desc": "We zullen u niet discrimineren omdat u uw rechten uitoefent."
+          }
+        }
+      },
+      "gdpr": {
+        "title": "7. Europese privacyrechten (GDPR)",
+        "intro": "Als u zich in de EER, het VK of Zwitserland bevindt, heeft u aanvullende rechten onder de GDPR:",
+        "items": {
+          "0": {
+            "label": "Juridische grondslag",
+            "desc": "We verwerken uw gegevens op basis van contractuitvoering, gerechtvaardigde belangen of toestemming."
+          },
+          "1": {
+            "label": "Rechten",
+            "desc": "Toegang, rectificatie, verwijdering, overdraagbaarheid, beperking en bezwaar."
+          },
+          "2": {
+            "label": "DPO",
+            "desc": "U kunt contact opnemen met onze Data Protection Officer op dpo@{domain}."
+          }
+        }
+      },
+      "contactUs": {
+        "title": "8. Neem contact met ons op",
+        "intro": "Heeft u vragen over dit privacybeleid? Neem dan contact met ons op:",
+        "company": "{brandName} Co., Ltd."
+      }
+    },
+    "refund": {
+      "title": "Protocollen voor transactieanomalieën — {brandName}",
+      "description": "Strikte afbakening van de exacte parameters voor kapitaalherstel binnen diverse structurele samenwerkingsmodellen.",
+      "heading": "Kader voor geschillenafhandeling",
+      "effectiveDate": "Datum van implementatie",
+      "lastUpdated": "Datum van laatste wijziging",
+      "dates": {
+        "effective": "1 januari 2025",
+        "updated": "1 januari 2025"
+      },
+      "intro": "Bij {brandName} willen we dat u volledig tevreden bent met onze diensten. In dit terugbetalingsbeleid beschrijven we de omstandigheden waaronder terugbetaling mogelijk is en het proces om dit aan te vragen.",
+      "subscriptionPlans": {
+        "title": "Abonnementsplannen",
+        "monthly": {
+          "title": "Maandabonnementen",
+          "items": {
+            "0": {
+              "label": "Annulering",
+              "desc": "U kunt uw maandabonnement op elk moment opzeggen"
+            },
+            "1": {
+              "label": "Proportionele terugbetaling",
+              "desc": "Wij bieden geen pro-rata terugbetalingen voor gedeeltelijke maanden aan"
+            },
+            "2": {
+              "label": "Toegang",
+              "desc": "U behoudt toegang tot betaalde functies tot het einde van uw factureringsperiode"
+            },
+            "3": {
+              "label": "Automatische verlenging",
+              "desc": "Abonnementen worden automatisch verlengd tenzij ze worden opgezegd"
+            }
+          }
+        },
+        "annual": {
+          "title": "Jaarabonnementen",
+          "items": {
+            "0": {
+              "label": "14-dagen geld-terug-garantie",
+              "desc": "Nieuwe jaarabonnees kunnen binnen 14 dagen na hun eerste aankoop een volledige terugbetaling aanvragen"
+            },
+            "1": {
+              "label": "Na 14 dagen",
+              "desc": "Terugbetalingen zijn over het algemeen niet beschikbaar na de periode van 14 dagen"
+            },
+            "2": {
+              "label": "Opzegging",
+              "desc": "U kunt op elk moment opzeggen, maar uw abonnement blijft actief tot het einde van de jaartermijn"
+            },
+            "3": {
+              "label": "Geen pro-rata terugbetalingen",
+              "desc": "Wij bieden geen gedeeltelijke terugbetalingen voor ongebruikte maanden aan"
+            }
+          }
+        }
+      },
+      "eligibleScenarios": {
+        "title": "In aanmerking komende terugbetalingsituaties",
+        "intro": "Wij zullen terugbetalingsverzoeken overwegen in de volgende omstandigheden:",
+        "serviceIssues": {
+          "title": "1. Serviceproblemen",
+          "items": {
+            "0": "Aanzienlijke serviceonderbrekingen die uw gebruik van kernfuncties beïnvloeden",
+            "1": "Technische problemen die wij niet binnen een redelijke termijn kunnen oplossen",
+            "2": "Functies die aanzienlijk afwijken van wat werd geadverteerd"
+          }
+        },
+        "billingErrors": {
+          "title": "2. Factureringsfouten",
+          "items": {
+            "0": "Dubbele debetboekingen",
+            "1": "Onjuiste factuurbedragen",
+            "2": "Ongeautoriseerde debetboekingen (na verificatie)"
+          }
+        },
+        "exceptionalCircumstances": {
+          "title": "3. Bijzondere omstandigheden",
+          "items": {
+            "0": "Gedocumenteerde medische noodgevallen",
+            "1": "Natuurrampen die uw bedrijf beïnvloeden",
+            "2": "Andere omstandigheden die geval per geval worden beoordeeld"
+          }
+        }
+      },
+      "nonRefundable": {
+        "title": "Niet-terugbetaalbare items",
+        "intro": "De volgende items komen doorgaans niet in aanmerking voor terugbetaling:",
+        "items": {
+          "0": {
+            "label": "Gebruiksgerelateerde kosten",
+            "desc": "API-aanroepen, AI-tokenverbruik of gebruikte opslagruimte"
+          },
+          "1": {
+            "label": "Add-ons en extra's",
+            "desc": "Eenmalige aankopen of add-on diensten"
+          },
+          "2": {
+            "label": "Enterprise contracten",
+            "desc": "Op maat gemaakte overeenkomsten hebben hun eigen voorwaarden"
+          },
+          "3": {
+            "label": "Vrijwillige opzeggingen",
+            "desc": "Na de periode waarin een terugbetaling mogelijk is"
+          },
+          "4": {
+            "label": "Schending van voorwaarden",
+            "desc": "Accounts die zijn opgezegd wegens schending van het beleid"
+          }
+        }
+      },
+      "howToRequest": {
+        "title": "Hoe een terugbetaling aanvragen",
+        "step1": {
+          "title": "Stap 1: Neem contact op met support",
+          "intro": "Stuur ons een e-mail naar billing@{domain} met:",
+          "items": {
+            "0": "Uw account e-mailadres",
+            "1": "Abonnementsplan en factureringsperiode",
+            "2": "Reden voor het terugbetalingsverzoek",
+            "3": "Eventuele relevante documentatie"
+          }
+        },
+        "step2": {
+          "title": "Stap 2: Beoordelingsproces",
+          "items": {
+            "0": "We bekijken uw verzoek binnen 5 werkdagen",
+            "1": "We kunnen om aanvullende informatie vragen",
+            "2": "U ontvangt een schriftelijk besluit per e-mail"
+          }
+        },
+        "step3": {
+          "title": "Stap 3: Terugbetaling verwerken",
+          "intro": "Indien goedgekeurd:",
+          "items": {
+            "0": "Terugbetalingen worden verwerkt naar het oorspronkelijke betaalmiddel",
+            "1": "Creditcardterugbetalingen verschijnen doorgaans binnen 5-10 werkdagen",
+            "2": "Verwerkingstijden van banken kunnen variëren"
+          }
+        }
+      },
+      "planChanges": {
+        "title": "Planwijzigingen",
+        "upgrades": {
+          "title": "Upgrades",
+          "items": {
+            "0": "Upgrades treden onmiddellijk in werking",
+            "1": "U wordt het pro-rata verschil in rekening gebracht voor de resterende periode van uw factuurcyclus",
+            "2": "Er wordt geen terugbetaling verleend voor het vorige plan"
+          }
+        },
+        "downgrades": {
+          "title": "Downgrades",
+          "items": {
+            "0": "Downgrades treden in werking bij de volgende factuurcyclus",
+            "1": "U behoudt toegang tot de huidige functies tot die tijd",
+            "2": "Geen gedeeltelijke terugbetaling voor de huidige periode"
+          }
+        }
+      },
+      "freeTrial": {
+        "title": "Gratis proefperiode",
+        "items": {
+          "0": "Voor gratis proefperioden is geen betaalgegevens nodig",
+          "1": "Er worden geen kosten in rekening gebracht tijdens de proefperiode",
+          "2": "U ontvangt een melding voordat er kosten worden berekend"
+        }
+      },
+      "disputeResolution": {
+        "title": "Geschillenbeslechting",
+        "intro": "Als u het niet eens bent met ons terugbetalingsbesluit:",
+        "steps": {
+          "0": "Reageer op de beslissing e-mail met aanvullende informatie",
+          "1": "Vraag escalatie aan naar een leidinggevende",
+          "2": "Neem contact met ons op via legal@{domain} voor verdere beoordeling"
+        }
+      },
+      "contactUs": {
+        "title": "Neem contact met ons op",
+        "intro": "Voor terugbetalingsverzoeken of vragen over dit beleid:",
+        "company": "{brandName} Co., Ltd.",
+        "billingLabel": "Facturering",
+        "supportLabel": "Ondersteuning",
+        "legalLabel": "Juridisch",
+        "responseNote": "We streven ernaar om binnen 5 werkdagen te reageren op alle terugvraaganvragen.",
+        "termsNote": "Dit beleid is onderdeel van onze",
+        "termsLink": "Servicevoorwaarden",
+        "termsAgreement": "Door {brandName} te gebruiken, ga je akkoord met deze terugvraagvoorwaarden."
+      }
+    },
+    "terms": {
+      "title": "Servicevoorwaarden — {brandName}",
+      "description": "De servicevoorwaarden die van toepassing zijn op je toegang tot en gebruik van de website, applicaties, API's en diensten van {brandName}.",
+      "heading": "Servicevoorwaarden",
+      "effectiveDate": "Ingangsdatum",
+      "lastUpdated": "Laatst bijgewerkt",
+      "dates": {
+        "effective": "1 januari 2025",
+        "updated": "1 januari 2025"
+      },
+      "intro1": "Welkom bij {brandName}! Deze servicevoorwaarden (\"Voorwaarden\") regelen je toegang tot en gebruik van de website, applicaties, API's en diensten (samen de \"Diensten\") van {brandName} Co., Ltd. (\"{brandName}\", \"Bedrijf\", \"wij\", \"ons\" of \"onze\").",
+      "intro2": "Door onze Diensten te gebruiken of er toegang toe te krijgen, ga je akkoord met deze Voorwaarden en onze",
+      "intro2PrivacyLink": "Privacybeleid",
+      "intro2End": ". Als je niet akkoord gaat met deze Voorwaarden, gebruik dan onze Diensten niet.",
+      "acceptance": {
+        "title": "1. Aanvaarding van de Voorwaarden",
+        "eligibility": {
+          "title": "1.1 Geschiktheid",
+          "intro": "Om onze Diensten te gebruiken, moet u:",
+          "items": {
+            "0": "Minimaal 18 jaar oud zijn of de leeftijd van meerderjarigheid in uw rechtsgebied",
+            "1": "De bevoegdheid hebben om deze Voorwaarden namens uzelf of uw organisatie aan te gaan",
+            "2": "Niet verboden zijn om onze Diensten te gebruiken krachtens toepasselijk recht"
+          }
+        },
+        "orgAccounts": {
+          "title": "1.2 Organisatieaccounts",
+          "content": "Als u onze Diensten gebruikt namens een organisatie, verklaart u dat u de bevoegdheid heeft om die organisatie aan deze Voorwaarden te binden."
+        }
+      },
+      "services": {
+        "title": "2. Beschrijving van Diensten",
+        "intro": "{brandName} biedt een SaaS-platform dat het volgende omvat:",
+        "items": {
+          "0": "AI-gestuurde functies en inhoudsgeneratie",
+          "1": "Inhoudsbeheer en communitytools",
+          "2": "Aanbevelingssystemen",
+          "3": "E-commerce-integraties",
+          "4": "Web3-mogelijkheden",
+          "5": "Analytics en rapportage"
+        }
+      },
+      "account": {
+        "title": "3. Accountregistratie",
+        "creation": {
+          "title": "3.1 Accountaanmaak",
+          "intro": "Om toegang te krijgen tot bepaalde functies, moet u een account aanmaken. U gaat ermee akkoord om:",
+          "items": {
+            "0": "Nauwkeurige en volledige informatie te verstrekken",
+            "1": "De beveiliging van uw accountgegevens te waarborgen",
+            "2": "Uw gegevens tijdig bij te werken indien deze wijzigen",
+            "3": "Verantwoordelijkheid te nemen voor alle activiteiten onder uw account"
+          }
+        }
+      },
+      "billing": {
+        "title": "4. Abonnement en facturering",
+        "pricing": {
+          "title": "4.1 Prijzen",
+          "content": "Onze diensten worden aangeboden onder verschillende abonnementsplannen zoals beschreven op onze Prijzenpagina. Prijzen kunnen wijzigen met 30 dagen voorafkennis."
+        },
+        "payment": {
+          "title": "4.2 Betaling",
+          "items": {
+            "0": "Abonnementen worden vooraf gefactureerd op maandelijkse of jaarlijkse basis",
+            "1": "Alle kosten zijn niet-terugbetaalbaar, tenzij anders vermeld in ons",
+            "2": "U machtigt ons om uw betaalmethode te belasten met de toepasselijke kosten",
+            "3": "We gebruiken Creem voor veilige betalingsverwerking",
+            "1RefundLink": "Retourbeleid"
+          }
+        }
+      },
+      "acceptableUse": {
+        "title": "5. Aanvaardbaar gebruik",
+        "prohibited": {
+          "title": "5.1 Verboden activiteiten",
+          "intro": "U stemt ermee in om NIET het volgende te doen:",
+          "items": {
+            "0": "Inbreuk maken op geldende wetten, regelgeving of rechten van derden",
+            "1": "De Diensten gebruiken om malware, spam of schadelijke inhoud te verzenden",
+            "2": "Proberen ongeautoriseerde toegang te krijgen tot onze systemen",
+            "3": "De integriteit of prestaties van onze Diensten verstoren of onderbreken",
+            "4": "Geautomatiseerde tools gebruiken om data te scrapen, kopiëren of extraheren zonder toestemming",
+            "5": "Onze Diensten reverse engineeren, decompileren of uit elkaar halen",
+            "6": "Onze AI-functies gebruiken om illegale, schadelijke of misleidende inhoud te genereren"
+          }
+        }
+      },
+      "ip": {
+        "title": "6. Intellectuele eigendom",
+        "ours": {
+          "title": "6.1 Onze intellectuele eigendom",
+          "content": "{brandName} en haar licentiegevers zijn eigenaar van alle rechten, titels en belangen in de Diensten, inclusief alle software, ontwerpen, handelsmerken en inhoud die door ons is gemaakt."
+        },
+        "yours": {
+          "title": "6.2 Uw inhoud",
+          "content": "U behoudt het eigendom van inhoud die u maakt of uploadt (\"Uw inhoud\"). Door gebruik te maken van onze Diensten, verleent u ons een wereldwijde, niet-exclusieve, royaltyvrije licentie om Uw inhoud te gebruiken, op te slaan, te verwerken en weer te geven, uitsluitend om de Diensten aan u te leveren."
+        }
+      },
+      "warranties": {
+        "title": "7. Uitsluiting van garanties",
+        "content": "DE DIENSTEN WORDEN Aangeboden \"ZOALS IS\" EN \"ZOALS BESCHIKBAAR\" ZONDER ENIGE GARANTIE, Zowel EXPLICIET ALS IMPLICIET, INCLUSIEF MAAR NIET BEPERKT TOT IMPLICIETE GARANTIES VAN VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL, EIGENDOM EN NIET-INBREUKMAKING."
+      },
+      "liability": {
+        "title": "8. Beperking van aansprakelijkheid",
+        "para1": "VOOR ZOVER TOEGESTAAN DOOR DE WET, IS {brandNameUpper} NIET AANSPRAKELIJK VOOR INDIRECTE, TOEVALLIGE, SPECIALE, GEVOLGSCHADE OF STRAFBARE SCHADE, OF VERLIES VAN Winst, GEGEVENS, GEBRUIK OF GOODWILL.",
+        "para2": "ONZE TOTALE AANSPRAKELIJKHEID OVERSTIJGT IN GEEN GEVAL HET HOOGSTE VAN (A) HET BEDRAG DAT U IN DE 12 MAANDEN VOORAFGAAND AAN DE AANSPRAAK AAN ONS HEBT BETAALD, OF (B) $100 USD."
+      },
+      "termination": {
+        "title": "9. Beëindiging",
+        "byYou": {
+          "title": "9.1 Door u",
+          "content": "U kunt uw account op elk moment beëindigen via uw accountinstellingen. Na beëindiging verliest u toegang tot de Diensten."
+        },
+        "byUs": {
+          "title": "9.2 Door ons",
+          "intro": "Wij kunnen uw account opschorten of beëindigen als u:",
+          "items": {
+            "0": "Deze Voorwaarden schendt",
+            "1": "Zich schuldig maakt aan fraude of illegale activiteiten",
+            "2": "Niet betaalt de van toepassing zijnde kosten",
+            "3": "Risico's of juridische blootstelling voor ons creëert"
+          }
+        }
+      },
+      "disputes": {
+        "title": "10. Geschillenbeslechting",
+        "informal": {
+          "title": "10.1 Informele afhandeling",
+          "content": "Voordat u formele procedures start, gaat u ermee akkoord ons te contacteren op legal@{domain} om geschillen informeel op te lossen."
+        },
+        "governingLaw": {
+          "title": "10.2 Toepasselijk recht",
+          "content": "Deze Voorwaarden worden beheerst door de wetten van de staat Delaware, zonder rekening te houden met conflicten van wetten."
+        }
+      },
+      "contactUs": {
+        "title": "11. Neem contact met ons op",
+        "intro": "Als u vragen heeft over deze Voorwaarden, neem dan contact met ons op:",
+        "company": "{brandName} Co., Ltd.",
+        "emailLabel": "E-mail",
+        "supportLabel": "Ondersteuning"
+      },
+      "acknowledgement": "Door {brandName} te gebruiken, bevestigt u dat u deze Servicevoorwaarden heeft gelezen, begrepen en ermee akkoord gaat gebonden te zijn."
+    }
+  },
+  "metadata": {
+    "title": "{brandName} Agent OS | Het Startup Agent OS",
+    "description": "Het Startup Agent OS voor oprichters die internationaal opereren. Productieklare Next.js-basis met beheerde architectuur, auth, facturering, agents en i18n — gebouwd voor AI-coding agents en serieuze teams."
+  },
+  "microLanding": {
+    "architecture": {
+      "badge": "SYSTEEMTOPOLOGIE",
+      "title": "Transparante architectuur, geen zwarte dozen.",
+      "description": "{productName} is ontworpen met een hyper-modulaire Turborepo-structuur, waardoor u volledige controle heeft over uw volledige softwarelevenscyclus.",
+      "database": {
+        "title": "PostgreSQL + Prisma v7",
+        "desc": "Volledig getypt ORM met Row-Level Security (RLS)-beleid standaard ingebouwd."
+      },
+      "auth": {
+        "title": "Better Auth Multi-Tenant / Aangepaste Identiteit",
+        "desc": "SOC2-klare authenticatiegateway met ondersteuning voor B2B-organisatiewisseling en RBAC."
+      }
+    },
+    "pricing": {
+      "title": "Gratis om op te bouwen. Betaal alleen als wij moeten instaan.",
+      "description": "Een commercieel product bouwen op {brandName} kost niets — geen kosten, geen licentiesleutel, geen registratie, geen copyleft. Betaalde niveaus verkopen support, SLA's, vrijwaring en merkrechten, nooit toestemming.",
+      "socialProofText": "MIT op npm · FSL-1.1-ALv2 op de repository, na twee jaar Apache-2.0 · commercieel gebruik gratis op elke schaal.",
+      "community": {
+        "badge": "COMMUNITY",
+        "price": "Gratis",
+        "period": "voor altijd",
+        "desc": "Voor iedereen. Elke teamgrootte, elke omzet. Closed-source commercieel gebruik inbegrepen, zonder registratie en zonder naamsvermelding.",
+        "cta": "npx create-sailor",
+        "f1": "Volledige Next.js 16 SaaS-kern, alle pakketten inbegrepen",
+        "f2": "Closed-source commercieel gebruik bij elke teamgrootte of omzet",
+        "f3": "Volledige stack: Auth, Betalingen, Organisaties, API, E-mail, i18n, Achtergrondtaken, Opslag en meer",
+        "f4": "Marketingfuncties: Blog, landingspagina, SEO, Analytics",
+        "f5": "Publieke issues, Discussions en Discord — naar beste vermogen, zonder reactiegarantie"
+      },
+      "team": {
+        "badge": "TEAM",
+        "price": "$2.000",
+        "period": "jaar",
+        "desc": "Voor teams die geen kritieke pad kunnen leggen op community-reactietijden.",
+        "cta": "{brandName}-support afnemen",
+        "f1": "Privé supportkanaal (e-mail + gedeelde Slack of Discord)",
+        "f2": "Eerste reactie gegarandeerd binnen twee werkdagen",
+        "f3": "Prioritaire bugtriage, vóór community-issues",
+        "f4": "Upgradehulp en vooraankondiging van breaking changes",
+        "f5": "Alles uit Community"
+      },
+      "enterprise": {
+        "badge": "ENTERPRISE",
+        "price": "Vanaf $30.000",
+        "period": "jaar",
+        "desc": "Voor organisaties waarvan inkoop, juridische zaken of security een tegenpartij eist die tekent.",
+        "cta": "Neem contact op met sales",
+        "f1": "Reactie-SLA — 4 werkuren standaard, 1 uur bij productiestoring",
+        "f2": "Vrijwaring en contractuele toezegging voor securitypatches",
+        "f3": "Ondertekende verwerkersovereenkomst, compliancepakket en continuïteitstoezegging",
+        "f4": "Merk- en white-labelrechten, plus ontheffing van de concurrentieclausule",
+        "f5": "Long-term-supportbranch en engineering voor privé-implementaties",
+        "f6": "Alles uit Team"
+      }
+    },
+    "faq": {
+      "title": "Prijzen & licenties FAQ",
+      "description": "Vragen over licentietiers, terugbetalingen en commerciële gebruiksrechten.",
+      "q1": {
+        "q": "Is Sailor een maandelijkse SaaS-abonnement?",
+        "a": "Nee. Deze prijzen zijn voor Sailor-broncode-licenties: Independent is gratis, Startup wordt jaarlijks gefactureerd en Enterprise is op maat."
+      },
+      "q2": {
+        "q": "Bieden jullie terugbetalingen aan?",
+        "a": "Startup-commerciële licenties bevatten een terugbetalingsvenster van 14 dagen voor eerste aankopen. Enterprise-voorwaarden worden afgehandeld in het ondertekende contract."
+      },
+      "q3": {
+        "q": "Kan ik Sailor gebruiken voor klantwerk?",
+        "a": "Ja. Met een commerciële licentie kan je team closed-source klant- of interne producten uitbrengen binnen het gelicentieerde bereik; white-label-rechten vereisen Enterprise-goedkeuring."
+      },
+      "contactNudge": "Nog vragen? Neem contact op met het {brandName}-team →"
+    },
+    "cta": {
+      "eyebrow": "Aan de slag",
+      "title": "Stop met configureren. Begin met bouwen.",
+      "description": "Initialiseer een schaalbare SaaS-architectuur lokaal met de {brandName}-CLI.",
+      "license": "Open source onder FSL-1.1-ALv2-licentie. Geen creditcard vereist."
+    },
+    "capability": {
+      "badge": "Enterprise-mogelijkheden",
+      "title": "Een volledig getypte, uitbreidbare kern.",
+      "multiTenant": {
+        "title": "Native rijniveau-beveiliging",
+        "desc": "Elke databasequery is strikt beperkt tot de huidige tenantcontext.",
+        "cta": "Lees databasefilosofie"
+      },
+      "aiGateway": {
+        "title": "Universele AI-gateway",
+        "desc": "Routeer prompts naadloos naar OpenAI, Anthropic of open-source modellen.",
+        "cta": "Ontdek de AI SDK-handler"
+      },
+      "rbac": {
+        "title": "Gedetailleerde toegangscontrole",
+        "desc": "Definieer rollen voor beheerder, lid en toeschouwer met ingebouwde beleidsstructuur.",
+        "cta": "Bekijk RBAC-documentatie"
+      },
+      "billing": {
+        "title": "Factureringsinfrastructuur voor meerdere providers",
+        "desc": "Gemeten gebruik, abonnementswebhooks en zelfbedieningsportalen voor klanten.",
+        "cta": "Bekijk factureringsarchitectuur"
+      }
+    },
+    "productDemo": {
+      "badge": "Productdemo",
+      "title": "Zie het platform in actie.",
+      "description": "Drie oppervlakken die elke AI-SaaS vanaf dag één levert — analytics, facturatie en werkruimten — op dezelfde getypeerde kern.",
+      "analytics": {
+        "label": "Analytics",
+        "desc": "Van event-inname tot dashboard met tenant-gebonden query's en zonder lijmcode."
+      },
+      "billing": {
+        "label": "Facturatie",
+        "desc": "Abonnementen, rechten en gebruiksmeting gekoppeld aan de provider van uw keuze."
+      },
+      "workspaces": {
+        "label": "Werkruimten",
+        "desc": "Multi-tenant organisaties, uitnodigingen en rollen met rijniveau-beveiliging als standaard."
+      }
+    },
+    "workflow": {
+      "badge": "Snelheid",
+      "title": "Van nul tot productie in recordtijd.",
+      "step1": {
+        "title": "1. Klonen",
+        "desc": "Kloon de {brandName}-monorepo direct en voer pnpm install uit."
+      },
+      "step2": {
+        "title": "2. Configureren",
+        "desc": "Stel Prisma, Better Auth en Creem in via de interactieve CLI in enkele minuten."
+      },
+      "step3": {
+        "title": "3. Bouwen",
+        "desc": "Focus op productlogica en UI terwijl de platformbasis al is aangesloten."
+      },
+      "step4": {
+        "title": "4. Implementeren",
+        "desc": "Push naar Vercel en AWS voor directe wereldwijde distributie."
+      },
+      "speedometer": {
+        "number": "10",
+        "unit": "min",
+        "subtitle": "TIJD TOT MARKT",
+        "comparison": "Sla maanden aan platformwerk over.",
+        "phases": {
+          "scaffold": "Init",
+          "wire": "Core",
+          "ship": "Deploy",
+          "scale": "Scale",
+          "ongoing": "∞"
+        },
+        "cta": "Start je timer"
+      },
+      "presetHint": {
+        "badge": "Preset Systeem",
+        "message": "Eén configuratie. Elke functie. Kies je preset en ship.",
+        "detail": "Configureer één keer, genereer alles — billing, auth, AI, i18n — vanuit één preset-configuratie.",
+        "readyStatus": "Preset systeem klaar"
+      }
+    }
+  },
+  "featuresPage": {
+    "hero": {
+      "badge": "Platformmogelijkheden",
+      "headlinePrefix": "Alles wat je nodig hebt om ",
+      "headlineHighlight": "met vertrouwen te shippen.",
+      "description": "{brandName} is een full-stack SaaS-platform — AI, billing, multi-tenancy, observability en security vanaf dag één ingebouwd. Stop met het opnieuw bouwen van de platformlaag."
+    },
+    "sections": {
+      "exploreFeature": "Verken functie",
+      "ai_category": "AI & Intelligentie",
+      "ai_f1_title": "Chat-completies voor meerdere modellen",
+      "ai_f1_desc": "Routeer verzoeken naar Anthropic, OpenAI, Google of je eigen fine-tuned modellen. Streaming, vision en function calling worden direct ondersteund.",
+      "ai_f2_title": "Semantische embeddings",
+      "ai_f2_desc": "Genereer en sla vector-embeddings op met pgvector. Ondersteun semantische zoekopdrachten, RAG-pipelines en aanbevelingsengines.",
+      "ai_f3_title": "AI-gebruiksmeting",
+      "ai_f3_desc": "Quota per plan met gebruikstracking — meet AI-tokens, API-aanroepen en opslag tegen real-time aggregaten op basis van ClickHouse.",
+      "multi_category": "Multi-tenant platform",
+      "multi_f1_title": "Isolatie op organisatie-niveau",
+      "multi_f1_desc": "Row-level security in Postgres zorgt ervoor dat tenants nooit toegang hebben tot elkaars gegevens — afgedwongen op databaselayer, niet alleen in de applicatie.",
+      "multi_f2_title": "Multi-provider authenticatie (Better Auth)",
+      "multi_f2_desc": "Multi-provider OAuth (Google, GitHub, etc.) plus e-mail/wachtwoord en magic-link — allemaal via één Better Auth-instantie, geen providerwissel nodig.",
+      "multi_f3_title": "Automatische tenant-provisioning",
+      "multi_f3_desc": "Wanneer een nieuwe organisatie zich aanmeldt, genereren we automatisch hun eerste API-sleutel en sturen we een branded welkomstmail — zonder handmatige stappen.",
+      "dx_category": "Ontwikkelaarservaring",
+      "dx_f1_title": "Gehashte API-sleutels",
+      "dx_f1_desc": "SHA-256 gehashte sleutels met prefixweergave (nbtr_live_…). Slechts één keer in platte tekst getoond bij aanmaken — beveiliging zonder wrijving.",
+      "dx_f2_title": "Idempotentie-middleware",
+      "dx_f2_desc": "Voeg een Idempotency-Key-header toe en elke POST-aanvraag kan veilig worden herhaald. Redis-gebaseerd, 24-uurs cache, IETF-draft-conform.",
+      "dx_f3_title": "Multi-protocol API (REST + oRPC + tRPC)",
+      "dx_f3_desc": "REST/OpenAPI voor openbare API's, oRPC voor type-safe frontend-aanroepen, tRPC voor T3-stack-compatibiliteit. Alle protocollen delen dezelfde Zod-contracten en middleware-stack. Schakel per protocol in via preset-configuratie.",
+      "billing_category": "Facturering & Monetarisatie",
+      "billing_f1_title": "Creem & China Pay",
+      "billing_f1_desc": "Kies je betaalprovider: Creem als merchant of record voor wereldwijd enterprise — het int en draagt zelf btw/omzetbelasting af, zodat je je niet in elk land hoeft te registreren — of Alipay/WeChat Pay voor de Chinese markt. Eén-klik checkout en zelfbedieningsfactureringsportaal.",
+      "billing_f2_title": "Quota-aafdwinging op basis van gebruik",
+      "billing_f2_desc": "Real-time Redis-tellers houden API-aanroepen en tokengebruik per tenant bij. Aanvragen worden op de gateway geblokkeerd zodra limieten zijn bereikt.",
+      "billing_f3_title": "Webhook-lifecycle synchronisatie",
+      "billing_f3_desc": "Betalingswebhookevents werken org-plannen automatisch bij in je database via Inngest — geen cron-jobs, geen polling.",
+      "rel_category": "Betrouwbaarheid",
+      "rel_f1_title": "Circuit breaker + retry",
+      "rel_f1_desc": "De gateway en AI-service gebruiken een CLOSED/OPEN/HALF_OPEN circuit breaker met exponentiële backoff en jitter — geen cascade-fouten.",
+      "rel_f2_title": "Dead letter queue",
+      "rel_f2_desc": "Event-handlers die 3 retry-attempten overschrijden, belanden in de DLQ. Speel ze individueel af via de admin-API zonder opnieuw te deployen.",
+      "rel_f3_title": "SLO-verbruiktariefmeldingen",
+      "rel_f3_desc": "Multi-window Google SRE-stijl meldingen worden afgevuurd bij 14,4×, 6× en 3× verbruiktarieven voordat je foutbudget op is.",
+      "sec_category": "Beveiliging",
+      "sec_f1_title": "CSP nonces-gebaseerde headers",
+      "sec_f1_desc": "Strict-dynamic Content Security Policy met per-aanvraag nonces gegenereerd in Auth middleware — nergens unsafe-inline.",
+      "sec_f2_title": "ModSecurity WAF",
+      "sec_f2_desc": "OWASP Core Rule Set in DetectionOnly-modus op elke ingress. Rate limiting op 30 RPS met burst-tolerantie via nginx-annotaties.",
+      "sec_f3_title": "SBOM + SLSA-provenance",
+      "sec_f3_desc": "Elke release genereert een CycloneDX software bill of materials en SLSA-provenance attestatie, geüpload naar de GitHub Release.",
+      "obs_category": "Observability",
+      "obs_f1_title": "OpenTelemetry-tracering",
+      "obs_f1_desc": "Gedistribueerde traces stromen van Next.js → Hono → Python-microservices via OTLP. Geëxporteerd naar Jaeger (dev) en Grafana Tempo (prod).",
+      "obs_f2_title": "Grafana-dashboards",
+      "obs_f2_desc": "Multi-panel platformoverzicht: SLO-beschikbaarheid, resterend foutbudget, HPA-verzadiging, pod-herstarts en CPU-throttling.",
+      "obs_f3_title": "Sentry-fouttracking",
+      "obs_f3_desc": "Server-side en client-side fouten vastgelegd met tenant-context, aanvraag-ID en trace-ID voor cross-system correlatie.",
+      "data_category": "Data & Analytics",
+      "data_f1_title": "ClickHouse OLAP-warehouse",
+      "data_f1_desc": "Events komen binnen in ClickHouse voor snelle analytische queries. dbt transformeert ruwe events naar gold-layer-groeimetrics die zichtbaar zijn in het dashboard.",
+      "data_f2_title": "Funnel-analyse",
+      "data_f2_desc": "Volg aanmeldingen → activeringen → conversies met cohort-attributie. Omzet per actieve gebruiker wordt berekend vanuit de gold layer.",
+      "data_f3_title": "Kafka / event-inname",
+      "data_f3_desc": "Hoge doorvoer van event-inname via Inngest naar ClickHouse-bronze, met in-memory-deduplicatie en schema-validatie op de gateway-edge.",
+      "infra_category": "Infrastructuur",
+      "infra_f1_title": "GitOps met ArgoCD",
+      "infra_f1_desc": "Wijzigingen in de main-branch worden automatisch gesynchroniseerd met de cluster. Zelfherstellend gedrag draait handmatige kubectl-wijzigingen terug. Sync-windows handhaven veilige deploy-tijden.",
+      "infra_f2_title": "PgBouncer-verbindingspool",
+      "infra_f2_desc": "PgBouncer in transactiemodus voor Postgres hanteert 1.000 app-verbindingen op 20 Postgres-verbindingen. HA met 2 replica's.",
+      "infra_f3_title": "Horizontaal + verticaal autoscaling",
+      "infra_f3_desc": "HPA schaal op CPU/geheugen. VPA draait in Off-modus en geeft right-sizing-aanbevelingen. KEDA-custom metrics gepland voor v2."
+    }
+  },
+  "comingSoon": {
+    "badge": "🚧 In aanbouw",
+    "description": {
+      "ideas": "We werken momenteel aan een fantastische, door nerds gedreven ervaring voor dit onderdeel. Het wordt gelanceerd samen met de volgende grote update van de architectuurpijplijn.",
+      "opc": "Een uitgebreider platformoverzicht is in ontwikkeling. Volg het changelog en de roadmap voor aankomende releases.",
+      "roadmap": "Van infrastructuurbasis tot enterprise-schaal — onze productfasen, versiemijlpalen en financieringsvisie."
+    },
+    "returnBtn": "Terug naar Hub"
+  },
+  "blogShowcase": {
+    "badge": "UIT HET BLOG",
+    "title": "Engineering Insights",
+    "subtitle": "Diepgaande analyses van SaaS-architectuur, AI-infrastructuur en productie-engineering.",
+    "readMore": "Lees meer"
+  },
+  "useCases": {
+    "badge": "SCHAALBARE SCENARIO'S",
+    "title": "Seven shapes, one foundation.",
+    "description": "An operations hub, a portfolio site, a multimodal SaaS, two enterprise sites, a design system and an asset library — the same core underneath each.",
+    "tabs": {
+      "opc": "Agentische Operaties",
+      "ip": "Persoonlijke IP-matrix",
+      "multimodal": "Multimodale AI SaaS",
+      "enterprise": "Modern Enterprise (CN)",
+      "export": "Wereldwijde Software-export",
+      "design": "Designsysteem-engine",
+      "edam": "Enterprise Digitale Activas"
+    },
+    "content": {
+      "opc": {
+        "title": "AI-native Operatiehub",
+        "desc": "Voer agent-workflows, interne tooling en integratieoppervlakken uit op één beheerd platform. Registry-gedreven extensies, operatorportals en herbruikbare runtimepatronen blijven gesynchroniseerd naarmate het systeem groeit.",
+        "features": {
+          "f1": "Tool Registry & Integratieoppervlak",
+          "f2": "Operatorportal & Interne Console"
+        }
+      },
+      "ip": {
+        "title": "Persoonlijke IP-groei- en Portfoliomatrix",
+        "desc": "Creëer een wereldklasse founder-presence met een hoog-converterende MDX-blog, portfolio en profielpagina's. Ingebouwde nieuwsbrief, analytics en SEO zorgen dat je persoonlijke merkwaarde groeit.",
+        "features": {
+          "f1": "MDX Blog + Nieuwsbrief Engine",
+          "f2": "SEO & Social Graph Geoptimaliseerd"
+        }
+      },
+      "multimodal": {
+        "title": "Innovatieve Multimodale AI SaaS",
+        "desc": "Lanceer Multi-Agent orchestration, Chatbot, Text-to-Image, Image-to-Text en Text-to-Video SaaS-producten met een UX-leidende streaming UI, intelligente modelrouting en gebruiksmeting.",
+        "features": {
+          "f1": "Multi-agent Streaming UI",
+          "f2": "Model Router + Gebruiksmeting"
+        }
+      },
+      "enterprise": {
+        "title": "Moderne Enterprise-website (CN)",
+        "desc": "Aangepast voor Chinese zakelijke scenario's — ultrasnelle binnenlandse CDN, WeChat-ecosysteemintegratie, mobile-first responsive design en lokaal compliance out of the box.",
+        "features": {
+          "f1": "Lokale CDN + Compliance",
+          "f2": "WeChat-ecosysteem klaar"
+        }
+      },
+      "export": {
+        "title": "Landingpagina's voor wereldwijde software-export",
+        "desc": "Speciaal ontworpen voor SaaS die wereldwijd uitbreidt. Multi-valuta Creem-checkout, next-intl i18n-autorouting in 7 talen, GDPR/CCPA-compliance en geo-gerichte content.",
+        "features": {
+          "f1": "Wereldwijde betalingen in meerdere valuta",
+          "f2": "7 talen + GDPR-klaar"
+        }
+      },
+      "design": {
+        "title": "Toonaangevend designsystem en componentenbibliotheek",
+        "desc": "A 4-layer token-driven architecture: Brand → Tokens → Theme → UI. Built on Radix + the shared Motion layer with eight switchable design languages, Storybook docs, and visual regression testing.",
+        "features": {
+          "f1": "4-laagse token-governance",
+          "f2": "Eight design languages + Storybook"
+        }
+      },
+      "edam": {
+        "title": "Enterprise digital asset management",
+        "desc": "Gestructureerde data lakes en complexe dashboardtopologieën met schaalbare PostgreSQL-architecturen en granulaire RBAC.",
+        "features": {
+          "f1": "Beveiliging op rijniveau",
+          "f2": "Complexe queries",
+          "f3": "Rolbeheer"
+        }
+      }
+    }
+  },
+  "designSystem": {
+    "badge": "DESIGNSYSTEM",
+    "headline": "4 lagen designgovernance.",
+    "subheadline": "Van merkprimitieven tot runtime-tokens, tot een multi-theme-engine en beheerde componenten — niet zomaar shadcn met Tailwind.",
+    "flowBrand": "Merk",
+    "flowBrandDesc": "Kleurprimitieven, gradients, bewegingstaal",
+    "flowTokens": "Tokens",
+    "flowTokensDesc": "CSS-variabelen, 12-staps schalen, donkere modus",
+    "flowTheme": "Thema",
+    "flowThemeDesc": "Brand Packages, 7 languages, html[data-brand]",
+    "flowUI": "UI",
+    "flowUIDesc": "Componenten, Storybook, Chromatic",
+    "card1Title": "12-staps kleurschalen",
+    "card1Desc": "Geist-uitgelijnde semantische schaal: achtergronden (1-2), statussen (3-5), randen (6-8), vullingen (9-10), tekst (11-12).",
+    "card2Title": "Design Languages",
+    "card2Desc": "Seven Brand Packages on html[data-brand]. Colour roles, radii, elevation, type and easing switch together — not just the palette.",
+    "card3Title": "Visuele regressie",
+    "card3Desc": "Chromatic vangt elke pixelverandering. Storybook documenteert elk component. Architectuurtests handhaven story-coverage.",
+    "card4Title": "Tokenbeheer",
+    "card4Desc": "Shrink-only allowlists for brand hex, brand literals and motion tokens. A new offender fails CI; the existing ones migrate on touch.",
+    "card5Title": "Interactieve documentatie",
+    "card5Desc": "Volledig Fumadocs-aangedreven design-docs-site met tweetalige (EN/ZH) component-API-documentatie, token-galerijen, layoutpatroon-gidsen en live codevoorbeelden.",
+    "card6Title": "Token Pipeline",
+    "card6Desc": "Brand primitives compile to DTCG tokens, tokens to CSS variables, variables to governed components. One direction, no hand-offs by hand."
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "desc": "De link is mogelijk verouderd of de pagina is verplaatst.",
+    "home": "Terug naar {brandName}",
+    "docs": "Documentatie openen"
+  },
+  "ui": {
+    "search": {
+      "placeholder": "Zoek releases..."
+    },
+    "nav": {
+      "toggleMenu": "Menu wisselen"
+    },
+    "actions": {
+      "showFullRelease": "Volledige release tonen",
+      "copyLinkToRelease": "Link naar release kopiëren",
+      "copyLink": "Link kopiëren",
+      "openInNewTab": "In nieuw tabblad openen"
+    },
+    "status": {
+      "comingSoon": "Binnenkort beschikbaar"
+    }
+  },
+  "licensing": {
+    "hero": {
+      "title": "Gratis om <hl>op te bouwen</hl>",
+      "description": "{brandName}-Sailor is gratis voor commercieel gebruik — MIT op npm, FSL-1.1-ALv2 in de repository, met overstap naar Apache-2.0 na twee jaar. Betaalde niveaus bieden ondersteuning en contractuele afspraken, nooit toestemming."
+    },
+    "plans": {
+      "community": {
+        "badge": "Altijd gratis",
+        "title": "Community",
+        "subtitle": "Iedereen",
+        "description": "Elk team, elke omzet. Gesloten-bron commerciële producten inbegrepen.",
+        "features": {
+          "fullSource": "Volledige broncode, alle pakketten",
+          "closedSourceOk": "Gesloten-bron commercieel gebruik — geen copyleft",
+          "noAttribution": "Geen registratie, geen vermelding vereist",
+          "communitySupport": "Community-ondersteuning — besteffort"
+        },
+        "cta": "Bekijk op GitHub"
+      },
+      "team": {
+        "badge": "Vanaf {price}/jr",
+        "title": "Team",
+        "subtitle": "Ondersteuningsabonnement",
+        "description": "Voor teams die geen kritieke pad kunnen leggen op community-reactietijden.",
+        "features": {
+          "privateChannel": "Privé-ondersteuningskanaal",
+          "firstResponse": "Eerste reactie binnen twee werkdagen, gegarandeerd",
+          "priorityTriage": "Prioritaire bugtriage",
+          "upgradeHelp": "Upgrade-ondersteuning en melding van brekende wijzigingen"
+        },
+        "cta": "Ondersteuning aanvragen"
+      },
+      "enterprise": {
+        "badge": "Vanaf $30.000/jaar",
+        "title": "Enterprise",
+        "subtitle": "Klaar voor inkoop",
+        "description": "Voor organisaties waarvan de juridische, beveiligings- of inkoopreview een tegenpartij nodig heeft die tekent.",
+        "features": {
+          "sla": "Response-SLA — 4 werkbare uren, 1 uur bij productie-down",
+          "indemnity": "Schadevergoeding en verbintenis tot beveiligingspatches",
+          "compliance": "Ondertekende DPA, compliancepakket, continuïteitsverklaring",
+          "trademark": "Handelsmerk- en white-labelrechten"
+        },
+        "cta": "Neem contact op met sales"
+      }
+    },
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "description": "Kort gezegd: gebruiken is gratis. Betalen is voor wanneer je ons contractueel aanspreekbaar wilt hebben.",
+      "items": {
+        "whyFsl": {
+          "q": "Waarom FSL in plaats van MIT of AGPL?",
+          "a": "FSL staat elk gebruik toe, behalve het verkopen van een vervanging voor Sailor zelf, en elke versie wordt Apache-2.0 twee jaar na release — een onherroepelijke voorafgaande toestemming. Het gaat sneller door de juridische keuring bij bedrijven dan AGPL."
+        },
+        "reallyFree": {
+          "q": "Is commercieel gebruik echt gratis?",
+          "a": "Ja. Geen kosten, geen licentiekey, geen registratie, geen inkomsten- of personeelsgrens, geen attributie. Bouw een closed-source product en verkoop het."
+        },
+        "competingUse": {
+          "q": "Wat telt als concurrerend gebruik?",
+          "a": "Sailor zelf aanbieden — een gehoste Sailor-service of een herpakt concurrerend platform als basis. Een verticale SaaS, een intern hulpmiddel of klantprojecten bouwen op Sailor is geen concurrerend gebruik. Als je model het nodig heeft, kan een Enterprise-overeenkomst een schriftelijke vrijstelling bevatten."
+        },
+        "upgrade": {
+          "q": "Wat kopen de betaalde niveaus eigenlijk?",
+          "a": "Ondersteuningsverplichtingen, response-SLA's, schadevergoeding, compliance-documentatie en handelsmerkrechten. Nooit toestemming om de software te gebruiken — dat is al van jou."
+        },
+        "contributions": {
+          "q": "En open source-bijdragen?",
+          "a": "Alle bijdragen vereisen een CLA. Zie CONTRIBUTING.md."
+        }
+      }
+    },
+    "meta": {
+      "title": "Licenties — {brandName}",
+      "description": "Gratis voor commercieel gebruik. MIT op npm, FSL-1.1-ALv2 in de repository, conversie naar Apache-2.0."
+    }
+  },
+  "licenseWizard": {
+    "tiers": {
+      "individualFree": "Individuele gratis licentie",
+      "opcFree": "Single-Owner Company-licentie",
+      "startupCommercial": "Startup commerciële licentie",
+      "enterprise": "Enterprise-licentie"
+    },
+    "referralSource": {
+      "selectPlaceholder": "Selecteer een optie...",
+      "productHunt": "Product Hunt"
+    }
+  },
+  "changelogMeta": {
+    "title": "Wijzigingslogboek — {brandName}",
+    "description": "Elke release, geleverd met obsessieve aandacht voor detail.",
+    "versionTitleSuffix": "{brandName} Wijzigingslogboek"
+  },
+  "roadmapMeta": {
+    "title": "Platform Roadmap — {brandName}",
+    "description": "De roadmap voor de beheerde platformbasis van {brandName}, de Harness-runtime en het upgrade-pad."
+  },
+  "blogMeta": {
+    "title": "Blog — {brandName}",
+    "description": "Engineering-inzichten, productupdates en SaaS-best practices van het {brandName}-team."
+  },
+  "getLicenseMeta": {
+    "title": "Krijg je licentie — {brandName}",
+    "description": "Krijg je {brandName}-licentie en platformtoegang in 2 minuten."
+  },
+  "landing": {
+    "faq": {
+      "badge": "FAQ",
+      "title": "Vragen, direct beantwoord",
+      "subtitle": "Alles wat je moet weten voordat je live gaat.",
+      "items": {
+        "what-is-sailor": {
+          "question": "Wat is {productName} precies?",
+          "answer": "Sailor is een uitgesproken Next.js + Tailwind v4 SaaS-fundament met auth, facturering, multi-tenancy, AI, wachtrijen, zoekfunctie en e-mail die al zijn ingesteld. Je clone het, configureert providers en gaat live — meestal binnen een week."
+        },
+        "who-is-it-for": {
+          "question": "Voor wie is Sailor gebouwd?",
+          "answer": "Oprichters en productengineers die hun tijd willen besteden aan het onderscheidende element — niet aan het voor de vijfde keer opnieuw bouwen van dezelfde auth/facturering/tenancy-infrastructuur."
+        },
+        "free-or-paid": {
+          "question": "Is het gratis of betaald?",
+          "answer": "De volledige broncode wordt uitgegeven onder FSL-1.1-ALv2 — gratis voor persoonlijke projecten, interne tooling en het bouwen van je eigen product, zonder kosten of copyleft-verplichting. De enige beperking is het aanbieden van Sailor zelf als concurrerend commercieel product of dienst. Elk plan bevat de volledige functieset (authenticatie, facturering, multi-tenancy, AI, audit); de niveaus verschillen in support-SLA, vrijwaring, compliance-documentatie en merkrechten, niet in functies."
+        },
+        "china-friendly": {
+          "question": "Werkt het in China?",
+          "answer": "Ja. We leveren een parallelle infrastructuurconfiguratie (Aliyun-compatibele CDN, ICP-vriendelijke domeinen) zodat dezelfde codebase probleemloos binnen de Great Firewall kan worden gedeployed."
+        },
+        "deployment": {
+          "question": "Waar kan ik het deployen?",
+          "answer": "Overal waar Node 22+ draait. De marketing-site wordt naar Vercel gedeployed; het dashboard, de gateway en de Python-services draaien op Docker / PM2 (we draaien ze vandaag de dag op Aliyun ECS, met volledige Kubernetes-manifesten onder infra/iac/k8s/ voor clusters). Enterprise-klanten kunnen ook binnen hun eigen VPCs deployen."
+        },
+        "security": {
+          "question": "Hoe wordt beveiliging afgehandeld?",
+          "answer": "Toepassingslaag-envelope encryptie voor geheimen (@nebutra/vault), Postgres RLS voor tenant-isolatie, RBAC/ABAC via CASL (@nebutra/permissions), HMAC-ondertekende inter-service tokens, ondertekende uitgaande webhooks en een SOC 2-uitgelijnde audit-pipeline (@nebutra/audit) inbegrepen in elk plan. Pro en Enterprise voegen SOC 2-attestatie-ondersteuning, toegewijde incidentrespons en langere audit-logretentie toe."
+        },
+        "support": {
+          "question": "Welke ondersteuning krijg ik?",
+          "answer": "Gratis klanten krijgen community Discord + GitHub Issues. Pro voegt prioritaire e-mail toe met een 1-werkdag respons-SLA. Enterprise krijgt een toegewijd Slack-kanaal en een onboarding-engineer."
+        },
+        "byo-provider": {
+          "question": "Kan ik mijn eigen provider meenemen?",
+          "answer": "Ja. Elke integratie (authenticatie, wachtrij, zoekopdracht, e-mail, betalingen, opslag, facturering) is provider-agnostisch. De fabriek in elk pakket kiest de juiste adapter uit een enkele omgevingsvariabele — de ingebouwde adapters zijn Better Auth, QStash, Resend en Creem — zonder de applicatiecode aan te raken."
+        },
+        "tech-stack": {
+          "question": "Wat is de tech stack?",
+          "answer": "Next.js 16 (App Router) op React 19, TypeScript 5.9, Tailwind v4, Prisma 7 over Postgres (met pgvector + RLS), Hono voor de BFF-gateway, FastAPI voor ML/zware services en een gecureerde componentbibliotheek op Radix, {brandName} UI-primitieven en de gedeelde Motion-laag. AI-functies gaan via de Vercel AI SDK met provider-portabiliteit (OpenAI / OpenRouter / SiliconFlow / Azure / lokaal)."
+        },
+        "license": {
+          "question": "Wat is de licentie?",
+          "answer": "FSL-1.1-ALv2, dat twee jaar na elke release overgaat naar Apache-2.0. Gratis voor persoonlijk gebruik, interne tooling en het bouwen van je eigen product, zonder kosten of copyleft-verplichting. Het enige wat niet is toegestaan, is Sailor zelf aanbieden als concurrerend product of dienst. Volledige broncode is inbegrepen in elk plan."
+        },
+        "paid-updates": {
+          "question": "Moet ik betalen voor updates?",
+          "answer": "Nee. Broncode-updates zijn inbegrepen bij elk commercieel licentiepakket — haal op elk moment op uit main en rebased je fork. Het betaalde tarief is het recht om Sailor in commerciële productie te gebruiken, niet het recht om code te ontvangen. Elke minor-release wordt geleverd met een CHANGELOG en een upgradehandleiding voor eventuele breaking changes."
+        },
+        "why-turborepo": {
+          "question": "Waarom Turborepo in plaats van een standaard Next.js-app?",
+          "answer": "Sailor bestaat uit 10 apps + 104 gedeelde packages onder packages/*/* + 4 backend-lanes (Hono-gateway, FastAPI/Python, Go, Rust) — ver voorbij het punt waarop een enkele Next.js-mega-app nog onderhoudbaar blijft. Turborepo geeft ons affected-only builds, transparante remote caching en één bron van waarheid voor gedeelde design tokens, auth, facturering en observability — zonder elk team te dwingen in hetzelfde Next.js-proces."
+        },
+        "multi-tenancy": {
+          "question": "Hoe wordt multi-tenancy afgehandeld?",
+          "answer": "Twee lagen. Request-scope tenant-context via @nebutra/tenant (AsyncLocalStorage propageert de actieve org door elke serveraanroep, inclusief DB-query's en uitgaande webhooks), en database-afgedwongen isolatie via Postgres Row-Level Security-beleiden (packages/platform/db/prisma/generated/rls.sql) gekoppeld aan een session-lokale app.current_tenant_id. Service-role-verbindingen omzeilen RLS alleen binnen vertrouwde interne services; alle gebruikersgerichte routes gaan via de tenant-scope client."
+        },
+        "swap-clerk": {
+          "question": "Kan ik Better Auth vervangen door een andere auth-provider?",
+          "answer": "Ja. @nebutra/auth levert een first-class adapter voor Better Auth. Schakel via de AUTH_PROVIDER-omgevingsvariabele of kies bij scaffold-tijd met create-sailor --auth=... — server-, React- en middleware-oppervlakken blijven identiek ongeacht de provider. Een vijfde adapter toevoegen betekent het implementeren van één interface (~80 LOC); niets in de omliggende code is gekoppeld aan een specifieke provider."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "Geliefd bij bouwers",
+      "title": "Wat founders zeggen na het uitrollen met Sailor",
+      "subtitle": "Klantverhalen uit onze beta-cohort komen binnenkort — wees een van de eersten."
+    },
+    "comparison": {
+      "badge": "Niveaus vergelijken",
+      "title": "Alles is gratis. Kies hoeveel zekerheid u nodig hebt.",
+      "subtitle": "Elk niveau bevat de volledige broncode en staat kosteloos closed-source commercieel gebruik toe. De verschillen zitten in support, contractuele toezeggingen en merkrechten.",
+      "plan": {
+        "community": "Community",
+        "team": "Team",
+        "enterprise": "Enterprise"
+      },
+      "feature": {
+        "license": {
+          "label": "Licentie",
+          "type": "Licentie",
+          "commercial-use": "Closed-source commercieel gebruik",
+          "registration": "Registratie",
+          "trademark": "Merkrechten"
+        },
+        "source": {
+          "label": "Broncode",
+          "full-source": "Volledige broncode",
+          "all-packages": "Alle pakketten en modules",
+          "update-window": "Updates"
+        },
+        "support": {
+          "label": "Ondersteuning",
+          "channel": "Supportkanaal",
+          "first-response": "Gegarandeerde eerste reactie",
+          "security-patch": "Toezegging securitypatches"
+        },
+        "procurement": {
+          "label": "Inkoop",
+          "indemnification": "Vrijwaring",
+          "dpa": "Ondertekende verwerkersovereenkomst en compliancepakket",
+          "continuity": "Continuïteitstoezegging"
+        }
+      },
+      "ariaTable": "Vergelijking van niveaus en functies",
+      "value": {
+        "included": "Inbegrepen",
+        "notIncluded": "Niet inbegrepen",
+        "licenseIds": "MIT + FSL-1.1-ALv2",
+        "notRequired": "Niet vereist",
+        "whiteLabelRights": "White-labelrechten",
+        "unlimited": "Onbeperkt",
+        "unlimitedPlusNotice": "Onbeperkt + vooraankondiging breaking changes",
+        "unlimitedPlusLts": "Onbeperkt + long-term-supportbranch",
+        "publicChannels": "Publieke issues en Discord",
+        "privateChannel": "Privékanaal",
+        "namedContact": "Vast aanspreekpunt",
+        "twoBusinessDays": "2 werkdagen",
+        "fourBusinessHours": "4 werkuren",
+        "bestEffort": "Naar beste vermogen",
+        "contractual": "Contractueel"
+      }
+    },
+    "socialProof": {
+      "title": "Gebouwd op een stack die je kunt vertrouwen",
+      "logosLabel": "Integratiepartners",
+      "metrics": {
+        "developers": {
+          "value": "47+",
+          "label": "Ondersteunde AI-aanbieders"
+        },
+        "projects": {
+          "value": "104",
+          "label": "monorepo-pakketten"
+        },
+        "uptime": {
+          "value": "7",
+          "label": "i18n-locales out of the box"
+        }
+      }
+    }
+  },
+  "compliance": {
+    "icp": {
+      "recordNumber": "ICP-registratienummer",
+      "publicSecurity": "Openbare veiligheid"
+    }
+  },
+  "icpFooter": {
+    "recordNumber": "ICP-registratie",
+    "publicSecurity": "Openbare veiligheidsregistratie"
+  },
+  "MarketLocalePicker": {
+    "title": "Regio's en talen",
+    "description": "Selecteer een regio en taal voor de marketingwebsite.",
+    "triggerAria": "Selecteer regio en taal",
+    "searchPlaceholder": "Zoek regio's…",
+    "plannedHint": "De interface valt terug op Engels tot deze taal beschikbaar is",
+    "noResults": "Geen overeenkomende regio's",
+    "menuAria": "Regio's en talen"
+  },
+  "siteShell": {
+    "nav": {
+      "openNavigation": "Open navigation",
+      "closeNavigation": "Close navigation",
+      "searchSite": "Search the site",
+      "siteNavigation": "Site navigation",
+      "searchPages": "Search pages",
+      "noMatch": "Nothing matches that."
+    },
+    "menu": {
+      "writeToFounder": "Write to the founder",
+      "sailorOnGithub": "Sailor on GitHub",
+      "back": "Back"
+    },
+    "footer": {
+      "tagline": "An AI-native company builder. No company should be hard to start.",
+      "read": "Read",
+      "journal": "Journal",
+      "changelog": "Changelog",
+      "build": "Build",
+      "whatWeAreBuilding": "What we're building",
+      "status": "Status",
+      "company": "Company",
+      "about": "About",
+      "writeToFounder": "Write to the founder",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "credits": "Credits"
+    }
+  },
+  "sitePages": {
+    "home": {
+      "metaDescription": "No company should be hard to start. {brandName} builds the platform, the products and the network that make it so.",
+      "hero": {
+        "title": "No company should be hard to <signature>start.</signature>",
+        "titleCn": "让世界上没有难创的业。",
+        "lead": "Founders rarely die of bad ideas. They die of the Founder Tax — a dozen brilliant tools, each seeing one slice, none knowing you are building a company. {brandName} is building the system that does, and writing down what we learn on the way."
+      },
+      "latest": {
+        "title": "Latest",
+        "titleCn": "最新文章",
+        "viewAll": "All essays"
+      },
+      "newsletter": {
+        "title": "Read it as it's written.",
+        "lead": "New essays on agents, the layer after them, and the founder's craft — when they are ready, not on a schedule."
+      },
+      "sailor": {
+        "lead": "The open-source platform we build everything on. Usable today: npx create-sailor.",
+        "cta": "The platform"
+      },
+      "building": {
+        "title": "What we're building",
+        "lead": "{brandName} OS, the Sleptons network, and the early products growing on the platform.",
+        "cta": "In progress"
+      }
+    },
+    "sailor": {
+      "hero": {
+        "lead": "The open-source platform we build everything on: auth, billing, tenancy, AI routing and the guards that keep a fast-moving codebase honest. Start a company on it with one command.",
+        "cn": "我们自己在用的开源地基，今天就能用。"
+      },
+      "install": {
+        "copyLabel": "Copy",
+        "copiedLabel": "Copied"
+      },
+      "links": {
+        "source": "Source on GitHub",
+        "seeSite": "See the site you get",
+        "licensing": "Licensing for teams"
+      }
+    },
+    "sleptons": {
+      "hero": {
+        "lead": "Where people, ideas, needs and capital find each other — earlier than they would have alone.",
+        "cn": "让潜能流动起来。"
+      },
+      "parts": {
+        "ideas": {
+          "title": "Ideas",
+          "titleCn": "创意与需求",
+          "body": "Write down what you wish existed, or what you need. The ideas and needs people post are where the network starts.",
+          "cta": "Post an idea"
+        },
+        "capital": {
+          "title": "Capital",
+          "titleCn": "资本",
+          "body": "The investor directory we keep today — Chinese and global funds, each with what they back.",
+          "cta": "Browse investors"
+        },
+        "network": {
+          "title": "The network",
+          "titleCn": "网络",
+          "body": "Describe the person you wish existed; an AI-native network finds them. In development.",
+          "cta": "Read the plan"
+        }
+      }
+    },
+    "building": {
+      "hero": {
+        "title": "What we're building",
+        "lead": "{brandName} OS, and the products we built on the platform along the way.",
+        "cn": "我们正在造的东西。"
+      },
+      "os": {
+        "lead": "One sentence, a whole company: brand, product, code and launch from one context, on your Mac. In development — the essay below is what it is for; there is nothing to show until there is something real.",
+        "cta": "Why we are building it"
+      },
+      "platform": {
+        "title": "On the platform",
+        "lead": "Products we have built on Sailor along the way, each open to use."
+      }
+    },
+    "about": {
+      "hero": {
+        "title": "Where chaos becomes a company.",
+        "lead": "{brandName} is an AI-native company builder. We exist because founders rarely die of bad ideas — they die of the Founder Tax: a dozen brilliant tools, each seeing one slice, none knowing you are building a company.",
+        "cn": "让世界上没有难创的业。",
+        "cta": "Why we are building {brandName}"
+      },
+      "name": {
+        "title": "The name",
+        "lead": "Four words, compressed into one: nurture the nebula into an ultra future.",
+        "nebula": "every idea before it has a shape",
+        "nurture": "we grow it with you, not for you",
+        "ultra": "a fifty-person agency's output from one person",
+        "future": "the company form being rewritten now"
+      },
+      "how": {
+        "title": "How we work",
+        "lead": "We don't hire a company. We orchestrate one. The founder sets direction and makes the calls that are hard to reverse; agents write, review and ship; the architecture decides what is allowed to merge — so speed never buys drift.",
+        "cn": "人定方向，agent 执行，架构把关。",
+        "architectureNote": "好的架构，意味着你能走很远。"
+      },
+      "contact": {
+        "founderTitle": "Write to the founder",
+        "companyTitle": "The company"
+      }
+    },
+    "aboutProducts": {
+      "hero": {
+        "title": "The founder OS",
+        "lead": "Everything {brandName} makes is one system for starting a company: a production layer to build on, a network to find people and needs, and an OS that runs the company from one context.",
+        "cn": "创始人操作系统：一套从想法走到公司的系统。"
+      },
+      "layers": {
+        "sailor": {
+          "line": "Skip to production.",
+          "body": "The production layer for agent-built software: auth, billing for global and China rails, multi-tenancy and an AI gateway in one command, running locally with zero keys. You own the code.",
+          "cn": "给 AI 写出来的产品铺好上线的路。",
+          "status": "Usable today",
+          "cta": "Sailor"
+        },
+        "sleptons": {
+          "line": "Where people, ideas, needs and capital find each other.",
+          "body": "The network around the platform: Ideas, the open board of ideas and needs, and the people and resources that pick them up.",
+          "cn": "人、想法、需求与资本彼此找到的地方。",
+          "status": "Open",
+          "cta": "Sleptons"
+        },
+        "os": {
+          "line": "One sentence, a whole company.",
+          "body": "Brand, product, code and launch from one context, on your Mac. In development — there is nothing to show until there is something real.",
+          "cn": "一句话，一整家公司。",
+          "status": "In development",
+          "cta": "Why we are building it"
+        }
+      },
+      "platform": {
+        "title": "Built on the platform",
+        "lead": "Products we have built on Sailor along the way, each open to use.",
+        "cn": "在平台上长出来的产品。",
+        "buildingLink": "What we're building"
+      }
+    }
+  },
+  "siteMap": {
+    "sections": {
+      "home": {
+        "title": "Home",
+        "is": "The manifesto, led by the Journal."
+      },
+      "journal": {
+        "title": "Journal",
+        "is": "The founder's essays: what we believe about building now."
+      },
+      "sailor": {
+        "title": "Sailor",
+        "is": "The open-source platform everything is built on, usable today."
+      },
+      "sleptons": {
+        "title": "Sleptons",
+        "is": "Where people, ideas, needs and capital find each other — including Ideas, the UGC of ideas and needs."
+      },
+      "building": {
+        "title": "Building",
+        "is": "The founder OS, and the products grown on the platform along the way."
+      },
+      "company": {
+        "title": "Company",
+        "is": "Who we are, how we work, how to reach us, and the legal pages."
+      }
+    },
+    "pages": {
+      "home": {
+        "title": "Home"
+      },
+      "blog": {
+        "title": "Journal",
+        "slug": {
+          "title": "Essay"
+        },
+        "author": {
+          "author": {
+            "title": "Author"
+          }
+        },
+        "tag": {
+          "tag": {
+            "title": "Topic"
+          }
+        }
+      },
+      "news": {
+        "title": "News"
+      },
+      "sailor": {
+        "title": "Sailor",
+        "studio": {
+          "title": "Sailor Studio",
+          "frame": {
+            "title": "Sailor Studio frame"
+          }
+        }
+      },
+      "features": {
+        "title": "Packages",
+        "name": {
+          "title": "Package"
+        }
+      },
+      "pricing": {
+        "title": "Pricing"
+      },
+      "licensing": {
+        "title": "Licensing"
+      },
+      "getLicense": {
+        "title": "Get a license"
+      },
+      "ai": {
+        "models": {
+          "title": "AI models"
+        }
+      },
+      "open": {
+        "title": "Open platform"
+      },
+      "changelog": {
+        "title": "Changelog",
+        "version": {
+          "title": "Release"
+        }
+      },
+      "showcase": {
+        "title": "Built with Sailor"
+      },
+      "status": {
+        "title": "Status",
+        "history": {
+          "title": "Incident history"
+        },
+        "subscription": {
+          "title": "Status subscription"
+        },
+        "incidents": {
+          "id": {
+            "title": "Incident"
+          }
+        }
+      },
+      "security": {
+        "title": "Security"
+      },
+      "refer": {
+        "title": "Refer"
+      },
+      "sleptons": {
+        "title": "Sleptons"
+      },
+      "ideas": {
+        "title": "Ideas"
+      },
+      "solutions": {
+        "title": "Capital",
+        "slug": {
+          "title": "Solution"
+        },
+        "chinaVc": {
+          "id": {
+            "title": "Investor"
+          }
+        },
+        "globalVc": {
+          "id": {
+            "title": "Investor"
+          }
+        }
+      },
+      "building": {
+        "title": "Building"
+      },
+      "roadmap": {
+        "title": "Roadmap"
+      },
+      "playbook": {
+        "title": "Playbook"
+      },
+      "opc": {
+        "title": "OPC"
+      },
+      "about": {
+        "title": "About",
+        "whitepaper": {
+          "title": "Whitepaper"
+        },
+        "products": {
+          "title": "Founder OS"
+        },
+        "businessPortfolio": {
+          "title": "Business"
+        },
+        "global": {
+          "title": "Global"
+        },
+        "innovation": {
+          "title": "Innovation"
+        }
+      },
+      "careers": {
+        "title": "Careers"
+      },
+      "contact": {
+        "title": "Contact"
+      },
+      "faq": {
+        "title": "FAQ"
+      },
+      "privacy": {
+        "title": "Privacy"
+      },
+      "terms": {
+        "title": "Terms"
+      },
+      "cookies": {
+        "title": "Cookies"
+      },
+      "credits": {
+        "title": "Credits"
+      },
+      "dpa": {
+        "title": "DPA"
+      },
+      "refund": {
+        "title": "Refunds"
+      },
+      "legal": {
+        "slug": {
+          "title": "Legal"
+        }
+      }
+    }
+  },
+  "solutionsCatalog": {
+    "groups": {
+      "go-to-market": {
+        "label": "Go-to-Market"
+      },
+      "build-govern": {
+        "label": "Build & Govern"
+      },
+      "ai-data": {
+        "label": "AI & Data"
+      },
+      "founder": {
+        "label": "Founder"
+      }
+    },
+    "solutions": {
+      "go-global": {
+        "label": "Ship Globally",
+        "tagline": "Launch a compliant, localized SaaS for global markets.",
+        "hero": {
+          "eyebrow": "Go Global",
+          "title": "Take your SaaS",
+          "titleAccent": "global",
+          "summary": "Multi-region infra, i18n, payments and compliance — the harness ships the cross-border plumbing so you ship product."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Localization at the core",
+            "body": "7-locale routing, RTL-ready tokens and per-market content without forking the codebase."
+          },
+          "uc2": {
+            "title": "Payments without rewrites",
+            "body": "Creem (cards, merchant of record) plus WeChat Pay / Alipay behind one billing contract — both live the moment you add their keys."
+          },
+          "uc3": {
+            "title": "Compliance baked in",
+            "body": "Tenant isolation, audit logging and data-residency primitives ready on day one."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Do I need separate apps per region?",
+            "a": "No — one codebase. Both adapters of a China pair (payments, SMS, storage) ship in every build; whichever keys are present at deploy time decide which run, and both can run at once."
+          }
+        }
+      },
+      "growth": {
+        "label": "Growth Hacking",
+        "tagline": "Acquisition, activation and retention loops that compound.",
+        "hero": {
+          "eyebrow": "Growth",
+          "title": "Build loops that",
+          "titleAccent": "compound",
+          "summary": "Instrument funnels, run experiments and wire referral and lifecycle loops on a metering + notifications backbone."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Funnel instrumentation",
+            "body": "Usage metering + analytics give you the events to measure activation, not guesses."
+          },
+          "uc2": {
+            "title": "Lifecycle messaging",
+            "body": "Multi-channel notifications (in-app / email / push) driven by product events."
+          },
+          "uc3": {
+            "title": "Experiment fast",
+            "body": "Feature flags ship variants without redeploys; metering reads the result."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Is an analytics warehouse included?",
+            "a": "Metering aggregates to ClickHouse for real-time funnel and cohort reads."
+          }
+        }
+      },
+      "architecture": {
+        "label": "Architecture Governance",
+        "tagline": "Keep a large codebase coherent as it scales.",
+        "hero": {
+          "eyebrow": "Architecture",
+          "title": "Govern your",
+          "titleAccent": "architecture",
+          "summary": "Architecture tests, ratchets and capability boundaries enforce structure mechanically — not in a wiki nobody reads."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Ratcheted invariants",
+            "body": "Property tests fail the build when hardcoded values or cross-layer imports creep in."
+          },
+          "uc2": {
+            "title": "Capability boundaries",
+            "body": "Domain-grouped packages with declared owners and scopes keep coupling low."
+          },
+          "uc3": {
+            "title": "Three-tier lifecycle",
+            "body": "active / stub / incubator keeps dead concepts out of CI without losing the idea."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Does governance slow teams down?",
+            "a": "It moves review from humans to tests, so most checks are instant and automatic."
+          }
+        }
+      },
+      "tech-stack": {
+        "label": "Tech Selection",
+        "tagline": "One opinionated stack per domain — a second adapter only where China requires it.",
+        "hero": {
+          "eyebrow": "Tech Stack",
+          "title": "One stack,",
+          "titleAccent": "zero decisions",
+          "summary": "Queue, search, auth, billing and storage each have one answer — Better Auth, QStash, Postgres, Creem — behind an interface, not a picklist."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "One answer per domain",
+            "body": "Better Auth for identity, QStash for queues, Postgres (pgvector + full-text) for search, Creem for billing — the interface stayed, the alternatives didn't."
+          },
+          "uc2": {
+            "title": "TS-by-default backend",
+            "body": "A documented policy for when Python is justified keeps the stack from sprawling."
+          },
+          "uc3": {
+            "title": "China pairs, not a matrix",
+            "body": "Payments (Creem + WeChat Pay/Alipay), SMS (Twilio Verify + Aliyun) and storage (R2/OSS on one S3-compatible client) keep a second adapter only where mainland law or network access makes the default unusable — both live as soon as their keys are set."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "What if I need a provider that isn't kept?",
+            "a": "Each domain still ships behind an interface — add an adapter without touching call sites. The ones that remain were kept because production runs on them, not because the interface only fits them."
+          }
+        }
+      },
+      "dx": {
+        "label": "DX Tooling",
+        "tagline": "A developer experience that keeps velocity high.",
+        "hero": {
+          "eyebrow": "DX",
+          "title": "Tooling that gets",
+          "titleAccent": "out of the way",
+          "summary": "One scaffold CLI, one formatter, one pipeline. Generate, lint, test and ship without yak-shaving the toolchain."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Scaffold in seconds",
+            "body": "`npx create-sailor my-app` asks nothing and ships the full converged stack, wired and ready to run."
+          },
+          "uc2": {
+            "title": "One linter, one config",
+            "body": "Biome formats and lints the whole monorepo — no ESLint/Prettier split-brain."
+          },
+          "uc3": {
+            "title": "Green pipeline by default",
+            "body": "lint → build → test → scan → deploy runs the same locally and in CI."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Can I bring my own tools?",
+            "a": "Yes — presets are opt-in; the defaults are opinionated, not locked."
+          }
+        }
+      },
+      "ai": {
+        "label": "AI Integration",
+        "tagline": "Ship AI features on a provider-agnostic agent runtime.",
+        "hero": {
+          "eyebrow": "AI",
+          "title": "Make your product",
+          "titleAccent": "AI-native",
+          "summary": "Agents, RAG, tools and an LLM gateway — multi-model, observable, and safe to put in front of users."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Model-agnostic gateway",
+            "body": "Route, fail over and track cost across providers behind one API."
+          },
+          "uc2": {
+            "title": "RAG that ships",
+            "body": "Knowledge base, embeddings and retrieval primitives wired for multi-tenant use."
+          },
+          "uc3": {
+            "title": "Tool-using agents",
+            "body": "An agent runtime with tool registry and execution policy for safe autonomy."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Am I locked to one model vendor?",
+            "a": "No — the gateway abstracts vendors; switching is configuration."
+          }
+        }
+      },
+      "ai-data-ops": {
+        "label": "AI Data Operations",
+        "tagline": "Managed data labeling, RLHF and eval pipelines — as a service.",
+        "hero": {
+          "eyebrow": "AI Data Ops",
+          "title": "Fuel your models with",
+          "titleAccent": "quality data",
+          "summary": "A managed data operation — annotation, RLHF preference data and evaluation sets — run by our team against your spec."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Annotation at scale",
+            "body": "Vetted workforce + tooling for text, image, audio and 3D labeling."
+          },
+          "uc2": {
+            "title": "RLHF preference data",
+            "body": "Pairwise comparisons and rubric scoring to align your model to intent."
+          },
+          "uc3": {
+            "title": "Evaluation sets",
+            "body": "Held-out, audited eval suites so you measure quality, not vibes."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "How do we start?",
+            "a": "Book a scoping call — we turn your spec into a pilot batch within days."
+          }
+        }
+      },
+      "frontier": {
+        "label": "Frontier",
+        "tagline": "Field notes from the edge of what's shipping.",
+        "hero": {
+          "eyebrow": "Frontier",
+          "title": "Stay on the",
+          "titleAccent": "frontier",
+          "summary": "What we're testing before it's obvious — new models, runtimes and patterns, with the trade-offs spelled out."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Early signal",
+            "body": "Honest write-ups of what worked and what didn't, not hype."
+          },
+          "uc2": {
+            "title": "Reference implementations",
+            "body": "Runnable spikes you can lift instead of starting from a blog post."
+          },
+          "uc3": {
+            "title": "Trade-offs first",
+            "body": "Every frontier note leads with cost, risk and when not to adopt."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Is this production advice?",
+            "a": "Treat frontier notes as scouting — production guidance is flagged explicitly."
+          }
+        }
+      },
+      "china-vc": {
+        "label": "China VC Directory",
+        "tagline": "China's direct-investment institutions, searchable by sector, type and deal activity.",
+        "hero": {
+          "eyebrow": "China VC",
+          "title": "Find the right",
+          "titleAccent": "China investors",
+          "summary": "A searchable directory of China's direct-investment institutions — filter by sector, type and deal volume."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Filter by sector",
+            "body": "Normalized sectors — narrow to investors active in your space."
+          },
+          "uc2": {
+            "title": "Read the activity signal",
+            "body": "Cumulative deal volume shows who deploys most."
+          },
+          "uc3": {
+            "title": "Go straight to source",
+            "body": "Each institution links straight to its official site."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Which institutions are included?",
+            "a": "China's mainstream direct-investment institutions across stages and sectors."
+          }
+        }
+      },
+      "global-vc": {
+        "label": "Global VC Directory",
+        "tagline": "Well-known global investors — from Y Combinator to multi-stage funds.",
+        "hero": {
+          "eyebrow": "Global VC",
+          "title": "Reach",
+          "titleAccent": "global investors",
+          "summary": "A curated directory of leading global investors — accelerators, seed, multi-stage and growth funds — filterable by sector, type and region."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "From accelerator to growth",
+            "body": "Y Combinator, a16z, Sequoia, Accel and more — across every stage."
+          },
+          "uc2": {
+            "title": "Filter by focus",
+            "body": "Narrow by sector (AI, fintech, crypto, bio…), type and region."
+          },
+          "uc3": {
+            "title": "Go straight to source",
+            "body": "Each fund links straight to its official site."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "How is this list chosen?",
+            "a": "A hand-curated set of widely recognized global investors, compiled from public information."
+          }
+        }
+      },
+      "fundraising": {
+        "label": "Fundraising",
+        "tagline": "Playbooks for raising from the right investors.",
+        "hero": {
+          "eyebrow": "Fundraising",
+          "title": "Raise with a",
+          "titleAccent": "clear story",
+          "summary": "Metrics, narrative and process — how to package what you've built into a round that closes."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Metrics that matter",
+            "body": "Which numbers investors actually underwrite at each stage."
+          },
+          "uc2": {
+            "title": "Narrative craft",
+            "body": "Turn a feature list into a market story without overclaiming."
+          },
+          "uc3": {
+            "title": "Process discipline",
+            "body": "Run a tight, time-boxed raise instead of an open-ended drift."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Is this region-specific?",
+            "a": "Patterns are general; we flag where US, EU and China rounds differ."
+          }
+        }
+      },
+      "product-insights": {
+        "label": "Product Insights",
+        "tagline": "Teardowns and patterns from products worth studying.",
+        "hero": {
+          "eyebrow": "Product",
+          "title": "Learn from",
+          "titleAccent": "products that work",
+          "summary": "Structured teardowns — what a product gets right, why it works, and what's transferable to yours."
+        },
+        "useCases": {
+          "uc1": {
+            "title": "Pattern, not copy",
+            "body": "We extract the reusable principle behind a UX or GTM move."
+          },
+          "uc2": {
+            "title": "Decision context",
+            "body": "Why a choice made sense for them — and when it wouldn't for you."
+          },
+          "uc3": {
+            "title": "Actionable takeaways",
+            "body": "Each teardown ends with what to try this week."
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "Do you cover B2B and B2C?",
+            "a": "Both, with a bias toward SaaS and developer-facing products."
+          }
+        }
+      }
+    },
+    "index": {
+      "eyebrow": "Solutions",
+      "title": "Best practices for shipping global SaaS",
+      "summary": "Scenario playbooks for outbound founders — from going global and growth to architecture, AI and fundraising."
+    },
+    "page": {
+      "back": "All solutions",
+      "useCasesHeading": "How it helps",
+      "capabilities": "Powered by",
+      "bestPractices": "Best practices",
+      "faqHeading": "FAQ",
+      "ctaContent": "Get Sailed",
+      "ctaOffering": "Book a scoping call"
+    },
+    "vcProfile": {
+      "home": "Home",
+      "thesis": "Investment focus",
+      "facts": "At a glance",
+      "founded": "Founded",
+      "hq": "HQ",
+      "stages": "Stages",
+      "checkSize": "Check size",
+      "totalDeals": "Total deals",
+      "region": "Region",
+      "sectors": "Sectors",
+      "notable": "Notable portfolio",
+      "recent": "Recent activity (2025–26)",
+      "similar": "Similar institutions",
+      "visit": "Visit website"
+    },
+    "chinaVc": {
+      "back": "All solutions",
+      "statInstitutions": "Institutions",
+      "statSectors": "Sectors",
+      "statDeals": "Deals tracked",
+      "source": "Compiled from public information on China's direct-investment institutions.",
+      "directoryLabel": "China VC"
+    },
+    "globalVc": {
+      "back": "All solutions",
+      "statFunds": "Funds",
+      "statSectors": "Sectors",
+      "statRegions": "Regions",
+      "source": "A curated set of well-known global investors. Profiles compiled from public information.",
+      "directoryLabel": "Global VC"
+    },
+    "meta": {
+      "indexTitle": "Solutions | {brandName}",
+      "indexDescription": "Scenario playbooks for outbound founders — go global, growth, architecture, AI and fundraising best practices.",
+      "detailTitleSuffix": "{brandName} Solutions",
+      "chinaVcProfileTitle": "{name} — Investor Profile | {brandName}",
+      "chinaVcProfileDescriptionFallback": "{name}: investment focus, sectors, stages and notable portfolio.",
+      "globalVcProfileTitle": "{name} — Investor Profile | {brandName}",
+      "globalVcProfileDescriptionFallback": "{name}: focus sectors, stage and region."
+    }
+  },
+  "solutionsNav": {
+    "groups": {
+      "go-to-market": "Go-to-Market",
+      "build-govern": "Build & Govern",
+      "ai-data": "AI & Data",
+      "founder": "Founder"
+    },
+    "items": {
+      "go-global": {
+        "label": "Ship Globally",
+        "tagline": "Launch a compliant, localized SaaS for global markets."
+      },
+      "growth": {
+        "label": "Growth Hacking",
+        "tagline": "Acquisition, activation and retention loops that compound."
+      },
+      "architecture": {
+        "label": "Architecture Governance",
+        "tagline": "Keep a large codebase coherent as it scales."
+      },
+      "tech-stack": {
+        "label": "Tech Selection",
+        "tagline": "One opinionated stack per domain — a second adapter only where China requires it."
+      },
+      "dx": {
+        "label": "DX Tooling",
+        "tagline": "A developer experience that keeps velocity high."
+      },
+      "ai": {
+        "label": "AI Integration",
+        "tagline": "Ship AI features on a provider-agnostic agent runtime."
+      },
+      "ai-data-ops": {
+        "label": "AI Data Operations",
+        "tagline": "Managed data labeling, RLHF and eval pipelines — as a service."
+      },
+      "frontier": {
+        "label": "Frontier",
+        "tagline": "Field notes from the edge of what's shipping."
+      },
+      "china-vc": {
+        "label": "China VC Directory",
+        "tagline": "China's direct-investment institutions, searchable by sector, type and deal activity."
+      },
+      "global-vc": {
+        "label": "Global VC Directory",
+        "tagline": "Well-known global investors — from Y Combinator to multi-stage funds."
+      },
+      "fundraising": {
+        "label": "Fundraising",
+        "tagline": "Playbooks for raising from the right investors."
+      },
+      "product-insights": {
+        "label": "Product Insights",
+        "tagline": "Teardowns and patterns from products worth studying."
+      }
+    }
+  },
+  "resourcesCatalog": {
+    "groups": {
+      "developers": "Developers",
+      "company": "Company"
+    },
+    "items": {
+      "open-platform": {
+        "label": "Open Platform",
+        "tagline": "APIs, docs, and the developer console"
+      },
+      "docs": {
+        "label": "Docs",
+        "tagline": "API docs and guides"
+      },
+      "forge": {
+        "label": "Forge",
+        "tagline": "Online codecs, text, hashing, and document tools"
+      },
+      "blog": {
+        "label": "Blog",
+        "tagline": "Engineering notes and updates"
+      },
+      "changelog": {
+        "label": "Changelog",
+        "tagline": "What's new in {brandName}"
+      },
+      "roadmap": {
+        "label": "Roadmap",
+        "tagline": "See what we're building next"
+      },
+      "design-system": {
+        "label": "Design System",
+        "tagline": "Tokens, components, and brand"
+      },
+      "status": {
+        "label": "Status",
+        "tagline": "Service status and uptime"
+      },
+      "about": {
+        "label": "About",
+        "tagline": "Our mission and team"
+      },
+      "careers": {
+        "label": "Careers",
+        "tagline": "Join the team"
+      },
+      "newsroom": {
+        "label": "Newsroom",
+        "tagline": "Announcements and press"
+      },
+      "playbook": {
+        "label": "Playbook",
+        "tagline": "How we build"
+      },
+      "showcase": {
+        "label": "Showcase",
+        "tagline": "Built with {brandName}"
+      },
+      "security": {
+        "label": "Security",
+        "tagline": "Security and compliance"
+      }
+    }
+  },
+  "openPlatform": {
+    "eyebrow": "Open Platform",
+    "title": "{brandName} Open Platform",
+    "lead": "Docs, public APIs, and the signed-in developer console — one catalog, no second origin.",
+    "consoleCta": "Open the console",
+    "consoleHint": "API keys, webhooks, and provider keys stay on the app. Sign in if you are asked.",
+    "groups": {
+      "catalog": {
+        "label": "Public surfaces",
+        "description": "Hosts that already exist. This page does not proxy them."
+      },
+      "console": {
+        "label": "Developer console",
+        "description": "Signed-in settings on the app. Create and revoke credentials there."
+      }
+    },
+    "items": {
+      "docs": {
+        "title": "Docs",
+        "description": "Guides, API reference, and webhook contracts."
+      },
+      "api": {
+        "title": "API",
+        "description": "Shared gateway. Product namespaces stay under /<product>/v1/*."
+      },
+      "router": {
+        "title": "Router",
+        "description": "OpenAI-compatible model edge."
+      },
+      "forge": {
+        "title": "Forge",
+        "description": "Tool station and agent invoke API."
+      },
+      "sso": {
+        "title": "Sign in with {brandName}",
+        "description": "OIDC issuer on sso. Client registration is not self-serve yet.",
+        "badge": "IdP"
+      },
+      "status": {
+        "title": "Status",
+        "description": "Live operational status for public hosts."
+      },
+      "api-keys": {
+        "title": "API keys",
+        "description": "Create and revoke programmatic keys for the gateway."
+      },
+      "webhooks": {
+        "title": "Webhooks",
+        "description": "Subscribe to workspace events. Payloads are signed."
+      },
+      "provider-keys": {
+        "title": "Provider keys",
+        "description": "Bring your own AI provider credentials."
+      }
+    }
+  },
+  "playbookCatalog": {
+    "categories": {
+      "ai": {
+        "label": "AI & Agents",
+        "description": "Agentic runtimes and multi-step pipelines you can watch run end-to-end."
+      },
+      "design": {
+        "label": "Design & Theming",
+        "description": "Shape the brand system — palette, type, motion — and preview it live."
+      },
+      "compose": {
+        "label": "Embedding & Composition",
+        "description": "Compose workflows visually and embed Sailor surfaces anywhere."
+      },
+      "os": {
+        "label": "The OS",
+        "description": "Opinionated operating surfaces built on top of the platform."
+      }
+    },
+    "items": {
+      "layer0": {
+        "title": "Layer 0 Capability Loop",
+        "description": "Watch a capability request travel the full perceive → plan → act → verify loop."
+      },
+      "agent-runtime": {
+        "title": "Agent Runtime Grammar",
+        "description": "The multi-step agent runtime — tool registry, streaming UI, MCP integration."
+      },
+      "cinema": {
+        "title": "Cinema — Film-Director Pipeline",
+        "description": "A multi-agent pipeline that storyboards, shoots and cuts a short film."
+      },
+      "sailor-studio": {
+        "title": "Sailor Studio",
+        "description": "Choose a project's look, preview it on real pages, apply it with one command."
+      },
+      "color-tokens": {
+        "title": "Color & Tokens",
+        "description": "Browse the 12-step brand color scales and the live design-token reference."
+      },
+      "icon-library": {
+        "title": "Icon Library",
+        "description": "Browse all 541 Geist icons as tree-shakable, single-weight TSX components."
+      },
+      "canvas": {
+        "title": "Canvas — Node-Graph Editor",
+        "description": "An infinite node-graph canvas for composing agent workflows visually."
+      },
+      "embed": {
+        "title": "Embed Demo",
+        "description": "Drop a Sailor surface into any page with a single embed snippet."
+      },
+      "startup-os": {
+        "title": "Startup OS",
+        "description": "An opinionated operating surface for running a startup on Sailor.",
+        "badge": "Alpha"
+      }
+    },
+    "page": {
+      "eyebrow": "Playbook",
+      "title": "See the infrastructure run",
+      "lead": "The infrastructure demos, utilities, integrations and experiments that ship inside Sailor — pick one and dive in."
+    },
+    "meta": {
+      "title": "Playbook — {productName}",
+      "description": "A curated directory of the infrastructure demos, utilities, integrations and experimental features that ship inside Sailor."
+    }
+  },
+  "packageCatalog": {
+    "descriptions": {
+      "audit": "Hash-chained, SHA-256 append-only audit log for actor/tenant actions. SOC 2-grade tamper detection, streaming export, and replay-safe queries.",
+      "auth": "Better Auth on Postgres — organization membership, device-flow login, MFA-enforced, session HMAC-signed. One identity layer, no vendor in the loop.",
+      "captcha": "Bot challenge with Cloudflare Turnstile / hCaptcha / reCAPTCHA behind one verify() call. Server-side scoring, per-route enable, no third-party tracker on the client.",
+      "identity": "Shared actor primitive — usr_/svc_/api_ ID space, role/membership lookup, tenant attachment. The single identity object every iam package reads.",
+      "oauth": "Your own OIDC identity provider — \"Sign in with {brandName}\" for third-party apps. Authorization code + PKCE, refresh-token rotation, consent, clients stored in Postgres.",
+      "permissions": "RBAC + ABAC engine — CASL for in-process checks. defineAbility() server, <Can /> in React.",
+      "tenant": "Request-scoped tenant context via AsyncLocalStorage, with Prisma RLS bridge. One tenantId resolves through middleware and propagates the whole stack.",
+      "vault": "Application-layer envelope encryption for customer secrets — AES-256-GCM, per-tenant DEK, KMS-wrapped. Audit-logged read/decrypt, zero plaintext at rest.",
+      "billing": "Billing on Creem (cards worldwide, merchant of record), plus WeChat Pay / Alipay for mainland China (or manual, for offline invoicing). Same Subscription / Invoice / Customer surface for every backend.",
+      "blog": "Framework-agnostic blog rules shared by every content surface: PortableText types, reading time, related-post ranking, table-of-contents extraction.",
+      "contracts": "Cross-package event, identity, billing, and notification type contracts. The shared TypeScript boundary that lets commerce talk to iam, queue, webhooks.",
+      "license": "License key generation, validation, and revocation. Ed25519-signed, offline-verifiable, with seat-count and expiry enforcement.",
+      "marketing": "Shared marketing-site primitives — hero blocks, pricing tables, FAQ accordions — reused by landing and product marketing surfaces with the brand tokens already wired.",
+      "metering": "Usage metering on ClickHouse — sub-second ingestion, per-tenant quota lookup, ready to feed metered billing or in-product limits.",
+      "waitlist": "Pre-launch waitlist for the foundation tier — invite codes, position queues, referral counts, and operator dashboards.",
+      "cache": "Tag-based cache with Redis, Upstash, or in-memory backend. Same get/set/invalidate(tags) for serverless and self-hosted.",
+      "queue": "Message queue — Upstash QStash (serverless), with an in-memory fallback for local dev and tests.",
+      "search": "Full-text + vector search — pgvector (Postgres). BM25 keyword search and vector cosine search over your own database, no external search infra.",
+      "notifications": "Multi-channel notifications — in-app, email, push, SMS, chat — with self-hosted direct dispatchers and recipient-preference resolution.",
+      "webhooks": "Outbound webhook delivery — self-hosted custom dispatcher, signed payloads, retry with exponential backoff, subscriber portal for self-serve.",
+      "uploads": "Large-file uploads — S3 / R2 multipart, Tus resumable, presigned URLs. Picks the right strategy by file size automatically.",
+      "storage": "Lower-tier object storage helpers — list, copy, ACL, signed reads. Sits below @nebutra/uploads when you don't need multipart logic.",
+      "email": "Render React Email templates, dispatch through Resend / SES / SMTP. One sendEmail(template, props, recipient) for every transactional flow.",
+      "saga": "Distributed-transaction primitives — compensating actions, retry/rollback hooks, idempotency keys. WIP; ships behind a flag.",
+      "event-bus": "In-process pub/sub with cross-app fanout. Used by audit, billing, and notifications to react to commerce events without circular imports.",
+      "sms": "Transactional SMS + OTP verify — Twilio Verify globally, Aliyun for mainland China — same send(to, template) surface, automatic local-prefix routing.",
+      "tts": "Text-to-speech with OpenAI / ElevenLabs / Azure backends. Streamed audio, voice presets, per-tenant rate-limit budgets.",
+      "video-compose": "Programmatic video composition via Remotion. Render reels, social cards, and on-brand product GIFs from a JSON spec.",
+      "collab": "Realtime co-editing primitives — Yjs CRDT, WebSocket transport, presence cursors. The piece every multi-user app eventually needs.",
+      "onboarding": "Multi-step product onboarding with persistence — checklist state per user, branching flows, A/B-friendly step gating.",
+      "admin-tooling": "Self-serve operator dashboards — tenants, billing overrides, feature-flag flips — all gated by @nebutra/permissions.",
+      "integration-vault": "Per-tenant credential store for OAuth integrations and API keys — Creem, Gmail OAuth, Notion API. KMS-wrapped, refresh-rotated.",
+      "db": "Typed Prisma client wrapper — extension-aware, RLS-friendly, with per-tenant connection pinning when the deployment splits writes from reads.",
+      "prepaid-wallet": "Prepaid balances and API keys for {brandName} Router and Forge: a wallet port, sk-sailor- keys stored as SHA-256 fingerprints, and a usage envelope that records the charge and the supply cost.",
+      "router-supply": "Supply routing for {brandName} Router: model aliases, engine discovery from the environment, and an upstream chain that falls back when a provider fails.",
+      "browser-utils": "Small browser helpers every app needs: storage that survives private mode and blocked site data, and fetch with a timeout.",
+      "config": "Typed environment + runtime config — Zod schemas at boot, no scattered process.env reads, fail-fast on missing keys.",
+      "logger": "Structured logging with pino + Sentry transport. One log object per request, breadcrumbs forwarded, PII-stripper plugged into the standard sink.",
+      "health": "Liveness + readiness probes for every backend service. Aggregates downstream deps (db, queue, search) into one /healthz response.",
+      "errors": "Typed application error taxonomy — UserError, AuthError, RateLimitError. Maps cleanly to HTTP, to logs, to Sentry, to the in-product toast.",
+      "gateway-core": "BFF primitives shared by backends/gateway and edge handlers — middleware chains, route matchers, header normalization, request-id propagation.",
+      "rate-limit": "Token-bucket rate limiter — Upstash Redis or in-memory. Per-route + per-tenant policy, 429 with retry-after, decision logged for audit.",
+      "repositories": "Repository-pattern primitives — findAll, findById, create, update, delete behind one Repository<T>. Swap Prisma for any backend without changing callers.",
+      "tenant-store": "Tenant-bound key/value cache for lookups too hot for the database. Auto-invalidates on tenant settings change.",
+      "trace-store": "OpenTelemetry-compatible span store and query layer. Lets agents trace a tool call across iam, billing, and webhooks.",
+      "status": "Public status page primitives — incident timeline, component graph, subscriber emails. Renders both /status pages and embeddable widgets.",
+      "alerting": "Alert rules + delivery on top of @nebutra/metering. Threshold/anomaly detection, route to PagerDuty, Discord, or in-product banners.",
+      "analytics": "First-party product analytics on ClickHouse — event ingest, funnel queries, no third-party loader on the marketing site.",
+      "feature-flags": "Server + client flag evaluator with GrowthBook / Statsig / custom. Per-tenant overrides, sticky bucketing, exported as React hooks.",
+      "i18n": "next-intl bridge — runtime locale, ICU plural, currency/date formatters, sided JSON bundles per route. Build-time guarantees on key drift.",
+      "graph-model": "Property-graph model layer for knowledge / org / asset graphs. Edges/nodes typed by Zod, persisted via Prisma or Neo4j adapter.",
+      "provider-factory": "Auto-detecting provider factory pattern — env vars choose between queue / search / notifications backends with a single getX() call.",
+      "capability-kit": "Composable capability primitives — pricing tier ↔ feature flag ↔ quota ↔ UI gating wired into one declarative manifest.",
+      "typelens-catalog": "The data layer for TypeLens: typographic works, pairings and extract packs for designers and design agents. Work in progress — the catalog model exists, the seed content does not yet.",
+      "fonts": "Self-hosted open-source fonts: the Chinese body face every app loads, plus a registry of 19 faces that themes and DESIGN.md files can name — no request leaves for a font CDN.",
+      "brand": "Brand primitives — color definitions, gradient tokens, motion language. Source data; not imported at runtime by apps.",
+      "tokens": "Runtime CSS variables + ThemeProvider — single source of truth for colors, spacing, radii in every app. @import in your globals.css.",
+      "design-tokens": "W3C DTCG $value/$type token files + Style Dictionary 4 pipeline. Output CSS variables and JS modules, edited git-only — no design-tool sync round-trip.",
+      "icons": "541 Geist icons as tree-shakable TSX components. Single-weight, optical-sized, drop-in for Vercel / v0 visual parity.",
+      "theme": "CSS-only multi-theme engine — six oklch presets toggled by data-theme attribute. No JavaScript on the critical path.",
+      "ui": "Primary component library — {brandName} components, custom primitives, layout, theme bridge, and the shared Motion facade. The product UI import boundary.",
+      "design-sync": "Git-only design-token sync — tokens live in the repo as the source of truth, no design-tool round-trip to keep in lock-step.",
+      "forge-dns-leak": "An authoritative DNS zone for real leak tests: probe names resolved by the visitor's recursive resolver are logged by source IP. Work in progress — needs a delegated zone.",
+      "forge-runtime": "The capability registry and invoke pipeline behind {brandName} Forge: pure tools, one invoke path for the page and the API, charged against the credit ledger.",
+      "startup-os": "Typed contracts for Startup OS: company context, founder conversation streaming, run state, generated files and rollout gates. Work in progress — no production app uses it yet.",
+      "workflow-runtime": "Tenant-written workflows — agent(), parallel(), phase() — run only inside a fail-closed sandbox. Untrusted script source never reaches eval, new Function or node:vm.",
+      "agents": "Multi-step agent runtime — Vercel AI SDK foundation, tool registry, streaming UI, MCP integration. The skeleton for every Sailor agentic feature.",
+      "agent-runtime": "Lower-level agent execution — message reducer, tool invocation, streaming state machine. The kernel @nebutra/agents wraps.",
+      "ai-primitives": "Shared helpers used across all AI packages — token counting, prompt templating, stream-parser, retry-with-backoff. No provider dependency.",
+      "ai-providers": "Provider metadata — pricing per million tokens, context windows, modalities. Drives model selection and cost estimates.",
+      "mcp": "Model Context Protocol server primitives — register tools, expose resources, stream subscriptions. Run inside Sailor or stand-alone.",
+      "knowledge-rag": "Retrieval-augmented generation pipeline — chunk, embed, store, retrieve, rerank — pluggable per vector store.",
+      "knowledge-base": "Document store + indexer for RAG. Watches sources (S3, Notion, GitHub), schedules re-embed, surfaces freshness in the agent answer.",
+      "knowledge-graph": "Entity + relationship store on top of @nebutra/graph-model. Lets agents traverse \"customer → invoice → product\" without a SQL detour.",
+      "tool-registry": "Runtime tool catalog — schemas, descriptions, safety levels. Hot-swap tools between agents without re-deploying.",
+      "code-execution": "Sandboxed code execution for agents — JS / Python / shell — short-lived containers, network-isolated, capability-gated by @nebutra/permissions.",
+      "sandbox-runtime": "Vercel Sandbox + Lambda + local runner adapter under one execute() call. Picks the runner from a policy rule list.",
+      "browser-control": "Headless browser drive for agents — Vercel Agent Browser primary, Playwright fallback. Screenshot, click, type, evaluate.",
+      "generation-context": "Token-budgeted context window manager — system prompt, RAG, user history, scratchpad. Picks what to drop when the window fills.",
+      "local-embedding": "On-device embedding via ONNX / WebGPU. Avoids the round-trip when the embed is short, private, or rate-limited at the provider.",
+      "execution-policy": "Policy rules that route agent tasks to compute backends — render → Vercel Sandbox, long → Lambda, internal → local-runner.",
+      "code-index": "Repository code index for agents — symbol graph, embedding, file watcher. Lets the agent answer \"where is X defined\" without grep'ing.",
+      "voice-realtime": "Realtime voice loop — input ASR, model stream, output TTS — sub-300ms end-to-end. Bridges OpenAI Realtime + Deepgram + ElevenLabs.",
+      "image-pipeline": "Image generation + transform pipeline — provider-routed, watermark + safety filter, cached output, per-tenant quota.",
+      "audio-pipeline": "Audio processing chain — voice clone, denoise, transcribe, summarize. Streams through one async iterator per stage.",
+      "video-pipeline": "Long-form video pipeline — split, caption, b-roll, render. Distributes the long stages to backends/python via queue.",
+      "document-pipeline": "Ingestion for PDF / docx / markdown — chunk, table-aware extract, embed, route to @nebutra/knowledge-base. OCR fallback for image-only pages.",
+      "3d-pipeline": "3D asset generation + render — text-to-mesh + USD export + Three.js preview, with GPU-pool routing on the backend.",
+      "cli": "`nebutra` CLI — scaffold features, run migrations, inspect tenants, deploy presets. Same binary your CI uses.",
+      "create-sailor": "`create-sailor` scaffold — one command, working multi-tenant SaaS with auth + billing + dashboard wired in.",
+      "preset": "Feature-based SaaS config system. Toggle apps and features directly in one config file to shape your stack.",
+      "sanity": "Sanity Studio v4 helpers — schema generators, content-driven page builder, image pipeline integration.",
+      "china-compliance": "China-region operations — ICP filing helpers, MIIT registration, real-name verification, in-country DB residency.",
+      "content-store": "Headless CMS adapter — Sanity / Strapi / Notion behind one ContentEntry<T> read API. Drives marketing pages and product copy.",
+      "play-loader": "Hot-reload loader for atelier plays — sandboxed iframe, message bridge, persistence on save.",
+      "play-marketplace": "Marketplace shell for shareable atelier plays — discovery, ratings, install, attribution.",
+      "access-gate": "Pre-launch access gate — invite-code redemption, position queue, drip-release windows. Layers on top of @nebutra/waitlist.",
+      "atelier-canvas": "Infinite design canvas — multiplayer cursors, layer panel, frame export. The drawing surface every atelier play renders into.",
+      "brand-genesis": "Brand creation flow — pick palette, type pair, motion preset; ships a synced @nebutra/brand override and a Figma preview link.",
+      "cinema": "Atelier cinema mode — distraction-free fullscreen with timed scene playback, perfect for demoing a play or rehearsing a pitch.",
+      "cofounder-match": "Skill-and-stage cofounder matching — answers a small intake, surfaces ranked candidates with shared interest and warm intros.",
+      "ecosystem-safety": "Pre-flight safety check — license sweep, dep-vuln audit, prohibited-content scan. Surfaces blockers before a play ships to marketplace.",
+      "event-log": "General-purpose event log primitive — append, query, time-window aggregate. Sits below audit, analytics, and trace-store as their record.",
+      "founder-cemetery": "Failed-startup memorial — anonymized post-mortems with cause tags. Read-only catalog, source of the recurring failure pattern dashboard.",
+      "idea-plaza": "Public idea board — submit, upvote, comment; the seed pool atelier plays draw from when a founder asks \"what should I build\".",
+      "landing-builder": "Block-based landing page builder — drag pre-styled sections, edit copy in place, publish to a subdomain with one click.",
+      "legal": "Legal entity primitives — corp filings, registered agents, jurisdiction-aware ToS/Privacy generation. Feeds the legal section of @nebutra/preset.",
+      "outreach-engine": "Cold-outreach orchestrator — list dedupe, persona-aware drafting, send via SES/Resend, reply detection. Routes hot replies back into @nebutra/agents.",
+      "reel": "Short-form vertical video primitive — captures atelier moments, auto-captions via TTS pipeline, publishes to social channels.",
+      "support-deflector": "Inline AI support layer — answers from your docs + past tickets before a human is needed. Hands off cleanly with full transcript.",
+      "time-machine": "Project history scrubber — snapshot every save, branch a play from any past frame, diff two snapshots side by side."
+    },
+    "groups": {
+      "ai": {
+        "label": "AI runtime",
+        "summary": "Agent runtimes, RAG, media pipelines, and provider tooling"
+      },
+      "commerce": {
+        "label": "Commerce",
+        "summary": "Access, billing, license, marketing, and metering contracts"
+      },
+      "design": {
+        "label": "Design system",
+        "summary": "Brand, tokens, icons, theme, and UI system packages"
+      },
+      "gateway": {
+        "label": "Gateway",
+        "summary": "TypeScript / Hono BFF, auth, tenancy, OpenAPI"
+      },
+      "iam": {
+        "label": "Identity and trust",
+        "summary": "Auth, identity, permissions, tenancy, audit, and secrets"
+      },
+      "integrations": {
+        "label": "Integrations",
+        "summary": "Cache, queues, search, messaging, storage, and webhooks"
+      },
+      "ops": {
+        "label": "Operations",
+        "summary": "The nebutra CLI, create-sailor, presets, Sanity helpers and China compliance"
+      },
+      "platform": {
+        "label": "Platform",
+        "summary": "Core platform services, data, config, health, and tenancy"
+      }
+    },
+    "folders": {
+      "ai": {
+        "title": "AI Runtime & Agent Substrate",
+        "titleCn": "AI 运行时与智能体底座",
+        "summary": "A production AI domain with agent loops, tool protocols, RAG, local execution, provider metadata, and multimodal pipelines kept out of app code.",
+        "signature": {
+          "label": "AI packages",
+          "detail": "220 runtime source files and 117 tests, with the heaviest coverage in agent-runtime, knowledge-rag, reel, graph, and execution policies."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Agent workbench topology",
+          "caption": "One core loop coordinates model calls, context, tools, memory, execution, and media production.",
+          "nodes": {
+            "0": "durable turns, tools, commands, hooks, subagents",
+            "1": "retrieval, chunking, local embeddings, content-store",
+            "2": "tool catalog and protocol bridge",
+            "3": "typed media graph and storyboard execution",
+            "4": "execution providers behind one router",
+            "5": "metadata only; runtime remains in agents"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "agent-runtime tests",
+            "detail": "dispatcher, hooks, durable turns, commands, rollout store"
+          },
+          "1": {
+            "label": "RAG tests",
+            "detail": "retrieval contracts and ingestion behavior"
+          },
+          "2": {
+            "label": "README surfaces",
+            "detail": "package-level docs for most AI capabilities"
+          }
+        },
+        "owns": {
+          "0": "@nebutra/agents as the canonical model execution surface",
+          "1": "RAG, code indexing, knowledge graph, content store, and tool registry",
+          "2": "Image, video, audio, voice, sandbox, and browser automation pipelines"
+        },
+        "boundaries": {
+          "0": "Apps consume stable package APIs; they do not own provider routing.",
+          "1": "Media workflows depend on injected adapters instead of hardcoded vendors."
+        },
+        "proof": {
+          "0": "package-local tests for agents, knowledge-rag, reel, and agent-runtime",
+          "1": "architecture tests for AI primitive ownership and runtime dependencies"
+        }
+      },
+      "platform": {
+        "title": "Platform Control Plane",
+        "titleCn": "平台控制平面",
+        "summary": "The lowest shared layer: database, config, provider selection, tenant locks, gateway-core contracts, health, rate limits, traces, and repository boundaries.",
+        "signature": {
+          "label": "foundation packages",
+          "detail": "166 runtime source files spanning db, gateway-core, provider-factory, tenant-store, trace-store, config, errors, and observability."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Downward-only platform stack",
+          "caption": "Feature packages stand above this stack; platform packages must not pull product logic upward.",
+          "nodes": {
+            "0": "Prisma v7, schema policy, generation scripts",
+            "1": "per-tenant serialization and scoped stores",
+            "2": "explicit/env/detect/fallback provider resolution",
+            "3": "shared gateway contracts below the Hono backend",
+            "4": "async traces for agents, tools, and LLM spans"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "db source files",
+            "detail": "schema, client, seed, generated boundaries"
+          },
+          "1": {
+            "label": "local AGENTS contracts",
+            "detail": "package-level ownership rules"
+          },
+          "2": {
+            "label": "gateway-core tests",
+            "detail": "shared gateway behavior below backend routes"
+          }
+        },
+        "owns": {
+          "0": "Prisma schema, database client, migrations, and multi-schema policy",
+          "1": "Tenant locks, trace store, health checks, config, errors, and rate limiting",
+          "2": "Provider factory and repository boundaries used by higher-level packages"
+        },
+        "boundaries": {
+          "0": "No app-specific UI or product copy belongs in platform packages.",
+          "1": "Feature packages depend downward; platform does not import feature domains."
+        },
+        "proof": {
+          "0": "schema drift audits, db generation, and architecture dependency tests",
+          "1": "tenant-store and trace-store package-local doctor/debug commands"
+        }
+      },
+      "iam": {
+        "title": "Identity, Access & Tenant Trust",
+        "titleCn": "身份、访问与租户信任",
+        "summary": "Authentication on Better Auth, tenant context, permission gates, audit, captcha, OAuth, and encrypted vault behavior live in one trust boundary.",
+        "signature": {
+          "label": "trust tests",
+          "detail": "Provider abstraction, audit, tenant, permission, OAuth, and vault tests keep auth behavior from drifting into apps."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Trust corridor",
+          "caption": "Every product action should pass through identity, tenant, permission, audit, and secret boundaries in that order.",
+          "nodes": {
+            "0": "Better Auth on Postgres, session-based",
+            "1": "tenant context and organization scoping",
+            "2": "RBAC and resource-action scopes",
+            "3": "sensitive operation trail",
+            "4": "local and KMS-backed secret storage"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "auth tests",
+            "detail": "provider contract behavior"
+          },
+          "1": {
+            "label": "local AGENTS files",
+            "detail": "every IAM package declares ownership"
+          },
+          "2": {
+            "label": "tenant tests",
+            "detail": "organization context and tenant policies"
+          }
+        },
+        "owns": {
+          "0": "Better Auth session/identity surface, with device-flow login and organization membership",
+          "1": "Permission gates, tenant context, audit events, and vault storage",
+          "2": "OAuth server and captcha boundaries for external identity flows"
+        },
+        "boundaries": {
+          "0": "UI checks call IAM contracts; they do not reimplement authorization.",
+          "1": "Secrets and audit behavior do not leak into app-local helpers."
+        },
+        "proof": {
+          "0": "auth provider abstraction tests and permission concept docs",
+          "1": "audit and tenant package boundaries in AGENTS.md contracts"
+        }
+      },
+      "design": {
+        "title": "Design System Supply Chain",
+        "titleCn": "设计系统供应链",
+        "summary": "Brand assets, DTCG tokens, Tailwind v4 theme exports, Geist icons, UI primitives, registry builds, and git-only/design-md sync operate as a pipeline.",
+        "signature": {
+          "label": "packaged Geist icons",
+          "detail": "@nebutra/icons alone has 543 source files; the design lane is source-heavy by nature."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Token-to-app supply chain",
+          "caption": "One fact, one owner: colors, icons, components, and registries flow through governed package boundaries.",
+          "nodes": {
+            "0": "W3C DTCG source of truth",
+            "1": "CSS variables and ThemeProvider entry",
+            "2": "Tailwind v4 @theme and data-theme selectors",
+            "3": "Geist icon React package",
+            "4": "primitives, layouts, registry, governance tests"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "UI source files",
+            "detail": "primitives, layout shells, registry scripts"
+          },
+          "1": {
+            "label": "design-sync tests",
+            "detail": "git-only, design-md, IO, detection"
+          },
+          "2": {
+            "label": "AGENTS contracts",
+            "detail": "token, theme, brand, icons, UI, sync ownership"
+          }
+        },
+        "owns": {
+          "0": "CSS variable tokens, oklch themes, brand primitives, and generated assets",
+          "1": "Reusable primitives, layout shells, registry manifests, and Storybook surfaces",
+          "2": "Design sync scripts and policy tests for UI governance"
+        },
+        "boundaries": {
+          "0": "Landing pages compose design packages; they do not fork primitives.",
+          "1": "Token changes flow through brand sync, not one-off hex overrides."
+        },
+        "proof": {
+          "0": "React Doctor, Storybook registry generation, and token sync checks",
+          "1": "design-docs component pages and governance tests"
+        }
+      },
+      "integrations": {
+        "title": "Integration Runtime Layer",
+        "titleCn": "集成运行时层",
+        "summary": "Queues, cache, event bus, email, uploads, storage, search, SMS, notifications, webhooks, collaboration, and provider vaults share one adapter lane.",
+        "signature": {
+          "label": "adapter packages",
+          "detail": "The most operational lane: queue has 10 tests, notifications 5, email/uploads/webhooks 3 each."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Port-and-adapter bus",
+          "caption": "Transport details collect here so AI, commerce, and app packages call stable ports instead of vendor SDKs.",
+          "nodes": {
+            "0": "durable delivery and worker contracts",
+            "1": "cache provider boundary",
+            "2": "Resend, Console transports",
+            "3": "upload validation and storage handoff",
+            "4": "signature verification and delivery",
+            "5": "tenant-partitioned CRDT rooms"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "queue tests",
+            "detail": "delivery, retry, and worker behavior"
+          },
+          "1": {
+            "label": "README surfaces",
+            "detail": "adapter usage stays package-local"
+          },
+          "2": {
+            "label": "AGENTS contracts",
+            "detail": "operational boundaries per integration"
+          }
+        },
+        "owns": {
+          "0": "Cache, queue, event-bus, saga, notifications, onboarding, and webhooks",
+          "1": "Search, storage, uploads, SMS, TTS, video compose, and integration vault",
+          "2": "Provider-facing adapters that keep apps from depending on vendor SDKs directly"
+        },
+        "boundaries": {
+          "0": "Business workflows call integration ports; provider details stay here.",
+          "1": "AI and commerce packages reuse adapters without owning transport code."
+        },
+        "proof": {
+          "0": "queue, cache, webhook, and search package tests",
+          "1": "background job docs and operational smoke checks"
+        }
+      },
+      "commerce": {
+        "title": "Commercial System of Record",
+        "titleCn": "商业系统记录源",
+        "summary": "Access gates, billing providers, subscriptions, usage, credits, metering, licenses, contracts, legal content, marketing, and waitlists form the commercial domain.",
+        "signature": {
+          "label": "commercial packages",
+          "detail": "Billing is the largest package, but access-gate, blog, license, legal, metering, and waitlist keep adjacent commercial facts separate."
+        },
+        "sourceStats": {
+          "unitLabel": "packages"
+        },
+        "topology": {
+          "title": "Commercial ledger lanes",
+          "caption": "Each lane owns a different fact: access, invoice, usage, license, legal, or acquisition.",
+          "nodes": {
+            "0": "invite lifecycle for controlled SaaS access",
+            "1": "Creem, ChinaPay, credits, manual",
+            "2": "usage records and billing handoff",
+            "3": "issuance, validation, lifecycle events",
+            "4": "policy content and compliance surfaces"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "billing tests",
+            "detail": "checkout factory, readiness, credit webhook, metering"
+          },
+          "1": {
+            "label": "metering tests",
+            "detail": "usage accounting boundary"
+          },
+          "2": {
+            "label": "license tests",
+            "detail": "issuance and validation lifecycle"
+          }
+        },
+        "owns": {
+          "0": "Billing provider adapters, subscription lifecycle, and metering contracts",
+          "1": "Access-gate invites, licensing, legal content, marketing primitives, and waitlist",
+          "2": "Commercial boundaries that apps expose but do not redefine"
+        },
+        "boundaries": {
+          "0": "Landing copy can link to commerce contracts; it does not own pricing behavior.",
+          "1": "Auth and billing connect through tenant identifiers, not shared UI state."
+        },
+        "proof": {
+          "0": "access-gate lifecycle tests and package status docs",
+          "1": "billing model docs and release-surface verification"
+        }
+      },
+      "gateway": {
+        "title": "Typed API Gateway Boundary",
+        "titleCn": "类型化 API 网关边界",
+        "summary": "The Hono backend owns request context, security middleware, tenant extraction, idempotency, usage metering, route groups, OpenAPI generation, and async Inngest jobs.",
+        "signature": {
+          "label": "gateway tests",
+          "detail": "Billing idempotency, RBAC, middleware, queue delivery, events, health, notifications, and AI gateway routes are covered."
+        },
+        "sourceStats": {
+          "unitLabel": "backend"
+        },
+        "topology": {
+          "title": "Request-to-contract path",
+          "caption": "Route code is the visible part; the hard boundary is the ordered policy chain before and around it.",
+          "nodes": {
+            "0": "trace IDs, correlation, dependency injection",
+            "1": "headers, dynamic CORS, token buckets",
+            "2": "tenant extraction, mutation dedupe",
+            "3": "admin, ai, billing, events, legal, webhooks",
+            "4": "typed clients and background sync jobs"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "source files",
+            "detail": "routes, middleware, services, clients, adapters"
+          },
+          "1": {
+            "label": "async jobs",
+            "detail": "billing sync, GDPR deletion, tenant provisioning, user sync"
+          },
+          "2": {
+            "label": "contract output",
+            "detail": "generate:spec and typed API clients"
+          }
+        },
+        "owns": {
+          "0": "BFF routing, OpenAPI generation, middleware order, and tenancy extraction",
+          "1": "Gateway-level rate limiting, idempotency, audit logging, and versioning",
+          "2": "Typed API contracts consumed by web and generated clients"
+        },
+        "boundaries": {
+          "0": "Backend policy lives in middleware, not duplicated in each route.",
+          "1": "Apps do not bypass the gateway for tenant-sensitive operations."
+        },
+        "proof": {
+          "0": "OpenAPI generation, gateway route tests, and release verification scripts",
+          "1": "api-reference docs and dashboard typed-client integration"
+        }
+      }
+    },
+    "page": {
+      "heroTitle": "Every layer, already <signature>written.</signature>",
+      "heroLead": "{packageCount} packages in {domainCount} domains: every layer a SaaS needs, written, tested and in one repository. Each domain is below, with how it fits together and every package it holds.",
+      "metaDescription": "{packageCount} packages in {domainCount} domains — auth, billing, tenancy, AI, integrations and the design system, written, tested and in one repository.",
+      "exploreDomain": "Explore the domain",
+      "startTitle": "Start from all of it",
+      "startLead": "One command gives you the repository, with every package on this page already wired together.",
+      "install": {
+        "copyLabel": "Copy",
+        "copiedLabel": "Copied"
+      },
+      "allPackages": "Packages",
+      "docs": "Docs",
+      "source": "Source",
+      "inCode": "In code",
+      "owns": "What it owns",
+      "stops": "Where it stops",
+      "proof": "How we know it works",
+      "packages": "Packages",
+      "packagesCount": "{count} packages in {path}.",
+      "moreInDomain": "More in {domain}",
+      "allPackagesInDomain": "All {count} packages",
+      "sourceSentence": "{count} {unit}, {sourceFiles} source files and {testFiles} test files in {path}."
+    },
+    "glyphs": {
+      "sms": {
+        "message": "Your {brandName} OTP is 8472. Expires in 5 minutes.",
+        "delivered": "delivered"
+      },
+      "audio-pipeline": {
+        "steps": {
+          "0": "transcribe",
+          "1": "denoise",
+          "2": "master"
+        }
+      },
+      "code-execution": {
+        "footer": "Vercel Sandbox · safe untrusted",
+        "executed": "executed in 47ms"
+      },
+      "document-pipeline": {
+        "steps": {
+          "0": {
+            "label": "PDF",
+            "meta": "upload"
+          },
+          "1": {
+            "label": "OCR",
+            "meta": "47p"
+          },
+          "2": {
+            "label": "chunk",
+            "meta": "248"
+          },
+          "3": {
+            "label": "embed",
+            "meta": ""
+          }
+        },
+        "docs": {
+          "0": {
+            "age": "2m ago",
+            "pages": "47 pages",
+            "chunks": "248 chunks"
+          },
+          "1": {
+            "age": "12m ago",
+            "pages": "12 pages",
+            "chunks": "84 chunks"
+          }
+        },
+        "processed": "processed"
+      },
+      "ecosystem-safety": {
+        "title": "Guardrails active",
+        "layersCount": "4 layers",
+        "layers": {
+          "0": {
+            "label": "Content moderation",
+            "stat": "0 blocked today"
+          },
+          "1": {
+            "label": "PII redaction",
+            "stat": "12 redacted today"
+          },
+          "2": {
+            "label": "Prompt injection detect",
+            "stat": "2 caught today"
+          },
+          "3": {
+            "label": "Rate limit per actor",
+            "stat": "normal"
+          }
+        },
+        "footer": "OpenAI Moderation · regex + LLM gate"
+      },
+      "notifications": {
+        "rows": {
+          "0": {
+            "title": "payment received"
+          },
+          "1": {
+            "title": "new teammate"
+          },
+          "2": {
+            "title": "rate limit hit"
+          }
+        }
+      },
+      "onboarding": {
+        "steps": {
+          "0": "Account",
+          "1": "Workspace",
+          "2": "Invite",
+          "3": "First action"
+        },
+        "footnote": "Almost there",
+        "count": "3 of 4"
+      },
+      "outreach-engine": {
+        "campaign": "Q4 enterprise outbound",
+        "status": "Active · 47 prospects",
+        "sent": "Sent",
+        "open": "Opens",
+        "reply": "Replies",
+        "steps": {
+          "0": "Day 1: intro",
+          "1": "Day 3: case study",
+          "2": "Day 7: demo offer",
+          "3": "Day 14: bump"
+        }
+      },
+      "sandbox-runtime": {
+        "footer": "Vercel Sandbox · safe untrusted",
+        "run": "Run",
+        "lastExec": "Last exec"
+      }
+    },
+    "showcases": {
+      "auth": {
+        "active": "active",
+        "providers": {
+          "0": {
+            "label": "Continue with passkey"
+          },
+          "1": {
+            "label": "Continue with Google"
+          },
+          "2": {
+            "label": "Continue with GitHub"
+          },
+          "3": {
+            "label": "Continue with device code"
+          },
+          "4": {
+            "label": "Continue with magic link"
+          }
+        },
+        "cta": "Sign in",
+        "description": "One auth provider, every sign-in method it needs — Better Auth, no vendor in the loop.",
+        "email": "Email",
+        "or": "or sign in with email",
+        "password": "Password",
+        "stats": "Better Auth · SSO ready · MFA enforced",
+        "title": "Sign in to {brandName}"
+      },
+      "db": {
+        "headerLabel": "Query · packages/platform/db",
+        "rlsEnforced": "enforced",
+        "resultsTitle": "Query results",
+        "resultsSubtitle": "tenant-scoped via row-level security",
+        "visibleLabel": "Visible rows",
+        "hiddenLabel": "Hidden by RLS",
+        "visibleHint": "in tenant_a",
+        "hiddenHint": "other tenants",
+        "hiddenNote": "RLS hides rows belonging to other tenants — they never leave the database."
+      },
+      "gateway-core": {
+        "stops": {
+          "0": "Tenant resolution",
+          "1": "Rate-limit check",
+          "2": "Idempotency",
+          "3": "Auth",
+          "4": "Route handler",
+          "5": "Response shape"
+        },
+        "totalLabel": "Total latency",
+        "lifecycle": "Middleware lifecycle",
+        "okLabel": "OK",
+        "rps": "Requests / sec",
+        "p50": "p50 latency",
+        "p95": "p95 latency",
+        "gaugeLabel": "Success rate",
+        "success": "success"
+      },
+      "metering": {
+        "kpis": {
+          "0": {
+            "label": "API calls"
+          },
+          "1": {
+            "label": "AI tokens"
+          },
+          "2": {
+            "label": "Storage"
+          },
+          "3": {
+            "label": "Active users"
+          }
+        },
+        "meterRows": {
+          "0": {
+            "tier": "Pro · $0.001/call"
+          },
+          "1": {
+            "tier": "Pro · metered"
+          },
+          "2": {
+            "tier": "Pro · 50 GB incl."
+          },
+          "3": {
+            "tier": "Pro · seat-based"
+          }
+        },
+        "capLabel": "Cap",
+        "footer": "Aggregated in ClickHouse · realtime · ≤ 800ms p99",
+        "meterLabel": "Meter",
+        "of": "of",
+        "pctLabel": "% used",
+        "realtime": "live",
+        "tierLabel": "Pricing tier",
+        "title": "Usage metering",
+        "usedLabel": "Period usage"
+      },
+      "queue": {
+        "jobs": {
+          "0": {
+            "relative": "now"
+          },
+          "1": {
+            "relative": "12s ago"
+          },
+          "2": {
+            "relative": "48s ago"
+          },
+          "3": {
+            "relative": "1m ago"
+          },
+          "4": {
+            "relative": "2m ago"
+          },
+          "5": {
+            "relative": "3m ago"
+          }
+        },
+        "statusMeta": {
+          "failed": "Failed",
+          "pending": "Pending",
+          "processing": "Processing",
+          "success": "Success"
+        },
+        "attempts": "Attempts",
+        "duration": "Duration",
+        "queue": "Queue",
+        "status": "Status",
+        "throughput": "Throughput",
+        "success": "Success rate",
+        "when": "When",
+        "rate": "jobs/min",
+        "latency": "Avg latency",
+        "healthy": "Healthy",
+        "last60": "Last 60 min",
+        "live": "Live · QStash"
+      },
+      "search": {
+        "results": {
+          "0": {
+            "title": "Billing v2 migration playbook",
+            "excerpt": "Step-by-step migration from legacy invoices to the new metering pipeline."
+          },
+          "1": {
+            "title": "Migration checklist for billing tenants",
+            "excerpt": "Verify RLS, secrets rotation, and webhook backfill before cutover."
+          },
+          "2": {
+            "title": "Creem + WeChat Pay billing adapter notes",
+            "excerpt": "One billing contract keeps customer code stable across both rails."
+          },
+          "3": {
+            "title": "Zero-downtime migration patterns",
+            "excerpt": "Dual-write, shadow-read, then flip — applies to billing data too."
+          }
+        },
+        "placeholder": "Search docs, posts, changelog…",
+        "indexLabel": "Index",
+        "tagsLabel": "Tags",
+        "footer": "Searched {count} docs in {ms} · Postgres backend",
+        "relevance": "score"
+      },
+      "webhooks": {
+        "deliveries": {
+          "0": {
+            "timestamp": "2m ago"
+          },
+          "1": {
+            "timestamp": "5m ago"
+          },
+          "2": {
+            "timestamp": "just now"
+          },
+          "3": {
+            "timestamp": "12m ago"
+          },
+          "4": {
+            "timestamp": "1h ago"
+          }
+        },
+        "active": "Active",
+        "attempts": "Attempts",
+        "code": "Code",
+        "delivered": "last delivered 2m ago",
+        "event": "Event",
+        "footer": "99.2% success · p95 248ms · signed HMAC",
+        "latency": "Latency",
+        "retry": "retrying",
+        "status": "Status",
+        "title": "Recent deliveries",
+        "when": "When"
+      }
+    }
+  }
+}
