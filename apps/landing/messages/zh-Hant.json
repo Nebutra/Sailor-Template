@@ -1,0 +1,4300 @@
+{
+  "nav": {
+    "features": "特性",
+    "solutions": "解决方案",
+    "pricing": "定价",
+    "docs": "开发文档",
+    "github": "GitHub",
+    "npm": "npm",
+    "about": "关于我们",
+    "ideas": "点子广场",
+    "opc": "平台能力",
+    "roadmap": "路线图",
+    "resources": "资源",
+    "signIn": "登录控制台",
+    "getStarted": "起航",
+    "changelog": "更新日志",
+    "news": "新闻",
+    "designDocs": "设计系统",
+    "avatarMenu": {
+      "ariaLabel": "账户菜单",
+      "loadingName": "加载中…",
+      "dashboard": "控制台",
+      "account": "账户设置",
+      "billing": "账单",
+      "docs": "文档",
+      "signOut": "退出登录"
+    },
+    "theme": "外觀"
+  },
+  "refer": {
+    "metadataTitle": "加入 {brandName} 创始人推荐闭环",
+    "metadataDescription": "加入 {brandName} 等候名单，保留推荐归因，并在同一个 PLG 闭环里生成你的专属分享链接。",
+    "eyebrow": "创始人推荐闭环",
+    "title": "加入下一批创始人队列，并领取你的专属分享链接。",
+    "description": "可以带任意邀请码进入，也可以直接加入。若邀请码真实存在，系统会保留归因；同时把你写入等候名单，并立即生成可分享的私有 referral URL。",
+    "signal": {
+      "waitlist": "持久化等候名单",
+      "codeDetected": "已识别邀请码 {code}",
+      "direct": "直接加入"
+    },
+    "form": {
+      "emailLabel": "工作邮箱",
+      "emailPlaceholder": "you@example.com",
+      "codeLabel": "推荐码",
+      "codePlaceholder": "可选推荐码",
+      "submit": "加入等候名单",
+      "submitting": "加入中",
+      "invalidEmail": "请输入有效邮箱。",
+      "error": "暂时无法加入，请稍后重试。",
+      "successTitle": "你已进入队列",
+      "successDescription": "你的专属分享链接已经生成。",
+      "positionLabel": "队列位置",
+      "referralCodeLabel": "你的推荐码",
+      "referralUrlLabel": "你的分享链接",
+      "copyLink": "复制链接",
+      "copied": "已复制",
+      "share": "分享",
+      "shareTitle": "加入 {brandName} 创始人闭环",
+      "shareText": "使用我的邀请链接加入 {brandName} 创始人等候名单。",
+      "directMode": "无需推荐码也可加入",
+      "codeMode": "推荐归因已启用"
+    },
+    "proof": {
+      "peerLoop": {
+        "title": "创始人到创始人的增长闭环",
+        "description": "每个成功加入的用户都会获得推荐码和链接，下一次传播无需人工转交。"
+      },
+      "attribution": {
+        "title": "可信归因",
+        "description": "未知码会作为尝试归因被记录；有效码会增加推荐人计数，并保持 signup 数据干净。"
+      },
+      "shareLink": {
+        "title": "成功态即可分享",
+        "description": "确认页直接展示队列位置、推荐码、复制与系统分享动作，让闭环在页面内完成。"
+      }
+    },
+    "infrastructure": {
+      "eyebrow": "产品驱动基础设施",
+      "title": "它是耐久 SaaS 基础设施，不是一次性表单。",
+      "description": "推荐页背后由领域包、持久化 Prisma 模型、类型化 Next.js route 和可接入 ECS 部署后的 public smoke checks 支撑。",
+      "data": {
+        "eyebrow": "数据",
+        "title": "单一持久等候名单表",
+        "description": "邮箱唯一性、自动递增位置、推荐码索引、尝试归因 metadata 与状态流转都落在平台数据库里。"
+      },
+      "api": {
+        "eyebrow": "API",
+        "title": "类型化加入端点",
+        "description": "页面提交到 `/api/waitlist`，归一化任意推荐码，重复邮箱幂等返回既有记录，并且不依赖任何样例码。"
+      },
+      "cicd": {
+        "eyebrow": "CI/CD",
+        "title": "部署时 public smoke",
+        "description": "canonical 和 alias URL 都可自动检查，让 ECS 交付能捕获路由、DNS 与健康检查回归。"
+      }
+    }
+  },
+  "hero": {
+    "headline1": "睡前的一个念头，",
+    "headline2": "也能長成一家公司。",
+    "subheadline": "基于 <highlight>生产就绪</highlight> 的底座与 受治理的架构 开发，跳过数周平台工作。专为 AI 编程智能体与出海创始人 优化。",
+    "copyLabel": "复制环境配置",
+    "copiedLabel": "代码已复制",
+    "ctaGetAccess": "启动我的创业",
+    "ctaExploreDemo": "探索演示 Demo",
+    "pillCopied": "已复制"
+  },
+  "features": {
+    "sectionTitle": "开箱即用的基础设施，从原型直到海量扩张。",
+    "item0": {
+      "title": "AI 应用级基础设施",
+      "description": "内置且久经考验的大模型编排引擎。绕开底层死胡同，直接通过结构化的智能 API 开展业务。"
+    },
+    "item1": {
+      "title": "受治理的平台底座",
+      "description": "为 AI Native SaaS 团队提供统一的平台基线。把脚手架、运行时能力和交付面收敛到一个可审计、可扩展的体系里，而不是临时拼装工具链。"
+    },
+    "item2": {
+      "title": "全自动 SaaS 商业底座",
+      "description": "將 Postgres、Better Auth 與 Creem 的現代技術棧深度熔鑄。完全內建開箱即用的存取控制以及訂閱式計費。"
+    }
+  },
+  "cta": {
+    "heading": "即刻启动您的 AI 原生产品。",
+    "subheading": "通过单一命令，在本地极速初始化完整的云原生与 AI 架构。",
+    "copyLabel": "复制",
+    "copiedLabel": "已复制",
+    "startBuilding": "开始使用"
+  },
+  "footer": {
+    "brandDescription": "用 {brandName} Agent OS 发布你的 Startup。多租户、计费、身份验证及 AI 能力——开箱即用的生产级架构。",
+    "columns": {
+      "product": "产品",
+      "resources": "资源",
+      "company": "公司",
+      "legal": "法律"
+    },
+    "links": {
+      "product": "产品",
+      "features": "功能特性",
+      "forge": "Forge",
+      "pricing": "定价方案",
+      "about": "关于我们",
+      "showcase": "案例展示",
+      "blog": "技术博客",
+      "playbook": "实战手册",
+      "changelog": "更新日志",
+      "roadmap": "产品路线图",
+      "docs": "开发者文档",
+      "ideas": "创意实验室",
+      "opc": "平台能力",
+      "careers": "招聘",
+      "security": "安全",
+      "dpa": "数据处理",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "cookies": "Cookie 政策",
+      "refund": "退款政策",
+      "credits": "致謝",
+      "licensing": "授权与协议",
+      "contact": "联系我们",
+      "faq": "常见问题",
+      "github": "GitHub",
+      "discord": "Discord",
+      "twitter": "X (Twitter)"
+    },
+    "copyright": "© 2026 {companyLegal} · 保留所有权利。",
+    "statusOnline": "所有子系统在线运行",
+    "newsletterTitle": "保持最新动态",
+    "newsletterPlaceholder": "you@example.com",
+    "newsletterSubscribe": "订阅",
+    "newsletterSuccess": "感谢订阅！",
+    "newsletterError": "出了些问题",
+    "statusDegraded": "服務降級",
+    "statusOutage": "重大服務中斷",
+    "statusUnknown": "正在檢查狀態"
+  },
+  "logoStrip": {
+    "tagline": "執行於"
+  },
+  "monorepoTree": {
+    "badge": "TURBOREPO 架构",
+    "title": "10 个应用 · 111 个包 · 4 条后端线",
+    "description": "共享代码、并行构建、零冗余。从数据库到前端的完整端到端类型安全。",
+    "metricApps": "应用",
+    "metricBackends": "后端线",
+    "metricPackages": "包",
+    "verifiedPaths": "已按当前 workspace 路径校验",
+    "cta": "探索 Monorepo 架构"
+  },
+  "stats": {
+    "title": "关键数字指标",
+    "github": "GitHub 星标",
+    "discord": "Discord 社区",
+    "setup": "平均部署延迟",
+    "packages": "Monorepo 包数量",
+    "ctaStar": "前往 GitHub 点赞",
+    "ctaJoin": "加入社群交流",
+    "ctaStart": "快速开始",
+    "ctaExplore": "探索技术栈"
+  },
+  "legalPages": {
+    "about": {
+      "title": "关于我们 — 受治理的 AI 平台",
+      "description": "了解 {brandName} 围绕受治理 AI 平台所建立的商业判断与工程原则。",
+      "heading": "精干产品团队时代",
+      "subheading": "用受治理的平台基础设施、自动化与工程杠杆，替代重复的平台体力劳动。",
+      "missionTitle": "抵抗人治腐化的新秩序",
+      "missionP1": "{brandName} 正在构建一套面向长期主义交付的受治理 AI 平台，让团队依赖的不是短生命周期的 starter，而是可审计、可扩展、可持续演进的平台基线。面对规模增长带来的官僚化和熵增，我们选择用代码治理、自动化与平台纪律来回应。",
+      "missionP2": "商业系统今天依然被协作成本、工具割裂和升级路径薄弱所拖累。我们更关心如何通过清晰的平台契约、更稳的交付原语和可观测的运行时，把这些摩擦系统性地降下来。",
+      "missionP3": "我们不接受靠增加层级和组织阻力来解决规模问题。自动化、测试与治理规则应该吞掉重复运营工作，让团队把注意力放回产品、架构与客户结果。",
+      "missionP4": "",
+      "valuesTitle": "四大核心基石 (The 4 Pillars)",
+      "values": {
+        "0": {
+          "title": "受治理的规模 (Philosophy)",
+          "description": "规模不应来自更重的组织负担，而应来自更强的系统杠杆、更清晰的运行规则和更稳的工程基础。"
+        },
+        "1": {
+          "title": "Builder Core (Infrastructure)",
+          "description": "把多租户、计费、认证、合规与 AI 集成收敛成一套可审计、可扩展、可重复交付的平台基线。"
+        },
+        "2": {
+          "title": "升级纪律 (Routing)",
+          "description": "健康的平台应通过兼容性检查、迁移机制与可观测运行时持续演进，而不是依赖临时救火和隐性漂移。"
+        },
+        "3": {
+          "title": "代码即规则 (Code is Law)",
+          "description": "把运营纪律编码进测试、工作流与治理规则，让团队在不依赖政治与口口相传的前提下持续改进平台。"
+        }
+      },
+      "jobsTitle": "工程信号优先于头衔资历",
+      "jobsDescription": "我们更看重可验证的工程产出、系统判断力和表达清晰度，而不是被包装过的履历与头衔。",
+      "jobsButton": "提交 Github Profile",
+      "companyInfoTitle": "组织与合规信息",
+      "companyInfo": {
+        "legalName": "法定实体名称",
+        "founded": "实体注册年份",
+        "headquarters": "全球运营总部",
+        "jurisdiction": "管辖适用法律"
+      },
+      "ctaHeading": "期望更深入的探讨？",
+      "ctaDescription": "联系我们的技术团队进行企业级系统集成的评估，或查阅开发者文档。",
+      "ctaButton": "建立通讯"
+    },
+    "contact": {
+      "title": "技术与商务联络 — {brandName}",
+      "description": "针对商务授权、企业私有化部署以及疑难技术支持的联系通道。",
+      "heading": "建立支持联结",
+      "subheading": "我们将指派对应的技术专员或架构师跟进您的具体需求。",
+      "contacts": {
+        "founder": {
+          "title": "创始人信箱",
+          "description": "针对核心战略布局及深度业务协同等高级别事项的直达联络通道。"
+        },
+        "general": {
+          "title": "企业综合咨询",
+          "description": "针对生态战略合作及产品整体演进规划的初步探讨。"
+        },
+        "sales": {
+          "title": "商业部署方案",
+          "description": "深入沟通商业闭源授权方案与特定私有化集群环境的部署细节。"
+        },
+        "support": {
+          "title": "专家级支持",
+          "description": "为当前业务集成和核心系统调试提供针对性的架构指导与排障服务。"
+        },
+        "legal": {
+          "title": "法务与商业合规",
+          "description": "涉及开源协议边界设定、企业使用合规审查与合同约定解读。"
+        },
+        "privacy": {
+          "title": "数据中心隐私",
+          "description": "GDPR 与国内外其他数据隐私保护法的技术侧验证及遵循规范问题。"
+        },
+        "security": {
+          "title": "系统安全报告",
+          "description": "向我们的基础设施团队安全地提交针对软件服务潜在漏洞的技术复现报告。"
+        }
+      },
+      "formTitle": "信息递交口",
+      "form": {
+        "name": "递交人名称",
+        "email": "官方邮件地址",
+        "company": "所属机构组织",
+        "category": "需求归属领域",
+        "categories": {
+          "general": "企业综合咨询",
+          "sales": "商业授权与架构方案",
+          "support": "开发者技术支持",
+          "legal": "法务边界与合规",
+          "privacy": "数据与隐私处理",
+          "partnership": "产品与生态联动",
+          "press": "公关与舆论"
+        },
+        "subject": "关键议题提要",
+        "message": "技术或商务考量详情",
+        "submit": "递交后台系统",
+        "privacyNotice": "触发递交动作表明您已阅读并赞同我们的",
+        "privacyLink": "系统化隐私政策",
+        "submitting": "正在进入队列...",
+        "successMessage": "数据流转成功。相关的责任团队将会在 1-2 个基准工作日内予以详实答复。"
+      },
+      "companyInfoTitle": "对外运营资讯",
+      "companyNameChinese": "{companyLegal}",
+      "companyNameEnglish": "{companyLegalEn}",
+      "companyAddress": "无锡市，江苏省，中国",
+      "socialMedia": "主流社交链路"
+    },
+    "cookies": {
+      "title": "Cookie 政策 — {brandName}",
+      "description": "{brandName} 如何在网站和服务中使用 Cookie 及类似追踪技术。",
+      "heading": "Cookie 政策",
+      "effectiveDate": "生效日期",
+      "lastUpdated": "最后更新",
+      "dates": {
+        "effective": "2025 年 1 月 1 日",
+        "updated": "2025 年 1 月 1 日"
+      },
+      "intro": "本 Cookie 政策说明了{companyLegal}（以下简称「{brandName}」、「我们」或「本公司」）如何在网站和服务中使用 Cookie 及类似追踪技术。",
+      "whatAreCookies": {
+        "title": "什么是 Cookie？",
+        "content": "Cookie 是您访问网站时存放在设备上的小型文本文件。它们被广泛用于提升网站运行效率，并向网站所有者提供访问信息。"
+      },
+      "howWeUse": {
+        "title": "我们如何使用 Cookie",
+        "intro": "我们使用 Cookie 来：",
+        "items": {
+          "0": {
+            "label": "启用核心功能",
+            "desc": "提供用户身份验证和安全防护等基本功能"
+          },
+          "1": {
+            "label": "记住偏好设置",
+            "desc": "存储您的语言、主题和其他个性化设置"
+          },
+          "2": {
+            "label": "提升性能表现",
+            "desc": "了解访客如何与我们的服务进行交互"
+          },
+          "3": {
+            "label": "个性化体验",
+            "desc": "提供相关内容和推荐"
+          },
+          "4": {
+            "label": "衡量营销效果",
+            "desc": "追踪营销活动的实际效果"
+          }
+        }
+      },
+      "typesTitle": "我们使用的 Cookie 类型",
+      "tableHeaders": {
+        "cookie": "Cookie 名称",
+        "provider": "提供方",
+        "purpose": "用途",
+        "duration": "有效期"
+      },
+      "necessary": {
+        "title": "严格必要 Cookie",
+        "description": "这些 Cookie 是网站正常运行所必需的，无法被禁用。",
+        "cookies": {
+          "0": {
+            "name": "__session",
+            "provider": "{brandName}",
+            "purpose": "用户身份验证会话",
+            "duration": "会话期间"
+          },
+          "1": {
+            "name": "better-auth.session_token",
+            "provider": "Better Auth",
+            "purpose": "身分驗證會話權杖",
+            "duration": "7 天"
+          },
+          "2": {
+            "name": "cookie_consent",
+            "provider": "{brandName}",
+            "purpose": "存储 Cookie 同意偏好",
+            "duration": "1 年"
+          }
+        }
+      },
+      "functional": {
+        "title": "功能性 Cookie",
+        "description": "这些 Cookie 启用个性化功能并记住您的偏好设置。",
+        "cookies": {
+          "0": {
+            "name": "locale",
+            "provider": "{brandName}",
+            "purpose": "存储语言偏好",
+            "duration": "1 年"
+          },
+          "1": {
+            "name": "theme",
+            "provider": "{brandName}",
+            "purpose": "存储主题偏好",
+            "duration": "1 年"
+          }
+        }
+      },
+      "analyticsType": {
+        "title": "分析类 Cookie",
+        "description": "这些 Cookie 帮助我们了解访客如何与网站交互。",
+        "cookies": {
+          "0": {
+            "name": "_ga",
+            "provider": "Google Analytics",
+            "purpose": "区分独立用户",
+            "duration": "2 年"
+          },
+          "1": {
+            "name": "ph_*",
+            "provider": "PostHog",
+            "purpose": "产品分析",
+            "duration": "1 年"
+          }
+        }
+      },
+      "marketingType": {
+        "title": "营销类 Cookie",
+        "description": "这些 Cookie 用于广告投放和追踪广告效果。",
+        "cookies": {
+          "0": {
+            "name": "_fbp",
+            "provider": "Facebook",
+            "purpose": "追踪 Facebook 广告访问",
+            "duration": "3 个月"
+          },
+          "1": {
+            "name": "_gcl_au",
+            "provider": "Google Ads",
+            "purpose": "转化追踪",
+            "duration": "3 个月"
+          }
+        }
+      },
+      "managingTitle": "管理您的 Cookie 偏好",
+      "consentBanner": {
+        "title": "Cookie 同意横幅",
+        "intro": "首次访问我们的网站时，您将看到一个 Cookie 同意横幅，您可以：",
+        "items": {
+          "0": {
+            "label": "全部接受",
+            "desc": "启用所有 Cookie 类别"
+          },
+          "1": {
+            "label": "全部拒绝",
+            "desc": "禁用所有可选 Cookie（必要 Cookie 保留）"
+          },
+          "2": {
+            "label": "自定义",
+            "desc": "选择启用特定的 Cookie 类别"
+          }
+        },
+        "changeNote": "您可以随时通过点击页脚的「Cookie 设置」更改偏好。"
+      },
+      "browserSettings": {
+        "title": "浏览器设置",
+        "intro": "大多数浏览器允许您通过设置来控制 Cookie：",
+        "browsers": {
+          "0": {
+            "name": "Chrome",
+            "path": "设置 > 隐私和安全 > Cookie"
+          },
+          "1": {
+            "name": "Firefox",
+            "path": "设置 > 隐私与安全 > Cookie"
+          },
+          "2": {
+            "name": "Safari",
+            "path": "偏好设置 > 隐私 > Cookie"
+          },
+          "3": {
+            "name": "Edge",
+            "path": "设置 > 隐私、搜索和服务 > Cookie"
+          }
+        },
+        "note": "阻止某些 Cookie 可能会影响网站功能。"
+      },
+      "similarTech": {
+        "title": "类似技术",
+        "intro": "除 Cookie 外，我们还可能使用：",
+        "items": {
+          "0": {
+            "label": "本地存储",
+            "desc": "在本地存储偏好设置和缓存数据"
+          },
+          "1": {
+            "label": "会话存储",
+            "desc": "在浏览会话期间存储临时数据"
+          },
+          "2": {
+            "label": "像素标签",
+            "desc": "用于追踪邮件打开和网站访问的小型图片"
+          }
+        },
+        "noFingerprinting": "我们不使用浏览器指纹技术进行追踪。"
+      },
+      "updates": {
+        "title": "政策更新",
+        "content": "我们可能会不时更新本 Cookie 政策。如有重大变更，我们将在网站上发布更新后的政策通知您。"
+      },
+      "contactUs": {
+        "title": "联系我们",
+        "intro": "如果您对我们使用 Cookie 有任何疑问，请联系我们：",
+        "company": "{brandName} Co., Ltd.",
+        "privacyNote": "如需了解更多关于我们如何收集和处理您的数据的信息，请参阅我们的",
+        "privacyLink": "隐私政策"
+      }
+    },
+    "faq": {
+      "title": "技术指导与应用问答 (FAQ) — {brandName}",
+      "description": "关于系统框架搭建、技术栈原理和商业实施策略的详细说明与解析。",
+      "heading": "执行级深度解析",
+      "subheading": "为系统的工程集成和高管商业决策提供有力支撑的资料。",
+      "categories": {
+        "0": {
+          "name": "工程架构综述",
+          "questions": {
+            "0": {
+              "q": "{productName} 准确的业务作用是什么？",
+              "a": "{productName} 是一套高度结构化的生产级 Next.js AI SaaS 基础建设框架。它内置整合了包括企业计费、鉴权认证以及多端隔离在内的微服务能力，让研发团队得以摆脱边缘业务开发负担，直达核心 AI 功能变现环节。"
+            },
+            "1": {
+              "q": "项目本身的授权许可费用如何界定？",
+              "a": "本倉庫採用 Functional Source License（FSL-1.1-ALv2）：可免費用於構建產品，無著佐權（copyleft）義務，且每個版本發布兩年後會不可撤銷地轉為 Apache-2.0。需要支持 SLA、賠償保障或商標授權的組織，可選擇付費的商業方案。"
+            },
+            "2": {
+              "q": "团队能够多快地验证本产品的商业适用性？",
+              "a": "极其迅捷。借助提供的标准化 CLI 构建工具及严谨的开发规范文档摘要，一名初级网络开发工程师只需数分钟即可构建起本地端的系统最小化运行实例（MVP）。"
+            }
+          }
+        },
+        "1": {
+          "name": "商业运营系统",
+          "questions": {
+            "0": {
+              "q": "产品对商业扩展的容纳程度是怎样的？",
+              "a": "基于微服务组件模型，系统的承载力可自 Free Tier 无缝扩展至数百万月请求的 Enterprise Level。企业只需在其仪表盘修改资源规模限制要求接口参数。"
+            },
+            "1": {
+              "q": "不同层级的订阅变更是怎么反映在财务状态中的？",
+              "a": "我们采用了精确到核心秒的资源用量记录和 API 调用统计。升降级状态的迁移即时在账单系统中结算成按比例退还差额或附加抵扣凭证。技术上不存在变更冷冻期。"
+            },
+            "2": {
+              "q": "结算核心依托哪个处理中心完成验证？",
+              "a": "全球訂單流向作為交易商戶（merchant of record）的 Creem 後端進行符合 PCI-DSS 高安全等級的資訊流驗證和轉帳交割。特殊地區可根據商務安排接入企業內部財務合規稽核。"
+            }
+          }
+        },
+        "2": {
+          "name": "系统开发层",
+          "questions": {
+            "0": {
+              "q": "预置了对哪些基础模型底盘的支持？",
+              "a": "统一封装的网关层可自动承接针对 OpenAI、Anthropic、 以及 Gemini 数据交互标准规范，并在极低延迟下对数据清洗重包后送至模型推理服务端点。业务侧实现代码层零修改式切换。"
+            },
+            "1": {
+              "q": "面对数据混淆风险系统的表现如何？",
+              "a": "利用 Postgres 内置特性实现行级别数据不可变控制（RLS），搭配基于边缘端点中间件级别的租户解析机制（Tenant Resolution Routing），杜绝应用层逻辑漏洞造成的高危越权和数据意外渗漏现象。"
+            },
+            "2": {
+              "q": "可以自行主导服务器集群与部署事宜吗？",
+              "a": "毫无约束。本系统组件的设计基准就是面向任意独立云架构，只要部署现场具有健康的 Node.js 和 PostgreSQL 实例，一切即可顺畅运转。"
+            }
+          }
+        },
+        "3": {
+          "name": "系统性安全管理",
+          "questions": {
+            "0": {
+              "q": "安全防卫具体落实在什么细节？",
+              "a": "主要落点在：客户端到数据库物理环境全程强制加密传输、针对环境变量和令牌的底层强散列脱敏加密储存，以及所有写访问和特殊行为都会永久刻印在内部时间序列跟踪表单内。"
+            },
+            "1": {
+              "q": "它有针对全球隐私法例作出反应吗？",
+              "a": "非常重视且落到了实处。业务模块预组装了对于数据所有主体请求撤销授权同意（Consent withdraw）、提取与全部清除记录的关键实现功能代码，对标通用数据保护条例 (GDPR)。"
+            },
+            "2": {
+              "q": "事故发生下的企业应对规程是什么？",
+              "a": "依靠自动执行的哨兵检测系统，系统在预警或识别攻击后通过专门渠道上报。工程团队会采取强制阻断并介入诊断，并遵循向利益相关方提供不超过 3 个自然日的全面公开事故通报协议 (Incident Postmortems)。"
+            }
+          }
+        },
+        "4": {
+          "name": "技术支援指引",
+          "questions": {
+            "0": {
+              "q": "面对使用瓶颈时如何定位资源？",
+              "a": "首推阅读随版本高度覆盖并经过严格同行校验的基础文档库和社区问答库。购买标准授权及更高等级的企业用户激活优先技术工单队列获取内部支持团队的点对点支援响应。"
+            },
+            "1": {
+              "q": "有额外提供的个性化环境配置服务计划吗？",
+              "a": "这处于我们面向高端集团提供的商业覆盖范畴。从对用户既有老旧产品环境进行的源码技术审核、复杂的外部环境迁徙、跨网域验证等深层次要求均会抽调资深实施小组专门负责。"
+            }
+          }
+        }
+      },
+      "ctaHeading": "需要对接进一步的系统调研工作？",
+      "ctaDescription": "无论是希望深入了解 API 调用范式，或是推进相关合作事宜，都可与执行技术专家联络。",
+      "ctaButton": "获取系统接入指南",
+      "ctaEmail": "投递至专职对接账户"
+    },
+    "privacy": {
+      "title": "隐私及信息保护协定 — {brandName}",
+      "description": "详尽透明地剖析公司系统基础设施架构在对个人乃至设备机密数据管控的机制。",
+      "heading": "信息保护及治理细则",
+      "effectiveDate": "生效日期",
+      "lastUpdated": "最后更新",
+      "dates": {
+        "effective": "2025 年 1 月 1 日",
+        "updated": "2025 年 1 月 1 日"
+      },
+      "intro": "{companyLegal}（以下简称「{brandName}」、「我们」或「本公司」）致力于保护您的隐私。本隐私政策说明了我们在您使用本公司网站、应用程序及服务（统称「服务」）时，如何收集、使用、披露和保护您的信息。",
+      "infoWeCollect": {
+        "title": "一、我们收集的信息",
+        "youProvide": {
+          "title": "1.1 您主动提供的信息",
+          "intro": "我们收集您直接向我们提供的信息，包括：",
+          "items": {
+            "0": {
+              "label": "账户信息",
+              "desc": "您在创建账户时提供的姓名、电子邮件地址、密码及组织信息。"
+            },
+            "1": {
+              "label": "个人资料",
+              "desc": "头像、职位、公司名称及其他可选信息。"
+            },
+            "2": {
+              "label": "支付信息",
+              "desc": "帳單地址及支付方式詳情（透過 Creem 安全處理）。"
+            },
+            "3": {
+              "label": "通讯内容",
+              "desc": "您向我们发送的消息、反馈及其他通讯内容。"
+            },
+            "4": {
+              "label": "用户内容",
+              "desc": "您通过服务创建、上传或存储的任何内容。"
+            }
+          }
+        },
+        "automatic": {
+          "title": "1.2 自动收集的信息",
+          "intro": "当您使用我们的服务时，我们会自动收集以下信息：",
+          "items": {
+            "0": {
+              "label": "设备信息",
+              "desc": "设备类型、操作系统、浏览器类型及唯一设备标识符。"
+            },
+            "1": {
+              "label": "使用信息",
+              "desc": "浏览页面、使用功能、操作行为及在服务上花费的时间。"
+            },
+            "2": {
+              "label": "日志数据",
+              "desc": "IP 地址、访问时间、来源 URL 及系统活动日志。"
+            },
+            "3": {
+              "label": "位置信息",
+              "desc": "基于 IP 地址的大致地理位置（我们不收集精确的地理定位信息）。"
+            }
+          }
+        }
+      },
+      "howWeUse": {
+        "title": "二、我们如何使用您的信息",
+        "intro": "我们将收集的信息用于以下目的：",
+        "items": {
+          "0": {
+            "label": "提供服务",
+            "desc": "运营、维护和改进我们的服务。"
+          },
+          "1": {
+            "label": "处理交易",
+            "desc": "处理付款、账单及相关操作。"
+          },
+          "2": {
+            "label": "沟通联系",
+            "desc": "发送服务公告、更新通知及营销传播内容（需经您同意）。"
+          },
+          "3": {
+            "label": "个性化体验",
+            "desc": "定制您的使用体验并提供相关推荐。"
+          },
+          "4": {
+            "label": "数据分析",
+            "desc": "了解使用规律并改进我们的服务。"
+          },
+          "5": {
+            "label": "安全防护",
+            "desc": "检测、预防和应对欺诈、滥用及安全事件。"
+          }
+        }
+      },
+      "howWeShare": {
+        "title": "三、我们如何共享您的信息",
+        "intro": "在以下情况下，我们可能共享您的信息：",
+        "serviceProviders": {
+          "title": "3.1 服务提供商",
+          "intro": "我们与代表我们提供服务的第三方供应商共享信息，包括：",
+          "items": {
+            "0": {
+              "label": "基础设施",
+              "desc": "雲端代管服務（Fly.io、Cloudflare）及資料庫代管服務"
+            },
+            "1": {
+              "label": "支付处理",
+              "desc": "Creem 提供的安全支付服務"
+            },
+            "2": {
+              "label": "身份认证",
+              "desc": "Better Auth 提供的身分管理服務"
+            },
+            "3": {
+              "label": "数据分析",
+              "desc": "PostHog、Vercel Analytics 提供的使用洞察服务"
+            }
+          }
+        },
+        "businessTransfers": {
+          "title": "3.2 业务转让",
+          "content": "若我们涉及合并、收购或资产出售，您的信息可能作为该交易的一部分被转移。"
+        },
+        "legalRequirements": {
+          "title": "3.3 法律要求",
+          "content": "当法律、法律程序或政府要求，或为保护我们的权利、隐私、安全或财产时，我们可能披露相关信息。"
+        }
+      },
+      "yourRights": {
+        "title": "四、您的权利与选择",
+        "accessPortability": {
+          "title": "4.1 访问与数据可携带性",
+          "content": "您可通过账户设置访问您的个人信息，并以可携带格式请求获取您的数据副本。"
+        },
+        "correction": {
+          "title": "4.2 更正",
+          "content": "您可随时通过控制台更新您的账户信息。"
+        },
+        "deletion": {
+          "title": "4.3 删除",
+          "content": "您可通过设置或联系我们，请求删除您的账户及关联数据。"
+        },
+        "marketing": {
+          "title": "4.4 营销通讯",
+          "content": "您可通过点击任意营销邮件中的「取消订阅」链接或更新您的偏好设置，选择退出营销邮件。"
+        }
+      },
+      "dataSecurity": {
+        "title": "五、数据安全",
+        "intro": "我们采取适当的技术与组织措施保护您的信息，包括：",
+        "items": {
+          "0": "传输中（TLS）及静态数据加密",
+          "1": "定期安全评估与渗透测试",
+          "2": "访问控制与身份验证要求",
+          "3": "系统活动监控与日志记录"
+        }
+      },
+      "ccpa": {
+        "title": "六、加利福尼亚州隐私权（CCPA）",
+        "intro": "若您是加利福尼亚州居民，您对个人信息享有以下特定权利：",
+        "items": {
+          "0": {
+            "label": "知情权",
+            "desc": "要求披露我们收集、使用和共享的信息。"
+          },
+          "1": {
+            "label": "删除权",
+            "desc": "要求删除您的个人信息。"
+          },
+          "2": {
+            "label": "退出权",
+            "desc": "选择退出个人信息的出售（我们不出售您的数据）。"
+          },
+          "3": {
+            "label": "非歧视权",
+            "desc": "我们不会因您行使上述权利而对您实施歧视。"
+          }
+        }
+      },
+      "gdpr": {
+        "title": "七、欧洲隐私权（GDPR）",
+        "intro": "若您位于欧洲经济区、英国或瑞士，您在 GDPR 下享有额外权利：",
+        "items": {
+          "0": {
+            "label": "法律依据",
+            "desc": "我们基于合同履行、合法利益或您的同意处理您的数据。"
+          },
+          "1": {
+            "label": "各项权利",
+            "desc": "访问权、更正权、删除权、数据可携带权、限制处理权及反对权。"
+          },
+          "2": {
+            "label": "数据保护官",
+            "desc": "您可通过 dpo@{domain} 联系我们的数据保护官。"
+          }
+        }
+      },
+      "contactUs": {
+        "title": "八、联系我们",
+        "intro": "若您对本隐私政策有任何疑问，请通过以下方式联系我们：",
+        "company": "{brandName} Co., Ltd."
+      }
+    },
+    "refund": {
+      "title": "订单结算异常协定 — {brandName}",
+      "description": "严格约束退费及金额返还程序和相关符合执行标准的重要政策规章。",
+      "heading": "执行类订单争端处理框架",
+      "effectiveDate": "正式强制实施日",
+      "lastUpdated": "条文演化追踪时间",
+      "dates": {
+        "effective": "2025年1月1日",
+        "updated": "2025年1月1日"
+      },
+      "intro": "{brandName} 致力于确保您对我们服务的完全满意。本退款政策阐明了可申请退款的情形及相应的申请流程。",
+      "subscriptionPlans": {
+        "title": "订阅方案",
+        "monthly": {
+          "title": "月度订阅",
+          "items": {
+            "0": {
+              "label": "取消订阅",
+              "desc": "您可随时取消月度订阅"
+            },
+            "1": {
+              "label": "按比例退款",
+              "desc": "我们不提供未使用月份的按比例退款"
+            },
+            "2": {
+              "label": "服务访问",
+              "desc": "您可在当前计费周期结束前持续使用付费功能"
+            },
+            "3": {
+              "label": "自动续费",
+              "desc": "订阅将自动续费，除非您主动取消"
+            }
+          }
+        },
+        "annual": {
+          "title": "年度订阅",
+          "items": {
+            "0": {
+              "label": "14天无理由退款保障",
+              "desc": "新年度订阅用户可在首次购买后14天内申请全额退款"
+            },
+            "1": {
+              "label": "超过14天后",
+              "desc": "14天保障期届满后，原则上不再受理退款申请"
+            },
+            "2": {
+              "label": "取消订阅",
+              "desc": "您可随时取消，但订阅将在年度周期结束前保持有效"
+            },
+            "3": {
+              "label": "不提供按比例退款",
+              "desc": "我们不提供未使用月份的部分退款"
+            }
+          }
+        }
+      },
+      "eligibleScenarios": {
+        "title": "符合退款条件的情形",
+        "intro": "我们将在以下情况下受理退款申请：",
+        "serviceIssues": {
+          "title": "1. 服务故障",
+          "items": {
+            "0": "严重服务中断，导致您无法正常使用核心功能",
+            "1": "我们未能在合理时间内解决的技术问题",
+            "2": "实际功能与宣传内容存在重大差异"
+          }
+        },
+        "billingErrors": {
+          "title": "2. 账单错误",
+          "items": {
+            "0": "重复扣款",
+            "1": "账单金额有误",
+            "2": "未授权扣款（经核实后）"
+          }
+        },
+        "exceptionalCircumstances": {
+          "title": "3. 特殊情形",
+          "items": {
+            "0": "有证明文件的医疗紧急情况",
+            "1": "影响您业务的自然灾害",
+            "2": "其他经逐案评估认定的特殊情形"
+          }
+        }
+      },
+      "nonRefundable": {
+        "title": "不可退款项目",
+        "intro": "以下项目通常不符合退款条件：",
+        "items": {
+          "0": {
+            "label": "按量计费费用",
+            "desc": "API 调用、AI 令牌消耗或已使用的存储空间"
+          },
+          "1": {
+            "label": "附加功能及增值服务",
+            "desc": "一次性购买或附加服务"
+          },
+          "2": {
+            "label": "企业合同",
+            "desc": "定制合同适用其专属条款"
+          },
+          "3": {
+            "label": "主动取消订阅",
+            "desc": "超过退款资格期限后的主动取消"
+          },
+          "4": {
+            "label": "违反使用条款",
+            "desc": "因违反政策而被终止的账户"
+          }
+        }
+      },
+      "howToRequest": {
+        "title": "如何申请退款",
+        "step1": {
+          "title": "第一步：联系支持团队",
+          "intro": "请发送邮件至 billing@{domain}，并提供以下信息：",
+          "items": {
+            "0": "您的账户注册邮箱",
+            "1": "订阅方案及计费周期",
+            "2": "申请退款的原因",
+            "3": "相关证明材料（如有）"
+          }
+        },
+        "step2": {
+          "title": "第二步：审核流程",
+          "items": {
+            "0": "我们将在5个工作日内审核您的申请",
+            "1": "我们可能会要求您提供补充信息",
+            "2": "您将通过邮件收到书面审核结果"
+          }
+        },
+        "step3": {
+          "title": "第三步：退款处理",
+          "intro": "申请获批后：",
+          "items": {
+            "0": "退款将原路退回至原始支付方式",
+            "1": "信用卡退款通常在5至10个工作日内到账",
+            "2": "银行处理时间可能因机构而有所不同"
+          }
+        }
+      },
+      "planChanges": {
+        "title": "方案变更",
+        "upgrades": {
+          "title": "升级",
+          "items": {
+            "0": "升级立即生效",
+            "1": "将按当前计费周期剩余时间收取升级差价",
+            "2": "不提供原方案的退款"
+          }
+        },
+        "downgrades": {
+          "title": "降级",
+          "items": {
+            "0": "降级将在下一计费周期生效",
+            "1": "您可在此之前继续使用当前方案的功能",
+            "2": "当前计费周期内不提供部分退款"
+          }
+        }
+      },
+      "freeTrial": {
+        "title": "免费试用",
+        "items": {
+          "0": "免费试用无需提供支付信息",
+          "1": "试用期间不产生任何费用",
+          "2": "正式收费前我们将提前通知您"
+        }
+      },
+      "disputeResolution": {
+        "title": "争议解决",
+        "intro": "若您对我们的退款决定有异议，可按以下步骤处理：",
+        "steps": {
+          "0": "回复决定邮件并附上补充信息",
+          "1": "申请升级至主管级别处理",
+          "2": "通过 legal@{domain} 联系我们寻求进一步审核"
+        }
+      },
+      "contactUs": {
+        "title": "联系我们",
+        "intro": "如需申请退款或就本政策提出咨询，请通过以下方式联系我们：",
+        "company": "{brandName} Co., Ltd.",
+        "billingLabel": "账单",
+        "supportLabel": "支持",
+        "legalLabel": "法务",
+        "responseNote": "我们致力于在5个工作日内回复所有退款申请。",
+        "termsNote": "本政策为我们",
+        "termsLink": "服务条款",
+        "termsAgreement": "的组成部分。使用 {brandName} 即表示您同意本退款条款。"
+      }
+    },
+    "terms": {
+      "title": "服务条款 — {brandName}",
+      "description": "规范您访问和使用 {brandName} 网站、应用程序、API 及相关服务的服务条款协议。",
+      "heading": "服务条款",
+      "effectiveDate": "生效日期",
+      "lastUpdated": "最后更新",
+      "dates": {
+        "effective": "2025年1月1日",
+        "updated": "2025年1月1日"
+      },
+      "intro1": "欢迎使用 {brandName}！本服务条款（「条款」）规范您访问和使用 {brandName} 网站、应用程序、API 及服务（统称「服务」）的方式，上述服务由 {brandName} Co., Ltd.（「{brandName}」、「公司」、「我们」或「本公司」）提供。",
+      "intro2": "访问或使用本服务即表示您同意受本条款及我们的",
+      "intro2PrivacyLink": "隐私政策",
+      "intro2End": "的约束。如您不同意本条款，请勿使用本服务。",
+      "acceptance": {
+        "title": "一、条款接受",
+        "eligibility": {
+          "title": "1.1 使用资格",
+          "intro": "使用本服务，您须满足以下条件：",
+          "items": {
+            "0": "年满18周岁，或达到您所在司法管辖区法定成年年龄",
+            "1": "有权代表您本人或所属组织接受本条款约束",
+            "2": "在适用法律下未被禁止使用本服务"
+          }
+        },
+        "orgAccounts": {
+          "title": "1.2 组织账户",
+          "content": "若您代表组织使用本服务，您声明已获授权代表该组织接受本条款约束。"
+        }
+      },
+      "services": {
+        "title": "二、服务描述",
+        "intro": "{brandName} 提供的 SaaS 平台包含以下功能：",
+        "items": {
+          "0": "AI 驱动的功能与内容生成",
+          "1": "内容管理与社区工具",
+          "2": "智能推荐系统",
+          "3": "电子商务集成",
+          "4": "Web3 功能",
+          "5": "数据分析与报告"
+        }
+      },
+      "account": {
+        "title": "三、账户注册",
+        "creation": {
+          "title": "3.1 账户创建",
+          "intro": "访问特定功能须先创建账户。您同意：",
+          "items": {
+            "0": "提供准确、完整的信息",
+            "1": "维护账户凭据的安全性",
+            "2": "信息变更时及时更新",
+            "3": "对账户下的所有活动承担责任"
+          }
+        }
+      },
+      "billing": {
+        "title": "四、订阅与计费",
+        "pricing": {
+          "title": "4.1 定价",
+          "content": "本服务依据定价页面所述的各类订阅方案提供。价格变动将提前30天通知。"
+        },
+        "payment": {
+          "title": "4.2 付款",
+          "items": {
+            "0": "订阅费用按月或按年预先收取",
+            "1": "所有费用不予退款，除非符合我们的",
+            "2": "您授权我们向您的支付方式收取相应费用",
+            "3": "我們使用 Creem 進行安全支付處理",
+            "1RefundLink": "退款政策"
+          }
+        }
+      },
+      "acceptableUse": {
+        "title": "五、可接受使用",
+        "prohibited": {
+          "title": "5.1 禁止行为",
+          "intro": "您同意不得进行以下行为：",
+          "items": {
+            "0": "违反任何适用法律、法规或第三方权利",
+            "1": "利用本服务传播恶意软件、垃圾信息或有害内容",
+            "2": "尝试未经授权访问我们的系统",
+            "3": "干扰或破坏本服务的完整性或性能",
+            "4": "未经许可使用自动化工具抓取、复制或提取数据",
+            "5": "对本服务进行逆向工程、反编译或反汇编",
+            "6": "利用 AI 功能生成违法、有害或欺骗性内容"
+          }
+        }
+      },
+      "ip": {
+        "title": "六、知识产权",
+        "ours": {
+          "title": "6.1 我们的知识产权",
+          "content": "{brandName} 及其许可方对本服务拥有全部权利、所有权及利益，包括我们创作的所有软件、设计、商标和内容。"
+        },
+        "yours": {
+          "title": "6.2 您的内容",
+          "content": "您保留对自己创建或上传内容（「您的内容」）的所有权。使用本服务即表示您授予我们在全球范围内非独家、免版税的许可，仅用于向您提供服务之目的使用、存储、处理和展示您的内容。"
+        }
+      },
+      "warranties": {
+        "title": "七、免责声明",
+        "content": "本服务按「现状」及「可用状态」提供，不附带任何明示或暗示的保证，包括但不限于对适销性、特定用途适用性、所有权及不侵权的默示保证。"
+      },
+      "liability": {
+        "title": "八、责任限制",
+        "para1": "在法律允许的最大范围内，{brandNameUpper} 不对间接性、附带性、特殊性、衍生性或惩罚性损害，以及利润损失、数据损失、使用损失或商誉损失承担责任。",
+        "para2": "在任何情况下，我们的总责任不超过以下两者中的较大值：（A）索赔前12个月内您向我们支付的金额，或（B）100美元。"
+      },
+      "termination": {
+        "title": "九、终止",
+        "byYou": {
+          "title": "9.1 您的终止权",
+          "content": "您可随时通过账户设置终止账户。终止后，您将失去对本服务的访问权限。"
+        },
+        "byUs": {
+          "title": "9.2 我们的终止权",
+          "intro": "如您存在以下情形，我们可暂停或终止您的账户：",
+          "items": {
+            "0": "违反本条款",
+            "1": "从事欺诈或违法活动",
+            "2": "未支付应付费用",
+            "3": "对我们造成风险或法律责任"
+          }
+        }
+      },
+      "disputes": {
+        "title": "十、争议解决",
+        "informal": {
+          "title": "10.1 非正式解决",
+          "content": "在启动正式程序之前，您同意通过 legal@{domain} 联系我们，尝试非正式解决争议。"
+        },
+        "governingLaw": {
+          "title": "10.2 适用法律",
+          "content": "本条款受特拉华州法律管辖，不适用冲突法原则。"
+        }
+      },
+      "contactUs": {
+        "title": "十一、联系我们",
+        "intro": "如您对本条款有任何疑问，请通过以下方式联系我们：",
+        "company": "{brandName} Co., Ltd.",
+        "emailLabel": "电子邮件",
+        "supportLabel": "支持"
+      },
+      "acknowledgement": "使用 {brandName} 即表示您确认已阅读、理解并同意受本服务条款约束。"
+    },
+    "dpa": {
+      "meta": {
+        "title": "資料處理附錄（DPA）— {brandNameCn}",
+        "description": "如果您的客戶涉及個人資料處理，可按需向 {brandNameCn} 索取資料處理附錄（DPA）。"
+      },
+      "title": "資料處理附錄（DPA）",
+      "lastUpdated": "最後更新：2026-05-13",
+      "availability": {
+        "heading": "適用範圍",
+        "p1": "如果您在使用我們的服務時會處理歐盟、英國、瑞士或加州居民（或其他具有類似資料保護法律的司法轄區）的個人資料，{brandNameCn}（“我們”）將為您提供資料處理附錄。",
+        "p2": "我們的 DPA 符合 GDPR 第 28 條，在需要時包含標準合同條款（EU 2021/914），並體現了分處理者義務。"
+      },
+      "howToRequest": {
+        "heading": "如何申請",
+        "emailIntro": "發郵件至 <email>地址</email>，並附上：",
+        "items": {
+          "0": "您的法律實體名稱與簽署授權人",
+          "1": "您希望使用我們的標準 DPA，還是提供您自己的草案",
+          "2": "所需的地區附錄（如 UK IDTA、瑞士 FADP 等）"
+        },
+        "response": "我們會在一個工作日內回覆。"
+      },
+      "related": {
+        "heading": "相關連結",
+        "security": "安全概覽",
+        "privacy": "隱私政策",
+        "terms": "服務條款",
+        "cookies": "Cookie 政策"
+      }
+    },
+    "document": {
+      "versionLabel": "版本 {version} · 生效日期 {date}"
+    }
+  },
+  "metadata": {
+    "title": "{brandName} Agent OS | 出海创业的起点",
+    "description": "面向出海创始人的 Startup Agent OS。生产就绪的 Next.js 底座，受治理的架构，内置鉴权、计费、智能体与 i18n —— 为 AI 编程智能体与严肃团队打造。"
+  },
+  "microLanding": {
+    "architecture": {
+      "badge": "系统拓扑架构",
+      "title": "透明架构，拒绝技术黑盒",
+      "description": "{productName} 采用高度模块化的 Turborepo 结构进行工程设计，让您完全掌控整个软件生命周期。",
+      "database": {
+        "title": "PostgreSQL + Prisma v7",
+        "desc": "原生内置行级安全 (RLS) 策略的完全强类型 ORM。"
+      },
+      "auth": {
+        "title": "Better Auth 多租戶 & 組織身分閘道",
+        "desc": "支持 B2B 组织切换和细粒度 RBAC 的 SOC2 级认证网关。"
+      }
+    },
+    "pricing": {
+      "title": "免費使用。只有需要我們擔責時才付費。",
+      "description": "用 {brandName} 建構商業產品不花一分錢——無費用、無授權金鑰、無需註冊、無 Copyleft。付費方案賣的是支援、SLA、賠償和商標授權，從不是使用許可。",
+      "socialProofText": "npm 套件 MIT · 儲存庫 FSL-1.1-ALv2，兩年後轉 Apache-2.0 · 任何規模商用皆免費。",
+      "community": {
+        "badge": "社群版",
+        "price": "免費",
+        "period": "永久",
+        "desc": "面向所有人。不限團隊規模、不限營收。含閉源商用，無需註冊，無需署名。",
+        "cta": "npx create-sailor",
+        "f1": "完整 Next.js 16 SaaS 核心，全部套件都在內",
+        "f2": "任意團隊規模與營收下的閉源商業使用",
+        "f3": "全端能力：認證、支付、組織、API、郵件、i18n、背景任務、儲存等",
+        "f4": "行銷能力：部落格、著陸頁、SEO、分析",
+        "f5": "公開 issue、Discussions 和 Discord——盡力而為，不承諾回應"
+      },
+      "team": {
+        "badge": "團隊版",
+        "price": "$2,000",
+        "period": "年",
+        "desc": "適用於無法將關鍵路徑依賴於社群回應速度的團隊。",
+        "cta": "取得 {brandName} 支援",
+        "f1": "私有支援管道（郵件 + 專屬 Slack 或 Discord）",
+        "f2": "兩個工作日內首次回應，有保證",
+        "f3": "缺陷優先分診，排在社群 issue 之前",
+        "f4": "升級協助，破壞性變更提前通知",
+        "f5": "包含社群版全部內容"
+      },
+      "enterprise": {
+        "badge": "企業版",
+        "price": "$30,000 起",
+        "period": "年",
+        "desc": "面向採購、法務或安全審查需要一個「簽字方」的組織。",
+        "cta": "聯絡銷售",
+        "f1": "回應 SLA——標準 4 個工作小時，生產環境故障 1 小時",
+        "f2": "賠償條款，以及具備合約約束力的安全修補承諾",
+        "f3": "已簽署 DPA、合規資料包、業務持續性承諾",
+        "f4": "商標與白牌授權，含競品使用豁免",
+        "f5": "長期支援分支，私有化部署工程支援",
+        "f6": "包含團隊版全部內容"
+      }
+    },
+    "faq": {
+      "title": "定价与授权常见问题",
+      "description": "关于授权层级、退款与商用使用权的常见问题。",
+      "q1": {
+        "q": "Sailor 是按月订阅制吗？",
+        "a": "不是。本页定价面向 Sailor 源代码授权：Independent 免费，Startup 按年授权，Enterprise 走定制合同。"
+      },
+      "q2": {
+        "q": "可以退款吗？",
+        "a": "Startup 商业授权的首次购买提供 14 天退款窗口；Enterprise 退款与验收条款以签署合同为准。"
+      },
+      "q3": {
+        "q": "可以用于客户项目交付吗？",
+        "a": "可以。商业授权允许团队在授权范围内交付闭源客户项目或内部产品；白标权益需通过 Enterprise 书面确认。"
+      },
+      "contactNudge": "还有疑问？与 {brandName} 团队沟通 →"
+    },
+    "cta": {
+      "eyebrow": "立即开始",
+      "title": "停止折腾配置，立即开始构建",
+      "description": "使用 {brandName} CLI 即可在本地初始化您的高可用可扩展 SaaS 架构。",
+      "license": "基於 FSL-1.1-ALv2 開源協議。無需信用卡。"
+    },
+    "capability": {
+      "badge": "企业级能力",
+      "title": "完全强类型的可扩展核心",
+      "multiTenant": {
+        "title": "原生行级数据安全 (RLS)",
+        "desc": "每次数据库查询都在当前租户上下文中受到严格限制与隔离。",
+        "cta": "阅读数据库设计哲学"
+      },
+      "aiGateway": {
+        "title": "通用 AI 模型网关",
+        "desc": "无缝地将 Prompt 路由到 OpenAI、Anthropic 甚至本地开源大模型。",
+        "cta": "探索 AI SDK 适配器"
+      },
+      "rbac": {
+        "title": "细粒度权限控制 (RBAC)",
+        "desc": "零模板代码即可定义管理员、成员和查看者等细粒度角色与权限。",
+        "cta": "查看 RBAC 鉴权文档"
+      },
+      "billing": {
+        "title": "多供应商计费基础设施",
+        "desc": "按量计费系统、订阅 Webhook 事件分发以及完全自助化的客户门户。",
+        "cta": "了解计费中间件架构"
+      }
+    },
+    "productDemo": {
+      "badge": "產品示範",
+      "title": "看看平台實際運作。",
+      "description": "每個 AI SaaS 第一天就要交付的三個介面——分析、計費、工作區——都跑在同一個強型別核心上。",
+      "analytics": {
+        "label": "分析",
+        "desc": "從事件擷取到儀表板，查詢天然依租戶隔離，沒有膠水程式碼。"
+      },
+      "billing": {
+        "label": "計費",
+        "desc": "訂閱、權益與用量計量，串接你選擇的支付服務商。"
+      },
+      "workspaces": {
+        "label": "工作區",
+        "desc": "多租戶組織、邀請與角色，預設啟用資料列層級安全。"
+      }
+    },
+    "workflow": {
+      "badge": "研发效能",
+      "title": "以破纪录的速度从零走向生产",
+      "step1": {
+        "title": "1. 快速克隆",
+        "desc": "瞬间克隆全功能 {brandName} Monorepo，并运行 pnpm install 初始化工作空间。"
+      },
+      "step2": {
+        "title": "2. 交互式配置",
+        "desc": "幾分鐘內透過 CLI 引導完成 Prisma、Better Auth 和 Creem 的生產環境級設定。"
+      },
+      "step3": {
+        "title": "3. 专注构建",
+        "desc": "把精力集中在产品逻辑和 UI 上，平台底层能力已预先接好。"
+      },
+      "step4": {
+        "title": "4. 全球部署",
+        "desc": "一键提交至 Vercel 和 AWS 边缘节点，实现分钟级全球可用性分发。"
+      },
+      "speedometer": {
+        "number": "10",
+        "unit": "分钟",
+        "subtitle": "上市时间",
+        "comparison": "比组建内部研发平台团队快 99%。",
+        "phases": {
+          "scaffold": "初始化",
+          "wire": "基建核",
+          "ship": "云部署",
+          "scale": "高扩展",
+          "ongoing": "∞"
+        },
+        "cta": "现在开始计时"
+      },
+      "presetHint": {
+        "badge": "预设系统",
+        "message": "一份配置，全部功能。选择预设，即刻交付。",
+        "detail": "一次配置，自动生成一切——计费、认证、AI、国际化——全部来自单一预设文件。",
+        "readyStatus": "预设系统准备就绪"
+      }
+    }
+  },
+  "featuresPage": {
+    "hero": {
+      "badge": "平台能力",
+      "headlinePrefix": "構建一家公司所需的",
+      "headlineHighlight": "一切就绪。",
+      "description": "{brandName} 是全栈 SaaS 平台——AI、计费、多租户、可观测性和安全性从第一天起就内置其中。停止重复造轮子。"
+    },
+    "sections": {
+      "exploreFeature": "探索功能",
+      "ai_category": "AI 与智能体引擎",
+      "ai_f1_title": "多模型会话代理",
+      "ai_f1_desc": "将请求路由到 Anthropic、OpenAI、Google 或您自己微调的模型。开箱即用支持流式、视觉与函数调用。",
+      "ai_f2_title": "语义向量检索 (RAG)",
+      "ai_f2_desc": "利用 pgvector 生成和存储高维向量。为您的语义搜索、检索增强生成 (RAG) 和推荐引擎注入动力。",
+      "ai_f3_title": "AI 推理用量计量",
+      "ai_f3_desc": "按计划配额追踪用量 —— AI tokens、API 调用、存储,基于 ClickHouse 实时聚合。",
+      "multi_category": "多租户管控中枢",
+      "multi_f1_title": "租户级数据隔离墙",
+      "multi_f1_desc": "基于 Postgres 的行级安全控制 (RLS) 确保租户之间的数据物理隔离——在数据库最底层强制执行，超越应用层限制。",
+      "multi_f2_title": "Better Auth，原生組織感知",
+      "multi_f2_desc": "OAuth（Google、GitHub 等）加郵箱/密碼、Passkey 與魔法連結——都在同一個 Better Auth 實例裡，無需切換供應商。",
+      "multi_f3_title": "自动化租户编排",
+      "multi_f3_desc": "新企業組織註冊後，系統會自動分配首組 API 金鑰並寄出客製化歡迎信——無需任何手動步驟。",
+      "dx_category": "开发者使用体验",
+      "dx_f1_title": "SHA-256 API 密钥哈希",
+      "dx_f1_desc": "带有组织前缀 (例如 nbtr_live_…) 的密文标识加密散列。且仅在首次创建时明文展示一次——兼顾无摩擦的体验与严苛的安全性。",
+      "dx_f2_title": "幂等性校验中间件",
+      "dx_f2_desc": "通过携带 Idempotency-Key 头信息，让所有 POST 请求皆可被安全地进行重试。由 Redis 高速缓存背书支持，并完全遵循 IETF 草案规范。",
+      "dx_f3_title": "多协议 API（REST + oRPC + tRPC）",
+      "dx_f3_desc": "REST/OpenAPI 面向公共 API，oRPC 面向类型安全的前端调用，tRPC 面向 T3 技术栈兼容。所有协议共享相同的 Zod 契约和中间件栈。通过 preset 配置按需启用。",
+      "billing_category": "订阅与商业计费",
+      "billing_f1_title": "Creem + 微信支付 / 支付寶",
+      "billing_f1_desc": "Creem 以交易商戶（merchant of record）身份涵蓋全球卡組織，代收代繳各地銷售稅/增值稅；微信支付與支付寶涵蓋中國市場——設定好金鑰即可同時上線。一鍵結帳與自助帳單入口。",
+      "billing_f2_title": "用量计量与配额执法",
+      "billing_f2_desc": "实时的 Redis 哨兵持续监听租户的接口调用与 Token 损耗。一旦突破硬性配额极限，系统将立刻在 API 边缘网关上将后续请求直接拦截阻断。",
+      "billing_f3_title": "订阅生命周期 Webhook 联动",
+      "billing_f3_desc": "支付 webhook 事件將會透過 Inngest 的排程，實現對底層組織狀態的無縫自癒式同步更新——免除繁瑣設定與冗餘的輪詢作業。",
+      "rel_category": "高可用架构",
+      "rel_f1_title": "熔断器守护机制",
+      "rel_f1_desc": "Gateway 和 AI 服务使用 CLOSED/OPEN/HALF_OPEN 熔断器,带指数退避与抖动 —— 杜绝级联故障。",
+      "rel_f2_title": "死信队列 (DLQ)",
+      "rel_f2_desc": "由于未知异常消耗完自动重试极值的事件序列会被安全地放逐在死信栈中。管理层人员可以借助后端管控面一键重放修复。",
+      "rel_f3_title": "SLO 损耗告警",
+      "rel_f3_desc": "配置了与 Google SRE 理念等同的多段触发告警。能够在可用性错误预算枯竭之前，捕捉并向运维团队紧急发送预警事件。",
+      "sec_category": "企业级安全",
+      "sec_f1_title": "基于单次验证 nonce 指纹的 CSP",
+      "sec_f1_desc": "运用原生边缘特性实现的 strict-dynamic 动态安全策略——在完全剔除 unsafe-inline 危险执行指令背景下安全运行。",
+      "sec_f2_title": "ModSecurity WAF 防火墙",
+      "sec_f2_desc": "接入了 OWASP 底层审查规则集的边界防火墙机制，极速抵御诸如 SQL 注入以及各类跨站点的自动化攻击恶意嗅探行为。",
+      "sec_f3_title": "SBOM 物料清单溯源",
+      "sec_f3_desc": "每个版本的系统核心在上线封装前皆由独立脚本产出规范化网络指纹证明链，透明交付开源与核心商业审计环节进行监督检阅。",
+      "obs_category": "全链路可观测性",
+      "obs_f1_title": "OpenTelemetry 全分布式追踪",
+      "obs_f1_desc": "透视前台 Next.js 穿越 API 到微服务的底层全息追踪，兼容标准的 OpenTelemetry 协议向云端面板发送指标数据流。",
+      "obs_f2_title": "全景 Grafana 监控",
+      "obs_f2_desc": "多面板平台总览：SLO 可用性、错误预算剩余、HPA 饱和度、Pod 重启、CPU 节流。",
+      "obs_f3_title": "Sentry 下钻级错误追捕",
+      "obs_f3_desc": "错误追溯伴随着请求专属 ID 及多租户会话定位信标，方便直接捕捉到任何故障链底层执行错误的完整环境上下文。",
+      "data_category": "数据与增长管理",
+      "data_f1_title": "高吞吐量事件聚合库 (ClickHouse)",
+      "data_f1_desc": "所有遥测与应用内打点皆无摩擦同步送达后端极速缓存，借由 dbt 的数仓操作自动转化为了直观的产品关键业务黄金统计层指标。",
+      "data_f2_title": "漏斗与归类追踪",
+      "data_f2_desc": "将用户的留存活跃按队列进行切分聚类，让收入贡献的衡量维度精确穿过复杂逻辑下落到单个动作的影响效果归因评判中去。",
+      "data_f3_title": "消息网关解耦",
+      "data_f3_desc": "通过 Inngest 高吞吐事件管道进入 ClickHouse bronze 层,在 gateway 边缘进行内存去重和 schema 校验。",
+      "infra_category": "弹性基础设施",
+      "infra_f1_title": "伴随 GitOps 的自动集群治理",
+      "infra_f1_desc": "任何修改均需代码库确认才投放到正式机房。拒绝线上的孤岛式后门变更污染你的产品可靠度；更自带无感知平稳灰度部署策略设计。",
+      "infra_f2_title": "长连接复用池",
+      "infra_f2_desc": "高效转置大量前端零碎应用链接合并向 Postgres 原生引擎发送并接管所有长会话状态——千次以上的会话只需十几根源头查询进程便可轻松满足负载。",
+      "infra_f3_title": "冷热自我调节阵列",
+      "infra_f3_desc": "跟随内存芯片占用比及流量高低峰而完成弹射扩容分配。自带底层健康评估告警、并在 v2 中全面适配高度自由触发策略定义的深度缩放管理手段。"
+    }
+  },
+  "comingSoon": {
+    "badge": "🚧 建设中",
+    "description": {
+      "ideas": "我们正在为您打造极具极客精神的全新体验模块，它将随 {brandName}-Sailor 的下一次核心架构更新同步上线。",
+      "opc": "更完整的平台能力介绍正在整理中。请关注更新日志与路线图获取后续发布。",
+      "roadmap": "从基础架构到企业规模——产品阶段、大版本里程碑与融资愿景一览。"
+    },
+    "returnBtn": "返回首页"
+  },
+  "blogShowcase": {
+    "badge": "博客精选",
+    "title": "工程洞察",
+    "subtitle": "深入探讨SaaS架构、AI基础设施和生产工程。",
+    "readMore": "阅读更多"
+  },
+  "useCases": {
+    "badge": "无限应用场景",
+    "title": "七種形態，同一套底座。",
+    "description": "營運中樞、作品集站、多模態 SaaS、兩個企業站、一套設計系統、一個資產庫——底下是同一個核心。",
+    "tabs": {
+      "opc": "智能体运营中枢",
+      "ip": "个人 IP 矩阵",
+      "multimodal": "多模态 AI SaaS",
+      "enterprise": "现代企业官网",
+      "export": "软件出海落地页",
+      "design": "现代组件库",
+      "edam": "企业资产数字化"
+    },
+    "content": {
+      "opc": {
+        "title": "AI 原生运营中枢",
+        "desc": "将智能体工作流、内部工具和集成面运行在同一套受治理的平台基线之上。通过注册中心扩展、运营控制台和可复用运行时模式，让系统在扩张时仍保持一致性。",
+        "features": {
+          "f1": "工具注册中心与集成接口",
+          "f2": "运营控制台与内部工作台"
+        }
+      },
+      "ip": {
+        "title": "个人 IP 增长与组合矩阵",
+        "desc": "建立世界级的创始人形象——高转化 MDX 博客、作品集和个人主页。内置邮件列表、数据分析和 SEO，让你的个人品牌持续复利增长。",
+        "features": {
+          "f1": "MDX 博客 + 邮件列表引擎",
+          "f2": "SEO 与社交图谱优化"
+        }
+      },
+      "multimodal": {
+        "title": "创新多模态 AI 应用 SaaS",
+        "desc": "交付 Multi-Agent 编排、Chatbot、文生图、图生文、文生视频等 SaaS 产品，具备 UX 领先的流式 UI、智能模型路由和用量计量。",
+        "features": {
+          "f1": "Multi-Agent 流式 UI",
+          "f2": "模型路由 + 用量计量"
+        }
+      },
+      "enterprise": {
+        "title": "适合中国业务场景的现代企业官网",
+        "desc": "为中国市场量身定制——超速境内 CDN、微信生态对接、移动优先响应式设计，以及开箱即用的本地化合规。",
+        "features": {
+          "f1": "境内 CDN + 合规",
+          "f2": "微信生态已就绪"
+        }
+      },
+      "export": {
+        "title": "适合软件出海场景的落地页",
+        "desc": "專為 SaaS 出海打造。多幣種 Creem 結帳、next-intl 7 國語言自動路由、GDPR/CCPA 合規以及地域定向內容。",
+        "features": {
+          "f1": "多币种全球支付",
+          "f2": "7 国语言 + GDPR 就绪"
+        }
+      },
+      "design": {
+        "title": "领先的设计系统与现代组件库",
+        "desc": "四层 Token 驱动架构：品牌 → 令牌 → 主题 → UI。基于 Radix + 共享 Motion 层构建，配合 八种可切换的设计语言、Storybook 文档和视觉回归测试。",
+        "features": {
+          "f1": "四层令牌治理",
+          "f2": "八种设计语言 + Storybook"
+        }
+      },
+      "edam": {
+        "title": "领先的企业资产数字化管理模板",
+        "desc": "利用可扩展的 PostgreSQL 架构和细粒度的 RBAC 处理结构化数据湖和复杂的管理仪表盘。",
+        "features": {
+          "f1": "行级数据库安全",
+          "f2": "高阶复杂查询",
+          "f3": "细颗粒度读写"
+        }
+      }
+    }
+  },
+  "designSystem": {
+    "badge": "设计系统",
+    "headline": "4 层设计治理。",
+    "subheadline": "从品牌原语到运行时令牌到多主题引擎到治理组件——不只是 shadcn + Tailwind。",
+    "flowBrand": "品牌",
+    "flowBrandDesc": "色彩原语、渐变、动效语言",
+    "flowTokens": "令牌",
+    "flowTokensDesc": "CSS 变量、12 级色阶、暗黑模式",
+    "flowTheme": "主题",
+    "flowThemeDesc": "Brand Package，7 种语言，html[data-brand]",
+    "flowUI": "使用者介面",
+    "flowUIDesc": "组件库、Storybook、Chromatic",
+    "card1Title": "12 级色阶",
+    "card1Desc": "Geist 对齐语义色阶：背景 (1-2)、状态 (3-5)、边框 (6-8)、填充 (9-10)、文本 (11-12)。",
+    "card2Title": "设计语言",
+    "card2Desc": "七套 Brand Package，挂在 html[data-brand] 上。颜色角色、圆角、投影、字体与缓动一起切换——不只是换配色。",
+    "card3Title": "视觉回归测试",
+    "card3Desc": "Chromatic 捕捉每个像素变化。Storybook 记录每个组件。架构测试强制 Story 覆盖率。",
+    "card4Title": "令牌治理",
+    "card4Desc": "品牌色值、品牌字面量与动效 token 的只减不增白名单。新增违例直接卡 CI，存量随改随迁。",
+    "card5Title": "交互式文档",
+    "card5Desc": "基于 Fumadocs 的完整设计文档站，中英双语组件 API 文档、令牌展廊、布局模式指南和实时代码示例。",
+    "card6Title": "Token 流水线",
+    "card6Desc": "品牌基元编译成 DTCG token，token 编译成 CSS 变量，变量再进受治理的组件。单向流动，中间没有一处靠手工搬运。"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "desc": "链接可能已过期，或页面已迁移。",
+    "home": "返回 {brandName}",
+    "docs": "打开文档"
+  },
+  "ui": {
+    "search": {
+      "placeholder": "搜索版本发布..."
+    },
+    "nav": {
+      "toggleMenu": "切换菜单"
+    },
+    "actions": {
+      "showFullRelease": "查看完整发布",
+      "copyLinkToRelease": "复制发布链接",
+      "copyLink": "复制链接",
+      "openInNewTab": "在新标签页打开"
+    },
+    "status": {
+      "comingSoon": "即将推出"
+    }
+  },
+  "licensing": {
+    "hero": {
+      "title": "免費<hl>拿去用</hl>",
+      "description": "{brandName}-Sailor 商用不收一分錢——npm 套件 MIT，儲存庫 FSL-1.1-ALv2，兩年後轉 Apache-2.0。付費方案賣的是支援和合約承諾，從不是使用許可。"
+    },
+    "plans": {
+      "community": {
+        "badge": "永久免費",
+        "title": "社群版",
+        "subtitle": "面向所有人",
+        "description": "不限團隊規模、不限營收，含閉源商業產品。",
+        "features": {
+          "fullSource": "完整原始碼，全部套件",
+          "closedSourceOk": "閉源商業使用——無 Copyleft",
+          "noAttribution": "無需註冊，無需署名",
+          "communitySupport": "社群支援——盡力而為"
+        },
+        "cta": "在 GitHub 檢視"
+      },
+      "team": {
+        "badge": "{price}/年起",
+        "title": "團隊版",
+        "subtitle": "支援訂閱",
+        "description": "適用於無法將關鍵路徑依賴於社群回應速度的團隊。",
+        "features": {
+          "privateChannel": "私有支援管道",
+          "firstResponse": "兩個工作日內首次回應，有保證",
+          "priorityTriage": "缺陷優先分診",
+          "upgradeHelp": "升級協助與破壞性變更預告"
+        },
+        "cta": "取得支援"
+      },
+      "enterprise": {
+        "badge": "$30,000/年起",
+        "title": "企業版",
+        "subtitle": "可通過採購流程",
+        "description": "面向法務、資安或採購審查需要一個「簽字方」的組織。",
+        "features": {
+          "sla": "回應 SLA——4 個工作小時，生產環境故障 1 小時",
+          "indemnity": "賠償條款與安全修補承諾",
+          "compliance": "已簽署 DPA、合規資料包、持續性承諾",
+          "trademark": "商標與白牌授權"
+        },
+        "cta": "聯絡銷售"
+      }
+    },
+    "faq": {
+      "title": "常見問題",
+      "description": "一句話：用它是免費的。付費是為了在你需要時，讓我們負合約責任。",
+      "items": {
+        "whyFsl": {
+          "q": "為什麼選 FSL 而不是 MIT 或 AGPL？",
+          "a": "FSL 允許所有用途，僅禁止銷售 Sailor 的替代品；且每個版本在發布兩年後即轉為 Apache-2.0，此授權事先不可撤銷。相較於 AGPL，FSL 更容易通過企業法律審查。"
+        },
+        "reallyFree": {
+          "q": "商業使用真的免費嗎？",
+          "a": "是。無費用、無授權金鑰、無需註冊、無營收或人數門檻、無需署名。做個閉源產品拿去賣就行。"
+        },
+        "competingUse": {
+          "q": "什麼算「競品使用」？",
+          "a": "把 Sailor 本身提供出去——託管版 Sailor 服務，或重新包裝的競爭性平台基座。用 Sailor 做垂直 SaaS、內部工具或客戶專案都不算。如果你的模式確實需要，企業合約裡可以寫入書面豁免。"
+        },
+        "upgrade": {
+          "q": "付費方案到底買到了什麼？",
+          "a": "支援承諾、回應 SLA、賠償、合規文件和商標授權。從來不是軟體使用權——那個本來就是你的。"
+        },
+        "contributions": {
+          "q": "開源貢獻怎麼辦？",
+          "a": "所有貢獻都需要簽署 CLA，詳見 CONTRIBUTING.md。"
+        }
+      }
+    },
+    "meta": {
+      "title": "授權 — {brandName}",
+      "description": "商業使用免費。npm 套件 MIT，儲存庫 FSL-1.1-ALv2，後續轉為 Apache-2.0。"
+    }
+  },
+  "licenseWizard": {
+    "tiers": {
+      "individualFree": "个人免费授权",
+      "opcFree": "单人公司授权",
+      "startupCommercial": "Startup 商业授权",
+      "enterprise": "企业授权"
+    },
+    "referralSource": {
+      "selectPlaceholder": "请选择...",
+      "productHunt": "Product Hunt"
+    }
+  },
+  "changelogMeta": {
+    "title": "更新日志 — {brandName}",
+    "description": "每一次发布，都倾注极致的打磨。",
+    "versionTitleSuffix": "{brandName} 更新日志"
+  },
+  "roadmapMeta": {
+    "title": "平台路线图 — {brandName}",
+    "description": "{brandName} 平台基线、Harness 运行时与升级路径的演进路线。"
+  },
+  "blogMeta": {
+    "title": "博客 — {brandName}",
+    "description": "{brandName} 团队的工程洞察、产品更新与 SaaS 最佳实践。"
+  },
+  "getLicenseMeta": {
+    "title": "获取授权 — {brandName}",
+    "description": "2 分钟获取 {brandName} 授权与平台访问权限。"
+  },
+  "landing": {
+    "faq": {
+      "badge": "常见问题",
+      "title": "把疑问一次讲清楚",
+      "subtitle": "在动手之前你需要知道的一切。",
+      "items": {
+        "what-is-sailor": {
+          "question": "{productName} 到底是什么？",
+          "answer": "Sailor 是一个观点鲜明的 Next.js + Tailwind v4 SaaS 基础脚手架，认证、计费、多租户、AI、队列、搜索与邮件等模块开箱即用。克隆代码、配置提供商，通常一周内就能上线。"
+        },
+        "who-is-it-for": {
+          "question": "Sailor 适合谁？",
+          "answer": "适合希望把精力放在产品差异化、不愿第五次重写同一套 auth / 计费 / 租户底座的创业者和产品工程师。"
+        },
+        "free-or-paid": {
+          "question": "免费还是付费？",
+          "answer": "完整源碼以 FSL-1.1-ALv2 發布 —— 可免費用它構建並交付任何商業產品，無著佐權、無需付費。該許可唯一不允許的，是把 Sailor 本身作為競爭性產品或服務對外提供；這項限制會在每個版本發布兩年後失效並轉為 Apache-2.0。所有套餐均提供完整功能（認證、計費、多租戶、AI、審計日誌）；付費套餐增加的是支持 SLA、賠償保障與商標授權，而非功能。"
+        },
+        "china-friendly": {
+          "question": "在中国大陆能用吗？",
+          "answer": "可以。支付（微信支付/支付寶與 Creem 並行）、簡訊（阿里雲與 Twilio Verify 並行）、儲存（OSS 與 R2 並行，走同一套 S3 相容用戶端）各自保留了中國市場適配器，再加上阿里雲相容 CDN 與 ICP 友善網域——同一份程式碼可以無障礙部署在長城防火牆內。"
+        },
+        "deployment": {
+          "question": "可以部署到哪些环境？",
+          "answer": "任何支援 Node 22+ 的環境。Sailor 產出的是可攜式建置——Next standalone 與 Dockerfile——本身不綁定執行位置；行銷站、後台、閘道與 Python 服務都透過 Docker / PM2 執行（我們目前在 Fly Machines 與阿里雲 ECS 上運行，infra/iac/k8s/ 提供完整的 Kubernetes 清單可用於叢集）。企業客戶還可部署在客戶自有的 VPC 內。"
+        },
+        "security": {
+          "question": "安全性如何保障？",
+          "answer": "应用层信封加密保管密钥（@nebutra/vault）、Postgres RLS 强制租户隔离、CASL 实现的 RBAC/ABAC（@nebutra/permissions）、HMAC 签名的服务间令牌、签名出站 Webhook，以及所有套餐都内置的 SOC 2 对齐审计管道（@nebutra/audit）。Pro 与企业版额外提供 SOC 2 认证支持、专属事件响应与更长的审计日志保留。"
+        },
+        "support": {
+          "question": "支持服务包括哪些？",
+          "answer": "免费用户享受社区 Discord 与 GitHub Issues 支持。Pro 版增加 1 个工作日响应的优先邮件支持。企业版提供专属 Slack 频道与专属 onboarding 工程师。"
+        },
+        "byo-provider": {
+          "question": "可以接入我自己的供應商嗎？",
+          "answer": "每個整合（認證、佇列、搜尋、郵件、支付、儲存、計費）仍然收斂在各自的介面後面，但內建的適配器是 {brandName} 生產環境真正在用的那一個——Better Auth、QStash、Postgres、Resend、Creem。只有在中國大陸確有必要時，支付、簡訊與儲存才保留第二套適配器（微信支付/支付寶、阿里雲、OSS）。要接入自己的供應商，需要自行實作該介面；業務程式碼本身不會綁定某個具體供應商。"
+        },
+        "tech-stack": {
+          "question": "技术栈是什么？",
+          "answer": "Next.js 16 (App Router) + React 19、TypeScript 5.9、Tailwind v4、Prisma 7 + Postgres（含 pgvector + RLS）、Hono 作为 BFF 网关、FastAPI 承载 ML 与重型服务，组件库基于 Radix、{brandName} UI 原语与共享 Motion 层。AI 能力通过 Vercel AI SDK 接入，可在 OpenAI / OpenRouter / SiliconFlow / Azure / 本地模型间自由切换。"
+        },
+        "license": {
+          "question": "授权方式是什么？",
+          "answer": "FSL-1.1-ALv2（Functional Source License），每個版本發布兩年後會不可撤銷地轉為 Apache-2.0。除了把 Sailor 本身作為競爭性產品或服務對外提供之外，其餘用途一律免費。付費商業套餐增加的是支持 SLA、賠償保障與商標授權，而非額外許可。所有套餐都包含完整源碼。"
+        },
+        "paid-updates": {
+          "question": "升级是否需要再付费？",
+          "answer": "不需要。每份商业授权都包含源码更新——随时从 main 拉取并 rebase 你的 fork 即可。付费购买的是在商业生产环境中使用 Sailor 的权利，而不是获取代码的权利。每个 minor 版本都附带 CHANGELOG 与升级指南，破坏性变更会专门提示。"
+        },
+        "why-turborepo": {
+          "question": "为什么用 Turborepo 而不是单一 Next.js 项目？",
+          "answer": "Sailor 由 10 个应用 + packages/*/* 下的 104 个共享包 + 4 条后端线（Hono gateway、FastAPI/Python、Go、Rust）组成，单一 Next.js 巨型应用早就维护不过来。Turborepo 提供 affected-only 增量构建、透明的远程缓存，以及共享设计 token / 认证 / 计费 / 可观测性的单一来源——而不需要把所有团队塞进同一个 Next.js 进程。"
+        },
+        "multi-tenancy": {
+          "question": "多租户怎么实现？",
+          "answer": "两层。请求级租户上下文通过 @nebutra/tenant 实现（AsyncLocalStorage 在每次服务端调用中传播当前组织，含 DB 查询与出站 Webhook）；数据库级隔离通过 Postgres Row-Level Security 策略（packages/platform/db/prisma/generated/rls.sql）绑定到 session-local 的 app.current_tenant_id。Service-role 连接仅在受信任的内部服务中绕过 RLS；所有面向用户的路由都走 tenant-scoped 客户端。"
+        },
+        "swap-clerk": {
+          "question": "為什麼是 Better Auth？還能換成別的認證服務嗎？",
+          "answer": "Better Auth 是 Sailor 唯一內建的認證後端——它是生產環境實際在跑的方案，因此也是經過測試、有文件、持續維護的那一個。現在沒有 Clerk、NextAuth 或 Supabase Auth 適配器可以切換；@nebutra/auth 仍然對外暴露同一套介面（session、React hooks、middleware），如果你需要別的供應商，可以在這套介面後面自己實作一個適配器（約 80 行程式碼），而不是從清單裡挑一個。"
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "构建者好评",
+      "title": "用 Sailor 上线后，他们这么说",
+      "subtitle": "我们 beta 内测的客户故事即将上线 — 你可以成为最早登场的那一个。"
+    },
+    "comparison": {
+      "badge": "方案比較",
+      "title": "全部免費。依你需要多強的承諾來選。",
+      "subtitle": "每一檔都提供完整原始碼，且都允許免費閉源商用。差別在於支援、合約承諾和商標授權。",
+      "plan": {
+        "community": "社群版",
+        "team": "團隊版",
+        "enterprise": "企業版"
+      },
+      "feature": {
+        "license": {
+          "label": "授權",
+          "type": "授權",
+          "commercial-use": "閉源商業使用",
+          "registration": "是否需註冊",
+          "trademark": "商標授權"
+        },
+        "source": {
+          "label": "原始碼",
+          "full-source": "完整原始碼",
+          "all-packages": "全部套件與模組",
+          "update-window": "更新"
+        },
+        "support": {
+          "label": "支援",
+          "channel": "支援管道",
+          "first-response": "首次回應保證",
+          "security-patch": "安全修補承諾"
+        },
+        "procurement": {
+          "label": "採購與合規",
+          "indemnification": "賠償條款",
+          "dpa": "已簽署 DPA 與合規資料包",
+          "continuity": "業務持續性承諾"
+        }
+      },
+      "ariaTable": "各方案與功能比較",
+      "value": {
+        "included": "包含",
+        "notIncluded": "不包含",
+        "licenseIds": "MIT + FSL-1.1-ALv2",
+        "notRequired": "無需註冊",
+        "whiteLabelRights": "白牌授權",
+        "unlimited": "不限",
+        "unlimitedPlusNotice": "不限 + 破壞性變更預告",
+        "unlimitedPlusLts": "不限 + 長期支援分支",
+        "publicChannels": "公開 issue 與 Discord",
+        "privateChannel": "私有管道",
+        "namedContact": "專屬對接人",
+        "twoBusinessDays": "2 個工作天",
+        "fourBusinessHours": "4 個工作小時",
+        "bestEffort": "盡力而為",
+        "contractual": "合約約定"
+      }
+    },
+    "socialProof": {
+      "title": "建立在你能信赖的技术栈之上",
+      "logosLabel": "集成合作伙伴",
+      "metrics": {
+        "developers": {
+          "value": "47+",
+          "label": "AI 提供商支持"
+        },
+        "projects": {
+          "value": "104",
+          "label": "monorepo 包"
+        },
+        "uptime": {
+          "value": "7",
+          "label": "种 i18n 语言开箱即用"
+        }
+      }
+    }
+  },
+  "compliance": {
+    "icp": {
+      "recordNumber": "ICP 备案号",
+      "publicSecurity": "公安备案"
+    }
+  },
+  "icpFooter": {
+    "recordNumber": "ICP 备案号",
+    "publicSecurity": "公安备案"
+  },
+  "MarketLocalePicker": {
+    "title": "地區和語言",
+    "description": "為行銷網站選擇地區與語言。",
+    "triggerAria": "選擇地區和語言",
+    "searchPlaceholder": "搜尋地區…",
+    "plannedHint": "該語言上線前,介面回退為英文",
+    "noResults": "沒有符合的地區",
+    "menuAria": "地區和語言"
+  },
+  "siteShell": {
+    "nav": {
+      "openNavigation": "開啟導覽",
+      "closeNavigation": "關閉導覽",
+      "searchSite": "搜尋本站",
+      "siteNavigation": "網站導覽",
+      "searchPages": "搜尋頁面",
+      "noMatch": "沒有符合的頁面。"
+    },
+    "menu": {
+      "writeToFounder": "寫信給創辦人",
+      "sailorOnGithub": "GitHub 上的 Sailor",
+      "back": "返回"
+    },
+    "footer": {
+      "tagline": "AI 原生的公司建造者。讓世界上沒有難創的業。",
+      "read": "閱讀",
+      "journal": "日誌",
+      "changelog": "更新日誌",
+      "build": "構建",
+      "whatWeAreBuilding": "我們正在打造的",
+      "status": "服務狀態",
+      "company": "公司",
+      "about": "關於我們",
+      "writeToFounder": "寫信給創辦人",
+      "privacy": "隱私",
+      "terms": "條款",
+      "credits": "致謝"
+    }
+  },
+  "sitePages": {
+    "home": {
+      "metaDescription": "讓世界上沒有難創的業。{brandName} 在造讓這件事成立的平台、產品和網絡。",
+      "hero": {
+        "title": "讓世界上沒有<signature>難創的業。</signature>",
+        "titleCn": "讓世界上沒有難創的業。",
+        "lead": "創業者很少死於壞點子，他們死於「創始人稅」：十幾個出色的工具，每個只看到一小塊，沒有一個知道你在建一家公司。{brandName} 在造那個知道的系統，並把一路學到的寫下來。"
+      },
+      "latest": {
+        "title": "最新文章",
+        "titleCn": "最新文章",
+        "viewAll": "全部文章"
+      },
+      "newsletter": {
+        "title": "寫完就發，第一時間讀到。",
+        "lead": "關於 agent、agent 之後的那一層，以及創辦人這門手藝的新文章。寫好了才發，不趕排期。"
+      },
+      "sailor": {
+        "lead": "我們所有東西都建在它上面的開源平台。今天就能用：npx create-sailor。",
+        "cta": "了解平台"
+      },
+      "building": {
+        "title": "我們正在打造的",
+        "lead": "{brandName} OS、Sleptons 網絡，以及在平台上長出來的早期產品。",
+        "cta": "進展"
+      }
+    },
+    "sailor": {
+      "hero": {
+        "lead": "我們所有東西都建在它上面的開源平台：認證、計費、多租戶、AI 路由，以及讓快速迭代的程式碼庫保持誠實的守衛。一條命令，在它上面開一家公司。",
+        "cn": "我們自己在用的開源地基，今天就能用。"
+      },
+      "install": {
+        "copyLabel": "複製",
+        "copiedLabel": "已複製"
+      },
+      "links": {
+        "source": "GitHub 原始碼",
+        "seeSite": "看看生成的網站",
+        "licensing": "團隊授權"
+      }
+    },
+    "sleptons": {
+      "hero": {
+        "lead": "讓人、創意、需求與資本更早地找到彼此。",
+        "cn": "讓潛能流動起來。"
+      },
+      "parts": {
+        "ideas": {
+          "title": "Ideas",
+          "titleCn": "創意與需求",
+          "body": "寫下你希望存在的東西，或者你需要的東西。大家發的創意和需求，就是網絡的起點。",
+          "cta": "發一個創意"
+        },
+        "capital": {
+          "title": "Capital",
+          "titleCn": "資本",
+          "body": "我們維護的投資人名錄：國內與全球的基金，各自投什麼，一目了然。",
+          "cta": "瀏覽投資人"
+        },
+        "network": {
+          "title": "The network",
+          "titleCn": "網絡",
+          "body": "描述你想找的那個人，由 AI 原生的網絡替你找到。開發中。",
+          "cta": "看看計劃"
+        }
+      }
+    },
+    "building": {
+      "hero": {
+        "title": "我們正在打造的",
+        "lead": "{brandName} OS，以及一路在平台上做出來的產品。",
+        "cn": "我們正在打造的東西。"
+      },
+      "os": {
+        "lead": "一句話，一整家公司：品牌、產品、程式碼和發布，在你的 Mac 上從同一個上下文裡完成。開發中——下面那篇文章講它為什麼存在；在有真東西之前，不拿出來展示。",
+        "cta": "我們為什麼要打造它"
+      },
+      "platform": {
+        "title": "平台上的產品",
+        "lead": "我們一路在 Sailor 上做出來的產品，都可以直接用。"
+      }
+    },
+    "about": {
+      "hero": {
+        "title": "讓混沌長成一家公司。",
+        "lead": "{brandName} 是一家 AI 原生的公司建造者。我們存在，是因為創業者很少死於壞點子——他們死於「創始人稅」：十幾個出色的工具，每個只看到一小塊，沒有一個知道你在建一家公司。",
+        "cn": "讓世界上沒有難創的業。",
+        "cta": "我們為什麼打造 {brandName}"
+      },
+      "name": {
+        "title": "名字的由來",
+        "lead": "四個詞壓成一個：把星雲養成一個極致的未來。",
+        "nebula": "每個想法成形之前的樣子",
+        "nurture": "和你一起養大，而不是替你養",
+        "ultra": "一個人做出五十人團隊的產出",
+        "future": "正在被重寫的公司形態"
+      },
+      "how": {
+        "title": "我們怎麼工作",
+        "lead": "我們不是招出一家公司，而是編排出一家公司。創辦人定方向、做難以回頭的決定；agent 負責寫、審、發；架構決定什麼能合進來——速度永遠換不來走樣。",
+        "cn": "人定方向，agent 執行，架構把關。",
+        "architectureNote": "好的架構，意味著你能走很遠。"
+      },
+      "contact": {
+        "founderTitle": "寫信給創辦人",
+        "companyTitle": "公司主體"
+      }
+    },
+    "aboutProducts": {
+      "hero": {
+        "title": "創辦人操作系統",
+        "lead": "{brandName} 做的所有東西，是同一套開公司的系統：一個可以在上面建造的生產層，一個找人和需求的網絡，以及一個在同一上下文裡運轉整家公司的操作系統。",
+        "cn": "創辦人操作系統：一套從想法走到公司的系統。"
+      },
+      "layers": {
+        "sailor": {
+          "line": "給 AI 寫出來的產品鋪好上線的路。",
+          "body": "給 agent 寫出來的軟件用的生產層：認證、全球與中國雙通道支付、多租戶和 AI 網關，一條命令搞定，零密鑰本地就能跑。程式碼歸你。",
+          "cn": "給 AI 寫出來的產品鋪好上線的路。",
+          "status": "今天就能用",
+          "cta": "了解 Sailor"
+        },
+        "sleptons": {
+          "line": "人、想法、需求與資本彼此找到的地方。",
+          "body": "平台周圍的網絡：公開的創意與需求牆，以及接住它們的人和資源。",
+          "cn": "人、想法、需求與資本彼此找到的地方。",
+          "status": "已開放",
+          "cta": "了解 Sleptons"
+        },
+        "os": {
+          "line": "一句話，一整家公司。",
+          "body": "品牌、產品、程式碼和發布，在你的 Mac 上從同一個上下文裡完成。開發中——在有真東西之前，不拿出來展示。",
+          "cn": "一句話，一整家公司。",
+          "status": "開發中",
+          "cta": "我們為什麼要打造它"
+        }
+      },
+      "platform": {
+        "title": "在平台上長出來的產品",
+        "lead": "我們一路在 Sailor 上做出來的產品，都可以直接用。",
+        "cn": "在平台上長出來的產品。",
+        "buildingLink": "我們正在打造的"
+      }
+    },
+    "journalPage": {
+      "title": "日誌",
+      "lead": "我們對這個時代的判斷——關於 agent、agent 之後的那一層，以及創始人這門手藝。",
+      "cn": "我們對這個時代的判斷。"
+    }
+  },
+  "siteMap": {
+    "sections": {
+      "home": {
+        "title": "首頁",
+        "is": "宣言，由日誌領銜。"
+      },
+      "journal": {
+        "title": "日誌",
+        "is": "創辦人的文章：我們對如今怎麼造東西的看法。"
+      },
+      "sailor": {
+        "title": "開源平台",
+        "is": "一切都建在它上面的開源平台，今天就能用。"
+      },
+      "sleptons": {
+        "title": "生態",
+        "is": "人、想法、需求與資本彼此找到的地方——包括創意與需求牆。"
+      },
+      "building": {
+        "title": "正在造的",
+        "is": "創辦人作業系統，以及一路在平台上長出來的產品。"
+      },
+      "company": {
+        "title": "公司",
+        "is": "我們是誰、怎麼工作、怎麼聯絡我們，以及法律頁面。"
+      }
+    },
+    "pages": {
+      "home": {
+        "title": "首頁"
+      },
+      "blog": {
+        "title": "日誌",
+        "slug": {
+          "title": "文章"
+        },
+        "author": {
+          "author": {
+            "title": "作者"
+          }
+        },
+        "tag": {
+          "tag": {
+            "title": "主題"
+          }
+        }
+      },
+      "news": {
+        "title": "新聞"
+      },
+      "sailor": {
+        "title": "開源平台",
+        "studio": {
+          "title": "Sailor Studio",
+          "frame": {
+            "title": "Sailor Studio 畫框"
+          }
+        }
+      },
+      "features": {
+        "title": "功能包",
+        "name": {
+          "title": "功能包"
+        }
+      },
+      "pricing": {
+        "title": "定價"
+      },
+      "licensing": {
+        "title": "授權"
+      },
+      "getLicense": {
+        "title": "取得授權"
+      },
+      "ai": {
+        "models": {
+          "title": "AI 模型"
+        }
+      },
+      "open": {
+        "title": "開放平台"
+      },
+      "changelog": {
+        "title": "更新日誌",
+        "version": {
+          "title": "版本"
+        }
+      },
+      "showcase": {
+        "title": "作品展示"
+      },
+      "status": {
+        "title": "服務狀態",
+        "history": {
+          "title": "事件歷史"
+        },
+        "subscription": {
+          "title": "狀態訂閱"
+        },
+        "incidents": {
+          "id": {
+            "title": "事件"
+          }
+        }
+      },
+      "security": {
+        "title": "安全"
+      },
+      "refer": {
+        "title": "推薦"
+      },
+      "sleptons": {
+        "title": "生態"
+      },
+      "ideas": {
+        "title": "創意與需求"
+      },
+      "solutions": {
+        "title": "資本",
+        "slug": {
+          "title": "方案"
+        },
+        "chinaVc": {
+          "id": {
+            "title": "投資機構"
+          }
+        },
+        "globalVc": {
+          "id": {
+            "title": "投資機構"
+          }
+        }
+      },
+      "building": {
+        "title": "正在造的"
+      },
+      "roadmap": {
+        "title": "路線圖"
+      },
+      "playbook": {
+        "title": "演示合輯"
+      },
+      "opc": {
+        "title": "OPC"
+      },
+      "about": {
+        "title": "關於",
+        "whitepaper": {
+          "title": "白皮書"
+        },
+        "products": {
+          "title": "創辦人作業系統"
+        },
+        "businessPortfolio": {
+          "title": "業務版圖"
+        },
+        "global": {
+          "title": "全球"
+        },
+        "innovation": {
+          "title": "創新"
+        }
+      },
+      "careers": {
+        "title": "加入我們"
+      },
+      "contact": {
+        "title": "聯絡"
+      },
+      "faq": {
+        "title": "常見問題"
+      },
+      "privacy": {
+        "title": "隱私政策"
+      },
+      "terms": {
+        "title": "服務條款"
+      },
+      "cookies": {
+        "title": "Cookie 政策"
+      },
+      "credits": {
+        "title": "致謝"
+      },
+      "dpa": {
+        "title": "資料處理協議"
+      },
+      "refund": {
+        "title": "退款政策"
+      },
+      "legal": {
+        "slug": {
+          "title": "法律文件"
+        }
+      }
+    }
+  },
+  "solutionsCatalog": {
+    "groups": {
+      "go-to-market": {
+        "label": "出海與增長"
+      },
+      "build-govern": {
+        "label": "工程與治理"
+      },
+      "ai-data": {
+        "label": "AI 與資料"
+      },
+      "founder": {
+        "label": "創業"
+      }
+    },
+    "solutions": {
+      "go-global": {
+        "label": "軟體出海",
+        "tagline": "合規、本地化地把 SaaS 推向全球市場。",
+        "hero": {
+          "eyebrow": "軟體出海",
+          "title": "把你的 SaaS",
+          "titleAccent": "推向全球",
+          "summary": "多區域基建、國際化、支付與合規——Harness 把跨境的底層管道做好，你只管做產品。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "國際化是地基",
+            "body": "7 語言路由、可適配 RTL 的 token、按市場分發內容，而不必 fork 程式碼庫。"
+          },
+          "uc2": {
+            "title": "支付無需重寫",
+            "body": "Creem（全球卡組織，交易商戶）與微信支付 / 支付寶收斂到同一套計費契約後面——配好金鑰即可同時上線。"
+          },
+          "uc3": {
+            "title": "合規內建",
+            "body": "租戶隔離、審計日誌、資料駐留原語，第一天就緒。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "每個地區要分開建應用嗎？",
+            "a": "不用——一套程式碼庫。中國雙軌(支付、簡訊、儲存)的兩個配接器都會打進每次構建；部署時哪些金鑰存在就決定哪些生效，兩邊也可以同時執行。"
+          }
+        }
+      },
+      "growth": {
+        "label": "駭客增長",
+        "tagline": "可複利的獲客、啟用與留存增長閉環。",
+        "hero": {
+          "eyebrow": "駭客增長",
+          "title": "搭建可以",
+          "titleAccent": "複利的增長閉環",
+          "summary": "在計量 + 通知骨幹之上做漏斗埋點、跑實驗，並接入推薦與生命週期閉環。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "漏斗埋點",
+            "body": "用量計量 + 分析提供衡量啟用所需的事件，而不是靠猜。"
+          },
+          "uc2": {
+            "title": "生命週期觸達",
+            "body": "由產品事件驅動的多渠道通知(站內 / 郵件 / 推送)。"
+          },
+          "uc3": {
+            "title": "快速實驗",
+            "body": "特性開關無需重新部署即可投放變體，計量回讀結果。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "自帶資料倉儲嗎？",
+            "a": "計量管道聚合到 ClickHouse，做即時漏斗與同期群分析。"
+          }
+        }
+      },
+      "architecture": {
+        "label": "架構治理",
+        "tagline": "在規模擴張時保持大型程式碼庫的一致性。",
+        "hero": {
+          "eyebrow": "架構治理",
+          "title": "治理你的",
+          "titleAccent": "系統架構",
+          "summary": "用架構測試、ratchet 與能力邊界從機制上強制結構，而不是寫在沒人看的 wiki 裡。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "棘輪式不變數",
+            "body": "當硬編碼值或跨層匯入出現時，屬性測試讓構建失敗。"
+          },
+          "uc2": {
+            "title": "能力邊界",
+            "body": "按域分組、宣告歸屬與作用域的包，把耦合壓到最低。"
+          },
+          "uc3": {
+            "title": "三級生命週期",
+            "body": "active / stub / incubator 讓死概念離開 CI，又不丟失思路。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "治理會拖慢團隊嗎？",
+            "a": "它把評審從人轉移到測試，大多數檢查即時且自動。"
+          }
+        }
+      },
+      "tech-stack": {
+        "label": "技術選型",
+        "tagline": "每個領域一套定見技術棧——只有中國市場的法律或網路要求時才保留第二套。",
+        "hero": {
+          "eyebrow": "技術選型",
+          "title": "一套技術棧，",
+          "titleAccent": "零決策",
+          "summary": "佇列、搜尋、鑑權、計費、儲存各自只有一個答案——Better Auth、QStash、Postgres、Creem——都在介面後面，而不是一份選型清單。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "每個領域一個答案",
+            "body": "身份用 Better Auth，佇列用 QStash，搜尋用 Postgres(pgvector + 全文檢索)，計費用 Creem——介面留下了，備選項沒有。"
+          },
+          "uc2": {
+            "title": "後端預設 TS",
+            "body": "對何時該用 Python 有成文政策，防止技術棧蔓延。"
+          },
+          "uc3": {
+            "title": "中國雙軌，而非矩陣",
+            "body": "支付(Creem + 微信支付/支付寶)、簡訊(Twilio Verify + 阿里雲)、儲存(同一套 S3 相容客戶端接入 R2/OSS)——只有在中國大陸的法律或網路因素讓預設方案走不通時，才保留第二套配接器；配好金鑰兩邊都能同時上線。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "如果我需要一個已被移除的 provider 怎麼辦？",
+            "a": "每個域仍然收斂在一個介面後面——加一個配接器即可，無需改呼叫點。保留下來的這些是因為生產環境真的在用，不是因為介面只認它們。"
+          }
+        }
+      },
+      "dx": {
+        "label": "DX 工具鏈",
+        "tagline": "讓研發速度保持在高位的開發者體驗。",
+        "hero": {
+          "eyebrow": "DX 工具鏈",
+          "title": "讓你",
+          "titleAccent": "心無旁騖的工具鏈",
+          "summary": "一個腳手架 CLI、一個格式化器、一條流水線。生成、檢查、測試、釋出，無需在工具鏈上反覆折騰。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "秒級腳手架",
+            "body": "`npx create-sailor my-app` 不問任何問題，直接生成完整的收斂技術棧，開箱即可執行。"
+          },
+          "uc2": {
+            "title": "一個 linter，一份配置",
+            "body": "Biome 統一格式化與檢查整個 monorepo——沒有 ESLint/Prettier 的分裂。"
+          },
+          "uc3": {
+            "title": "預設綠色流水線",
+            "body": "lint → build → test → scan → deploy 本地與 CI 完全一致。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "可以用我自己的工具嗎？",
+            "a": "可以——preset 是可選的；預設值是有主張的，但不鎖死。"
+          }
+        }
+      },
+      "ai": {
+        "label": "人工智慧",
+        "tagline": "在 provider 無關的智慧體執行時上交付 AI 功能。",
+        "hero": {
+          "eyebrow": "人工智慧",
+          "title": "讓你的產品",
+          "titleAccent": "AI 原生",
+          "summary": "智慧體、RAG、工具與 LLM 閘道器——多模型、可觀測，放心交到使用者面前。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "模型無關閘道器",
+            "body": "在一套 API 後面跨 provider 做路由、故障轉移與成本追蹤。"
+          },
+          "uc2": {
+            "title": "可落地的 RAG",
+            "body": "知識庫、嵌入與檢索原語，已為多租戶場景接好。"
+          },
+          "uc3": {
+            "title": "會用工具的智慧體",
+            "body": "帶工具登錄檔與執行策略的智慧體執行時，實現安全的自主性。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "會被綁死在一家模型廠商嗎？",
+            "a": "不會——閘道器抽象了廠商，切換隻是配置。"
+          }
+        }
+      },
+      "ai-data-ops": {
+        "label": "AI 資料運營",
+        "tagline": "託管式的資料標註、RLHF 與評測流水線——以服務交付。",
+        "hero": {
+          "eyebrow": "AI 資料運營",
+          "title": "用高質量資料",
+          "titleAccent": "餵養你的模型",
+          "summary": "一套託管的資料運營——標註、RLHF 偏好資料與評測集——由我們的團隊按你的規範執行。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "規模化標註",
+            "body": "經過稽核的人力 + 工具，覆蓋文本、影像、音訊與 3D 標註。"
+          },
+          "uc2": {
+            "title": "RLHF 偏好資料",
+            "body": "成對比較與量表打分，讓你的模型對齊意圖。"
+          },
+          "uc3": {
+            "title": "評測集",
+            "body": "留出、經審計的評測套件，用以衡量質量而非感覺。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "如何開始？",
+            "a": "預約一次範圍溝通——我們在數天內把你的規範變成試點批次。"
+          }
+        }
+      },
+      "frontier": {
+        "label": "未來前沿",
+        "tagline": "來自落地最前沿的一線觀察。",
+        "hero": {
+          "eyebrow": "未來前沿",
+          "title": "站在",
+          "titleAccent": "技術前沿",
+          "summary": "在事情變得顯而易見之前我們在測什麼——新模型、新執行時、新範式，並講清權衡。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "早期訊號",
+            "body": "對什麼有效、什麼無效的誠實記錄，而非炒作。"
+          },
+          "uc2": {
+            "title": "參考實現",
+            "body": "可執行的探針，直接拿來用，而不是從一篇部落格開始。"
+          },
+          "uc3": {
+            "title": "先講權衡",
+            "body": "每篇前沿記錄都先講成本、風險與何時不該採用。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "這是生產級建議嗎？",
+            "a": "把前沿記錄當作偵察——生產級建議會被明確標註。"
+          }
+        }
+      },
+      "china-vc": {
+        "label": "中國 VC 解決方案",
+        "tagline": "中國主流直投機構，按賽道、型別、投資體量可搜可篩。",
+        "hero": {
+          "eyebrow": "中國 VC",
+          "title": "找到對的",
+          "titleAccent": "中國投資人",
+          "summary": "覆蓋中國主流直投機構的可搜尋資料庫——按賽道、型別、投資體量篩選。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "按賽道篩選",
+            "body": "標準化賽道——快速鎖定你所在領域的投資人。"
+          },
+          "uc2": {
+            "title": "看活躍度訊號",
+            "body": "累計投資體量反映誰出手最多。"
+          },
+          "uc3": {
+            "title": "直達官方入口",
+            "body": "每家機構一鍵直達官網。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "收錄了哪些機構？",
+            "a": "覆蓋中國主流直投機構，跨階段與賽道。"
+          }
+        }
+      },
+      "global-vc": {
+        "label": "全球 VC 解決方案",
+        "tagline": "全球知名投資機構——從 Y Combinator 到多階段基金。",
+        "hero": {
+          "eyebrow": "全球 VC",
+          "title": "對接",
+          "titleAccent": "全球投資人",
+          "summary": "精選的全球頭部投資機構目錄——加速器、種子、多階段與成長基金——按領域、型別、地區篩選。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "從加速器到成長期",
+            "body": "Y Combinator、a16z、紅杉、Accel 等——覆蓋各個階段。"
+          },
+          "uc2": {
+            "title": "按方向篩選",
+            "body": "按領域(AI、金融科技、加密、生物…)、型別與地區收窄。"
+          },
+          "uc3": {
+            "title": "直達官方入口",
+            "body": "每家基金一鍵直達官網。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "名單怎麼選的？",
+            "a": "人工精選的全球公認投資機構，資料整理自公開資訊。"
+          }
+        }
+      },
+      "fundraising": {
+        "label": "創業融資",
+        "tagline": "向對的投資人融資的實操手冊。",
+        "hero": {
+          "eyebrow": "創業融資",
+          "title": "用",
+          "titleAccent": "清晰的故事去融資",
+          "summary": "指標、敘事與流程——把你做出來的東西，打包成一輪能 close 的融資。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "真正重要的指標",
+            "body": "在每個階段，投資人真正會據以決策的數字。"
+          },
+          "uc2": {
+            "title": "敘事打磨",
+            "body": "把功能清單變成市場故事，又不過度承諾。"
+          },
+          "uc3": {
+            "title": "流程紀律",
+            "body": "跑一輪緊湊、限時的融資，而不是無止境地拖。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "分地區嗎？",
+            "a": "範式是通用的；我們會標註美、歐、中三地融資的差異處。"
+          }
+        }
+      },
+      "product-insights": {
+        "label": "產品觀察",
+        "tagline": "對值得研究的產品的拆解與範式提煉。",
+        "hero": {
+          "eyebrow": "產品觀察",
+          "title": "從",
+          "titleAccent": "好產品中學習",
+          "summary": "結構化拆解——一個產品做對了什麼、為何有效、哪些可遷移到你這裡。"
+        },
+        "useCases": {
+          "uc1": {
+            "title": "提煉範式，而非照抄",
+            "body": "我們提煉一個 UX 或 GTM 動作背後可複用的原則。"
+          },
+          "uc2": {
+            "title": "決策語境",
+            "body": "為什麼這個選擇對他們成立——以及何時對你並不成立。"
+          },
+          "uc3": {
+            "title": "可執行結論",
+            "body": "每篇拆解都以「本週可以試什麼」收尾。"
+          }
+        },
+        "faq": {
+          "faq1": {
+            "q": "覆蓋 B2B 和 B2C 嗎？",
+            "a": "都有，偏向 SaaS 與面向開發者的產品。"
+          }
+        }
+      }
+    },
+    "index": {
+      "eyebrow": "解決方案",
+      "title": "把 SaaS 推向全球的最佳實踐",
+      "summary": "為出海創業者準備的場景手冊——從出海、增長到架構、AI 與融資。"
+    },
+    "page": {
+      "back": "全部解決方案",
+      "useCasesHeading": "它如何幫你",
+      "capabilities": "由這些能力驅動",
+      "bestPractices": "最佳實踐",
+      "faqHeading": "常見問題",
+      "ctaContent": "開始使用",
+      "ctaOffering": "預約範圍溝通"
+    },
+    "vcProfile": {
+      "home": "首頁",
+      "thesis": "投資主線",
+      "facts": "速覽",
+      "founded": "成立",
+      "hq": "總部",
+      "stages": "階段",
+      "checkSize": "單筆",
+      "totalDeals": "總投資",
+      "region": "地域",
+      "sectors": "賽道",
+      "notable": "代表案例",
+      "recent": "近期出手(2025–26)",
+      "similar": "同賽道機構",
+      "visit": "訪問官網"
+    },
+    "chinaVc": {
+      "back": "全部解決方案",
+      "statInstitutions": "家機構",
+      "statSectors": "個賽道",
+      "statDeals": "筆投資",
+      "source": "整理自中國主流直投機構的公開資訊。",
+      "directoryLabel": "中國 VC"
+    },
+    "globalVc": {
+      "back": "全部解決方案",
+      "statFunds": "家基金",
+      "statSectors": "個領域",
+      "statRegions": "個地區",
+      "source": "精選的全球知名投資機構，資料整理自公開資訊。",
+      "directoryLabel": "全球 VC"
+    },
+    "meta": {
+      "indexTitle": "解決方案 | {brandName}",
+      "indexDescription": "為出海創業者準備的場景手冊——出海、增長、架構治理、AI 與融資的最佳實踐。",
+      "detailTitleSuffix": "{brandName} Solutions",
+      "chinaVcProfileTitle": "{name} — 投資機構畫像 | {brandName}",
+      "chinaVcProfileDescriptionFallback": "{name} 的投資主線、賽道、階段與代表案例。",
+      "globalVcProfileTitle": "{name} — Investor Profile | {brandName}",
+      "globalVcProfileDescriptionFallback": "{name}: focus sectors, stage and region."
+    }
+  },
+  "solutionsNav": {
+    "groups": {
+      "go-to-market": "出海與增長",
+      "build-govern": "工程與治理",
+      "ai-data": "AI 與資料",
+      "founder": "創業"
+    },
+    "items": {
+      "go-global": {
+        "label": "軟體出海",
+        "tagline": "合規、本地化地把 SaaS 推向全球市場。"
+      },
+      "growth": {
+        "label": "駭客增長",
+        "tagline": "可複利的獲客、啟用與留存增長閉環。"
+      },
+      "architecture": {
+        "label": "架構治理",
+        "tagline": "在規模擴張時保持大型程式碼庫的一致性。"
+      },
+      "tech-stack": {
+        "label": "技術選型",
+        "tagline": "每個領域一套定見技術棧——只有中國市場的法律或網路要求時才保留第二套。"
+      },
+      "dx": {
+        "label": "DX 工具鏈",
+        "tagline": "讓研發速度保持在高位的開發者體驗。"
+      },
+      "ai": {
+        "label": "人工智慧",
+        "tagline": "在 provider 無關的智慧體執行時上交付 AI 功能。"
+      },
+      "ai-data-ops": {
+        "label": "AI 資料運營",
+        "tagline": "託管式的資料標註、RLHF 與評測流水線——以服務交付。"
+      },
+      "frontier": {
+        "label": "未來前沿",
+        "tagline": "來自落地最前沿的一線觀察。"
+      },
+      "china-vc": {
+        "label": "中國 VC 解決方案",
+        "tagline": "中國主流直投機構，按賽道、型別、投資體量可搜可篩。"
+      },
+      "global-vc": {
+        "label": "全球 VC 解決方案",
+        "tagline": "全球知名投資機構——從 Y Combinator 到多階段基金。"
+      },
+      "fundraising": {
+        "label": "創業融資",
+        "tagline": "向對的投資人融資的實操手冊。"
+      },
+      "product-insights": {
+        "label": "產品觀察",
+        "tagline": "對值得研究的產品的拆解與範式提煉。"
+      }
+    }
+  },
+  "resourcesCatalog": {
+    "groups": {
+      "developers": "開發者",
+      "company": "公司"
+    },
+    "items": {
+      "open-platform": {
+        "label": "開放平臺",
+        "tagline": "API、文件與開發者控制台"
+      },
+      "docs": {
+        "label": "文件",
+        "tagline": "API 文件與指南"
+      },
+      "forge": {
+        "label": "Forge 工具站",
+        "tagline": "線上編解碼、文本、雜湊與文件工具"
+      },
+      "blog": {
+        "label": "部落格",
+        "tagline": "工程筆記與產品更新"
+      },
+      "changelog": {
+        "label": "更新日誌",
+        "tagline": "{brandName} 的最新更新"
+      },
+      "roadmap": {
+        "label": "路線圖",
+        "tagline": "下一步在建什麼"
+      },
+      "design-system": {
+        "label": "設計系統",
+        "tagline": "令牌、元件與品牌"
+      },
+      "status": {
+        "label": "服務狀態",
+        "tagline": "服務狀態與可用性"
+      },
+      "about": {
+        "label": "關於我們",
+        "tagline": "我們的使命與團隊"
+      },
+      "careers": {
+        "label": "加入我們",
+        "tagline": "招聘職位"
+      },
+      "newsroom": {
+        "label": "新聞中心",
+        "tagline": "公告與新聞稿"
+      },
+      "playbook": {
+        "label": "實戰手冊",
+        "tagline": "我們如何構建"
+      },
+      "showcase": {
+        "label": "案例展示",
+        "tagline": "用 {brandName} 構建的作品"
+      },
+      "security": {
+        "label": "安全合規",
+        "tagline": "安全與合規"
+      }
+    }
+  },
+  "openPlatform": {
+    "eyebrow": "開放平臺",
+    "title": "{brandNameCn}開放平臺",
+    "lead": "文件、公開 API 與登入後的開發者控制台，集中在這一處，不另開源站。",
+    "consoleCta": "開啟控制台",
+    "consoleHint": "金鑰、Webhook 與供應商金鑰仍在應用裡。未登入時會先走到登入。",
+    "groups": {
+      "catalog": {
+        "label": "公開面",
+        "description": "已經在跑的主機。本頁只做索引，不代發請求。"
+      },
+      "console": {
+        "label": "開發者控制台",
+        "description": "登入後在應用設定裡建立、吊銷憑證。"
+      }
+    },
+    "items": {
+      "docs": {
+        "title": "文件",
+        "description": "指南、API 參考與 Webhook 契約。"
+      },
+      "api": {
+        "title": "API",
+        "description": "共享閘道器。產品名稱空間落在 /<product>/v1/*。"
+      },
+      "router": {
+        "title": "Router",
+        "description": "相容 OpenAI 的模型邊。"
+      },
+      "forge": {
+        "title": "Forge",
+        "description": "工具站與 Agent 呼叫 API。"
+      },
+      "sso": {
+        "title": "使用{brandNameCn}登入",
+        "description": "OIDC 簽發在 sso。第三方應用註冊尚未自助開通。",
+        "badge": "IdP"
+      },
+      "status": {
+        "title": "服務狀態",
+        "description": "公開主機的執行狀態。"
+      },
+      "api-keys": {
+        "title": "API 金鑰",
+        "description": "建立、吊銷閘道器的程式化金鑰。"
+      },
+      "webhooks": {
+        "title": "Webhooks",
+        "description": "訂閱工作區事件。載荷帶簽名。"
+      },
+      "provider-keys": {
+        "title": "供應商金鑰",
+        "description": "接入自有 AI 供應商憑證。"
+      }
+    }
+  },
+  "playbookCatalog": {
+    "categories": {
+      "ai": {
+        "label": "AI 與 Agent",
+        "description": "可觀察其端到端執行的 agent 執行時與多步流水線。"
+      },
+      "design": {
+        "label": "設計與主題",
+        "description": "塑造品牌系統——調色盤、字型、動效——並即時預覽。"
+      },
+      "compose": {
+        "label": "嵌入與編排",
+        "description": "視覺化編排工作流，並把 Sailor 介面嵌入任意位置。"
+      },
+      "os": {
+        "label": "作業系統",
+        "description": "構建在平臺之上的一體化操作面板。"
+      }
+    },
+    "items": {
+      "layer0": {
+        "title": "Layer 0 能力迴環",
+        "description": "觀察一次能力請求走完 感知 → 規劃 → 執行 → 校驗 的完整迴環。"
+      },
+      "agent-runtime": {
+        "title": "Agent Runtime 語法",
+        "description": "多步驟 agent 執行時——tool registry、流式 UI、MCP 接入。"
+      },
+      "cinema": {
+        "title": "Cinema 電影導演流水線",
+        "description": "把分鏡、拍攝、剪輯串成一條多 agent 流水線的短片生成。"
+      },
+      "sailor-studio": {
+        "title": "Sailor Studio",
+        "description": "選定專案的外觀，在真實頁面上預覽，一條命令落地。"
+      },
+      "color-tokens": {
+        "title": "色彩與 Token",
+        "description": "瀏覽 12 階品牌色階與即時設計 token 參考。"
+      },
+      "icon-library": {
+        "title": "圖示庫",
+        "description": "瀏覽全部 541 個 Geist 圖示——tree-shakable、單字重 TSX 元件。"
+      },
+      "canvas": {
+        "title": "Canvas 節點圖編輯器",
+        "description": "用於視覺化編排 agent 工作流的無限節點圖畫布。"
+      },
+      "embed": {
+        "title": "嵌入 Demo",
+        "description": "用一段嵌入程式碼把 Sailor 介面塞進任意頁面。"
+      },
+      "startup-os": {
+        "title": "Startup OS",
+        "description": "在 Sailor 上經營一家創業公司的一體化操作面板。",
+        "badge": "Alpha"
+      }
+    },
+    "page": {
+      "eyebrow": "實戰手冊",
+      "title": "把基礎設施跑給你看",
+      "lead": "Sailor 內建的基礎設施 Demo、實用工具、整合能力與實驗性功能——挑一個直接上手。"
+    },
+    "meta": {
+      "title": "Playbook — {productName}",
+      "description": "Sailor 內建的基礎設施 Demo、實用工具、整合能力與實驗性功能的精選目錄。"
+    }
+  },
+  "packageCatalog": {
+    "descriptions": {
+      "audit": "面向 actor/tenant 行動的 hash-chain SHA-256 僅追加審計日誌，SOC 2 級防篡改，支援流式匯出與可回放查詢。",
+      "auth": "基於 Postgres 的 Better Auth — 組織成員關係、裝置碼登入、強制 MFA、session HMAC 簽名。統一身份層，不經第三方廠商。",
+      "captcha": "一個 verify() 後端介面適配 Cloudflare Turnstile / hCaptcha / reCAPTCHA；分路啟用，得分服務端判定，前端無第三方追蹤。",
+      "identity": "統一 actor 原語 — usr_/svc_/api_ ID 空間，角色/成員關係，租戶繫結；所有 iam 子包都從同一個 identity 物件讀取上下文。",
+      "oauth": "自建 OIDC 身份提供方 — 讓第三方應用「用 {brandName} 登入」；授權碼 + PKCE、refresh token 輪換、授權同意，client 存於 Postgres。",
+      "permissions": "RBAC + ABAC 引擎 — CASL 處理程序內 check；服務端 defineAbility()，React 用 <Can /> 包裹。",
+      "tenant": "基於 AsyncLocalStorage 的請求級租戶上下文 + Prisma RLS 橋接；中介軟體解析一次 tenantId，整條呼叫棧自動透傳。",
+      "vault": "客戶金鑰應用層信封加密 — AES-256-GCM、按租戶 DEK、KMS 包裝；解密帶審計記錄,落盤零明文。",
+      "billing": "計費基於 Creem（全球卡組織，交易商戶），另有微信支付 / 支付寶覆蓋中國大陸（或手動開票）；Subscription / Invoice / Customer 介面對所有後端保持一致。",
+      "blog": "各內容面共用的部落格領域規則，與框架無關：PortableText 型別、閱讀時長、相關文章排序、目錄提取。",
+      "contracts": "事件 / 身份 / 計費 / 通知的跨包型別契約；commerce 與 iam、queue、webhooks 之間通訊的共享 TypeScript 邊界。",
+      "license": "License key 生成、校驗、吊銷;Ed25519 簽名、可離線驗證、內建席位與有效期約束。",
+      "marketing": "營銷站點共用原語 — Hero、Pricing、FAQ — landing 與產品營銷面複用，brand tokens 已接入。",
+      "metering": "基於 ClickHouse 的用量計量 — 秒級寫入、按租戶查 quota，可直接接計量計費或產品內額度。",
+      "waitlist": "面向 foundation tier 的預啟動 waitlist — 邀請碼、排隊位置、推薦計數、運營 dashboard。",
+      "cache": "基於 tag 的快取 — Redis / Upstash / 記憶體 三種 backend；serverless 與自託管複用同一 get/set/invalidate(tags) 介面。",
+      "queue": "訊息佇列 — Upstash QStash（serverless），本地開發與測試使用記憶體回退。",
+      "search": "全文 + 向量搜尋 — pgvector（Postgres）；BM25 關鍵詞搜尋與向量餘弦搜尋直接跑在自有資料庫上，無需外部搜尋基礎設施。",
+      "notifications": "多通道通知 — in_app / email / push / sms / chat — 自託管直發通道,按收件人偏好路由。",
+      "webhooks": "出站 webhook 投遞 — 自實現分發,負載簽名、指數退避重試、使用者自助訂閱 portal。",
+      "uploads": "大檔案上傳 — S3 / R2 多段、Tus 斷點續傳、Presigned URL；按檔案大小自動選擇策略。",
+      "storage": "下層物件儲存輔助 — list / copy / ACL / signed read;不需要多段邏輯時替代 @nebutra/uploads。",
+      "email": "渲染 React Email 模板,經 Resend / SES / SMTP 投遞;所有交易郵件統一 sendEmail(template, props, recipient)。",
+      "saga": "分散式事務原語 — 補償動作、重試/回滾 hook、冪等 key;開發中,預設 flag 關閉。",
+      "event-bus": "程序內 pub/sub + 跨應用 fanout;audit / billing / notifications 藉此響應 commerce 事件,避免迴圈依賴。",
+      "sms": "事務 SMS + OTP 校驗 — 全球用 Twilio Verify,中國大陸用阿里雲;統一 send(to, template),按本地號段自動選 provider。",
+      "tts": "TTS 三 provider — OpenAI / ElevenLabs / Azure;流式音訊、voice preset、按租戶限速。",
+      "video-compose": "基於 Remotion 的程式化影片合成 — 由 JSON spec 渲染短片、社媒卡片、品牌 GIF。",
+      "collab": "即時協同原語 — Yjs CRDT、WebSocket 傳輸、presence 游標;多人應用最終都會用上。",
+      "onboarding": "可持久化的多步 onboarding — 每使用者進度、分支流、可做 A/B 步驟門控。",
+      "admin-tooling": "自助式運營 dashboard — 租戶、計費覆寫、feature flag 切換 — 由 @nebutra/permissions 統一鑑權。",
+      "integration-vault": "按租戶的憑證庫，覆蓋 OAuth 整合與 API key — Creem、Gmail OAuth、Notion API;KMS 包裝,自動 refresh 輪換。",
+      "db": "型別化 Prisma client 包裝 — extension 友好、RLS 相容、讀寫分離時按租戶繫結連線。",
+      "prepaid-wallet": "{brandName} Router 與 Forge 的預付餘額與 API key：錢包埠、以 SHA-256 指紋儲存的 sk-sailor- key，以及同時記錄收費與供給成本的用量信封。",
+      "router-supply": "{brandName} Router 的供給路由：模型別名、從環境變數發現引擎，以及在上游失敗時自動回退的供給鏈。",
+      "browser-utils": "每個應用都需要的瀏覽器小工具：在隱私模式和停用站點資料時也不出錯的儲存，以及帶超時的 fetch。",
+      "config": "型別化環境與執行時配置 — boot 時 Zod 校驗,杜絕散落的 process.env 引用,缺 key 立刻失敗。",
+      "logger": "結構化日誌 — pino + Sentry transport;每請求一個 log 物件、breadcrumb 自動聯動、PII 自動剝離。",
+      "health": "所有後端服務的存活 + 就緒探針;把 db / queue / search 等下游聚合進同一份 /healthz 響應。",
+      "errors": "應用錯誤型別分類 — UserError / AuthError / RateLimitError;到 HTTP、日誌、Sentry、產品內 toast 各層對映一致。",
+      "gateway-core": "BFF 原語 — backends/gateway 與 edge handler 共用;中介軟體鏈、路由匹配、header 規整、request-id 透傳。",
+      "rate-limit": "令牌桶限速器 — Upstash Redis / 記憶體;按路由 + 按租戶配置,返回 429 + retry-after,決策可審計。",
+      "repositories": "倉儲模式原語 — findAll / findById / create / update / delete 統一 Repository<T>;換 backend 不動呼叫方。",
+      "tenant-store": "按租戶的 KV 快取 — 快取資料庫查詢太熱的 lookup;租戶設定變更自動失效。",
+      "trace-store": "OpenTelemetry 相容的 span 儲存與查詢層;讓 agent 能跨 iam / billing / webhooks 追蹤一個 tool 呼叫。",
+      "status": "公開狀態頁原語 — incident 時間線、元件圖、訂閱郵件;支援完整狀態頁與可嵌入 widget。",
+      "alerting": "基於 @nebutra/metering 的告警規則與投遞 — 閾值/異常檢測,路由到 PagerDuty / Discord / 產品內 banner。",
+      "analytics": "基於 ClickHouse 的一方產品分析 — 事件寫入、漏斗查詢;營銷站點不載入任何三方指令碼。",
+      "feature-flags": "服務端 + 客戶端 flag 求值器 — GrowthBook / Statsig / 自建;按租戶覆寫、sticky 分桶、暴露為 React hook。",
+      "i18n": "next-intl 橋接 — 執行時 locale、ICU 複數、貨幣/日期 formatter、按路由分包;構建期防止 key 漂移。",
+      "graph-model": "屬性圖模型層 — 用於知識 / 組織 / 資產圖;邊與點用 Zod 定型,可走 Prisma 或 Neo4j adapter。",
+      "provider-factory": "自動探測的 provider 工廠模式 — 由環境變數決定 queue / search / notifications backend,一個 getX() 即可。",
+      "capability-kit": "可組合 capability 原語 — pricing tier ↔ feature flag ↔ quota ↔ UI gating,以單一宣告式 manifest 串聯。",
+      "typelens-catalog": "TypeLens 的資料層：字型作品、搭配與供設計師和設計 agent 使用的提取包。仍在開發中，目錄模型已就緒，種子內容尚未完成。",
+      "fonts": "自託管開源字型：每個應用載入的中文正文字型，以及主題與 DESIGN.md 可引用的 19 款字型登錄檔；不向任何字型 CDN 發請求。",
+      "brand": "品牌原語 — 顏色定義、漸變 token、動效語言;為源資料,不被 app 執行時直接引用。",
+      "tokens": "執行時 CSS 變數 + ThemeProvider — 所有 app 顏色 / 間距 / radius 的單一資料來源;在 globals.css 中 @import。",
+      "design-tokens": "W3C DTCG $value/$type 規範的 token 檔案 + Style Dictionary 4 流水線;輸出 CSS 變數與 JS module，純 Git 編輯，不經設計工具同步往返。",
+      "icons": "541 個 Geist icon,以 tree-shakable TSX 元件分發;單字重 + 光學尺寸,與 Vercel / v0 視覺對齊。",
+      "theme": "純 CSS 多 theme 引擎 — 六套 oklch preset,通過 data-theme 切換;關鍵路徑無 JS。",
+      "ui": "主元件庫 — {brandName} 元件、自研原語、layout、主題橋接與共享 Motion 門面；產品 UI 的 import 邊界。",
+      "design-sync": "純 Git 的設計 token 同步 — token 以倉庫為唯一資料來源,無需再和設計工具做雙向同步。",
+      "forge-dns-leak": "用於真實 DNS 洩漏檢測的權威 DNS 區：訪客遞迴解析器查詢的探針域名按來源 IP 記錄。仍在開發中，需要委派的 DNS 區。",
+      "forge-runtime": "{brandName} Forge 背後的能力登錄檔與呼叫流水線：純函式工具，頁面與 API 同一條呼叫路徑，按積分賬本計費。",
+      "startup-os": "Startup OS 的型別化契約：公司上下文、創始人對話流、執行狀態、生成檔案與釋出閘門。仍在開發中，尚未接入生產應用。",
+      "workflow-runtime": "租戶編寫的工作流（agent()、parallel()、phase()）只在失敗即關閉的沙箱中執行；不可信指令碼永遠不經過 eval、new Function 或 node:vm。",
+      "agents": "多步驟 agent 執行時 — Vercel AI SDK 為底、tool registry、流式 UI、MCP 接入;所有 Sailor agentic 能力的腳手架。",
+      "agent-runtime": "更底層的 agent 執行 — message reducer、tool 呼叫、流式狀態機;@nebutra/agents 在其之上封裝。",
+      "ai-primitives": "所有 AI 包共享的輔助 — token 計數、prompt 模板、stream 解析、退避重試;不依賴具體 provider。",
+      "ai-providers": "Provider 後設資料 — 每百萬 token 單價、context window、模態;驅動模型選擇與成本估算。",
+      "mcp": "Model Context Protocol server 原語 — 註冊 tool、暴露 resource、流式訂閱;可作為 Sailor 內嵌或獨立部署。",
+      "knowledge-rag": "檢索增強生成流水線 — chunk → embed → store → retrieve → rerank;vector store 可插拔。",
+      "knowledge-base": "面向 RAG 的文件庫 + indexer;監聽 S3 / Notion / GitHub 源、排程重嵌入、把新鮮度暴露給 agent。",
+      "knowledge-graph": "基於 @nebutra/graph-model 的實體 + 關係儲存;agent 可直接走 \"客戶 → 發票 → 產品\",無需繞 SQL。",
+      "tool-registry": "執行時 tool catalog — schema、描述、安全等級;在 agent 之間熱插拔,無需重新部署。",
+      "code-execution": "面向 agent 的沙箱程式碼執行 — JS / Python / shell;短生命週期容器、網路隔離、由 @nebutra/permissions 限權。",
+      "sandbox-runtime": "Vercel Sandbox + Lambda + 本地 runner 介面卡;execute() 統一入口,按策略規則選擇。",
+      "browser-control": "面向 agent 的無頭瀏覽器驅動 — Vercel Agent Browser 優先,Playwright 兜底;截圖 / 點選 / 輸入 / 求值。",
+      "generation-context": "Token 預算的上下文視窗管理 — 系統 prompt、RAG、使用者歷史、scratchpad;視窗爆掉時決定淘汰策略。",
+      "local-embedding": "基於 ONNX / WebGPU 的端側 embedding;短文本、隱私敏感、provider 限流時省去往返。",
+      "execution-policy": "決定 agent 任務路由到何處的策略規則 — render → Vercel Sandbox / 長任務 → Lambda / 內部 → local-runner。",
+      "code-index": "面向 agent 的程式碼倉索引 — symbol graph、embedding、檔案 watcher;agent 無需 grep 即可回答 \"X 在哪定義\"。",
+      "voice-realtime": "即時語音迴環 — 輸入 ASR、模型流式、輸出 TTS — 端到端 < 300ms;橋接 OpenAI Realtime + Deepgram + ElevenLabs。",
+      "image-pipeline": "影像生成 + 變換流水線 — provider 路由、水印 + 安全過濾、輸出快取、按租戶 quota。",
+      "audio-pipeline": "音訊處理鏈 — voice clone、降噪、轉寫、摘要;每段以 async iterator 串流。",
+      "video-pipeline": "長影片流水線 — 切片、字幕、b-roll、渲染;長階段通過 queue 轉給 backends/python。",
+      "document-pipeline": "PDF / docx / markdown 攝入 — chunk、表格感知抽取、embed、入 @nebutra/knowledge-base;純圖頁用 OCR 回落。",
+      "3d-pipeline": "3D 資產生成 + 渲染 — 文生 mesh + USD 匯出 + Three.js 預覽;backend 走 GPU pool 路由。",
+      "cli": "`nebutra` CLI — 腳手架功能、遷移、租戶檢視、部署 preset;CI 用的是同一份二進位制。",
+      "create-sailor": "`create-sailor` 腳手架 — 一條命令,跑得起來的多租戶 SaaS,自帶 auth + billing + dashboard。",
+      "preset": "基於 feature 的 SaaS 配置系統;在單個配置檔案中直接開關 apps 與 features,組裝你的 stack。",
+      "sanity": "Sanity Studio v4 輔助 — schema 生成器、內容驅動的 page builder、與影像流水線整合。",
+      "china-compliance": "中國區運營支援 — ICP 備案輔助、工信部登記、實名認證、資料境記憶體儲。",
+      "content-store": "Headless CMS 介面卡 — Sanity / Strapi / Notion 統一為一個 ContentEntry<T> 讀 API;驅動營銷頁面與產品文案。",
+      "play-loader": "Atelier play 的熱過載 loader — 沙箱 iframe、訊息橋、儲存即持久化。",
+      "play-marketplace": "可分享 atelier play 的市場殼 — 發現、評分、安裝、署名。",
+      "access-gate": "上線前訪問閘門 — 邀請碼核銷、排隊位置、分批放量;在 @nebutra/waitlist 之上疊加。",
+      "atelier-canvas": "無限設計畫布 — 多人游標、圖層面板、frame 匯出;所有 atelier play 的繪製載體。",
+      "brand-genesis": "品牌生成流 — 選調色盤 / 字組合 / 動效 preset,產出同步的 @nebutra/brand 覆寫與 Figma 預覽連結。",
+      "cinema": "Atelier 電影模式 — 全屏沉浸 + 計時場景播放;最適合 demo play 或排練 pitch。",
+      "cofounder-match": "按技能 + 階段匹配 cofounder — 短表單後輸出排序候選,標註共同興趣與可信引薦路徑。",
+      "ecosystem-safety": "上線前安全自檢 — license 掃描、依賴漏洞審計、違禁內容檢測;在 play 進市場前暴露阻塞項。",
+      "event-log": "通用事件日誌原語 — append、查詢、時間窗聚合;為 audit / analytics / trace-store 提供底層記錄。",
+      "founder-cemetery": "失敗創業紀念館 — 匿名化復盤 + 失敗原因 tag;只讀目錄,作為高頻失敗模式 dashboard 的資料來源。",
+      "idea-plaza": "公開 idea 廣場 — 提交、點贊、評論;atelier play 在創始人問 \"做什麼\" 時的種子池。",
+      "landing-builder": "積木式落地頁生成器 — 拖動預設 section、原位改文案、一鍵發到子域名。",
+      "legal": "法律實體原語 — 公司註冊、代理人、按管轄區生成 ToS/Privacy;為 @nebutra/preset 的法律部分供給。",
+      "outreach-engine": "Cold-outreach 排程器 — 名單去重、按 persona 撰寫、SES/Resend 投遞、自動識別回覆;熱回覆回灌 @nebutra/agents。",
+      "reel": "豎屏短影片原語 — 抓取 atelier 高光、走 TTS 流水線自動加字幕、發到社媒通道。",
+      "support-deflector": "內嵌 AI 客服層 — 從文件與歷史工單回答,先省一輪人工;無法解決時攜完整記錄轉人工。",
+      "time-machine": "專案歷史回看器 — 每次儲存打 snapshot、可從任一歷史幀拉新 play、雙 snapshot 對比 diff。"
+    },
+    "groups": {
+      "ai": {
+        "label": "AI 執行時",
+        "summary": "把智慧體迴圈、RAG、工具協議、沙箱執行和多模態流水線收束到應用外部。"
+      },
+      "commerce": {
+        "label": "商業化",
+        "summary": "把訪問、計費、合同、license、營銷和用量計量放在同一商業邊界內。"
+      },
+      "design": {
+        "label": "設計系統",
+        "summary": "把品牌、tokens、icons、theme、UI primitive 和設計同步組織成一條供應鏈。"
+      },
+      "gateway": {
+        "label": "閘道器",
+        "summary": "把 BFF、鑑權、租戶、限流、OpenAPI 和路由契約放在請求入口處。"
+      },
+      "iam": {
+        "label": "身份與信任",
+        "summary": "把認證、身份、許可權、租戶、審計和金鑰行為收束到同一個信任邊界。"
+      },
+      "integrations": {
+        "label": "整合",
+        "summary": "把快取、佇列、搜尋、訊息、儲存、上傳和 webhook 作為可替換連線層。"
+      },
+      "ops": {
+        "label": "運維",
+        "summary": "把 CLI、預設、CMS、Supabase 和合規支援放在釋出與運維邊界。"
+      },
+      "platform": {
+        "label": "平臺",
+        "summary": "把資料庫、配置、健康檢查、倉儲、trace、限流和租戶鎖放在最低共享層。"
+      }
+    },
+    "folders": {
+      "ai": {
+        "title": "AI 執行時與智慧體底座",
+        "titleCn": "AI 執行時與智慧體底座",
+        "summary": "這是一個生產級 AI 域：智慧體迴圈、工具協議、RAG、本地執行、供應商後設資料與多模態流水線都被收束在應用之外。",
+        "signature": {
+          "label": "AI 包",
+          "detail": "220 個執行時原始碼檔案與 117 個測試，重心落在 agent-runtime、knowledge-rag、reel、graph 與 execution policy。"
+        },
+        "sourceStats": {
+          "unitLabel": "包"
+        },
+        "topology": {
+          "title": "智慧體工作臺拓撲",
+          "caption": "一個核心迴圈協調模型呼叫、上下文、工具、記憶、執行與媒體生產。",
+          "nodes": {
+            "0": "durable turns、工具、命令、hooks、subagents",
+            "1": "檢索、切塊、本地 embedding、content-store",
+            "2": "工具目錄與協議橋接",
+            "3": "型別化媒體圖與 storyboard 執行",
+            "4": "一個 router 後的執行供應商",
+            "5": "只放後設資料；執行時留在 agents"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "agent-runtime 測試",
+            "detail": "dispatcher、hooks、durable turn、命令、rollout store"
+          },
+          "1": {
+            "label": "RAG 測試",
+            "detail": "檢索契約與 ingestion 行為"
+          },
+          "2": {
+            "label": "README 面",
+            "detail": "多數 AI 能力有包級文件"
+          }
+        },
+        "owns": {
+          "0": "@nebutra/agents 作為統一模型執行面",
+          "1": "RAG、程式碼索引、知識圖譜、內容庫與工具註冊中心",
+          "2": "影像、影片、音訊、語音、沙箱與瀏覽器自動化流水線"
+        },
+        "boundaries": {
+          "0": "應用只消費穩定包 API，不擁有供應商路由。",
+          "1": "多媒體工作流依賴注入介面卡，而不是硬編碼廠商。"
+        },
+        "proof": {
+          "0": "agents、knowledge-rag、reel、agent-runtime 的包級測試",
+          "1": "AI primitive ownership 與 runtime dependency 架構測試"
+        }
+      },
+      "platform": {
+        "title": "平臺控制平面",
+        "titleCn": "平臺控制平面",
+        "summary": "最低層共享能力：資料庫、配置、供應商選擇、租戶鎖、gateway-core 契約、健康檢查、限流、trace 與倉儲邊界。",
+        "signature": {
+          "label": "基礎包",
+          "detail": "166 個執行時原始碼檔案覆蓋 db、gateway-core、provider-factory、tenant-store、trace-store、config、errors 與可觀測性。"
+        },
+        "sourceStats": {
+          "unitLabel": "包"
+        },
+        "topology": {
+          "title": "只能向下依賴的平臺棧",
+          "caption": "功能包站在這層之上；平臺包不把產品邏輯拉進來。",
+          "nodes": {
+            "0": "Prisma v7、schema 策略、生成指令碼",
+            "1": "按租戶序列化與 scoped stores",
+            "2": "explicit/env/detect/fallback 供應商解析",
+            "3": "Hono backend 之下的共享 gateway 契約",
+            "4": "agent、tool、LLM span 的非同步 trace"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "db 原始碼檔案",
+            "detail": "schema、client、seed、生成邊界"
+          },
+          "1": {
+            "label": "本地 AGENTS 契約",
+            "detail": "包級所有權規則"
+          },
+          "2": {
+            "label": "gateway-core 測試",
+            "detail": "後端路由之下的共享 gateway 行為"
+          }
+        },
+        "owns": {
+          "0": "Prisma schema、資料庫客戶端、遷移與多 schema 策略",
+          "1": "租戶鎖、trace store、健康檢查、配置、錯誤與限流",
+          "2": "上層包複用的 provider factory 與 repository 邊界"
+        },
+        "boundaries": {
+          "0": "平臺包不承載應用專屬 UI 或產品文案。",
+          "1": "功能包向下依賴平臺，平臺不反向匯入功能域。"
+        },
+        "proof": {
+          "0": "schema drift audit、db generate 與架構依賴測試",
+          "1": "tenant-store 與 trace-store 的包級 doctor/debug 命令"
+        }
+      },
+      "iam": {
+        "title": "身份、訪問與租戶信任",
+        "titleCn": "身份、訪問與租戶信任",
+        "summary": "基於 Better Auth 的認證、租戶上下文、許可權門禁、審計、驗證碼、OAuth 與加密 vault 行為被放在同一個信任邊界裡。",
+        "signature": {
+          "label": "信任測試",
+          "detail": "供應商抽象、審計、租戶、許可權、OAuth 與 vault 測試防止 auth 行為漂移進應用。"
+        },
+        "sourceStats": {
+          "unitLabel": "包"
+        },
+        "topology": {
+          "title": "信任走廊",
+          "caption": "每個產品動作都應按身份、租戶、許可權、審計、金鑰邊界的順序通過。",
+          "nodes": {
+            "0": "基於 Postgres 的 Better Auth，session 鑑權",
+            "1": "租戶上下文與組織作用域",
+            "2": "RBAC 與 resource-action scopes",
+            "3": "敏感操作軌跡",
+            "4": "本地與 KMS-backed 金鑰儲存"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "auth 測試",
+            "detail": "供應商契約行為"
+          },
+          "1": {
+            "label": "本地 AGENTS 檔案",
+            "detail": "每個 IAM 包都有所有權說明"
+          },
+          "2": {
+            "label": "tenant 測試",
+            "detail": "組織上下文與租戶策略"
+          }
+        },
+        "owns": {
+          "0": "Better Auth 的 session/身份介面，內建裝置碼登入與組織成員關係",
+          "1": "許可權門禁、租戶上下文、審計事件與 vault 儲存",
+          "2": "外部身份流的 OAuth server 與 captcha 邊界"
+        },
+        "boundaries": {
+          "0": "UI 檢查呼叫 IAM 契約，不重新實現授權邏輯。",
+          "1": "金鑰與審計行為不洩漏到應用本地 helper。"
+        },
+        "proof": {
+          "0": "認證供應商抽象測試與許可權概念文件",
+          "1": "AGENTS.md 契約中的 audit 與 tenant 包邊界"
+        }
+      },
+      "design": {
+        "title": "設計系統供應鏈",
+        "titleCn": "設計系統供應鏈",
+        "summary": "品牌資產、DTCG tokens、Tailwind v4 theme 匯出、Geist icons、UI primitives、registry build 與 git-only/design-md sync 構成一條流水線。",
+        "signature": {
+          "label": "已封裝 Geist 圖示",
+          "detail": "@nebutra/icons 自身就有 543 個原始碼檔案；設計系統天然是原始碼密集型。"
+        },
+        "sourceStats": {
+          "unitLabel": "包"
+        },
+        "topology": {
+          "title": "Token 到應用的供應鏈",
+          "caption": "一個事實，一個 owner：顏色、圖示、元件與 registry 經由受控包邊界流動。",
+          "nodes": {
+            "0": "W3C DTCG 單一事實源",
+            "1": "CSS 變數與 ThemeProvider 入口",
+            "2": "Tailwind v4 @theme 與 data-theme selectors",
+            "3": "Geist 圖示 React 包",
+            "4": "primitives、layouts、registry、治理測試"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "UI 原始碼檔案",
+            "detail": "primitives、layout shells、registry scripts"
+          },
+          "1": {
+            "label": "design-sync 測試",
+            "detail": "git-only、design-md、IO、detect"
+          },
+          "2": {
+            "label": "AGENTS 契約",
+            "detail": "token、theme、brand、icons、UI、sync 所有權"
+          }
+        },
+        "owns": {
+          "0": "CSS 變數令牌、oklch 主題、品牌原語與生成資產",
+          "1": "可複用 primitives、佈局殼、registry manifest 與 Storybook 表面",
+          "2": "設計同步指令碼與 UI 治理策略測試"
+        },
+        "boundaries": {
+          "0": "落地頁組合設計包，不 fork primitives。",
+          "1": "令牌變更通過 brand sync 流動，而不是一次性 hex 覆蓋。"
+        },
+        "proof": {
+          "0": "React Doctor、Storybook registry 生成與 token sync 檢查",
+          "1": "design-docs 元件頁與治理測試"
+        }
+      },
+      "integrations": {
+        "title": "整合執行時層",
+        "titleCn": "整合執行時層",
+        "summary": "佇列、快取、事件匯流排、郵件、上傳、儲存、搜尋、簡訊、通知、Webhook、協作與供應商 vault 共享同一條介面卡線路。",
+        "signature": {
+          "label": "介面卡包",
+          "detail": "最偏執行時的一條線：queue 有 10 個測試，notifications 5 個，email/uploads/webhooks 各 3 個。"
+        },
+        "sourceStats": {
+          "unitLabel": "包"
+        },
+        "topology": {
+          "title": "埠與介面卡匯流排",
+          "caption": "傳輸細節集中在這裡，使 AI、commerce 與 app 包呼叫穩定 port，而不是直接碰 vendor SDK。",
+          "nodes": {
+            "0": "持久投遞與 worker 契約",
+            "1": "快取供應商邊界",
+            "2": "Resend、Console 傳輸",
+            "3": "上傳校驗與 storage handoff",
+            "4": "簽名校驗與投遞",
+            "5": "按租戶分割槽的 CRDT rooms"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "queue 測試",
+            "detail": "投遞、重試與 worker 行為"
+          },
+          "1": {
+            "label": "README 面",
+            "detail": "介面卡用法保留在包級文件"
+          },
+          "2": {
+            "label": "AGENTS 契約",
+            "detail": "每個 integration 的執行邊界"
+          }
+        },
+        "owns": {
+          "0": "快取、佇列、事件匯流排、saga、通知、onboarding 與 webhooks",
+          "1": "搜尋、儲存、上傳、簡訊、TTS、影片合成與 integration vault",
+          "2": "面向供應商的介面卡，避免應用直接依賴 vendor SDK"
+        },
+        "boundaries": {
+          "0": "業務工作流呼叫 integration port，供應商細節留在這裡。",
+          "1": "AI 與 commerce 包複用介面卡，但不擁有傳輸程式碼。"
+        },
+        "proof": {
+          "0": "queue、cache、webhook、search 包級測試",
+          "1": "後臺任務文件與執行時 smoke checks"
+        }
+      },
+      "commerce": {
+        "title": "商業系統記錄源",
+        "titleCn": "商業系統記錄源",
+        "summary": "訪問門禁、計費供應商、訂閱、用量、credits、metering、license、contracts、legal 內容、marketing 與 waitlist 構成商業域。",
+        "signature": {
+          "label": "商業包",
+          "detail": "billing 最大，但 access-gate、blog、license、legal、metering 與 waitlist 保持相鄰商業事實分離。"
+        },
+        "sourceStats": {
+          "unitLabel": "包"
+        },
+        "topology": {
+          "title": "商業賬本分道",
+          "caption": "每條 lane 擁有不同事實：訪問、發票、用量、許可證、法務或獲客。",
+          "nodes": {
+            "0": "受控 SaaS 訪問的邀請生命週期",
+            "1": "Creem、ChinaPay、credits、manual",
+            "2": "用量記錄與 billing handoff",
+            "3": "簽發、校驗、生命週期事件",
+            "4": "政策內容與合規表面"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "billing 測試",
+            "detail": "checkout factory、readiness、credit webhook、metering"
+          },
+          "1": {
+            "label": "metering 測試",
+            "detail": "用量記賬邊界"
+          },
+          "2": {
+            "label": "license 測試",
+            "detail": "簽發與校驗生命週期"
+          }
+        },
+        "owns": {
+          "0": "計費供應商介面卡、訂閱生命週期與計量契約",
+          "1": "訪問門禁邀請、許可證、法務內容、營銷原語與 waitlist",
+          "2": "應用可暴露但不可重新定義的商業邊界"
+        },
+        "boundaries": {
+          "0": "落地頁文案可連結商業契約，但不擁有計價行為。",
+          "1": "認證與計費通過租戶標識連線，而不是共享 UI 狀態。"
+        },
+        "proof": {
+          "0": "access-gate 生命週期測試與 package status 文件",
+          "1": "billing model 文件與 release-surface 校驗"
+        }
+      },
+      "gateway": {
+        "title": "型別化 API 閘道器邊界",
+        "titleCn": "型別化 API 閘道器邊界",
+        "summary": "Hono 後端負責 request context、安全中介軟體、租戶提取、冪等、用量計量、路由組、OpenAPI 生成與非同步 Inngest jobs。",
+        "signature": {
+          "label": "gateway 測試",
+          "detail": "覆蓋 billing 冪等、RBAC、middleware、queue delivery、events、health、notifications 與 AI gateway routes。"
+        },
+        "sourceStats": {
+          "unitLabel": "後端"
+        },
+        "topology": {
+          "title": "請求到契約路徑",
+          "caption": "route code 只是可見部分；真正的邊界是路由前後按序執行的策略鏈。",
+          "nodes": {
+            "0": "trace ID、關聯、依賴注入",
+            "1": "安全頭、動態 CORS、token bucket",
+            "2": "租戶提取、mutation 去重",
+            "3": "admin、ai、billing、events、legal、webhooks",
+            "4": "型別客戶端與後臺同步 jobs"
+          }
+        },
+        "evidence": {
+          "0": {
+            "label": "原始碼檔案",
+            "detail": "routes、middleware、services、clients、adapters"
+          },
+          "1": {
+            "label": "非同步 jobs",
+            "detail": "billing sync、GDPR deletion、tenant provisioning、user sync"
+          },
+          "2": {
+            "label": "契約輸出",
+            "detail": "generate:spec 與 typed API clients"
+          }
+        },
+        "owns": {
+          "0": "BFF 路由、OpenAPI 生成、中介軟體順序與租戶提取",
+          "1": "閘道器級限流、冪等、審計日誌與版本化",
+          "2": "web 與生成客戶端消費的型別化 API 契約"
+        },
+        "boundaries": {
+          "0": "後端策略位於 middleware，不在每條 route 中重複。",
+          "1": "應用不繞過 gateway 執行租戶敏感操作。"
+        },
+        "proof": {
+          "0": "OpenAPI 生成、gateway route 測試與 release 驗證指令碼",
+          "1": "api-reference 文件與 dashboard typed-client 整合"
+        }
+      }
+    },
+    "page": {
+      "heroTitle": "每一層，都已經<signature>寫好。</signature>",
+      "heroLead": "{packageCount} 個包，{domainCount} 個能力域：一個 SaaS 需要的每一層都寫好、測好，放在同一個倉庫裡。下面逐個能力域展開：它怎麼組織，裡面有哪些包。",
+      "metaDescription": "{packageCount} 個包，{domainCount} 個能力域 — 認證、計費、租戶、AI、整合與設計系統，寫好、測好，放在同一個倉庫裡。",
+      "exploreDomain": "進入這個能力域",
+      "startTitle": "從這一切開始",
+      "startLead": "一條命令給你整個倉庫，這個頁面上的每個包都已經接好線。",
+      "install": {
+        "copyLabel": "複製",
+        "copiedLabel": "已複製"
+      },
+      "allPackages": "全部功能包",
+      "docs": "文件",
+      "source": "原始碼",
+      "inCode": "程式碼裡",
+      "owns": "它負責什麼",
+      "stops": "它的邊界",
+      "proof": "怎麼證明它能用",
+      "packages": "功能包",
+      "packagesCount": "{path} 下的 {count} 個包。",
+      "moreInDomain": "{domain}裡的其他包",
+      "allPackagesInDomain": "全部 {count} 個包",
+      "sourceSentence": "{path} 下有 {count} 個{unit}、{sourceFiles} 個原始碼檔案、{testFiles} 個測試檔案。"
+    },
+    "glyphs": {
+      "sms": {
+        "message": "您的 {brandName} 驗證碼是 8472，5 分鐘後過期。",
+        "delivered": "已送達"
+      },
+      "audio-pipeline": {
+        "steps": {
+          "0": "轉寫",
+          "1": "降噪",
+          "2": "母帶"
+        }
+      },
+      "code-execution": {
+        "footer": "Vercel Sandbox · 安全執行不可信程式碼",
+        "executed": "47ms 內執行完成"
+      },
+      "document-pipeline": {
+        "steps": {
+          "0": {
+            "label": "PDF",
+            "meta": "上傳"
+          },
+          "1": {
+            "label": "OCR",
+            "meta": "47頁"
+          },
+          "2": {
+            "label": "切塊",
+            "meta": "248"
+          },
+          "3": {
+            "label": "向量化",
+            "meta": ""
+          }
+        },
+        "docs": {
+          "0": {
+            "age": "2分鐘前",
+            "pages": "47頁",
+            "chunks": "248塊"
+          },
+          "1": {
+            "age": "12分鐘前",
+            "pages": "12頁",
+            "chunks": "84塊"
+          }
+        },
+        "processed": "已處理"
+      },
+      "ecosystem-safety": {
+        "title": "防護已開啟",
+        "layersCount": "4 層",
+        "layers": {
+          "0": {
+            "label": "內容稽核",
+            "stat": "今日 0 攔截"
+          },
+          "1": {
+            "label": "PII 脫敏",
+            "stat": "今日脫敏 12"
+          },
+          "2": {
+            "label": "注入檢測",
+            "stat": "今日捕獲 2"
+          },
+          "3": {
+            "label": "按主體限流",
+            "stat": "正常"
+          }
+        },
+        "footer": "OpenAI Moderation · 正則 + LLM 閘道器"
+      },
+      "notifications": {
+        "rows": {
+          "0": {
+            "title": "已收到付款"
+          },
+          "1": {
+            "title": "新隊友加入"
+          },
+          "2": {
+            "title": "觸發限流"
+          }
+        }
+      },
+      "onboarding": {
+        "steps": {
+          "0": "賬戶",
+          "1": "工作區",
+          "2": "邀請",
+          "3": "首次操作"
+        },
+        "footnote": "即將完成",
+        "count": "3 / 4"
+      },
+      "outreach-engine": {
+        "campaign": "Q4 企業級外聯",
+        "status": "執行中 · 47 位潛在客戶",
+        "sent": "已發",
+        "open": "開啟",
+        "reply": "回覆",
+        "steps": {
+          "0": "第 1 天 · 自我介紹",
+          "1": "第 3 天 · 案例",
+          "2": "第 7 天 · 邀約 Demo",
+          "3": "第 14 天 · 跟進"
+        }
+      },
+      "sandbox-runtime": {
+        "footer": "Vercel Sandbox · 安全執行不可信程式碼",
+        "run": "執行",
+        "lastExec": "上次執行"
+      }
+    },
+    "showcases": {
+      "auth": {
+        "active": "已啟用",
+        "providers": {
+          "0": {
+            "label": "使用 Passkey 登入"
+          },
+          "1": {
+            "label": "使用 Google 登入"
+          },
+          "2": {
+            "label": "使用 GitHub 登入"
+          },
+          "3": {
+            "label": "使用裝置碼登入"
+          },
+          "4": {
+            "label": "使用魔法連結登入"
+          }
+        },
+        "cta": "登入",
+        "description": "一個認證提供方，覆蓋所有需要的登入方式 — Better Auth，不經第三方廠商。",
+        "email": "郵箱",
+        "or": "或使用郵箱登入",
+        "password": "密碼",
+        "stats": "Better Auth · 支援 SSO · 強制 MFA",
+        "title": "登入 {brandName}"
+      },
+      "db": {
+        "headerLabel": "查詢 · packages/platform/db",
+        "rlsEnforced": "已啟用",
+        "resultsTitle": "查詢結果",
+        "resultsSubtitle": "通過行級安全按租戶隔離",
+        "visibleLabel": "可見行",
+        "hiddenLabel": "RLS 隱藏",
+        "visibleHint": "tenant_a 內",
+        "hiddenHint": "其他租戶",
+        "hiddenNote": "RLS 在資料庫層遮蔽其他租戶的行，應用永遠看不到它們。"
+      },
+      "gateway-core": {
+        "stops": {
+          "0": "租戶解析",
+          "1": "限流檢查",
+          "2": "冪等性",
+          "3": "認證",
+          "4": "路由處理",
+          "5": "響應封裝"
+        },
+        "totalLabel": "總延遲",
+        "lifecycle": "中介軟體生命週期",
+        "okLabel": "已通過",
+        "rps": "每秒請求",
+        "p50": "p50 延遲",
+        "p95": "p95 延遲",
+        "gaugeLabel": "成功率",
+        "success": "成功"
+      },
+      "metering": {
+        "kpis": {
+          "0": {
+            "label": "API 呼叫"
+          },
+          "1": {
+            "label": "AI tokens"
+          },
+          "2": {
+            "label": "儲存"
+          },
+          "3": {
+            "label": "活躍使用者"
+          }
+        },
+        "meterRows": {
+          "0": {
+            "tier": "Pro · $0.001/次"
+          },
+          "1": {
+            "tier": "Pro · 按量"
+          },
+          "2": {
+            "tier": "Pro · 含 50 GB"
+          },
+          "3": {
+            "tier": "Pro · 席位"
+          }
+        },
+        "capLabel": "上限",
+        "footer": "ClickHouse 即時聚合 · ≤ 800ms p99",
+        "meterLabel": "計量項",
+        "of": "/",
+        "pctLabel": "使用率",
+        "realtime": "即時",
+        "tierLabel": "計費檔位",
+        "title": "用量計量",
+        "usedLabel": "本期用量"
+      },
+      "queue": {
+        "jobs": {
+          "0": {
+            "relative": "剛剛"
+          },
+          "1": {
+            "relative": "12 秒前"
+          },
+          "2": {
+            "relative": "48 秒前"
+          },
+          "3": {
+            "relative": "1 分鐘前"
+          },
+          "4": {
+            "relative": "2 分鐘前"
+          },
+          "5": {
+            "relative": "3 分鐘前"
+          }
+        },
+        "statusMeta": {
+          "failed": "失敗",
+          "pending": "等待中",
+          "processing": "執行中",
+          "success": "成功"
+        },
+        "attempts": "重試",
+        "duration": "耗時",
+        "queue": "佇列",
+        "status": "狀態",
+        "throughput": "吞吐量",
+        "success": "成功率",
+        "when": "時間",
+        "rate": "條/分鐘",
+        "latency": "平均延遲",
+        "healthy": "執行正常",
+        "last60": "過去 60 分鐘",
+        "live": "即時重新整理 · QStash"
+      },
+      "search": {
+        "results": {
+          "0": {
+            "title": "Billing v2 遷移手冊",
+            "excerpt": "從舊版發票遷移到新計量管道的逐步流程。"
+          },
+          "1": {
+            "title": "針對 billing 租戶的遷移清單",
+            "excerpt": "切換前請確認 RLS、金鑰輪換和 webhook 回填。"
+          },
+          "2": {
+            "title": "Creem + 微信支付 billing 介面卡筆記",
+            "excerpt": "同一套計費契約讓客戶程式碼在兩條支付通道上保持穩定。"
+          },
+          "3": {
+            "title": "零停機 migration 模式",
+            "excerpt": "雙寫、影子讀取、最後切換——同樣適用於 billing 資料。"
+          }
+        },
+        "placeholder": "搜尋文件、帖子、更新日誌……",
+        "indexLabel": "索引",
+        "tagsLabel": "標籤",
+        "footer": "檢索 {count} 篇文件 用時 {ms} · Postgres 後端",
+        "relevance": "得分"
+      },
+      "webhooks": {
+        "deliveries": {
+          "0": {
+            "timestamp": "2 分鐘前"
+          },
+          "1": {
+            "timestamp": "5 分鐘前"
+          },
+          "2": {
+            "timestamp": "剛剛"
+          },
+          "3": {
+            "timestamp": "12 分鐘前"
+          },
+          "4": {
+            "timestamp": "1 小時前"
+          }
+        },
+        "active": "活躍",
+        "attempts": "嘗試次數",
+        "code": "狀態碼",
+        "delivered": "上次投遞 2 分鐘前",
+        "event": "事件",
+        "footer": "99.2% 成功 · p95 248ms · HMAC 簽名",
+        "latency": "延遲",
+        "retry": "重試中",
+        "status": "狀態",
+        "title": "最近投遞",
+        "when": "時間"
+      }
+    }
+  },
+  "site": {
+    "meta": {
+      "title": "{brandName} — 規劃、交付與增長，一處完成",
+      "description": "{brandName} 把團隊的工作、客戶和資料放進同一個工作空間，讓你把時間花在產品上，而不是在工具之間來回切換。"
+    },
+    "hero": {
+      "eyebrow": "現已向所有團隊開放",
+      "pitch": "團隊規劃工作、交付成果、看清影響的同一個工作空間。",
+      "body": "與團隊一起登入，邀請同事加入，在任何裝置上接著上次的進度繼續。免費開始，無需綁卡。",
+      "primaryLabel": "免費開始",
+      "secondaryLabel": "檢視價格"
+    },
+    "features": {
+      "eyebrow": "功能",
+      "title": "團隊第一天就需要的，都已就緒",
+      "lead": "核心能力開箱即用、彼此打通，開始之前無需任何配置。",
+      "items": {
+        "fingerprint": {
+          "title": "隨心登入",
+          "body": "郵箱密碼、通行金鑰或已有帳號均可登入，需要時開啟兩步驗證。"
+        },
+        "users": {
+          "title": "為團隊而生",
+          "body": "帶角色許可權的共享工作空間，每個人只看到該看的內容。"
+        },
+        "card": {
+          "title": "簡單透明的計費",
+          "body": "升級、降級或取消只需幾次點選，發票自動傳送到郵箱，按實際使用付費。"
+        },
+        "globe": {
+          "title": "說你的語言",
+          "body": "介面、郵件和日期格式會跟隨每個人的語言與地區。"
+        },
+        "shield": {
+          "title": "預設安全",
+          "body": "金鑰加密儲存，工作空間資料相互隔離，每次敏感操作都留有審計記錄。"
+        },
+        "plug": {
+          "title": "連線你的工具",
+          "body": "完善的 API 與簽名 Webhook 讓其他工具自動保持同步，告別手動匯出。"
+        }
+      }
+    },
+    "pricing": {
+      "eyebrow": "價格",
+      "title": "免費開始，隨團隊成長升級",
+      "lead": "所有套餐都包含完整產品功能。按年付費，贈送兩個月。",
+      "monthly": "按月",
+      "yearly": "按年",
+      "onRequest": "按需報價",
+      "plans": {
+        "free": {
+          "name": "免費版",
+          "blurb": "適合個人和剛開始試用的小團隊。",
+          "unit": "永久免費",
+          "features": ["最多 3 名成員", "1 個工作空間", "社群支援"],
+          "ctaLabel": "免費開始"
+        },
+        "pro": {
+          "name": "專業版",
+          "blurb": "適合每天依靠它推進工作的成長型團隊。",
+          "unit": "每成員 / 月",
+          "features": ["不限成員數", "不限工作空間", "角色與許可權", "API 與 Webhook", "郵件支援"],
+          "ctaLabel": "開始免費試用",
+          "highlightLabel": "最受歡迎"
+        },
+        "business": {
+          "name": "企業版",
+          "blurb": "適合有安全與合規要求的組織。",
+          "unit": "按團隊定製",
+          "features": [
+            "包含專業版全部功能",
+            "單點登入（SSO）",
+            "審計日誌匯出",
+            "資料處理協議",
+            "優先支援"
+          ],
+          "ctaLabel": "聯絡銷售"
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "常見問題",
+      "title": "你可能想問",
+      "lead": "沒找到答案？聯絡我們，我們會在一個工作日內回覆。",
+      "items": {
+        "free-plan": {
+          "q": "有免費套餐嗎？",
+          "a": "有。免費版沒有時間限制，也無需綁卡。團隊規模擴大後可隨時升級。"
+        },
+        "change-plans": {
+          "q": "之後可以更換套餐嗎？",
+          "a": "隨時可以。升級立即生效；降級在當前計費週期結束後生效，差額會計入餘額。"
+        },
+        "cancel": {
+          "q": "如何取消訂閱？",
+          "a": "在應用的帳單頁面點兩下即可取消。已付費的週期結束前仍可正常使用。"
+        },
+        "data-location": {
+          "q": "我的資料存放在哪裡？誰能看到？",
+          "a": "每個工作空間的資料彼此隔離，傳輸與儲存全程加密，只有你邀請的成員可以訪問。"
+        },
+        "payment-methods": {
+          "q": "支援哪些付款方式？",
+          "a": "支援主流信用卡與簽帳金融卡，在中國大陸也可使用微信支付和支付寶。企業客戶可按發票付款。"
+        },
+        "export-data": {
+          "q": "可以匯出我的資料嗎？",
+          "a": "可以。所有套餐都支援隨時匯出工作空間中的全部資料。"
+        }
+      }
+    },
+    "cta": {
+      "title": "這周就把團隊帶過來",
+      "body": "幾分鐘即可完成設定，免費版可一直使用。",
+      "primaryLabel": "免費開始",
+      "secondaryLabel": "聯絡我們"
+    },
+    "nav": {
+      "features": "功能",
+      "pricing": "價格",
+      "faq": "常見問題",
+      "blog": "部落格",
+      "contact": "聯絡"
+    },
+    "account": {
+      "signIn": "登入",
+      "getStarted": "開始使用",
+      "open": "進入應用",
+      "menu": "選單"
+    },
+    "footer": {
+      "tagline": "團隊規劃、交付與增長的工作空間。",
+      "columns": {
+        "product": {
+          "title": "產品",
+          "links": {
+            "features": "功能",
+            "pricing": "價格",
+            "faq": "常見問題",
+            "signIn": "登入"
+          }
+        },
+        "company": {
+          "title": "公司",
+          "links": {
+            "blog": "部落格",
+            "contact": "聯絡我們"
+          }
+        },
+        "legal": {
+          "title": "法律",
+          "links": {
+            "privacy": "隱私政策",
+            "terms": "服務條款",
+            "cookies": "Cookie 政策",
+            "refunds": "退款政策",
+            "dpa": "資料處理協議"
+          }
+        }
+      },
+      "rights": "保留所有權利。"
+    }
+  },
+  "journal": {
+    "og": {
+      "tagline": "面向 AI SaaS 的工程筆記"
+    },
+    "article": {
+      "allPosts": "全部文章",
+      "journalBadge": "{brandName} 技術部落格",
+      "copyOriginal": "複製原文",
+      "copyBlock": "複製此段",
+      "copied": "已複製",
+      "tableOfContentsAria": "目錄",
+      "contents": "目錄",
+      "footer": {
+        "continueReading": "繼續閱讀",
+        "relatedNotes": "同主題文章",
+        "allPosts": "全部文章",
+        "subscribeTitle": "訂閱 {brandName} Originals",
+        "subscribeBody": "低頻、認真，只發產品工程和 AI SaaS 交付筆記。",
+        "discuss": "去評論",
+        "share": "分享"
+      }
+    },
+    "comments": {
+      "title": "討論",
+      "subtitle": "使用 {brandName} 賬號參與評論。評論會先進入稽核佇列。",
+      "empty": "還沒有評論。來寫下第一條。",
+      "signIn": "登入後評論",
+      "placeholder": "寫下你的想法...",
+      "submit": "釋出評論",
+      "submitting": "釋出中",
+      "pending": "待稽核",
+      "error": "評論暫時不可用，請稍後再試。",
+      "like": "點贊",
+      "liked": "已點贊",
+      "save": "收藏",
+      "saved": "已收藏",
+      "signInToLike": "登入後點贊",
+      "signInToSave": "登入後收藏"
+    },
+    "author": {
+      "label": "作者",
+      "postCount": "{count} 篇文章"
+    },
+    "tag": {
+      "label": "專題",
+      "postCount": "{count} 篇文章"
+    }
+  },
+  "changelogPage": {
+    "meta": {
+      "title": "更新日誌 — {brandNameCn}",
+      "description": "每一次釋出，都追求極致的細節。"
+    },
+    "subscribe": "通過 <rss>RSS</rss> 或 <atom>Atom</atom> 訂閱更新，或關注 <handle>@nebutra_ai</handle>。"
+  },
+  "newsPage": {
+    "meta": {
+      "title": "新聞中心 — {brandNameCn}",
+      "description": "{brandNameCn} 的產品釋出、公告與平臺動態。"
+    },
+    "empty": {
+      "title": "暫時還沒有新聞。",
+      "subtitle": "敬請關注後續更新。"
+    }
+  },
+  "modelsPage": {
+    "meta": {
+      "title": "支援的 AI 提供商與模型 — {brandNameCn}",
+      "description": "覆蓋各大 LLM 實驗室、國內平臺、閘道器與本地執行時的 AI 提供商後設資料 — 通過 Vercel AI SDK 接入，改一個環境變數即可切換提供商。"
+    },
+    "eyebrow": "AI 提供商",
+    "title": "{count} 個 AI 提供商，一套適配層。",
+    "lead": "Sailor 內建覆蓋各大 LLM 實驗室、國內平臺、閘道器與本地執行時的提供商後設資料 — 通過 Vercel AI SDK 接入，改一個環境變數即可切換提供商。",
+    "providerCount": "{count} 個提供商",
+    "status": {
+      "opencode": "生產環境",
+      "ai-sdk": "AI SDK",
+      "cn-compatible": "相容",
+      "pending": "待接入"
+    },
+    "categories": {
+      "directLabs": "直接實驗室",
+      "chinaPlatforms": "國內平臺",
+      "cloudPlatforms": "雲平臺",
+      "inferenceAccelerators": "推理加速",
+      "unifiedGateways": "統一閘道器",
+      "multimodal": "多模態",
+      "localDeployment": "本地部署",
+      "developerEcosystem": "開發者生態"
+    }
+  },
+  "roadmapPage": {
+    "meta": {
+      "description": "{brandNameCn} 在創始人九層結構裡的路線圖：我們為什麼存在、要去哪裡，以及接下來要做什麼。"
+    },
+    "hero": {
+      "title": "從為什麼，到下一步要做的事。",
+      "lead": "九層，從上到下。前八層說明 {brandNameCn} 為什麼存在、必須成為什麼樣子——它們基本不變。第九層是我們正在做的事，每週都在變。",
+      "cn": "從為什麼，到下一步。",
+      "essayLink": "九層結構，以及我們為什麼把它寫下來 →"
+    },
+    "direction": {
+      "title": "方向",
+      "lead": "每一行都是創始人的原話，照 Journal 裡寫的樣子摘錄。",
+      "cn": "方向，L1 到 L8。"
+    },
+    "execution": {
+      "title": "執行",
+      "lead": "L9。每一個 bet 都標明它服務於哪一層；不服務任何一層的 bet 不會出現在列表裡。",
+      "cn": "執行：現在、接下來、更遠。"
+    },
+    "landed": {
+      "title": "已落地",
+      "lead": "從「正在做」移出的部分，附帶它花費的工作量。其餘內容見更新日誌。",
+      "cn": "已經落地的。",
+      "releaseNotes": "更新日誌 →"
+    }
+  },
+  "aboutPages": {
+    "businessPortfolio": {
+      "meta": {
+        "title": "核心能力佈局 — {brandNameCn}",
+        "description": "19 項核心能力覆蓋模態維度、技術能力、平臺基礎設施與資料治理四大層面，構築 AI 原生資料智慧全棧底座。"
+      },
+      "hero": {
+        "kicker": "核心能力佈局",
+        "heading": "19 項核心能力，四重能力維度",
+        "lead": "從模態覆蓋到技術底座、從平臺基礎設施到資料治理 — 我們以四組共 19 項能力，構建 AI 原生資料智慧的全鏈路工程體系。",
+        "totalLabel": "總計 {count} 項核心能力 · 四大維度"
+      },
+      "groupItemsLabel": "{count} 項",
+      "matrix": {
+        "kicker": "能力矩陣",
+        "heading": "一圖概覽 19 項核心能力",
+        "lead": "四組能力並列呈現，便於對照、編排與組合落地。"
+      },
+      "cta": {
+        "kicker": "需要深入瞭解？",
+        "heading": "想針對某一項能力洽談落地？",
+        "lead": "告訴我們您的場景，我們會匹配專屬架構師與工程團隊為您做技術對齊。",
+        "button": "聯絡我們"
+      }
+    },
+    "global": {
+      "meta": {
+        "title": "全球化佈局 — 關於我們 · {productName}",
+        "description": "{productName} 生而全球化 — 7 大主幹語種、跨境資料合規、多地區支付、全球 Edge 網路，Day 1 即可出海。"
+      },
+      "hero": {
+        "eyebrow": "全球化佈局",
+        "title": "生而全球化",
+        "lead": "{productName} 從第一行程式碼起就是國際化原生架構，而不是後期補丁。對標 Stripe、Vercel、Linear 等全球化基因產品，我們為您鋪好從 Day 1 走向全球市場的基礎設施底座。"
+      },
+      "pillars": {
+        "title": "全球化四大支柱",
+        "lead": "語種、合規、支付、邊緣網路 — 構成出海業務的四個基礎維度。"
+      },
+      "languages": {
+        "title": "7 大主幹語種",
+        "lead": "原生國際化（i18n）+ 動態本地化（l10n），覆蓋全球約 40 億人口。"
+      },
+      "compliance": {
+        "title": "合規矩陣",
+        "lead": "主流監管框架 Day 1 支援，企業級認證按 Roadmap 推進。",
+        "columns": {
+          "region": "地區",
+          "framework": "合規框架",
+          "status": "狀態"
+        }
+      },
+      "payments": {
+        "title": "支付：全球 + 中國",
+        "lead": "Creem 作為交易商戶（merchant of record）覆蓋全球主流卡組織，代收代繳各地銷售稅/增值稅；微信支付與支付寶原生覆蓋中國大陸——都在同一套計費契約背後，配好金鑰即可上線。"
+      },
+      "cta": {
+        "eyebrow": "Ready to Sail",
+        "title": "準備在全球啟航？",
+        "lead": "從本地驗證到全球擴張，Sailor 是您最可靠的技術合夥人。",
+        "button": "聯絡我們"
+      }
+    },
+    "innovation": {
+      "meta": {
+        "title": "研發與創新 — {brandNameCn}",
+        "description": "工程品味即護城河。{brandNameCn}極客驅動，對標矽谷最佳實踐：AI 原生架構（Harness 工程）、開源基礎設施、工程卓越。"
+      },
+      "hero": {
+        "eyebrow": "R&D / 研發與創新",
+        "heading": "工程品味即護城河",
+        "manifesto": "我們是一支極客驅動的小型團隊。在 AI 加速度時代，工具幾乎被所有人平等擁有，真正的稀缺資源是品味 — 對架構的審美、對細節的偏執、對長期主義的堅持。{brandNameCn}對標矽谷一線研發組織，從第一行程式碼就寫給 AI 時代：型別安全、可觀測、Edge-first、多租戶、開源。這不是口號，這是我們每天的工作紀律。",
+        "battlefield": "在 AI stack 三層演化中，我們選擇 Harness 層作戰 — MCP/SKILL、工具生態、Agent 編排、A2A 協同。這裡是 2025–2026 年工程化的真正前線。"
+      },
+      "harness": {
+        "eyebrow": "AI Stack 三層演化",
+        "heading": "從權重，到上下文，到 Harness",
+        "intro": "大模型的創新面每兩年就會向外擴充套件一層。2022 年在權重（Weights）層卷 scaling law；2023–2024 年在上下文（Context）層卷 RAG 與長視窗；2025–2026 年，真正的增量產出已經轉移到 Harness 層 — 工具、協議、工作流圖與 Agent 基礎設施。",
+        "outro": "{productName} 把 Harness 工程當作一等公民。我們不在權重層造模型，也不只在上下文層做 Prompt — 我們交付可工程化的 Harness：MCP/SKILL 驅動的智慧體、A2A 協同協議、可觀測的工作流圖、安全可控的工具生態。這是 AI 原生 SaaS 的下一代架構座標。",
+        "battlefieldTag": "← {productName} 的戰場",
+        "currentTag": "正在發生"
+      },
+      "pillars": {
+        "ossSupplement": "為什麼開源？因為我們相信：在加速度時代，閉源的專有優勢在 6 個月內會被追平，而開源的複利會持續十年。開源讓客戶免於 vendor lock-in，讓社群共同加固我們的基礎設施，也讓每一次 commit 接受全世界的審閱。這是我們最有信心的一場長期賭注。"
+      },
+      "orgPrinciples": {
+        "eyebrow": "組織演進準則",
+        "heading": "AI 槓桿對抗人治腐化",
+        "intro": "偉大的組織不應在業務擴張過程中走向平庸與官僚化。當 {brandNameCn} 生態及其孵化公司面臨規模激增時，以下三條是唯一不可妥協的組織演進準則——每一條都直接約束 hiring、治理與資源配置決策。"
+      },
+      "timeline": {
+        "eyebrow": "創新時間線",
+        "heading": "我們走過的路與即將抵達的站臺"
+      },
+      "cta": {
+        "eyebrow": "加入我們的研發之旅",
+        "heading": "與極客並肩,打造下一代 AI 基礎設施",
+        "button": "探索職業機會"
+      }
+    },
+    "whitepaper": {
+      "meta": {
+        "title": "商業白皮書 — {productName}",
+        "description": "{productName} 受治理 AI 平臺白皮書 · 四章工程與商業文件"
+      },
+      "hero": {
+        "eyebrow": "{brandNameUpper} BUSINESS WHITEPAPER / 商業白皮書",
+        "title": "{productName} 平臺白皮書與工程原則",
+        "readTime": "全文約 15 分鐘閱讀",
+        "tocKicker": "目錄",
+        "updated": "最後更新:2026-04-21",
+        "back": "返回 About"
+      },
+      "chapters": {
+        "chapter": "第",
+        "iTitle": "戰略定位:平臺基線與工程槓桿",
+        "iiTitle": "升級路徑與協作契約",
+        "iiiTitle": "全鏈路 AI 原生平臺層",
+        "ivTitle": "組織演進準則:治理與自動化"
+      },
+      "goalsKicker": "核心目標",
+      "sectionII": {
+        "heading": "超級要素路由協議",
+        "intro": "現代軟體團隊的主要摩擦,不在於沒有工具,而在於平臺層反覆重建、升級路徑模糊和協作契約失真。{brandNameCn}關注的是如何用更穩定的平臺契約和更清晰的演進路徑,讓系統持續產出而不是持續返工。"
+      },
+      "sectionIII": {
+        "heading": "全鏈路 AI 原生基建",
+        "intro": "{brandNameCn}不是零散工具的拼貼。它把腳手架、執行時整合、治理機制和交付路徑收斂進一套可驗證的平臺層,讓團隊能圍繞同一基線持續演進。",
+        "builderEyebrow": "L0 · 工程底座",
+        "sleptonsEyebrow": "L1 · 信任與撮合",
+        "highlightsKicker": "核心能力"
+      },
+      "sectionIV": {
+        "heading": "組織演進準則 · AI 槓桿對抗人治腐化",
+        "intro": "偉大的組織不應在擴張過程中走向平庸與官僚化。當 {brandNameCn}生態及其孵化公司面臨規模激增時,以下三條準則不可妥協——它們決定組織是繼續複利,還是走向內耗。"
+      }
+    }
+  },
+  "showcasePage": {
+    "meta": {
+      "title": "案例展示 — {productName}",
+      "description": "看看開發者和團隊正在用 {productName} 構建什麼。"
+    },
+    "title": "案例展示",
+    "lead": "看看開發者和團隊正在用 {productName} 構建什麼。",
+    "comingSoon": {
+      "title": "即將上線",
+      "body": "用 {productName} 構建的專案將在這裡展示。"
+    },
+    "featured": "精選",
+    "categories": {
+      "saas": "SaaS",
+      "ecommerce": "電商",
+      "ai": "AI / 機器學習",
+      "devtools": "開發者工具",
+      "marketing": "營銷",
+      "other": "其他"
+    }
+  },
+  "securityPage": {
+    "meta": {
+      "title": "安全 — {brandNameCn}",
+      "description": "租戶隔離、應用層加密、RBAC/ABAC、結構化審計日誌 — 作為可安裝的軟體包內置於 Sailor 骨架中。"
+    },
+    "hero": {
+      "eyebrow": "安全",
+      "title": "安全是程式碼，不是口號。",
+      "lead": "Sailor 骨架自帶審計日誌、租戶隔離、加密與許可權原語，都是可安裝的軟體包 — 不是 PPT 裡的承諾。"
+    },
+    "capabilitiesSection": {
+      "title": "內建能力",
+      "lead": "以下每一項都是本倉庫中的一個軟體包，歡迎在 GitHub 上審閱我們的原始碼。"
+    },
+    "capabilities": {
+      "tenantIsolation": {
+        "title": "租戶隔離",
+        "summary": "請求級租戶上下文（AsyncLocalStorage）加上 Postgres 行級安全策略，在資料庫層實現嚴格的租戶隔離。"
+      },
+      "encryption": {
+        "title": "應用層加密",
+        "summary": "使用 AWS KMS 對客戶金鑰做信封加密。明文永不離開應用邊界；資料加密金鑰支援輪換。"
+      },
+      "rbacAbac": {
+        "title": "RBAC 與 ABAC",
+        "summary": "使用 CASL 進行程序內角色/屬性校驗。"
+      },
+      "auditLogging": {
+        "title": "結構化審計日誌",
+        "summary": "統一的 AuditEvent 格式，記錄操作者 / 動作 / 資源 / 結果。架構已就位，生產環境整合正在進行中。"
+      },
+      "auth": {
+        "title": "基於 Postgres 的 Better Auth",
+        "summary": "由 Better Auth 支撐的會話/Cookie 認證，內建組織成員與裝置碼登入 — 您的使用者與資料庫之間沒有第三方身份供應商。"
+      },
+      "secrets": {
+        "title": "邊界處的金鑰管理",
+        "summary": "必需的環境變數在程序啟動時校驗（Zod schema）。應用金鑰按需解密，絕不寫入日誌。"
+      }
+    },
+    "integrationWip": "整合進行中",
+    "complianceSection": {
+      "title": "合規姿態",
+      "lead": "我們如實列出當前狀態 — 哪些已經就緒，哪些還在路線圖上。不掛我們尚未贏得的徽章。"
+    },
+    "compliance": {
+      "gdpr": {
+        "label": "GDPR / 英國 GDPR 資料處理",
+        "state": "已對齊",
+        "detail": "可按需提供 DPA。應用內已支援資料主體訪問與刪除流程。"
+      },
+      "soc2": {
+        "label": "SOC 2 Type II",
+        "state": "路線圖中",
+        "detail": "目前尚未認證。架構設計已支援 SOC 2 控制項；計劃進行正式審計。"
+      },
+      "iso27001": {
+        "label": "ISO 27001",
+        "state": "路線圖中",
+        "detail": "目前尚未認證。ISMS 範圍與 SOC 2 一併跟蹤推進。"
+      },
+      "hipaa": {
+        "label": "HIPAA 就緒架構",
+        "state": "需簽署 BAA",
+        "detail": "審計日誌、RBAC 與加密原語均已就位；受管轄實體需簽署業務合作協議（BAA）。"
+      },
+      "pipl": {
+        "label": "個人資訊保護法（PIPL）",
+        "state": "已支援",
+        "detail": "支援中國境內合規服務商（百鍊、火山引擎、SiliconFlow），滿足資料境內留存需求。"
+      }
+    },
+    "cta": {
+      "title": "需要我們的 DPA、安全問卷，或想聊聊？",
+      "lead": "我們會在一個工作日內回覆安全相關諮詢。如需 DPA，可附上您的草案，或直接使用我們的模板。",
+      "readDpa": "檢視我們的 DPA 說明",
+      "requestDpa": "申請 DPA"
+    }
+  },
+  "opcPage": {
+    "meta": {
+      "title": "平臺 — {brandNameCn}",
+      "description": "{brandNameCn} 平臺概覽。"
+    }
+  },
+  "studioPage": {
+    "meta": {
+      "description": "選擇一個 Sailor 專案的外觀，在真實頁面上預覽，然後用一條命令應用它。"
+    }
+  },
+  "statusPages": {
+    "index": {
+      "meta": {
+        "title": "{brandNameCn} 狀態",
+        "description": "{brandNameCn} 公開服務的即時執行狀態。"
+      }
+    },
+    "history": {
+      "meta": {
+        "title": "事件歷史"
+      },
+      "backToStatus": "返回狀態頁",
+      "calendar": "日曆",
+      "previousMonth": "上個月",
+      "nextMonth": "下個月",
+      "weekdays": {
+        "mon": "一",
+        "tue": "二",
+        "wed": "三",
+        "thu": "四",
+        "fri": "五",
+        "sat": "六",
+        "sun": "日"
+      },
+      "nothingToReport": "本月沒有可報告的事項。"
+    },
+    "incident": {
+      "seoTitle": "事件",
+      "phase": {
+        "scheduled": "已計劃",
+        "inProgress": "進行中",
+        "completed": "已完成"
+      },
+      "backToStatus": "返回狀態頁",
+      "fields": {
+        "status": "狀態",
+        "type": "型別",
+        "impact": "影響",
+        "started": "開始時間",
+        "duration": "持續時間"
+      },
+      "maintenance": "維護",
+      "affected": "受影響：{services}",
+      "updates": "更新"
+    },
+    "subscription": {
+      "meta": {
+        "title": "訂閱"
+      },
+      "invalid": {
+        "title": "此連結無效",
+        "body": "該連結可能已過期或已被使用。請從狀態頁重新訂閱。"
+      },
+      "confirmed": {
+        "title": "訂閱成功",
+        "body": "發生事件或計劃維護時，{email} 將收到郵件通知。"
+      },
+      "unsubscribed": {
+        "title": "已取消訂閱",
+        "body": "您將不再收到狀態郵件。"
+      },
+      "backToStatus": "返回狀態頁"
+    }
+  }
+}
