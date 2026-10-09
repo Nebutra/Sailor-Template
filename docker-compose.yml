@@ -1,0 +1,148 @@
+# Nebutra-Sailor Local Development Stack
+# Run: docker-compose up -d
+
+services:
+  # ============================================
+  # Infrastructure
+  # ============================================
+
+  # PostgreSQL (Supabase alternative for local dev)
+  # Schema is owned by Prisma 7 (packages/platform/db/prisma/) — see db-migrate service.
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: nebutra-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nebutra
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # One-shot Prisma migrate runner. Replaces the legacy SQL bootstrap mounts.
+  db-migrate:
+    build:
+      context: .
+      dockerfile: infra/runtime/docker/Dockerfile.db-migrate
+    container_name: nebutra-db-migrate
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/nebutra
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  # Redis (Upstash alternative for local dev)
+  redis:
+    image: redis:7-alpine
+    container_name: nebutra-redis
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ClickHouse (warehouse for analytics + growth metrics)
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8
+    container_name: nebutra-clickhouse
+    ports:
+      - "127.0.0.1:8123:8123" # HTTP
+      - "127.0.0.1:9000:9000" # Native
+    environment:
+      - CLICKHOUSE_DB=nebutra
+      - CLICKHOUSE_USER=default
+      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD:-}
+      - CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - ./infra/data/clickhouse/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "clickhouse-client --query 'SELECT 1'"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ============================================
+  # Python Microservices
+  # ============================================
+
+  ai-service:
+    build:
+      context: .
+      dockerfile: infra/runtime/docker/Dockerfile.python
+      args:
+        SERVICE: ai
+    container_name: nebutra-ai
+    ports:
+      - "127.0.0.1:8001:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/nebutra
+      - REDIS_URL=redis://redis:6379
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+    profiles: ["ai", "core"]
+
+  idp:
+    build:
+      context: .
+      dockerfile: apps/idp/Dockerfile
+    container_name: nebutra-idp
+    ports:
+      - "127.0.0.1:3100:3100"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/nebutra
+      - REDIS_URL=redis://redis:6379
+      - OIDC_ISSUER=http://localhost:3100
+      - OIDC_COOKIE_KEYS=dev-cookie-key-1,dev-cookie-key-2
+      - NODE_ENV=development
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+    profiles: ["idp", "core"]
+
+  # ============================================
+  # Observability (optional)
+  # ============================================
+
+  # Jaeger for distributed tracing
+  jaeger:
+    image: jaegertracing/all-in-one:1.51
+    container_name: nebutra-jaeger
+    ports:
+      - "16686:16686" # UI
+      - "4317:4317" # OTLP gRPC
+      - "4318:4318" # OTLP HTTP
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+    profiles:
+      - observability
+
+volumes:
+  postgres_data:
+  redis_data:
+  clickhouse_data:
+
+networks:
+  default:
+    name: nebutra-network
