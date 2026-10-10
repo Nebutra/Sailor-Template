@@ -1,0 +1,64 @@
+{
+  "name": "@nebutra/search",
+  "version": "4.0.1",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "nebutra": {
+    "graph": "core",
+    "status": "foundation",
+    "productionReady": false,
+    "requires": [
+      "Postgres + pgvector extension — preferably reached through an injected PgvectorDbAdapter (config.db); falls back to a private pg.Pool from DATABASE_URL if db is omitted (deprecated)"
+    ],
+    "gaps": [
+      "Provider adapters are stubs — need bulk index + faceted search",
+      "Tenant filtering is a WHERE clause plus the host adapter's tenant-scoped client (getTenantDb) — the dynamic per-index tables carry no Postgres RLS policy of their own",
+      "The no-db fallback pg.Pool (deprecated) does not apply tenant RLS at all — it is a WHERE clause only"
+    ]
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./pgvector": {
+      "types": "./dist/providers/pgvector.d.ts",
+      "import": "./dist/providers/pgvector.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@nebutra/logger": "workspace:*",
+    "pg": "^8.13.1",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.10",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "homepage": "https://github.com/Nebutra/Nebutra-Sailor/tree/main/packages/integrations/search#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nebutra/Nebutra-Sailor.git",
+    "directory": "packages/integrations/search"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebutra/Nebutra-Sailor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
