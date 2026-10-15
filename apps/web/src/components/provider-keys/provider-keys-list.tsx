@@ -1,0 +1,184 @@
+"use client";
+
+import { Badge, DataList, type DataListColumn } from "@nebutra/ui/primitives";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
+
+export type ProviderId = "OPENAI" | "ANTHROPIC" | "GOOGLE" | "SILICONFLOW" | "CUSTOM";
+
+export interface ProviderKey {
+  id: string;
+  provider: ProviderId;
+  label: string;
+  isActive: boolean;
+  alwaysUse: boolean;
+  baseUrl: string | null;
+  maskedKey: string | null;
+  createdAt: string;
+}
+
+export const PROVIDER_LABELS: Record<ProviderId, string> = {
+  OPENAI: "OpenAI",
+  ANTHROPIC: "Anthropic",
+  GOOGLE: "Google",
+  SILICONFLOW: "SiliconFlow",
+  CUSTOM: "Custom (OpenAI-compatible)",
+};
+
+function DeleteButton({
+  provider,
+  onDelete,
+}: {
+  provider: ProviderId;
+  onDelete: (provider: ProviderId) => void | Promise<void>;
+}) {
+  const tCopy = useTranslations("copy.providerKeysProviderKeysList");
+  const [pending, setPending] = useState(false);
+
+  async function handleClick() {
+    setPending(true);
+    try {
+      await onDelete(provider);
+    } finally {
+      setPending(false);
+    }
+  }
+
+  return (
+    <button
+      type="button"
+      disabled={pending}
+      onClick={handleClick}
+      data-testid={`provider-key-remove-${provider}`}
+      className="text-xs font-medium text-destructive-strong transition-colors hover:text-destructive-strong/80 disabled:opacity-50"
+    >
+      {pending ? tCopy("removing") : tCopy("remove")}
+    </button>
+  );
+}
+
+interface ProviderKeysListProps {
+  keys: ProviderKey[];
+  onAdd: () => void;
+  onDelete: (provider: ProviderId) => void | Promise<void>;
+  /** Gates the empty-state add button (provider_key:create). */
+  canCreate: boolean;
+  /** Gates the per-row Remove action (provider_key:delete). */
+  canDelete: boolean;
+  /**
+   * First load. Renders the reserved skeleton floor instead of the rows, so the
+   * list does not appear from nothing once the fetch settles.
+   */
+  isLoading?: boolean | undefined;
+  /**
+   * A background refetch or a settling optimistic delete. Deliberately NOT
+   * `isLoading`: the mounted rows stay mounted while the mutation lands.
+   */
+  isRefreshing?: boolean | undefined;
+  /** Fetch failure copy. Its presence alone puts the list in the error state. */
+  error?: string | null | undefined;
+  /** Retry affordance shown on the error body. */
+  onRetry?: (() => void) | undefined;
+}
+
+export function ProviderKeysList({
+  keys,
+  onAdd,
+  onDelete,
+  canCreate,
+  canDelete,
+  isLoading = false,
+  isRefreshing = false,
+  error,
+  onRetry,
+}: ProviderKeysListProps) {
+  const tCopy = useTranslations("copy.providerKeysProviderKeysList");
+  const tc = useTranslations("copy.providerKeysProviderKeysList");
+  const columns: readonly DataListColumn<ProviderKey>[] = [
+    {
+      id: "provider",
+      header: tCopy("provider"),
+      loadingWidth: "45%",
+      cell: (k) => (
+        <span className="min-w-0 truncate font-medium text-foreground">
+          {PROVIDER_LABELS[k.provider]}
+          {k.label ? (
+            <span className="ml-2 text-xs font-normal text-muted-foreground">{k.label}</span>
+          ) : null}
+        </span>
+      ),
+    },
+    {
+      id: "key",
+      header: tCopy("key"),
+      loadingWidth: "70%",
+      cell: (k) => (
+        <span className="truncate font-mono text-xs text-muted-foreground">
+          {k.maskedKey ?? "—"}
+        </span>
+      ),
+    },
+    {
+      id: "routing",
+      header: tCopy("routing"),
+      loadingWidth: "55%",
+      cell: (k) =>
+        k.alwaysUse ? (
+          // blue-subtle is bg-primary/10 + text-primary — 5.71:1, AA-safe in
+          // both themes. Never surface a raw --status-* as foreground here.
+          <Badge variant="blue-subtle" size="sm">
+            {tc("alwaysUseThisKey")}
+          </Badge>
+        ) : (
+          <span className="text-xs text-muted-foreground">{tc("preferFallBackTo")}</span>
+        ),
+    },
+    {
+      id: "actions",
+      header: tCopy("actions"),
+      align: "end",
+      width: 96,
+      loadingWidth: 56,
+      cell: (k) =>
+        canDelete ? (
+          <DeleteButton provider={k.provider} onDelete={onDelete} />
+        ) : (
+          <span className="text-xs text-muted-foreground">—</span>
+        ),
+    },
+  ];
+
+  return (
+    <div className="rounded-[var(--radius-lg)] bg-muted/25 p-2">
+      <DataList<ProviderKey>
+        label={tc("providerKeys")}
+        data-testid="provider-keys-list"
+        columns={columns}
+        rows={keys}
+        getRowKey={(k) => k.id}
+        {...(isLoading ? { status: "loading" as const } : {})}
+        isRefreshing={isRefreshing}
+        {...(error ? { error } : {})}
+        errorTitle="Provider keys did not load"
+        retryLabel="Try again"
+        {...(onRetry === undefined ? {} : { onRetry })}
+        emptyTitle={tCopy("noProviderKeysConfigured")}
+        emptyDescription={tCopy("addAKeyAnd")}
+        {...(canCreate
+          ? {
+              emptyAction: (
+                <button
+                  type="button"
+                  onClick={onAdd}
+                  data-testid="provider-keys-empty-add"
+                  className="rounded-[var(--radius-md)] px-4 py-2 text-sm font-medium bg-primary text-primary-foreground transition-[background-color] hover:bg-primary/90"
+                >
+                  {tc("addYourFirstProvider")}
+                </button>
+              ),
+            }
+          : {})}
+      />
+    </div>
+  );
+}
