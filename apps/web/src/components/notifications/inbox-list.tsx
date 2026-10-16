@@ -1,0 +1,233 @@
+"use client";
+
+import {
+  Bell,
+  Bell as BellRing,
+  Bug,
+  Envelope as Mail,
+  Star,
+  Trash as Trash2,
+} from "@nebutra/icons";
+import { GhostPreview } from "@nebutra/ui/primitives";
+import Link from "next/link";
+import { useFormatter, useTranslations } from "next-intl";
+
+// =============================================================================
+// InboxList: shared rendering for both the bell dropdown and the full page
+// =============================================================================
+
+export interface InboxNotification {
+  id: string;
+  type: string;
+  title: string;
+  body: string;
+  createdAt: string;
+  readAt?: string | null;
+  read: boolean;
+  channel: string;
+  data?: Record<string, unknown> | null;
+}
+
+export interface InboxListProps {
+  notifications: InboxNotification[];
+  onMarkRead?: (id: string) => void | Promise<void>;
+  onArchive?: (id: string) => void | Promise<void>;
+  loading?: boolean;
+  emptyMessage?: string;
+  selectable?: boolean;
+  selectedIds?: ReadonlySet<string>;
+  onToggleSelect?: (id: string) => void;
+  variant?: "compact" | "full";
+}
+
+function getIconForType(type: string): typeof Bell {
+  if (type.startsWith("email") || type.includes(".email")) return Mail;
+  if (type.startsWith("system.error") || type.includes("bug")) return Bug;
+  if (type.startsWith("billing")) return Star;
+  if (type.startsWith("security")) return BellRing;
+  return Bell;
+}
+
+export function InboxListSkeleton({ count = 3 }: { count?: number }): React.ReactElement {
+  const tc = useTranslations("copy.notificationsInboxList");
+  return (
+    <ul className="divide-y divide-border" aria-label={tc("loadingNotifications")}>
+      {Array.from({ length: count }).map((_, i) => (
+        <li key={`notification-skeleton-${i}`} className="flex animate-pulse gap-3 px-4 py-3">
+          <div className="size-8 rounded-full bg-muted" />
+          <div className="flex-1 space-y-2">
+            <div className="h-3 w-1/3 rounded bg-muted" />
+            <div className="h-3 w-2/3 rounded bg-muted" />
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function InboxEmptyState({
+  message,
+  variant = "compact",
+}: {
+  message?: string;
+  variant?: "compact" | "full";
+}): React.ReactElement {
+  const tc = useTranslations("copy.notificationsInboxList");
+  const text = message ?? tc("allCaughtUp");
+  if (variant === "full") {
+    // The page inbox shows the shape of the list it will hold, not an icon.
+    return (
+      <div className="grid" data-testid="inbox-empty">
+        <div className="[grid-area:1/1] [mask-image:radial-gradient(ellipse_55%_60%_at_50%_50%,transparent_25%,black_80%)]">
+          <GhostPreview kind="list" />
+        </div>
+        <p className="[grid-area:1/1] flex items-center justify-center px-6 py-8 text-center text-sm font-medium text-foreground">
+          {text}
+        </p>
+      </div>
+    );
+  }
+  return (
+    <p className="px-4 py-8 text-center text-sm text-neutral-11" data-testid="inbox-empty">
+      {text}
+    </p>
+  );
+}
+
+export function InboxList({
+  notifications,
+  onMarkRead,
+  onArchive,
+  loading,
+  emptyMessage,
+  selectable = false,
+  selectedIds,
+  onToggleSelect,
+  variant = "compact",
+}: InboxListProps): React.ReactElement {
+  const tc = useTranslations("copy.notificationsInboxList");
+  const format = useFormatter();
+
+  if (loading) {
+    return <InboxListSkeleton />;
+  }
+
+  if (notifications.length === 0) {
+    return <InboxEmptyState message={emptyMessage} variant={variant} />;
+  }
+
+  return (
+    <ul
+      className="divide-y divide-border"
+      data-testid="inbox-list"
+      aria-label={tc("notifications")}
+    >
+      {notifications.map((item) => {
+        const Icon = getIconForType(item.type);
+        const href = typeof item.data?.href === "string" ? (item.data.href as string) : undefined;
+        const checked = selectedIds?.has(item.id) ?? false;
+
+        const itemContent = (
+          <div
+            className={`flex gap-3 px-4 py-3 transition-colors ${
+              item.read ? "bg-background" : "bg-primary/5 dark:bg-primary/10"
+            } hover:bg-muted`}
+          >
+            {selectable ? (
+              <input
+                data-allow-native
+                type="checkbox"
+                aria-label={`Select notification ${item.title}`}
+                checked={checked}
+                onChange={() => onToggleSelect?.(item.id)}
+                className="mt-1 size-4 cursor-pointer accent-primary"
+                onClick={(e) => e.stopPropagation()}
+              />
+            ) : null}
+
+            <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted">
+              <Icon className="size-4 text-muted-foreground" aria-hidden="true" />
+            </div>
+
+            <div className="flex-1 min-w-0">
+              <div className="flex items-start justify-between gap-2">
+                <p
+                  className={`truncate text-sm ${
+                    item.read ? "font-medium text-foreground" : "font-semibold text-foreground"
+                  }`}
+                >
+                  {item.title}
+                </p>
+                <time className="shrink-0 text-xs text-muted-foreground" dateTime={item.createdAt}>
+                  {Number.isNaN(new Date(item.createdAt).getTime())
+                    ? ""
+                    : format.relativeTime(new Date(item.createdAt))}
+                </time>
+              </div>
+              {item.body ? (
+                <p
+                  className={`mt-0.5 text-xs text-muted-foreground ${
+                    variant === "compact" ? "line-clamp-2" : ""
+                  }`}
+                >
+                  {item.body}
+                </p>
+              ) : null}
+            </div>
+
+            {!item.read ? (
+              <span
+                role="status"
+                aria-label={tc("unread")}
+                className="mt-1.5 size-2 shrink-0 rounded-full bg-primary"
+              />
+            ) : null}
+
+            {variant === "full" && onArchive ? (
+              <button
+                type="button"
+                aria-label={`Archive notification ${item.title}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  void onArchive(item.id);
+                }}
+                className="rounded-[var(--radius-md)] p-1 text-muted-foreground hover:bg-muted"
+              >
+                <Trash2 className="size-4" aria-hidden="true" />
+              </button>
+            ) : null}
+          </div>
+        );
+
+        return (
+          <li key={item.id}>
+            {href ? (
+              <Link
+                href={href}
+                onClick={() => {
+                  if (!item.read) void onMarkRead?.(item.id);
+                }}
+                className="block"
+              >
+                {itemContent}
+              </Link>
+            ) : variant === "full" && onArchive ? (
+              <div className="block w-full text-left">{itemContent}</div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => {
+                  if (!item.read) void onMarkRead?.(item.id);
+                }}
+                className="block w-full text-left"
+              >
+                {itemContent}
+              </button>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
