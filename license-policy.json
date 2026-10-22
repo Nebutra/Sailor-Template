@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "License compliance policy for the Nebutra-Sailor monorepo (Apache-2.0).",
+  "projectLicense": "Apache-2.0",
+  "allowed": [
+    {
+      "id": "MIT",
+      "reason": "Permissive — compatible with Apache-2.0 distribution"
+    },
+    {
+      "id": "Apache-2.0",
+      "reason": "Permissive — compatible with Apache-2.0 distribution"
+    },
+    {
+      "id": "BSD-2-Clause",
+      "reason": "Permissive — compatible with Apache-2.0 distribution"
+    },
+    {
+      "id": "BSD-3-Clause",
+      "reason": "Permissive — compatible with Apache-2.0 distribution"
+    },
+    {
+      "id": "ISC",
+      "reason": "Permissive — compatible with Apache-2.0 distribution"
+    },
+    {
+      "id": "0BSD",
+      "reason": "Public-domain equivalent — compatible with everything"
+    },
+    {
+      "id": "Unlicense",
+      "reason": "Public-domain equivalent — compatible with everything"
+    },
+    {
+      "id": "CC0-1.0",
+      "reason": "Public-domain dedication — compatible with everything"
+    },
+    {
+      "id": "CC-BY-3.0",
+      "reason": "Attribution-only — compatible with Apache-2.0 distribution"
+    },
+    {
+      "id": "CC-BY-4.0",
+      "reason": "Attribution-only — compatible with Apache-2.0 distribution"
+    },
+    {
+      "id": "BlueOak-1.0.0",
+      "reason": "Permissive — compatible with Apache-2.0 distribution"
+    },
+    {
+      "id": "Python-2.0",
+      "reason": "Permissive — compatible with Apache-2.0 distribution"
+    }
+  ],
+  "forbidden": [
+    {
+      "id": "GPL-2.0",
+      "reason": "Strong copyleft — cannot be combined with an Apache-2.0 distribution"
+    },
+    {
+      "id": "GPL-3.0",
+      "reason": "Strong copyleft — cannot be combined with an Apache-2.0 distribution"
+    },
+    {
+      "id": "AGPL-1.0",
+      "reason": "Network copyleft — would impose source-disclosure obligations on downstream licensees"
+    },
+    {
+      "id": "AGPL-3.0",
+      "reason": "Network copyleft — would impose source-disclosure obligations on downstream licensees. Note: this project itself was AGPL-3.0 until 2026-07-26 and FSL-1.1-ALv2 until 2026-10-16; it is Apache-2.0 now, so AGPL dependencies cannot be absorbed"
+    },
+    {
+      "id": "SSPL-1.0",
+      "reason": "Server Side Public License is not OSI-approved and imposes service-level copyleft obligations"
+    },
+    {
+      "id": "EUPL-1.1",
+      "reason": "European Union Public License has complex compatibility matrix and reciprocal obligations"
+    },
+    {
+      "id": "EUPL-1.2",
+      "reason": "European Union Public License has complex compatibility matrix and reciprocal obligations"
+    }
+  ],
+  "excludedPackages": ["@nebutra/*"],
+  "notes": "The repository, every @nebutra/* package, the nebutra and create-sailor CLIs, the Sailor-Template mirror and every scaffolded project are Apache-2.0 (ADR 2026-10-16 apache-2-relicense). Our own @nebutra/* packages are excluded from the dependency check; tests/architecture/release-surface.test.ts enforces their Apache-2.0 license field and LICENSE file. Copyleft dependencies (GPL, AGPL) stay forbidden: an Apache-2.0 distribution cannot absorb them. The CI job and local script both use license-checker-rspack via npx (not installed as a dependency)."
+}
