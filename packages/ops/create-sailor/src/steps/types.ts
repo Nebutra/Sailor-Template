@@ -1,0 +1,27 @@
+/**
+ * Shared types for create-sailor.
+ *
+ * The scaffold asks nothing but where to put the project (ADR 2026-09-24
+ * Sailor convergence). The only options are mechanical.
+ */
+
+export interface CliOptions {
+  pm?: string;
+  install?: boolean;
+  git?: boolean;
+  yes?: boolean;
+  dryRun?: boolean;
+  json?: boolean;
+  color?: boolean;
+  help?: boolean;
+  /** Sailor Studio preset code, or a design-language id. */
+  preset?: string;
+}
+
+export type JsonEvent = {
+  event: string;
+  step?: string;
+  status?: "ok" | "error" | "skip" | "start" | "warn" | "pending";
+  message?: string;
+  [k: string]: unknown;
+};

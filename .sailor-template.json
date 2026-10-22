@@ -1,0 +1,10 @@
+{
+  "type": "sailor-template-mirror",
+  "sourceRepo": "Nebutra/Nebutra-Sailor",
+  "sailorVersion": "4.0.1",
+  "sailorVersionConverged": true,
+  "syncedAt": "2026-10-22T19:39:51.674Z",
+  "license": "Apache-2.0",
+  "readonly": true,
+  "note": "PRs to this repo are closed. Open PRs against Nebutra/Nebutra-Sailor."
+}
