@@ -1,0 +1,337 @@
+"use client";
+
+import { brand } from "../metadata";
+import { publicAssetUrl } from "../metadata-helpers";
+import { LogomarkSVG, WordmarkEnSVG } from "./LogoSVG";
+
+/*
+ * Inline where the asset is a single flat path. The classic mono / inverse mark
+ * and the English wordmark are one fill each (#060307 or white), so they render
+ * from the paths in LogoSVG with no request at all. Loading them from
+ * cdn.nebutra.com put the site header behind a third-party round trip (~1.3s
+ * cold) and one capture showed the alt text in the wordmark's place. The
+ * multi-gradient colour mark and the lockups stay on the CDN.
+ */
+const INK = "#060307";
+const INLINE_MARK: ReadonlySet<string> = new Set(["mono", "inverse"]);
+const INLINE_WORDMARK: ReadonlySet<string> = new Set(["en"]);
+
+function inlineFill(variant: string, inverted: boolean): string {
+  return variant === "inverse" || inverted ? "#ffffff" : INK;
+}
+
+export type LogoVariant =
+  | "color"
+  | "inverse"
+  | "mono"
+  | "en"
+  | "zh"
+  | "zh-en"
+  | "horizontal-en"
+  | "horizontal-zh"
+  | "vertical-en"
+  | "vertical-zh"
+  | "horizontal-en-mono"
+  | "horizontal-zh-mono"
+  | "vertical-en-mono"
+  | "vertical-zh-mono";
+
+/**
+ * Logo edition: classic (v1.0) or compliant (v2.0)
+ *
+ * - classic: 经典版，"毓"字更美观，用于用户体验场景 (App/网站/产品)
+ * - compliant: 合规版，"毓"字符合商标规范，用于商务场景 (法律/商标/正式文件)
+ */
+export type LogoEdition = "classic" | "compliant";
+
+/** Variants that only exist in the compliant edition */
+const COMPLIANT_ONLY_VARIANTS: ReadonlySet<LogoVariant> = new Set([
+  "horizontal-en-mono",
+  "horizontal-zh-mono",
+  "vertical-en-mono",
+  "vertical-zh-mono",
+]);
+
+export interface LogoProps {
+  /**
+   * Logo variant
+   * @default "en" (Nebutra with English wordmark)
+   */
+  variant?: LogoVariant;
+
+  /**
+   * Logo edition
+   * - "classic" (default): v1.0 经典版，更美观
+   * - "compliant": v2.0 合规版，符合商标规范
+   *
+   * Mono combination variants automatically use compliant edition.
+   * @default "classic"
+   */
+  edition?: LogoEdition;
+
+  /**
+   * Logo size (width in pixels)
+   * @default 120
+   */
+  size?: number;
+
+  /**
+   * Custom className
+   */
+  className?: string;
+
+  /**
+   * Invert colors for dark backgrounds.
+   * When true, black becomes white (useful for dark mode).
+   *
+   * Note: For pure white logomark, use variant="inverse" instead.
+   */
+  inverted?: boolean;
+}
+
+/**
+ * Resolve the CDN object for a logo variant + edition combination.
+ * Mono combination variants always route to the compliant directory.
+ * `public/` copies from `pnpm brand:sync` stay as seed, not consumption.
+ */
+export function logoPublicSrc(variant: LogoVariant, edition: LogoEdition): string {
+  const dir =
+    edition === "compliant" || COMPLIANT_ONLY_VARIANTS.has(variant)
+      ? "brand/logo-compliant"
+      : "brand/logo";
+  return publicAssetUrl(`${dir}/logo-${variant}.svg`);
+}
+
+/**
+ * Aspect ratios for different logo variants
+ * width:height ratio (e.g. 5.25 means width is 5.25x height)
+ */
+const ASPECT_RATIOS: Record<LogoVariant, number> = {
+  color: 1.07, // 535.71 x 500 ≈ 1.07
+  inverse: 1.07, // 535.71 x 500 ≈ 1.07
+  mono: 1.07, // Same as color/inverse
+  en: 5.25, // 544.21 x 103.74 ≈ 5.25 (horizontal text)
+  zh: 3.5, // Estimated for Chinese wordmark
+  "zh-en": 4.0, // Estimated for bilingual
+  "horizontal-en": 5.25, // Similar to "en"
+  "horizontal-zh": 4.5, // Estimated
+  "vertical-en": 0.8, // Taller than wide
+  "vertical-zh": 0.8, // Taller than wide
+  "horizontal-en-mono": 5.25, // Same as horizontal-en
+  "horizontal-zh-mono": 4.5, // Same as horizontal-zh
+  "vertical-en-mono": 0.8, // Same as vertical-en
+  "vertical-zh-mono": 0.8, // Same as vertical-zh
+};
+
+/**
+ * A brand with no logo files yet (`brand.logo === "wordmark"`, what brand:init
+ * sets) shows its name in the heading face. currentColor, so it follows the
+ * surface in both themes the way the SVGs do with `inverted`.
+ */
+// The outer element never sets an inline `display`: callers show/hide logos with classes
+// (`hidden md:block`, `dark:hidden`), and an inline display would override them and render
+// both themed variants at once.
+function TextWordmark({ height, className }: { height: number; className?: string | undefined }) {
+  return (
+    <span
+      className={className}
+      style={{
+        fontFamily: "var(--font-heading, inherit)",
+        fontWeight: 500,
+        fontSize: Math.round(height * 0.9),
+        lineHeight: 1,
+        letterSpacing: "-0.02em",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {brand.name}
+    </span>
+  );
+}
+
+/** The mark counterpart: the initial in a rounded outline, same rules as TextWordmark. */
+function TextLogomark({ size, className }: { size: number; className?: string | undefined }) {
+  return (
+    <span aria-label={brand.name} role="img" className={className}>
+      <span
+        style={{
+          display: "inline-grid",
+          placeItems: "center",
+          width: size,
+          height: size,
+          borderRadius: Math.round(size * 0.24),
+          border: "1.5px solid currentColor",
+          fontFamily: "var(--font-heading, inherit)",
+          fontWeight: 500,
+          fontSize: Math.round(size * 0.55),
+          lineHeight: 1,
+        }}
+      >
+        {brand.name.charAt(0).toUpperCase()}
+      </span>
+    </span>
+  );
+}
+
+/**
+ * Nebutra Logo Component
+ *
+ * Renders the official Nebutra brand logo from SVG assets (fixed VI fills).
+ * Browser src is `https://cdn.nebutra.com/brand/logo{,-compliant}/…`.
+ * `pnpm brand:sync` still copies seed files into each app `public/`.
+ *
+ * For product chrome that must recolor with Brand Package skins (roles.brand),
+ * prefer LogomarkSVG / LogoEnSVG with default `text-brand-mark` instead of
+ * raster VI color SVGs or `text-primary` (CTA / roles.action).
+ *
+ * @example
+ * ```tsx
+ * // Logomark only (square icon)
+ * <Logo variant="inverse" size={40} />
+ *
+ * // Full logo with English wordmark
+ * <Logo variant="en" size={150} />
+ *
+ * // Chinese wordmark
+ * <Logo variant="zh" size={120} />
+ * ```
+ */
+export function Logo({
+  variant = "en",
+  edition = "classic",
+  size = 120,
+  className,
+  inverted = false,
+}: LogoProps) {
+  const aspectRatio = ASPECT_RATIOS[variant];
+  const height = Math.round(size / aspectRatio);
+  if (brand.logo === "wordmark") return <TextWordmark height={height} className={className} />;
+  if (edition === "classic" && INLINE_WORDMARK.has(variant)) {
+    return (
+      <span className={className} style={{ color: inlineFill(variant, inverted), lineHeight: 0 }}>
+        <WordmarkEnSVG
+          aria-label={brand.name}
+          className="!text-current"
+          width={size}
+          height={height}
+        />
+      </span>
+    );
+  }
+  const src = logoPublicSrc(variant, edition);
+
+  // For dark backgrounds, invert black to white
+  const filterStyle = inverted ? { filter: "brightness(0) invert(1)" } : {};
+
+  return (
+    <img
+      src={src}
+      alt={brand.name}
+      width={size}
+      height={height}
+      className={className}
+      style={{ width: size, height, ...filterStyle }}
+    />
+  );
+}
+
+/**
+ * Logomark only (the abstract icon without text)
+ *
+ * This uses the "color" or "inverse" variant which is just the icon.
+ *
+ * @example
+ * ```tsx
+ * <Logomark variant="inverse" size={32} />
+ * ```
+ */
+export function Logomark({
+  size = 32,
+  className,
+  variant = "color",
+  edition = "classic",
+  inverted = false,
+}: {
+  size?: number;
+  className?: string;
+  variant?: "color" | "inverse" | "mono";
+  edition?: LogoEdition;
+  inverted?: boolean;
+}) {
+  if (brand.logo === "wordmark") return <TextLogomark size={size} className={className} />;
+  if (edition === "classic" && INLINE_MARK.has(variant)) {
+    return (
+      <span className={className} style={{ color: inlineFill(variant, inverted), lineHeight: 0 }}>
+        <LogomarkSVG aria-label={brand.name} className="!text-current" width={size} height={size} />
+      </span>
+    );
+  }
+  const src = logoPublicSrc(variant, edition);
+
+  // For dark backgrounds, invert black to white (unless using "inverse" variant which is already white)
+  const filterStyle =
+    inverted && variant !== "inverse" ? { filter: "brightness(0) invert(1)" } : {};
+
+  return (
+    <img
+      src={src}
+      alt={brand.name}
+      width={size}
+      height={size}
+      className={className}
+      style={{ width: size, height: size, ...filterStyle }}
+    />
+  );
+}
+
+/**
+ * Wordmark only (text "Nebutra" without the icon)
+ *
+ * Uses the "en" variant which has the full wordmark.
+ * For icon + text, use Logo with variant="en".
+ */
+export function Wordmark({
+  size = 100,
+  className,
+  variant = "en",
+  edition = "classic",
+  inverted = false,
+}: {
+  size?: number;
+  className?: string;
+  variant?: "en" | "zh" | "zh-en";
+  edition?: LogoEdition;
+  inverted?: boolean;
+}) {
+  const aspectRatio = ASPECT_RATIOS[variant];
+  const height = Math.round(size / aspectRatio);
+  if (brand.logo === "wordmark") return <TextWordmark height={height} className={className} />;
+  if (edition === "classic" && INLINE_WORDMARK.has(variant)) {
+    return (
+      <span className={className} style={{ color: inlineFill(variant, inverted), lineHeight: 0 }}>
+        <WordmarkEnSVG
+          aria-label={brand.name}
+          className="!text-current"
+          width={size}
+          height={height}
+        />
+      </span>
+    );
+  }
+  const src = logoPublicSrc(variant, edition);
+
+  const filterStyle = inverted ? { filter: "brightness(0) invert(1)" } : {};
+
+  return (
+    <img
+      src={src}
+      alt={brand.name}
+      width={size}
+      height={height}
+      className={className}
+      style={{ width: size, height, ...filterStyle }}
+    />
+  );
+}
+
+export default Logo;
