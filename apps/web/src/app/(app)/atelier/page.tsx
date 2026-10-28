@@ -1,0 +1,40 @@
+/**
+ * /atelier — agentic creative-canvas demo.
+ *
+ * Gated by FLAGS.ATELIER_CANVAS (off by default). When disabled the route
+ * `notFound()`s so it neither renders nor advertises its existence — the
+ * established pattern for flag-gated surfaces in this app.
+ *
+ * The demo proves the absorbed product form: a prompt produces a generated
+ * asset that the SERVER places at a non-overlapping position and persists
+ * before the client is told. Generation uses the mock provider, so no AI
+ * provider key is required to see it work.
+ */
+
+import { FLAGS, isFeatureEnabled } from "@nebutra/feature-flags";
+import { PageHeader } from "@nebutra/ui/layout";
+import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+import { AtelierCanvas } from "@/components/atelier/atelier-canvas";
+import { getAuth, getTenantContext } from "@/lib/auth";
+
+export default async function AtelierPage() {
+  const tc = await getTranslations("copy.atelierPage");
+  const { userId } = await getAuth();
+  const { tenantId, plan } = await getTenantContext();
+
+  const enabled = await isFeatureEnabled(FLAGS.ATELIER_CANVAS, {
+    userId: userId ?? undefined,
+    tenantId: tenantId ?? undefined,
+    plan: (plan?.toLowerCase() || "free") as "free" | "pro" | "enterprise",
+  });
+  if (!enabled) notFound();
+
+  return (
+    <section className="mx-auto w-full max-w-wide">
+      <PageHeader title={tc("atelier")} description={tc("describeWhatYouWant")} />
+
+      <AtelierCanvas canvasId="demo" />
+    </section>
+  );
+}
